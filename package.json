@@ -1,0 +1,71 @@
+{
+  "name": "remark-docx",
+  "version": "0.0.0",
+  "description": "remark plugin to transform markdown to docx.",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "tsc": "tsc -p . --noEmit",
+    "tsc:d": "tsc -p . --outDir lib -d --emitDeclarationOnly",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
+    "prepublishOnly": "rimraf lib && npm run build && npm run tsc:d"
+  },
+  "dependencies": {
+    "docx": "^7.3.0",
+    "unist-util-visit": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.15.5",
+    "@babel/preset-env": "7.15.6",
+    "@babel/preset-typescript": "7.15.0",
+    "@rollup/plugin-typescript": "8.2.5",
+    "@storybook/addon-essentials": "6.4.9",
+    "@storybook/addon-links": "6.4.9",
+    "@storybook/react": "6.4.9",
+    "@types/jest": "^27.4.0",
+    "@types/mdast": "^3.0.10",
+    "@types/unist": "2.0.6",
+    "babel-jest": "27.4.6",
+    "file-saver": "^2.0.5",
+    "jest": "27.4.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-is": "17.0.2",
+    "remark-footnotes": "4.0.1",
+    "remark-frontmatter": "4.0.1",
+    "remark-gfm": "3.0.1",
+    "remark-math": "5.1.1",
+    "remark-parse": "10.0.1",
+    "rimraf": "3.0.2",
+    "rollup": "2.63.0",
+    "tslib": "2.3.1",
+    "typescript": "4.5.4",
+    "unified": "10.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inokawa/remark-docx.git"
+  },
+  "keywords": [
+    "unist",
+    "remark",
+    "mdast",
+    "markdown",
+    "docx",
+    "word",
+    "office"
+  ],
+  "author": "inokawa <stratoooo-taster@yahoo.co.jp> (https://github.com/inokawa/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inokawa/remark-docx/issues"
+  },
+  "homepage": "https://github.com/inokawa/remark-docx#readme"
+}
