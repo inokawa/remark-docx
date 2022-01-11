@@ -13,14 +13,18 @@ const plugin: Plugin<[Options?]> = function (opts = {}) {
   };
 
   return async (node) => {
-    const imageResolver = opts.imageResolver;
-    if (!imageResolver) {
-      throw new Error("options.imageResolver is not defined.");
-    }
     const imageList: mdast.Image[] = [];
     visit(node, "image", (node) => {
       imageList.push(node);
     });
+    if (imageList.length === 0) {
+      return node;
+    }
+
+    const imageResolver = opts.imageResolver;
+    if (!imageResolver) {
+      throw new Error("options.imageResolver is not defined.");
+    }
     const imageDatas = await Promise.all(
       imageList.map(({ url }) => imageResolver(url))
     );
