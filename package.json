@@ -1,7 +1,7 @@
 {
   "name": "remark-docx",
   "version": "0.0.3",
-  "description": "remark plugin to transform markdown to docx.",
+  "description": "remark plugin to compile markdown to docx.",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
   "types": "lib/index.d.ts",

@@ -2,7 +2,7 @@
 
 ![npm](https://img.shields.io/npm/v/remark-docx) ![check](https://github.com/inokawa/remark-docx/workflows/check/badge.svg) ![demo](https://github.com/inokawa/remark-docx/workflows/demo/badge.svg)
 
-[remark](https://github.com/remarkjs/remark) plugin to transform markdown to docx.
+[remark](https://github.com/remarkjs/remark) plugin to compile markdown to docx.
 
 ### 🚧 WIP 🚧
 
