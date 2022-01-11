@@ -244,8 +244,11 @@ function convertNodes(
   return results;
 }
 
-function buildParagraph(node: mdast.Paragraph, ctx: Context, opts: Opts) {
-  const { type, children } = node;
+function buildParagraph(
+  { type, children }: mdast.Paragraph,
+  ctx: Context,
+  opts: Opts
+) {
   const list = ctx.list;
   return new docx.Paragraph({
     children: convertNodes(children, ctx, opts),
@@ -265,8 +268,11 @@ function buildParagraph(node: mdast.Paragraph, ctx: Context, opts: Opts) {
   });
 }
 
-function buildHeading(node: mdast.Heading, ctx: Context, opts: Opts) {
-  const { type, children, depth } = node;
+function buildHeading(
+  { type, children, depth }: mdast.Heading,
+  ctx: Context,
+  opts: Opts
+) {
   let heading: docx.HeadingLevel;
   switch (depth) {
     case 1:
@@ -294,20 +300,26 @@ function buildHeading(node: mdast.Heading, ctx: Context, opts: Opts) {
   });
 }
 
-function buildThematicBreak(node: mdast.ThematicBreak) {
+function buildThematicBreak({ type }: mdast.ThematicBreak) {
   return new docx.Paragraph({
     thematicBreak: true,
   });
 }
 
-function buildBlockquote(node: mdast.Blockquote, ctx: Context, opts: Opts) {
+function buildBlockquote(
+  { type, children }: mdast.Blockquote,
+  ctx: Context,
+  opts: Opts
+) {
   // FIXME: do nothing for now
-  return convertNodes(node.children, ctx, opts);
+  return convertNodes(children, ctx, opts);
 }
 
-function buildList(node: mdast.List, ctx: Context, opts: Opts) {
-  const { type, children, ordered, start, spread } = node;
-
+function buildList(
+  { type, children, ordered, start, spread }: mdast.List,
+  ctx: Context,
+  opts: Opts
+) {
   const list: ListInfo = {
     level: ctx.list ? ctx.list.level + 1 : 0,
     ordered: !!ordered,
@@ -327,14 +339,19 @@ function buildList(node: mdast.List, ctx: Context, opts: Opts) {
   }, [] as DocxContent[]);
 }
 
-function buildListItem(node: mdast.ListItem, ctx: Context, opts: Opts) {
-  const { type, children, checked, spread } = node;
+function buildListItem(
+  { type, children, checked, spread }: mdast.ListItem,
+  ctx: Context,
+  opts: Opts
+) {
   return convertNodes(children, ctx, opts);
 }
 
-function buildTable(node: mdast.Table, ctx: Context, opts: Opts) {
-  const { type, children, align } = node;
-
+function buildTable(
+  { type, children, align }: mdast.Table,
+  ctx: Context,
+  opts: Opts
+) {
   const cellAligns: docx.AlignmentType[] | undefined = align?.map((a) => {
     switch (a) {
       case "left":
@@ -356,12 +373,11 @@ function buildTable(node: mdast.Table, ctx: Context, opts: Opts) {
 }
 
 function buildTableRow(
-  node: mdast.TableRow,
+  { type, children }: mdast.TableRow,
   ctx: Context,
   opts: Opts,
   cellAligns: docx.AlignmentType[] | undefined
 ) {
-  const { type, children } = node;
   return new docx.TableRow({
     children: children.map((c, i) => {
       return buildTableCell(c, ctx, opts, cellAligns?.[i]);
@@ -370,12 +386,11 @@ function buildTableRow(
 }
 
 function buildTableCell(
-  node: mdast.TableCell,
+  { type, children }: mdast.TableCell,
   ctx: Context,
   opts: Opts,
   align: docx.AlignmentType | undefined
 ) {
-  const { type, children } = node;
   return new docx.TableCell({
     children: [
       new docx.Paragraph({
@@ -386,32 +401,28 @@ function buildTableCell(
   });
 }
 
-function buildHtml(node: mdast.HTML) {
-  const { type, value } = node;
+function buildHtml({ type, value }: mdast.HTML) {
   // FIXME: transform to text for now
   return new docx.Paragraph({
     children: [buildText(value, {})],
   });
 }
 
-function buildCode(node: mdast.Code) {
-  const { type, value, lang, meta } = node;
+function buildCode({ type, value, lang, meta }: mdast.Code) {
   // FIXME: transform to text for now
   return new docx.Paragraph({
     children: [buildText(value, {})],
   });
 }
 
-function buildMath(node: mdast.Math) {
-  const { type, value } = node;
+function buildMath({ type, value }: mdast.Math) {
   // FIXME: transform to text for now
   return new docx.Paragraph({
     children: [new docx.TextRun(value)],
   });
 }
 
-function buildInlineMath(node: mdast.InlineMath) {
-  const { type, value } = node;
+function buildInlineMath({ type, value }: mdast.InlineMath) {
   // FIXME: transform to text for now
   return new docx.TextRun(value);
 }
@@ -425,20 +436,25 @@ function buildText(text: string, deco: Decoration) {
   });
 }
 
-function buildBreak(node: mdast.Break) {
+function buildBreak({ type }: mdast.Break) {
   return new docx.TextRun({ text: "", break: 1 });
 }
 
-function buildLink(node: mdast.Link, ctx: Context, opts: Opts) {
-  const { type, children, url, title } = node;
+function buildLink(
+  { type, children, url, title }: mdast.Link,
+  ctx: Context,
+  opts: Opts
+) {
   return new docx.ExternalHyperlink({
     link: url,
     children: convertNodes(children, ctx, opts),
   });
 }
 
-function buildImage(node: mdast.Image, images: ImageDataMap) {
-  const { type, url, title, alt } = node;
+function buildImage(
+  { type, url, title, alt }: mdast.Image,
+  images: ImageDataMap
+) {
   if (!images[url]) {
     return error(`Fetch image was failed: ${url}`);
   }
@@ -452,8 +468,11 @@ function buildImage(node: mdast.Image, images: ImageDataMap) {
   });
 }
 
-function buildFootnote(node: mdast.Footnote, ctx: Context, opts: Opts) {
-  const { type, children } = node;
+function buildFootnote(
+  { type, children }: mdast.Footnote,
+  ctx: Context,
+  opts: Opts
+) {
   // FIXME: transform to paragraph for now
   return new docx.Paragraph({
     children: convertNodes(children, ctx, opts),
