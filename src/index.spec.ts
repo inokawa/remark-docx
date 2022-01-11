@@ -20,6 +20,7 @@ describe("e2e", () => {
     .use(frontmatter, ["yaml", "toml"])
     .use(math)
     .use(docx, {
+      output: "raw",
       imageResolver: (url) => ({
         image: new Uint8Array(),
         width: 600,

@@ -3,7 +3,7 @@ import { unified } from "unified";
 import markdown from "remark-parse";
 import gfm from "remark-gfm";
 import frontmatter from "remark-frontmatter";
-import docx, { Packer } from "../src";
+import docx from "../src";
 import TextEditor from "./components/text-editor";
 // @ts-expect-error no type definition
 import text from "../fixtures/article.md";
@@ -33,12 +33,13 @@ const toDocxProcessor = unified()
   .use(gfm)
   .use(frontmatter)
   .use(docx, {
+    output: "blob",
     imageResolver: fetchImage,
   });
 
 const toDocx = async (s: string) => {
   const doc = await toDocxProcessor.process(s);
-  return Packer.toBlob(doc.result as any);
+  return doc.result;
 };
 
 export default {

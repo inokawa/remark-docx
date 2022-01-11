@@ -1,5 +1,5 @@
 import * as docx from "docx";
-import { convertInchesToTwip } from "docx";
+import { convertInchesToTwip, Packer } from "docx";
 import { IPropertiesOptions } from "docx/build/file/core-properties";
 import * as mdast from "./models/mdast";
 
@@ -95,6 +95,7 @@ type Context = Readonly<{
 }>;
 
 export type Opts = {
+  output?: "buffer" | "blob" | "raw";
   docProperties?: Omit<IPropertiesOptions, "sections" | "numbering">;
   imageResolver?: ImageResolver;
 };
@@ -110,8 +111,16 @@ export function mdastToDocx(
   node: mdast.Root,
   opts: Opts,
   images: ImageDataMap
-): docx.File {
-  return buildDocxRoot(node, opts, images);
+): Promise<any> | docx.File {
+  const doc = buildDocxRoot(node, opts, images);
+  switch (opts.output ?? "buffer") {
+    case "buffer":
+      return Packer.toBuffer(doc);
+    case "blob":
+      return Packer.toBlob(doc);
+    case "raw":
+      return doc;
+  }
 }
 
 function buildDocxRoot(
