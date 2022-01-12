@@ -95,7 +95,7 @@ type Context = Readonly<{
 }>;
 
 export type Opts = {
-  output?: "buffer" | "blob" | "raw";
+  output?: "buffer" | "blob";
   imageResolver?: ImageResolver;
 } & Pick<
   IPropertiesOptions,
@@ -132,7 +132,7 @@ export function mdastToDocx(
     background,
   }: Opts,
   images: ImageDataMap
-): Promise<any> | docx.File {
+): Promise<any> {
   const nodes = convertNodes(node.children, {
     deco: {},
     images,
@@ -163,8 +163,6 @@ export function mdastToDocx(
       return Packer.toBuffer(doc);
     case "blob":
       return Packer.toBlob(doc);
-    case "raw":
-      return doc;
   }
 }
 

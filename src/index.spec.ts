@@ -6,11 +6,18 @@ import gfm from "remark-gfm";
 import footnotes from "remark-footnotes";
 import frontmatter from "remark-frontmatter";
 import math from "remark-math";
-import { File } from "docx";
-import { Formatter } from "docx/src/export/formatter";
+import Zip from "adm-zip";
 import docx from ".";
 
 const FIXTURE_PATH = "../fixtures";
+
+// mock unique id
+beforeEach(() => {
+  jest.spyOn(global.Math, "random").mockReturnValue(0.123456789);
+});
+afterEach(() => {
+  jest.spyOn(global.Math, "random").mockRestore();
+});
 
 describe("e2e", () => {
   const toDocxProcessor = unified()
@@ -20,7 +27,7 @@ describe("e2e", () => {
     .use(frontmatter, ["yaml", "toml"])
     .use(math)
     .use(docx, {
-      output: "raw",
+      output: "buffer",
       imageResolver: (url) => ({
         image: new Uint8Array(),
         width: 600,
@@ -35,9 +42,12 @@ describe("e2e", () => {
       const doc = await toDocxProcessor.process(
         fs.readFileSync(path.join(fixturesDir, filename))
       );
-      expect(
-        new Formatter().format((doc.result as File).Document.View.Body)
-      ).toMatchSnapshot();
+      const z = new Zip((await doc.result) as any);
+      for (const e of z.getEntries()) {
+        if (e.entryName.match(/word\/.*\.xml$/)) {
+          expect(z.readAsText(e)).toMatchSnapshot();
+        }
+      }
     });
   });
 });
