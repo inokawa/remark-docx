@@ -1,6 +1,6 @@
 {
   "name": "remark-docx",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "remark plugin to compile markdown to docx.",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
