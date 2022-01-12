@@ -118,36 +118,30 @@ const error = (message: string) => {
 
 export function mdastToDocx(
   node: mdast.Root,
-  opts: Opts,
+  {
+    output,
+    title,
+    subject,
+    creator,
+    keywords,
+    description,
+    lastModifiedBy,
+    revision,
+    background,
+  }: Opts,
   images: ImageDataMap
 ): Promise<any> | docx.File {
-  const doc = buildDocxRoot(node, opts, images);
-  switch (opts.output ?? "buffer") {
-    case "buffer":
-      return Packer.toBuffer(doc);
-    case "blob":
-      return Packer.toBlob(doc);
-    case "raw":
-      return doc;
-  }
-}
-
-function buildDocxRoot(
-  root: mdast.Root,
-  opts: Opts,
-  images: ImageDataMap
-): docx.File {
   const ctx: Context = { deco: {}, images };
-  const nodes = convertNodes(root.children, ctx, opts) as DocxChild[];
-  return new docx.Document({
-    title: opts.title,
-    subject: opts.subject,
-    creator: opts.creator,
-    keywords: opts.keywords,
-    description: opts.description,
-    lastModifiedBy: opts.lastModifiedBy,
-    revision: opts.revision,
-    background: opts.background,
+  const nodes = convertNodes(node.children, ctx) as DocxChild[];
+  const doc = new docx.Document({
+    title,
+    subject,
+    creator,
+    keywords,
+    description,
+    lastModifiedBy,
+    revision,
+    background,
     sections: [{ children: nodes }],
     numbering: {
       config: [
@@ -158,37 +152,42 @@ function buildDocxRoot(
       ],
     },
   });
+
+  switch (output ?? "buffer") {
+    case "buffer":
+      return Packer.toBuffer(doc);
+    case "blob":
+      return Packer.toBlob(doc);
+    case "raw":
+      return doc;
+  }
 }
 
-function convertNodes(
-  nodes: mdast.Content[],
-  ctx: Context,
-  opts: Opts
-): DocxContent[] {
+function convertNodes(nodes: mdast.Content[], ctx: Context): DocxContent[] {
   const results: DocxContent[] = [];
 
   for (const node of nodes) {
     switch (node.type) {
       case "paragraph":
-        results.push(buildParagraph(node, ctx, opts));
+        results.push(buildParagraph(node, ctx));
         break;
       case "heading":
-        results.push(buildHeading(node, ctx, opts));
+        results.push(buildHeading(node, ctx));
         break;
       case "thematicBreak":
         results.push(buildThematicBreak(node));
         break;
       case "blockquote":
-        results.push(...buildBlockquote(node, ctx, opts));
+        results.push(...buildBlockquote(node, ctx));
         break;
       case "list":
-        results.push(...buildList(node, ctx, opts));
+        results.push(...buildList(node, ctx));
         break;
       case "listItem":
         error("unreachable");
         break;
       case "table":
-        results.push(buildTable(node, ctx, opts));
+        results.push(buildTable(node, ctx));
         break;
       case "tableRow":
         error("unreachable");
@@ -222,11 +221,10 @@ function convertNodes(
       case "delete": {
         const { type, children } = node;
         results.push(
-          ...convertNodes(
-            children,
-            { ...ctx, deco: { ...ctx.deco, [type]: true } },
-            opts
-          )
+          ...convertNodes(children, {
+            ...ctx,
+            deco: { ...ctx.deco, [type]: true },
+          })
         );
         break;
       }
@@ -238,7 +236,7 @@ function convertNodes(
         results.push(buildBreak(node));
         break;
       case "link":
-        results.push(buildLink(node, ctx, opts));
+        results.push(buildLink(node, ctx));
         break;
       case "image":
         results.push(buildImage(node, ctx.images));
@@ -250,7 +248,7 @@ function convertNodes(
         // FIXME: unimplemented
         break;
       case "footnote":
-        results.push(buildFootnote(node, ctx, opts));
+        results.push(buildFootnote(node, ctx));
         break;
       case "footnoteReference":
         // FIXME: unimplemented
@@ -269,14 +267,10 @@ function convertNodes(
   return results;
 }
 
-function buildParagraph(
-  { type, children }: mdast.Paragraph,
-  ctx: Context,
-  opts: Opts
-) {
+function buildParagraph({ type, children }: mdast.Paragraph, ctx: Context) {
   const list = ctx.list;
   return new docx.Paragraph({
-    children: convertNodes(children, ctx, opts),
+    children: convertNodes(children, ctx),
     ...(list &&
       (list.ordered
         ? {
@@ -293,11 +287,7 @@ function buildParagraph(
   });
 }
 
-function buildHeading(
-  { type, children, depth }: mdast.Heading,
-  ctx: Context,
-  opts: Opts
-) {
+function buildHeading({ type, children, depth }: mdast.Heading, ctx: Context) {
   let heading: docx.HeadingLevel;
   switch (depth) {
     case 1:
@@ -321,7 +311,7 @@ function buildHeading(
   }
   return new docx.Paragraph({
     heading,
-    children: convertNodes(children, ctx, opts),
+    children: convertNodes(children, ctx),
   });
 }
 
@@ -331,19 +321,14 @@ function buildThematicBreak({ type }: mdast.ThematicBreak) {
   });
 }
 
-function buildBlockquote(
-  { type, children }: mdast.Blockquote,
-  ctx: Context,
-  opts: Opts
-) {
+function buildBlockquote({ type, children }: mdast.Blockquote, ctx: Context) {
   // FIXME: do nothing for now
-  return convertNodes(children, ctx, opts);
+  return convertNodes(children, ctx);
 }
 
 function buildList(
   { type, children, ordered, start, spread }: mdast.List,
-  ctx: Context,
-  opts: Opts
+  ctx: Context
 ) {
   const list: ListInfo = {
     level: ctx.list ? ctx.list.level + 1 : 0,
@@ -351,14 +336,10 @@ function buildList(
   };
   return children.reduce((acc, item) => {
     acc.push(
-      ...buildListItem(
-        item,
-        {
-          ...ctx,
-          list,
-        },
-        opts
-      )
+      ...buildListItem(item, {
+        ...ctx,
+        list,
+      })
     );
     return acc;
   }, [] as DocxContent[]);
@@ -366,17 +347,12 @@ function buildList(
 
 function buildListItem(
   { type, children, checked, spread }: mdast.ListItem,
-  ctx: Context,
-  opts: Opts
+  ctx: Context
 ) {
-  return convertNodes(children, ctx, opts);
+  return convertNodes(children, ctx);
 }
 
-function buildTable(
-  { type, children, align }: mdast.Table,
-  ctx: Context,
-  opts: Opts
-) {
+function buildTable({ type, children, align }: mdast.Table, ctx: Context) {
   const cellAligns: docx.AlignmentType[] | undefined = align?.map((a) => {
     switch (a) {
       case "left":
@@ -392,7 +368,7 @@ function buildTable(
 
   return new docx.Table({
     rows: children.map((r) => {
-      return buildTableRow(r, ctx, opts, cellAligns);
+      return buildTableRow(r, ctx, cellAligns);
     }),
   });
 }
@@ -400,12 +376,11 @@ function buildTable(
 function buildTableRow(
   { type, children }: mdast.TableRow,
   ctx: Context,
-  opts: Opts,
   cellAligns: docx.AlignmentType[] | undefined
 ) {
   return new docx.TableRow({
     children: children.map((c, i) => {
-      return buildTableCell(c, ctx, opts, cellAligns?.[i]);
+      return buildTableCell(c, ctx, cellAligns?.[i]);
     }),
   });
 }
@@ -413,14 +388,13 @@ function buildTableRow(
 function buildTableCell(
   { type, children }: mdast.TableCell,
   ctx: Context,
-  opts: Opts,
   align: docx.AlignmentType | undefined
 ) {
   return new docx.TableCell({
     children: [
       new docx.Paragraph({
         alignment: align,
-        children: convertNodes(children, ctx, opts),
+        children: convertNodes(children, ctx),
       }),
     ],
   });
@@ -465,14 +439,10 @@ function buildBreak({ type }: mdast.Break) {
   return new docx.TextRun({ text: "", break: 1 });
 }
 
-function buildLink(
-  { type, children, url, title }: mdast.Link,
-  ctx: Context,
-  opts: Opts
-) {
+function buildLink({ type, children, url, title }: mdast.Link, ctx: Context) {
   return new docx.ExternalHyperlink({
     link: url,
-    children: convertNodes(children, ctx, opts),
+    children: convertNodes(children, ctx),
   });
 }
 
@@ -493,13 +463,9 @@ function buildImage(
   });
 }
 
-function buildFootnote(
-  { type, children }: mdast.Footnote,
-  ctx: Context,
-  opts: Opts
-) {
+function buildFootnote({ type, children }: mdast.Footnote, ctx: Context) {
   // FIXME: transform to paragraph for now
   return new docx.Paragraph({
-    children: convertNodes(children, ctx, opts),
+    children: convertNodes(children, ctx),
   });
 }
