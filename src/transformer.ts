@@ -96,9 +96,18 @@ type Context = Readonly<{
 
 export type Opts = {
   output?: "buffer" | "blob" | "raw";
-  docProperties?: Omit<IPropertiesOptions, "sections" | "numbering">;
   imageResolver?: ImageResolver;
-};
+} & Pick<
+  IPropertiesOptions,
+  | "title"
+  | "subject"
+  | "creator"
+  | "keywords"
+  | "description"
+  | "lastModifiedBy"
+  | "revision"
+  | "background"
+>;
 
 type DocxChild = docx.Paragraph | docx.Table | docx.TableOfContents;
 type DocxContent = DocxChild | docx.ParagraphChild;
@@ -131,7 +140,14 @@ function buildDocxRoot(
   const ctx: Context = { deco: {}, images };
   const nodes = convertNodes(root.children, ctx, opts) as DocxChild[];
   return new docx.Document({
-    ...opts.docProperties,
+    title: opts.title,
+    subject: opts.subject,
+    creator: opts.creator,
+    keywords: opts.keywords,
+    description: opts.description,
+    lastModifiedBy: opts.lastModifiedBy,
+    revision: opts.revision,
+    background: opts.background,
     sections: [{ children: nodes }],
     numbering: {
       config: [
