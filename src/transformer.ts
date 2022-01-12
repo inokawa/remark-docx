@@ -133,8 +133,10 @@ export function mdastToDocx(
   }: Opts,
   images: ImageDataMap
 ): Promise<any> | docx.File {
-  const ctx: Context = { deco: {}, images };
-  const nodes = convertNodes(node.children, ctx) as DocxChild[];
+  const nodes = convertNodes(node.children, {
+    deco: {},
+    images,
+  }) as DocxChild[];
   const doc = new docx.Document({
     title,
     subject,
