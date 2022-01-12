@@ -106,6 +106,7 @@ export type Opts = {
   | "description"
   | "lastModifiedBy"
   | "revision"
+  | "styles"
   | "background"
 >;
 
@@ -127,6 +128,7 @@ export function mdastToDocx(
     description,
     lastModifiedBy,
     revision,
+    styles,
     background,
   }: Opts,
   images: ImageDataMap
@@ -141,6 +143,7 @@ export function mdastToDocx(
     description,
     lastModifiedBy,
     revision,
+    styles,
     background,
     sections: [{ children: nodes }],
     numbering: {
