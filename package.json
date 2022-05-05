@@ -12,10 +12,9 @@
     "build": "rollup -c",
     "test": "jest",
     "tsc": "tsc -p . --noEmit",
-    "tsc:d": "tsc -p ./tsconfig-build.json --outDir lib -d --emitDeclarationOnly",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
-    "prepublishOnly": "rimraf lib && npm run build && npm run tsc:d"
+    "prepublishOnly": "rimraf lib && npm run build"
   },
   "dependencies": {
     "docx": "^7.3.0",

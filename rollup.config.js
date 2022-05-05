@@ -14,5 +14,12 @@ export default {
     },
   ],
   external: Object.keys(pkg.dependencies),
-  plugins: [typescript()],
+  plugins: [
+    typescript({
+      tsconfig: "./tsconfig.json",
+      outDir: ".",
+      declaration: true,
+      exclude: ["src/**/*.spec.*"],
+    }),
+  ],
 };
