@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "docx": "^7.4.1",
+    "latex-parser": "^0.6.2",
     "unist-util-visit": "^4.1.0"
   },
   "devDependencies": {

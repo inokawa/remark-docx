@@ -2,6 +2,7 @@ import * as docx from "docx";
 import { convertInchesToTwip, Packer } from "docx";
 import type { IPropertiesOptions } from "docx/build/file/core-properties";
 import type * as mdast from "./models/mdast";
+import { parseLatex } from "./latex";
 import { invariant, unreachable } from "./utils";
 
 const ORDERED_LIST_REF = "ordered";
@@ -413,16 +414,20 @@ function buildCode({ value, lang: _lang, meta: _meta }: mdast.Code) {
   });
 }
 
-function buildMath({ value }: mdast.Math) {
-  // FIXME: transform to text for now
+function buildMath({  value }: mdast.Math) {
   return new docx.Paragraph({
-    children: [new docx.TextRun(value)],
+    children: [
+      new docx.Math({
+        children: parseLatex(value),
+      }),
+    ],
   });
 }
 
-function buildInlineMath({ value }: mdast.InlineMath) {
-  // FIXME: transform to text for now
-  return new docx.TextRun(value);
+function buildInlineMath({  value }: mdast.InlineMath) {
+  return new docx.Math({
+    children: parseLatex(value),
+  });
 }
 
 function buildText(text: string, deco: Decoration) {

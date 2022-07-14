@@ -1,0 +1,1084 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parse \\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\pi i \\xi x}\\,d\\xi 1`] = `
+Object {
+  "w:r": Array [
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "x",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "=",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "∞",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ξ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:sSup": Array [
+        Object {
+          "m:sSupPr": Object {},
+        },
+        Object {
+          "m:e": Array [
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "e",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "m:sup": Array [
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "^",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ξ",
+          ],
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`parse L = \\frac{1}{2} \\rho v^2 S C_L 1`] = `
+Object {
+  "w:r": Array [
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "L",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "=",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:f": Array [
+        Object {
+          "m:num": Array [
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "1",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "m:den": Array [
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "2",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ρ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:sSup": Array [
+        Object {
+          "m:sSupPr": Object {},
+        },
+        Object {
+          "m:e": Array [
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "v",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "m:sup": Array [
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "^",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "2",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "S",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:sSub": Array [
+        Object {
+          "m:sSubPr": Object {},
+        },
+        Object {
+          "m:e": Array [
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "C",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "m:sub": Array [
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "_",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "L",
+          ],
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`parse command greek1 1`] = `
+Object {
+  "w:r": Array [
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "α",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "β",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "γ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "δ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ϵ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ζ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "η",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "θ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ι",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "κ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "λ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "μ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ν",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ξ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "o",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "π",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ρ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "σ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "τ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "υ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ϕ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "χ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ψ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ω",
+          ],
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`parse command greek2 1`] = `
+Object {
+  "w:r": Array [
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ε",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ϑ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ϱ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "ς",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "φ",
+          ],
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`parse command greek3 1`] = `
+Object {
+  "w:r": Array [
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "Γ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "Δ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "Θ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "Λ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "Ξ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "Π",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "Σ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "Υ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "Φ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "Ψ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "Ω",
+          ],
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`parse i hbar \\frac{partial psi}{partial t} = H psi(x,t) 1`] = `
+Object {
+  "w:r": Array [
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "i",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "h",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "b",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "a",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "r",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:f": Array [
+        Object {
+          "m:num": Array [
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "p",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "a",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "r",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "t",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "i",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "a",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "l",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    " ",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "p",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "s",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "i",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "m:den": Array [
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "p",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "a",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "r",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "t",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "i",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "a",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "l",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    " ",
+                  ],
+                },
+              ],
+            },
+            Object {
+              "m:r": Array [
+                Object {
+                  "m:t": Array [
+                    "t",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "=",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "H",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            " ",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "p",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "s",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "i",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "(",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "x",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            ",",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            "t",
+          ],
+        },
+      ],
+    },
+    Object {
+      "m:r": Array [
+        Object {
+          "m:t": Array [
+            ")",
+          ],
+        },
+      ],
+    },
+  ],
+}
+`;

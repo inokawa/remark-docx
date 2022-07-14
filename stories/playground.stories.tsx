@@ -3,6 +3,7 @@ import { unified } from "unified";
 import markdown from "remark-parse";
 import gfm from "remark-gfm";
 import frontmatter from "remark-frontmatter";
+import math from "remark-math";
 import docx from "../src";
 import TextEditor from "./components/text-editor";
 // @ts-expect-error no type definition
@@ -33,6 +34,7 @@ const toDocxProcessor = unified()
   .use(markdown)
   .use(gfm)
   .use(frontmatter)
+  .use(math)
   .use(docx, {
     output: "blob",
     imageResolver: fetchImage,
