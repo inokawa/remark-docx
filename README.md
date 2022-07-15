@@ -6,9 +6,39 @@
 
 ### 🚧 WIP 🚧
 
-The goal is to support all nodes in [mdast](https://github.com/syntax-tree/mdast) syntax tree, but currently transformation and stylings may not be well.
+This project is aiming to support all nodes in [mdast](https://github.com/syntax-tree/mdast) syntax tree, but currently transformation and stylings may not be well.
 
 If you have some feature requests or improvements, please create a [issue](https://github.com/inokawa/remark-docx/issues) or [PR](https://github.com/inokawa/remark-docx/pulls).
+
+- [x] paragraph
+- [x] heading
+- [x] thematicBreak
+- [ ] blockquote
+- [x] list
+- [x] listItem
+- [x] table
+- [x] tableRow
+- [x] tableCell
+- [ ] html
+- [ ] code
+- [ ] yaml
+- [ ] toml
+- [ ] definition
+- [ ] footnoteDefinition
+- [x] text
+- [x] emphasis
+- [x] strong
+- [x] delete
+- [ ] inlineCode
+- [x] break
+- [x] link
+- [x] image
+- [ ] linkReference
+- [ ] imageReference
+- [ ] footnote
+- [ ] footnoteReference
+- [ ] math
+- [ ] inlineMath
 
 ## Demo
 
