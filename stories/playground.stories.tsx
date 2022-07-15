@@ -88,7 +88,8 @@ export const MarkdownToDocx = () => {
           }}
         >
           {"download docx"}
-        </button>
+        </button>{" "}
+        <span>Live preview may be different from actual docx</span>
       </div>
       <Wrapper>
         <TextEditor ref={ref} initialValue={text} onChange={onChange} />
