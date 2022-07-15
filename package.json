@@ -18,8 +18,8 @@
     "prepublishOnly": "rimraf lib && npm run build"
   },
   "dependencies": {
+    "@unified-latex/unified-latex-util-parse": "1.0.12",
     "docx": "^7.4.1",
-    "latex-parser": "^0.6.2",
     "unist-util-visit": "^4.1.0"
   },
   "devDependencies": {

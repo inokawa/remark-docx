@@ -3,13 +3,18 @@ import { Formatter } from "docx/src/export/formatter";
 import { Run } from "docx";
 
 const parse = (str: string) =>
-  new Formatter().format(new Run({ children: parseLatex(str) }));
+  new Formatter().format(
+    new Run({ children: parseLatex(str).map((c) => new Run({ children: c })) })
+  );
 
 describe("parse", () => {
   [
     "L = \\frac{1}{2} \\rho v^2 S C_L",
     "i hbar \\frac{partial psi}{partial t} = H psi(x,t)",
     "\\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\pi i \\xi x}\\,d\\xi",
+    "\\frac{a+b}{c+d}",
+    "\\sqrt[30]{a+\\sqrt{b+c}}",
+    "\\sum_{k=1}^{n} k=\frac{n(n+1)}{2}",
   ].forEach((s) => {
     it(s, () => {
       expect(parse(s)).toMatchSnapshot();

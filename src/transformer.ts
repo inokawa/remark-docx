@@ -254,7 +254,7 @@ function convertNodes(nodes: mdast.Content[], ctx: Context): DocxContent[] {
         // FIXME: unimplemented
         break;
       case "math":
-        results.push(buildMath(node));
+        results.push(...buildMath(node));
         break;
       case "inlineMath":
         results.push(buildInlineMath(node));
@@ -414,19 +414,22 @@ function buildCode({ value, lang: _lang, meta: _meta }: mdast.Code) {
   });
 }
 
-function buildMath({  value }: mdast.Math) {
-  return new docx.Paragraph({
-    children: [
-      new docx.Math({
-        children: parseLatex(value),
-      }),
-    ],
-  });
+function buildMath({ value }: mdast.Math) {
+  return parseLatex(value).map(
+    (runs) =>
+      new docx.Paragraph({
+        children: [
+          new docx.Math({
+            children: runs,
+          }),
+        ],
+      })
+  );
 }
 
-function buildInlineMath({  value }: mdast.InlineMath) {
+function buildInlineMath({ value }: mdast.InlineMath) {
   return new docx.Math({
-    children: parseLatex(value),
+    children: parseLatex(value).flatMap((runs) => runs),
   });
 }
 

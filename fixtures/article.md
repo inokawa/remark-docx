@@ -62,6 +62,10 @@ This is ![image](https://github.githubassets.com/images/modules/logos_page/Octoc
 | left       |       right |    center    |
 | aligned    |     aligned |   aligned    |
 
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$
+
 <div style="color:red;">
 This is <u>HTML</u>
 </div>
