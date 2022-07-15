@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { unified } from "unified";
 import markdown from "remark-parse";
 import gfm from "remark-gfm";
@@ -8,6 +8,7 @@ import TextEditor from "./components/text-editor";
 // @ts-expect-error no type definition
 import text from "../fixtures/article.md";
 import { saveAs } from "file-saver";
+import { renderAsync } from "docx-preview";
 
 const fetchImage = async (
   url: string
@@ -53,7 +54,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => (
         width: "100vw",
         height: "100vh",
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
         fontSize: "10.5pt",
       }),
       []
@@ -63,24 +64,37 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+const previewStyle = { flex: 1, overflow: "auto" };
+
 export const MarkdownToDocx = () => {
   const ref = useRef<HTMLTextAreaElement>(null);
+  const onChange = async (v: string) => {
+    const blob = await toDocx(v);
+    renderAsync(blob, document.getElementById("preview")!);
+  };
+
+  useEffect(() => {
+    onChange(text);
+  }, []);
+
   return (
     <>
-      <div style={{ padding: 10 }}>
+      <div>
         <button
-          style={{ height: "100%" }}
           onClick={async () => {
             if (!ref.current) return;
             const blob = await toDocx(ref.current.value);
             saveAs(blob, "example.docx");
           }}
         >
-          {"convert to docx"}
+          {"download docx"}
         </button>
       </div>
       <Wrapper>
-        <TextEditor ref={ref} initialValue={text} />
+        <TextEditor ref={ref} initialValue={text} onChange={onChange} />
+        <div style={previewStyle}>
+          <div id="preview" />
+        </div>
       </Wrapper>
     </>
   );
