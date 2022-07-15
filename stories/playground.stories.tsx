@@ -70,7 +70,9 @@ export const MarkdownToDocx = () => {
   const ref = useRef<HTMLTextAreaElement>(null);
   const onChange = async (v: string) => {
     const blob = await toDocx(v);
-    renderAsync(blob, document.getElementById("preview")!);
+    renderAsync(blob, document.getElementById("preview")!, undefined, {
+      useMathMLPolyfill: true,
+    });
   };
 
   useEffect(() => {
