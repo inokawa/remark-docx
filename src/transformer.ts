@@ -95,6 +95,7 @@ type ListInfo = Readonly<{
 type Context = Readonly<{
   deco: Decoration;
   images: ImageDataMap;
+  indent: number;
   list?: ListInfo;
 }>;
 
@@ -136,6 +137,7 @@ export const mdastToDocx = (
   const nodes = convertNodes(node.children, {
     deco: {},
     images,
+    indent: 0,
   }) as DocxChild[];
   const doc = new docx.Document({
     title,
@@ -271,6 +273,12 @@ const buildParagraph = ({ children }: mdast.Paragraph, ctx: Context) => {
   const list = ctx.list;
   return new docx.Paragraph({
     children: convertNodes(children, ctx),
+    indent:
+      ctx.indent > 0
+        ? {
+            start: convertInchesToTwip(INDENT * ctx.indent),
+          }
+        : undefined,
     ...(list &&
       (list.ordered
         ? {
@@ -322,8 +330,7 @@ const buildThematicBreak = (_: mdast.ThematicBreak) => {
 };
 
 const buildBlockquote = ({ children }: mdast.Blockquote, ctx: Context) => {
-  // FIXME: do nothing for now
-  return convertNodes(children, ctx);
+  return convertNodes(children, { ...ctx, indent: ctx.indent + 1 });
 };
 
 const buildList = (

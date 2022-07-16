@@ -13,7 +13,7 @@ If you have some feature requests or improvements, please create a [issue](https
 - [x] paragraph
 - [x] heading
 - [x] thematicBreak
-- [ ] blockquote
+- [x] blockquote
 - [x] list
 - [x] listItem
 - [x] table
