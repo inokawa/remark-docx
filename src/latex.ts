@@ -1,23 +1,23 @@
 import * as docx from "docx";
 import { parseMath } from "@unified-latex/unified-latex-util-parse";
-import type * as Latex from "@unified-latex/unified-latex-types";
+import type * as latex from "@unified-latex/unified-latex-types";
 import { unreachable } from "./utils";
 
-const hasSquareBracket = (
-  arg: Latex.Argument | undefined
-): arg is Latex.Argument => {
+const hasSquareBrackets = (
+  arg: latex.Argument | undefined
+): arg is latex.Argument => {
   return !!arg && arg.openMark === "[" && arg.closeMark === "]";
 };
-const hasCurlyBracket = (
-  arg: Latex.Argument | undefined
-): arg is Latex.Argument => {
+const hasCurlyBrackets = (
+  arg: latex.Argument | undefined
+): arg is latex.Argument => {
   return !!arg && arg.openMark === "{" && arg.closeMark === "}";
 };
 
 const mapString = (s: string): docx.MathRun => new docx.MathRun(s);
 
 const mapMacro = (
-  n: Latex.Macro,
+  n: latex.Macro,
   runs: docx.MathRun[]
 ): docx.MathRun | false => {
   switch (n.content) {
@@ -259,8 +259,8 @@ const mapMacro = (
       const args = n.args ?? [];
       if (
         args.length === 2 &&
-        hasCurlyBracket(args[0]) &&
-        hasCurlyBracket(args[1])
+        hasCurlyBrackets(args[0]) &&
+        hasCurlyBrackets(args[1])
       ) {
         return new docx.MathFraction({
           numerator: mapGroup(args[0].content),
@@ -271,15 +271,15 @@ const mapMacro = (
     }
     case "sqrt": {
       const args = n.args ?? [];
-      if (args.length === 1 && hasCurlyBracket(args[0])) {
+      if (args.length === 1 && hasCurlyBrackets(args[0])) {
         return new docx.MathRadical({
           children: mapGroup(args[0].content),
         });
       }
       if (
         args.length === 2 &&
-        hasSquareBracket(args[0]) &&
-        hasCurlyBracket(args[1])
+        hasSquareBrackets(args[0]) &&
+        hasCurlyBrackets(args[1])
       ) {
         return new docx.MathRadical({
           children: mapGroup(args[1].content),
@@ -294,7 +294,7 @@ const mapMacro = (
   return mapString(n.content);
 };
 
-const mapGroup = (nodes: Latex.Node[]): docx.MathRun[] => {
+const mapGroup = (nodes: latex.Node[]): docx.MathRun[] => {
   const group: docx.MathRun[] = [];
   for (const c of nodes) {
     group.push(...(mapNode(c, group) || []));
@@ -303,7 +303,7 @@ const mapGroup = (nodes: Latex.Node[]): docx.MathRun[] => {
 };
 
 const mapNode = (
-  n: Latex.Node,
+  n: latex.Node,
   runs: docx.MathRun[]
 ): docx.MathRun[] | false => {
   switch (n.type) {
