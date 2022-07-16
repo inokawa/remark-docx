@@ -104,3 +104,8 @@ const text = "# hello world";
 | revision       | undefined | number?                     |                                                                                                                                                                                                                                                  |
 | styles         | undefined | IStylesOptions?             |                                                                                                                                                                                                                                                  |
 | background     | undefined | IDocumentBackgroundOptions? |                                                                                                                                                                                                                                                  |
+
+## Related projects
+
+- [remark-slate-transformer](https://github.com/inokawa/remark-slate-transformer)
+- [remark-pdf](https://github.com/inokawa/remark-pdf)
