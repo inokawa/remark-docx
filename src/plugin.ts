@@ -1,7 +1,8 @@
 import type { Plugin } from "unified";
-import * as mdast from "mdast";
+import type * as mdast from "mdast";
 import { visit } from "unist-util-visit";
 import { mdastToDocx, Opts, ImageDataMap } from "./transformer";
+import { invariant } from "./utils";
 
 export type Options = Opts;
 
@@ -22,14 +23,13 @@ const plugin: Plugin<[Options?]> = function (opts = {}) {
     }
 
     const imageResolver = opts.imageResolver;
-    if (!imageResolver) {
-      throw new Error("options.imageResolver is not defined.");
-    }
+    invariant(imageResolver, "options.imageResolver is not defined.");
+
     const imageDatas = await Promise.all(
       imageList.map(({ url }) => imageResolver(url))
     );
     images = imageList.reduce((acc, img, i) => {
-      acc[img.url] = imageDatas[i];
+      acc[img.url] = imageDatas[i]!;
       return acc;
     }, {} as ImageDataMap);
     return node;

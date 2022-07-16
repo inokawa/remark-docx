@@ -28,7 +28,7 @@ describe("e2e", () => {
     .use(math)
     .use(docx, {
       output: "buffer",
-      imageResolver: (url) => ({
+      imageResolver: () => ({
         image: new Uint8Array(),
         width: 600,
         height: 400,

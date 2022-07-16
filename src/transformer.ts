@@ -1,7 +1,8 @@
 import * as docx from "docx";
 import { convertInchesToTwip, Packer } from "docx";
-import { IPropertiesOptions } from "docx/build/file/core-properties";
-import * as mdast from "./models/mdast";
+import type { IPropertiesOptions } from "docx/build/file/core-properties";
+import type * as mdast from "./models/mdast";
+import { invariant, unreachable } from "./utils";
 
 const ORDERED_LIST_REF = "ordered";
 const INDENT = 0.5;
@@ -79,9 +80,11 @@ export type ImageData = {
 
 export type ImageResolver = (url: string) => Promise<ImageData> | ImageData;
 
-type Decoration = Readonly<{
-  [key in (mdast.Emphasis | mdast.Strong | mdast.Delete)["type"]]?: true;
-}>;
+type Decoration = Readonly<
+  {
+    [key in (mdast.Emphasis | mdast.Strong | mdast.Delete)["type"]]?: true;
+  }
+>;
 
 type ListInfo = Readonly<{
   level: number;
@@ -112,10 +115,6 @@ export type Opts = {
 
 type DocxChild = docx.Paragraph | docx.Table | docx.TableOfContents;
 type DocxContent = DocxChild | docx.ParagraphChild;
-
-const error = (message: string) => {
-  throw new Error(message);
-};
 
 export function mdastToDocx(
   node: mdast.Root,
@@ -187,17 +186,14 @@ function convertNodes(nodes: mdast.Content[], ctx: Context): DocxContent[] {
         results.push(...buildList(node, ctx));
         break;
       case "listItem":
-        error("unreachable");
-        break;
+        invariant(false, "unreachable");
       case "table":
         results.push(buildTable(node, ctx));
         break;
       case "tableRow":
-        error("unreachable");
-        break;
+        invariant(false, "unreachable");
       case "tableCell":
-        error("unreachable");
-        break;
+        invariant(false, "unreachable");
       case "html":
         results.push(buildHtml(node));
         break;
@@ -263,14 +259,14 @@ function convertNodes(nodes: mdast.Content[], ctx: Context): DocxContent[] {
         results.push(buildInlineMath(node));
         break;
       default:
-        const _: never = node;
+        unreachable(node);
         break;
     }
   }
   return results;
 }
 
-function buildParagraph({ type, children }: mdast.Paragraph, ctx: Context) {
+function buildParagraph({ children }: mdast.Paragraph, ctx: Context) {
   const list = ctx.list;
   return new docx.Paragraph({
     children: convertNodes(children, ctx),
@@ -290,7 +286,7 @@ function buildParagraph({ type, children }: mdast.Paragraph, ctx: Context) {
   });
 }
 
-function buildHeading({ type, children, depth }: mdast.Heading, ctx: Context) {
+function buildHeading({ children, depth }: mdast.Heading, ctx: Context) {
   let heading: docx.HeadingLevel;
   switch (depth) {
     case 1:
@@ -318,19 +314,19 @@ function buildHeading({ type, children, depth }: mdast.Heading, ctx: Context) {
   });
 }
 
-function buildThematicBreak({ type }: mdast.ThematicBreak) {
+function buildThematicBreak(_: mdast.ThematicBreak) {
   return new docx.Paragraph({
     thematicBreak: true,
   });
 }
 
-function buildBlockquote({ type, children }: mdast.Blockquote, ctx: Context) {
+function buildBlockquote({ children }: mdast.Blockquote, ctx: Context) {
   // FIXME: do nothing for now
   return convertNodes(children, ctx);
 }
 
 function buildList(
-  { type, children, ordered, start, spread }: mdast.List,
+  { children, ordered, start: _start, spread: _spread }: mdast.List,
   ctx: Context
 ) {
   const list: ListInfo = {
@@ -349,13 +345,13 @@ function buildList(
 }
 
 function buildListItem(
-  { type, children, checked, spread }: mdast.ListItem,
+  { children, checked: _checked, spread: _spread }: mdast.ListItem,
   ctx: Context
 ) {
   return convertNodes(children, ctx);
 }
 
-function buildTable({ type, children, align }: mdast.Table, ctx: Context) {
+function buildTable({ children, align }: mdast.Table, ctx: Context) {
   const cellAligns: docx.AlignmentType[] | undefined = align?.map((a) => {
     switch (a) {
       case "left":
@@ -377,7 +373,7 @@ function buildTable({ type, children, align }: mdast.Table, ctx: Context) {
 }
 
 function buildTableRow(
-  { type, children }: mdast.TableRow,
+  { children }: mdast.TableRow,
   ctx: Context,
   cellAligns: docx.AlignmentType[] | undefined
 ) {
@@ -389,7 +385,7 @@ function buildTableRow(
 }
 
 function buildTableCell(
-  { type, children }: mdast.TableCell,
+  { children }: mdast.TableCell,
   ctx: Context,
   align: docx.AlignmentType | undefined
 ) {
@@ -403,28 +399,28 @@ function buildTableCell(
   });
 }
 
-function buildHtml({ type, value }: mdast.HTML) {
+function buildHtml({ value }: mdast.HTML) {
   // FIXME: transform to text for now
   return new docx.Paragraph({
     children: [buildText(value, {})],
   });
 }
 
-function buildCode({ type, value, lang, meta }: mdast.Code) {
+function buildCode({ value, lang: _lang, meta: _meta }: mdast.Code) {
   // FIXME: transform to text for now
   return new docx.Paragraph({
     children: [buildText(value, {})],
   });
 }
 
-function buildMath({ type, value }: mdast.Math) {
+function buildMath({ value }: mdast.Math) {
   // FIXME: transform to text for now
   return new docx.Paragraph({
     children: [new docx.TextRun(value)],
   });
 }
 
-function buildInlineMath({ type, value }: mdast.InlineMath) {
+function buildInlineMath({ value }: mdast.InlineMath) {
   // FIXME: transform to text for now
   return new docx.TextRun(value);
 }
@@ -438,11 +434,11 @@ function buildText(text: string, deco: Decoration) {
   });
 }
 
-function buildBreak({ type }: mdast.Break) {
+function buildBreak(_: mdast.Break) {
   return new docx.TextRun({ text: "", break: 1 });
 }
 
-function buildLink({ type, children, url, title }: mdast.Link, ctx: Context) {
+function buildLink({ children, url, title: _title }: mdast.Link, ctx: Context) {
   return new docx.ExternalHyperlink({
     link: url,
     children: convertNodes(children, ctx),
@@ -450,13 +446,13 @@ function buildLink({ type, children, url, title }: mdast.Link, ctx: Context) {
 }
 
 function buildImage(
-  { type, url, title, alt }: mdast.Image,
+  { url, title: _title, alt: _alt }: mdast.Image,
   images: ImageDataMap
 ) {
-  if (!images[url]) {
-    return error(`Fetch image was failed: ${url}`);
-  }
-  const { image, width, height } = images[url];
+  const img = images[url];
+  invariant(img, `Fetch image was failed: ${url}`);
+
+  const { image, width, height } = img;
   return new docx.ImageRun({
     data: image,
     transformation: {
@@ -466,7 +462,7 @@ function buildImage(
   });
 }
 
-function buildFootnote({ type, children }: mdast.Footnote, ctx: Context) {
+function buildFootnote({ children }: mdast.Footnote, ctx: Context) {
   // FIXME: transform to paragraph for now
   return new docx.Paragraph({
     children: convertNodes(children, ctx),
