@@ -37,7 +37,7 @@ If you have some feature requests or improvements, please create a [issue](https
 - [ ] imageReference
 - [ ] footnote
 - [ ] footnoteReference
-- [x] LaTeX support with math and inlineMath ([remark-math](https://www.npmjs.com/package/remark-math) is required)
+- [x] LaTeX support with math and inlineMath ([remark-math](https://github.com/remarkjs/remark-math) is required)
 
 ## Demo
 
