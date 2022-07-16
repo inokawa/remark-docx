@@ -1,11 +1,10 @@
 import { parseLatex } from "./latex";
-import { Formatter } from "docx/src/export/formatter";
 import { Run } from "docx";
 
 const parse = (str: string) =>
-  new Formatter().format(
-    new Run({ children: parseLatex(str).map((c) => new Run({ children: c })) })
-  );
+  new Run({
+    children: parseLatex(str).map((c) => new Run({ children: c })),
+  }).prepForXml({} as any);
 
 describe("parse", () => {
   [
