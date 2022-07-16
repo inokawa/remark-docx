@@ -3,6 +3,7 @@ import { unified } from "unified";
 import markdown from "remark-parse";
 import gfm from "remark-gfm";
 import frontmatter from "remark-frontmatter";
+import math from "remark-math";
 import docx from "../src";
 import TextEditor from "./components/text-editor";
 // @ts-expect-error no type definition
@@ -33,6 +34,7 @@ const toDocxProcessor = unified()
   .use(markdown)
   .use(gfm)
   .use(frontmatter)
+  .use(math)
   .use(docx, {
     output: "blob",
     imageResolver: fetchImage,
@@ -70,7 +72,9 @@ export const MarkdownToDocx = () => {
   const ref = useRef<HTMLTextAreaElement>(null);
   const onChange = async (v: string) => {
     const blob = await toDocx(v);
-    renderAsync(blob, document.getElementById("preview")!);
+    renderAsync(blob, document.getElementById("preview")!, undefined, {
+      useMathMLPolyfill: true,
+    });
   };
 
   useEffect(() => {
