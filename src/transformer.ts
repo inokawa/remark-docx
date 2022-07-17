@@ -1,5 +1,23 @@
-import * as docx from "docx";
-import { convertInchesToTwip, Packer } from "docx";
+import {
+  convertInchesToTwip,
+  Packer,
+  Document,
+  Paragraph,
+  ParagraphChild,
+  Table,
+  TableRow,
+  TableCell,
+  TableOfContents,
+  TextRun,
+  ImageRun,
+  ExternalHyperlink,
+  Math,
+  HeadingLevel,
+  LevelFormat,
+  AlignmentType,
+  IImageOptions,
+  ILevelsOptions,
+} from "docx";
 import type { IPropertiesOptions } from "docx/build/file/core-properties";
 import type * as mdast from "./models/mdast";
 import { parseLatex } from "./latex";
@@ -7,18 +25,18 @@ import { invariant, unreachable } from "./utils";
 
 const ORDERED_LIST_REF = "ordered";
 const INDENT = 0.5;
-const DEFAULT_NUMBERINGS: docx.ILevelsOptions[] = [
+const DEFAULT_NUMBERINGS: ILevelsOptions[] = [
   {
     level: 0,
-    format: docx.LevelFormat.DECIMAL,
+    format: LevelFormat.DECIMAL,
     text: "%1.",
-    alignment: docx.AlignmentType.START,
+    alignment: AlignmentType.START,
   },
   {
     level: 1,
-    format: docx.LevelFormat.DECIMAL,
+    format: LevelFormat.DECIMAL,
     text: "%2.",
-    alignment: docx.AlignmentType.START,
+    alignment: AlignmentType.START,
     style: {
       paragraph: {
         indent: { start: convertInchesToTwip(INDENT * 1) },
@@ -27,9 +45,9 @@ const DEFAULT_NUMBERINGS: docx.ILevelsOptions[] = [
   },
   {
     level: 2,
-    format: docx.LevelFormat.DECIMAL,
+    format: LevelFormat.DECIMAL,
     text: "%3.",
-    alignment: docx.AlignmentType.START,
+    alignment: AlignmentType.START,
     style: {
       paragraph: {
         indent: { start: convertInchesToTwip(INDENT * 2) },
@@ -38,9 +56,9 @@ const DEFAULT_NUMBERINGS: docx.ILevelsOptions[] = [
   },
   {
     level: 3,
-    format: docx.LevelFormat.DECIMAL,
+    format: LevelFormat.DECIMAL,
     text: "%4.",
-    alignment: docx.AlignmentType.START,
+    alignment: AlignmentType.START,
     style: {
       paragraph: {
         indent: { start: convertInchesToTwip(INDENT * 3) },
@@ -49,9 +67,9 @@ const DEFAULT_NUMBERINGS: docx.ILevelsOptions[] = [
   },
   {
     level: 4,
-    format: docx.LevelFormat.DECIMAL,
+    format: LevelFormat.DECIMAL,
     text: "%5.",
-    alignment: docx.AlignmentType.START,
+    alignment: AlignmentType.START,
     style: {
       paragraph: {
         indent: { start: convertInchesToTwip(INDENT * 4) },
@@ -60,9 +78,9 @@ const DEFAULT_NUMBERINGS: docx.ILevelsOptions[] = [
   },
   {
     level: 5,
-    format: docx.LevelFormat.DECIMAL,
+    format: LevelFormat.DECIMAL,
     text: "%6.",
-    alignment: docx.AlignmentType.START,
+    alignment: AlignmentType.START,
     style: {
       paragraph: {
         indent: { start: convertInchesToTwip(INDENT * 5) },
@@ -74,7 +92,7 @@ const DEFAULT_NUMBERINGS: docx.ILevelsOptions[] = [
 export type ImageDataMap = { [url: string]: ImageData };
 
 export type ImageData = {
-  image: docx.IImageOptions["data"];
+  image: IImageOptions["data"];
   width: number;
   height: number;
 };
@@ -115,8 +133,8 @@ export type Opts = {
   | "background"
 >;
 
-type DocxChild = docx.Paragraph | docx.Table | docx.TableOfContents;
-type DocxContent = DocxChild | docx.ParagraphChild;
+type DocxChild = Paragraph | Table | TableOfContents;
+type DocxContent = DocxChild | ParagraphChild;
 
 export const mdastToDocx = (
   node: mdast.Root,
@@ -139,7 +157,7 @@ export const mdastToDocx = (
     images,
     indent: 0,
   }) as DocxChild[];
-  const doc = new docx.Document({
+  const doc = new Document({
     title,
     subject,
     creator,
@@ -271,7 +289,7 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
 
 const buildParagraph = ({ children }: mdast.Paragraph, ctx: Context) => {
   const list = ctx.list;
-  return new docx.Paragraph({
+  return new Paragraph({
     children: convertNodes(children, ctx),
     indent:
       ctx.indent > 0
@@ -296,35 +314,35 @@ const buildParagraph = ({ children }: mdast.Paragraph, ctx: Context) => {
 };
 
 const buildHeading = ({ children, depth }: mdast.Heading, ctx: Context) => {
-  let heading: docx.HeadingLevel;
+  let heading: HeadingLevel;
   switch (depth) {
     case 1:
-      heading = docx.HeadingLevel.TITLE;
+      heading = HeadingLevel.TITLE;
       break;
     case 2:
-      heading = docx.HeadingLevel.HEADING_1;
+      heading = HeadingLevel.HEADING_1;
       break;
     case 3:
-      heading = docx.HeadingLevel.HEADING_2;
+      heading = HeadingLevel.HEADING_2;
       break;
     case 4:
-      heading = docx.HeadingLevel.HEADING_3;
+      heading = HeadingLevel.HEADING_3;
       break;
     case 5:
-      heading = docx.HeadingLevel.HEADING_4;
+      heading = HeadingLevel.HEADING_4;
       break;
     case 6:
-      heading = docx.HeadingLevel.HEADING_5;
+      heading = HeadingLevel.HEADING_5;
       break;
   }
-  return new docx.Paragraph({
+  return new Paragraph({
     heading,
     children: convertNodes(children, ctx),
   });
 };
 
 const buildThematicBreak = (_: mdast.ThematicBreak) => {
-  return new docx.Paragraph({
+  return new Paragraph({
     thematicBreak: true,
   });
 };
@@ -360,20 +378,20 @@ const buildListItem = (
 };
 
 const buildTable = ({ children, align }: mdast.Table, ctx: Context) => {
-  const cellAligns: docx.AlignmentType[] | undefined = align?.map((a) => {
+  const cellAligns: AlignmentType[] | undefined = align?.map((a) => {
     switch (a) {
       case "left":
-        return docx.AlignmentType.LEFT;
+        return AlignmentType.LEFT;
       case "right":
-        return docx.AlignmentType.RIGHT;
+        return AlignmentType.RIGHT;
       case "center":
-        return docx.AlignmentType.CENTER;
+        return AlignmentType.CENTER;
       default:
-        return docx.AlignmentType.LEFT;
+        return AlignmentType.LEFT;
     }
   });
 
-  return new docx.Table({
+  return new Table({
     rows: children.map((r) => {
       return buildTableRow(r, ctx, cellAligns);
     }),
@@ -383,9 +401,9 @@ const buildTable = ({ children, align }: mdast.Table, ctx: Context) => {
 const buildTableRow = (
   { children }: mdast.TableRow,
   ctx: Context,
-  cellAligns: docx.AlignmentType[] | undefined
+  cellAligns: AlignmentType[] | undefined
 ) => {
-  return new docx.TableRow({
+  return new TableRow({
     children: children.map((c, i) => {
       return buildTableCell(c, ctx, cellAligns?.[i]);
     }),
@@ -395,11 +413,11 @@ const buildTableRow = (
 const buildTableCell = (
   { children }: mdast.TableCell,
   ctx: Context,
-  align: docx.AlignmentType | undefined
+  align: AlignmentType | undefined
 ) => {
-  return new docx.TableCell({
+  return new TableCell({
     children: [
-      new docx.Paragraph({
+      new Paragraph({
         alignment: align,
         children: convertNodes(children, ctx),
       }),
@@ -409,14 +427,14 @@ const buildTableCell = (
 
 const buildHtml = ({ value }: mdast.HTML) => {
   // FIXME: transform to text for now
-  return new docx.Paragraph({
+  return new Paragraph({
     children: [buildText(value, {})],
   });
 };
 
 const buildCode = ({ value, lang: _lang, meta: _meta }: mdast.Code) => {
   // FIXME: transform to text for now
-  return new docx.Paragraph({
+  return new Paragraph({
     children: [buildText(value, {})],
   });
 };
@@ -424,9 +442,9 @@ const buildCode = ({ value, lang: _lang, meta: _meta }: mdast.Code) => {
 const buildMath = ({ value }: mdast.Math) => {
   return parseLatex(value).map(
     (runs) =>
-      new docx.Paragraph({
+      new Paragraph({
         children: [
-          new docx.Math({
+          new Math({
             children: runs,
           }),
         ],
@@ -435,13 +453,13 @@ const buildMath = ({ value }: mdast.Math) => {
 };
 
 const buildInlineMath = ({ value }: mdast.InlineMath) => {
-  return new docx.Math({
+  return new Math({
     children: parseLatex(value).flatMap((runs) => runs),
   });
 };
 
 const buildText = (text: string, deco: Decoration) => {
-  return new docx.TextRun({
+  return new TextRun({
     text,
     bold: deco.strong,
     italics: deco.emphasis,
@@ -450,14 +468,14 @@ const buildText = (text: string, deco: Decoration) => {
 };
 
 const buildBreak = (_: mdast.Break) => {
-  return new docx.TextRun({ text: "", break: 1 });
+  return new TextRun({ text: "", break: 1 });
 };
 
 const buildLink = (
   { children, url, title: _title }: mdast.Link,
   ctx: Context
 ) => {
-  return new docx.ExternalHyperlink({
+  return new ExternalHyperlink({
     link: url,
     children: convertNodes(children, ctx),
   });
@@ -471,7 +489,7 @@ const buildImage = (
   invariant(img, `Fetch image was failed: ${url}`);
 
   const { image, width, height } = img;
-  return new docx.ImageRun({
+  return new ImageRun({
     data: image,
     transformation: {
       width,
@@ -482,7 +500,7 @@ const buildImage = (
 
 const buildFootnote = ({ children }: mdast.Footnote, ctx: Context) => {
   // FIXME: transform to paragraph for now
-  return new docx.Paragraph({
+  return new Paragraph({
     children: convertNodes(children, ctx),
   });
 };

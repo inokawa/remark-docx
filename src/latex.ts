@@ -1,4 +1,11 @@
-import * as docx from "docx";
+import {
+  MathRun,
+  MathSuperScript,
+  MathSubScript,
+  MathRadical,
+  MathFraction,
+  MathSum,
+} from "docx";
 import { parseMath } from "@unified-latex/unified-latex-util-parse";
 import type * as latex from "@unified-latex/unified-latex-types";
 import { unreachable } from "./utils";
@@ -14,12 +21,9 @@ const hasCurlyBrackets = (
   return !!arg && arg.openMark === "{" && arg.closeMark === "}";
 };
 
-const mapString = (s: string): docx.MathRun => new docx.MathRun(s);
+const mapString = (s: string): MathRun => new MathRun(s);
 
-const mapMacro = (
-  n: latex.Macro,
-  runs: docx.MathRun[]
-): docx.MathRun | false => {
+const mapMacro = (n: latex.Macro, runs: MathRun[]): MathRun | false => {
   switch (n.content) {
     case "#":
       return mapString("#");
@@ -226,7 +230,7 @@ const mapMacro = (
     case "^": {
       const prev = runs.pop();
       if (!prev) break;
-      return new docx.MathSuperScript({
+      return new MathSuperScript({
         children: [prev],
         superScript: mapGroup(n.args?.[0]?.content ?? []),
       });
@@ -234,7 +238,7 @@ const mapMacro = (
     case "_": {
       const prev = runs.pop();
       if (!prev) break;
-      return new docx.MathSubScript({
+      return new MathSubScript({
         children: [prev],
         subScript: mapGroup(n.args?.[0]?.content ?? []),
       });
@@ -247,7 +251,7 @@ const mapMacro = (
       break;
     case "sum": {
       // TODO: support superscript and subscript
-      return new docx.MathSum({
+      return new MathSum({
         children: [],
       });
     }
@@ -262,7 +266,7 @@ const mapMacro = (
         hasCurlyBrackets(args[0]) &&
         hasCurlyBrackets(args[1])
       ) {
-        return new docx.MathFraction({
+        return new MathFraction({
           numerator: mapGroup(args[0].content),
           denominator: mapGroup(args[1].content),
         });
@@ -272,7 +276,7 @@ const mapMacro = (
     case "sqrt": {
       const args = n.args ?? [];
       if (args.length === 1 && hasCurlyBrackets(args[0])) {
-        return new docx.MathRadical({
+        return new MathRadical({
           children: mapGroup(args[0].content),
         });
       }
@@ -281,7 +285,7 @@ const mapMacro = (
         hasSquareBrackets(args[0]) &&
         hasCurlyBrackets(args[1])
       ) {
-        return new docx.MathRadical({
+        return new MathRadical({
           children: mapGroup(args[1].content),
           degree: mapGroup(args[0].content),
         });
@@ -294,18 +298,15 @@ const mapMacro = (
   return mapString(n.content);
 };
 
-const mapGroup = (nodes: latex.Node[]): docx.MathRun[] => {
-  const group: docx.MathRun[] = [];
+const mapGroup = (nodes: latex.Node[]): MathRun[] => {
+  const group: MathRun[] = [];
   for (const c of nodes) {
     group.push(...(mapNode(c, group) || []));
   }
   return group;
 };
 
-const mapNode = (
-  n: latex.Node,
-  runs: docx.MathRun[]
-): docx.MathRun[] | false => {
+const mapNode = (n: latex.Node, runs: MathRun[]): MathRun[] | false => {
   switch (n.type) {
     case "root":
       break;
@@ -345,10 +346,10 @@ const mapNode = (
   return [];
 };
 
-export const parseLatex = (value: string): docx.MathRun[][] => {
+export const parseLatex = (value: string): MathRun[][] => {
   const parsed = parseMath(value);
-  const paragraphs: docx.MathRun[][] = [[]];
-  let runs: docx.MathRun[] = paragraphs[0]!;
+  const paragraphs: MathRun[][] = [[]];
+  let runs: MathRun[] = paragraphs[0]!;
   for (const n of parsed) {
     const res = mapNode(n, runs);
     if (!res) {
