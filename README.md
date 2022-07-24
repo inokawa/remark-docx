@@ -104,6 +104,17 @@ const text = "# hello world";
 | revision       | undefined | number?                     |                                                                                                                                                                                                                                                  |
 | styles         | undefined | IStylesOptions?             |                                                                                                                                                                                                                                                  |
 | background     | undefined | IDocumentBackgroundOptions? |                                                                                                                                                                                                                                                  |
+## Contribute
+
+All contributions are welcome!
+If you have any feature requests or improvements, please create a [issue](https://github.com/inokawa/remark-docx/issues) or [PR](https://github.com/inokawa/remark-docx/pulls).
+
+### Making a Pull Request
+
+1. Clone this repo.
+2. Run `npm install`.
+3. Commit your fix.
+4. Make a PR and confirm all the CI checks passed.
 
 ## Related projects
 
