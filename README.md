@@ -106,8 +106,8 @@ const text = "# hello world";
 | background     | undefined | IDocumentBackgroundOptions? |                                                                                                                                                                                                                                                  |
 ## Contribute
 
-All contributions are welcome!
-If you have any feature requests or improvements, please create a [issue](https://github.com/inokawa/remark-docx/issues) or [PR](https://github.com/inokawa/remark-docx/pulls).
+All contributions are welcome.
+If you find a problem, feel free to create an [issue](https://github.com/inokawa/remark-docx/issues) or a [PR](https://github.com/inokawa/remark-docx/pulls).
 
 ### Making a Pull Request
 
