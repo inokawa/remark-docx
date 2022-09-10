@@ -1,3 +1,11 @@
+import {
+  jest,
+  beforeEach,
+  afterEach,
+  it,
+  describe,
+  expect,
+} from "@jest/globals";
 import fs from "fs";
 import path from "path";
 import { unified } from "unified";

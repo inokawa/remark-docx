@@ -1,3 +1,4 @@
+import { it, describe, expect } from "@jest/globals";
 import { parseLatex } from "./latex";
 import { Run } from "docx";
 
