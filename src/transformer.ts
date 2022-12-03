@@ -117,21 +117,28 @@ type Context = Readonly<{
   list?: ListInfo;
 }>;
 
-export type Opts = {
+export interface DocxOptions
+  extends Pick<
+    IPropertiesOptions,
+    | "title"
+    | "subject"
+    | "creator"
+    | "keywords"
+    | "description"
+    | "lastModifiedBy"
+    | "revision"
+    | "styles"
+    | "background"
+  > {
+  /**
+   * Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Promise<Blob>`.
+   */
   output?: "buffer" | "blob";
+  /**
+   * **You must set** if your markdown includes images. See example for [browser](https://github.com/inokawa/remark-docx/blob/main/stories/playground.stories.tsx) and [Node.js](https://github.com/inokawa/remark-docx/blob/main/src/index.spec.ts).
+   */
   imageResolver?: ImageResolver;
-} & Pick<
-  IPropertiesOptions,
-  | "title"
-  | "subject"
-  | "creator"
-  | "keywords"
-  | "description"
-  | "lastModifiedBy"
-  | "revision"
-  | "styles"
-  | "background"
->;
+}
 
 type DocxChild = Paragraph | Table | TableOfContents;
 type DocxContent = DocxChild | ParagraphChild;
@@ -149,7 +156,7 @@ export const mdastToDocx = (
     revision,
     styles,
     background,
-  }: Opts,
+  }: DocxOptions,
   images: ImageDataMap
 ): Promise<any> => {
   const nodes = convertNodes(node.children, {
