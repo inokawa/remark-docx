@@ -1,12 +1,12 @@
 import type { Plugin } from "unified";
 import type * as mdast from "mdast";
 import { visit } from "unist-util-visit";
-import { mdastToDocx, Opts, ImageDataMap } from "./transformer";
+import { mdastToDocx, DocxOptions, ImageDataMap } from "./transformer";
 import { invariant } from "./utils";
 
-export type Options = Opts;
+export type { DocxOptions };
 
-const plugin: Plugin<[Options?]> = function (opts = {}) {
+const plugin: Plugin<[DocxOptions?]> = function (opts = {}) {
   let images: ImageDataMap = {};
 
   this.Compiler = (node) => {

@@ -1,2 +1,2 @@
 export { default } from "./plugin";
-export type { Options as DocxOptions } from "./plugin";
+export type { DocxOptions } from "./plugin";

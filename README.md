@@ -89,21 +89,10 @@ const text = "# hello world";
 })();
 ```
 
-## Options
+## Documentation
 
-| Key            | Default   | Type                        | Description                                                                                                                                                                                                                                      |
-| -------------- | --------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| output         | "buffer"  | `"buffer"` `"blob"`         | Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Promise<Blob>`.                                                                                                                                                     |
-| imageResolver  | undefined | ImageResolver?              | **You must set** if your markdown includes images. See example for [browser](https://github.com/inokawa/remark-docx/blob/main/stories/playground.stories.tsx) and [Node.js](https://github.com/inokawa/remark-docx/blob/main/src/index.spec.ts). |
-| title          | undefined | string?                     |                                                                                                                                                                                                                                                  |
-| subject        | undefined | string?                     |                                                                                                                                                                                                                                                  |
-| creator        | undefined | string?                     |                                                                                                                                                                                                                                                  |
-| keywords       | undefined | string?                     |                                                                                                                                                                                                                                                  |
-| description    | undefined | string?                     |                                                                                                                                                                                                                                                  |
-| lastModifiedBy | undefined | string?                     |                                                                                                                                                                                                                                                  |
-| revision       | undefined | number?                     |                                                                                                                                                                                                                                                  |
-| styles         | undefined | IStylesOptions?             |                                                                                                                                                                                                                                                  |
-| background     | undefined | IDocumentBackgroundOptions? |                                                                                                                                                                                                                                                  |
+- [API reference](./docs/API.md)
+
 ## Contribute
 
 All contributions are welcome.
