@@ -2,13 +2,13 @@
 
 ## Table of contents
 
-### Interfaces
-
-- [DocxOptions](interfaces/DocxOptions.md)
-
 ### Functions
 
 - [default](API.md#default)
+
+### Interfaces
+
+- [DocxOptions](interfaces/DocxOptions.md)
 
 ## Functions
 
