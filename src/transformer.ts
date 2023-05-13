@@ -17,6 +17,7 @@ import {
   AlignmentType,
   IImageOptions,
   ILevelsOptions,
+  FootnoteReferenceRun,
 } from "docx";
 import type { IPropertiesOptions } from "docx/build/file/core-properties";
 import type * as mdast from "./models/mdast";
@@ -144,7 +145,7 @@ type DocxChild = Paragraph | Table | TableOfContents;
 type DocxContent = DocxChild | ParagraphChild;
 
 export interface Footnotes {
-  [key: number]: DocxContent;
+  [key: string]: { children: Paragraph[] };
 }
 
 // type to define the return value of `convertNodes`
@@ -184,6 +185,7 @@ export const mdastToDocx = (
     revision,
     styles,
     background,
+    footnotes,
     sections: [{ children: nodes as DocxChild[] }],
     numbering: {
       config: [
@@ -203,9 +205,12 @@ export const mdastToDocx = (
   }
 };
 
-const convertNodes = (nodes: mdast.Content[], ctx: Context): ConvertNodesReturn => {
+const convertNodes = (
+  nodes: mdast.Content[],
+  ctx: Context
+): ConvertNodesReturn => {
   const results: DocxContent[] = [];
-  const footnotes: Footnotes = {};
+  let footnotes: Footnotes = {};
   for (const node of nodes) {
     switch (node.type) {
       case "paragraph":
@@ -248,7 +253,7 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): ConvertNodesReturn 
         // FIXME: unimplemented
         break;
       case "footnoteDefinition":
-        // FIXME: unimplemented
+        footnotes[node.identifier] = buildFootnoteDefinition(node, ctx);
         break;
       case "text":
         results.push(buildText(node.value, ctx.deco));
@@ -261,9 +266,7 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): ConvertNodesReturn 
           ...ctx,
           deco: { ...ctx.deco, [type]: true },
         });
-        results.push(
-          ...nodes
-        );
+        results.push(...nodes);
         break;
       }
       case "inlineCode":
@@ -289,7 +292,7 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): ConvertNodesReturn 
         results.push(buildFootnote(node, ctx));
         break;
       case "footnoteReference":
-        // FIXME: unimplemented
+        results.push(buildFootnoteReference(node, ctx));
         break;
       case "math":
         results.push(...buildMath(node));
@@ -531,4 +534,18 @@ const buildFootnote = ({ children }: mdast.Footnote, ctx: Context) => {
   return new Paragraph({
     children: nodes,
   });
+};
+
+const buildFootnoteDefinition = ({ children }: mdast.FootnoteDefinition, ctx: Context) => {
+  return {
+    children: children.map((node) => {
+      const { nodes } = convertNodes([node], ctx);
+      return nodes[0] as Paragraph;
+    }),
+  };
+};
+
+const buildFootnoteReference = ({ identifier }: mdast.FootnoteReference, ctx: Context) => {
+  // do we need Context?
+  return new FootnoteReferenceRun(parseInt(identifier));
 };
