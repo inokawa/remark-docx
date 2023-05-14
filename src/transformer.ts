@@ -120,16 +120,16 @@ type Context = Readonly<{
 
 export interface DocxOptions
   extends Pick<
-    IPropertiesOptions,
-    | "title"
-    | "subject"
-    | "creator"
-    | "keywords"
-    | "description"
-    | "lastModifiedBy"
-    | "revision"
-    | "styles"
-    | "background"
+  IPropertiesOptions,
+  | "title"
+  | "subject"
+  | "creator"
+  | "keywords"
+  | "description"
+  | "lastModifiedBy"
+  | "revision"
+  | "styles"
+  | "background"
   > {
   /**
    * Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Promise<Blob>`.
@@ -292,7 +292,8 @@ const convertNodes = (
         results.push(buildFootnote(node, ctx));
         break;
       case "footnoteReference":
-        results.push(buildFootnoteReference(node, ctx));
+        // do we need context here?
+        results.push(buildFootnoteReference(node));
         break;
       case "math":
         results.push(...buildMath(node));
@@ -545,7 +546,7 @@ const buildFootnoteDefinition = ({ children }: mdast.FootnoteDefinition, ctx: Co
   };
 };
 
-const buildFootnoteReference = ({ identifier }: mdast.FootnoteReference, ctx: Context) => {
+const buildFootnoteReference = ({ identifier }: mdast.FootnoteReference) => {
   // do we need Context?
   return new FootnoteReferenceRun(parseInt(identifier));
 };
