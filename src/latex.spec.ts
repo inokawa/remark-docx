@@ -1,11 +1,7 @@
 import { it, describe, expect } from "@jest/globals";
 import { parseLatex } from "./latex";
-import { Run } from "docx";
 
-const parse = (str: string) =>
-  new Run({
-    children: parseLatex(str).map((c) => new Run({ children: c })),
-  }).prepForXml({} as any);
+const parse = (str: string) => parseLatex(str);
 
 describe("parse", () => {
   [

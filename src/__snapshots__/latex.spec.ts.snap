@@ -1,1483 +1,1783 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`parse \\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\pi i \\xi x}\\,d\\xi 1`] = `
-{
-  "w:r": [
-    {
-      "w:r": [
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "f",
-              ],
-            },
+[
+  [
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "f",
           ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "relax",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "x",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "=",
-              ],
-            },
-          ],
-        },
-        {
-          "m:sSup": [
-            {
-              "m:sSupPr": {},
-            },
-            {
-              "m:e": [
-                {
-                  "m:sSub": [
-                    {
-                      "m:sSubPr": {},
-                    },
-                    {
-                      "m:e": [
-                        {
-                          "m:r": [
-                            {
-                              "m:t": [
-                                "∫",
-                              ],
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      "m:sub": [
-                        {
-                          "m:r": [
-                            {
-                              "m:t": [
-                                "-",
-                              ],
-                            },
-                          ],
-                        },
-                        {
-                          "m:r": [
-                            {
-                              "m:t": [
-                                "∞",
-                              ],
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              "m:sup": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "∞",
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "f",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "hat",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ξ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                ",",
-              ],
-            },
-          ],
-        },
-        {
-          "m:sSup": [
-            {
-              "m:sSupPr": {},
-            },
-            {
-              "m:e": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "e",
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              "m:sup": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "2",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "π",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "i",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "ξ",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "x",
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                ",",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "d",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ξ",
-              ],
-            },
-          ],
+          "rootKey": "m:t",
         },
       ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "relax",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "x",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "=",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    fs {
+      "root": [
+        ds {
+          "root": [],
+          "rootKey": "m:sSupPr",
+        },
+        ts {
+          "root": [
+            ws {
+              "root": [
+                ms {
+                  "root": [],
+                  "rootKey": "m:sSubPr",
+                },
+                ts {
+                  "root": [
+                    $n {
+                      "root": [
+                        Xn {
+                          "root": [
+                            "∫",
+                          ],
+                          "rootKey": "m:t",
+                        },
+                      ],
+                      "rootKey": "m:r",
+                    },
+                  ],
+                  "rootKey": "m:e",
+                },
+                us {
+                  "root": [
+                    $n {
+                      "root": [
+                        Xn {
+                          "root": [
+                            "-",
+                          ],
+                          "rootKey": "m:t",
+                        },
+                      ],
+                      "rootKey": "m:r",
+                    },
+                    $n {
+                      "root": [
+                        Xn {
+                          "root": [
+                            "∞",
+                          ],
+                          "rootKey": "m:t",
+                        },
+                      ],
+                      "rootKey": "m:r",
+                    },
+                  ],
+                  "rootKey": "m:sub",
+                },
+              ],
+              "rootKey": "m:sSub",
+            },
+          ],
+          "rootKey": "m:e",
+        },
+        ls {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "∞",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:sup",
+        },
+      ],
+      "rootKey": "m:sSup",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "f",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "hat",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ξ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            ",",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    fs {
+      "root": [
+        ds {
+          "root": [],
+          "rootKey": "m:sSupPr",
+        },
+        ts {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "e",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:e",
+        },
+        ls {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "2",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "π",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "i",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "ξ",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "x",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:sup",
+        },
+      ],
+      "rootKey": "m:sSup",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            ",",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "d",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ξ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
     },
   ],
-}
+]
 `;
 
 exports[`parse \\frac{a+b}{c+d} 1`] = `
-{
-  "w:r": [
-    {
-      "w:r": [
-        {
-          "m:f": [
-            {
-              "m:num": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "a",
-                      ],
-                    },
+[
+  [
+    Jn {
+      "root": [
+        Yn {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "a",
                   ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "+",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "b",
-                      ],
-                    },
-                  ],
+                  "rootKey": "m:t",
                 },
               ],
+              "rootKey": "m:r",
             },
-            {
-              "m:den": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "c",
-                      ],
-                    },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "+",
                   ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "+",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "d",
-                      ],
-                    },
-                  ],
+                  "rootKey": "m:t",
                 },
               ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "b",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
             },
           ],
+          "rootKey": "m:num",
+        },
+        Zn {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "c",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "+",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "d",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:den",
         },
       ],
+      "rootKey": "m:f",
     },
   ],
-}
+]
 `;
 
 exports[`parse \\sqrt[30]{a+\\sqrt{b+c}} 1`] = `
-{
-  "w:r": [
-    {
-      "w:r": [
-        {
-          "m:rad": [
-            {
-              "m:radPr": {},
-            },
-            {
-              "m:deg": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "3",
-                      ],
-                    },
+[
+  [
+    Ss {
+      "root": [
+        As {
+          "root": [],
+          "rootKey": "m:radPr",
+        },
+        _s {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "3",
                   ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "0",
-                      ],
-                    },
-                  ],
+                  "rootKey": "m:t",
                 },
               ],
+              "rootKey": "m:r",
             },
-            {
-              "m:e": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "a",
-                      ],
-                    },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "0",
                   ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "+",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "sqrt",
-                      ],
-                    },
-                  ],
+                  "rootKey": "m:t",
                 },
               ],
+              "rootKey": "m:r",
             },
           ],
+          "rootKey": "m:deg",
+        },
+        ts {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "a",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "+",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "sqrt",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:e",
         },
       ],
+      "rootKey": "m:rad",
     },
   ],
-}
+]
 `;
 
 exports[`parse \\sum_{k=1}^{n} k=rac{n(n+1)}{2} 1`] = `
-{
-  "w:r": [
-    {
-      "w:r": [
-        {
-          "m:sSup": [
-            {
-              "m:sSupPr": {},
-            },
-            {
-              "m:e": [
-                {
-                  "m:sSub": [
-                    {
-                      "m:sSubPr": {},
-                    },
-                    {
-                      "m:e": [
-                        {
-                          "m:nary": [
-                            {
-                              "m:naryPr": [
-                                {
-                                  "m:chr": {
-                                    "_attr": {
-                                      "m:val": "∑",
-                                    },
+[
+  [
+    fs {
+      "root": [
+        ds {
+          "root": [],
+          "rootKey": "m:sSupPr",
+        },
+        ts {
+          "root": [
+            ws {
+              "root": [
+                ms {
+                  "root": [],
+                  "rootKey": "m:sSubPr",
+                },
+                ts {
+                  "root": [
+                    hs {
+                      "root": [
+                        cs {
+                          "root": [
+                            es {
+                              "root": [
+                                Qn {
+                                  "root": {
+                                    "accent": "∑",
                                   },
-                                },
-                                {
-                                  "m:limLoc": {
-                                    "_attr": {
-                                      "m:val": "undOvr",
-                                    },
-                                  },
-                                },
-                                {
-                                  "m:supHide": {
-                                    "_attr": {
-                                      "m:val": 1,
-                                    },
-                                  },
-                                },
-                                {
-                                  "m:subHide": {
-                                    "_attr": {
-                                      "m:val": 1,
-                                    },
+                                  "rootKey": "_attr",
+                                  "xmlKeys": {
+                                    "accent": "m:val",
                                   },
                                 },
                               ],
+                              "rootKey": "m:chr",
                             },
-                            {
-                              "m:e": {},
+                            ns {
+                              "root": [
+                                rs {
+                                  "root": {
+                                    "value": "undOvr",
+                                  },
+                                  "rootKey": "_attr",
+                                  "xmlKeys": {
+                                    "value": "m:val",
+                                  },
+                                },
+                              ],
+                              "rootKey": "m:limLoc",
+                            },
+                            as {
+                              "root": [
+                                os {
+                                  "root": {
+                                    "hide": 1,
+                                  },
+                                  "rootKey": "_attr",
+                                  "xmlKeys": {
+                                    "hide": "m:val",
+                                  },
+                                },
+                              ],
+                              "rootKey": "m:supHide",
+                            },
+                            is {
+                              "root": [
+                                ss {
+                                  "root": {
+                                    "hide": 1,
+                                  },
+                                  "rootKey": "_attr",
+                                  "xmlKeys": {
+                                    "hide": "m:val",
+                                  },
+                                },
+                              ],
+                              "rootKey": "m:subHide",
                             },
                           ],
+                          "rootKey": "m:naryPr",
+                        },
+                        ts {
+                          "root": [],
+                          "rootKey": "m:e",
                         },
                       ],
-                    },
-                    {
-                      "m:sub": [
-                        {
-                          "m:r": [
-                            {
-                              "m:t": [
-                                "k",
-                              ],
-                            },
-                          ],
-                        },
-                        {
-                          "m:r": [
-                            {
-                              "m:t": [
-                                "=",
-                              ],
-                            },
-                          ],
-                        },
-                        {
-                          "m:r": [
-                            {
-                              "m:t": [
-                                "1",
-                              ],
-                            },
-                          ],
-                        },
-                      ],
+                      "rootKey": "m:nary",
                     },
                   ],
+                  "rootKey": "m:e",
                 },
-              ],
-            },
-            {
-              "m:sup": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "n",
+                us {
+                  "root": [
+                    $n {
+                      "root": [
+                        Xn {
+                          "root": [
+                            "k",
+                          ],
+                          "rootKey": "m:t",
+                        },
                       ],
+                      "rootKey": "m:r",
+                    },
+                    $n {
+                      "root": [
+                        Xn {
+                          "root": [
+                            "=",
+                          ],
+                          "rootKey": "m:t",
+                        },
+                      ],
+                      "rootKey": "m:r",
+                    },
+                    $n {
+                      "root": [
+                        Xn {
+                          "root": [
+                            "1",
+                          ],
+                          "rootKey": "m:t",
+                        },
+                      ],
+                      "rootKey": "m:r",
                     },
                   ],
+                  "rootKey": "m:sub",
                 },
               ],
+              "rootKey": "m:sSub",
             },
           ],
+          "rootKey": "m:e",
         },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "k",
+        ls {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "n",
+                  ],
+                  "rootKey": "m:t",
+                },
               ],
+              "rootKey": "m:r",
             },
           ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "=",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "r",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "a",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "c",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "n",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "(",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "n",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "+",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "1",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                ")",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "2",
-              ],
-            },
-          ],
+          "rootKey": "m:sup",
         },
       ],
+      "rootKey": "m:sSup",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "k",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "=",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "r",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "a",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "c",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "n",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "(",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "n",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "+",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "1",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            ")",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "2",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
     },
   ],
-}
+]
 `;
 
 exports[`parse L = \\frac{1}{2} \\rho v^2 S C_L 1`] = `
-{
-  "w:r": [
-    {
-      "w:r": [
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "L",
-              ],
-            },
+[
+  [
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "L",
           ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "=",
-              ],
-            },
-          ],
-        },
-        {
-          "m:f": [
-            {
-              "m:num": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "1",
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              "m:den": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "2",
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ρ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:sSup": [
-            {
-              "m:sSupPr": {},
-            },
-            {
-              "m:e": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "v",
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              "m:sup": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "2",
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "S",
-              ],
-            },
-          ],
-        },
-        {
-          "m:sSub": [
-            {
-              "m:sSubPr": {},
-            },
-            {
-              "m:e": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "C",
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              "m:sub": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "L",
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
+          "rootKey": "m:t",
         },
       ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "=",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    Jn {
+      "root": [
+        Yn {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "1",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:num",
+        },
+        Zn {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "2",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:den",
+        },
+      ],
+      "rootKey": "m:f",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ρ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    fs {
+      "root": [
+        ds {
+          "root": [],
+          "rootKey": "m:sSupPr",
+        },
+        ts {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "v",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:e",
+        },
+        ls {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "2",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:sup",
+        },
+      ],
+      "rootKey": "m:sSup",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "S",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    ws {
+      "root": [
+        ms {
+          "root": [],
+          "rootKey": "m:sSubPr",
+        },
+        ts {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "C",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:e",
+        },
+        us {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "L",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:sub",
+        },
+      ],
+      "rootKey": "m:sSub",
     },
   ],
-}
+]
 `;
 
 exports[`parse command greek1 1`] = `
-{
-  "w:r": [
-    {
-      "w:r": [
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "α",
-              ],
-            },
+[
+  [
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "α",
           ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "β",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "γ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "δ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ϵ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ζ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "η",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "θ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ι",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "κ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "λ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "μ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ν",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ξ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "o",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "π",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ρ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "σ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "τ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "υ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ϕ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "χ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ψ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ω",
-              ],
-            },
-          ],
+          "rootKey": "m:t",
         },
       ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "β",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "γ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "δ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ϵ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ζ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "η",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "θ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ι",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "κ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "λ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "μ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ν",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ξ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "o",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "π",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ρ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "σ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "τ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "υ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ϕ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "χ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ψ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ω",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
     },
   ],
-}
+]
 `;
 
 exports[`parse command greek2 1`] = `
-{
-  "w:r": [
-    {
-      "w:r": [
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ε",
-              ],
-            },
+[
+  [
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ε",
           ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ϑ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ϱ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "ς",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "φ",
-              ],
-            },
-          ],
+          "rootKey": "m:t",
         },
       ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ϑ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ϱ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "ς",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "φ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
     },
   ],
-}
+]
 `;
 
 exports[`parse command greek3 1`] = `
-{
-  "w:r": [
-    {
-      "w:r": [
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "Γ",
-              ],
-            },
+[
+  [
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "Γ",
           ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "Δ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "Θ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "Λ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "Ξ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "Π",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "Σ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "Υ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "Φ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "Ψ",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "Ω",
-              ],
-            },
-          ],
+          "rootKey": "m:t",
         },
       ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "Δ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "Θ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "Λ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "Ξ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "Π",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "Σ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "Υ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "Φ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "Ψ",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "Ω",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
     },
   ],
-}
+]
 `;
 
 exports[`parse i hbar \\frac{partial psi}{partial t} = H psi(x,t) 1`] = `
-{
-  "w:r": [
-    {
-      "w:r": [
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "i",
-              ],
-            },
+[
+  [
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "i",
           ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "h",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "b",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "a",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "r",
-              ],
-            },
-          ],
-        },
-        {
-          "m:f": [
-            {
-              "m:num": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "p",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "a",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "r",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "t",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "i",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "a",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "l",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "p",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "s",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "i",
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              "m:den": [
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "p",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "a",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "r",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "t",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "i",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "a",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "l",
-                      ],
-                    },
-                  ],
-                },
-                {
-                  "m:r": [
-                    {
-                      "m:t": [
-                        "t",
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "=",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "H",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "p",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "s",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "i",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "(",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "x",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                ",",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                "t",
-              ],
-            },
-          ],
-        },
-        {
-          "m:r": [
-            {
-              "m:t": [
-                ")",
-              ],
-            },
-          ],
+          "rootKey": "m:t",
         },
       ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "h",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "b",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "a",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "r",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    Jn {
+      "root": [
+        Yn {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "p",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "a",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "r",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "t",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "i",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "a",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "l",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "p",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "s",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "i",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:num",
+        },
+        Zn {
+          "root": [
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "p",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "a",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "r",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "t",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "i",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "a",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "l",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+            $n {
+              "root": [
+                Xn {
+                  "root": [
+                    "t",
+                  ],
+                  "rootKey": "m:t",
+                },
+              ],
+              "rootKey": "m:r",
+            },
+          ],
+          "rootKey": "m:den",
+        },
+      ],
+      "rootKey": "m:f",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "=",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "H",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "p",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "s",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "i",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "(",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "x",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            ",",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            "t",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
+    },
+    $n {
+      "root": [
+        Xn {
+          "root": [
+            ")",
+          ],
+          "rootKey": "m:t",
+        },
+      ],
+      "rootKey": "m:r",
     },
   ],
-}
+]
 `;
