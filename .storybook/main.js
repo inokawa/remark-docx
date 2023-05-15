@@ -1,19 +1,18 @@
-module.exports = {
+import { mergeConfig } from "vite";
+
+export default {
   stories: [
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: ["@storybook/addon-essentials"],
   framework: {
-    name: "@storybook/react-webpack5",
+    name: "@storybook/react-vite",
     options: {},
   },
-  webpackFinal: async (config, { configType }) => {
-    config.module.rules.push({
-      test: /\.js$/,
-      loader: "babel-loader",
-      exclude: [/node_modules[\\/](?!(@unified-latex))/],
+  viteFinal: async (config) => {
+    return mergeConfig(config, {
+      assetsInclude: ["**/*.md"],
     });
-    return config;
   },
 };
