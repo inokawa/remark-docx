@@ -7,7 +7,7 @@ import math from "remark-math";
 import docx from "../src";
 import TextEditor from "./components/text-editor";
 // @ts-expect-error no type definition
-import text from "../fixtures/node-footnotes.md";
+import text from "../fixtures/article.md";
 import { saveAs } from "file-saver";
 import { renderAsync } from "docx-preview";
 

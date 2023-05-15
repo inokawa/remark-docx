@@ -24,7 +24,7 @@ If you have some feature requests or improvements, please create a [issue](https
 - [ ] yaml
 - [ ] toml
 - [ ] definition
-- [ ] footnoteDefinition
+- [x] footnoteDefinition
 - [x] text
 - [x] emphasis
 - [x] strong
@@ -35,8 +35,8 @@ If you have some feature requests or improvements, please create a [issue](https
 - [x] image
 - [ ] linkReference
 - [ ] imageReference
-- [ ] footnote
-- [ ] footnoteReference
+- [x] footnote
+- [x] footnoteReference
 - [x] LaTeX support with math and inlineMath ([remark-math](https://github.com/remarkjs/remark-math) is required)
 
 ## Demo

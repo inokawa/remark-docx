@@ -120,16 +120,16 @@ type Context = Readonly<{
 
 export interface DocxOptions
   extends Pick<
-  IPropertiesOptions,
-  | "title"
-  | "subject"
-  | "creator"
-  | "keywords"
-  | "description"
-  | "lastModifiedBy"
-  | "revision"
-  | "styles"
-  | "background"
+    IPropertiesOptions,
+    | "title"
+    | "subject"
+    | "creator"
+    | "keywords"
+    | "description"
+    | "lastModifiedBy"
+    | "revision"
+    | "styles"
+    | "background"
   > {
   /**
    * Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Promise<Blob>`.
@@ -320,22 +320,22 @@ const buildParagraph = ({ children }: mdast.Paragraph, ctx: Context) => {
     indent:
       ctx.indent > 0
         ? {
-          start: convertInchesToTwip(INDENT * ctx.indent),
-        }
+            start: convertInchesToTwip(INDENT * ctx.indent),
+          }
         : undefined,
     ...(list &&
       (list.ordered
         ? {
-          numbering: {
-            reference: ORDERED_LIST_REF,
-            level: list.level,
-          },
-        }
+            numbering: {
+              reference: ORDERED_LIST_REF,
+              level: list.level,
+            },
+          }
         : {
-          bullet: {
-            level: list.level,
-          },
-        })),
+            bullet: {
+              level: list.level,
+            },
+          })),
   });
 };
 
@@ -537,7 +537,10 @@ const buildFootnote = ({ children }: mdast.Footnote, ctx: Context) => {
   });
 };
 
-const buildFootnoteDefinition = ({ children }: mdast.FootnoteDefinition, ctx: Context) => {
+const buildFootnoteDefinition = (
+  { children }: mdast.FootnoteDefinition,
+  ctx: Context
+) => {
   return {
     children: children.map((node) => {
       const { nodes } = convertNodes([node], ctx);
