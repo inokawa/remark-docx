@@ -17,6 +17,7 @@ import {
   AlignmentType,
   IImageOptions,
   ILevelsOptions,
+  FootnoteReferenceRun,
 } from "docx";
 import type { IPropertiesOptions } from "docx/build/file/core-properties";
 import type * as mdast from "./models/mdast";
@@ -119,16 +120,16 @@ type Context = Readonly<{
 
 export interface DocxOptions
   extends Pick<
-    IPropertiesOptions,
-    | "title"
-    | "subject"
-    | "creator"
-    | "keywords"
-    | "description"
-    | "lastModifiedBy"
-    | "revision"
-    | "styles"
-    | "background"
+  IPropertiesOptions,
+  | "title"
+  | "subject"
+  | "creator"
+  | "keywords"
+  | "description"
+  | "lastModifiedBy"
+  | "revision"
+  | "styles"
+  | "background"
   > {
   /**
    * Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Promise<Blob>`.
@@ -142,6 +143,16 @@ export interface DocxOptions
 
 type DocxChild = Paragraph | Table | TableOfContents;
 type DocxContent = DocxChild | ParagraphChild;
+
+export interface Footnotes {
+  [key: string]: { children: Paragraph[] };
+}
+
+// type to define the return value of `convertNodes`
+export interface ConvertNodesReturn {
+  nodes: DocxContent[];
+  footnotes: Footnotes;
+}
 
 export const mdastToDocx = (
   node: mdast.Root,
@@ -159,11 +170,11 @@ export const mdastToDocx = (
   }: DocxOptions,
   images: ImageDataMap
 ): Promise<any> => {
-  const nodes = convertNodes(node.children, {
+  const { nodes, footnotes } = convertNodes(node.children, {
     deco: {},
     images,
     indent: 0,
-  }) as DocxChild[];
+  });
   const doc = new Document({
     title,
     subject,
@@ -174,7 +185,8 @@ export const mdastToDocx = (
     revision,
     styles,
     background,
-    sections: [{ children: nodes }],
+    footnotes,
+    sections: [{ children: nodes as DocxChild[] }],
     numbering: {
       config: [
         {
@@ -193,9 +205,12 @@ export const mdastToDocx = (
   }
 };
 
-const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
+const convertNodes = (
+  nodes: mdast.Content[],
+  ctx: Context
+): ConvertNodesReturn => {
   const results: DocxContent[] = [];
-
+  let footnotes: Footnotes = {};
   for (const node of nodes) {
     switch (node.type) {
       case "paragraph":
@@ -238,7 +253,7 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
         // FIXME: unimplemented
         break;
       case "footnoteDefinition":
-        // FIXME: unimplemented
+        footnotes[node.identifier] = buildFootnoteDefinition(node, ctx);
         break;
       case "text":
         results.push(buildText(node.value, ctx.deco));
@@ -247,12 +262,11 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
       case "strong":
       case "delete": {
         const { type, children } = node;
-        results.push(
-          ...convertNodes(children, {
-            ...ctx,
-            deco: { ...ctx.deco, [type]: true },
-          })
-        );
+        const { nodes } = convertNodes(children, {
+          ...ctx,
+          deco: { ...ctx.deco, [type]: true },
+        });
+        results.push(...nodes);
         break;
       }
       case "inlineCode":
@@ -278,7 +292,8 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
         results.push(buildFootnote(node, ctx));
         break;
       case "footnoteReference":
-        // FIXME: unimplemented
+        // do we need context here?
+        results.push(buildFootnoteReference(node));
         break;
       case "math":
         results.push(...buildMath(node));
@@ -291,32 +306,36 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
         break;
     }
   }
-  return results;
+  return {
+    nodes: results,
+    footnotes,
+  };
 };
 
 const buildParagraph = ({ children }: mdast.Paragraph, ctx: Context) => {
   const list = ctx.list;
+  const { nodes } = convertNodes(children, ctx);
   return new Paragraph({
-    children: convertNodes(children, ctx),
+    children: nodes,
     indent:
       ctx.indent > 0
         ? {
-            start: convertInchesToTwip(INDENT * ctx.indent),
-          }
+          start: convertInchesToTwip(INDENT * ctx.indent),
+        }
         : undefined,
     ...(list &&
       (list.ordered
         ? {
-            numbering: {
-              reference: ORDERED_LIST_REF,
-              level: list.level,
-            },
-          }
+          numbering: {
+            reference: ORDERED_LIST_REF,
+            level: list.level,
+          },
+        }
         : {
-            bullet: {
-              level: list.level,
-            },
-          })),
+          bullet: {
+            level: list.level,
+          },
+        })),
   });
 };
 
@@ -342,9 +361,10 @@ const buildHeading = ({ children, depth }: mdast.Heading, ctx: Context) => {
       heading = HeadingLevel.HEADING_5;
       break;
   }
+  const { nodes } = convertNodes(children, ctx);
   return new Paragraph({
     heading,
-    children: convertNodes(children, ctx),
+    children: nodes,
   });
 };
 
@@ -355,7 +375,8 @@ const buildThematicBreak = (_: mdast.ThematicBreak) => {
 };
 
 const buildBlockquote = ({ children }: mdast.Blockquote, ctx: Context) => {
-  return convertNodes(children, { ...ctx, indent: ctx.indent + 1 });
+  const { nodes } = convertNodes(children, { ...ctx, indent: ctx.indent + 1 });
+  return nodes;
 };
 
 const buildList = (
@@ -381,7 +402,8 @@ const buildListItem = (
   { children, checked: _checked, spread: _spread }: mdast.ListItem,
   ctx: Context
 ) => {
-  return convertNodes(children, ctx);
+  const { nodes } = convertNodes(children, ctx);
+  return nodes;
 };
 
 const buildTable = ({ children, align }: mdast.Table, ctx: Context) => {
@@ -422,11 +444,12 @@ const buildTableCell = (
   ctx: Context,
   align: AlignmentType | undefined
 ) => {
+  const { nodes } = convertNodes(children, ctx);
   return new TableCell({
     children: [
       new Paragraph({
         alignment: align,
-        children: convertNodes(children, ctx),
+        children: nodes,
       }),
     ],
   });
@@ -482,9 +505,10 @@ const buildLink = (
   { children, url, title: _title }: mdast.Link,
   ctx: Context
 ) => {
+  const { nodes } = convertNodes(children, ctx);
   return new ExternalHyperlink({
     link: url,
-    children: convertNodes(children, ctx),
+    children: nodes,
   });
 };
 
@@ -507,7 +531,22 @@ const buildImage = (
 
 const buildFootnote = ({ children }: mdast.Footnote, ctx: Context) => {
   // FIXME: transform to paragraph for now
+  const { nodes } = convertNodes(children, ctx);
   return new Paragraph({
-    children: convertNodes(children, ctx),
+    children: nodes,
   });
+};
+
+const buildFootnoteDefinition = ({ children }: mdast.FootnoteDefinition, ctx: Context) => {
+  return {
+    children: children.map((node) => {
+      const { nodes } = convertNodes([node], ctx);
+      return nodes[0] as Paragraph;
+    }),
+  };
+};
+
+const buildFootnoteReference = ({ identifier }: mdast.FootnoteReference) => {
+  // do we need Context?
+  return new FootnoteReferenceRun(parseInt(identifier));
 };
