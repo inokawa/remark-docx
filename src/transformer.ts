@@ -100,11 +100,9 @@ export type ImageData = {
 
 export type ImageResolver = (url: string) => Promise<ImageData> | ImageData;
 
-type Decoration = Readonly<
-  {
-    [key in (mdast.Emphasis | mdast.Strong | mdast.Delete)["type"]]?: true;
-  }
->;
+type Decoration = Readonly<{
+  [key in (mdast.Emphasis | mdast.Strong | mdast.Delete)["type"]]?: true;
+}>;
 
 type ListInfo = Readonly<{
   level: number;
@@ -154,7 +152,7 @@ export interface ConvertNodesReturn {
   footnotes: Footnotes;
 }
 
-export const mdastToDocx = (
+export const mdastToDocx = async (
   node: mdast.Root,
   {
     output = "buffer",
@@ -199,7 +197,11 @@ export const mdastToDocx = (
 
   switch (output) {
     case "buffer":
-      return Packer.toBuffer(doc);
+      const bufOut = await Packer.toBuffer(doc);
+      // feature detection instead of environment detection, but if Buffer exists
+      // it's probably Node. If not, return the Uint8Array that JSZip returns
+      // when it doesn't detect a Node environment.
+      return typeof Buffer === "function" ? Buffer.from(bufOut) : bufOut;
     case "blob":
       return Packer.toBlob(doc);
   }
