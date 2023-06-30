@@ -32,7 +32,7 @@ Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Pro
 
 #### Defined in
 
-[src/transformer.ts:136](https://github.com/inokawa/remark-docx/blob/6fd4049/src/transformer.ts#L136)
+[src/transformer.ts:135](https://github.com/inokawa/remark-docx/blob/8b9de57/src/transformer.ts#L135)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[src/transformer.ts:140](https://github.com/inokawa/remark-docx/blob/6fd4049/src/transformer.ts#L140)
+[src/transformer.ts:139](https://github.com/inokawa/remark-docx/blob/8b9de57/src/transformer.ts#L139)
 
 ___
 
@@ -58,7 +58,7 @@ Pick.title
 
 #### Defined in
 
-node_modules/docx/build/file/core-properties/properties.d.ts:11
+node_modules/docx/build/file/core-properties/properties.d.ts:12
 
 ___
 
@@ -72,7 +72,7 @@ Pick.subject
 
 #### Defined in
 
-node_modules/docx/build/file/core-properties/properties.d.ts:12
+node_modules/docx/build/file/core-properties/properties.d.ts:13
 
 ___
 
@@ -86,7 +86,7 @@ Pick.creator
 
 #### Defined in
 
-node_modules/docx/build/file/core-properties/properties.d.ts:13
+node_modules/docx/build/file/core-properties/properties.d.ts:14
 
 ___
 
@@ -100,7 +100,7 @@ Pick.keywords
 
 #### Defined in
 
-node_modules/docx/build/file/core-properties/properties.d.ts:14
+node_modules/docx/build/file/core-properties/properties.d.ts:15
 
 ___
 
@@ -114,7 +114,7 @@ Pick.description
 
 #### Defined in
 
-node_modules/docx/build/file/core-properties/properties.d.ts:15
+node_modules/docx/build/file/core-properties/properties.d.ts:16
 
 ___
 
@@ -128,7 +128,7 @@ Pick.lastModifiedBy
 
 #### Defined in
 
-node_modules/docx/build/file/core-properties/properties.d.ts:16
+node_modules/docx/build/file/core-properties/properties.d.ts:17
 
 ___
 
@@ -142,7 +142,7 @@ Pick.revision
 
 #### Defined in
 
-node_modules/docx/build/file/core-properties/properties.d.ts:17
+node_modules/docx/build/file/core-properties/properties.d.ts:18
 
 ___
 
@@ -156,7 +156,7 @@ Pick.styles
 
 #### Defined in
 
-node_modules/docx/build/file/core-properties/properties.d.ts:19
+node_modules/docx/build/file/core-properties/properties.d.ts:20
 
 ___
 
@@ -170,4 +170,4 @@ Pick.background
 
 #### Defined in
 
-node_modules/docx/build/file/core-properties/properties.d.ts:27
+node_modules/docx/build/file/core-properties/properties.d.ts:28
