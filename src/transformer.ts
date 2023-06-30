@@ -320,9 +320,8 @@ const buildParagraph = ({ children }: mdast.Paragraph, ctx: Context) => {
   const list = ctx.list;
   const { nodes } = convertNodes(children, ctx);
 
-  const paragraphChildren = [...nodes];
   if (list && list.checked != null) {
-    paragraphChildren.unshift(
+    nodes.unshift(
       new CheckBox({
         checked: list.checked,
         checkedState: { value: "2611" },
@@ -331,7 +330,7 @@ const buildParagraph = ({ children }: mdast.Paragraph, ctx: Context) => {
     );
   }
   return new Paragraph({
-    children: paragraphChildren,
+    children: nodes,
     indent:
       ctx.indent > 0
         ? {
@@ -402,15 +401,12 @@ const buildList = (
     level: ctx.list ? ctx.list.level + 1 : 0,
     ordered: !!ordered,
   };
-  return children.reduce((acc, item) => {
-    acc.push(
-      ...buildListItem(item, {
-        ...ctx,
-        list,
-      })
-    );
-    return acc;
-  }, [] as DocxContent[]);
+  return children.flatMap((item) => {
+    return buildListItem(item, {
+      ...ctx,
+      list,
+    });
+  });
 };
 
 const buildListItem = (
