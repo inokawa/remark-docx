@@ -1,5 +1,8 @@
 import typescript from "@rollup/plugin-typescript";
-import pkg from "./package.json" assert { type: "json" };
+import fs from "node:fs";
+
+const pkgLoc = new URL("./package.json", import.meta.url);
+const pkg = JSON.parse(fs.readFileSync(pkgLoc, "utf8"));
 
 const externals = [
   ...Object.keys(pkg.dependencies),
