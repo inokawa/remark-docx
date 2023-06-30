@@ -18,6 +18,7 @@ import {
   IImageOptions,
   ILevelsOptions,
   FootnoteReferenceRun,
+  CheckBox,
 } from "docx";
 import type { IPropertiesOptions } from "docx/build/file/core-properties";
 import type * as mdast from "./models/mdast";
@@ -107,6 +108,7 @@ type Decoration = Readonly<{
 type ListInfo = Readonly<{
   level: number;
   ordered: boolean;
+  checked?: boolean;
 }>;
 
 type Context = Readonly<{
@@ -317,8 +319,19 @@ const convertNodes = (
 const buildParagraph = ({ children }: mdast.Paragraph, ctx: Context) => {
   const list = ctx.list;
   const { nodes } = convertNodes(children, ctx);
+
+  const paragraphChildren = [...nodes];
+  if (list && list.checked != null) {
+    paragraphChildren.unshift(
+      new CheckBox({
+        checked: list.checked,
+        checkedState: { value: "2611" },
+        uncheckedState: { value: "2610" },
+      })
+    );
+  }
   return new Paragraph({
-    children: nodes,
+    children: paragraphChildren,
     indent:
       ctx.indent > 0
         ? {
@@ -401,10 +414,13 @@ const buildList = (
 };
 
 const buildListItem = (
-  { children, checked: _checked, spread: _spread }: mdast.ListItem,
+  { children, checked, spread: _spread }: mdast.ListItem,
   ctx: Context
 ) => {
-  const { nodes } = convertNodes(children, ctx);
+  const { nodes } = convertNodes(children, {
+    ...ctx,
+    ...(ctx.list && { list: { ...ctx.list, checked: checked ?? undefined } }),
+  });
   return nodes;
 };
 
