@@ -346,6 +346,9 @@ const mapNode = (n: latex.Node, runs: MathRun[]): MathRun[] | false => {
   return [];
 };
 
+/**
+ * @internal
+ */
 export const parseLatex = (value: string): MathRun[][] => {
   const parsed = parseMath(value);
   const paragraphs: MathRun[][] = [[]];

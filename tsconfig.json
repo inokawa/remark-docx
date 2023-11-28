@@ -20,8 +20,9 @@
     "noImplicitOverride": true,
     "noFallthroughCasesInSwitch": true,
     "allowUnreachableCode": false,
-    "allowUnusedLabels": false
+    "allowUnusedLabels": false,
     // "exactOptionalPropertyTypes": true,
+    "stripInternal": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]
