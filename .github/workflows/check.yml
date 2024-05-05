@@ -25,3 +25,8 @@ jobs:
       - run: npm run tsc
       - run: npm run test
       - run: npm run build
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Smoke test stories
+        run: npm run storybook:test
