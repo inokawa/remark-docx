@@ -1,11 +1,4 @@
-import {
-  jest,
-  beforeEach,
-  afterEach,
-  it,
-  describe,
-  expect,
-} from "@jest/globals";
+import { vitest, beforeEach, afterEach, it, describe, expect } from "vitest";
 import fs from "fs";
 import path from "path";
 import { unified } from "unified";
@@ -21,10 +14,10 @@ const FIXTURE_PATH = "../fixtures";
 
 // mock unique id
 beforeEach(() => {
-  jest.spyOn(global.Math, "random").mockReturnValue(0.123456789);
+  vitest.spyOn(global.Math, "random").mockReturnValue(0.123456789);
 });
 afterEach(() => {
-  jest.spyOn(global.Math, "random").mockRestore();
+  vitest.spyOn(global.Math, "random").mockRestore();
 });
 
 describe("e2e", () => {
@@ -48,7 +41,7 @@ describe("e2e", () => {
   filenames.forEach((filename) => {
     it(filename, async () => {
       const doc = await toDocxProcessor.process(
-        fs.readFileSync(path.join(fixturesDir, filename))
+        fs.readFileSync(path.join(fixturesDir, filename)),
       );
       const z = new Zip((await doc.result) as any);
       for (const e of z.getEntries()) {

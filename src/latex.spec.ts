@@ -1,4 +1,4 @@
-import { it, describe, expect } from "@jest/globals";
+import { it, describe, expect } from "vitest";
 import { parseLatex } from "./latex";
 
 const parse = (str: string) => parseLatex(str);
@@ -21,20 +21,20 @@ describe("parse", () => {
     it("greek1", () => {
       expect(
         parse(
-          "\\alpha\\beta\\gamma\\delta\\epsilon\\zeta\\eta\\theta\\iota\\kappa\\lambda\\mu\\nu\\xi o\\pi\\rho\\sigma\\tau\\upsilon\\phi\\chi\\psi\\omega"
-        )
+          "\\alpha\\beta\\gamma\\delta\\epsilon\\zeta\\eta\\theta\\iota\\kappa\\lambda\\mu\\nu\\xi o\\pi\\rho\\sigma\\tau\\upsilon\\phi\\chi\\psi\\omega",
+        ),
       ).toMatchSnapshot();
     });
     it("greek2", () => {
       expect(
-        parse("\\varepsilon\\vartheta\\varrho\\varsigma\\varphi")
+        parse("\\varepsilon\\vartheta\\varrho\\varsigma\\varphi"),
       ).toMatchSnapshot();
     });
     it("greek3", () => {
       expect(
         parse(
-          "\\Gamma\\Delta\\Theta\\Lambda\\Xi\\Pi\\Sigma\\Upsilon\\Phi\\Psi\\Omega"
-        )
+          "\\Gamma\\Delta\\Theta\\Lambda\\Xi\\Pi\\Sigma\\Upsilon\\Phi\\Psi\\Omega",
+        ),
       ).toMatchSnapshot();
     });
   });

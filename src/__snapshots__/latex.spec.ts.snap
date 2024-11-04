@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`parse \\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\pi i \\xi x}\\,d\\xi 1`] = `
+exports[`parse > \\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\pi i \\xi x}\\,d\\xi 1`] = `
 [
   [
     MathRun {
@@ -295,7 +295,7 @@ exports[`parse \\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\pi 
 ]
 `;
 
-exports[`parse \\frac{a+b}{c+d} 1`] = `
+exports[`parse > \\frac{a+b}{c+d} 1`] = `
 [
   [
     MathFraction {
@@ -383,7 +383,7 @@ exports[`parse \\frac{a+b}{c+d} 1`] = `
 ]
 `;
 
-exports[`parse \\sqrt[30]{a+\\sqrt{b+c}} 1`] = `
+exports[`parse > \\sqrt[30]{a+\\sqrt{b+c}} 1`] = `
 [
   [
     MathRadical {
@@ -464,7 +464,7 @@ exports[`parse \\sqrt[30]{a+\\sqrt{b+c}} 1`] = `
 ]
 `;
 
-exports[`parse \\sum_{k=1}^{n} k=rac{n(n+1)}{2} 1`] = `
+exports[`parse > \\sum_{k=1}^{n} k=rac{n(n+1)}{2} 1`] = `
 [
   [
     MathSuperScript {
@@ -766,7 +766,7 @@ exports[`parse \\sum_{k=1}^{n} k=rac{n(n+1)}{2} 1`] = `
 ]
 `;
 
-exports[`parse L = \\frac{1}{2} \\rho v^2 S C_L 1`] = `
+exports[`parse > L = \\frac{1}{2} \\rho v^2 S C_L 1`] = `
 [
   [
     MathRun {
@@ -936,7 +936,7 @@ exports[`parse L = \\frac{1}{2} \\rho v^2 S C_L 1`] = `
 ]
 `;
 
-exports[`parse command greek1 1`] = `
+exports[`parse > command > greek1 1`] = `
 [
   [
     MathRun {
@@ -1207,7 +1207,7 @@ exports[`parse command greek1 1`] = `
 ]
 `;
 
-exports[`parse command greek2 1`] = `
+exports[`parse > command > greek2 1`] = `
 [
   [
     MathRun {
@@ -1269,7 +1269,7 @@ exports[`parse command greek2 1`] = `
 ]
 `;
 
-exports[`parse command greek3 1`] = `
+exports[`parse > command > greek3 1`] = `
 [
   [
     MathRun {
@@ -1397,7 +1397,7 @@ exports[`parse command greek3 1`] = `
 ]
 `;
 
-exports[`parse i hbar \\frac{partial psi}{partial t} = H psi(x,t) 1`] = `
+exports[`parse > i hbar \\frac{partial psi}{partial t} = H psi(x,t) 1`] = `
 [
   [
     MathRun {
