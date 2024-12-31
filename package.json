@@ -38,7 +38,7 @@
     "@storybook/react": "^8.4.0",
     "@storybook/react-vite": "^8.4.0",
     "@storybook/source-loader": "^8.4.0",
-    "@storybook/test-runner": "^0.20.0",
+    "@storybook/test-runner": "^0.21.0",
     "@types/adm-zip": "^0.5.0",
     "@types/mdast": "^3.0.10",
     "@types/unist": "^2.0.6",
