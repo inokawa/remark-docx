@@ -19,22 +19,22 @@ If you have some feature requests or improvements, please create a [issue](https
 - [x] table
 - [x] tableRow
 - [x] tableCell
-- [ ] html
-- [ ] code
+- [x] html
+- [x] code
 - [ ] yaml
 - [ ] toml
-- [ ] definition
+- [x] definition
 - [x] footnoteDefinition
 - [x] text
 - [x] emphasis
 - [x] strong
 - [x] delete
-- [ ] inlineCode
+- [x] inlineCode
 - [x] break
 - [x] link
 - [x] image
-- [ ] linkReference
-- [ ] imageReference
+- [x] linkReference
+- [x] imageReference
 - [x] footnote
 - [x] footnoteReference
 - [x] LaTeX support with math and inlineMath ([remark-math](https://github.com/remarkjs/remark-math) is required)
