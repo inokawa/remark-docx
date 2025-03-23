@@ -1,12 +1,11 @@
 {
   "name": "remark-docx",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "remark plugin to compile markdown to docx (Microsoft Word, Office Open XML).",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
   "types": "lib/index.d.ts",
   "exports": {
-    "./package.json": "./package.json",
     ".": {
       "types": "./lib/index.d.ts",
       "import": "./lib/index.mjs",
@@ -18,7 +17,9 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "rollup -c",
+    "build": "tsup && tsc -p tsconfig-build.json && gzip -c dist/index.js | wc -c",
+    "clean": "rm -rf dist",
+    "dev": "tsup --watch && tsc -p tsconfig-build.json -w",
     "test": "vitest run",
     "tsc": "tsc -p . --noEmit",
     "storybook": "storybook dev -p 6006",
@@ -28,43 +29,41 @@
     "prepublishOnly": "npm run typedoc && rimraf lib && npm run build"
   },
   "dependencies": {
-    "@unified-latex/unified-latex-util-parse": "1.8.1",
-    "docx": "^8.2.0",
-    "unist-util-visit": "^4.1.2"
+    "docx": "^9.3.0",
+    "mdast2docx": "^0.3.2",
+    "tsup": "^8.4.0",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^11.1.6",
-    "@storybook/addon-storysource": "^8.4.0",
-    "@storybook/react": "^8.4.0",
-    "@storybook/react-vite": "^8.4.0",
-    "@storybook/source-loader": "^8.4.0",
-    "@storybook/test-runner": "^0.21.0",
-    "@types/adm-zip": "^0.5.0",
-    "@types/mdast": "^3.0.10",
-    "@types/unist": "^2.0.6",
-    "adm-zip": "^0.5.9",
-    "concurrently": "^8.2.2",
-    "docx-preview": "^0.3.0",
+    "@storybook/addon-storysource": "^8.6.8",
+    "@storybook/react": "^8.6.8",
+    "@storybook/react-vite": "^8.6.8",
+    "@storybook/source-loader": "^8.6.8",
+    "@storybook/test-runner": "^0.22.0",
+    "@types/adm-zip": "^0.5.7",
+    "@types/mdast": "^4.0.4",
+    "@types/node": "^22.13.11",
+    "@types/unist": "^3.0.3",
+    "adm-zip": "^0.5.16",
+    "concurrently": "^9.1.2",
+    "docx-preview": "^0.3.5",
     "file-saver": "^2.0.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-is": "^18.3.1",
-    "remark-footnotes": "^4.0.1",
-    "remark-frontmatter": "^4.0.1",
-    "remark-gfm": "^3.0.1",
-    "remark-math": "^5.1.1",
-    "remark-parse": "^10.0.1",
-    "rimraf": "^5.0.0",
-    "rollup": "^4.17.2",
-    "storybook": "^8.4.0",
-    "tslib": "^2.4.1",
-    "typedoc": "^0.27.0",
-    "typedoc-plugin-markdown": "^3.16.0",
-    "typescript": "^5.0.4",
-    "unified": "^10.1.2",
-    "vite": "^5.4.10",
-    "vitest": "^2.1.4",
-    "wait-on": "^7.2.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-is": "^19.0.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "rimraf": "^6.0.1",
+    "storybook": "^8.6.8",
+    "tslib": "^2.8.1",
+    "typedoc": "^0.28.1",
+    "typedoc-plugin-markdown": "^4.5.2",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2",
+    "vitest": "^3.0.9",
+    "wait-on": "^8.0.3"
   },
   "repository": {
     "type": "git",
@@ -83,6 +82,16 @@
     "math"
   ],
   "author": "inokawa <stratoooo-taster@yahoo.co.jp> (https://github.com/inokawa/)",
+  "contributors": [
+    {
+      "name": "inokawa",
+      "url": "https://github.com/inokawa"
+    },
+    {
+      "name": "Mayank Kumar Chaudhari",
+      "url": "https://github.com/mayank1513"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/inokawa/remark-docx/issues"
