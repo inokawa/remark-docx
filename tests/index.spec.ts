@@ -4,11 +4,10 @@ import path from "path";
 import { unified } from "unified";
 import markdown from "remark-parse";
 import gfm from "remark-gfm";
-import footnotes from "remark-footnotes";
 import frontmatter from "remark-frontmatter";
 import math from "remark-math";
 import Zip from "adm-zip";
-import docx from ".";
+import docx from "../src";
 
 const FIXTURE_PATH = "../fixtures";
 
@@ -24,7 +23,6 @@ describe("e2e", () => {
   const toDocxProcessor = unified()
     .use(markdown)
     .use(gfm)
-    .use(footnotes, { inlineNotes: true })
     .use(frontmatter, ["yaml", "toml"])
     .use(math)
     .use(docx, {
@@ -41,7 +39,7 @@ describe("e2e", () => {
   filenames.forEach((filename) => {
     it(filename, async () => {
       const doc = await toDocxProcessor.process(
-        fs.readFileSync(path.join(fixturesDir, filename)),
+        fs.readFileSync(path.join(fixturesDir, filename))
       );
       const z = new Zip((await doc.result) as any);
       for (const e of z.getEntries()) {

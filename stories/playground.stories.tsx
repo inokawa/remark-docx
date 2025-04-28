@@ -12,7 +12,7 @@ import { saveAs } from "file-saver";
 import { renderAsync } from "docx-preview";
 
 const fetchImage = async (
-  url: string
+  url: string,
 ): Promise<{ image: ArrayBuffer; width: number; height: number }> => {
   const image = new Image();
   const res = await fetch(url);
@@ -59,7 +59,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => (
         flexDirection: "column",
         fontSize: "10.5pt",
       }),
-      []
+      [],
     )}
   >
     {children}
@@ -73,7 +73,7 @@ export const MarkdownToDocx = () => {
   const onChange = async (v: string) => {
     const blob = await toDocx(v);
     renderAsync(blob, document.getElementById("preview")!, undefined, {
-      useMathMLPolyfill: true,
+      // useMathMLPolyfill: true,
     });
   };
 
@@ -87,7 +87,7 @@ export const MarkdownToDocx = () => {
         <button
           onClick={async () => {
             if (!ref.current) return;
-            const blob = await toDocx(ref.current.value);
+            const blob = (await toDocx(ref.current.value)) as Blob;
             saveAs(blob, "example.docx");
           }}
         >

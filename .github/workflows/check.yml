@@ -27,6 +27,7 @@ jobs:
       - run: npm run build
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: |
+          sudo npx playwright install --with-deps && npx playwright install
       - name: Smoke test stories
         run: npm run storybook:test
