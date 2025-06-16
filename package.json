@@ -28,7 +28,7 @@
     "prepublishOnly": "npm run typedoc && rimraf lib && npm run build"
   },
   "dependencies": {
-    "@unified-latex/unified-latex-util-parse": "1.8.1",
+    "@unified-latex/unified-latex-util-parse": "1.8.3",
     "docx": "^8.2.0",
     "unist-util-visit": "^4.1.2"
   },
