@@ -1,173 +1,139 @@
+[**API**](../API.md)
+
+***
+
 # Interface: DocxOptions
 
-## Hierarchy
+Defined in: [src/transformer.ts:124](https://github.com/inokawa/remark-docx/blob/020caed5daac73edb3764fa82eba18e03f68d466/src/transformer.ts#L124)
 
-- `Pick`<`IPropertiesOptions`, ``"title"`` \| ``"subject"`` \| ``"creator"`` \| ``"keywords"`` \| ``"description"`` \| ``"lastModifiedBy"`` \| ``"revision"`` \| ``"styles"`` \| ``"background"``\>
+## Extends
 
-  ↳ **`DocxOptions`**
-
-## Table of contents
-
-### Properties
-
-- [output](DocxOptions.md#output)
-- [imageResolver](DocxOptions.md#imageresolver)
-- [title](DocxOptions.md#title)
-- [subject](DocxOptions.md#subject)
-- [creator](DocxOptions.md#creator)
-- [keywords](DocxOptions.md#keywords)
-- [description](DocxOptions.md#description)
-- [lastModifiedBy](DocxOptions.md#lastmodifiedby)
-- [revision](DocxOptions.md#revision)
-- [styles](DocxOptions.md#styles)
-- [background](DocxOptions.md#background)
+- `Pick`\<`IPropertiesOptions`, `"title"` \| `"subject"` \| `"creator"` \| `"keywords"` \| `"description"` \| `"lastModifiedBy"` \| `"revision"` \| `"styles"` \| `"background"`\>
 
 ## Properties
 
-### output
+### output?
 
-• `Optional` **output**: ``"buffer"`` \| ``"blob"``
+> `optional` **output**: `"buffer"` \| `"blob"`
+
+Defined in: [src/transformer.ts:140](https://github.com/inokawa/remark-docx/blob/020caed5daac73edb3764fa82eba18e03f68d466/src/transformer.ts#L140)
 
 Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Promise<Blob>`.
 
-#### Defined in
+***
 
-[src/transformer.ts:137](https://github.com/inokawa/remark-docx/blob/63506a6/src/transformer.ts#L137)
+### imageResolver?
 
-___
+> `optional` **imageResolver**: `ImageResolver`
 
-### imageResolver
-
-• `Optional` **imageResolver**: `ImageResolver`
+Defined in: [src/transformer.ts:144](https://github.com/inokawa/remark-docx/blob/020caed5daac73edb3764fa82eba18e03f68d466/src/transformer.ts#L144)
 
 **You must set** if your markdown includes images. See example for [browser](https://github.com/inokawa/remark-docx/blob/main/stories/playground.stories.tsx) and [Node.js](https://github.com/inokawa/remark-docx/blob/main/src/index.spec.ts).
 
-#### Defined in
+***
 
-[src/transformer.ts:141](https://github.com/inokawa/remark-docx/blob/63506a6/src/transformer.ts#L141)
+### title?
 
-___
+> `readonly` `optional` **title**: `string`
 
-### title
-
-• `Optional` `Readonly` **title**: `string`
+Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:12
 
 #### Inherited from
 
-Pick.title
+`Pick.title`
 
-#### Defined in
+***
 
-node_modules/docx/build/file/core-properties/properties.d.ts:12
+### subject?
 
-___
+> `readonly` `optional` **subject**: `string`
 
-### subject
-
-• `Optional` `Readonly` **subject**: `string`
+Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:13
 
 #### Inherited from
 
-Pick.subject
+`Pick.subject`
 
-#### Defined in
+***
 
-node_modules/docx/build/file/core-properties/properties.d.ts:13
+### creator?
 
-___
+> `readonly` `optional` **creator**: `string`
 
-### creator
-
-• `Optional` `Readonly` **creator**: `string`
+Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:14
 
 #### Inherited from
 
-Pick.creator
+`Pick.creator`
 
-#### Defined in
+***
 
-node_modules/docx/build/file/core-properties/properties.d.ts:14
+### keywords?
 
-___
+> `readonly` `optional` **keywords**: `string`
 
-### keywords
-
-• `Optional` `Readonly` **keywords**: `string`
+Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:15
 
 #### Inherited from
 
-Pick.keywords
+`Pick.keywords`
 
-#### Defined in
+***
 
-node_modules/docx/build/file/core-properties/properties.d.ts:15
+### description?
 
-___
+> `readonly` `optional` **description**: `string`
 
-### description
-
-• `Optional` `Readonly` **description**: `string`
+Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:16
 
 #### Inherited from
 
-Pick.description
+`Pick.description`
 
-#### Defined in
+***
 
-node_modules/docx/build/file/core-properties/properties.d.ts:16
+### lastModifiedBy?
 
-___
+> `readonly` `optional` **lastModifiedBy**: `string`
 
-### lastModifiedBy
-
-• `Optional` `Readonly` **lastModifiedBy**: `string`
+Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:17
 
 #### Inherited from
 
-Pick.lastModifiedBy
+`Pick.lastModifiedBy`
 
-#### Defined in
+***
 
-node_modules/docx/build/file/core-properties/properties.d.ts:17
+### revision?
 
-___
+> `readonly` `optional` **revision**: `number`
 
-### revision
-
-• `Optional` `Readonly` **revision**: `number`
+Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:18
 
 #### Inherited from
 
-Pick.revision
+`Pick.revision`
 
-#### Defined in
+***
 
-node_modules/docx/build/file/core-properties/properties.d.ts:18
+### styles?
 
-___
+> `readonly` `optional` **styles**: `IStylesOptions`
 
-### styles
-
-• `Optional` `Readonly` **styles**: `IStylesOptions`
+Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:20
 
 #### Inherited from
 
-Pick.styles
+`Pick.styles`
 
-#### Defined in
+***
 
-node_modules/docx/build/file/core-properties/properties.d.ts:20
+### background?
 
-___
+> `readonly` `optional` **background**: `IDocumentBackgroundOptions`
 
-### background
-
-• `Optional` `Readonly` **background**: `IDocumentBackgroundOptions`
+Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:28
 
 #### Inherited from
 
-Pick.background
-
-#### Defined in
-
-node_modules/docx/build/file/core-properties/properties.d.ts:28
+`Pick.background`
