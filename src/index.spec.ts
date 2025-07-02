@@ -8,6 +8,7 @@ import footnotes from "remark-footnotes";
 import frontmatter from "remark-frontmatter";
 import math from "remark-math";
 import Zip from "adm-zip";
+import prettier from "prettier";
 import docx from ".";
 
 const FIXTURE_PATH = "../fixtures";
@@ -46,7 +47,11 @@ describe("e2e", () => {
       const z = new Zip((await doc.result) as any);
       for (const e of z.getEntries()) {
         if (e.entryName.match(/word\/.*\.xml$/)) {
-          expect(z.readAsText(e)).toMatchSnapshot();
+          const xml = await prettier.format(z.readAsText(e), {
+            parser: "xml",
+            plugins: ["@prettier/plugin-xml"],
+          });
+          expect(xml).toMatchSnapshot();
         }
       }
     });
