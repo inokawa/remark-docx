@@ -325,9 +325,7 @@ const convertNodes = (
         // FIXME: unimplemented
         break;
       case "footnote": {
-        const [footnoteRef, footnoteData] = buildFootnote(node, ctx);
-        results.push(footnoteRef);
-        footnotes = { ...footnotes, ...footnoteData };
+        // inline footnote was removed in mdast v5
         break;
       }
       case "footnoteReference":
@@ -604,31 +602,6 @@ const buildImage = (
       height,
     },
   });
-};
-
-const buildFootnote = (
-  { children }: mdast.Footnote,
-  ctx: Context,
-): [DocxContent, Footnotes] => {
-  // Generate auto ID based on current registry size to ensure uniqueness
-  const footnoteId = ctx.footnoteId();
-
-  const footnoteContent = children.map((node) => {
-    // Convert each node and extract the first result as a paragraph
-    const [nodes] = convertNodes([node], ctx);
-    if (nodes[0] instanceof Paragraph) {
-      return nodes[0] as Paragraph;
-    }
-    // For non-paragraph content, wrap in a paragraph
-    return new Paragraph({ children: nodes });
-  });
-
-  return [
-    new FootnoteReferenceRun(footnoteId),
-    {
-      [footnoteId]: { children: footnoteContent },
-    },
-  ];
 };
 
 const buildFootnoteDefinition = (

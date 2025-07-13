@@ -25,7 +25,7 @@ describe("e2e", () => {
   const toDocxProcessor = unified()
     .use(markdown)
     .use(gfm)
-    .use(footnotes, { inlineNotes: true })
+    .use(footnotes)
     .use(frontmatter, ["yaml", "toml"])
     .use(math)
     .use(docx, {
