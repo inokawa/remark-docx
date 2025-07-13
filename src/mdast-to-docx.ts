@@ -111,17 +111,47 @@ type ListInfo = Readonly<{
   checked?: boolean;
 }>;
 
-type FootnoteRegistry = (id?: string) => number;
+type FootnoteDefinition = Readonly<{ children: Paragraph[] }>;
+
+type FootnoteRegistry = {
+  ref: (id: string) => number;
+  def: (id: string, def: FootnoteDefinition) => void;
+  footnotes: () => {
+    [key: string]: FootnoteDefinition;
+  };
+};
 
 const createFootnoteRegistry = (): FootnoteRegistry => {
   const idToInternalId = new Map<string, number>();
+  const defs = new Map<number, FootnoteDefinition>();
 
-  return (identifier: string = `inline-${idToInternalId.size + 1}`): number => {
-    let internalId = idToInternalId.get(identifier);
+  const getId = (id: string): number => {
+    let internalId = idToInternalId.get(id);
     if (internalId == null) {
-      idToInternalId.set(identifier, (internalId = idToInternalId.size + 1));
+      idToInternalId.set(id, (internalId = idToInternalId.size + 1));
     }
     return internalId;
+  };
+
+  return {
+    ref: (id) => {
+      return getId(id);
+    },
+    def: (id, def) => {
+      const internalId = getId(id);
+      defs.set(internalId, def);
+    },
+    footnotes: () => {
+      return defs.entries().reduce(
+        (acc, [key, def]) => {
+          acc[key] = def;
+          return acc;
+        },
+        {} as {
+          [key: string]: FootnoteDefinition;
+        },
+      );
+    },
   };
 };
 
@@ -130,7 +160,7 @@ type Context = Readonly<{
   images: ImageDataMap;
   indent: number;
   list?: ListInfo;
-  footnoteId: FootnoteRegistry;
+  footnote: FootnoteRegistry;
 }>;
 
 export interface DocxOptions
@@ -159,12 +189,6 @@ export interface DocxOptions
 type DocxChild = Paragraph | Table | TableOfContents;
 type DocxContent = DocxChild | ParagraphChild;
 
-type FootnoteData = Readonly<{ children: Paragraph[] }>;
-
-interface Footnotes {
-  [key: string]: FootnoteData;
-}
-
 export const mdastToDocx = async (
   node: mdast.Root,
   {
@@ -181,11 +205,12 @@ export const mdastToDocx = async (
   }: DocxOptions,
   images: ImageDataMap,
 ): Promise<any> => {
-  const [nodes, footnotes] = convertNodes(node.children, {
+  const footnote = createFootnoteRegistry();
+  const nodes = convertNodes(node.children, {
     deco: {},
     images,
     indent: 0,
-    footnoteId: createFootnoteRegistry(),
+    footnote,
   });
   const doc = new Document({
     title,
@@ -197,7 +222,7 @@ export const mdastToDocx = async (
     revision,
     styles,
     background,
-    footnotes,
+    footnotes: footnote.footnotes(),
     sections: [{ children: nodes as DocxChild[] }],
     numbering: {
       config: [
@@ -221,39 +246,27 @@ export const mdastToDocx = async (
   }
 };
 
-const convertNodes = (
-  nodes: mdast.Content[],
-  ctx: Context,
-): [DocxContent[], Footnotes] => {
+const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
   const results: DocxContent[] = [];
-  let footnotes: Footnotes = {};
   for (const node of nodes) {
     switch (node.type) {
       case "paragraph": {
-        const [paragraph, nestedFootnotes] = buildParagraph(node, ctx);
-        results.push(paragraph);
-        footnotes = { ...footnotes, ...nestedFootnotes };
+        results.push(buildParagraph(node, ctx));
         break;
       }
       case "heading": {
-        const [heading, nestedFootnotes] = buildHeading(node, ctx);
-        results.push(heading);
-        footnotes = { ...footnotes, ...nestedFootnotes };
+        results.push(buildHeading(node, ctx));
         break;
       }
       case "thematicBreak":
         results.push(buildThematicBreak(node));
         break;
       case "blockquote": {
-        const [blockquoteNodes, nestedFootnotes] = buildBlockquote(node, ctx);
-        results.push(...blockquoteNodes);
-        footnotes = { ...footnotes, ...nestedFootnotes };
+        results.push(...buildBlockquote(node, ctx));
         break;
       }
       case "list": {
-        const [listNodes, nestedFootnotes] = buildList(node, ctx);
-        results.push(...listNodes);
-        footnotes = { ...footnotes, ...nestedFootnotes };
+        results.push(...buildList(node, ctx));
         break;
       }
       case "listItem":
@@ -281,10 +294,7 @@ const convertNodes = (
         // FIXME: unimplemented
         break;
       case "footnoteDefinition": {
-        footnotes[ctx.footnoteId(node.identifier)] = buildFootnoteDefinition(
-          node,
-          ctx,
-        );
+        registerFootnoteDefinition(node, ctx);
         break;
       }
       case "text":
@@ -294,12 +304,11 @@ const convertNodes = (
       case "strong":
       case "delete": {
         const { type, children } = node;
-        const [nodes, nestedFootnotes] = convertNodes(children, {
+        const nodes = convertNodes(children, {
           ...ctx,
           deco: { ...ctx.deco, [type]: true },
         });
         results.push(...nodes);
-        footnotes = { ...footnotes, ...nestedFootnotes };
         break;
       }
       case "inlineCode":
@@ -310,9 +319,7 @@ const convertNodes = (
         results.push(buildBreak(node));
         break;
       case "link": {
-        const [link, nestedFootnotes] = buildLink(node, ctx);
-        results.push(link);
-        footnotes = { ...footnotes, ...nestedFootnotes };
+        results.push(buildLink(node, ctx));
         break;
       }
       case "image":
@@ -342,15 +349,15 @@ const convertNodes = (
         break;
     }
   }
-  return [results, footnotes];
+  return results;
 };
 
 const buildParagraph = (
   { children }: mdast.Paragraph,
   ctx: Context,
-): [DocxContent, Footnotes] => {
+): DocxContent => {
   const list = ctx.list;
-  const [nodes, footnotes] = convertNodes(children, ctx);
+  const nodes = convertNodes(children, ctx);
 
   if (list && list.checked != null) {
     nodes.unshift(
@@ -361,37 +368,34 @@ const buildParagraph = (
       }),
     );
   }
-  return [
-    new Paragraph({
-      children: nodes,
-      indent:
-        ctx.indent > 0
-          ? {
-              start: convertInchesToTwip(INDENT * ctx.indent),
-            }
-          : undefined,
-      ...(list &&
-        (list.ordered
-          ? {
-              numbering: {
-                reference: ORDERED_LIST_REF,
-                level: list.level,
-              },
-            }
-          : {
-              bullet: {
-                level: list.level,
-              },
-            })),
-    }),
-    footnotes,
-  ];
+  return new Paragraph({
+    children: nodes,
+    indent:
+      ctx.indent > 0
+        ? {
+            start: convertInchesToTwip(INDENT * ctx.indent),
+          }
+        : undefined,
+    ...(list &&
+      (list.ordered
+        ? {
+            numbering: {
+              reference: ORDERED_LIST_REF,
+              level: list.level,
+            },
+          }
+        : {
+            bullet: {
+              level: list.level,
+            },
+          })),
+  });
 };
 
 const buildHeading = (
   { children, depth }: mdast.Heading,
   ctx: Context,
-): [DocxContent, Footnotes] => {
+): DocxContent => {
   let headingLevel: HeadingLevel;
   switch (depth) {
     case 1:
@@ -413,14 +417,11 @@ const buildHeading = (
       headingLevel = HeadingLevel.HEADING_5;
       break;
   }
-  const [nodes, footnotes] = convertNodes(children, ctx);
-  return [
-    new Paragraph({
-      heading: headingLevel,
-      children: nodes,
-    }),
-    footnotes,
-  ];
+  const nodes = convertNodes(children, ctx);
+  return new Paragraph({
+    heading: headingLevel,
+    children: nodes,
+  });
 };
 
 const buildThematicBreak = (_: mdast.ThematicBreak): DocxContent => {
@@ -432,43 +433,37 @@ const buildThematicBreak = (_: mdast.ThematicBreak): DocxContent => {
 const buildBlockquote = (
   { children }: mdast.Blockquote,
   ctx: Context,
-): [DocxContent[], Footnotes] => {
-  const [nodes, footnotes] = convertNodes(children, {
+): DocxContent[] => {
+  return convertNodes(children, {
     ...ctx,
     indent: ctx.indent + 1,
   });
-  return [nodes, footnotes];
 };
 
 const buildList = (
   { children, ordered, start: _start, spread: _spread }: mdast.List,
   ctx: Context,
-): [DocxContent[], Footnotes] => {
+): DocxContent[] => {
   const list: ListInfo = {
     level: ctx.list ? ctx.list.level + 1 : 0,
     ordered: !!ordered,
   };
-  let allFootnotes: Footnotes = {};
-  const allNodes = children.flatMap((item) => {
-    const [nodes, itemFootnotes] = buildListItem(item, {
+  return children.flatMap((item) => {
+    return buildListItem(item, {
       ...ctx,
       list,
     });
-    allFootnotes = { ...allFootnotes, ...itemFootnotes };
-    return nodes;
   });
-  return [allNodes, allFootnotes];
 };
 
 const buildListItem = (
   { children, checked, spread: _spread }: mdast.ListItem,
   ctx: Context,
-): [DocxContent[], Footnotes] => {
-  const [nodes, footnotes] = convertNodes(children, {
+): DocxContent[] => {
+  return convertNodes(children, {
     ...ctx,
     ...(ctx.list && { list: { ...ctx.list, checked: checked ?? undefined } }),
   });
-  return [nodes, footnotes];
 };
 
 const buildTable = (
@@ -512,7 +507,7 @@ const buildTableCell = (
   ctx: Context,
   align: AlignmentType | undefined,
 ): TableCell => {
-  const [nodes] = convertNodes(children, ctx);
+  const nodes = convertNodes(children, ctx);
   return new TableCell({
     children: [
       new Paragraph({
@@ -576,15 +571,12 @@ const buildBreak = (_: mdast.Break): DocxContent => {
 const buildLink = (
   { children, url, title: _title }: mdast.Link,
   ctx: Context,
-): [DocxContent, Footnotes] => {
-  const [nodes, footnotes] = convertNodes(children, ctx);
-  return [
-    new ExternalHyperlink({
-      link: url,
-      children: nodes,
-    }),
-    footnotes,
-  ];
+): DocxContent => {
+  const nodes = convertNodes(children, ctx);
+  return new ExternalHyperlink({
+    link: url,
+    children: nodes,
+  });
 };
 
 const buildImage = (
@@ -604,14 +596,14 @@ const buildImage = (
   });
 };
 
-const buildFootnoteDefinition = (
-  { children }: mdast.FootnoteDefinition,
+const registerFootnoteDefinition = (
+  { children, identifier }: mdast.FootnoteDefinition,
   ctx: Context,
-): FootnoteData => {
-  return {
+): void => {
+  const definition: FootnoteDefinition = {
     children: children.map((node) => {
       // Convert each node and extract the first result as a paragraph
-      const [nodes] = convertNodes([node], ctx);
+      const nodes = convertNodes([node], ctx);
       if (nodes[0] instanceof Paragraph) {
         return nodes[0] as Paragraph;
       }
@@ -619,11 +611,12 @@ const buildFootnoteDefinition = (
       return new Paragraph({ children: nodes });
     }),
   };
+  ctx.footnote.def(identifier, definition);
 };
 
 const buildFootnoteReference = (
   { identifier }: mdast.FootnoteReference,
   ctx: Context,
 ): DocxContent => {
-  return new FootnoteReferenceRun(ctx.footnoteId(identifier));
+  return new FootnoteReferenceRun(ctx.footnote.ref(identifier));
 };
