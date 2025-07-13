@@ -1,18 +1,16 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { unified } from "unified";
 import markdown from "remark-parse";
 import gfm from "remark-gfm";
 import frontmatter from "remark-frontmatter";
 import math from "remark-math";
 import docx from "../src";
-import TextEditor from "./components/text-editor";
 // @ts-expect-error no type definition
 import text from "../fixtures/article.md?raw";
 import { saveAs } from "file-saver";
-import { renderAsync } from "docx-preview";
 
 const fetchImage = async (
-  url: string
+  url: string,
 ): Promise<{ image: ArrayBuffer; width: number; height: number }> => {
   const image = new Image();
   const res = await fetch(url);
@@ -49,40 +47,20 @@ export default {
   title: "Playground",
 };
 
-const Wrapper = ({ children }: { children: React.ReactNode }) => (
-  <div
-    style={useMemo(
-      () => ({
-        width: "100vw",
-        height: "100vh",
+export const MarkdownToDocx = () => {
+  const ref = useRef<HTMLTextAreaElement>(null);
+
+  return (
+    <div
+      style={{
+        height: "calc(100vh - 16px)",
         display: "flex",
         flexDirection: "column",
         fontSize: "10.5pt",
-      }),
-      []
-    )}
-  >
-    {children}
-  </div>
-);
-
-const previewStyle = { flex: 1, overflow: "auto" };
-
-export const MarkdownToDocx = () => {
-  const ref = useRef<HTMLTextAreaElement>(null);
-  const onChange = async (v: string) => {
-    const blob = await toDocx(v);
-    renderAsync(blob, document.getElementById("preview")!, undefined, {
-      useMathMLPolyfill: true,
-    });
-  };
-
-  useEffect(() => {
-    onChange(text);
-  }, []);
-
-  return (
-    <>
+        padding: 8,
+        gap: 4,
+      }}
+    >
       <div>
         <button
           onClick={async () => {
@@ -92,15 +70,9 @@ export const MarkdownToDocx = () => {
           }}
         >
           {"download docx"}
-        </button>{" "}
-        <span>Live preview may be different from actual docx</span>
+        </button>
       </div>
-      <Wrapper>
-        <TextEditor ref={ref} initialValue={text} onChange={onChange} />
-        <div style={previewStyle}>
-          <div id="preview" />
-        </div>
-      </Wrapper>
-    </>
+      <textarea ref={ref} style={{ flex: 1 }} defaultValue={text} />
+    </div>
   );
 };
