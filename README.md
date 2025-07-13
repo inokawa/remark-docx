@@ -33,8 +33,8 @@ If you have some feature requests or improvements, please create a [issue](https
 - [x] break
 - [x] link
 - [x] image
-- [ ] linkReference
-- [ ] imageReference
+- [x] linkReference
+- [x] imageReference
 - [x] footnote
 - [x] footnoteReference
 - [x] LaTeX support with math and inlineMath ([remark-math](https://github.com/remarkjs/remark-math) is required)

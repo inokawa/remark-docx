@@ -24,6 +24,7 @@ import type { IPropertiesOptions } from "docx/build/file/core-properties";
 import type * as mdast from "./models/mdast";
 import { parseLatex } from "./latex";
 import { invariant, unreachable } from "./utils";
+import { visit } from "unist-util-visit";
 
 const ORDERED_LIST_REF = "ordered";
 const INDENT = 0.5;
@@ -111,6 +112,7 @@ type ListInfo = Readonly<{
   checked?: boolean;
 }>;
 
+type Definition = Record<string, string>;
 type FootnoteDefinition = Readonly<{ children: Paragraph[] }>;
 
 type FootnoteRegistry = {
@@ -157,9 +159,10 @@ const createFootnoteRegistry = (): FootnoteRegistry => {
 
 type Context = Readonly<{
   deco: Decoration;
-  images: ImageDataMap;
+  images: Readonly<ImageDataMap>;
   indent: number;
   list?: ListInfo;
+  def: Readonly<Definition>;
   footnote: FootnoteRegistry;
 }>;
 
@@ -205,11 +208,17 @@ export const mdastToDocx = async (
   }: DocxOptions,
   images: ImageDataMap,
 ): Promise<any> => {
+  const definition: Definition = {};
+  visit(node, "definition", (node) => {
+    definition[node.identifier] = node.url;
+  });
+
   const footnote = createFootnoteRegistry();
   const nodes = convertNodes(node.children, {
     deco: {},
     images,
     indent: 0,
+    def: definition,
     footnote,
   });
   const doc = new Document({
@@ -291,7 +300,7 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
         // FIXME: unimplemented
         break;
       case "definition":
-        // FIXME: unimplemented
+        // noop
         break;
       case "footnoteDefinition": {
         registerFootnoteDefinition(node, ctx);
@@ -326,11 +335,15 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
         results.push(buildImage(node, ctx.images));
         break;
       case "linkReference":
-        // FIXME: unimplemented
+        results.push(...buildLinkReference(node, ctx));
         break;
-      case "imageReference":
-        // FIXME: unimplemented
+      case "imageReference": {
+        const image = buildImageReference(node, ctx);
+        if (image) {
+          results.push(image);
+        }
         break;
+      }
       case "footnote": {
         // inline footnote was removed in mdast v5
         break;
@@ -569,7 +582,7 @@ const buildBreak = (_: mdast.Break): DocxContent => {
 };
 
 const buildLink = (
-  { children, url, title: _title }: mdast.Link,
+  { children, url }: Pick<mdast.Link, "children" | "url">,
   ctx: Context,
 ): DocxContent => {
   const nodes = convertNodes(children, ctx);
@@ -580,7 +593,7 @@ const buildLink = (
 };
 
 const buildImage = (
-  { url, title: _title, alt: _alt }: mdast.Image,
+  { url }: Pick<mdast.Image, "url">,
   images: ImageDataMap,
 ): DocxContent => {
   const img = images[url];
@@ -594,6 +607,28 @@ const buildImage = (
       height,
     },
   });
+};
+
+const buildLinkReference = (
+  { children, identifier }: mdast.LinkReference,
+  ctx: Context,
+): DocxContent[] => {
+  const def = ctx.def[identifier];
+  if (def == null) {
+    return convertNodes(children, ctx);
+  }
+  return [buildLink({ children, url: def }, ctx)];
+};
+
+const buildImageReference = (
+  { identifier }: mdast.ImageReference,
+  ctx: Context,
+): DocxContent | undefined => {
+  const def = ctx.def[identifier];
+  if (def == null) {
+    return;
+  }
+  return buildImage({ url: def }, ctx.images);
 };
 
 const registerFootnoteDefinition = (
