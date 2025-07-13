@@ -23,7 +23,7 @@ If you have some feature requests or improvements, please create a [issue](https
 - [ ] code
 - [ ] yaml
 - [ ] toml
-- [ ] definition
+- [x] definition
 - [x] footnoteDefinition
 - [x] text
 - [x] emphasis
