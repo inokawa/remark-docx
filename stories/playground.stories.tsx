@@ -8,10 +8,9 @@ import docx from "../src";
 // @ts-expect-error no type definition
 import text from "../fixtures/article.md?raw";
 import { saveAs } from "file-saver";
+import { ImageResolver } from "../src/mdast-to-docx";
 
-const fetchImage = async (
-  url: string,
-): Promise<{ image: ArrayBuffer; width: number; height: number }> => {
+const fetchImage: ImageResolver = async (url) => {
   const image = new Image();
   const res = await fetch(url);
   const buf = await res.arrayBuffer();
@@ -21,6 +20,7 @@ const fetchImage = async (
         image: buf,
         width: image.naturalWidth,
         height: image.naturalHeight,
+        type: "png",
       });
     };
     image.onerror = reject;

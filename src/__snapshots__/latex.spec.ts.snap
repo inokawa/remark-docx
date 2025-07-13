@@ -49,19 +49,19 @@ exports[`parse > \\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\p
     },
     MathSuperScript {
       "root": [
-        MathSuperScriptProperties {
+        BuilderElement {
           "root": [],
           "rootKey": "m:sSupPr",
         },
-        MathBase {
+        BuilderElement {
           "root": [
             MathSubScript {
               "root": [
-                MathSubScriptProperties {
+                BuilderElement {
                   "root": [],
                   "rootKey": "m:sSubPr",
                 },
-                MathBase {
+                BuilderElement {
                   "root": [
                     MathRun {
                       "root": [
@@ -77,7 +77,7 @@ exports[`parse > \\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\p
                   ],
                   "rootKey": "m:e",
                 },
-                MathSubScriptElement {
+                BuilderElement {
                   "root": [
                     MathRun {
                       "root": [
@@ -110,7 +110,7 @@ exports[`parse > \\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\p
           ],
           "rootKey": "m:e",
         },
-        MathSuperScriptElement {
+        BuilderElement {
           "root": [
             MathRun {
               "root": [
@@ -175,11 +175,11 @@ exports[`parse > \\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\p
     },
     MathSuperScript {
       "root": [
-        MathSuperScriptProperties {
+        BuilderElement {
           "root": [],
           "rootKey": "m:sSupPr",
         },
-        MathBase {
+        BuilderElement {
           "root": [
             MathRun {
               "root": [
@@ -195,7 +195,7 @@ exports[`parse > \\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\p
           ],
           "rootKey": "m:e",
         },
-        MathSuperScriptElement {
+        BuilderElement {
           "root": [
             MathRun {
               "root": [
@@ -419,7 +419,7 @@ exports[`parse > \\sqrt[30]{a+\\sqrt{b+c}} 1`] = `
           ],
           "rootKey": "m:deg",
         },
-        MathBase {
+        BuilderElement {
           "root": [
             MathRun {
               "root": [
@@ -469,76 +469,76 @@ exports[`parse > \\sum_{k=1}^{n} k=rac{n(n+1)}{2} 1`] = `
   [
     MathSuperScript {
       "root": [
-        MathSuperScriptProperties {
+        BuilderElement {
           "root": [],
           "rootKey": "m:sSupPr",
         },
-        MathBase {
+        BuilderElement {
           "root": [
             MathSubScript {
               "root": [
-                MathSubScriptProperties {
+                BuilderElement {
                   "root": [],
                   "rootKey": "m:sSubPr",
                 },
-                MathBase {
+                BuilderElement {
                   "root": [
                     MathSum {
                       "root": [
-                        MathNAryProperties {
+                        BuilderElement {
                           "root": [
-                            MathAccentCharacter {
+                            BuilderElement {
                               "root": [
-                                MathAccentCharacterAttributes {
+                                NextAttributeComponent {
                                   "root": {
-                                    "accent": "∑",
+                                    "accent": {
+                                      "key": "m:val",
+                                      "value": "∑",
+                                    },
                                   },
                                   "rootKey": "_attr",
-                                  "xmlKeys": {
-                                    "accent": "m:val",
-                                  },
                                 },
                               ],
                               "rootKey": "m:chr",
                             },
-                            MathLimitLocation {
+                            BuilderElement {
                               "root": [
-                                MathLimitLocationAttributes {
+                                NextAttributeComponent {
                                   "root": {
-                                    "value": "undOvr",
+                                    "value": {
+                                      "key": "m:val",
+                                      "value": "undOvr",
+                                    },
                                   },
                                   "rootKey": "_attr",
-                                  "xmlKeys": {
-                                    "value": "m:val",
-                                  },
                                 },
                               ],
                               "rootKey": "m:limLoc",
                             },
-                            MathSuperScriptHide {
+                            BuilderElement {
                               "root": [
-                                MathSuperScriptHideAttributes {
+                                NextAttributeComponent {
                                   "root": {
-                                    "hide": 1,
+                                    "hide": {
+                                      "key": "m:val",
+                                      "value": 1,
+                                    },
                                   },
                                   "rootKey": "_attr",
-                                  "xmlKeys": {
-                                    "hide": "m:val",
-                                  },
                                 },
                               ],
                               "rootKey": "m:supHide",
                             },
-                            MathSubScriptHide {
+                            BuilderElement {
                               "root": [
-                                MathSubScriptHideAttributes {
+                                NextAttributeComponent {
                                   "root": {
-                                    "hide": 1,
+                                    "hide": {
+                                      "key": "m:val",
+                                      "value": 1,
+                                    },
                                   },
                                   "rootKey": "_attr",
-                                  "xmlKeys": {
-                                    "hide": "m:val",
-                                  },
                                 },
                               ],
                               "rootKey": "m:subHide",
@@ -546,7 +546,7 @@ exports[`parse > \\sum_{k=1}^{n} k=rac{n(n+1)}{2} 1`] = `
                           ],
                           "rootKey": "m:naryPr",
                         },
-                        MathBase {
+                        BuilderElement {
                           "root": [],
                           "rootKey": "m:e",
                         },
@@ -556,7 +556,7 @@ exports[`parse > \\sum_{k=1}^{n} k=rac{n(n+1)}{2} 1`] = `
                   ],
                   "rootKey": "m:e",
                 },
-                MathSubScriptElement {
+                BuilderElement {
                   "root": [
                     MathRun {
                       "root": [
@@ -600,7 +600,7 @@ exports[`parse > \\sum_{k=1}^{n} k=rac{n(n+1)}{2} 1`] = `
           ],
           "rootKey": "m:e",
         },
-        MathSuperScriptElement {
+        BuilderElement {
           "root": [
             MathRun {
               "root": [
@@ -841,11 +841,11 @@ exports[`parse > L = \\frac{1}{2} \\rho v^2 S C_L 1`] = `
     },
     MathSuperScript {
       "root": [
-        MathSuperScriptProperties {
+        BuilderElement {
           "root": [],
           "rootKey": "m:sSupPr",
         },
-        MathBase {
+        BuilderElement {
           "root": [
             MathRun {
               "root": [
@@ -861,7 +861,7 @@ exports[`parse > L = \\frac{1}{2} \\rho v^2 S C_L 1`] = `
           ],
           "rootKey": "m:e",
         },
-        MathSuperScriptElement {
+        BuilderElement {
           "root": [
             MathRun {
               "root": [
@@ -893,11 +893,11 @@ exports[`parse > L = \\frac{1}{2} \\rho v^2 S C_L 1`] = `
     },
     MathSubScript {
       "root": [
-        MathSubScriptProperties {
+        BuilderElement {
           "root": [],
           "rootKey": "m:sSubPr",
         },
-        MathBase {
+        BuilderElement {
           "root": [
             MathRun {
               "root": [
@@ -913,7 +913,7 @@ exports[`parse > L = \\frac{1}{2} \\rho v^2 S C_L 1`] = `
           ],
           "rootKey": "m:e",
         },
-        MathSubScriptElement {
+        BuilderElement {
           "root": [
             MathRun {
               "root": [

@@ -34,6 +34,7 @@ describe("e2e", () => {
         image: new Uint8Array(),
         width: 600,
         height: 400,
+        type: "png",
       }),
     });
 
