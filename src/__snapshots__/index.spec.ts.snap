@@ -1583,17 +1583,8 @@ exports[`e2e > node-footnotes.md 1`] = `
 ><w:body><w:p><w:r><w:t xml:space="preserve">This is footnote</w:t></w:r><w:r
       ><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
           w:id="1"
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >. And this is also </w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="2" /></w:r><w:r><w:t
-          xml:space="preserve"
-        >.</w:t></w:r></w:p><w:sectPr><w:pgSz
-        w:w="11906"
-        w:h="16838"
-        w:orient="portrait"
-      /><w:pgMar
+        /></w:r><w:r><w:t xml:space="preserve">.</w:t></w:r></w:p><w:sectPr
+    ><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
         w:top="1in"
         w:right="1in"
         w:bottom="1in"
@@ -1866,12 +1857,7 @@ exports[`e2e > node-footnotes.md 4`] = `
         ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
         /></w:r><w:r><w:t
           xml:space="preserve"
-        >Here is the footnote.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="2"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >inline footnote</w:t></w:r></w:p></w:footnote></w:footnotes>
+        >Here is the footnote.</w:t></w:r></w:p></w:footnote></w:footnotes>
 "
 `;
 
@@ -2007,34 +1993,6 @@ exports[`e2e > node-footnotes2.md 1`] = `
           /></w:rPr><w:footnoteReference w:id="3" /></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
           xml:space="preserve"
-        >Inline Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >Here is an inline footnote</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="4" /></w:r><w:r><w:t
-          xml:space="preserve"
-        >. And another</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="5" /></w:r><w:r><w:t
-          xml:space="preserve"
-        >.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading1"
-        /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Mixed Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >This paragraph has both reference</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="6" /></w:r><w:r><w:t
-          xml:space="preserve"
-        > and inline</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="7" /></w:r><w:r><w:t
-          xml:space="preserve"
-        > footnotes.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading1"
-        /></w:pPr><w:r><w:t
-          xml:space="preserve"
         >Footnotes in Lists</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
@@ -2043,42 +2001,21 @@ exports[`e2e > node-footnotes2.md 1`] = `
           xml:space="preserve"
         >List item with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="8" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Another item</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="9" /></w:r></w:p><w:p><w:pPr
+          /></w:rPr><w:footnoteReference w:id="4" /></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="1"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Nested item with reference</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="10" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="1"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Nested with inline</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="11" /></w:r></w:p><w:p><w:pPr
+          /></w:rPr><w:footnoteReference w:id="5" /></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Ordered list with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="12" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Another ordered item</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="13" /></w:r></w:p><w:p><w:pPr
+          /></w:rPr><w:footnoteReference w:id="6" /></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Footnotes in Blockquotes</w:t></w:r></w:p><w:p><w:pPr><w:ind
@@ -2087,13 +2024,7 @@ exports[`e2e > node-footnotes2.md 1`] = `
           xml:space="preserve"
         >This blockquote has a footnote</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="14" /></w:r><w:r><w:t
-          xml:space="preserve"
-        >.</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >And another paragraph</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="15" /></w:r><w:r><w:t
+          /></w:rPr><w:footnoteReference w:id="7" /></w:r><w:r><w:t
           xml:space="preserve"
         >.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
@@ -2106,7 +2037,7 @@ exports[`e2e > node-footnotes2.md 1`] = `
         r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
       ><w:r><w:t xml:space="preserve">link with footnote</w:t></w:r><w:r><w:rPr
           ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
-            w:id="16"
+            w:id="8"
           /></w:r></w:hyperlink><w:r><w:t
           xml:space="preserve"
         > in the text.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
@@ -2119,13 +2050,13 @@ exports[`e2e > node-footnotes2.md 1`] = `
           xml:space="preserve"
         >bold text with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="17" /></w:r><w:r><w:t
+          /></w:rPr><w:footnoteReference w:id="9" /></w:r><w:r><w:t
           xml:space="preserve"
         > and </w:t></w:r><w:r><w:rPr><w:i /><w:iCs /></w:rPr><w:t
           xml:space="preserve"
         >italic with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="18" /></w:r><w:r><w:t
+          /></w:rPr><w:footnoteReference w:id="10" /></w:r><w:r><w:t
           xml:space="preserve"
         >.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
@@ -2135,13 +2066,13 @@ exports[`e2e > node-footnotes2.md 1`] = `
           xml:space="preserve"
         >Testing various string identifier patterns</w:t></w:r><w:r><w:rPr
         ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
-          w:id="19"
+          w:id="11"
         /></w:r><w:r><w:t xml:space="preserve"> and </w:t></w:r><w:r><w:rPr
         ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
-          w:id="20"
+          w:id="12"
         /></w:r><w:r><w:t xml:space="preserve"> and </w:t></w:r><w:r><w:rPr
         ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
-          w:id="21"
+          w:id="13"
         /></w:r><w:r><w:t xml:space="preserve">.</w:t></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -2439,83 +2370,48 @@ exports[`e2e > node-footnotes2.md 4`] = `
   ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
         /></w:r><w:r><w:t
           xml:space="preserve"
-        >This is an inline footnote with some content</w:t></w:r></w:p></w:footnote><w:footnote
+        >Footnote from unordered list.</w:t></w:r></w:p></w:footnote><w:footnote
     w:id="5"
   ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
         /></w:r><w:r><w:t
           xml:space="preserve"
-        >Short inline</w:t></w:r></w:p></w:footnote><w:footnote w:id="6"><w:p
-    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        >Footnote from nested list item.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="6"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
         /></w:r><w:r><w:t
           xml:space="preserve"
-        >Reference footnote in mixed scenario.</w:t></w:r></w:p></w:footnote><w:footnote
+        >Footnote from ordered list.</w:t></w:r></w:p></w:footnote><w:footnote
     w:id="7"
   ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
         /></w:r><w:r><w:t
           xml:space="preserve"
-        >Mixed example</w:t></w:r></w:p></w:footnote><w:footnote w:id="8"><w:p
-    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Footnote from unordered list.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="9"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Inline in list</w:t></w:r></w:p></w:footnote><w:footnote w:id="10"><w:p
-    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Footnote from nested list item.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="11"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Nested inline</w:t></w:r></w:p></w:footnote><w:footnote w:id="12"><w:p
-    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Footnote from ordered list.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="13"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Ordered inline</w:t></w:r></w:p></w:footnote><w:footnote w:id="14"><w:p
-    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
         >Footnote from blockquote.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="15"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Blockquote inline</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="16"
+    w:id="8"
   ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
         /></w:r><w:r><w:t
           xml:space="preserve"
         >Footnote from within a link.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="17"
+    w:id="9"
   ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
         /></w:r><w:r><w:t
           xml:space="preserve"
         >Footnote from bold text.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="18"
+    w:id="10"
   ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
         /></w:r><w:r><w:t
           xml:space="preserve"
         >Footnote from italic text.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="19"
+    w:id="11"
   ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
         /></w:r><w:r><w:t
           xml:space="preserve"
         >String identifier with letters only.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="20"
+    w:id="12"
   ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
         /></w:r><w:r><w:t
           xml:space="preserve"
         >String identifier with kebab-case format.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="21"
+    w:id="13"
   ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
         /></w:r><w:r><w:t
           xml:space="preserve"
