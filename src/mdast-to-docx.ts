@@ -19,10 +19,10 @@ import {
   ILevelsOptions,
   FootnoteReferenceRun,
   CheckBox,
+  MathRun,
 } from "docx";
 import type { IPropertiesOptions } from "docx/build/file/core-properties";
 import type * as mdast from "./models/mdast";
-import { parseLatex } from "./latex";
 import { invariant, unreachable } from "./utils";
 import { visit } from "unist-util-visit";
 
@@ -112,6 +112,11 @@ type ListInfo = Readonly<{
   checked?: boolean;
 }>;
 
+/**
+ * @internal
+ */
+export type LatexParser = (value: string) => MathRun[][];
+
 type Definition = Record<string, string>;
 type FootnoteDefinition = Readonly<{ children: Paragraph[] }>;
 
@@ -164,6 +169,7 @@ type Context = Readonly<{
   list?: ListInfo;
   def: Readonly<Definition>;
   footnote: FootnoteRegistry;
+  latex: LatexParser;
 }>;
 
 export interface DocxOptions
@@ -207,6 +213,7 @@ export const mdastToDocx = async (
     background,
   }: DocxOptions,
   images: ImageDataMap,
+  latex: LatexParser,
 ): Promise<any> => {
   const definition: Definition = {};
   visit(node, "definition", (node) => {
@@ -220,6 +227,7 @@ export const mdastToDocx = async (
     indent: 0,
     def: definition,
     footnote,
+    latex,
   });
   const doc = new Document({
     title,
@@ -352,10 +360,10 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
         results.push(buildFootnoteReference(node, ctx));
         break;
       case "math":
-        results.push(...buildMath(node));
+        results.push(...buildMath(node, ctx));
         break;
       case "inlineMath":
-        results.push(buildInlineMath(node));
+        results.push(buildInlineMath(node, ctx));
         break;
       default:
         unreachable(node);
@@ -549,8 +557,8 @@ const buildCode = ({
   });
 };
 
-const buildMath = ({ value }: mdast.Math): DocxContent[] => {
-  return parseLatex(value).map(
+const buildMath = ({ value }: mdast.Math, ctx: Context): DocxContent[] => {
+  return ctx.latex(value).map(
     (runs) =>
       new Paragraph({
         children: [
@@ -562,9 +570,12 @@ const buildMath = ({ value }: mdast.Math): DocxContent[] => {
   );
 };
 
-const buildInlineMath = ({ value }: mdast.InlineMath): DocxContent => {
+const buildInlineMath = (
+  { value }: mdast.InlineMath,
+  ctx: Context,
+): DocxContent => {
   return new Math({
-    children: parseLatex(value).flatMap((runs) => runs),
+    children: ctx.latex(value).flatMap((runs) => runs),
   });
 };
 

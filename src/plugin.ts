@@ -8,6 +8,7 @@ import {
   ImageData,
 } from "./mdast-to-docx";
 import { invariant } from "./utils";
+import { parseLatex } from "./latex";
 
 export type { DocxOptions };
 
@@ -15,7 +16,7 @@ const plugin: Plugin<[DocxOptions?]> = function (opts = {}) {
   let images: ImageDataMap = {};
 
   this.Compiler = (node) => {
-    return mdastToDocx(node as any, opts, images);
+    return mdastToDocx(node as any, opts, images, parseLatex);
   };
 
   return async (node) => {
