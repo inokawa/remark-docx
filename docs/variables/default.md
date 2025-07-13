@@ -6,4 +6,4 @@
 
 > `const` **default**: `Plugin`\<\[[`DocxOptions`](../interfaces/DocxOptions.md)?\]\>
 
-Defined in: [src/plugin.ts:9](https://github.com/inokawa/remark-docx/blob/020caed5daac73edb3764fa82eba18e03f68d466/src/plugin.ts#L9)
+Defined in: [src/plugin.ts:14](https://github.com/inokawa/remark-docx/blob/c5254cb8a86c89703abbdc07740610a93e99b5a5/src/plugin.ts#L14)
