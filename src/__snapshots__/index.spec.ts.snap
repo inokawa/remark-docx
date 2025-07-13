@@ -722,654 +722,6 @@ exports[`e2e > article.md 6`] = `
 "
 `;
 
-exports[`e2e > comprehensive-footnotes.md 1`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<w:document
-  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
-  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
-  xmlns:w10="urn:schemas-microsoft-com:office:word"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
-  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
-  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
-  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
-  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
-  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
-  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
-  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
-  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
-  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
-  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
-  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
-  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
-  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
-  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
-  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
-  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
-  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
-  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
-><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Comprehensive Footnote Test</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >This document tests various footnote scenarios to ensure proper rendering in DOCX format.</w:t></w:r></w:p><w:p
-    ><w:pPr><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Reference Style Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >Here is a reference footnote</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="1" /></w:r><w:r><w:t
-          xml:space="preserve"
-        > in a paragraph. Another reference footnote</w:t></w:r><w:r><w:rPr
-        ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
-          w:id="2"
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        > with a string identifier.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading2"
-        /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Footnotes in Headings</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >This heading has a footnote</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="3" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Inline Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >Here is an inline footnote</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="4" /></w:r><w:r><w:t
-          xml:space="preserve"
-        >. And another</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="5" /></w:r><w:r><w:t
-          xml:space="preserve"
-        >.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading1"
-        /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Mixed Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >This paragraph has both reference</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="6" /></w:r><w:r><w:t
-          xml:space="preserve"
-        > and inline</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="7" /></w:r><w:r><w:t
-          xml:space="preserve"
-        > footnotes.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading1"
-        /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Footnotes in Lists</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >List item with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="8" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Another item</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="9" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="1"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Nested item with reference</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="10" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="1"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Nested with inline</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="11" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Ordered list with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="12" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Another ordered item</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="13" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Footnotes in Blockquotes</w:t></w:r></w:p><w:p><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >This blockquote has a footnote</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="14" /></w:r><w:r><w:t
-          xml:space="preserve"
-        >.</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >And another paragraph</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="15" /></w:r><w:r><w:t
-          xml:space="preserve"
-        >.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading1"
-        /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Footnotes in Links</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >Here is a </w:t></w:r><w:hyperlink
-        w:history="1"
-        r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
-      ><w:r><w:t xml:space="preserve">link with footnote</w:t></w:r><w:r><w:rPr
-          ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
-            w:id="16"
-          /></w:r></w:hyperlink><w:r><w:t
-          xml:space="preserve"
-        > in the text.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading1"
-        /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Complex Nested Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >This is a </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
-          xml:space="preserve"
-        >bold text with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="17" /></w:r><w:r><w:t
-          xml:space="preserve"
-        > and </w:t></w:r><w:r><w:rPr><w:i /><w:iCs /></w:rPr><w:t
-          xml:space="preserve"
-        >italic with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="18" /></w:r><w:r><w:t
-          xml:space="preserve"
-        >.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading1"
-        /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >String Identifiers</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >Testing various string identifier patterns</w:t></w:r><w:r><w:rPr
-        ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
-          w:id="19"
-        /></w:r><w:r><w:t xml:space="preserve"> and </w:t></w:r><w:r><w:rPr
-        ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
-          w:id="20"
-        /></w:r><w:r><w:t xml:space="preserve"> and </w:t></w:r><w:r><w:rPr
-        ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
-          w:id="21"
-        /></w:r><w:r><w:t xml:space="preserve">.</w:t></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Footnote Definitions</w:t></w:r></w:p><w:sectPr><w:pgSz
-        w:w="11906"
-        w:h="16838"
-        w:orient="portrait"
-      /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
-        w:header="708"
-        w:footer="708"
-        w:gutter="0"
-      /><w:pgNumType /><w:docGrid
-        w:linePitch="360"
-      /></w:sectPr></w:body></w:document>
-"
-`;
-
-exports[`e2e > comprehensive-footnotes.md 2`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<w:styles
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
-><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
-    w:type="paragraph"
-    w:styleId="Title"
-  ><w:name w:val="Title" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:sz w:val="56" /><w:szCs
-        w:val="56"
-      /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading1"
-  ><w:name w:val="Heading 1" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="32" /><w:szCs
-        w:val="32"
-      /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading2"
-  ><w:name w:val="Heading 2" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="26" /><w:szCs
-        w:val="26"
-      /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading3"
-  ><w:name w:val="Heading 3" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /><w:sz w:val="24" /><w:szCs
-        w:val="24"
-      /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading4"
-  ><w:name w:val="Heading 4" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:i /><w:iCs /><w:color
-        w:val="2E74B5"
-      /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading5"
-  ><w:name w:val="Heading 5" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading6"
-  ><w:name w:val="Heading 6" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Strong"
-  ><w:name w:val="Strong" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:b /><w:bCs /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="ListParagraph"
-  ><w:name w:val="List Paragraph" /><w:basedOn w:val="Normal" /><w:qFormat
-    /></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name
-      w:val="Hyperlink"
-    /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
-      w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="FootnoteReference"
-  ><w:name w:val="footnote reference" /><w:basedOn
-      w:val="DefaultParagraphFont"
-    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
-    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="FootnoteText"
-  ><w:name w:val="footnote text" /><w:basedOn w:val="Normal" /><w:link
-      w:val="FootnoteTextChar"
-    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
-    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
-    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="FootnoteTextChar"
-  ><w:name w:val="Footnote Text Char" /><w:basedOn
-      w:val="DefaultParagraphFont"
-    /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
-    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
-        w:val="20"
-      /></w:rPr></w:style></w:styles>
-"
-`;
-
-exports[`e2e > comprehensive-footnotes.md 3`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<w:numbering
-  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
-  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
-  xmlns:w10="urn:schemas-microsoft-com:office:word"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
-  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
-  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
-  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
-><w:abstractNum
-    w:abstractNumId="1"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="●"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="720"
-          w:hanging="360"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="○" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1440" w:hanging="360" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="2"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="■"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="2160"
-          w:hanging="360"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="2880" w:hanging="360" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="4"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="○"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="3600"
-          w:hanging="360"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="■" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="4320" w:hanging="360" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="6"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="●"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="5040"
-          w:hanging="360"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="7" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="5760" w:hanging="360" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="8"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="●"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="6480"
-          w:hanging="360"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="2"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
-      w:val="1"
-    /><w:lvlOverride w:ilvl="0"><w:startOverride
-        w:val="1"
-      /></w:lvlOverride></w:num><w:num w:numId="2"><w:abstractNumId
-      w:val="2"
-    /></w:num></w:numbering>
-"
-`;
-
-exports[`e2e > comprehensive-footnotes.md 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
-<w:footnotes
-  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
-  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
-  xmlns:w10="urn:schemas-microsoft-com:office:word"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
-  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
-  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
-  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
-><w:footnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
-          w:after="0"
-          w:line="240"
-          w:lineRule="auto"
-        /></w:pPr><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteRef /></w:r><w:r><w:separator
-        /></w:r></w:p></w:footnote><w:footnote
-    w:type="continuationSeparator"
-    w:id="0"
-  ><w:p><w:pPr><w:spacing
-          w:after="0"
-          w:line="240"
-          w:lineRule="auto"
-        /></w:pPr><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteRef /></w:r><w:r><w:continuationSeparator
-        /></w:r></w:p></w:footnote><w:footnote w:id="1"><w:p><w:r><w:rPr
-        ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >This is the first footnote definition.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="2"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >This footnote has a string identifier with dashes.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="3"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >This footnote was referenced in a heading.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="4"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >This is an inline footnote with some content</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="5"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Short inline</w:t></w:r></w:p></w:footnote><w:footnote w:id="6"><w:p
-    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Reference footnote in mixed scenario.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="7"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Mixed example</w:t></w:r></w:p></w:footnote><w:footnote w:id="8"><w:p
-    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Footnote from unordered list.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="9"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Inline in list</w:t></w:r></w:p></w:footnote><w:footnote w:id="10"><w:p
-    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Footnote from nested list item.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="11"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Nested inline</w:t></w:r></w:p></w:footnote><w:footnote w:id="12"><w:p
-    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Footnote from ordered list.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="13"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Ordered inline</w:t></w:r></w:p></w:footnote><w:footnote w:id="14"><w:p
-    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Footnote from blockquote.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="15"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Blockquote inline</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="16"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Footnote from within a link.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="17"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Footnote from bold text.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="18"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >Footnote from italic text.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="19"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >String identifier with letters only.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="20"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >String identifier with kebab-case format.</w:t></w:r></w:p></w:footnote><w:footnote
-    w:id="21"
-  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
-        /></w:r><w:r><w:t
-          xml:space="preserve"
-        >String identifier with snake_case format.</w:t></w:r></w:p></w:footnote></w:footnotes>
-"
-`;
-
-exports[`e2e > comprehensive-footnotes.md 5`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<w:settings
-  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
-  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
-  xmlns:w10="urn:schemas-microsoft-com:office:word"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
-  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
-  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
-  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
-><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
-  ><w:compatSetting
-      w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
-      w:name="compatibilityMode"
-    /></w:compat></w:settings>
-"
-`;
-
-exports[`e2e > comprehensive-footnotes.md 6`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<w:comments
-  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
-  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
-  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
-  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
-  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
-  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
-  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
-  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
-  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
-  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
-  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
-  xmlns:w10="urn:schemas-microsoft-com:office:word"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
-  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
-  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
-  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
-  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
-  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
-  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
-  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-/>
-"
-`;
-
 exports[`e2e > node-break.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
@@ -2553,6 +1905,654 @@ exports[`e2e > node-footnotes.md 5`] = `
 `;
 
 exports[`e2e > node-footnotes.md 6`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:comments
+  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+/>
+"
+`;
+
+exports[`e2e > node-footnotes2.md 1`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:document
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 wp14"
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Comprehensive Footnote Test</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >This document tests various footnote scenarios to ensure proper rendering in DOCX format.</w:t></w:r></w:p><w:p
+    ><w:pPr><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Reference Style Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Here is a reference footnote</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="1" /></w:r><w:r><w:t
+          xml:space="preserve"
+        > in a paragraph. Another reference footnote</w:t></w:r><w:r><w:rPr
+        ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
+          w:id="2"
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        > with a string identifier.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading2"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Footnotes in Headings</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >This heading has a footnote</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="3" /></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Inline Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Here is an inline footnote</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="4" /></w:r><w:r><w:t
+          xml:space="preserve"
+        >. And another</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="5" /></w:r><w:r><w:t
+          xml:space="preserve"
+        >.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Mixed Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >This paragraph has both reference</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="6" /></w:r><w:r><w:t
+          xml:space="preserve"
+        > and inline</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="7" /></w:r><w:r><w:t
+          xml:space="preserve"
+        > footnotes.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Footnotes in Lists</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >List item with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="8" /></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Another item</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="9" /></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Nested item with reference</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="10" /></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Nested with inline</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="11" /></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Ordered list with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="12" /></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Another ordered item</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="13" /></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Footnotes in Blockquotes</w:t></w:r></w:p><w:p><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >This blockquote has a footnote</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="14" /></w:r><w:r><w:t
+          xml:space="preserve"
+        >.</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >And another paragraph</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="15" /></w:r><w:r><w:t
+          xml:space="preserve"
+        >.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Footnotes in Links</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Here is a </w:t></w:r><w:hyperlink
+        w:history="1"
+        r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
+      ><w:r><w:t xml:space="preserve">link with footnote</w:t></w:r><w:r><w:rPr
+          ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
+            w:id="16"
+          /></w:r></w:hyperlink><w:r><w:t
+          xml:space="preserve"
+        > in the text.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Complex Nested Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >This is a </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >bold text with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="17" /></w:r><w:r><w:t
+          xml:space="preserve"
+        > and </w:t></w:r><w:r><w:rPr><w:i /><w:iCs /></w:rPr><w:t
+          xml:space="preserve"
+        >italic with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteReference w:id="18" /></w:r><w:r><w:t
+          xml:space="preserve"
+        >.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >String Identifiers</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Testing various string identifier patterns</w:t></w:r><w:r><w:rPr
+        ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
+          w:id="19"
+        /></w:r><w:r><w:t xml:space="preserve"> and </w:t></w:r><w:r><w:rPr
+        ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
+          w:id="20"
+        /></w:r><w:r><w:t xml:space="preserve"> and </w:t></w:r><w:r><w:rPr
+        ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
+          w:id="21"
+        /></w:r><w:r><w:t xml:space="preserve">.</w:t></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Footnote Definitions</w:t></w:r></w:p><w:sectPr><w:pgSz
+        w:w="11906"
+        w:h="16838"
+        w:orient="portrait"
+      /><w:pgMar
+        w:top="1in"
+        w:right="1in"
+        w:bottom="1in"
+        w:left="1in"
+        w:header="708"
+        w:footer="708"
+        w:gutter="0"
+      /><w:pgNumType /><w:docGrid
+        w:linePitch="360"
+      /></w:sectPr></w:body></w:document>
+"
+`;
+
+exports[`e2e > node-footnotes2.md 2`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:styles
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  mc:Ignorable="w14 w15"
+><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
+    w:type="paragraph"
+    w:styleId="Title"
+  ><w:name w:val="Title" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:sz w:val="56" /><w:szCs
+        w:val="56"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading1"
+  ><w:name w:val="Heading 1" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="32" /><w:szCs
+        w:val="32"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading2"
+  ><w:name w:val="Heading 2" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="26" /><w:szCs
+        w:val="26"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading3"
+  ><w:name w:val="Heading 3" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /><w:sz w:val="24" /><w:szCs
+        w:val="24"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading4"
+  ><w:name w:val="Heading 4" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:i /><w:iCs /><w:color
+        w:val="2E74B5"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading5"
+  ><w:name w:val="Heading 5" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading6"
+  ><w:name w:val="Heading 6" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Strong"
+  ><w:name w:val="Strong" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:b /><w:bCs /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="ListParagraph"
+  ><w:name w:val="List Paragraph" /><w:basedOn w:val="Normal" /><w:qFormat
+    /></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name
+      w:val="Hyperlink"
+    /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
+      w:val="99"
+    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
+        w:val="0563C1"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteReference"
+  ><w:name w:val="footnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="FootnoteText"
+  ><w:name w:val="footnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="FootnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteTextChar"
+  ><w:name w:val="Footnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
+      /></w:rPr></w:style></w:styles>
+"
+`;
+
+exports[`e2e > node-footnotes2.md 3`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:numbering
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:abstractNum
+    w:abstractNumId="1"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="720"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="○" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1440" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="■"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2160"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="2880" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="○"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="3600"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="■" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="4320" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="6"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="5040"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="7" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="5760" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="8"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="6480"
+          w:hanging="360"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="2"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%1."
+      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
+      w:ilvl="1"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%2."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
+        w:val="start"
+      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="3"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%4."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
+        w:val="start"
+      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="5"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%6."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
+      w:val="1"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num><w:num w:numId="2"><w:abstractNumId
+      w:val="2"
+    /></w:num></w:numbering>
+"
+`;
+
+exports[`e2e > node-footnotes2.md 4`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:footnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:footnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:footnote><w:footnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:footnote><w:footnote w:id="1"><w:p><w:r><w:rPr
+        ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >This is the first footnote definition.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="2"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >This footnote has a string identifier with dashes.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="3"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >This footnote was referenced in a heading.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="4"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >This is an inline footnote with some content</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="5"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Short inline</w:t></w:r></w:p></w:footnote><w:footnote w:id="6"><w:p
+    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Reference footnote in mixed scenario.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="7"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Mixed example</w:t></w:r></w:p></w:footnote><w:footnote w:id="8"><w:p
+    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Footnote from unordered list.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="9"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Inline in list</w:t></w:r></w:p></w:footnote><w:footnote w:id="10"><w:p
+    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Footnote from nested list item.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="11"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Nested inline</w:t></w:r></w:p></w:footnote><w:footnote w:id="12"><w:p
+    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Footnote from ordered list.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="13"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Ordered inline</w:t></w:r></w:p></w:footnote><w:footnote w:id="14"><w:p
+    ><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Footnote from blockquote.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="15"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Blockquote inline</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="16"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Footnote from within a link.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="17"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Footnote from bold text.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="18"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >Footnote from italic text.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="19"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >String identifier with letters only.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="20"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >String identifier with kebab-case format.</w:t></w:r></w:p></w:footnote><w:footnote
+    w:id="21"
+  ><w:p><w:r><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteRef
+        /></w:r><w:r><w:t
+          xml:space="preserve"
+        >String identifier with snake_case format.</w:t></w:r></w:p></w:footnote></w:footnotes>
+"
+`;
+
+exports[`e2e > node-footnotes2.md 5`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:settings
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
+  ><w:compatSetting
+      w:val="15"
+      w:uri="http://schemas.microsoft.com/office/word"
+      w:name="compatibilityMode"
+    /></w:compat></w:settings>
+"
+`;
+
+exports[`e2e > node-footnotes2.md 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"

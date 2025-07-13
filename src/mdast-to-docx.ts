@@ -111,14 +111,26 @@ type ListInfo = Readonly<{
   checked?: boolean;
 }>;
 
-type FootnoteRegistry = { [identifier: string]: number };
+type FootnoteRegistry = (id?: string) => number;
+
+const createFootnoteRegistry = (): FootnoteRegistry => {
+  const idToInternalId = new Map<string, number>();
+
+  return (identifier: string = `inline-${idToInternalId.size + 1}`): number => {
+    let internalId = idToInternalId.get(identifier);
+    if (internalId == null) {
+      idToInternalId.set(identifier, (internalId = idToInternalId.size + 1));
+    }
+    return internalId;
+  };
+};
 
 type Context = Readonly<{
   deco: Decoration;
   images: ImageDataMap;
   indent: number;
   list?: ListInfo;
-  footnoteRegistry: FootnoteRegistry;
+  footnoteId: FootnoteRegistry;
 }>;
 
 export interface DocxOptions
@@ -147,8 +159,10 @@ export interface DocxOptions
 type DocxChild = Paragraph | Table | TableOfContents;
 type DocxContent = DocxChild | ParagraphChild;
 
+type FootnoteData = Readonly<{ children: Paragraph[] }>;
+
 interface Footnotes {
-  [key: string]: { children: Paragraph[] };
+  [key: string]: FootnoteData;
 }
 
 export const mdastToDocx = async (
@@ -171,7 +185,7 @@ export const mdastToDocx = async (
     deco: {},
     images,
     indent: 0,
-    footnoteRegistry: {},
+    footnoteId: createFootnoteRegistry(),
   });
   const doc = new Document({
     title,
@@ -205,16 +219,6 @@ export const mdastToDocx = async (
     case "blob":
       return Packer.toBlob(doc);
   }
-};
-
-const getOrCreateFootnoteId = (
-  identifier: string,
-  registry: FootnoteRegistry,
-): number => {
-  if (!(identifier in registry)) {
-    registry[identifier] = Object.keys(registry).length + 1;
-  }
-  return registry[identifier]!;
 };
 
 const convertNodes = (
@@ -277,11 +281,10 @@ const convertNodes = (
         // FIXME: unimplemented
         break;
       case "footnoteDefinition": {
-        const footnoteId = getOrCreateFootnoteId(
-          node.identifier,
-          ctx.footnoteRegistry,
+        footnotes[ctx.footnoteId(node.identifier)] = buildFootnoteDefinition(
+          node,
+          ctx,
         );
-        footnotes[footnoteId] = buildFootnoteDefinition(node, ctx);
         break;
       }
       case "text":
@@ -608,9 +611,7 @@ const buildFootnote = (
   ctx: Context,
 ): [DocxContent, Footnotes] => {
   // Generate auto ID based on current registry size to ensure uniqueness
-  const registry = ctx.footnoteRegistry;
-  const autoId = `inline-${Object.keys(registry).length + 1}`;
-  const footnoteId = getOrCreateFootnoteId(autoId, registry);
+  const footnoteId = ctx.footnoteId();
 
   const footnoteContent = children.map((node) => {
     // Convert each node and extract the first result as a paragraph
@@ -633,7 +634,7 @@ const buildFootnote = (
 const buildFootnoteDefinition = (
   { children }: mdast.FootnoteDefinition,
   ctx: Context,
-): Footnotes[string] => {
+): FootnoteData => {
   return {
     children: children.map((node) => {
       // Convert each node and extract the first result as a paragraph
@@ -651,6 +652,5 @@ const buildFootnoteReference = (
   { identifier }: mdast.FootnoteReference,
   ctx: Context,
 ): DocxContent => {
-  const footnoteId = getOrCreateFootnoteId(identifier, ctx.footnoteRegistry);
-  return new FootnoteReferenceRun(footnoteId);
+  return new FootnoteReferenceRun(ctx.footnoteId(identifier));
 };
