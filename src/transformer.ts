@@ -118,7 +118,7 @@ type Context = Readonly<{
   images: ImageDataMap;
   indent: number;
   list?: ListInfo;
-  footnoteRegistry?: FootnoteRegistry;
+  footnoteRegistry: FootnoteRegistry;
 }>;
 
 export interface DocxOptions
@@ -167,12 +167,11 @@ export const mdastToDocx = async (
   }: DocxOptions,
   images: ImageDataMap,
 ): Promise<any> => {
-  const footnoteRegistry: FootnoteRegistry = {};
   const [nodes, footnotes] = convertNodes(node.children, {
     deco: {},
     images,
     indent: 0,
-    footnoteRegistry,
+    footnoteRegistry: {},
   });
   const doc = new Document({
     title,
@@ -280,7 +279,7 @@ const convertNodes = (
       case "footnoteDefinition": {
         const footnoteId = getOrCreateFootnoteId(
           node.identifier,
-          ctx.footnoteRegistry || {},
+          ctx.footnoteRegistry,
         );
         footnotes[footnoteId] = buildFootnoteDefinition(node, ctx);
         break;
@@ -609,7 +608,7 @@ const buildFootnote = (
   ctx: Context,
 ): [DocxContent, Footnotes] => {
   // Generate auto ID based on current registry size to ensure uniqueness
-  const registry = ctx.footnoteRegistry || {};
+  const registry = ctx.footnoteRegistry;
   const autoId = `inline-${Object.keys(registry).length + 1}`;
   const footnoteId = getOrCreateFootnoteId(autoId, registry);
 
@@ -652,9 +651,6 @@ const buildFootnoteReference = (
   { identifier }: mdast.FootnoteReference,
   ctx: Context,
 ): DocxContent => {
-  const footnoteId = getOrCreateFootnoteId(
-    identifier,
-    ctx.footnoteRegistry || {},
-  );
+  const footnoteId = getOrCreateFootnoteId(identifier, ctx.footnoteRegistry);
   return new FootnoteReferenceRun(footnoteId);
 };
