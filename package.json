@@ -35,7 +35,6 @@
   "devDependencies": {
     "@prettier/plugin-xml": "^3.4.1",
     "@rollup/plugin-typescript": "^11.1.6",
-    "@storybook/addon-docs": "^9.0.15",
     "@storybook/react-vite": "^9.0.15",
     "@storybook/test-runner": "^0.23.0",
     "@types/adm-zip": "^0.5.0",
