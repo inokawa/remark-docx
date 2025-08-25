@@ -42,7 +42,7 @@
     "@types/node": "^24.0.10",
     "@types/unist": "^2.0.6",
     "adm-zip": "^0.5.9",
-    "concurrently": "^8.2.2",
+    "concurrently": "^9.0.0",
     "file-saver": "^2.0.5",
     "prettier": "^3.6.2",
     "react": "^18.3.1",
