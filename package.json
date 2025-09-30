@@ -61,7 +61,7 @@
     "typedoc-plugin-markdown": "^4.7.0",
     "typescript": "^5.8.3",
     "unified": "^10.1.2",
-    "vite": "^6.3.5",
+    "vite": "^7.0.0",
     "vitest": "^3.2.4",
     "wait-on": "^8.0.3"
   },
