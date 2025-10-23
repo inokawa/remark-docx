@@ -109,6 +109,7 @@ type Decoration = Readonly<{
 type ListInfo = Readonly<{
   level: number;
   ordered: boolean;
+  reference: string;
   checked?: boolean;
 }>;
 
@@ -162,6 +163,27 @@ const createFootnoteRegistry = (): FootnoteRegistry => {
   };
 };
 
+type NumberingRegistry = {
+  create: () => string;
+  getAll: () => Array<{ reference: string; levels: ILevelsOptions[] }>;
+};
+
+const createNumberingRegistry = (): NumberingRegistry => {
+  let counter = 1;
+
+  return {
+    create: () => {
+      return `${ORDERED_LIST_REF}-${counter++}`;
+    },
+    getAll: () => {
+      return Array.from({ length: counter }, (_, i) => ({
+        reference: `${ORDERED_LIST_REF}-${i}`,
+        levels: DEFAULT_NUMBERINGS,
+      }));
+    },
+  };
+};
+
 type Context = Readonly<{
   deco: Decoration;
   images: Readonly<ImageDataMap>;
@@ -169,6 +191,7 @@ type Context = Readonly<{
   list?: ListInfo;
   def: Readonly<Definition>;
   footnote: FootnoteRegistry;
+  numbering: NumberingRegistry;
   latex: LatexParser;
 }>;
 
@@ -221,12 +244,14 @@ export const mdastToDocx = async (
   });
 
   const footnote = createFootnoteRegistry();
+  const numbering = createNumberingRegistry();
   const nodes = convertNodes(node.children, {
     deco: {},
     images,
     indent: 0,
     def: definition,
     footnote,
+    numbering,
     latex,
   });
   const doc = new Document({
@@ -242,12 +267,7 @@ export const mdastToDocx = async (
     footnotes: footnote.footnotes(),
     sections: [{ children: nodes as DocxChild[] }],
     numbering: {
-      config: [
-        {
-          reference: ORDERED_LIST_REF,
-          levels: DEFAULT_NUMBERINGS,
-        },
-      ],
+      config: numbering.getAll(),
     },
   });
 
@@ -401,7 +421,7 @@ const buildParagraph = (
       (list.ordered
         ? {
             numbering: {
-              reference: ORDERED_LIST_REF,
+              reference: list.reference,
               level: list.level,
             },
           }
@@ -465,9 +485,14 @@ const buildList = (
   { children, ordered, start: _start, spread: _spread }: mdast.List,
   ctx: Context,
 ): DocxContent[] => {
+  const isTopLevel = !ctx.list;
   const list: ListInfo = {
     level: ctx.list ? ctx.list.level + 1 : 0,
     ordered: !!ordered,
+    reference:
+      isTopLevel && ordered
+        ? ctx.numbering.create()
+        : ctx.list?.reference || ORDERED_LIST_REF,
   };
   return children.flatMap((item) => {
     return buildListItem(item, {
