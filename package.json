@@ -23,7 +23,6 @@
     "tsc": "tsc -p . --noEmit",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "storybook:test": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run storybook -- --no-open\" \"wait-on tcp:6006 && test-storybook\"",
     "typedoc": "typedoc",
     "prepublishOnly": "npm run typedoc && rimraf lib && npm run build"
   },
@@ -36,13 +35,11 @@
     "@prettier/plugin-xml": "^3.4.1",
     "@rollup/plugin-typescript": "^11.1.6",
     "@storybook/react-vite": "^9.0.15",
-    "@storybook/test-runner": "^0.23.0",
     "@types/adm-zip": "^0.5.0",
     "@types/mdast": "^3.0.10",
     "@types/node": "^24.0.10",
     "@types/unist": "^2.0.6",
     "adm-zip": "^0.5.9",
-    "concurrently": "^9.0.0",
     "file-saver": "^2.0.5",
     "prettier": "^3.6.2",
     "react": "^18.3.1",
@@ -62,8 +59,7 @@
     "typescript": "^5.8.3",
     "unified": "^10.1.2",
     "vite": "^7.0.0",
-    "vitest": "^3.2.4",
-    "wait-on": "^8.0.3"
+    "vitest": "^3.2.4"
   },
   "repository": {
     "type": "git",

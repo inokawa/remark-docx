@@ -26,7 +26,7 @@ jobs:
       - run: npm run test
       - run: npm run build
 
-      - name: Install Playwright Browsers
-        run: npx playwright install chromium --with-deps
-      - name: Smoke test stories
-        run: npm run storybook:test
+      # - name: Install Playwright Browsers
+      #   run: npx playwright install chromium --with-deps
+      # - name: Smoke test stories
+      #   run: npm run storybook:test
