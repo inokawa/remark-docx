@@ -4,7 +4,7 @@
 
 # Interface: DocxOptions
 
-Defined in: [src/mdast-to-docx.ts:169](https://github.com/inokawa/remark-docx/blob/c5254cb8a86c89703abbdc07740610a93e99b5a5/src/mdast-to-docx.ts#L169)
+Defined in: [src/mdast-to-docx.ts:198](https://github.com/inokawa/remark-docx/blob/0d82659e62511c1708cf2243963b645317472b67/src/mdast-to-docx.ts#L198)
 
 ## Extends
 
@@ -16,7 +16,7 @@ Defined in: [src/mdast-to-docx.ts:169](https://github.com/inokawa/remark-docx/bl
 
 > `optional` **output**: `"buffer"` \| `"blob"`
 
-Defined in: [src/mdast-to-docx.ts:185](https://github.com/inokawa/remark-docx/blob/c5254cb8a86c89703abbdc07740610a93e99b5a5/src/mdast-to-docx.ts#L185)
+Defined in: [src/mdast-to-docx.ts:214](https://github.com/inokawa/remark-docx/blob/0d82659e62511c1708cf2243963b645317472b67/src/mdast-to-docx.ts#L214)
 
 Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Promise<Blob>`.
 
@@ -26,7 +26,7 @@ Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Pro
 
 > `optional` **imageResolver**: `ImageResolver`
 
-Defined in: [src/mdast-to-docx.ts:189](https://github.com/inokawa/remark-docx/blob/c5254cb8a86c89703abbdc07740610a93e99b5a5/src/mdast-to-docx.ts#L189)
+Defined in: [src/mdast-to-docx.ts:218](https://github.com/inokawa/remark-docx/blob/0d82659e62511c1708cf2243963b645317472b67/src/mdast-to-docx.ts#L218)
 
 **You must set** if your markdown includes images. See example for [browser](https://github.com/inokawa/remark-docx/blob/main/stories/playground.stories.tsx) and [Node.js](https://github.com/inokawa/remark-docx/blob/main/src/index.spec.ts).
 
