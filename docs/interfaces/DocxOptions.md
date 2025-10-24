@@ -4,7 +4,7 @@
 
 # Interface: DocxOptions
 
-Defined in: [src/mdast-to-docx.ts:198](https://github.com/inokawa/remark-docx/blob/0d82659e62511c1708cf2243963b645317472b67/src/mdast-to-docx.ts#L198)
+Defined in: [src/mdast-to-docx.ts:199](https://github.com/inokawa/remark-docx/blob/7322971402c953ff9690bf42cfb32e66b6190dba/src/mdast-to-docx.ts#L199)
 
 ## Extends
 
@@ -14,11 +14,11 @@ Defined in: [src/mdast-to-docx.ts:198](https://github.com/inokawa/remark-docx/bl
 
 ### output?
 
-> `optional` **output**: `"buffer"` \| `"blob"`
+> `optional` **output**: `"buffer"` \| `"arrayBuffer"` \| `"blob"`
 
-Defined in: [src/mdast-to-docx.ts:214](https://github.com/inokawa/remark-docx/blob/0d82659e62511c1708cf2243963b645317472b67/src/mdast-to-docx.ts#L214)
+Defined in: [src/mdast-to-docx.ts:215](https://github.com/inokawa/remark-docx/blob/7322971402c953ff9690bf42cfb32e66b6190dba/src/mdast-to-docx.ts#L215)
 
-Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Promise<Blob>`.
+Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `arrayBuffer` is `Promise<ArrayBuffer>`. `blob` is `Promise<Blob>`.
 
 ***
 
@@ -26,7 +26,7 @@ Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Pro
 
 > `optional` **imageResolver**: `ImageResolver`
 
-Defined in: [src/mdast-to-docx.ts:218](https://github.com/inokawa/remark-docx/blob/0d82659e62511c1708cf2243963b645317472b67/src/mdast-to-docx.ts#L218)
+Defined in: [src/mdast-to-docx.ts:219](https://github.com/inokawa/remark-docx/blob/7322971402c953ff9690bf42cfb32e66b6190dba/src/mdast-to-docx.ts#L219)
 
 **You must set** if your markdown includes images. See example for [browser](https://github.com/inokawa/remark-docx/blob/main/stories/playground.stories.tsx) and [Node.js](https://github.com/inokawa/remark-docx/blob/main/src/index.spec.ts).
 
@@ -36,7 +36,7 @@ Defined in: [src/mdast-to-docx.ts:218](https://github.com/inokawa/remark-docx/bl
 
 > `readonly` `optional` **title**: `string`
 
-Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:12
+Defined in: node\_modules/docx/dist/index.d.ts:1415
 
 #### Inherited from
 
@@ -48,7 +48,7 @@ Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:12
 
 > `readonly` `optional` **subject**: `string`
 
-Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:13
+Defined in: node\_modules/docx/dist/index.d.ts:1416
 
 #### Inherited from
 
@@ -60,7 +60,7 @@ Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:13
 
 > `readonly` `optional` **creator**: `string`
 
-Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:14
+Defined in: node\_modules/docx/dist/index.d.ts:1417
 
 #### Inherited from
 
@@ -72,7 +72,7 @@ Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:14
 
 > `readonly` `optional` **keywords**: `string`
 
-Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:15
+Defined in: node\_modules/docx/dist/index.d.ts:1418
 
 #### Inherited from
 
@@ -84,7 +84,7 @@ Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:15
 
 > `readonly` `optional` **description**: `string`
 
-Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:16
+Defined in: node\_modules/docx/dist/index.d.ts:1419
 
 #### Inherited from
 
@@ -96,7 +96,7 @@ Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:16
 
 > `readonly` `optional` **lastModifiedBy**: `string`
 
-Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:17
+Defined in: node\_modules/docx/dist/index.d.ts:1420
 
 #### Inherited from
 
@@ -108,7 +108,7 @@ Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:17
 
 > `readonly` `optional` **revision**: `number`
 
-Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:18
+Defined in: node\_modules/docx/dist/index.d.ts:1421
 
 #### Inherited from
 
@@ -120,7 +120,7 @@ Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:18
 
 > `readonly` `optional` **styles**: `IStylesOptions`
 
-Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:20
+Defined in: node\_modules/docx/dist/index.d.ts:1423
 
 #### Inherited from
 
@@ -132,7 +132,7 @@ Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:20
 
 > `readonly` `optional` **background**: `IDocumentBackgroundOptions`
 
-Defined in: node\_modules/docx/build/file/core-properties/properties.d.ts:28
+Defined in: node\_modules/docx/dist/index.d.ts:1429
 
 #### Inherited from
 
