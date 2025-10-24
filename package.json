@@ -51,15 +51,15 @@
     "remark-math": "^5.1.1",
     "remark-parse": "^10.0.1",
     "rimraf": "^6.0.0",
-    "rollup": "^4.44.1",
+    "rollup": "^4.52.5",
     "storybook": "^9.0.15",
     "tslib": "^2.8.1",
-    "typedoc": "^0.28.7",
-    "typedoc-plugin-markdown": "^4.7.0",
-    "typescript": "^5.8.3",
+    "typedoc": "^0.28.14",
+    "typedoc-plugin-markdown": "^4.9.0",
+    "typescript": "^5.9.3",
     "unified": "^10.1.2",
     "vite": "^7.0.0",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.0"
   },
   "repository": {
     "type": "git",
