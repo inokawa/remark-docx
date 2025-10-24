@@ -3,6 +3,7 @@
 exports[`e2e > article.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -35,7 +36,6 @@ exports[`e2e > article.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >heading 1</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
@@ -197,10 +197,10 @@ exports[`e2e > article.md 1`] = `
             distL="0"
             distR="0"
           ><wp:extent cx="5715000" cy="3810000" /><wp:effectExtent
+              t="0"
+              r="0"
               b="0"
               l="0"
-              r="0"
-              t="0"
             /><wp:docPr id="1" name="" descr="" title="" /><wp:cNvGraphicFramePr
             ><a:graphicFrameLocks
                 xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
@@ -381,10 +381,10 @@ export  $initHighlight;</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:h="16838"
         w:orient="portrait"
       /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -397,12 +397,12 @@ export  $initHighlight;</w:t></w:r></w:p><w:sectPr><w:pgSz
 exports[`e2e > article.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -461,8 +461,8 @@ exports[`e2e > article.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -491,6 +491,7 @@ exports[`e2e > article.md 2`] = `
 exports[`e2e > article.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -507,7 +508,6 @@ exports[`e2e > article.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -647,7 +647,9 @@ exports[`e2e > article.md 3`] = `
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="2"><w:abstractNumId
       w:val="3"
-    /></w:num></w:numbering>
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num></w:numbering>
 "
 `;
 
@@ -759,9 +761,28 @@ exports[`e2e > article.md 6`] = `
 "
 `;
 
+exports[`e2e > article.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-break.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -794,7 +815,6 @@ exports[`e2e > node-break.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:pPr><w:pBdr><w:bottom
             w:val="single"
             w:color="auto"
@@ -810,10 +830,10 @@ exports[`e2e > node-break.md 1`] = `
         w:h="16838"
         w:orient="portrait"
       /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -826,12 +846,12 @@ exports[`e2e > node-break.md 1`] = `
 exports[`e2e > node-break.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -890,8 +910,8 @@ exports[`e2e > node-break.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -920,6 +940,7 @@ exports[`e2e > node-break.md 2`] = `
 exports[`e2e > node-break.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -936,7 +957,6 @@ exports[`e2e > node-break.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -1149,9 +1169,28 @@ exports[`e2e > node-break.md 6`] = `
 "
 `;
 
+exports[`e2e > node-break.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-code.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -1184,7 +1223,6 @@ exports[`e2e > node-code.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:r><w:t xml:space="preserve">@font-face {
   font-family: Chunkfive;
   src: url(&quot;Chunkfive.otf&quot;);
@@ -1242,10 +1280,10 @@ module MyModule {
 declare magicNumber number;
 myArray.forEach(() =&gt; { }); // fat arrow syntax</w:t></w:r></w:p><w:sectPr
     ><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -1258,12 +1296,12 @@ myArray.forEach(() =&gt; { }); // fat arrow syntax</w:t></w:r></w:p><w:sectPr
 exports[`e2e > node-code.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -1322,8 +1360,8 @@ exports[`e2e > node-code.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -1352,6 +1390,7 @@ exports[`e2e > node-code.md 2`] = `
 exports[`e2e > node-code.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -1368,7 +1407,6 @@ exports[`e2e > node-code.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -1581,9 +1619,28 @@ exports[`e2e > node-code.md 6`] = `
 "
 `;
 
+exports[`e2e > node-code.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-footnotes.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -1616,16 +1673,15 @@ exports[`e2e > node-footnotes.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:r><w:t xml:space="preserve">This is footnote</w:t></w:r><w:r
       ><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
           w:id="1"
         /></w:r><w:r><w:t xml:space="preserve">.</w:t></w:r></w:p><w:sectPr
     ><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -1638,12 +1694,12 @@ exports[`e2e > node-footnotes.md 1`] = `
 exports[`e2e > node-footnotes.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -1702,8 +1758,8 @@ exports[`e2e > node-footnotes.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -1732,6 +1788,7 @@ exports[`e2e > node-footnotes.md 2`] = `
 exports[`e2e > node-footnotes.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -1748,7 +1805,6 @@ exports[`e2e > node-footnotes.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -1965,9 +2021,28 @@ exports[`e2e > node-footnotes.md 6`] = `
 "
 `;
 
+exports[`e2e > node-footnotes.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-footnotes2.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -2000,7 +2075,6 @@ exports[`e2e > node-footnotes2.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Comprehensive Footnote Test</w:t></w:r></w:p><w:p><w:r><w:t
@@ -2118,10 +2192,10 @@ exports[`e2e > node-footnotes2.md 1`] = `
         w:h="16838"
         w:orient="portrait"
       /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -2134,12 +2208,12 @@ exports[`e2e > node-footnotes2.md 1`] = `
 exports[`e2e > node-footnotes2.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -2198,8 +2272,8 @@ exports[`e2e > node-footnotes2.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -2228,6 +2302,7 @@ exports[`e2e > node-footnotes2.md 2`] = `
 exports[`e2e > node-footnotes2.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -2244,7 +2319,6 @@ exports[`e2e > node-footnotes2.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -2384,7 +2458,9 @@ exports[`e2e > node-footnotes2.md 3`] = `
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="2"><w:abstractNumId
       w:val="3"
-    /></w:num></w:numbering>
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num></w:numbering>
 "
 `;
 
@@ -2560,9 +2636,28 @@ exports[`e2e > node-footnotes2.md 6`] = `
 "
 `;
 
+exports[`e2e > node-footnotes2.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-frontmatter-toml.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -2595,7 +2690,6 @@ exports[`e2e > node-frontmatter-toml.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Other markdown</w:t></w:r></w:p><w:p><w:r><w:t
@@ -2605,10 +2699,10 @@ exports[`e2e > node-frontmatter-toml.md 1`] = `
         w:h="16838"
         w:orient="portrait"
       /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -2621,12 +2715,12 @@ exports[`e2e > node-frontmatter-toml.md 1`] = `
 exports[`e2e > node-frontmatter-toml.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -2685,8 +2779,8 @@ exports[`e2e > node-frontmatter-toml.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -2715,6 +2809,7 @@ exports[`e2e > node-frontmatter-toml.md 2`] = `
 exports[`e2e > node-frontmatter-toml.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -2731,7 +2826,6 @@ exports[`e2e > node-frontmatter-toml.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -2944,9 +3038,28 @@ exports[`e2e > node-frontmatter-toml.md 6`] = `
 "
 `;
 
+exports[`e2e > node-frontmatter-toml.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-frontmatter-yaml.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -2979,7 +3092,6 @@ exports[`e2e > node-frontmatter-yaml.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Other markdown</w:t></w:r></w:p><w:p><w:r><w:t
@@ -2989,10 +3101,10 @@ exports[`e2e > node-frontmatter-yaml.md 1`] = `
         w:h="16838"
         w:orient="portrait"
       /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -3005,12 +3117,12 @@ exports[`e2e > node-frontmatter-yaml.md 1`] = `
 exports[`e2e > node-frontmatter-yaml.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -3069,8 +3181,8 @@ exports[`e2e > node-frontmatter-yaml.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -3099,6 +3211,7 @@ exports[`e2e > node-frontmatter-yaml.md 2`] = `
 exports[`e2e > node-frontmatter-yaml.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -3115,7 +3228,6 @@ exports[`e2e > node-frontmatter-yaml.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -3328,9 +3440,28 @@ exports[`e2e > node-frontmatter-yaml.md 6`] = `
 "
 `;
 
+exports[`e2e > node-frontmatter-yaml.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-heading.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -3363,7 +3494,6 @@ exports[`e2e > node-heading.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Alpha</w:t></w:r></w:p><w:p><w:r><w:t
@@ -3392,10 +3522,10 @@ exports[`e2e > node-heading.md 1`] = `
         w:h="16838"
         w:orient="portrait"
       /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -3408,12 +3538,12 @@ exports[`e2e > node-heading.md 1`] = `
 exports[`e2e > node-heading.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -3472,8 +3602,8 @@ exports[`e2e > node-heading.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -3502,6 +3632,7 @@ exports[`e2e > node-heading.md 2`] = `
 exports[`e2e > node-heading.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -3518,7 +3649,6 @@ exports[`e2e > node-heading.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -3731,9 +3861,28 @@ exports[`e2e > node-heading.md 6`] = `
 "
 `;
 
+exports[`e2e > node-heading.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-image-reference.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -3766,12 +3915,11 @@ exports[`e2e > node-image-reference.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:r><w:t xml:space="preserve">This is </w:t></w:r><w:r><w:drawing
         ><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent
               cx="5715000"
               cy="3810000"
-            /><wp:effectExtent b="0" l="0" r="0" t="0" /><wp:docPr
+            /><wp:effectExtent t="0" r="0" b="0" l="0" /><wp:docPr
               id="1"
               name=""
               descr=""
@@ -3805,10 +3953,10 @@ exports[`e2e > node-image-reference.md 1`] = `
         w:h="16838"
         w:orient="portrait"
       /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -3821,12 +3969,12 @@ exports[`e2e > node-image-reference.md 1`] = `
 exports[`e2e > node-image-reference.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -3885,8 +4033,8 @@ exports[`e2e > node-image-reference.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -3915,6 +4063,7 @@ exports[`e2e > node-image-reference.md 2`] = `
 exports[`e2e > node-image-reference.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -3931,7 +4080,6 @@ exports[`e2e > node-image-reference.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -4144,9 +4292,28 @@ exports[`e2e > node-image-reference.md 6`] = `
 "
 `;
 
+exports[`e2e > node-image-reference.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-link-reference.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -4179,7 +4346,6 @@ exports[`e2e > node-link-reference.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:r><w:t xml:space="preserve">This is </w:t></w:r><w:hyperlink
         w:history="1"
         r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
@@ -4192,10 +4358,10 @@ exports[`e2e > node-link-reference.md 1`] = `
         w:h="16838"
         w:orient="portrait"
       /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -4208,12 +4374,12 @@ exports[`e2e > node-link-reference.md 1`] = `
 exports[`e2e > node-link-reference.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -4272,8 +4438,8 @@ exports[`e2e > node-link-reference.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -4302,6 +4468,7 @@ exports[`e2e > node-link-reference.md 2`] = `
 exports[`e2e > node-link-reference.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -4318,7 +4485,6 @@ exports[`e2e > node-link-reference.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -4531,9 +4697,28 @@ exports[`e2e > node-link-reference.md 6`] = `
 "
 `;
 
+exports[`e2e > node-link-reference.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-list-numbering-restart.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -4566,7 +4751,6 @@ exports[`e2e > node-list-numbering-restart.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Multiple Numbered Lists</w:t></w:r></w:p><w:p><w:r><w:t
@@ -4677,10 +4861,10 @@ exports[`e2e > node-list-numbering-restart.md 1`] = `
         w:h="16838"
         w:orient="portrait"
       /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -4693,12 +4877,12 @@ exports[`e2e > node-list-numbering-restart.md 1`] = `
 exports[`e2e > node-list-numbering-restart.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -4757,8 +4941,8 @@ exports[`e2e > node-list-numbering-restart.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -4787,6 +4971,7 @@ exports[`e2e > node-list-numbering-restart.md 2`] = `
 exports[`e2e > node-list-numbering-restart.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -4803,7 +4988,6 @@ exports[`e2e > node-list-numbering-restart.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -5054,11 +5238,21 @@ exports[`e2e > node-list-numbering-restart.md 3`] = `
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="2"><w:abstractNumId
       w:val="3"
-    /></w:num><w:num w:numId="3"><w:abstractNumId w:val="4" /></w:num><w:num
-    w:numId="4"
-  ><w:abstractNumId w:val="5" /></w:num><w:num w:numId="5"><w:abstractNumId
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num><w:num w:numId="3"><w:abstractNumId
+      w:val="4"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num><w:num w:numId="4"><w:abstractNumId
+      w:val="5"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num><w:num w:numId="5"><w:abstractNumId
       w:val="6"
-    /></w:num></w:numbering>
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num></w:numbering>
 "
 `;
 
@@ -5170,9 +5364,28 @@ exports[`e2e > node-list-numbering-restart.md 6`] = `
 "
 `;
 
+exports[`e2e > node-list-numbering-restart.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-math.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -5205,7 +5418,6 @@ exports[`e2e > node-math.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:r><w:t xml:space="preserve">Lift(</w:t></w:r><m:oMath><m:r><m:t
           >L</m:t></m:r></m:oMath><w:r><w:t
           xml:space="preserve"
@@ -5225,10 +5437,10 @@ equation.</w:t></w:r></w:p><w:p><m:oMath><m:r><m:t>L</m:t></m:r><m:r><m:t
         w:h="16838"
         w:orient="portrait"
       /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -5241,12 +5453,12 @@ equation.</w:t></w:r></w:p><w:p><m:oMath><m:r><m:t>L</m:t></m:r><m:r><m:t
 exports[`e2e > node-math.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -5305,8 +5517,8 @@ exports[`e2e > node-math.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -5335,6 +5547,7 @@ exports[`e2e > node-math.md 2`] = `
 exports[`e2e > node-math.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -5351,7 +5564,6 @@ exports[`e2e > node-math.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -5564,9 +5776,28 @@ exports[`e2e > node-math.md 6`] = `
 "
 `;
 
+exports[`e2e > node-math.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-ml.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -5599,7 +5830,6 @@ exports[`e2e > node-ml.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:r><w:t xml:space="preserve">&lt;div&gt;
 &lt;span&gt;This is &lt;b&gt;html&lt;/b&gt;&lt;/span&gt;
 &lt;/div&gt;</w:t></w:r></w:p><w:p><w:r><w:t
@@ -5616,10 +5846,10 @@ exports[`e2e > node-ml.md 1`] = `
         w:h="16838"
         w:orient="portrait"
       /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -5632,12 +5862,12 @@ exports[`e2e > node-ml.md 1`] = `
 exports[`e2e > node-ml.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -5696,8 +5926,8 @@ exports[`e2e > node-ml.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -5726,6 +5956,7 @@ exports[`e2e > node-ml.md 2`] = `
 exports[`e2e > node-ml.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -5742,7 +5973,6 @@ exports[`e2e > node-ml.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -5955,9 +6185,28 @@ exports[`e2e > node-ml.md 6`] = `
 "
 `;
 
+exports[`e2e > node-ml.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-paragraph.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -5990,7 +6239,6 @@ exports[`e2e > node-paragraph.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:r><w:t
           xml:space="preserve"
         >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</w:t></w:r></w:p><w:p
@@ -5999,10 +6247,10 @@ exports[`e2e > node-paragraph.md 1`] = `
         >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</w:t></w:r></w:p><w:sectPr
     ><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -6015,12 +6263,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 exports[`e2e > node-paragraph.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -6079,8 +6327,8 @@ exports[`e2e > node-paragraph.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -6109,6 +6357,7 @@ exports[`e2e > node-paragraph.md 2`] = `
 exports[`e2e > node-paragraph.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -6125,7 +6374,6 @@ exports[`e2e > node-paragraph.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -6338,9 +6586,28 @@ exports[`e2e > node-paragraph.md 6`] = `
 "
 `;
 
+exports[`e2e > node-paragraph.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-phrasing-1.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -6373,7 +6640,6 @@ exports[`e2e > node-phrasing-1.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:r><w:t xml:space="preserve">aaa </w:t></w:r><w:r><w:rPr><w:b
           /><w:bCs /></w:rPr><w:t xml:space="preserve">aaaaaaa</w:t></w:r><w:r
       ><w:t xml:space="preserve"> aaaaaa </w:t></w:r><w:r><w:rPr><w:i /><w:iCs
@@ -6429,7 +6695,7 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
       ><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent
               cx="5715000"
               cy="3810000"
-            /><wp:effectExtent b="0" l="0" r="0" t="0" /><wp:docPr
+            /><wp:effectExtent t="0" r="0" b="0" l="0" /><wp:docPr
               id="1"
               name=""
               descr=""
@@ -6459,10 +6725,10 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
                       /></a:xfrm><a:prstGeom prst="rect"><a:avLst
                       /></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r></w:p><w:sectPr
     ><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -6475,12 +6741,12 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
 exports[`e2e > node-phrasing-1.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -6539,8 +6805,8 @@ exports[`e2e > node-phrasing-1.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -6569,6 +6835,7 @@ exports[`e2e > node-phrasing-1.md 2`] = `
 exports[`e2e > node-phrasing-1.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -6585,7 +6852,6 @@ exports[`e2e > node-phrasing-1.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -6798,9 +7064,28 @@ exports[`e2e > node-phrasing-1.md 6`] = `
 "
 `;
 
+exports[`e2e > node-phrasing-1.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > node-phrasing-2.md 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -6833,7 +7118,6 @@ exports[`e2e > node-phrasing-2.md 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 wp14"
 ><w:body><w:p><w:hyperlink w:history="1" r:id="rIdmmmmmmmmmmmmmmmmmmmmm"><w:r
         ><w:rPr><w:b /><w:bCs /></w:rPr><w:t
             xml:space="preserve"
@@ -6841,7 +7125,7 @@ exports[`e2e > node-phrasing-2.md 1`] = `
       ><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent
               cx="5715000"
               cy="3810000"
-            /><wp:effectExtent b="0" l="0" r="0" t="0" /><wp:docPr
+            /><wp:effectExtent t="0" r="0" b="0" l="0" /><wp:docPr
               id="1"
               name=""
               descr=""
@@ -6878,10 +7162,10 @@ exports[`e2e > node-phrasing-2.md 1`] = `
             distL="0"
             distR="0"
           ><wp:extent cx="5715000" cy="3810000" /><wp:effectExtent
+              t="0"
+              r="0"
               b="0"
               l="0"
-              r="0"
-              t="0"
             /><wp:docPr id="1" name="" descr="" title="" /><wp:cNvGraphicFramePr
             ><a:graphicFrameLocks
                 xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
@@ -6908,10 +7192,10 @@ exports[`e2e > node-phrasing-2.md 1`] = `
                       /></a:xfrm><a:prstGeom prst="rect"><a:avLst
                       /></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r></w:p><w:sectPr
     ><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
-        w:top="1in"
-        w:right="1in"
-        w:bottom="1in"
-        w:left="1in"
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
         w:header="708"
         w:footer="708"
         w:gutter="0"
@@ -6924,12 +7208,12 @@ exports[`e2e > node-phrasing-2.md 1`] = `
 exports[`e2e > node-phrasing-2.md 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
+  mc:Ignorable="w14 w15"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
   xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
   xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
   xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  mc:Ignorable="w14 w15"
 ><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
     w:type="paragraph"
     w:styleId="Title"
@@ -6988,8 +7272,8 @@ exports[`e2e > node-phrasing-2.md 2`] = `
       w:val="Hyperlink"
     /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
       w:val="99"
-    /><w:unhideWhenUsed /><w:rPr><w:u w:val="single" /><w:color
-        w:val="0563C1"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
       /></w:rPr></w:style><w:style
     w:type="character"
     w:styleId="FootnoteReference"
@@ -7018,6 +7302,7 @@ exports[`e2e > node-phrasing-2.md 2`] = `
 exports[`e2e > node-phrasing-2.md 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
+  mc:Ignorable="w14 w15 wp14"
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -7034,7 +7319,6 @@ exports[`e2e > node-phrasing-2.md 3`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
 ><w:abstractNum
     w:abstractNumId="1"
     w15:restartNumberingAfterBreak="0"
@@ -7243,6 +7527,24 @@ exports[`e2e > node-phrasing-2.md 6`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+/>
+"
+`;
+
+exports[`e2e > node-phrasing-2.md 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
 />
 "
 `;

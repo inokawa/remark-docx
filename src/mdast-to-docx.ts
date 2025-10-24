@@ -20,8 +20,8 @@ import {
   FootnoteReferenceRun,
   CheckBox,
   MathRun,
+  type IPropertiesOptions,
 } from "docx";
-import type { IPropertiesOptions } from "docx/build/file/core-properties";
 import type * as mdast from "./models/mdast";
 import { invariant, unreachable } from "./utils";
 import { visit } from "unist-util-visit";
@@ -98,6 +98,7 @@ export type ImageData = {
   image: IImageOptions["data"];
   width: number;
   height: number;
+  type: IImageOptions["type"];
 };
 
 export type ImageResolver = (url: string) => Promise<ImageData> | ImageData;
@@ -209,9 +210,9 @@ export interface DocxOptions
     | "background"
   > {
   /**
-   * Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `blob` is `Promise<Blob>`.
+   * Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `arrayBuffer` is `Promise<ArrayBuffer>`. `blob` is `Promise<Blob>`.
    */
-  output?: "buffer" | "blob";
+  output?: "buffer" | "arrayBuffer" | "blob";
   /**
    * **You must set** if your markdown includes images. See example for [browser](https://github.com/inokawa/remark-docx/blob/main/stories/playground.stories.tsx) and [Node.js](https://github.com/inokawa/remark-docx/blob/main/src/index.spec.ts).
    */
@@ -273,11 +274,9 @@ export const mdastToDocx = async (
 
   switch (output) {
     case "buffer":
-      const bufOut = await Packer.toBuffer(doc);
-      // feature detection instead of environment detection, but if Buffer exists
-      // it's probably Node. If not, return the Uint8Array that JSZip returns
-      // when it doesn't detect a Node environment.
-      return typeof Buffer === "function" ? Buffer.from(bufOut) : bufOut;
+      return Packer.toBuffer(doc);
+    case "arrayBuffer":
+      return Packer.toArrayBuffer(doc);
     case "blob":
       return Packer.toBlob(doc);
   }
@@ -437,7 +436,7 @@ const buildHeading = (
   { children, depth }: mdast.Heading,
   ctx: Context,
 ): DocxContent => {
-  let headingLevel: HeadingLevel;
+  let headingLevel: (typeof HeadingLevel)[keyof typeof HeadingLevel];
   switch (depth) {
     case 1:
       headingLevel = HeadingLevel.TITLE;
@@ -516,7 +515,9 @@ const buildTable = (
   { children, align }: mdast.Table,
   ctx: Context,
 ): DocxContent => {
-  const cellAligns: AlignmentType[] | undefined = align?.map((a) => {
+  const cellAligns:
+    | (typeof AlignmentType)[keyof typeof AlignmentType][]
+    | undefined = align?.map((a) => {
     switch (a) {
       case "left":
         return AlignmentType.LEFT;
@@ -539,7 +540,7 @@ const buildTable = (
 const buildTableRow = (
   { children }: mdast.TableRow,
   ctx: Context,
-  cellAligns: AlignmentType[] | undefined,
+  cellAligns: (typeof AlignmentType)[keyof typeof AlignmentType][] | undefined,
 ): TableRow => {
   return new TableRow({
     children: children.map((c, i) => {
@@ -551,7 +552,7 @@ const buildTableRow = (
 const buildTableCell = (
   { children }: mdast.TableCell,
   ctx: Context,
-  align: AlignmentType | undefined,
+  align: (typeof AlignmentType)[keyof typeof AlignmentType] | undefined,
 ): TableCell => {
   const nodes = convertNodes(children, ctx);
   return new TableCell({
@@ -637,12 +638,13 @@ const buildImage = (
 
   const { image, width, height } = img;
   return new ImageRun({
+    type: img.type,
     data: image,
     transformation: {
       width,
       height,
     },
-  });
+  } as IImageOptions);
 };
 
 const buildLinkReference = (
