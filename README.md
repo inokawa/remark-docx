@@ -2,7 +2,10 @@
 
 ![npm](https://img.shields.io/npm/v/remark-docx) ![npm](https://img.shields.io/npm/dw/remark-docx) ![check](https://github.com/inokawa/remark-docx/workflows/check/badge.svg) ![demo](https://github.com/inokawa/remark-docx/workflows/demo/badge.svg)
 
-[remark](https://github.com/remarkjs/remark) plugin to compile markdown to docx (Microsoft Word, Office Open XML).
+> [remark](https://github.com/remarkjs/remark) plugin to compile markdown to docx (Microsoft Word, Office Open XML).
+
+- Uses [docx](https://github.com/dolanmiu/docx) for compilation.
+- Works in any environment (e.g. browser, Node.js).
 
 ### 🚧 WIP 🚧
 
