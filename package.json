@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@unified-latex/unified-latex-util-parse": "1.8.3",
-    "docx": "^9.5.1",
+    "docx": "9.5.1",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
