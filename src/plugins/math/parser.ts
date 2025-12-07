@@ -8,12 +8,7 @@ import {
 } from "docx";
 import { parseMath } from "@unified-latex/unified-latex-util-parse";
 import type * as latex from "@unified-latex/unified-latex-types";
-import { invariant } from "./utils";
-
-/**
- * @internal
- */
-export type LatexParser = (value: string) => MathRun[][];
+import { invariant } from "../../utils";
 
 const hasSquareBrackets = (
   arg: latex.Argument | undefined,
@@ -354,7 +349,7 @@ const mapNode = (n: latex.Node, runs: MathRun[]): MathRun[] | false => {
 /**
  * @internal
  */
-export const parseLatex: LatexParser = (value: string): MathRun[][] => {
+export const parseLatex = (value: string): MathRun[][] => {
   const parsed = parseMath(value);
   const paragraphs: MathRun[][] = [[]];
   let runs: MathRun[] = paragraphs[0]!;
