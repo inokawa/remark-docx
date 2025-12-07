@@ -7,12 +7,10 @@ import {
   TableRow,
   TableCell,
   TextRun,
-  ImageRun,
   ExternalHyperlink,
   HeadingLevel,
   LevelFormat,
   AlignmentType,
-  type IImageOptions,
   type ILevelsOptions,
   FootnoteReferenceRun,
   CheckBox,
@@ -20,10 +18,9 @@ import {
 } from "docx";
 import type * as mdast from "./mdast";
 import { invariant, warnOnce } from "./utils";
-import { visit } from "unist-util-visit";
 import { definitions, type GetDefinition } from "mdast-util-definitions";
 import type { DocxChild, DocxContent } from "./types";
-import type { RemarkDocxOverrides } from "./plugins/types";
+import type { NodeOverrides, RemarkDocxPlugin } from "./plugins/types";
 
 const ORDERED_LIST_REF = "ordered";
 const INDENT = 0.5;
@@ -90,17 +87,6 @@ const DEFAULT_NUMBERINGS: ILevelsOptions[] = [
     },
   },
 ];
-
-export type ImageDataMap = { [url: string]: ImageData };
-
-export type ImageData = {
-  image: IImageOptions["data"];
-  width: number;
-  height: number;
-  type: IImageOptions["type"];
-};
-
-export type ImageResolver = (url: string) => Promise<ImageData> | ImageData;
 
 type Decoration = Readonly<{
   [key in (mdast.Emphasis | mdast.Strong | mdast.Delete)["type"]]?: true;
@@ -178,9 +164,8 @@ const createNumberingRegistry = (): NumberingRegistry => {
 };
 
 type Context = Readonly<{
-  overrides: RemarkDocxOverrides;
+  overrides: NodeOverrides;
   deco: Decoration;
-  images: Readonly<ImageDataMap>;
   indent: number;
   list?: ListInfo;
   definition: GetDefinition;
@@ -203,11 +188,7 @@ export interface DocxOptions extends Pick<
   /**
    * Plugins to customize how mdast nodes are transformed.
    */
-  plugins?: RemarkDocxOverrides[];
-  /**
-   * **You must set** if your markdown includes images. See example for [browser](https://github.com/inokawa/remark-docx/blob/main/stories/playground.stories.tsx) and [Node.js](https://github.com/inokawa/remark-docx/blob/main/src/index.spec.ts).
-   */
-  imageResolver?: ImageResolver;
+  plugins?: RemarkDocxPlugin[];
 }
 
 export const mdastToDocx = async (
@@ -223,51 +204,18 @@ export const mdastToDocx = async (
     revision,
     styles,
     background,
-    imageResolver,
   }: DocxOptions,
 ): Promise<ArrayBuffer> => {
-  let images: ImageDataMap = {};
-
   const definition = definitions(node);
 
-  const imageList: (mdast.Image | mdast.Definition)[] = [];
-  visit(node, "image", (node) => {
-    imageList.push(node);
-  });
-  visit(node, "imageReference", (node) => {
-    const maybeImage = definition(node.identifier)!;
-    if (maybeImage) {
-      imageList.push(maybeImage);
-    }
-  });
-  if (imageList.length !== 0) {
-    invariant(imageResolver, "options.imageResolver is not defined.");
-
-    const resolved = new Set<string>();
-    const promises: Promise<{ img: ImageData; url: string }>[] = [];
-    imageList.forEach(({ url }) => {
-      if (!resolved.has(url)) {
-        resolved.add(url);
-        promises.push(
-          (async () => {
-            const img = await imageResolver(url);
-            return { img, url };
-          })(),
-        );
-      }
-    });
-    images = (await Promise.all(promises)).reduce((acc, { img, url }) => {
-      acc[url] = img;
-      return acc;
-    }, {} as ImageDataMap);
-  }
-
+  const pluginCtx = { root: node, definition };
   const footnote = createFootnoteRegistry();
   const numbering = createNumberingRegistry();
   const nodes = convertNodes(node.children, {
-    overrides: plugins.reduceRight((acc, p) => ({ acc, ...p }), {}),
+    overrides: (
+      await Promise.all(plugins.map((p) => p(pluginCtx)))
+    ).reduceRight((acc, p) => ({ acc, ...p }), {}),
     deco: {},
-    images,
     indent: 0,
     definition: definition,
     footnote,
@@ -303,7 +251,11 @@ const convertNodes = (
       convertNodes(children, ctx),
     );
     if (customNodes != null) {
-      results.push(...customNodes);
+      if (Array.isArray(customNodes)) {
+        results.push(...customNodes);
+      } else {
+        results.push(customNodes);
+      }
       continue;
     }
 
@@ -380,17 +332,14 @@ const convertNodes = (
         results.push(buildLink(node, ctx));
         break;
       }
-      case "image":
-        results.push(buildImage(node, ctx.images));
-        break;
       case "linkReference":
         results.push(...buildLinkReference(node, ctx));
         break;
+      case "image":
       case "imageReference": {
-        const image = buildImageReference(node, ctx);
-        if (image) {
-          results.push(image);
-        }
+        warnOnce(
+          `${node.type} node is not rendered since remark-docx/plugins/image is not provided.`,
+        );
         break;
       }
       // case "footnote": {
@@ -403,7 +352,7 @@ const convertNodes = (
       case "math":
       case "inlineMath":
         warnOnce(
-          `${node.type} node is not rendered since latexPlugin is not provided.`,
+          `${node.type} node is not rendered since remark-docx/plugins/math is not provided.`,
         );
         break;
       default:
@@ -629,24 +578,6 @@ const buildLink = (
   });
 };
 
-const buildImage = (
-  { url }: Pick<mdast.Image, "url">,
-  images: ImageDataMap,
-): DocxContent => {
-  const img = images[url];
-  invariant(img, `Fetch image was failed: ${url}`);
-
-  const { image, width, height } = img;
-  return new ImageRun({
-    type: img.type,
-    data: image,
-    transformation: {
-      width,
-      height,
-    },
-  } as IImageOptions);
-};
-
 const buildLinkReference = (
   { children, identifier }: mdast.LinkReference,
   ctx: Context,
@@ -656,17 +587,6 @@ const buildLinkReference = (
     return convertNodes(children, ctx);
   }
   return [buildLink({ children, url: def.url }, ctx)];
-};
-
-const buildImageReference = (
-  { identifier }: mdast.ImageReference,
-  ctx: Context,
-): DocxContent | undefined => {
-  const def = ctx.definition(identifier);
-  if (def == null) {
-    return;
-  }
-  return buildImage({ url: def.url }, ctx.images);
 };
 
 const registerFootnoteDefinition = (

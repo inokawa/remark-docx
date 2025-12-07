@@ -31,13 +31,13 @@ If you have some feature requests or improvements, please create a [issue](https
 - [x] delete
 - [x] break
 - [x] link / linkReference
-- [x] image / imageReference
+- [x] image / imageReference ([remark-docx/plugins/image](#image) is required)
 - [x] footnote / footnoteReference
 - [ ] html
 - [ ] yaml
 - [ ] toml
 - [ ] code / inlineCode
-- [x] math / inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [latexPlugin](#latex) are required)
+- [x] math / inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [remark-docx/plugins/math](#latex) are required)
 
 ## Demo
 
@@ -90,6 +90,34 @@ const text = "# hello world";
 ```
 
 ### With plugins
+
+#### Image
+
+#### Browser
+
+```javascript
+import { unified } from "unified";
+import markdown from "remark-parse";
+import docx from "remark-docx";
+import { browserImagePlugin } from "remark-docx/plugins/image";
+
+const processor = unified()
+  .use(markdown)
+  .use(docx, { plugins: [browserImagePlugin()] });
+```
+
+#### Node.js
+
+```javascript
+import { unified } from "unified";
+import markdown from "remark-parse";
+import docx from "remark-docx";
+import { nodeImagePlugin } from "remark-docx/plugins/image";
+
+const processor = unified()
+  .use(markdown)
+  .use(docx, { plugins: [nodeImagePlugin()] });
+```
 
 #### LaTeX
 
