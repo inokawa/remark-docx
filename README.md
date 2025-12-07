@@ -91,30 +91,15 @@ const text = "# hello world";
 
 ### Image
 
-#### Browser
-
 ```javascript
 import { unified } from "unified";
 import markdown from "remark-parse";
 import docx from "remark-docx";
-import { browserImagePlugin } from "remark-docx/plugins/image";
+import { imagePlugin } from "remark-docx/plugins/image";
 
 const processor = unified()
   .use(markdown)
-  .use(docx, { plugins: [browserImagePlugin()] });
-```
-
-#### Node.js
-
-```javascript
-import { unified } from "unified";
-import markdown from "remark-parse";
-import docx from "remark-docx";
-import { nodeImagePlugin } from "remark-docx/plugins/image";
-
-const processor = unified()
-  .use(markdown)
-  .use(docx, { plugins: [nodeImagePlugin()] });
+  .use(docx, { plugins: [imagePlugin()] });
 ```
 
 ### LaTeX

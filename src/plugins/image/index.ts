@@ -3,6 +3,7 @@ import type { RemarkDocxPlugin } from "../../types";
 import type * as mdast from "../../mdast";
 import { ImageRun, type IImageOptions } from "docx";
 import { visit } from "unist-util-visit";
+import { imageSize } from "image-size";
 
 type ImageData = {
   image: IImageOptions["data"];
@@ -22,9 +23,45 @@ const buildImage = ({ image, width, height, type }: ImageData) => {
   } as IImageOptions);
 };
 
-const imagePlugin = (
-  resolver: (url: string) => Promise<ImageData>,
-): RemarkDocxPlugin => {
+interface ImagePluginOptions {
+  /**
+   * A function to resolve image data from url.
+   * @default fetch
+   */
+  load?: (url: string) => Promise<ArrayBuffer>;
+}
+
+/**
+ * A plugin to render "image" nodes
+ */
+export const imagePlugin = ({
+  load = async (url) => {
+    const res = await fetch(url);
+    return res.arrayBuffer();
+  },
+}: ImagePluginOptions = {}): RemarkDocxPlugin => {
+  const isSupportedType = (
+    type: string | undefined,
+  ): type is "png" | "jpg" | "gif" | "bmp" => {
+    if (!type) return false;
+    if (type === "png" || type === "jpg" || type === "gif" || type === "bmp") {
+      return true;
+    }
+    return false;
+  };
+
+  const resolver = async (url: string): Promise<ImageData> => {
+    const buf = await load(url);
+
+    const { width, height, type } = imageSize(new Uint8Array(buf));
+    if (!isSupportedType(type)) {
+      const err = `Not supported image type: ${type}`;
+      warnOnce(err);
+      throw new Error(err);
+    }
+    return { image: buf, width, height, type };
+  };
+
   const images = new Map<string, ImageData>();
 
   return async ({ root, definition }) => {
@@ -81,69 +118,4 @@ const imagePlugin = (
       },
     };
   };
-};
-
-/**
- * A plugin to render "image" nodes on browser.
- */
-export const browserImagePlugin = (): RemarkDocxPlugin =>
-  imagePlugin(async (url) => {
-    const image = new Image();
-    const res = await fetch(url);
-    const buf = await res.arrayBuffer();
-    return new Promise((resolve, reject) => {
-      image.onload = () => {
-        resolve({
-          image: buf,
-          width: image.naturalWidth,
-          height: image.naturalHeight,
-          type: "png",
-        });
-      };
-      image.onerror = reject;
-      image.src = URL.createObjectURL(new Blob([buf], { type: "image/png" }));
-    });
-  });
-
-interface NodeImagePluginOptions {
-  /**
-   * A function to resolve image data from url.
-   * @default fetch
-   */
-  load: (url: string) => Promise<ArrayBuffer>;
-}
-
-/**
- * A plugin to render "image" nodes on Node.js.
- */
-export const nodeImagePlugin = ({
-  load = async (url) => {
-    const res = await fetch(url);
-    return res.arrayBuffer();
-  },
-}: NodeImagePluginOptions): RemarkDocxPlugin => {
-  const is = import("image-size");
-
-  const isSupportedType = (
-    type: string | undefined,
-  ): type is "png" | "jpg" | "gif" | "bmp" => {
-    if (!type) return false;
-    if (type === "png" || type === "jpg" || type === "gif" || type === "bmp") {
-      return true;
-    }
-    return false;
-  };
-
-  return imagePlugin(async (url) => {
-    const { imageSize } = await is;
-    const buf = await load(url);
-
-    const { width, height, type } = imageSize(new Uint8Array(buf));
-    if (!isSupportedType(type)) {
-      const err = `Not supported image type: ${type}`;
-      warnOnce(err);
-      throw new Error(err);
-    }
-    return { image: buf, width, height, type };
-  });
 };
