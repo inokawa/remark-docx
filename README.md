@@ -23,25 +23,21 @@ If you have some feature requests or improvements, please create a [issue](https
 - [x] table
 - [x] tableRow
 - [x] tableCell
-- [ ] html
-- [ ] code
-- [ ] yaml
-- [ ] toml
 - [x] definition
 - [x] footnoteDefinition
 - [x] text
 - [x] emphasis
 - [x] strong
 - [x] delete
-- [ ] inlineCode
 - [x] break
-- [x] link
-- [x] image
-- [x] linkReference
-- [x] imageReference
-- [x] footnote
-- [x] footnoteReference
-- [x] math and inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [latexPlugin](#latex) are required)
+- [x] link / linkReference
+- [x] image / imageReference
+- [x] footnote / footnoteReference
+- [ ] html
+- [ ] yaml
+- [ ] toml
+- [ ] code / inlineCode
+- [x] math / inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [latexPlugin](#latex) are required)
 
 ## Demo
 
