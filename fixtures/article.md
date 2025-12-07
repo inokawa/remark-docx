@@ -61,10 +61,6 @@ This is ![image](https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799
 | left       |       right |    center    |
 | aligned    |     aligned |   aligned    |
 
-<div style="color:red;">
-This is <u>HTML</u>
-</div>
-
 ---
 
 ---

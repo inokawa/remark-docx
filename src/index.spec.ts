@@ -12,6 +12,7 @@ import { createCanvas } from "@napi-rs/canvas";
 import docx, { type DocxOptions } from ".";
 import { latexPlugin } from "./plugins/math";
 import { imagePlugin } from "./plugins/image";
+import { htmlPlugin } from "./plugins/html";
 
 const FIXTURE_PATH = "../fixtures";
 
@@ -171,7 +172,7 @@ describe("e2e", () => {
 
   it("ml", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "ml.md"));
-    const doc = await processor({ plugins: [latexPlugin()] }).process(md);
+    const doc = await processor({ plugins: [htmlPlugin()] }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
