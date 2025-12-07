@@ -1,1 +1,1 @@
-{"v":5,"entries":{"playground--markdown-to-docx":{"type":"story","id":"playground--markdown-to-docx","name":"Markdown To Docx","title":"Playground","importPath":"./stories/playground.stories.tsx","tags":["dev","test"]}}}
+{"v":5,"entries":{"playground--markdown-to-docx":{"type":"story","subtype":"story","id":"playground--markdown-to-docx","name":"Markdown To Docx","title":"Playground","importPath":"./stories/playground.stories.tsx","tags":["dev","test"],"exportName":"MarkdownToDocx"}}}
