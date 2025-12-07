@@ -21,7 +21,6 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaa**bold**_emphasis_~~delete~~`inline code`
 
 - list
-
   - list
     - list
   - list
@@ -61,10 +60,6 @@ This is ![image](https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799
 | be         |          be |      be      |
 | left       |       right |    center    |
 | aligned    |     aligned |   aligned    |
-
-$$
-L = \frac{1}{2} \rho v^2 S C_L
-$$
 
 <div style="color:red;">
 This is <u>HTML</u>

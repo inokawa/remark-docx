@@ -333,14 +333,7 @@ quote</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r><w:t
                 w:val="center"
               /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >aligned</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><m:oMath><m:r
-        ><m:t>L</m:t></m:r><m:r><m:t>=</m:t></m:r><m:f><m:num><m:r><m:t
-              >1</m:t></m:r></m:num><m:den><m:r><m:t
-              >2</m:t></m:r></m:den></m:f><m:r><m:t>ρ</m:t></m:r><m:sSup
-        ><m:sSupPr /><m:e><m:r><m:t>v</m:t></m:r></m:e><m:sup><m:r><m:t
-              >2</m:t></m:r></m:sup></m:sSup><m:r><m:t>S</m:t></m:r><m:sSub
-        ><m:sSubPr /><m:e><m:r><m:t>C</m:t></m:r></m:e><m:sub><m:r><m:t
-              >L</m:t></m:r></m:sub></m:sSub></m:oMath></w:p><w:p><w:r><w:t
+              >aligned</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:r><w:t
           xml:space="preserve"
         >&lt;div style=&quot;color:red;&quot;&gt;
 This is &lt;u&gt;HTML&lt;/u&gt;
