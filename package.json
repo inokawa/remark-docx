@@ -12,6 +12,11 @@
       "types": "./lib/index.d.ts",
       "require": "./lib/index.cjs",
       "default": "./lib/index.js"
+    },
+    "./plugins/*": {
+      "types": "./lib/plugins/*/index.d.ts",
+      "require": "./lib/plugins/*/index.cjs",
+      "default": "./lib/plugins/*/index.js"
     }
   },
   "files": [

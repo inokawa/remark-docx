@@ -1,5 +1,5 @@
 import { it, describe, expect } from "vitest";
-import { parseLatex } from "./latex";
+import { parseLatex } from "./parser";
 
 const parse = (str: string) => parseLatex(str);
 

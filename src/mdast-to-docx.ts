@@ -3,15 +3,12 @@ import {
   Packer,
   Document,
   Paragraph,
-  type ParagraphChild,
   Table,
   TableRow,
   TableCell,
-  TableOfContents,
   TextRun,
   ImageRun,
   ExternalHyperlink,
-  Math,
   HeadingLevel,
   LevelFormat,
   AlignmentType,
@@ -24,7 +21,8 @@ import {
 import type * as mdast from "./mdast";
 import { invariant, warnOnce } from "./utils";
 import { visit } from "unist-util-visit";
-import type { LatexParser } from "./latex";
+import type { DocxChild, DocxContent } from "./types";
+import type { RemarkDocxOverrides } from "./plugins/types";
 
 const ORDERED_LIST_REF = "ordered";
 const INDENT = 0.5;
@@ -181,6 +179,7 @@ const createNumberingRegistry = (): NumberingRegistry => {
 };
 
 type Context = Readonly<{
+  overrides: RemarkDocxOverrides;
   deco: Decoration;
   images: Readonly<ImageDataMap>;
   indent: number;
@@ -188,7 +187,6 @@ type Context = Readonly<{
   def: Readonly<Definition>;
   footnote: FootnoteRegistry;
   numbering: NumberingRegistry;
-  latex: LatexParser;
 }>;
 
 export interface DocxOptions extends Pick<
@@ -204,17 +202,19 @@ export interface DocxOptions extends Pick<
   | "background"
 > {
   /**
+   * Plugins to customize how mdast nodes are transformed.
+   */
+  plugins?: RemarkDocxOverrides[];
+  /**
    * **You must set** if your markdown includes images. See example for [browser](https://github.com/inokawa/remark-docx/blob/main/stories/playground.stories.tsx) and [Node.js](https://github.com/inokawa/remark-docx/blob/main/src/index.spec.ts).
    */
   imageResolver?: ImageResolver;
 }
 
-type DocxChild = Paragraph | Table | TableOfContents;
-type DocxContent = DocxChild | ParagraphChild;
-
 export const mdastToDocx = async (
   node: mdast.Root,
   {
+    plugins = [],
     title,
     subject,
     creator,
@@ -226,7 +226,6 @@ export const mdastToDocx = async (
     background,
   }: DocxOptions,
   images: ImageDataMap,
-  latex: LatexParser,
 ): Promise<ArrayBuffer> => {
   const definition: Definition = {};
   visit(node, "definition", (node) => {
@@ -236,13 +235,13 @@ export const mdastToDocx = async (
   const footnote = createFootnoteRegistry();
   const numbering = createNumberingRegistry();
   const nodes = convertNodes(node.children, {
+    overrides: plugins.reduceRight((acc, p) => ({ acc, ...p }), {}),
     deco: {},
     images,
     indent: 0,
     def: definition,
     footnote,
     numbering,
-    latex,
   });
   const doc = new Document({
     title,
@@ -264,9 +263,20 @@ export const mdastToDocx = async (
   return Packer.toArrayBuffer(doc);
 };
 
-const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
+const convertNodes = (
+  nodes: mdast.RootContent[],
+  ctx: Context,
+): DocxContent[] => {
   const results: DocxContent[] = [];
   for (const node of nodes) {
+    const customNodes = ctx.overrides[node.type]?.(node as any, (children) =>
+      convertNodes(children, ctx),
+    );
+    if (customNodes != null) {
+      results.push(...customNodes);
+      continue;
+    }
+
     switch (node.type) {
       case "paragraph": {
         results.push(buildParagraph(node, ctx));
@@ -303,10 +313,10 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
         results.push(buildCode(node));
         break;
       // case "yaml":
-      //   // FIXME: unimplemented
+      //   // unimplemented
       //   break;
       // case "toml":
-      //   // FIXME: unimplemented
+      //   // unimplemented
       //   break;
       case "definition":
         // noop
@@ -361,13 +371,14 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
         results.push(buildFootnoteReference(node, ctx));
         break;
       case "math":
-        results.push(...buildMath(node, ctx));
-        break;
       case "inlineMath":
-        results.push(buildInlineMath(node, ctx));
+        warnOnce(
+          true,
+          `${node.type} node is not rendered since latexPlugin is not provided.`,
+        );
         break;
       default:
-        warnOnce(true, `${node.type} node is not supported.`);
+        warnOnce(true, `${node.type} node is not officially supported.`);
         break;
     }
   }
@@ -562,28 +573,6 @@ const buildCode = ({
   // FIXME: transform to text for now
   return new Paragraph({
     children: [buildText(value, {})],
-  });
-};
-
-const buildMath = ({ value }: mdast.Math, ctx: Context): DocxContent[] => {
-  return ctx.latex(value).map(
-    (runs) =>
-      new Paragraph({
-        children: [
-          new Math({
-            children: runs,
-          }),
-        ],
-      }),
-  );
-};
-
-const buildInlineMath = (
-  { value }: mdast.InlineMath,
-  ctx: Context,
-): DocxContent => {
-  return new Math({
-    children: ctx.latex(value).flatMap((runs) => runs),
   });
 };
 

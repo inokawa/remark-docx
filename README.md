@@ -6,6 +6,7 @@
 
 - Uses [docx](https://github.com/dolanmiu/docx) for compilation.
 - Works in any environment (e.g. browser, Node.js).
+- You can customize [mdast](https://github.com/syntax-tree/mdast) to Word transformation with plugin system.
 
 ### 🚧 WIP 🚧
 
@@ -40,7 +41,7 @@ If you have some feature requests or improvements, please create a [issue](https
 - [x] imageReference
 - [x] footnote
 - [x] footnoteReference
-- [x] LaTeX support with math and inlineMath ([remark-math](https://github.com/remarkjs/remark-math) is required)
+- [x] math and inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [latexPlugin](#latex) are required)
 
 ## Demo
 
@@ -90,6 +91,21 @@ const text = "# hello world";
   const arrayBuffer = await doc.result;
   fs.writeFileSync("example.docx", Buffer.from(arrayBuffer));
 })();
+```
+
+### With plugins
+
+#### LaTeX
+
+```javascript
+import { unified } from "unified";
+import markdown from "remark-parse";
+import docx from "remark-docx";
+import { latexPlugin } from "remark-docx/plugins/math";
+
+const processor = unified()
+  .use(markdown)
+  .use(docx, { plugins: [latexPlugin()] });
 ```
 
 ## Documentation

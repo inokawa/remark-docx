@@ -9,6 +9,7 @@ import math from "remark-math";
 import Zip from "adm-zip";
 import prettier from "prettier";
 import docx, { type DocxOptions } from ".";
+import { latexPlugin } from "./plugins/math";
 
 const FIXTURE_PATH = "../fixtures";
 
@@ -145,7 +146,7 @@ describe("e2e", () => {
 
   it("math", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "math.md"));
-    const doc = await processor().process(md);
+    const doc = await processor({ plugins: [latexPlugin()] }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
@@ -153,7 +154,7 @@ describe("e2e", () => {
 
   it("ml", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "ml.md"));
-    const doc = await processor().process(md);
+    const doc = await processor({ plugins: [latexPlugin()] }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
