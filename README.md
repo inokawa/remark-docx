@@ -49,7 +49,7 @@ https://inokawa.github.io/remark-docx/
 npm install remark-docx
 ```
 
-## Usage
+## Getting started
 
 ### Browser
 
@@ -89,11 +89,11 @@ const text = "# hello world";
 })();
 ```
 
-### With plugins
+## With plugins
 
-#### Image
+### Image
 
-##### Browser
+#### Browser
 
 ```javascript
 import { unified } from "unified";
@@ -106,7 +106,7 @@ const processor = unified()
   .use(docx, { plugins: [browserImagePlugin()] });
 ```
 
-##### Node.js
+#### Node.js
 
 ```javascript
 import { unified } from "unified";
@@ -119,7 +119,7 @@ const processor = unified()
   .use(docx, { plugins: [nodeImagePlugin()] });
 ```
 
-#### LaTeX
+### LaTeX
 
 ```javascript
 import { unified } from "unified";
