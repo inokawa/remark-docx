@@ -1,5 +1,5 @@
 import type { Plugin } from "unified";
-import type * as mdast from "mdast";
+import type { Definition, Image, Root } from "mdast";
 import { visit } from "unist-util-visit";
 import {
   mdastToDocx,
@@ -12,23 +12,31 @@ import { parseLatex } from "./latex";
 
 export type { DocxOptions };
 
-const plugin: Plugin<[DocxOptions?]> = function (opts = {}) {
+declare module "unified" {
+  interface CompileResultMap {
+    docx: Promise<ArrayBuffer>;
+  }
+}
+
+const plugin: Plugin<[DocxOptions?], Root, Promise<ArrayBuffer>> = function (
+  opts = {},
+) {
   let images: ImageDataMap = {};
 
-  this.Compiler = (node) => {
-    return mdastToDocx(node as any, opts, images, parseLatex);
+  this.compiler = (node) => {
+    return mdastToDocx(node as Root, opts, images, parseLatex);
   };
 
-  return async (node) => {
-    const imageList: (mdast.Image | mdast.Definition)[] = [];
-    visit(node as mdast.Root, "image", (node) => {
+  return (async (node: Root) => {
+    const imageList: (Image | Definition)[] = [];
+    visit(node, "image", (node) => {
       imageList.push(node);
     });
-    const defs = new Map<string, mdast.Definition>();
-    visit(node as mdast.Root, "definition", (node) => {
+    const defs = new Map<string, Definition>();
+    visit(node, "definition", (node) => {
       defs.set(node.identifier, node);
     });
-    visit(node as mdast.Root, "imageReference", (node) => {
+    visit(node, "imageReference", (node) => {
       const maybeImage = defs.get(node.identifier)!;
       if (maybeImage) {
         imageList.push(maybeImage);
@@ -59,6 +67,6 @@ const plugin: Plugin<[DocxOptions?]> = function (opts = {}) {
       return acc;
     }, {} as ImageDataMap);
     return node;
-  };
+  }) as any; // FIXME
 };
 export default plugin;
