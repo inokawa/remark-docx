@@ -39,7 +39,7 @@
     "@types/adm-zip": "^0.5.0",
     "@types/mdast": "^3.0.10",
     "@types/node": "^24.0.10",
-    "@types/unist": "^2.0.6",
+    "@types/unist": "^3.0.0",
     "adm-zip": "^0.5.9",
     "file-saver": "^2.0.5",
     "prettier": "^3.7.4",
