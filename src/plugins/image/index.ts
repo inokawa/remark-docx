@@ -1,5 +1,5 @@
 import { warnOnce } from "../../utils";
-import type { RemarkDocxPlugin } from "../types";
+import type { RemarkDocxPlugin } from "../../types";
 import type * as mdast from "../../mdast";
 import { ImageRun, type IImageOptions } from "docx";
 import type { DocxContent } from "../../types";

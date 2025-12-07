@@ -1,4 +1,4 @@
-import type { RemarkDocxPlugin } from "../types";
+import type { RemarkDocxPlugin } from "../../types";
 import { Math, Paragraph } from "docx";
 import { parseLatex } from "./parser";
 

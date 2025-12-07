@@ -19,8 +19,12 @@ import {
 import type * as mdast from "./mdast";
 import { invariant, warnOnce } from "./utils";
 import { definitions, type GetDefinition } from "mdast-util-definitions";
-import type { DocxChild, DocxContent } from "./types";
-import type { NodeOverrides, RemarkDocxPlugin } from "./plugins/types";
+import type {
+  DocxChild,
+  DocxContent,
+  NodeOverrides,
+  RemarkDocxPlugin,
+} from "./types";
 
 const ORDERED_LIST_REF = "ordered";
 const INDENT = 0.5;
