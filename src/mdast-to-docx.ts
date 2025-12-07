@@ -23,7 +23,7 @@ import {
   type IPropertiesOptions,
 } from "docx";
 import type * as mdast from "./models/mdast";
-import { invariant, unreachable } from "./utils";
+import { invariant, warnOnce } from "./utils";
 import { visit } from "unist-util-visit";
 
 const ORDERED_LIST_REF = "ordered";
@@ -196,19 +196,18 @@ type Context = Readonly<{
   latex: LatexParser;
 }>;
 
-export interface DocxOptions
-  extends Pick<
-    IPropertiesOptions,
-    | "title"
-    | "subject"
-    | "creator"
-    | "keywords"
-    | "description"
-    | "lastModifiedBy"
-    | "revision"
-    | "styles"
-    | "background"
-  > {
+export interface DocxOptions extends Pick<
+  IPropertiesOptions,
+  | "title"
+  | "subject"
+  | "creator"
+  | "keywords"
+  | "description"
+  | "lastModifiedBy"
+  | "revision"
+  | "styles"
+  | "background"
+> {
   /**
    * Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `arrayBuffer` is `Promise<ArrayBuffer>`. `blob` is `Promise<Blob>`.
    */
@@ -320,12 +319,12 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
       case "code":
         results.push(buildCode(node));
         break;
-      case "yaml":
-        // FIXME: unimplemented
-        break;
-      case "toml":
-        // FIXME: unimplemented
-        break;
+      // case "yaml":
+      //   // FIXME: unimplemented
+      //   break;
+      // case "toml":
+      //   // FIXME: unimplemented
+      //   break;
       case "definition":
         // noop
         break;
@@ -371,10 +370,10 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
         }
         break;
       }
-      case "footnote": {
-        // inline footnote was removed in mdast v5
-        break;
-      }
+      // case "footnote": {
+      //   // inline footnote was removed in mdast v5
+      //   break;
+      // }
       case "footnoteReference":
         results.push(buildFootnoteReference(node, ctx));
         break;
@@ -385,7 +384,7 @@ const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
         results.push(buildInlineMath(node, ctx));
         break;
       default:
-        unreachable(node);
+        warnOnce(true, `${node.type} node is not supported.`);
         break;
     }
   }
