@@ -1,10 +1,10 @@
-[**API**](../API.md)
+[**API**](../../API.md)
 
 ***
 
 # Interface: DocxOptions
 
-Defined in: [src/mdast-to-docx.ts:199](https://github.com/inokawa/remark-docx/blob/ed6c3b47c8e1e9d6d9d104ece07715dae1dca83f/src/mdast-to-docx.ts#L199)
+Defined in: [src/mdast-to-docx.ts:176](https://github.com/inokawa/remark-docx/blob/66a0c972e12dbf381934524b5fbfb192eb7d5b6a/src/mdast-to-docx.ts#L176)
 
 ## Extends
 
@@ -12,23 +12,13 @@ Defined in: [src/mdast-to-docx.ts:199](https://github.com/inokawa/remark-docx/bl
 
 ## Properties
 
-### output?
+### plugins?
 
-> `optional` **output**: `"buffer"` \| `"arrayBuffer"` \| `"blob"`
+> `optional` **plugins**: `RemarkDocxPlugin`[]
 
-Defined in: [src/mdast-to-docx.ts:215](https://github.com/inokawa/remark-docx/blob/ed6c3b47c8e1e9d6d9d104ece07715dae1dca83f/src/mdast-to-docx.ts#L215)
+Defined in: [src/mdast-to-docx.ts:191](https://github.com/inokawa/remark-docx/blob/66a0c972e12dbf381934524b5fbfb192eb7d5b6a/src/mdast-to-docx.ts#L191)
 
-Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `arrayBuffer` is `Promise<ArrayBuffer>`. `blob` is `Promise<Blob>`.
-
-***
-
-### imageResolver?
-
-> `optional` **imageResolver**: `ImageResolver`
-
-Defined in: [src/mdast-to-docx.ts:219](https://github.com/inokawa/remark-docx/blob/ed6c3b47c8e1e9d6d9d104ece07715dae1dca83f/src/mdast-to-docx.ts#L219)
-
-**You must set** if your markdown includes images. See example for [browser](https://github.com/inokawa/remark-docx/blob/main/stories/playground.stories.tsx) and [Node.js](https://github.com/inokawa/remark-docx/blob/main/src/index.spec.ts).
+Plugins to customize how mdast nodes are transformed.
 
 ***
 

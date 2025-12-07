@@ -4,10 +4,8 @@
 
 # API
 
-## Interfaces
+## Modules
 
-- [DocxOptions](interfaces/DocxOptions.md)
-
-## Variables
-
-- [default](variables/default.md)
+- [index](index/API.md)
+- [plugins/image](plugins/image/API.md)
+- [plugins/math](plugins/math/API.md)
