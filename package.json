@@ -37,7 +37,7 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "@storybook/react-vite": "^10.1.4",
     "@types/adm-zip": "^0.5.0",
-    "@types/mdast": "^3.0.10",
+    "@types/mdast": "^4.0.3",
     "@types/node": "^24.0.10",
     "@types/unist": "^3.0.0",
     "adm-zip": "^0.5.9",
