@@ -21,7 +21,7 @@ import {
   CheckBox,
   type IPropertiesOptions,
 } from "docx";
-import type * as mdast from "./models/mdast";
+import type * as mdast from "./mdast";
 import { invariant, warnOnce } from "./utils";
 import { visit } from "unist-util-visit";
 import type { LatexParser } from "./latex";
