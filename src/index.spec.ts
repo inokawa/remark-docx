@@ -42,10 +42,9 @@ describe("e2e", () => {
   const filenames = fs.readdirSync(fixturesDir);
   filenames.forEach((filename) => {
     it(filename, async () => {
-      const doc = await toDocxProcessor.process(
-        fs.readFileSync(path.join(fixturesDir, filename)),
-      );
-      const z = new Zip((await doc.result) as any);
+      const md = fs.readFileSync(path.join(fixturesDir, filename));
+      const doc = await toDocxProcessor.process(md);
+      const z = new Zip((await doc.result) as Buffer);
       for (const e of z.getEntries()) {
         if (e.entryName.match(/word\/.*\.xml$/)) {
           const xml = await prettier.format(z.readAsText(e), {
