@@ -11,6 +11,7 @@ import prettier from "prettier";
 import { createCanvas } from "@napi-rs/canvas";
 import docx, { type DocxOptions } from ".";
 import { latexPlugin } from "./plugins/math";
+import { nodeImagePlugin } from "./plugins/image";
 
 const FIXTURE_PATH = "../fixtures";
 
@@ -22,50 +23,33 @@ afterEach(() => {
   vitest.spyOn(global.Math, "random").mockRestore();
 });
 
-const dummyImage = (encode: "png") => {
+let imageId = 0;
+const loaded = new Map<string, ArrayBuffer>();
+const dummyImage = async (url: string): Promise<ArrayBuffer> => {
+  if (loaded.has(url)) {
+    return loaded.get(url)!;
+  }
   const canvas = createCanvas(100, 100);
   const ctx = canvas.getContext("2d");
 
-  ctx.fillStyle = "#ff0000";
+  const n = (0xfffff * (1000000 - ++imageId)).toString(16);
+  ctx.fillStyle = "#" + n.slice(0, 6);
   ctx.fillRect(0, 0, 100, 100);
-  return canvas.encode(encode).then((d) => d.buffer as ArrayBuffer);
+  const buffer = await canvas
+    .encode("png")
+    .then((d) => d.buffer as ArrayBuffer);
+  loaded.set(url, buffer);
+  return buffer;
 };
 
 describe("e2e", () => {
   const processor = (options: DocxOptions = {}) => {
-    let id = 0;
-    const loaded = new Map<string, ArrayBuffer>();
-    const dummyImage = async (url: string) => {
-      if (loaded.has(url)) {
-        return loaded.get(url)!;
-      }
-      const canvas = createCanvas(100, 100);
-      const ctx = canvas.getContext("2d");
-
-      const n = (0xfffff * (1000000 - ++id)).toString(16);
-      ctx.fillStyle = "#" + n.slice(0, 6);
-      ctx.fillRect(0, 0, 100, 100);
-      const buffer = await canvas
-        .encode("png")
-        .then((d) => d.buffer as ArrayBuffer);
-      loaded.set(url, buffer);
-      return buffer;
-    };
-
     return unified()
       .use(markdown)
       .use(gfm)
       .use(frontmatter, ["yaml", "toml"])
       .use(math)
-      .use(docx, {
-        ...options,
-        imageResolver: async (url) => ({
-          image: await dummyImage(url),
-          width: 100,
-          height: 100,
-          type: "png",
-        }),
-      });
+      .use(docx, options);
   };
 
   async function* readDocx(buffer: ArrayBuffer) {
@@ -85,7 +69,9 @@ describe("e2e", () => {
 
   it("article", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "article.md"));
-    const doc = await processor().process(md);
+    const doc = await processor({
+      plugins: [nodeImagePlugin({ load: dummyImage })],
+    }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
@@ -149,7 +135,9 @@ describe("e2e", () => {
 
   it("image-reference", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "image-reference.md"));
-    const doc = await processor().process(md);
+    const doc = await processor({
+      plugins: [nodeImagePlugin({ load: dummyImage })],
+    }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
@@ -199,7 +187,9 @@ describe("e2e", () => {
 
   it("phrasing-1", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "phrasing-1.md"));
-    const doc = await processor().process(md);
+    const doc = await processor({
+      plugins: [nodeImagePlugin({ load: dummyImage })],
+    }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
@@ -207,7 +197,9 @@ describe("e2e", () => {
 
   it("phrasing-2", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "phrasing-2.md"));
-    const doc = await processor().process(md);
+    const doc = await processor({
+      plugins: [nodeImagePlugin({ load: dummyImage })],
+    }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }

@@ -5,28 +5,10 @@ import gfm from "remark-gfm";
 import frontmatter from "remark-frontmatter";
 import math from "remark-math";
 import docx from "../src";
+import { browserImagePlugin } from "../src/plugins/image";
 // @ts-expect-error no type definition
 import text from "../fixtures/article.md?raw";
 import { saveAs } from "file-saver";
-import type { ImageResolver } from "../src";
-
-const fetchImage: ImageResolver = async (url) => {
-  const image = new Image();
-  const res = await fetch(url);
-  const buf = await res.arrayBuffer();
-  return new Promise((resolve, reject) => {
-    image.onload = () => {
-      resolve({
-        image: buf,
-        width: image.naturalWidth,
-        height: image.naturalHeight,
-        type: "png",
-      });
-    };
-    image.onerror = reject;
-    image.src = URL.createObjectURL(new Blob([buf], { type: "image/png" }));
-  });
-};
 
 const toDocxProcessor = unified()
   .use(markdown)
@@ -34,7 +16,7 @@ const toDocxProcessor = unified()
   .use(frontmatter)
   .use(math)
   .use(docx, {
-    imageResolver: fetchImage,
+    plugins: [browserImagePlugin()],
   });
 
 const toDocx = async (s: string) => {
