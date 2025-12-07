@@ -6,5 +6,4 @@
 
 ## Functions
 
-- [browserImagePlugin](functions/browserImagePlugin.md)
-- [nodeImagePlugin](functions/nodeImagePlugin.md)
+- [imagePlugin](functions/imagePlugin.md)
