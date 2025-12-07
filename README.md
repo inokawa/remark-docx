@@ -62,14 +62,14 @@ import markdown from "remark-parse";
 import docx from "remark-docx";
 import { saveAs } from "file-saver";
 
-const processor = unified().use(markdown).use(docx, { output: "blob" });
+const processor = unified().use(markdown).use(docx);
 
 const text = "# hello world";
 
 (async () => {
   const doc = await processor.process(text);
-  const blob = await doc.result;
-  saveAs(blob, "example.docx");
+  const arrayBuffer = await doc.result;
+  saveAs(new Blob([arrayBuffer]), "example.docx");
 })();
 ```
 
@@ -81,14 +81,14 @@ import markdown from "remark-parse";
 import docx from "remark-docx";
 import * as fs from "fs";
 
-const processor = unified().use(markdown).use(docx, { output: "buffer" });
+const processor = unified().use(markdown).use(docx);
 
 const text = "# hello world";
 
 (async () => {
   const doc = await processor.process(text);
-  const buffer = await doc.result;
-  fs.writeFileSync("example.docx", buffer);
+  const arrayBuffer = await doc.result;
+  fs.writeFileSync("example.docx", Buffer.from(arrayBuffer));
 })();
 ```
 

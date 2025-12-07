@@ -34,7 +34,6 @@ const toDocxProcessor = unified()
   .use(frontmatter)
   .use(math)
   .use(docx, {
-    output: "blob",
     imageResolver: fetchImage,
   });
 
@@ -65,8 +64,8 @@ export const MarkdownToDocx = () => {
         <button
           onClick={async () => {
             if (!ref.current) return;
-            const blob = await toDocx(ref.current.value);
-            saveAs(blob, "example.docx");
+            const buffer = await toDocx(ref.current.value);
+            saveAs(new Blob([buffer]), "example.docx");
           }}
         >
           {"download docx"}

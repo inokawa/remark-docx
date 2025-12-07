@@ -209,10 +209,6 @@ export interface DocxOptions extends Pick<
   | "background"
 > {
   /**
-   * Set output type of `VFile.result`. `buffer` is `Promise<Buffer>`. `arrayBuffer` is `Promise<ArrayBuffer>`. `blob` is `Promise<Blob>`.
-   */
-  output?: "buffer" | "arrayBuffer" | "blob";
-  /**
    * **You must set** if your markdown includes images. See example for [browser](https://github.com/inokawa/remark-docx/blob/main/stories/playground.stories.tsx) and [Node.js](https://github.com/inokawa/remark-docx/blob/main/src/index.spec.ts).
    */
   imageResolver?: ImageResolver;
@@ -224,7 +220,6 @@ type DocxContent = DocxChild | ParagraphChild;
 export const mdastToDocx = async (
   node: mdast.Root,
   {
-    output = "buffer",
     title,
     subject,
     creator,
@@ -237,7 +232,7 @@ export const mdastToDocx = async (
   }: DocxOptions,
   images: ImageDataMap,
   latex: LatexParser,
-): Promise<any> => {
+): Promise<ArrayBuffer> => {
   const definition: Definition = {};
   visit(node, "definition", (node) => {
     definition[node.identifier] = node.url;
@@ -271,14 +266,7 @@ export const mdastToDocx = async (
     },
   });
 
-  switch (output) {
-    case "buffer":
-      return Packer.toBuffer(doc);
-    case "arrayBuffer":
-      return Packer.toArrayBuffer(doc);
-    case "blob":
-      return Packer.toBlob(doc);
-  }
+  return Packer.toArrayBuffer(doc);
 };
 
 const convertNodes = (nodes: mdast.Content[], ctx: Context): DocxContent[] => {
