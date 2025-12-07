@@ -93,7 +93,7 @@ const text = "# hello world";
 
 #### Image
 
-#### Browser
+##### Browser
 
 ```javascript
 import { unified } from "unified";
@@ -106,7 +106,7 @@ const processor = unified()
   .use(docx, { plugins: [browserImagePlugin()] });
 ```
 
-#### Node.js
+##### Node.js
 
 ```javascript
 import { unified } from "unified";
