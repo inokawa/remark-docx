@@ -8,6 +8,7 @@ import frontmatter from "remark-frontmatter";
 import math from "remark-math";
 import Zip from "adm-zip";
 import prettier from "prettier";
+import { createCanvas } from "@napi-rs/canvas";
 import docx, { type DocxOptions } from ".";
 import { latexPlugin } from "./plugins/math";
 
@@ -23,6 +24,25 @@ afterEach(() => {
 
 describe("e2e", () => {
   const processor = (options: DocxOptions = {}) => {
+    let id = 0;
+    const loaded = new Map<string, ArrayBuffer>();
+    const dummyImage = async (url: string) => {
+      if (loaded.has(url)) {
+        return loaded.get(url)!;
+      }
+      const canvas = createCanvas(100, 100);
+      const ctx = canvas.getContext("2d");
+
+      const n = (0xfffff * (1000000 - ++id)).toString(16);
+      ctx.fillStyle = "#" + n.slice(0, 6);
+      ctx.fillRect(0, 0, 100, 100);
+      const buffer = await canvas
+        .encode("png")
+        .then((d) => d.buffer as ArrayBuffer);
+      loaded.set(url, buffer);
+      return buffer;
+    };
+
     return unified()
       .use(markdown)
       .use(gfm)
@@ -30,10 +50,10 @@ describe("e2e", () => {
       .use(math)
       .use(docx, {
         ...options,
-        imageResolver: () => ({
-          image: new Uint8Array(),
-          width: 600,
-          height: 400,
+        imageResolver: async (url) => ({
+          image: await dummyImage(url),
+          width: 100,
+          height: 100,
           type: "png",
         }),
       });
