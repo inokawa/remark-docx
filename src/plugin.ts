@@ -23,11 +23,11 @@ const plugin: Plugin<[DocxOptions?], Root, Promise<ArrayBuffer>> = function (
 ) {
   let images: ImageDataMap = {};
 
-  this.Compiler = (node) => {
-    return mdastToDocx(node, opts, images, parseLatex);
+  this.compiler = (node) => {
+    return mdastToDocx(node as Root, opts, images, parseLatex);
   };
 
-  return async (node: Root) => {
+  return (async (node: Root) => {
     const imageList: (Image | Definition)[] = [];
     visit(node, "image", (node) => {
       imageList.push(node);
@@ -67,6 +67,6 @@ const plugin: Plugin<[DocxOptions?], Root, Promise<ArrayBuffer>> = function (
       return acc;
     }, {} as ImageDataMap);
     return node;
-  };
+  }) as any; // FIXME
 };
 export default plugin;
