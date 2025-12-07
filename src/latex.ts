@@ -8,7 +8,7 @@ import {
 } from "docx";
 import { parseMath } from "@unified-latex/unified-latex-util-parse";
 import type * as latex from "@unified-latex/unified-latex-types";
-import { unreachable } from "./utils";
+import { invariant } from "./utils";
 import { LatexParser } from "./mdast-to-docx";
 
 const hasSquareBrackets = (
@@ -341,7 +341,7 @@ const mapNode = (n: latex.Node, runs: MathRun[]): MathRun[] | false => {
     case "verb":
       break;
     default:
-      unreachable(n);
+      invariant(false, "unreachable");
   }
 
   return [];
