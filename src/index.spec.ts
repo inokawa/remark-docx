@@ -11,7 +11,7 @@ import prettier from "prettier";
 import { createCanvas } from "@napi-rs/canvas";
 import docx, { type DocxOptions } from ".";
 import { latexPlugin } from "./plugins/math";
-import { nodeImagePlugin } from "./plugins/image";
+import { imagePlugin } from "./plugins/image";
 
 const FIXTURE_PATH = "../fixtures";
 
@@ -70,7 +70,7 @@ describe("e2e", () => {
   it("article", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "article.md"));
     const doc = await processor({
-      plugins: [nodeImagePlugin({ load: dummyImage })],
+      plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -136,7 +136,7 @@ describe("e2e", () => {
   it("image-reference", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "image-reference.md"));
     const doc = await processor({
-      plugins: [nodeImagePlugin({ load: dummyImage })],
+      plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -188,7 +188,7 @@ describe("e2e", () => {
   it("phrasing-1", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "phrasing-1.md"));
     const doc = await processor({
-      plugins: [nodeImagePlugin({ load: dummyImage })],
+      plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -198,7 +198,7 @@ describe("e2e", () => {
   it("phrasing-2", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "phrasing-2.md"));
     const doc = await processor({
-      plugins: [nodeImagePlugin({ load: dummyImage })],
+      plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();

@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useRef } from "react";
 import { unified } from "unified";
 import markdown from "remark-parse";
 import gfm from "remark-gfm";
 import frontmatter from "remark-frontmatter";
 import math from "remark-math";
 import docx from "../src";
-import { browserImagePlugin } from "../src/plugins/image";
+import { imagePlugin } from "../src/plugins/image";
 // @ts-expect-error no type definition
 import text from "../fixtures/article.md?raw";
 import { saveAs } from "file-saver";
@@ -16,7 +16,7 @@ const toDocxProcessor = unified()
   .use(frontmatter)
   .use(math)
   .use(docx, {
-    plugins: [browserImagePlugin()],
+    plugins: [imagePlugin()],
   });
 
 const toDocx = async (s: string) => {
