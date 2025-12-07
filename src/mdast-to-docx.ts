@@ -21,6 +21,7 @@ import {
 import type * as mdast from "./mdast";
 import { invariant, warnOnce } from "./utils";
 import { visit } from "unist-util-visit";
+import { definitions, type GetDefinition } from "mdast-util-definitions";
 import type { DocxChild, DocxContent } from "./types";
 import type { RemarkDocxOverrides } from "./plugins/types";
 
@@ -112,9 +113,7 @@ type ListInfo = Readonly<{
   checked?: boolean;
 }>;
 
-type Definition = Record<string, string>;
 type FootnoteDefinition = Readonly<{ children: Paragraph[] }>;
-
 type FootnoteRegistry = {
   ref: (id: string) => number;
   def: (id: string, def: FootnoteDefinition) => void;
@@ -184,7 +183,7 @@ type Context = Readonly<{
   images: Readonly<ImageDataMap>;
   indent: number;
   list?: ListInfo;
-  def: Readonly<Definition>;
+  definition: GetDefinition;
   footnote: FootnoteRegistry;
   numbering: NumberingRegistry;
 }>;
@@ -229,16 +228,14 @@ export const mdastToDocx = async (
 ): Promise<ArrayBuffer> => {
   let images: ImageDataMap = {};
 
+  const definition = definitions(node);
+
   const imageList: (mdast.Image | mdast.Definition)[] = [];
   visit(node, "image", (node) => {
     imageList.push(node);
   });
-  const defs = new Map<string, mdast.Definition>();
-  visit(node, "definition", (node) => {
-    defs.set(node.identifier, node);
-  });
   visit(node, "imageReference", (node) => {
-    const maybeImage = defs.get(node.identifier)!;
+    const maybeImage = definition(node.identifier)!;
     if (maybeImage) {
       imageList.push(maybeImage);
     }
@@ -265,11 +262,6 @@ export const mdastToDocx = async (
     }, {} as ImageDataMap);
   }
 
-  const definition: Definition = {};
-  visit(node, "definition", (node) => {
-    definition[node.identifier] = node.url;
-  });
-
   const footnote = createFootnoteRegistry();
   const numbering = createNumberingRegistry();
   const nodes = convertNodes(node.children, {
@@ -277,7 +269,7 @@ export const mdastToDocx = async (
     deco: {},
     images,
     indent: 0,
-    def: definition,
+    definition: definition,
     footnote,
     numbering,
   });
@@ -659,22 +651,22 @@ const buildLinkReference = (
   { children, identifier }: mdast.LinkReference,
   ctx: Context,
 ): DocxContent[] => {
-  const def = ctx.def[identifier];
+  const def = ctx.definition(identifier);
   if (def == null) {
     return convertNodes(children, ctx);
   }
-  return [buildLink({ children, url: def }, ctx)];
+  return [buildLink({ children, url: def.url }, ctx)];
 };
 
 const buildImageReference = (
   { identifier }: mdast.ImageReference,
   ctx: Context,
 ): DocxContent | undefined => {
-  const def = ctx.def[identifier];
+  const def = ctx.definition(identifier);
   if (def == null) {
     return;
   }
-  return buildImage({ url: def }, ctx.images);
+  return buildImage({ url: def.url }, ctx.images);
 };
 
 const registerFootnoteDefinition = (
