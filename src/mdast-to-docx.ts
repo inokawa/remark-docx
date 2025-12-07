@@ -411,12 +411,11 @@ const convertNodes = (
       case "math":
       case "inlineMath":
         warnOnce(
-          true,
           `${node.type} node is not rendered since latexPlugin is not provided.`,
         );
         break;
       default:
-        warnOnce(true, `${node.type} node is not officially supported.`);
+        warnOnce(`${node.type} node is not officially supported.`);
         break;
     }
   }
