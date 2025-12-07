@@ -510,36 +510,19 @@ const buildTable = (
 
   return new Table({
     rows: children.map((r) => {
-      return buildTableRow(r, ctx, cellAligns);
+      return new TableRow({
+        children: r.children.map((c, i) => {
+          return new TableCell({
+            children: [
+              new Paragraph({
+                alignment: cellAligns?.[i],
+                children: convertNodes(c.children, ctx),
+              }),
+            ],
+          });
+        }),
+      });
     }),
-  });
-};
-
-const buildTableRow = (
-  { children }: mdast.TableRow,
-  ctx: Context,
-  cellAligns: (typeof AlignmentType)[keyof typeof AlignmentType][] | undefined,
-): TableRow => {
-  return new TableRow({
-    children: children.map((c, i) => {
-      return buildTableCell(c, ctx, cellAligns?.[i]);
-    }),
-  });
-};
-
-const buildTableCell = (
-  { children }: mdast.TableCell,
-  ctx: Context,
-  align: (typeof AlignmentType)[keyof typeof AlignmentType] | undefined,
-): TableCell => {
-  const nodes = convertNodes(children, ctx);
-  return new TableCell({
-    children: [
-      new Paragraph({
-        alignment: align,
-        children: nodes,
-      }),
-    ],
   });
 };
 
