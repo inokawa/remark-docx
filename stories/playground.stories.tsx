@@ -8,7 +8,7 @@ import docx from "../src";
 // @ts-expect-error no type definition
 import text from "../fixtures/article.md?raw";
 import { saveAs } from "file-saver";
-import { ImageResolver } from "../src/mdast-to-docx";
+import type { ImageResolver } from "../src";
 
 const fetchImage: ImageResolver = async (url) => {
   const image = new Image();

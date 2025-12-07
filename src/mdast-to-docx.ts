@@ -224,9 +224,47 @@ export const mdastToDocx = async (
     revision,
     styles,
     background,
+    imageResolver,
   }: DocxOptions,
-  images: ImageDataMap,
 ): Promise<ArrayBuffer> => {
+  let images: ImageDataMap = {};
+
+  const imageList: (mdast.Image | mdast.Definition)[] = [];
+  visit(node, "image", (node) => {
+    imageList.push(node);
+  });
+  const defs = new Map<string, mdast.Definition>();
+  visit(node, "definition", (node) => {
+    defs.set(node.identifier, node);
+  });
+  visit(node, "imageReference", (node) => {
+    const maybeImage = defs.get(node.identifier)!;
+    if (maybeImage) {
+      imageList.push(maybeImage);
+    }
+  });
+  if (imageList.length !== 0) {
+    invariant(imageResolver, "options.imageResolver is not defined.");
+
+    const resolved = new Set<string>();
+    const promises: Promise<{ img: ImageData; url: string }>[] = [];
+    imageList.forEach(({ url }) => {
+      if (!resolved.has(url)) {
+        resolved.add(url);
+        promises.push(
+          (async () => {
+            const img = await imageResolver(url);
+            return { img, url };
+          })(),
+        );
+      }
+    });
+    images = (await Promise.all(promises)).reduce((acc, { img, url }) => {
+      acc[url] = img;
+      return acc;
+    }, {} as ImageDataMap);
+  }
+
   const definition: Definition = {};
   visit(node, "definition", (node) => {
     definition[node.identifier] = node.url;
