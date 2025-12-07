@@ -8,11 +8,9 @@
 - Works in any environment (e.g. browser, Node.js).
 - You can customize [mdast](https://github.com/syntax-tree/mdast) to Word transformation with plugin system.
 
-### 🚧 WIP 🚧
+### Supported mdast nodes
 
-This project is aiming to support all nodes in [mdast](https://github.com/syntax-tree/mdast) syntax tree, but currently transformation and stylings may not be well.
-
-If you have some feature requests or improvements, please create a [issue](https://github.com/inokawa/remark-docx/issues) or [PR](https://github.com/inokawa/remark-docx/pulls).
+Currently, some of the default styles may not be nice. If you have feature requests or improvements, please create a [issue](https://github.com/inokawa/remark-docx/issues) or [PR](https://github.com/inokawa/remark-docx/pulls).
 
 - [x] paragraph
 - [x] heading
