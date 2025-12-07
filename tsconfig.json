@@ -23,6 +23,7 @@
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     // "exactOptionalPropertyTypes": true,
+    "verbatimModuleSyntax": true,
     "stripInternal": true
   },
   "include": ["src"],

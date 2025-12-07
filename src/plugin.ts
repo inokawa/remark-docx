@@ -3,9 +3,9 @@ import type { Definition, Image, Root } from "mdast";
 import { visit } from "unist-util-visit";
 import {
   mdastToDocx,
-  DocxOptions,
-  ImageDataMap,
-  ImageData,
+  type DocxOptions,
+  type ImageDataMap,
+  type ImageData,
 } from "./mdast-to-docx";
 import { invariant } from "./utils";
 import { parseLatex } from "./latex";

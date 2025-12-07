@@ -8,7 +8,7 @@ import frontmatter from "remark-frontmatter";
 import math from "remark-math";
 import Zip from "adm-zip";
 import prettier from "prettier";
-import docx, { DocxOptions } from ".";
+import docx, { type DocxOptions } from ".";
 
 const FIXTURE_PATH = "../fixtures";
 
