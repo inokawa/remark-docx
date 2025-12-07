@@ -1,6 +1,6 @@
 {
   "name": "remark-docx",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "remark plugin to compile markdown to docx (Microsoft Word, Office Open XML).",
   "main": "lib/index.cjs",
   "module": "lib/index.js",
