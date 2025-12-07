@@ -107,11 +107,13 @@ const processor = unified()
 ```javascript
 import { unified } from "unified";
 import markdown from "remark-parse";
+import math from "remark-math";
 import docx from "remark-docx";
 import { latexPlugin } from "remark-docx/plugins/math";
 
 const processor = unified()
   .use(markdown)
+  .use(math)
   .use(docx, { plugins: [latexPlugin()] });
 ```
 
