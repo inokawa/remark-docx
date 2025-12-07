@@ -459,7 +459,7 @@ const buildBlockquote = (
 };
 
 const buildList = (
-  { children, ordered, start: _start, spread: _spread }: mdast.List,
+  { children, ordered }: mdast.List,
   ctx: Context,
 ): DocxContent[] => {
   const isTopLevel = !ctx.list;
@@ -480,7 +480,7 @@ const buildList = (
 };
 
 const buildListItem = (
-  { children, checked, spread: _spread }: mdast.ListItem,
+  { children, checked }: mdast.ListItem,
   ctx: Context,
 ): DocxContent[] => {
   return convertNodes(children, {
