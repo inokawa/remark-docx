@@ -28,69 +28,6 @@ import type {
 
 const ORDERED_LIST_REF = "ordered";
 const INDENT = 0.5;
-const DEFAULT_NUMBERINGS: ILevelsOptions[] = [
-  {
-    level: 0,
-    format: LevelFormat.DECIMAL,
-    text: "%1.",
-    alignment: AlignmentType.START,
-  },
-  {
-    level: 1,
-    format: LevelFormat.DECIMAL,
-    text: "%2.",
-    alignment: AlignmentType.START,
-    style: {
-      paragraph: {
-        indent: { start: convertInchesToTwip(INDENT * 1) },
-      },
-    },
-  },
-  {
-    level: 2,
-    format: LevelFormat.DECIMAL,
-    text: "%3.",
-    alignment: AlignmentType.START,
-    style: {
-      paragraph: {
-        indent: { start: convertInchesToTwip(INDENT * 2) },
-      },
-    },
-  },
-  {
-    level: 3,
-    format: LevelFormat.DECIMAL,
-    text: "%4.",
-    alignment: AlignmentType.START,
-    style: {
-      paragraph: {
-        indent: { start: convertInchesToTwip(INDENT * 3) },
-      },
-    },
-  },
-  {
-    level: 4,
-    format: LevelFormat.DECIMAL,
-    text: "%5.",
-    alignment: AlignmentType.START,
-    style: {
-      paragraph: {
-        indent: { start: convertInchesToTwip(INDENT * 4) },
-      },
-    },
-  },
-  {
-    level: 5,
-    format: LevelFormat.DECIMAL,
-    text: "%6.",
-    alignment: AlignmentType.START,
-    style: {
-      paragraph: {
-        indent: { start: convertInchesToTwip(INDENT * 5) },
-      },
-    },
-  },
-];
 
 type Decoration = Readonly<{
   [key in (mdast.Emphasis | mdast.Strong | mdast.Delete)["type"]]?: true;
@@ -148,17 +85,81 @@ const createFootnoteRegistry = (): FootnoteRegistry => {
 
 type NumberingRegistry = {
   create: () => string;
-  getAll: () => Array<{ reference: string; levels: ILevelsOptions[] }>;
+  numberings: () => Array<{ reference: string; levels: ILevelsOptions[] }>;
 };
 
 const createNumberingRegistry = (): NumberingRegistry => {
   let counter = 1;
 
+  const DEFAULT_NUMBERINGS: ILevelsOptions[] = [
+    {
+      level: 0,
+      format: LevelFormat.DECIMAL,
+      text: "%1.",
+      alignment: AlignmentType.START,
+    },
+    {
+      level: 1,
+      format: LevelFormat.DECIMAL,
+      text: "%2.",
+      alignment: AlignmentType.START,
+      style: {
+        paragraph: {
+          indent: { start: convertInchesToTwip(INDENT * 1) },
+        },
+      },
+    },
+    {
+      level: 2,
+      format: LevelFormat.DECIMAL,
+      text: "%3.",
+      alignment: AlignmentType.START,
+      style: {
+        paragraph: {
+          indent: { start: convertInchesToTwip(INDENT * 2) },
+        },
+      },
+    },
+    {
+      level: 3,
+      format: LevelFormat.DECIMAL,
+      text: "%4.",
+      alignment: AlignmentType.START,
+      style: {
+        paragraph: {
+          indent: { start: convertInchesToTwip(INDENT * 3) },
+        },
+      },
+    },
+    {
+      level: 4,
+      format: LevelFormat.DECIMAL,
+      text: "%5.",
+      alignment: AlignmentType.START,
+      style: {
+        paragraph: {
+          indent: { start: convertInchesToTwip(INDENT * 4) },
+        },
+      },
+    },
+    {
+      level: 5,
+      format: LevelFormat.DECIMAL,
+      text: "%6.",
+      alignment: AlignmentType.START,
+      style: {
+        paragraph: {
+          indent: { start: convertInchesToTwip(INDENT * 5) },
+        },
+      },
+    },
+  ];
+
   return {
     create: () => {
       return `${ORDERED_LIST_REF}-${counter++}`;
     },
-    getAll: () => {
+    numberings: () => {
       return Array.from({ length: counter }, (_, i) => ({
         reference: `${ORDERED_LIST_REF}-${i}`,
         levels: DEFAULT_NUMBERINGS,
@@ -212,9 +213,10 @@ export const mdastToDocx = async (
 ): Promise<ArrayBuffer> => {
   const definition = definitions(node);
 
-  const pluginCtx = { root: node, definition };
   const footnote = createFootnoteRegistry();
   const numbering = createNumberingRegistry();
+
+  const pluginCtx = { root: node, definition };
   const nodes = convertNodes(node.children, {
     overrides: (
       await Promise.all(plugins.map((p) => p(pluginCtx)))
@@ -225,6 +227,7 @@ export const mdastToDocx = async (
     footnote,
     numbering,
   });
+
   const doc = new Document({
     title,
     subject,
@@ -238,7 +241,7 @@ export const mdastToDocx = async (
     footnotes: footnote.footnotes(),
     sections: [{ children: nodes as DocxChild[] }],
     numbering: {
-      config: numbering.getAll(),
+      config: numbering.numberings(),
     },
   });
 
