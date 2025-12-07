@@ -2,7 +2,6 @@ import { warnOnce } from "../../utils";
 import type { RemarkDocxPlugin } from "../../types";
 import type * as mdast from "../../mdast";
 import { ImageRun, type IImageOptions } from "docx";
-import type { DocxContent } from "../../types";
 import { visit } from "unist-util-visit";
 
 type ImageData = {
@@ -12,26 +11,15 @@ type ImageData = {
   type: IImageOptions["type"];
 };
 
-const buildImage = (
-  { url }: Pick<mdast.Image, "url">,
-  images: ReadonlyMap<string, ImageData>,
-): DocxContent[] => {
-  const data = images.get(url);
-  if (!data) {
-    return [];
-  }
-
-  const { image, width, height } = data;
-  return [
-    new ImageRun({
-      type: data.type,
-      data: image,
-      transformation: {
-        width,
-        height,
-      },
-    } as IImageOptions),
-  ];
+const buildImage = ({ image, width, height, type }: ImageData) => {
+  return new ImageRun({
+    type: type,
+    data: image,
+    transformation: {
+      width,
+      height,
+    },
+  } as IImageOptions);
 };
 
 const imagePlugin = (
@@ -74,14 +62,22 @@ const imagePlugin = (
 
     return {
       image: (node) => {
-        return buildImage(node, images);
+        const data = images.get(node.url);
+        if (!data) {
+          return [];
+        }
+        return buildImage(data);
       },
       imageReference: ({ identifier }) => {
         const def = definition(identifier);
         if (def == null) {
           return [];
         }
-        return buildImage({ url: def.url }, images);
+        const data = images.get(def.url);
+        if (!data) {
+          return [];
+        }
+        return buildImage(data);
       },
     };
   };
