@@ -1,8 +1,6 @@
 import typescript from "@rollup/plugin-typescript";
-import fs from "node:fs";
-
-const pkgLoc = new URL("./package.json", import.meta.url);
-const pkg = JSON.parse(fs.readFileSync(pkgLoc, "utf8"));
+import { dirname } from 'node:path';
+import pkg from "./package.json" with { type: "json" };
 
 const externals = [
   ...Object.keys(pkg.dependencies),
@@ -29,6 +27,7 @@ export default {
       tsconfig: "./tsconfig.json",
       outDir: ".",
       declaration: true,
+      declarationDir: dirname(pkg.types),
       exclude: ["**/*.{spec,stories}.*"],
     }),
   ],
