@@ -9,7 +9,11 @@ import {
 import { parseMath } from "@unified-latex/unified-latex-util-parse";
 import type * as latex from "@unified-latex/unified-latex-types";
 import { invariant } from "./utils";
-import type { LatexParser } from "./mdast-to-docx";
+
+/**
+ * @internal
+ */
+export type LatexParser = (value: string) => MathRun[][];
 
 const hasSquareBrackets = (
   arg: latex.Argument | undefined,

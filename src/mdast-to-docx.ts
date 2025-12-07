@@ -19,12 +19,12 @@ import {
   type ILevelsOptions,
   FootnoteReferenceRun,
   CheckBox,
-  MathRun,
   type IPropertiesOptions,
 } from "docx";
 import type * as mdast from "./models/mdast";
 import { invariant, warnOnce } from "./utils";
 import { visit } from "unist-util-visit";
+import type { LatexParser } from "./latex";
 
 const ORDERED_LIST_REF = "ordered";
 const INDENT = 0.5;
@@ -113,11 +113,6 @@ type ListInfo = Readonly<{
   reference: string;
   checked?: boolean;
 }>;
-
-/**
- * @internal
- */
-export type LatexParser = (value: string) => MathRun[][];
 
 type Definition = Record<string, string>;
 type FootnoteDefinition = Readonly<{ children: Paragraph[] }>;
