@@ -22,6 +22,15 @@ afterEach(() => {
   vitest.spyOn(global.Math, "random").mockRestore();
 });
 
+const dummyImage = (encode: "png") => {
+  const canvas = createCanvas(100, 100);
+  const ctx = canvas.getContext("2d");
+
+  ctx.fillStyle = "#ff0000";
+  ctx.fillRect(0, 0, 100, 100);
+  return canvas.encode(encode).then((d) => d.buffer as ArrayBuffer);
+};
+
 describe("e2e", () => {
   const processor = (options: DocxOptions = {}) => {
     let id = 0;
