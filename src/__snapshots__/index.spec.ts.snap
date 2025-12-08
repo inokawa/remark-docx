@@ -60,7 +60,9 @@ exports[`e2e > article 1`] = `
           xml:space="preserve"
         >emphasis</w:t></w:r><w:r><w:rPr><w:strike /></w:rPr><w:t
           xml:space="preserve"
-        >delete</w:t></w:r><w:r><w:t
+        >delete</w:t></w:r><w:r><w:rPr><w:highlight
+            w:val="lightGray"
+          /><w:highlightCs w:val="lightGray" /></w:rPr><w:t
           xml:space="preserve"
         >inline code</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
@@ -6692,7 +6694,9 @@ exports[`e2e > phrasing-1 1`] = `
           xml:space="preserve"
         >aaaaaaa</w:t></w:r><w:r><w:t
           xml:space="preserve"
-        > aaaa </w:t></w:r><w:r><w:t
+        > aaaa </w:t></w:r><w:r><w:rPr><w:highlight
+            w:val="lightGray"
+          /><w:highlightCs w:val="lightGray" /></w:rPr><w:t
           xml:space="preserve"
         >aaaaaaaa</w:t></w:r><w:r><w:t xml:space="preserve"> aaa
 aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
@@ -6708,21 +6712,31 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           /></w:rPr><w:t xml:space="preserve">aa</w:t></w:r><w:r><w:rPr><w:b
           /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           xml:space="preserve"
-        > aa </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs
-          /></w:rPr><w:t xml:space="preserve">aaa</w:t></w:r><w:r><w:rPr><w:b
-          /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
+        > aa </w:t></w:r><w:r><w:rPr><w:highlight
+            w:val="lightGray"
+          /><w:highlightCs w:val="lightGray" /></w:rPr><w:t
+          xml:space="preserve"
+        >aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           xml:space="preserve"
         > aaaaa</w:t></w:r><w:r><w:rPr><w:i /><w:iCs /></w:rPr><w:t
           xml:space="preserve"
         > aaaa</w:t></w:r><w:r><w:t xml:space="preserve"> aa</w:t></w:r><w:r
-      ><w:t xml:space="preserve">a*aa*aa_aa_a~~aa~~a</w:t></w:r></w:p><w:p
-    ><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:rPr><w:b /><w:bCs
-          /></w:rPr><w:t xml:space="preserve">heading</w:t></w:r></w:p><w:p
-    ><w:pPr><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl
-            w:val="0"
-          /><w:numId w:val="1" /></w:numPr></w:pPr><w:r><w:rPr><w:b /><w:bCs
-          /></w:rPr><w:t xml:space="preserve">list</w:t></w:r></w:p><w:p><w:pPr
-      ><w:ind w:start="720" /></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+      ><w:rPr><w:highlight w:val="lightGray" /><w:highlightCs
+            w:val="lightGray"
+          /></w:rPr><w:t
+          xml:space="preserve"
+        >a*aa*aa_aa_a~~aa~~a</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Title"
+        /></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >heading</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >list</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r
+      ><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
         >quote</w:t></w:r></w:p><w:p><w:hyperlink
         w:history="1"
