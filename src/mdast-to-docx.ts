@@ -44,7 +44,7 @@ type FootnoteDefinition = Readonly<{ children: Paragraph[] }>;
 type FootnoteRegistry = {
   ref: (id: string) => number;
   def: (id: string, def: FootnoteDefinition) => void;
-  footnotes: () => {
+  toConfig: () => {
     [key: string]: FootnoteDefinition;
   };
 };
@@ -69,7 +69,7 @@ const createFootnoteRegistry = (): FootnoteRegistry => {
       const internalId = getId(id);
       defs.set(internalId, def);
     },
-    footnotes: () => {
+    toConfig: () => {
       return defs.entries().reduce(
         (acc, [key, def]) => {
           acc[key] = def;
@@ -85,7 +85,7 @@ const createFootnoteRegistry = (): FootnoteRegistry => {
 
 type NumberingRegistry = {
   create: () => string;
-  numberings: () => Array<{ reference: string; levels: ILevelsOptions[] }>;
+  toConfig: () => Array<{ reference: string; levels: ILevelsOptions[] }>;
 };
 
 const createNumberingRegistry = (): NumberingRegistry => {
@@ -159,7 +159,7 @@ const createNumberingRegistry = (): NumberingRegistry => {
     create: () => {
       return `${ORDERED_LIST_REF}-${counter++}`;
     },
-    numberings: () => {
+    toConfig: () => {
       return Array.from({ length: counter }, (_, i) => ({
         reference: `${ORDERED_LIST_REF}-${i}`,
         levels: DEFAULT_NUMBERINGS,
@@ -238,10 +238,10 @@ export const mdastToDocx = async (
     revision,
     styles,
     background,
-    footnotes: footnote.footnotes(),
+    footnotes: footnote.toConfig(),
     sections: [{ children: nodes as DocxChild[] }],
     numbering: {
-      config: numbering.numberings(),
+      config: numbering.toConfig(),
     },
   });
 

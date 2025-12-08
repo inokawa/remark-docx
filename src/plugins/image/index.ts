@@ -23,6 +23,16 @@ const buildImage = ({ image, width, height, type }: ImageData) => {
   } as IImageOptions);
 };
 
+const isSupportedType = (
+  type: string | undefined,
+): type is "png" | "jpg" | "gif" | "bmp" => {
+  if (!type) return false;
+  if (type === "png" || type === "jpg" || type === "gif" || type === "bmp") {
+    return true;
+  }
+  return false;
+};
+
 interface ImagePluginOptions {
   /**
    * A function to resolve image data from url.
@@ -40,16 +50,6 @@ export const imagePlugin = ({
     return res.arrayBuffer();
   },
 }: ImagePluginOptions = {}): RemarkDocxPlugin => {
-  const isSupportedType = (
-    type: string | undefined,
-  ): type is "png" | "jpg" | "gif" | "bmp" => {
-    if (!type) return false;
-    if (type === "png" || type === "jpg" || type === "gif" || type === "bmp") {
-      return true;
-    }
-    return false;
-  };
-
   const resolver = async (url: string): Promise<ImageData> => {
     const buf = await load(url);
 
