@@ -523,6 +523,7 @@ const buildTable = (
       return new TableRow({
         children: r.children.map((c, i) => {
           return new TableCell({
+            width: { size: columnWidth, type: "dxa" },
             children: [
               new Paragraph({
                 alignment: cellAligns?.[i],

@@ -254,84 +254,109 @@ quote</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r><w:t
           /></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol
           w:w="3008"
         /><w:gridCol w:w="3008" /><w:gridCol w:w="3008" /></w:tblGrid><w:tr
-      ><w:tc><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
-                xml:space="preserve"
-              >Left align</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="right"
-              /></w:pPr><w:r><w:t
-                xml:space="preserve"
-              >Right align</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="center"
-              /></w:pPr><w:r><w:t
-                xml:space="preserve"
-              >Center align</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:p
-          ><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
-                xml:space="preserve"
-              >This</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="right"
-              /></w:pPr><w:r><w:t
-                xml:space="preserve"
-              >This</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="center"
-              /></w:pPr><w:r><w:t
-                xml:space="preserve"
-              >This</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:p><w:pPr><w:jc
+      ><w:tc><w:tcPr><w:tcW w:type="dxa" w:w="3008" /></w:tcPr><w:p><w:pPr><w:jc
                 w:val="left"
               /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >column</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="right"
-              /></w:pPr><w:r><w:t
+              >Left align</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="right" /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >column</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="center"
-              /></w:pPr><w:r><w:t
+              >Right align</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >column</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:p><w:pPr
-            ><w:jc w:val="left" /></w:pPr><w:r><w:t
-                xml:space="preserve"
-              >will</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="right"
-              /></w:pPr><w:r><w:t
-                xml:space="preserve"
-              >will</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="center"
-              /></w:pPr><w:r><w:t
-                xml:space="preserve"
-              >will</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:p><w:pPr><w:jc
+              >Center align</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr
+          ><w:tcW w:type="dxa" w:w="3008" /></w:tcPr><w:p><w:pPr><w:jc
                 w:val="left"
               /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >be</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="right"
-              /></w:pPr><w:r><w:t
+              >This</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="right" /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >be</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="center"
-              /></w:pPr><w:r><w:t
+              >This</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >be</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:p><w:pPr><w:jc
-                w:val="left"
-              /></w:pPr><w:r><w:t
+              >This</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >left</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="right"
-              /></w:pPr><w:r><w:t
+              >column</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="right" /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >right</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="center"
-              /></w:pPr><w:r><w:t
+              >column</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >center</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:p><w:pPr
-            ><w:jc w:val="left" /></w:pPr><w:r><w:t
+              >column</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >aligned</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="right"
-              /></w:pPr><w:r><w:t
+              >will</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="right" /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >aligned</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
-                w:val="center"
-              /></w:pPr><w:r><w:t
+              >will</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
+                xml:space="preserve"
+              >will</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
+                xml:space="preserve"
+              >be</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="right" /></w:pPr><w:r><w:t
+                xml:space="preserve"
+              >be</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
+                xml:space="preserve"
+              >be</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
+                xml:space="preserve"
+              >left</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="right" /></w:pPr><w:r><w:t
+                xml:space="preserve"
+              >right</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
+                xml:space="preserve"
+              >center</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
+                xml:space="preserve"
+              >aligned</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="right" /></w:pPr><w:r><w:t
+                xml:space="preserve"
+              >aligned</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
                 xml:space="preserve"
               >aligned</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:r><w:t
           xml:space="preserve"
