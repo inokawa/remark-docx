@@ -14,7 +14,7 @@ type MdastNode<T extends string> = T extends KnownNodeType
 export type NodeOverrides = {
   [K in KnownNodeType]?: (
     node: MdastNode<K>,
-    next: (node: any) => DocxContent[],
+    next: (node: mdast.RootContent[]) => DocxContent[],
   ) => DocxContent | DocxContent[] | null;
 };
 
