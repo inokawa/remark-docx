@@ -23,14 +23,13 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] emphasis
 - [x] strong
 - [x] delete
+- [x] inlineCode
 - [x] break
 - [x] link / linkReference
 - [x] image / imageReference ([remark-docx/plugins/image](#image) is required)
 - [x] footnote / footnoteReference / footnoteDefinition
 - [x] html ([remark-docx/plugins/html](#html) is required)
-- [ ] yaml
-- [ ] toml
-- [ ] code / inlineCode
+- [ ] code
 - [x] math / inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [remark-docx/plugins/math](#latex) are required)
 
 ## Demo

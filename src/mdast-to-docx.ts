@@ -337,8 +337,7 @@ const convertNodes = (
         break;
       }
       case "inlineCode":
-        // FIXME: transform to text for now
-        results.push(buildText(node.value, ctx.deco));
+        results.push(buildInlineCode(node));
         break;
       case "break":
         results.push(buildBreak(node));
@@ -556,6 +555,13 @@ const buildText = (text: string, deco: Decoration): DocxContent => {
     bold: deco.strong,
     italics: deco.emphasis,
     strike: deco.delete,
+  });
+};
+
+const buildInlineCode = ({ value }: mdast.InlineCode): DocxContent => {
+  return new TextRun({
+    text: value,
+    highlight: "lightGray",
   });
 };
 
