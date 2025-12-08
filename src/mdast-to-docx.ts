@@ -302,7 +302,9 @@ const convertNodes = (
       case "tableCell":
         invariant(false, "unreachable");
       case "html":
-        results.push(buildHtml(node));
+        warnOnce(
+          `${node.type} node is not rendered since remark-docx/plugins/html is not provided.`,
+        );
         break;
       case "code":
         results.push(buildCode(node));
@@ -534,13 +536,6 @@ const buildTable = (
         }),
       });
     }),
-  });
-};
-
-const buildHtml = ({ value }: mdast.HTML): DocxContent => {
-  // FIXME: transform to text for now
-  return new Paragraph({
-    children: [buildText(value, {})],
   });
 };
 
