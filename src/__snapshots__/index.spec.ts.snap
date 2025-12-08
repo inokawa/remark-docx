@@ -252,9 +252,9 @@ quote</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r><w:t
             w:color="auto"
             w:sz="4"
           /></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol
-          w:w="100"
-        /><w:gridCol w:w="100" /><w:gridCol w:w="100" /></w:tblGrid><w:tr><w:tc
-        ><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
+          w:w="3008"
+        /><w:gridCol w:w="3008" /><w:gridCol w:w="3008" /></w:tblGrid><w:tr
+      ><w:tc><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
                 xml:space="preserve"
               >Left align</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc
                 w:val="right"

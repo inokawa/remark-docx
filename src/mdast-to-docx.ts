@@ -15,6 +15,8 @@ import {
   FootnoteReferenceRun,
   CheckBox,
   type IPropertiesOptions,
+  sectionPageSizeDefaults,
+  sectionMarginDefaults,
 } from "docx";
 import type * as mdast from "./mdast";
 import { invariant, warnOnce } from "./utils";
@@ -26,6 +28,10 @@ import type {
   RemarkDocxPlugin,
 } from "./types";
 
+const CONTENT_WIDTH =
+  sectionPageSizeDefaults.WIDTH -
+  sectionMarginDefaults.LEFT -
+  sectionMarginDefaults.RIGHT;
 const ORDERED_LIST_REF = "ordered";
 const INDENT = 0.5;
 
@@ -508,7 +514,11 @@ const buildTable = (
     }
   });
 
+  const columnLength = children[0]!.children.length;
+  const columnWidth = CONTENT_WIDTH / columnLength;
+
   return new Table({
+    columnWidths: Array.from({ length: columnLength }).map(() => columnWidth),
     rows: children.map((r) => {
       return new TableRow({
         children: r.children.map((c, i) => {
