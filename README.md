@@ -29,7 +29,7 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] image / imageReference ([remark-docx/plugins/image](#image) is required)
 - [x] footnote / footnoteReference / footnoteDefinition
 - [x] html ([remark-docx/plugins/html](#html) is required)
-- [ ] code
+- [x] code ([remark-docx/plugins/code](#code-block) is required)
 - [x] math / inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [remark-docx/plugins/math](#latex) are required)
 
 ## Demo
@@ -95,6 +95,21 @@ import { imagePlugin } from "remark-docx/plugins/image";
 const processor = unified()
   .use(markdown)
   .use(docx, { plugins: [imagePlugin()] });
+```
+
+### Code block
+
+#### Syntax highlighting with [shiki](https://github.com/shikijs/shiki)
+
+```javascript
+import { unified } from "unified";
+import markdown from "remark-parse";
+import docx from "remark-docx";
+import { shikiPlugin } from "remark-docx/plugins/code";
+
+const processor = unified()
+  .use(markdown)
+  .use(docx, { plugins: [shikiPlugin({ theme: "dark-plus" })] });
 ```
 
 ### HTML

@@ -371,29 +371,755 @@ quote</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r><w:t
             w:color="auto"
             w:sz="6"
             w:space="1"
-          /></w:pBdr></w:pPr></w:p><w:p><w:r><w:t
+          /></w:pBdr></w:pPr></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="569CD6"
+          /></w:rPr><w:t xml:space="preserve">function</w:t></w:r><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
           xml:space="preserve"
-        >function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/\\bno\\-highlight\\b/) != -1)
-      return process(block, true, 0x0F) +
-             \` class=&quot;\${cls}&quot;\`;
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i &lt; classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log(&apos;undefined&apos;);
-  }
-
-  return (
-    &lt;div&gt;
-      &lt;web-component&gt;{block}&lt;/web-component&gt;
-    &lt;/div&gt;
-  )
-}
-
-export  $initHighlight;</w:t></w:r></w:p><w:sectPr><w:pgSz
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >$initHighlight</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >block</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >, </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >cls</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >) {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >try</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >if</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > (</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >cls</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >.</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >search</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D16969" /></w:rPr><w:t
+          xml:space="preserve"
+        >/</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >\\b</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D16969" /></w:rPr><w:t
+          xml:space="preserve"
+        >no</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D7BA7D" /></w:rPr><w:t
+          xml:space="preserve"
+        >\\-</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D16969" /></w:rPr><w:t
+          xml:space="preserve"
+        >highlight</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >\\b</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D16969" /></w:rPr><w:t
+          xml:space="preserve"
+        >/</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >) != -</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="B5CEA8" /></w:rPr><w:t
+          xml:space="preserve"
+        >1</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >)</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">      </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >return</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >process</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >block</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >, </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >true</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >, </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="B5CEA8" /></w:rPr><w:t
+          xml:space="preserve"
+        >0x0F</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >) +</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">             </w:t></w:r><w:r
+      ><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="CE9178"
+          /></w:rPr><w:t xml:space="preserve">\` class=&quot;</w:t></w:r><w:r
+      ><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="569CD6"
+          /></w:rPr><w:t xml:space="preserve">\${</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >cls</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >}</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >&quot;\`</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  } </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >catch</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > (</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >e</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >) {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="6A9955" /></w:rPr><w:t
+          xml:space="preserve"
+        >/* handle exception */</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  }</w:t></w:r></w:p><w:p><w:pPr
+      ><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >  </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >for</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > (</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >var</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >i</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > = </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="B5CEA8" /></w:rPr><w:t
+          xml:space="preserve"
+        >0</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > / </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="B5CEA8" /></w:rPr><w:t
+          xml:space="preserve"
+        >2</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >; </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >i</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > &lt; </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >classes</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >.</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >length</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >; </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >i</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >++) {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >if</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > (</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >checkCondition</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >classes</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >[</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >i</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >]) === </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >undefined</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >)</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">      </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >console</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >.</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >log</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >&apos;undefined&apos;</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >);</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  }</w:t></w:r></w:p><w:p><w:pPr
+      ><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr></w:p><w:p
+    ><w:pPr><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr><w:r
+      ><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >return</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > (</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&lt;</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >div</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&gt;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">      </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&lt;</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="4EC9B0" /></w:rPr><w:t
+          xml:space="preserve"
+        >web-component</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&gt;</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >{</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >block</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >}</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&lt;/</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="4EC9B0" /></w:rPr><w:t
+          xml:space="preserve"
+        >web-component</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&gt;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&lt;/</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >div</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&gt;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  )</w:t></w:r></w:p><w:p><w:pPr
+      ><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >}</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="569CD6"
+          /></w:rPr><w:t xml:space="preserve">export</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >  </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >$initHighlight</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >;</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
         w:h="16838"
         w:orient="portrait"
@@ -1240,63 +1966,1660 @@ exports[`e2e > code 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:r><w:t xml:space="preserve">@font-face {
-  font-family: Chunkfive;
-  src: url(&quot;Chunkfive.otf&quot;);
-}
-
-body,
-.usertext {
-  color: #f0f0f0;
-  background: #600;
-  font-family: Chunkfive, sans;
-  --heading-1: 30px/32px Helvetica, sans-serif;
-}
-
-@import url(print.css);
-@media print {
-  a[href^=&quot;http&quot;]::after {
-    content: attr(href);
-  }
-}</w:t></w:r></w:p><w:p><w:r><w:t
+><w:body><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="C586C0"
+          /></w:rPr><w:t xml:space="preserve">@font-face</w:t></w:r><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
           xml:space="preserve"
-        >function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/\\bno\\-highlight\\b/) != -1)
-      return process(block, true, 0x0F) +
-             \` class=&quot;\${cls}&quot;\`;
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i &lt; classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log(&apos;undefined&apos;);
-  }
-
-  return (
-    &lt;div&gt;
-      &lt;web-component&gt;{block}&lt;/web-component&gt;
-    &lt;/div&gt;
-  )
-}
-
-export  $initHighlight;</w:t></w:r></w:p><w:p><w:r><w:t
+        > {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
           xml:space="preserve"
-        >class MyClass {
-  public static myValue: string;
-  constructor(init: string) {
-    this.myValue = init;
-  }
-}
-import fs = require(&quot;fs&quot;);
-module MyModule {
-  export interface MyInterface extends Other {
-    myProperty: any;
-  }
-}
-declare magicNumber number;
-myArray.forEach(() =&gt; { }); // fat arrow syntax</w:t></w:r></w:p><w:sectPr
-    ><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
+        >font-family</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >: Chunkfive;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >src</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >: </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >url</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >&quot;Chunkfive.otf&quot;</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >);</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">}</w:t></w:r></w:p><w:p><w:pPr
+      ><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr></w:p><w:p
+    ><w:pPr><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr><w:r
+      ><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D7BA7D"
+          /></w:rPr><w:t xml:space="preserve">body</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >,</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D7BA7D"
+          /></w:rPr><w:t xml:space="preserve">.usertext</w:t></w:r><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >color</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >: </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >#f0f0f0</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >background</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >: </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >#600</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >font-family</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >: Chunkfive, sans;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >--heading-1</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >: </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="B5CEA8" /></w:rPr><w:t
+          xml:space="preserve"
+        >30px</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >/</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="B5CEA8" /></w:rPr><w:t
+          xml:space="preserve"
+        >32px</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >Helvetica</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >, </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >sans-serif</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">}</w:t></w:r></w:p><w:p><w:pPr
+      ><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr></w:p><w:p
+    ><w:pPr><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr><w:r
+      ><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="C586C0"
+          /></w:rPr><w:t xml:space="preserve">@import</w:t></w:r><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >url</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >print.css</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >);</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="C586C0"
+          /></w:rPr><w:t xml:space="preserve">@media</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >print</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D7BA7D" /></w:rPr><w:t
+          xml:space="preserve"
+        >a</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >[</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >href</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >^=</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >&quot;http&quot;</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >]</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D7BA7D" /></w:rPr><w:t
+          xml:space="preserve"
+        >::after</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >content</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >: </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >attr</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >href</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >);</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  }</w:t></w:r></w:p><w:p><w:pPr
+      ><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >}</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="569CD6"
+          /></w:rPr><w:t xml:space="preserve">function</w:t></w:r><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >$initHighlight</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >block</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >, </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >cls</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >) {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >try</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >if</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > (</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >cls</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >.</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >search</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D16969" /></w:rPr><w:t
+          xml:space="preserve"
+        >/</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >\\b</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D16969" /></w:rPr><w:t
+          xml:space="preserve"
+        >no</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D7BA7D" /></w:rPr><w:t
+          xml:space="preserve"
+        >\\-</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D16969" /></w:rPr><w:t
+          xml:space="preserve"
+        >highlight</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >\\b</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D16969" /></w:rPr><w:t
+          xml:space="preserve"
+        >/</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >) != -</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="B5CEA8" /></w:rPr><w:t
+          xml:space="preserve"
+        >1</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >)</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">      </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >return</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >process</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >block</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >, </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >true</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >, </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="B5CEA8" /></w:rPr><w:t
+          xml:space="preserve"
+        >0x0F</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >) +</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">             </w:t></w:r><w:r
+      ><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="CE9178"
+          /></w:rPr><w:t xml:space="preserve">\` class=&quot;</w:t></w:r><w:r
+      ><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="569CD6"
+          /></w:rPr><w:t xml:space="preserve">\${</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >cls</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >}</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >&quot;\`</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  } </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >catch</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > (</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >e</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >) {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="6A9955" /></w:rPr><w:t
+          xml:space="preserve"
+        >/* handle exception */</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  }</w:t></w:r></w:p><w:p><w:pPr
+      ><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >  </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >for</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > (</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >var</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >i</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > = </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="B5CEA8" /></w:rPr><w:t
+          xml:space="preserve"
+        >0</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > / </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="B5CEA8" /></w:rPr><w:t
+          xml:space="preserve"
+        >2</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >; </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >i</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > &lt; </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >classes</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >.</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >length</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >; </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >i</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >++) {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >if</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > (</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >checkCondition</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >classes</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >[</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >i</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >]) === </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >undefined</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >)</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">      </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >console</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >.</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >log</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >&apos;undefined&apos;</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >);</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  }</w:t></w:r></w:p><w:p><w:pPr
+      ><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr></w:p><w:p
+    ><w:pPr><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr><w:r
+      ><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >return</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > (</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&lt;</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >div</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&gt;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">      </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&lt;</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="4EC9B0" /></w:rPr><w:t
+          xml:space="preserve"
+        >web-component</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&gt;</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >{</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >block</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >}</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&lt;/</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="4EC9B0" /></w:rPr><w:t
+          xml:space="preserve"
+        >web-component</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&gt;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&lt;/</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >div</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="808080" /></w:rPr><w:t
+          xml:space="preserve"
+        >&gt;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  )</w:t></w:r></w:p><w:p><w:pPr
+      ><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >}</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="569CD6"
+          /></w:rPr><w:t xml:space="preserve">export</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >  </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >$initHighlight</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="569CD6"
+          /></w:rPr><w:t xml:space="preserve">class</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="4EC9B0" /></w:rPr><w:t
+          xml:space="preserve"
+        >MyClass</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >public</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >static</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >myValue</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >: </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="4EC9B0" /></w:rPr><w:t
+          xml:space="preserve"
+        >string</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >constructor</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >init</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >: </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="4EC9B0" /></w:rPr><w:t
+          xml:space="preserve"
+        >string</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >) {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >this</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >.</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >myValue</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > = </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >init</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  }</w:t></w:r></w:p><w:p><w:pPr
+      ><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >}</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="C586C0"
+          /></w:rPr><w:t xml:space="preserve">import</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >fs</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > = </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >require</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="CE9178" /></w:rPr><w:t
+          xml:space="preserve"
+        >&quot;fs&quot;</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >);</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="569CD6"
+          /></w:rPr><w:t xml:space="preserve">module</w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="4EC9B0" /></w:rPr><w:t
+          xml:space="preserve"
+        >MyModule</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="C586C0" /></w:rPr><w:t
+          xml:space="preserve"
+        >export</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >interface</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="4EC9B0" /></w:rPr><w:t
+          xml:space="preserve"
+        >MyInterface</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >extends</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="4EC9B0" /></w:rPr><w:t
+          xml:space="preserve"
+        >Other</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > {</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">    </w:t></w:r><w:r><w:rPr><w:b
+            w:val="false"
+          /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >myProperty</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >: </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="4EC9B0" /></w:rPr><w:t
+          xml:space="preserve"
+        >any</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="D4D4D4"
+          /></w:rPr><w:t xml:space="preserve">  }</w:t></w:r></w:p><w:p><w:pPr
+      ><w:shd w:fill="1E1E1E" w:color="auto" w:val="clear" /></w:pPr><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >}</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="569CD6"
+          /></w:rPr><w:t xml:space="preserve">declare</w:t></w:r><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >magicNumber</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="9CDCFE" /></w:rPr><w:t
+          xml:space="preserve"
+        >number</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >;</w:t></w:r></w:p><w:p><w:pPr><w:shd
+          w:fill="1E1E1E"
+          w:color="auto"
+          w:val="clear"
+        /></w:pPr><w:r><w:rPr><w:b w:val="false" /><w:bCs w:val="false" /><w:i
+            w:val="false"
+          /><w:iCs w:val="false" /><w:strike w:val="false" /><w:color
+            w:val="9CDCFE"
+          /></w:rPr><w:t xml:space="preserve">myArray</w:t></w:r><w:r><w:rPr
+        ><w:b w:val="false" /><w:bCs w:val="false" /><w:i w:val="false" /><w:iCs
+            w:val="false"
+          /><w:strike w:val="false" /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >.</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="DCDCAA" /></w:rPr><w:t
+          xml:space="preserve"
+        >forEach</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        >(() </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="569CD6" /></w:rPr><w:t
+          xml:space="preserve"
+        >=&gt;</w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="D4D4D4" /></w:rPr><w:t
+          xml:space="preserve"
+        > { }); </w:t></w:r><w:r><w:rPr><w:b w:val="false" /><w:bCs
+            w:val="false"
+          /><w:i w:val="false" /><w:iCs w:val="false" /><w:strike
+            w:val="false"
+          /><w:color w:val="6A9955" /></w:rPr><w:t
+          xml:space="preserve"
+        >// fat arrow syntax</w:t></w:r></w:p><w:sectPr><w:pgSz
+        w:w="11906"
+        w:h="16838"
+        w:orient="portrait"
+      /><w:pgMar
         w:top="1440"
         w:right="1440"
         w:bottom="1440"
