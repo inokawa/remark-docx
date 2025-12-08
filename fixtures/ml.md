@@ -1,6 +1,8 @@
 <div>
-<span>This is <b>html</b></span>
+<span>This is <b>html</b></span> inside <u>docx</u>.
 </div>
+
+<table><tr><td>aaaaa</td></tr></table>
 
 <!--comment-->
 

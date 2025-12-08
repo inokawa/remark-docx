@@ -31,7 +31,7 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] link / linkReference
 - [x] image / imageReference ([remark-docx/plugins/image](#image) is required)
 - [x] footnote / footnoteReference
-- [ ] html
+- [x] html ([remark-docx/plugins/html](#html) is required)
 - [ ] yaml
 - [ ] toml
 - [ ] code / inlineCode
@@ -100,6 +100,19 @@ import { imagePlugin } from "remark-docx/plugins/image";
 const processor = unified()
   .use(markdown)
   .use(docx, { plugins: [imagePlugin()] });
+```
+
+### HTML
+
+```javascript
+import { unified } from "unified";
+import markdown from "remark-parse";
+import docx from "remark-docx";
+import { htmlPlugin } from "remark-docx/plugins/html";
+
+const processor = unified()
+  .use(markdown)
+  .use(docx, { plugins: [htmlPlugin()] });
 ```
 
 ### LaTeX
