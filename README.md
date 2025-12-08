@@ -16,13 +16,9 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] heading
 - [x] thematicBreak
 - [x] blockquote
-- [x] list
-- [x] listItem
-- [x] table
-- [x] tableRow
-- [x] tableCell
+- [x] list / listItem
+- [x] table / tableRow / tableCell
 - [x] definition
-- [x] footnoteDefinition
 - [x] text
 - [x] emphasis
 - [x] strong
@@ -30,7 +26,7 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] break
 - [x] link / linkReference
 - [x] image / imageReference ([remark-docx/plugins/image](#image) is required)
-- [x] footnote / footnoteReference
+- [x] footnote / footnoteReference / footnoteDefinition
 - [x] html ([remark-docx/plugins/html](#html) is required)
 - [ ] yaml
 - [ ] toml
