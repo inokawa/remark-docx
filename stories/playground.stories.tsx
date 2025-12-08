@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { unified } from "unified";
 import markdown from "remark-parse";
 import gfm from "remark-gfm";
-import frontmatter from "remark-frontmatter";
 import math from "remark-math";
 import docx from "../src";
 import { imagePlugin } from "../src/plugins/image";
@@ -15,7 +14,6 @@ import { renderAsync } from "docx-preview";
 const toDocxProcessor = unified()
   .use(markdown)
   .use(gfm)
-  .use(frontmatter)
   .use(math)
   .use(docx, {
     plugins: [imagePlugin()],
