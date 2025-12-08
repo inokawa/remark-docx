@@ -23,11 +23,13 @@ const buildImage = ({ image, width, height, type }: ImageData) => {
   } as IImageOptions);
 };
 
+const supportedTypes = ["png", "jpg", "gif", "bmp", "svg"] as const;
+
 const isSupportedType = (
   type: string | undefined,
-): type is "png" | "jpg" | "gif" | "bmp" => {
+): type is (typeof supportedTypes)[number] => {
   if (!type) return false;
-  if (type === "png" || type === "jpg" || type === "gif" || type === "bmp") {
+  if ((supportedTypes as readonly string[]).includes(type)) {
     return true;
   }
   return false;
