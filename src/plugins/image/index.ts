@@ -5,17 +5,17 @@ import { ImageRun, type IImageOptions } from "docx";
 import { visit } from "unist-util-visit";
 import { imageSize } from "image-size";
 
-type ImageData = {
-  image: IImageOptions["data"];
+type ImageData = Readonly<{
+  data: IImageOptions["data"];
   width: number;
   height: number;
   type: IImageOptions["type"];
-};
+}>;
 
-const buildImage = ({ image, width, height, type }: ImageData) => {
+const buildImage = ({ data, width, height, type }: ImageData) => {
   return new ImageRun({
     type: type,
-    data: image,
+    data: data,
     transformation: {
       width,
       height,
@@ -61,7 +61,7 @@ export const imagePlugin = ({
       warnOnce(err);
       throw new Error(err);
     }
-    return { image: buf, width, height, type };
+    return { data: buf, width, height, type };
   };
 
   const images = new Map<string, ImageData>();
