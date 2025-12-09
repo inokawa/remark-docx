@@ -6,7 +6,7 @@
 
 > **RemarkDocxPlugin** = (`ctx`) => `Promise`\<`NodeOverrides`\>
 
-Defined in: [src/types.ts:21](https://github.com/inokawa/remark-docx/blob/5b116bc5a1d857499289c6943a13c0cff5b3e466/src/types.ts#L21)
+Defined in: [src/types.ts:21](https://github.com/inokawa/remark-docx/blob/e8a2aee999db881246daf6a5fe811129d387c272/src/types.ts#L21)
 
 ## Parameters
 
