@@ -29,8 +29,8 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] image / imageReference ([remark-docx/plugins/image](#image) is required)
 - [x] footnote / footnoteReference / footnoteDefinition
 - [x] html ([remark-docx/plugins/html](#html) is required)
-- [x] code ([remark-docx/plugins/code](#code-block) is required)
-- [x] math / inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [remark-docx/plugins/math](#latex) are required)
+- [x] code ([remark-docx/plugins/code](#code) is required)
+- [x] math / inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [remark-docx/plugins/math](#math) are required)
 
 ## Demo
 
@@ -86,6 +86,8 @@ const text = "# hello world";
 
 ### Image
 
+Fetch image data and embed into docx.
+
 ```javascript
 import { unified } from "unified";
 import markdown from "remark-parse";
@@ -97,9 +99,9 @@ const processor = unified()
   .use(docx, { plugins: [imagePlugin()] });
 ```
 
-### Code block
+### Code
 
-#### Syntax highlighting with [shiki](https://github.com/shikijs/shiki)
+Syntax highlighting with [shiki](https://github.com/shikijs/shiki).
 
 ```javascript
 import { unified } from "unified";
@@ -114,6 +116,8 @@ const processor = unified()
 
 ### HTML
 
+Transform HTML to markdown.
+
 ```javascript
 import { unified } from "unified";
 import markdown from "remark-parse";
@@ -125,7 +129,9 @@ const processor = unified()
   .use(docx, { plugins: [htmlPlugin()] });
 ```
 
-### LaTeX
+### Math
+
+Render LaTeX with [unified-latex](https://github.com/siefkenj/unified-latex).
 
 ```javascript
 import { unified } from "unified";
