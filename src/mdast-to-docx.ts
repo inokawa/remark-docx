@@ -226,7 +226,7 @@ export const mdastToDocx = async (
   const nodes = convertNodes(node.children, {
     overrides: (
       await Promise.all(plugins.map((p) => p(pluginCtx)))
-    ).reduceRight((acc, p) => ({ acc, ...p }), {}),
+    ).reduceRight((acc, p) => ({ ...acc, ...p }), {}),
     deco: {},
     indent: 0,
     definition: definition,
@@ -307,7 +307,9 @@ const convertNodes = (
         );
         break;
       case "code":
-        results.push(buildCode(node));
+        warnOnce(
+          `${node.type} node is not rendered since remark-docx/plugins/code is not provided.`,
+        );
         break;
       // case "yaml":
       //   // unimplemented
@@ -535,17 +537,6 @@ const buildTable = (
         }),
       });
     }),
-  });
-};
-
-const buildCode = ({
-  value,
-  lang: _lang,
-  meta: _meta,
-}: mdast.Code): DocxContent => {
-  // FIXME: transform to text for now
-  return new Paragraph({
-    children: [buildText(value, {})],
   });
 };
 

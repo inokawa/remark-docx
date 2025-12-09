@@ -39,6 +39,7 @@
     "hast-util-to-mdast": "^10.1.2",
     "image-size": "^2.0.2",
     "mdast-util-definitions": "^6.0.0",
+    "shiki": "^3.19.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {

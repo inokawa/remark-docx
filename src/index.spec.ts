@@ -13,6 +13,7 @@ import docx, { type DocxOptions } from ".";
 import { latexPlugin } from "./plugins/math";
 import { imagePlugin } from "./plugins/image";
 import { htmlPlugin } from "./plugins/html";
+import { shikiPlugin } from "./plugins/code";
 
 const FIXTURE_PATH = "../fixtures";
 
@@ -71,7 +72,10 @@ describe("e2e", () => {
   it("article", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "article.md"));
     const doc = await processor({
-      plugins: [imagePlugin({ load: dummyImage })],
+      plugins: [
+        imagePlugin({ load: dummyImage }),
+        shikiPlugin({ theme: "dark-plus" }),
+      ],
     }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -88,7 +92,9 @@ describe("e2e", () => {
 
   it("code", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "code.md"));
-    const doc = await processor().process(md);
+    const doc = await processor({
+      plugins: [shikiPlugin({ theme: "dark-plus" })],
+    }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }

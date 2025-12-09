@@ -5,6 +5,7 @@ import gfm from "remark-gfm";
 import math from "remark-math";
 import docx from "../src";
 import { imagePlugin } from "../src/plugins/image";
+import { shikiPlugin } from "../src/plugins/code";
 // @ts-expect-error no type definition
 import text from "../fixtures/article.md?raw";
 import { saveAs } from "file-saver";
@@ -16,7 +17,7 @@ const toDocxProcessor = unified()
   .use(gfm)
   .use(math)
   .use(docx, {
-    plugins: [imagePlugin()],
+    plugins: [imagePlugin(), shikiPlugin({ theme: "dark-plus" })],
   });
 
 const toDocx = async (s: string) => {
