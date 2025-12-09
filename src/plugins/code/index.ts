@@ -8,7 +8,7 @@ import {
 import { visit } from "unist-util-visit";
 import type { FontStyle } from "shiki/textmate";
 
-interface ShikiPlugin {
+export interface ShikiPluginOptions {
   /**
    * https://shiki.style/themes
    */
@@ -18,7 +18,9 @@ interface ShikiPlugin {
 /**
  * A plugin to render "code" nodes, with syntax highlighting powered by shiki.
  */
-export const shikiPlugin = ({ theme }: ShikiPlugin): RemarkDocxPlugin => {
+export const shikiPlugin = ({
+  theme,
+}: ShikiPluginOptions): RemarkDocxPlugin => {
   let highlighter: Awaited<ReturnType<typeof createHighlighter>> | undefined;
   const langs = new Set<string>();
 

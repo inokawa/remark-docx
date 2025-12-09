@@ -35,7 +35,7 @@ const isSupportedType = (
   return false;
 };
 
-interface ImagePluginOptions {
+export interface ImagePluginOptions {
   /**
    * A function to resolve image data from url.
    * @default fetch
