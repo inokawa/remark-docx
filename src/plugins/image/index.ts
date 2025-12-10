@@ -85,11 +85,15 @@ const browserSvgToPng: SvgToPngFn = async ({ buffer, width, height }) => {
     img.src = url;
     await img.decode();
 
+    const dpr = window.devicePixelRatio;
+
     const canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = height;
+    const scaledWidth = width * dpr;
+    const scaledHeight = height * dpr;
+    canvas.width = scaledWidth;
+    canvas.height = scaledHeight;
     const ctx = canvas.getContext("2d")!;
-    ctx.drawImage(img, 0, 0, width, height);
+    ctx.drawImage(img, 0, 0, scaledWidth, scaledHeight);
 
     return new Promise<ArrayBuffer>((resolve) => {
       canvas.toBlob((blob) => {
