@@ -203,7 +203,7 @@ exports[`e2e > article 1`] = `
               r="0"
               b="0"
               l="0"
-            /><wp:docPr id="1" name="" descr="" title="" /><wp:cNvGraphicFramePr
+            /><wp:docPr id="1" name="image" /><wp:cNvGraphicFramePr
             ><a:graphicFrameLocks
                 xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
                 noChangeAspect="1"
@@ -6261,9 +6261,7 @@ exports[`e2e > image-reference 1`] = `
               cy="952500"
             /><wp:effectExtent t="0" r="0" b="0" l="0" /><wp:docPr
               id="1"
-              name=""
-              descr=""
-              title=""
+              name="image reference"
             /><wp:cNvGraphicFramePr><a:graphicFrameLocks
                 xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
                 noChangeAspect="1"
@@ -9077,9 +9075,7 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
               cy="952500"
             /><wp:effectExtent t="0" r="0" b="0" l="0" /><wp:docPr
               id="1"
-              name=""
-              descr=""
-              title=""
+              name="image"
             /><wp:cNvGraphicFramePr><a:graphicFrameLocks
                 xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
                 noChangeAspect="1"
@@ -9507,9 +9503,7 @@ exports[`e2e > phrasing-2 1`] = `
               cy="952500"
             /><wp:effectExtent t="0" r="0" b="0" l="0" /><wp:docPr
               id="1"
-              name=""
-              descr=""
-              title=""
+              name="image"
             /><wp:cNvGraphicFramePr><a:graphicFrameLocks
                 xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
                 noChangeAspect="1"
@@ -9546,7 +9540,7 @@ exports[`e2e > phrasing-2 1`] = `
               r="0"
               b="0"
               l="0"
-            /><wp:docPr id="1" name="" descr="" title="" /><wp:cNvGraphicFramePr
+            /><wp:docPr id="1" name="blavo" /><wp:cNvGraphicFramePr
             ><a:graphicFrameLocks
                 xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
                 noChangeAspect="1"
