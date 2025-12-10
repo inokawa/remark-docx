@@ -5,14 +5,34 @@ import { ImageRun, type IImageOptions } from "docx";
 import { visit } from "unist-util-visit";
 import { imageSize } from "image-size";
 
+const supportedTypes = ["png", "jpg", "gif", "bmp", "svg"] as const;
+
+type SupportedImageType = (typeof supportedTypes)[number];
+
 type ImageData = Readonly<{
-  data: IImageOptions["data"];
+  data: ArrayBuffer;
   width: number;
   height: number;
-  type: IImageOptions["type"];
+  type: SupportedImageType;
 }>;
 
-const buildImage = ({ data, width, height, type }: ImageData) => {
+const buildImage = (image: ImageData, node: { alt?: string | null }) => {
+  const altText = node.alt ? { name: node.alt } : undefined;
+
+  if (image.type === "svg") {
+    const { type, data, width, height } = image;
+    return new ImageRun({
+      type: type,
+      data: data,
+      transformation: {
+        width,
+        height,
+      },
+      altText,
+    } as IImageOptions);
+  }
+
+  const { type, data, width, height } = image;
   return new ImageRun({
     type: type,
     data: data,
@@ -20,14 +40,13 @@ const buildImage = ({ data, width, height, type }: ImageData) => {
       width,
       height,
     },
-  } as IImageOptions);
+    altText,
+  });
 };
-
-const supportedTypes = ["png", "jpg", "gif", "bmp", "svg"] as const;
 
 const isSupportedType = (
   type: string | undefined,
-): type is (typeof supportedTypes)[number] => {
+): type is SupportedImageType => {
   if (!type) return false;
   if ((supportedTypes as readonly string[]).includes(type)) {
     return true;
@@ -52,18 +71,6 @@ export const imagePlugin = ({
     return res.arrayBuffer();
   },
 }: ImagePluginOptions = {}): RemarkDocxPlugin => {
-  const resolver = async (url: string): Promise<ImageData> => {
-    const buf = await load(url);
-
-    const { width, height, type } = imageSize(new Uint8Array(buf));
-    if (!isSupportedType(type)) {
-      const err = `Not supported image type: ${type}`;
-      warnOnce(err);
-      throw new Error(err);
-    }
-    return { data: buf, width, height, type };
-  };
-
   const images = new Map<string, ImageData>();
 
   return async ({ root, definition }) => {
@@ -85,12 +92,26 @@ export const imagePlugin = ({
           promises.set(
             url,
             (async () => {
+              let data: ArrayBuffer;
               try {
-                const img = await resolver(url);
-                images.set(url, img);
+                data = await load(url);
               } catch (e) {
-                warnOnce(`Failed to fetch image: ${url}`);
+                warnOnce(`Failed to load image: ${url} ${e}`);
+                return;
               }
+
+              const { width, height, type } = imageSize(new Uint8Array(data));
+              if (!isSupportedType(type)) {
+                warnOnce(`Not supported image type: ${type}`);
+                return;
+              }
+
+              images.set(url, {
+                type,
+                width,
+                height,
+                data,
+              });
             })(),
           );
         }
@@ -105,10 +126,10 @@ export const imagePlugin = ({
         if (!data) {
           return [];
         }
-        return buildImage(data);
+        return buildImage(data, node);
       },
-      imageReference: ({ identifier }) => {
-        const def = definition(identifier);
+      imageReference: (node) => {
+        const def = definition(node.identifier);
         if (def == null) {
           return [];
         }
@@ -116,7 +137,7 @@ export const imagePlugin = ({
         if (!data) {
           return [];
         }
-        return buildImage(data);
+        return buildImage(data, node);
       },
     };
   };
