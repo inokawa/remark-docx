@@ -7,7 +7,7 @@ import docx from "../src";
 import { imagePlugin } from "../src/plugins/image";
 import { shikiPlugin } from "../src/plugins/code";
 // @ts-expect-error no type definition
-import text from "../fixtures/article.md?raw";
+import text from "../README.md?raw";
 import { saveAs } from "file-saver";
 import { renderAsync } from "docx-preview";
 import debounce from "lodash.debounce";
