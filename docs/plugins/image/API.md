@@ -7,3 +7,7 @@
 ## Functions
 
 - [imagePlugin](functions/imagePlugin.md)
+
+## Interfaces
+
+- [ImagePluginOptions](interfaces/ImagePluginOptions.md)
