@@ -8,6 +8,24 @@ import {
 import { visit } from "unist-util-visit";
 import type { FontStyle } from "shiki/textmate";
 
+/**
+ * Format to 6 disit hex
+ */
+const formatHex = (str: string): string => {
+  // #RGB
+  if (str.length === 4) {
+    const r = str[1]!;
+    const g = str[2]!;
+    const b = str[3]!;
+    return str[0]! + r + r + g + g + b + b;
+  }
+  // #RRGGBBAA
+  if (str.length === 9) {
+    return str.slice(0, 7);
+  }
+  return str;
+};
+
 export interface ShikiPluginOptions {
   /**
    * https://shiki.style/themes
@@ -56,18 +74,31 @@ export const shikiPlugin = ({
           lang: lang as BundledLanguage,
           theme,
         });
+        let { bg, fg } = res;
+        if (fg) {
+          fg = formatHex(fg);
+        }
+        if (bg) {
+          bg = formatHex(bg);
+        }
 
         return res.tokens.map((r) => {
           return new Paragraph({
             shading: {
               type: "clear",
               color: "auto",
-              fill: res.bg,
+              fill: bg,
             },
             children: r.map(({ content, bgColor, color, fontStyle }) => {
+              if (color) {
+                color = formatHex(color);
+              }
+              if (bgColor) {
+                bgColor = formatHex(bgColor);
+              }
               return new TextRun({
                 text: content,
-                color: color ?? res.fg,
+                color: color ?? fg,
                 shading: bgColor
                   ? {
                       type: "clear",
@@ -79,7 +110,7 @@ export const shikiPlugin = ({
                 italics: fontStyle === (1 satisfies FontStyle.Italic),
                 underline:
                   fontStyle === (4 satisfies FontStyle.Underline)
-                    ? { type: "single", color: res.fg }
+                    ? { type: "single", color: fg }
                     : undefined,
                 strike: fontStyle === (8 satisfies FontStyle.Strikethrough),
               });
