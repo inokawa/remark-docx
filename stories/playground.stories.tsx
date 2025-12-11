@@ -20,7 +20,7 @@ const toDocxProcessor = unified()
   .use(gfm)
   .use(math)
   .use(docx, {
-    plugins: [imagePlugin(), shikiPlugin({ theme: "dark-plus" })],
+    plugins: [imagePlugin(), shikiPlugin({ theme: "everforest-dark" })],
   });
 
 const toDocx = async (s: string) => {
