@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef } from "react";
+import type { StoryObj } from "@storybook/react-vite";
 import { unified } from "unified";
 import markdown from "remark-parse";
 import gfm from "remark-gfm";
@@ -7,7 +8,7 @@ import docx from "../src";
 import { imagePlugin } from "../src/plugins/image";
 import { shikiPlugin } from "../src/plugins/code";
 // @ts-expect-error no type definition
-import text from "../README.md?raw";
+import readme from "../README.md?raw";
 import { saveAs } from "file-saver";
 import { renderAsync } from "docx-preview";
 import debounce from "lodash.debounce";
@@ -29,7 +30,7 @@ export default {
   title: "Playground",
 };
 
-export const MarkdownToDocx = () => {
+const Component = ({ text }: { text: string }) => {
   const ref = useRef<HTMLTextAreaElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
   const onChange = async (v: string) => {
@@ -87,4 +88,8 @@ export const MarkdownToDocx = () => {
       </div>
     </>
   );
+};
+
+export const Readme: StoryObj = {
+  render: () => <Component text={readme} />,
 };
