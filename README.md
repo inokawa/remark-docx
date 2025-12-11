@@ -26,8 +26,8 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] inlineCode
 - [x] break
 - [x] link / linkReference
-- [x] image / imageReference ([remark-docx/plugins/image](#image) is required)
 - [x] footnote / footnoteReference / footnoteDefinition
+- [x] image / imageReference ([remark-docx/plugins/image](#image) is required)
 - [x] html ([remark-docx/plugins/html](#html) is required)
 - [x] code ([remark-docx/plugins/code](#code) is required)
 - [x] math / inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [remark-docx/plugins/math](#math) are required)
