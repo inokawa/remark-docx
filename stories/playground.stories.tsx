@@ -8,7 +8,9 @@ import docx from "../src";
 import { imagePlugin } from "../src/plugins/image";
 import { shikiPlugin } from "../src/plugins/code";
 // @ts-expect-error no type definition
-import readme from "../README.md?raw";
+import readmeMd from "../README.md?raw";
+// @ts-expect-error no type definition
+import codeTs from "../src/mdast-to-docx.ts?raw";
 import { saveAs } from "file-saver";
 import { renderAsync } from "docx-preview";
 import debounce from "lodash.debounce";
@@ -91,5 +93,9 @@ const Component = ({ text }: { text: string }) => {
 };
 
 export const Readme: StoryObj = {
-  render: () => <Component text={readme} />,
+  render: () => <Component text={readmeMd} />,
+};
+
+export const Code: StoryObj = {
+  render: () => <Component text={"```ts\n" + codeTs + "\n```"} />,
 };
