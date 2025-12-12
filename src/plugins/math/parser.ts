@@ -8,7 +8,10 @@ import {
 } from "docx";
 import { parseMath } from "@unified-latex/unified-latex-util-parse";
 import type * as latex from "@unified-latex/unified-latex-types";
-import { invariant } from "../../utils";
+
+function invariant(cond: any, message: string): asserts cond {
+  if (!cond) throw new Error(message);
+}
 
 const hasSquareBrackets = (
   arg: latex.Argument | undefined,
