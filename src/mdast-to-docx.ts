@@ -193,44 +193,45 @@ export const mdastToDocx = async (
 
   const pluginCtx = { root: node, definition };
 
-  const defaultBuilders: NodeBuilders = {
-    paragraph: buildParagraph,
-    heading: buildHeading,
-    thematicBreak: buildThematicBreak,
-    blockquote: buildBlockquote,
-    list: buildList,
-    listItem: buildListItem,
-    table: buildTable,
-    tableRow: noop,
-    tableCell: noop,
-    html: fallbackText,
-    code: fallbackText,
-    definition: noop,
-    footnoteDefinition: buildFootnoteDefinition,
-    text: buildText,
-    emphasis: buildEmphasis,
-    strong: buildStrong,
-    delete: buildDelete,
-    inlineCode: buildInlineCode,
-    break: buildBreak,
-    link: buildLink,
-    linkReference: buildLinkReference,
-    // image: warnImage,
-    // imageReference: warnImage,
-    footnoteReference: buildFootnoteReference,
-    math: fallbackText,
-    inlineMath: fallbackText,
-  };
-
   const builders = (
     await Promise.all(plugins.map((p) => p(pluginCtx)))
-  ).reduceRight((acc, p) => {
-    type Key = keyof typeof p;
-    for (const k of Object.keys(p)) {
-      acc[k as Key] = p[k as Key] as any;
-    }
-    return acc;
-  }, defaultBuilders);
+  ).reduceRight<NodeBuilders>(
+    (acc, p) => {
+      type Key = keyof typeof p;
+      for (const k of Object.keys(p)) {
+        acc[k as Key] = p[k as Key] as any;
+      }
+      return acc;
+    },
+    {
+      paragraph: buildParagraph,
+      heading: buildHeading,
+      thematicBreak: buildThematicBreak,
+      blockquote: buildBlockquote,
+      list: buildList,
+      listItem: buildListItem,
+      table: buildTable,
+      tableRow: noop,
+      tableCell: noop,
+      html: fallbackText,
+      code: fallbackText,
+      definition: noop,
+      footnoteDefinition: buildFootnoteDefinition,
+      text: buildText,
+      emphasis: buildEmphasis,
+      strong: buildStrong,
+      delete: buildDelete,
+      inlineCode: buildInlineCode,
+      break: buildBreak,
+      link: buildLink,
+      linkReference: buildLinkReference,
+      // image: warnImage,
+      // imageReference: warnImage,
+      footnoteReference: buildFootnoteReference,
+      math: fallbackText,
+      inlineMath: fallbackText,
+    },
+  );
 
   const ctx: Context = {
     next(nodes, c) {
