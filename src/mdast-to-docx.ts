@@ -224,7 +224,13 @@ export const mdastToDocx = async (
 
   const builders = (
     await Promise.all(plugins.map((p) => p(pluginCtx)))
-  ).reduceRight((acc, p) => ({ ...acc, ...p }), defaultBuilders);
+  ).reduceRight((acc, p) => {
+    type Key = keyof typeof p;
+    for (const k of Object.keys(p)) {
+      acc[k as Key] = p[k as Key] as any;
+    }
+    return acc;
+  }, defaultBuilders);
 
   const ctx: Context = {
     next(nodes, c) {
