@@ -9,7 +9,7 @@ import type { Root } from "mdast";
 export const htmlPlugin = (): RemarkDocxPlugin => {
   return async () => {
     return {
-      html: ({ value }, next) => {
+      html: ({ value }, ctx) => {
         const hast = fromHtml(value, { fragment: true });
         const mdast = toMdast(hast, {
           nodeHandlers: {
@@ -18,7 +18,7 @@ export const htmlPlugin = (): RemarkDocxPlugin => {
             },
           },
         });
-        return next((mdast as Root).children);
+        return ctx.next((mdast as Root).children);
       },
     };
   };

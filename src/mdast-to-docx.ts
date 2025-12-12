@@ -19,12 +19,17 @@ import {
   sectionMarginDefaults,
 } from "docx";
 import type * as mdast from "./mdast";
-import { invariant, warnOnce } from "./utils";
-import { definitions, type GetDefinition } from "mdast-util-definitions";
+import { warnOnce } from "./utils";
+import { definitions } from "mdast-util-definitions";
 import type {
+  Context,
   DocxChild,
   DocxContent,
+  FootnoteDefinition,
+  FootnoteRegistry,
+  NodeBuilder,
   NodeBuilders,
+  NumberingRegistry,
   RemarkDocxPlugin,
 } from "./types";
 
@@ -35,25 +40,12 @@ const CONTENT_WIDTH =
 const ORDERED_LIST_REF = "ordered";
 const INDENT = 0.5;
 
-type Decoration = Readonly<{
-  [key in (mdast.Emphasis | mdast.Strong | mdast.Delete)["type"]]?: true;
-}>;
-
 type ListInfo = Readonly<{
   level: number;
   ordered: boolean;
   reference: string;
   checked?: boolean;
 }>;
-
-type FootnoteDefinition = Readonly<{ children: Paragraph[] }>;
-type FootnoteRegistry = {
-  ref: (id: string) => number;
-  def: (id: string, def: FootnoteDefinition) => void;
-  toConfig: () => {
-    [key: string]: FootnoteDefinition;
-  };
-};
 
 const createFootnoteRegistry = (): FootnoteRegistry => {
   const idToInternalId = new Map<string, number>();
@@ -87,11 +79,6 @@ const createFootnoteRegistry = (): FootnoteRegistry => {
       );
     },
   };
-};
-
-type NumberingRegistry = {
-  create: () => string;
-  toConfig: () => Array<{ reference: string; levels: ILevelsOptions[] }>;
 };
 
 const createNumberingRegistry = (): NumberingRegistry => {
@@ -174,16 +161,6 @@ const createNumberingRegistry = (): NumberingRegistry => {
   };
 };
 
-type Context = Readonly<{
-  next: (node: readonly mdast.RootContent[], ctx?: Context) => DocxContent[];
-  deco: Decoration;
-  indent: number;
-  list?: ListInfo;
-  definition: GetDefinition;
-  footnote: FootnoteRegistry;
-  numbering: NumberingRegistry;
-}>;
-
 export interface DocxOptions extends Pick<
   IPropertiesOptions,
   | "title"
@@ -223,10 +200,39 @@ export const mdastToDocx = async (
   const numbering = createNumberingRegistry();
 
   const pluginCtx = { root: node, definition };
-  const builders = (await Promise.all(plugins.map((p) => p(pluginCtx)))).reduce(
-    (acc, p) => ({ ...acc, ...p }),
-    {},
-  );
+
+  const defaultBuilders: NodeBuilders = {
+    paragraph: buildParagraph,
+    heading: buildHeading,
+    thematicBreak: buildThematicBreak,
+    blockquote: buildBlockquote,
+    list: buildList,
+    listItem: buildListItem,
+    table: buildTable,
+    // tableRow
+    // tableCell
+    html: warnHtml,
+    code: warnCode,
+    definition: noop,
+    footnoteDefinition: buildFootnoteDefinition,
+    text: buildText,
+    emphasis: buildEmphasis,
+    strong: buildStrong,
+    delete: buildDelete,
+    inlineCode: buildInlineCode,
+    break: buildBreak,
+    link: buildLink,
+    linkReference: buildLinkReference,
+    image: warnImage,
+    imageReference: warnImage,
+    footnoteReference: buildFootnoteReference,
+    math: warnMath,
+    inlineMath: warnMath,
+  };
+
+  const builders = (
+    await Promise.all(plugins.map((p) => p(pluginCtx)))
+  ).reduceRight((acc, p) => ({ ...acc, ...p }), defaultBuilders);
 
   const ctx: Context = {
     next(nodes, c) {
@@ -273,9 +279,12 @@ const convertNode = (
   builders: NodeBuilders,
   ctx: Context,
 ): DocxContent[] | null => {
-  const customNodes = builders[node.type]?.(node as any, (children) =>
-    ctx.next(children),
-  );
+  const builder = builders[node.type];
+  if (!builder) {
+    warnOnce(`${node.type} node is not officially supported.`);
+    return null;
+  }
+  const customNodes = builder(node as any, ctx);
   if (customNodes != null) {
     if (Array.isArray(customNodes)) {
       return customNodes;
@@ -283,105 +292,10 @@ const convertNode = (
       return [customNodes];
     }
   }
-
-  switch (node.type) {
-    case "paragraph": {
-      return [buildParagraph(node, ctx)];
-    }
-    case "heading": {
-      return [buildHeading(node, ctx)];
-    }
-    case "thematicBreak": {
-      return [buildThematicBreak(node)];
-    }
-    case "blockquote": {
-      return buildBlockquote(node, ctx);
-    }
-    case "list": {
-      return buildList(node, ctx);
-    }
-    case "listItem":
-      invariant(false, "unreachable");
-    case "table":
-      return [buildTable(node, ctx)];
-    case "tableRow":
-      invariant(false, "unreachable");
-    case "tableCell":
-      invariant(false, "unreachable");
-    case "html":
-      warnOnce(
-        `${node.type} node is not rendered since remark-docx/plugins/html is not provided.`,
-      );
-      break;
-    case "code":
-      warnOnce(
-        `${node.type} node is not rendered since remark-docx/plugins/code is not provided.`,
-      );
-      break;
-    // case "yaml":
-    //   // unimplemented
-    //   break;
-    // case "toml":
-    //   // unimplemented
-    //   break;
-    case "definition":
-      // noop
-      break;
-    case "footnoteDefinition": {
-      registerFootnoteDefinition(node, ctx);
-      break;
-    }
-    case "text":
-      return [buildText(node.value, ctx.deco)];
-    case "emphasis":
-    case "strong":
-    case "delete": {
-      const { type, children } = node;
-      return ctx.next(children, {
-        ...ctx,
-        deco: { ...ctx.deco, [type]: true },
-      });
-    }
-    case "inlineCode":
-      return [buildInlineCode(node)];
-    case "break":
-      return [buildBreak(node)];
-    case "link": {
-      return [buildLink(node, ctx)];
-    }
-    case "linkReference":
-      return buildLinkReference(node, ctx);
-    case "image":
-    case "imageReference": {
-      warnOnce(
-        `${node.type} node is not rendered since remark-docx/plugins/image is not provided.`,
-      );
-      break;
-    }
-    // case "footnote": {
-    //   // inline footnote was removed in mdast v5
-    //   break;
-    // }
-    case "footnoteReference":
-      return [buildFootnoteReference(node, ctx)];
-    case "math":
-    case "inlineMath":
-      warnOnce(
-        `${node.type} node is not rendered since remark-docx/plugins/math is not provided.`,
-      );
-      break;
-    default: {
-      warnOnce(`${node.type} node is not officially supported.`);
-      break;
-    }
-  }
   return null;
 };
 
-const buildParagraph = (
-  { children }: mdast.Paragraph,
-  ctx: Context,
-): DocxContent => {
+const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
   const list = ctx.list;
   const nodes = ctx.next(children);
 
@@ -418,10 +332,7 @@ const buildParagraph = (
   });
 };
 
-const buildHeading = (
-  { children, depth }: mdast.Heading,
-  ctx: Context,
-): DocxContent => {
+const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
   let headingLevel: (typeof HeadingLevel)[keyof typeof HeadingLevel];
   switch (depth) {
     case 1:
@@ -450,26 +361,20 @@ const buildHeading = (
   });
 };
 
-const buildThematicBreak = (_: mdast.ThematicBreak): DocxContent => {
+const buildThematicBreak: NodeBuilder<"thematicBreak"> = () => {
   return new Paragraph({
     thematicBreak: true,
   });
 };
 
-const buildBlockquote = (
-  { children }: mdast.Blockquote,
-  ctx: Context,
-): DocxContent[] => {
+const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
   return ctx.next(children, {
     ...ctx,
     indent: ctx.indent + 1,
   });
 };
 
-const buildList = (
-  { children, ordered }: mdast.List,
-  ctx: Context,
-): DocxContent[] => {
+const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
   const isTopLevel = !ctx.list;
   const list: ListInfo = {
     level: ctx.list ? ctx.list.level + 1 : 0,
@@ -479,28 +384,20 @@ const buildList = (
         ? ctx.numbering.create()
         : ctx.list?.reference || ORDERED_LIST_REF,
   };
-  return children.flatMap((item) => {
-    return buildListItem(item, {
-      ...ctx,
-      list,
-    });
+  return ctx.next(children, {
+    ...ctx,
+    list,
   });
 };
 
-const buildListItem = (
-  { children, checked }: mdast.ListItem,
-  ctx: Context,
-): DocxContent[] => {
+const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
   return ctx.next(children, {
     ...ctx,
     ...(ctx.list && { list: { ...ctx.list, checked: checked ?? undefined } }),
   });
 };
 
-const buildTable = (
-  { children, align }: mdast.Table,
-  ctx: Context,
-): DocxContent => {
+const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
   const cellAligns:
     | (typeof AlignmentType)[keyof typeof AlignmentType][]
     | undefined = align?.map((a) => {
@@ -539,30 +436,48 @@ const buildTable = (
   });
 };
 
-const buildText = (text: string, deco: Decoration): DocxContent => {
+const buildText: NodeBuilder<"text"> = ({ value }, { deco }) => {
   return new TextRun({
-    text,
+    text: value,
     bold: deco.strong,
     italics: deco.emphasis,
     strike: deco.delete,
   });
 };
 
-const buildInlineCode = ({ value }: mdast.InlineCode): DocxContent => {
+const buildEmphasis: NodeBuilder<"emphasis"> = ({ children }, ctx) => {
+  return ctx.next(children, {
+    ...ctx,
+    deco: { ...ctx.deco, emphasis: true },
+  });
+};
+
+const buildStrong: NodeBuilder<"strong"> = ({ children }, ctx) => {
+  return ctx.next(children, {
+    ...ctx,
+    deco: { ...ctx.deco, strong: true },
+  });
+};
+
+const buildDelete: NodeBuilder<"delete"> = ({ children }, ctx) => {
+  return ctx.next(children, {
+    ...ctx,
+    deco: { ...ctx.deco, delete: true },
+  });
+};
+
+const buildInlineCode: NodeBuilder<"inlineCode"> = ({ value }) => {
   return new TextRun({
     text: value,
     highlight: "lightGray",
   });
 };
 
-const buildBreak = (_: mdast.Break): DocxContent => {
+const buildBreak: NodeBuilder<"break"> = () => {
   return new TextRun({ text: "", break: 1 });
 };
 
-const buildLink = (
-  { children, url }: Pick<mdast.Link, "children" | "url">,
-  ctx: Context,
-): DocxContent => {
+const buildLink: NodeBuilder<"link"> = ({ children, url }, ctx) => {
   const nodes = ctx.next(children);
   return new ExternalHyperlink({
     link: url,
@@ -570,21 +485,21 @@ const buildLink = (
   });
 };
 
-const buildLinkReference = (
-  { children, identifier }: mdast.LinkReference,
-  ctx: Context,
-): DocxContent[] => {
+const buildLinkReference: NodeBuilder<"linkReference"> = (
+  { children, identifier },
+  ctx,
+) => {
   const def = ctx.definition(identifier);
   if (def == null) {
     return ctx.next(children);
   }
-  return [buildLink({ children, url: def.url }, ctx)];
+  return buildLink({ type: "link", children, url: def.url }, ctx);
 };
 
-const registerFootnoteDefinition = (
-  { children, identifier }: mdast.FootnoteDefinition,
-  ctx: Context,
-): void => {
+const buildFootnoteDefinition: NodeBuilder<"footnoteDefinition"> = (
+  { children, identifier },
+  ctx,
+) => {
   const definition: FootnoteDefinition = {
     children: children.map((node) => {
       // Convert each node and extract the first result as a paragraph
@@ -597,11 +512,44 @@ const registerFootnoteDefinition = (
     }),
   };
   ctx.footnote.def(identifier, definition);
+  return null;
 };
 
-const buildFootnoteReference = (
-  { identifier }: mdast.FootnoteReference,
-  ctx: Context,
-): DocxContent => {
+const buildFootnoteReference: NodeBuilder<"footnoteReference"> = (
+  { identifier },
+  ctx,
+) => {
   return new FootnoteReferenceRun(ctx.footnote.ref(identifier));
+};
+
+const noop = () => {
+  return null;
+};
+
+const warnImage = (node: { type: string }) => {
+  warnOnce(
+    `${node.type} node is not rendered since remark-docx/plugins/image is not provided.`,
+  );
+  return null;
+};
+
+const warnCode = (node: { type: string }) => {
+  warnOnce(
+    `${node.type} node is not rendered since remark-docx/plugins/code is not provided.`,
+  );
+  return null;
+};
+
+const warnHtml = (node: { type: string }) => {
+  warnOnce(
+    `${node.type} node is not rendered since remark-docx/plugins/html is not provided.`,
+  );
+  return null;
+};
+
+const warnMath = (node: { type: string }) => {
+  warnOnce(
+    `${node.type} node is not rendered since remark-docx/plugins/math is not provided.`,
+  );
+  return null;
 };
