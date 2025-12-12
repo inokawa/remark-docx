@@ -5,7 +5,7 @@ import type {
   Table,
   TableOfContents,
 } from "docx";
-import type * as mdast from "./mdast";
+import type * as mdast from "mdast";
 import type { GetDefinition } from "mdast-util-definitions";
 
 export type DocxChild = Paragraph | Table | TableOfContents;

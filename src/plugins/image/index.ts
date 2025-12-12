@@ -1,6 +1,6 @@
 import { warnOnce } from "../../utils";
 import type { RemarkDocxPlugin } from "../../types";
-import type * as mdast from "../../mdast";
+import type * as mdast from "mdast";
 import { ImageRun } from "docx";
 import { visit } from "unist-util-visit";
 import { imageSize } from "image-size";

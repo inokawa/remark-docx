@@ -18,7 +18,7 @@ import {
   sectionPageSizeDefaults,
   sectionMarginDefaults,
 } from "docx";
-import type * as mdast from "./mdast";
+import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
 import { definitions } from "mdast-util-definitions";
 import type {
