@@ -230,9 +230,18 @@ export const mdastToDocx = async (
     next(nodes, c) {
       const results: DocxContent[] = [];
       for (const node of nodes) {
-        const r = convertNode(node, builders, c ?? this);
+        const builder = builders[node.type];
+        if (!builder) {
+          warnOnce(`${node.type} node is not officially supported.`);
+          continue;
+        }
+        const r = builder(node as any, c ?? this);
         if (r) {
-          results.push(...r);
+          if (Array.isArray(r)) {
+            results.push(...r);
+          } else {
+            results.push(r);
+          }
         }
       }
       return results;
@@ -264,27 +273,6 @@ export const mdastToDocx = async (
   });
 
   return Packer.toArrayBuffer(doc);
-};
-
-const convertNode = (
-  node: mdast.RootContent,
-  builders: NodeBuilders,
-  ctx: Context,
-): DocxContent[] | null => {
-  const builder = builders[node.type];
-  if (!builder) {
-    warnOnce(`${node.type} node is not officially supported.`);
-    return null;
-  }
-  const customNodes = builder(node as any, ctx);
-  if (customNodes != null) {
-    if (Array.isArray(customNodes)) {
-      return customNodes;
-    } else {
-      return [customNodes];
-    }
-  }
-  return null;
 };
 
 const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
