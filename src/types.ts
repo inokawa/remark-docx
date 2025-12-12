@@ -28,12 +28,11 @@ type ListInfo = Readonly<{
   checked?: boolean;
 }>;
 
-export type FootnoteDefinition = Readonly<{ children: Paragraph[] }>;
 export type FootnoteRegistry = {
   ref: (id: string) => number;
-  def: (id: string, def: FootnoteDefinition) => void;
+  def: (id: string, children: Paragraph[]) => void;
   toConfig: () => {
-    [key: string]: FootnoteDefinition;
+    [key: string]: { children: Paragraph[] };
   };
 };
 

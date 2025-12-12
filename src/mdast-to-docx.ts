@@ -25,7 +25,6 @@ import type {
   Context,
   DocxChild,
   DocxContent,
-  FootnoteDefinition,
   FootnoteRegistry,
   NodeBuilder,
   NodeBuilders,
@@ -40,16 +39,9 @@ const CONTENT_WIDTH =
 const ORDERED_LIST_REF = "ordered";
 const INDENT = 0.5;
 
-type ListInfo = Readonly<{
-  level: number;
-  ordered: boolean;
-  reference: string;
-  checked?: boolean;
-}>;
-
 const createFootnoteRegistry = (): FootnoteRegistry => {
   const idToInternalId = new Map<string, number>();
-  const defs = new Map<number, FootnoteDefinition>();
+  const defs = new Map<number, Paragraph[]>();
 
   const getId = (id: string): number => {
     let internalId = idToInternalId.get(id);
@@ -70,11 +62,11 @@ const createFootnoteRegistry = (): FootnoteRegistry => {
     toConfig: () => {
       return defs.entries().reduce(
         (acc, [key, def]) => {
-          acc[key] = def;
+          acc[key] = { children: def };
           return acc;
         },
         {} as {
-          [key: string]: FootnoteDefinition;
+          [key: string]: { children: Paragraph[] };
         },
       );
     },
@@ -209,8 +201,8 @@ export const mdastToDocx = async (
     list: buildList,
     listItem: buildListItem,
     table: buildTable,
-    // tableRow
-    // tableCell
+    tableRow: noop,
+    tableCell: noop,
     html: warnHtml,
     code: warnCode,
     definition: noop,
@@ -376,17 +368,18 @@ const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
 
 const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
   const isTopLevel = !ctx.list;
-  const list: ListInfo = {
-    level: ctx.list ? ctx.list.level + 1 : 0,
-    ordered: !!ordered,
-    reference:
-      isTopLevel && ordered
-        ? ctx.numbering.create()
-        : ctx.list?.reference || ORDERED_LIST_REF,
-  };
+  const reference =
+    isTopLevel && ordered
+      ? ctx.numbering.create()
+      : ctx.list?.reference || ORDERED_LIST_REF;
+
   return ctx.next(children, {
     ...ctx,
-    list,
+    list: {
+      level: isTopLevel ? 0 : ctx.list.level + 1,
+      ordered: !!ordered,
+      reference,
+    },
   });
 };
 
@@ -500,18 +493,10 @@ const buildFootnoteDefinition: NodeBuilder<"footnoteDefinition"> = (
   { children, identifier },
   ctx,
 ) => {
-  const definition: FootnoteDefinition = {
-    children: children.map((node) => {
-      // Convert each node and extract the first result as a paragraph
-      const nodes = ctx.next([node]);
-      if (nodes[0] instanceof Paragraph) {
-        return nodes[0] as Paragraph;
-      }
-      // For non-paragraph content, wrap in a paragraph
-      return new Paragraph({ children: nodes });
-    }),
-  };
-  ctx.footnote.def(identifier, definition);
+  ctx.footnote.def(
+    identifier,
+    ctx.next(children).filter((c) => c instanceof Paragraph),
+  );
   return null;
 };
 
