@@ -24,7 +24,7 @@ import { definitions, type GetDefinition } from "mdast-util-definitions";
 import type {
   DocxChild,
   DocxContent,
-  NodeOverrides,
+  NodeBuilders,
   RemarkDocxPlugin,
 } from "./types";
 
@@ -175,7 +175,7 @@ const createNumberingRegistry = (): NumberingRegistry => {
 };
 
 type Context = Readonly<{
-  overrides: NodeOverrides;
+  next: (node: mdast.RootContent[], ctx?: Context) => DocxContent[];
   deco: Decoration;
   indent: number;
   list?: ListInfo;
@@ -223,16 +223,22 @@ export const mdastToDocx = async (
   const numbering = createNumberingRegistry();
 
   const pluginCtx = { root: node, definition };
-  const nodes = convertNodes(node.children, {
-    overrides: (
-      await Promise.all(plugins.map((p) => p(pluginCtx)))
-    ).reduceRight((acc, p) => ({ ...acc, ...p }), {}),
+  const builders = (
+    await Promise.all(plugins.map((p) => p(pluginCtx)))
+  ).reduceRight((acc, p) => ({ ...acc, ...p }), {});
+
+  const ctx: Context = {
+    next(n, c) {
+      return convertNodes(n, builders, c ?? this);
+    },
     deco: {},
     indent: 0,
     definition: definition,
     footnote,
     numbering,
-  });
+  };
+
+  const nodes = ctx.next(node.children);
 
   const doc = new Document({
     title,
@@ -256,12 +262,13 @@ export const mdastToDocx = async (
 
 const convertNodes = (
   nodes: mdast.RootContent[],
+  builders: NodeBuilders,
   ctx: Context,
 ): DocxContent[] => {
   const results: DocxContent[] = [];
   for (const node of nodes) {
-    const customNodes = ctx.overrides[node.type]?.(node as any, (children) =>
-      convertNodes(children, ctx),
+    const customNodes = builders[node.type]?.(node as any, (children) =>
+      ctx.next(children),
     );
     if (customNodes != null) {
       if (Array.isArray(customNodes)) {
@@ -331,7 +338,7 @@ const convertNodes = (
       case "strong":
       case "delete": {
         const { type, children } = node;
-        const nodes = convertNodes(children, {
+        const nodes = ctx.next(children, {
           ...ctx,
           deco: { ...ctx.deco, [type]: true },
         });
@@ -384,7 +391,7 @@ const buildParagraph = (
   ctx: Context,
 ): DocxContent => {
   const list = ctx.list;
-  const nodes = convertNodes(children, ctx);
+  const nodes = ctx.next(children);
 
   if (list && list.checked != null) {
     nodes.unshift(
@@ -444,7 +451,7 @@ const buildHeading = (
       headingLevel = HeadingLevel.HEADING_5;
       break;
   }
-  const nodes = convertNodes(children, ctx);
+  const nodes = ctx.next(children);
   return new Paragraph({
     heading: headingLevel,
     children: nodes,
@@ -461,7 +468,7 @@ const buildBlockquote = (
   { children }: mdast.Blockquote,
   ctx: Context,
 ): DocxContent[] => {
-  return convertNodes(children, {
+  return ctx.next(children, {
     ...ctx,
     indent: ctx.indent + 1,
   });
@@ -492,7 +499,7 @@ const buildListItem = (
   { children, checked }: mdast.ListItem,
   ctx: Context,
 ): DocxContent[] => {
-  return convertNodes(children, {
+  return ctx.next(children, {
     ...ctx,
     ...(ctx.list && { list: { ...ctx.list, checked: checked ?? undefined } }),
   });
@@ -530,7 +537,7 @@ const buildTable = (
             children: [
               new Paragraph({
                 alignment: cellAligns?.[i],
-                children: convertNodes(c.children, ctx),
+                children: ctx.next(c.children),
               }),
             ],
           });
@@ -564,7 +571,7 @@ const buildLink = (
   { children, url }: Pick<mdast.Link, "children" | "url">,
   ctx: Context,
 ): DocxContent => {
-  const nodes = convertNodes(children, ctx);
+  const nodes = ctx.next(children);
   return new ExternalHyperlink({
     link: url,
     children: nodes,
@@ -577,7 +584,7 @@ const buildLinkReference = (
 ): DocxContent[] => {
   const def = ctx.definition(identifier);
   if (def == null) {
-    return convertNodes(children, ctx);
+    return ctx.next(children);
   }
   return [buildLink({ children, url: def.url }, ctx)];
 };
@@ -589,7 +596,7 @@ const registerFootnoteDefinition = (
   const definition: FootnoteDefinition = {
     children: children.map((node) => {
       // Convert each node and extract the first result as a paragraph
-      const nodes = convertNodes([node], ctx);
+      const nodes = ctx.next([node]);
       if (nodes[0] instanceof Paragraph) {
         return nodes[0] as Paragraph;
       }

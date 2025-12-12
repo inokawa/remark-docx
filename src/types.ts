@@ -11,7 +11,7 @@ type MdastNode<T extends string> = T extends KnownNodeType
   ? Extract<mdast.RootContent, { type: T }>
   : unknown;
 
-export type NodeOverrides = {
+export type NodeBuilders = {
   [K in KnownNodeType]?: (
     node: MdastNode<K>,
     next: (node: mdast.RootContent[]) => DocxContent[],
@@ -23,4 +23,4 @@ export type RemarkDocxPlugin = (
     root: mdast.Root;
     definition: GetDefinition;
   }>,
-) => Promise<NodeOverrides>;
+) => Promise<NodeBuilders>;
