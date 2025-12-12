@@ -203,8 +203,8 @@ export const mdastToDocx = async (
     table: buildTable,
     tableRow: noop,
     tableCell: noop,
-    html: warnHtml,
-    code: warnCode,
+    html: fallbackText,
+    code: fallbackText,
     definition: noop,
     footnoteDefinition: buildFootnoteDefinition,
     text: buildText,
@@ -215,11 +215,11 @@ export const mdastToDocx = async (
     break: buildBreak,
     link: buildLink,
     linkReference: buildLinkReference,
-    image: warnImage,
-    imageReference: warnImage,
+    // image: warnImage,
+    // imageReference: warnImage,
     footnoteReference: buildFootnoteReference,
-    math: warnMath,
-    inlineMath: warnMath,
+    math: fallbackText,
+    inlineMath: fallbackText,
   };
 
   const builders = (
@@ -232,7 +232,7 @@ export const mdastToDocx = async (
       for (const node of nodes) {
         const builder = builders[node.type];
         if (!builder) {
-          warnOnce(`${node.type} node is not officially supported.`);
+          warnOnce(`${node.type} node is not supported without plugins.`);
           continue;
         }
         const r = builder(node as any, c ?? this);
@@ -499,30 +499,9 @@ const noop = () => {
   return null;
 };
 
-const warnImage = (node: { type: string }) => {
+const fallbackText = (node: { type: string; value: string }, ctx: Context) => {
   warnOnce(
-    `${node.type} node is not rendered since remark-docx/plugins/image is not provided.`,
+    `${node.type} node is not supported without plugins, falling back to text.`,
   );
-  return null;
-};
-
-const warnCode = (node: { type: string }) => {
-  warnOnce(
-    `${node.type} node is not rendered since remark-docx/plugins/code is not provided.`,
-  );
-  return null;
-};
-
-const warnHtml = (node: { type: string }) => {
-  warnOnce(
-    `${node.type} node is not rendered since remark-docx/plugins/html is not provided.`,
-  );
-  return null;
-};
-
-const warnMath = (node: { type: string }) => {
-  warnOnce(
-    `${node.type} node is not rendered since remark-docx/plugins/math is not provided.`,
-  );
-  return null;
+  return buildText({ type: "text", value: node.value }, ctx);
 };
