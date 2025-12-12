@@ -420,30 +420,30 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
 const buildText: NodeBuilder<"text"> = ({ value }, { deco }) => {
   return new TextRun({
     text: value,
-    bold: deco.strong,
-    italics: deco.emphasis,
-    strike: deco.delete,
+    bold: deco.bold,
+    italics: deco.italic,
+    strike: deco.strike,
   });
 };
 
 const buildEmphasis: NodeBuilder<"emphasis"> = ({ children }, ctx) => {
   return ctx.next(children, {
     ...ctx,
-    deco: { ...ctx.deco, emphasis: true },
+    deco: { ...ctx.deco, italic: true },
   });
 };
 
 const buildStrong: NodeBuilder<"strong"> = ({ children }, ctx) => {
   return ctx.next(children, {
     ...ctx,
-    deco: { ...ctx.deco, strong: true },
+    deco: { ...ctx.deco, bold: true },
   });
 };
 
 const buildDelete: NodeBuilder<"delete"> = ({ children }, ctx) => {
   return ctx.next(children, {
     ...ctx,
-    deco: { ...ctx.deco, delete: true },
+    deco: { ...ctx.deco, strike: true },
   });
 };
 

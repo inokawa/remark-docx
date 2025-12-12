@@ -18,7 +18,9 @@ type MdastNode<T extends string> = T extends KnownNodeType
   : unknown;
 
 type Decoration = Readonly<{
-  [key in (mdast.Emphasis | mdast.Strong | mdast.Delete)["type"]]?: true;
+  bold?: boolean;
+  italic?: boolean;
+  strike?: boolean;
 }>;
 
 type ListInfo = Readonly<{
