@@ -4,9 +4,9 @@
 
 # Type Alias: RemarkDocxPlugin()
 
-> **RemarkDocxPlugin** = (`ctx`) => `Promise`\<`NodeOverrides`\>
+> **RemarkDocxPlugin** = (`ctx`) => `Promise`\<`NodeBuilders`\>
 
-Defined in: [src/types.ts:21](https://github.com/inokawa/remark-docx/blob/90d5b14619e79d1e7b908199d361022715ee63fa/src/types.ts#L21)
+Defined in: [src/types.ts:65](https://github.com/inokawa/remark-docx/blob/1ddf9d7757e7ff1fae2294c4586139e1681fc3d5/src/types.ts#L65)
 
 ## Parameters
 
@@ -16,4 +16,4 @@ Defined in: [src/types.ts:21](https://github.com/inokawa/remark-docx/blob/90d5b1
 
 ## Returns
 
-`Promise`\<`NodeOverrides`\>
+`Promise`\<`NodeBuilders`\>
