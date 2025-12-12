@@ -193,18 +193,18 @@ export const imagePlugin = ({
       image: (node) => {
         const data = images.get(node.url);
         if (!data) {
-          return [];
+          return null;
         }
         return buildImage(data, node);
       },
       imageReference: (node) => {
         const def = definition(node.identifier);
         if (def == null) {
-          return [];
+          return null;
         }
         const data = images.get(def.url);
         if (!data) {
-          return [];
+          return null;
         }
         return buildImage(data, node);
       },
