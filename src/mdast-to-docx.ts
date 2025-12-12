@@ -175,7 +175,7 @@ const createNumberingRegistry = (): NumberingRegistry => {
 };
 
 type Context = Readonly<{
-  next: (node: mdast.RootContent[], ctx?: Context) => DocxContent[];
+  next: (node: readonly mdast.RootContent[], ctx?: Context) => DocxContent[];
   deco: Decoration;
   indent: number;
   list?: ListInfo;
@@ -223,13 +223,21 @@ export const mdastToDocx = async (
   const numbering = createNumberingRegistry();
 
   const pluginCtx = { root: node, definition };
-  const builders = (
-    await Promise.all(plugins.map((p) => p(pluginCtx)))
-  ).reduceRight((acc, p) => ({ ...acc, ...p }), {});
+  const builders = (await Promise.all(plugins.map((p) => p(pluginCtx)))).reduce(
+    (acc, p) => ({ ...acc, ...p }),
+    {},
+  );
 
   const ctx: Context = {
-    next(n, c) {
-      return convertNodes(n, builders, c ?? this);
+    next(nodes, c) {
+      const results: DocxContent[] = [];
+      for (const node of nodes) {
+        const r = convertNode(node, builders, c ?? this);
+        if (r) {
+          results.push(...r);
+        }
+      }
+      return results;
     },
     deco: {},
     indent: 0,
@@ -260,130 +268,114 @@ export const mdastToDocx = async (
   return Packer.toArrayBuffer(doc);
 };
 
-const convertNodes = (
-  nodes: mdast.RootContent[],
+const convertNode = (
+  node: mdast.RootContent,
   builders: NodeBuilders,
   ctx: Context,
-): DocxContent[] => {
-  const results: DocxContent[] = [];
-  for (const node of nodes) {
-    const customNodes = builders[node.type]?.(node as any, (children) =>
-      ctx.next(children),
-    );
-    if (customNodes != null) {
-      if (Array.isArray(customNodes)) {
-        results.push(...customNodes);
-      } else {
-        results.push(customNodes);
-      }
-      continue;
-    }
-
-    switch (node.type) {
-      case "paragraph": {
-        results.push(buildParagraph(node, ctx));
-        break;
-      }
-      case "heading": {
-        results.push(buildHeading(node, ctx));
-        break;
-      }
-      case "thematicBreak":
-        results.push(buildThematicBreak(node));
-        break;
-      case "blockquote": {
-        results.push(...buildBlockquote(node, ctx));
-        break;
-      }
-      case "list": {
-        results.push(...buildList(node, ctx));
-        break;
-      }
-      case "listItem":
-        invariant(false, "unreachable");
-      case "table":
-        results.push(buildTable(node, ctx));
-        break;
-      case "tableRow":
-        invariant(false, "unreachable");
-      case "tableCell":
-        invariant(false, "unreachable");
-      case "html":
-        warnOnce(
-          `${node.type} node is not rendered since remark-docx/plugins/html is not provided.`,
-        );
-        break;
-      case "code":
-        warnOnce(
-          `${node.type} node is not rendered since remark-docx/plugins/code is not provided.`,
-        );
-        break;
-      // case "yaml":
-      //   // unimplemented
-      //   break;
-      // case "toml":
-      //   // unimplemented
-      //   break;
-      case "definition":
-        // noop
-        break;
-      case "footnoteDefinition": {
-        registerFootnoteDefinition(node, ctx);
-        break;
-      }
-      case "text":
-        results.push(buildText(node.value, ctx.deco));
-        break;
-      case "emphasis":
-      case "strong":
-      case "delete": {
-        const { type, children } = node;
-        const nodes = ctx.next(children, {
-          ...ctx,
-          deco: { ...ctx.deco, [type]: true },
-        });
-        results.push(...nodes);
-        break;
-      }
-      case "inlineCode":
-        results.push(buildInlineCode(node));
-        break;
-      case "break":
-        results.push(buildBreak(node));
-        break;
-      case "link": {
-        results.push(buildLink(node, ctx));
-        break;
-      }
-      case "linkReference":
-        results.push(...buildLinkReference(node, ctx));
-        break;
-      case "image":
-      case "imageReference": {
-        warnOnce(
-          `${node.type} node is not rendered since remark-docx/plugins/image is not provided.`,
-        );
-        break;
-      }
-      // case "footnote": {
-      //   // inline footnote was removed in mdast v5
-      //   break;
-      // }
-      case "footnoteReference":
-        results.push(buildFootnoteReference(node, ctx));
-        break;
-      case "math":
-      case "inlineMath":
-        warnOnce(
-          `${node.type} node is not rendered since remark-docx/plugins/math is not provided.`,
-        );
-        break;
-      default:
-        warnOnce(`${node.type} node is not officially supported.`);
-        break;
+): DocxContent[] | null => {
+  const customNodes = builders[node.type]?.(node as any, (children) =>
+    ctx.next(children),
+  );
+  if (customNodes != null) {
+    if (Array.isArray(customNodes)) {
+      return customNodes;
+    } else {
+      return [customNodes];
     }
   }
-  return results;
+
+  switch (node.type) {
+    case "paragraph": {
+      return [buildParagraph(node, ctx)];
+    }
+    case "heading": {
+      return [buildHeading(node, ctx)];
+    }
+    case "thematicBreak": {
+      return [buildThematicBreak(node)];
+    }
+    case "blockquote": {
+      return buildBlockquote(node, ctx);
+    }
+    case "list": {
+      return buildList(node, ctx);
+    }
+    case "listItem":
+      invariant(false, "unreachable");
+    case "table":
+      return [buildTable(node, ctx)];
+    case "tableRow":
+      invariant(false, "unreachable");
+    case "tableCell":
+      invariant(false, "unreachable");
+    case "html":
+      warnOnce(
+        `${node.type} node is not rendered since remark-docx/plugins/html is not provided.`,
+      );
+      break;
+    case "code":
+      warnOnce(
+        `${node.type} node is not rendered since remark-docx/plugins/code is not provided.`,
+      );
+      break;
+    // case "yaml":
+    //   // unimplemented
+    //   break;
+    // case "toml":
+    //   // unimplemented
+    //   break;
+    case "definition":
+      // noop
+      break;
+    case "footnoteDefinition": {
+      registerFootnoteDefinition(node, ctx);
+      break;
+    }
+    case "text":
+      return [buildText(node.value, ctx.deco)];
+    case "emphasis":
+    case "strong":
+    case "delete": {
+      const { type, children } = node;
+      return ctx.next(children, {
+        ...ctx,
+        deco: { ...ctx.deco, [type]: true },
+      });
+    }
+    case "inlineCode":
+      return [buildInlineCode(node)];
+    case "break":
+      return [buildBreak(node)];
+    case "link": {
+      return [buildLink(node, ctx)];
+    }
+    case "linkReference":
+      return buildLinkReference(node, ctx);
+    case "image":
+    case "imageReference": {
+      warnOnce(
+        `${node.type} node is not rendered since remark-docx/plugins/image is not provided.`,
+      );
+      break;
+    }
+    // case "footnote": {
+    //   // inline footnote was removed in mdast v5
+    //   break;
+    // }
+    case "footnoteReference":
+      return [buildFootnoteReference(node, ctx)];
+    case "math":
+    case "inlineMath":
+      warnOnce(
+        `${node.type} node is not rendered since remark-docx/plugins/math is not provided.`,
+      );
+      break;
+    default: {
+      warnOnce(`${node.type} node is not officially supported.`);
+      break;
+    }
+  }
+  return null;
 };
 
 const buildParagraph = (
