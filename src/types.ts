@@ -45,11 +45,29 @@ export type NumberingRegistry = {
 
 export type Context = Readonly<{
   render: (node: readonly mdast.RootContent[], ctx?: Context) => DocxContent[];
+  /**
+   * @internal
+   */
   deco: Decoration;
+  /**
+   * @internal
+   */
   indent: number;
+  /**
+   * @internal
+   */
   list?: ListInfo;
+  /**
+   * @internal
+   */
   definition: GetDefinition;
+  /**
+   * @internal
+   */
   footnote: FootnoteRegistry;
+  /**
+   * @internal
+   */
   numbering: NumberingRegistry;
 }>;
 
