@@ -10,7 +10,7 @@ import { shikiPlugin } from "../src/plugins/code";
 // @ts-expect-error no type definition
 import readmeMd from "../README.md?raw";
 // @ts-expect-error no type definition
-import codeTs from "../src/mdast-to-docx.ts?raw";
+import codeTs from "../src/mdast-util-to-docx.ts?raw";
 import { saveAs } from "file-saver";
 import { renderAsync } from "docx-preview";
 import debounce from "lodash.debounce";

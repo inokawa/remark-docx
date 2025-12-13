@@ -184,7 +184,7 @@ export const mdastToDocx = async (
     revision,
     styles,
     background,
-  }: DocxOptions,
+  }: DocxOptions = {},
 ): Promise<ArrayBuffer> => {
   const definition = definitions(node);
 
