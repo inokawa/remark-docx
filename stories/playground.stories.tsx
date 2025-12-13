@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import type { StoryObj } from "@storybook/react-vite";
 import { unified } from "unified";
 import markdown from "remark-parse";
@@ -7,6 +7,7 @@ import math from "remark-math";
 import docx from "../src";
 import { imagePlugin } from "../src/plugins/image";
 import { shikiPlugin } from "../src/plugins/code";
+import { htmlPlugin } from "../src/plugins/html";
 // @ts-expect-error no type definition
 import readmeMd from "../README.md?raw";
 // @ts-expect-error no type definition
@@ -20,7 +21,11 @@ const toDocxProcessor = unified()
   .use(gfm)
   .use(math)
   .use(docx, {
-    plugins: [imagePlugin(), shikiPlugin({ theme: "everforest-dark" })],
+    plugins: [
+      imagePlugin(),
+      shikiPlugin({ theme: "everforest-dark" }),
+      htmlPlugin(),
+    ],
   });
 
 const toDocx = async (s: string) => {
@@ -98,4 +103,37 @@ export const Readme: StoryObj = {
 
 export const Code: StoryObj = {
   render: () => <Component text={"```ts\n" + codeTs + "\n```"} />,
+};
+
+export const Html: StoryObj = {
+  render: () => {
+    const url = "https://en.wikipedia.org/w/rest.php/v1/page/HTML/html";
+    const [html, setHtml] = useState("");
+    useEffect(() => {
+      (async () => {
+        const res = await fetch(url);
+        if (res.ok) {
+          const h = await res.text();
+          const dom = new DOMParser().parseFromString(h, "text/html");
+          const serializer = new XMLSerializer();
+          setHtml(
+            [...dom.body.childNodes]
+              .map((t) => serializer.serializeToString(t))
+              .join("\n"),
+          );
+        } else {
+          setHtml(`${res.status}: ${res.statusText}`);
+        }
+      })();
+    }, []);
+    return html ? (
+      <Component
+        text={`${url}
+
+${html}`}
+      />
+    ) : (
+      <div>loading...</div>
+    );
+  },
 };
