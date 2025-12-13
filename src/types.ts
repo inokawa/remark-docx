@@ -44,7 +44,7 @@ export type NumberingRegistry = {
 };
 
 export type Context = Readonly<{
-  next: (node: readonly mdast.RootContent[], ctx?: Context) => DocxContent[];
+  render: (node: readonly mdast.RootContent[], ctx?: Context) => DocxContent[];
   deco: Decoration;
   indent: number;
   list?: ListInfo;

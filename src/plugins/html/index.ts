@@ -18,7 +18,7 @@ export const htmlPlugin = (): RemarkDocxPlugin => {
             },
           },
         });
-        return ctx.next((mdast as Root).children);
+        return ctx.render((mdast as Root).children);
       },
     };
   };

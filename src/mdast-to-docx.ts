@@ -234,7 +234,7 @@ export const mdastToDocx = async (
   );
 
   const ctx: Context = {
-    next(nodes, c) {
+    render(nodes, c) {
       const results: DocxContent[] = [];
       for (const node of nodes) {
         const builder = builders[node.type];
@@ -260,7 +260,7 @@ export const mdastToDocx = async (
     numbering,
   };
 
-  const nodes = ctx.next(node.children);
+  const nodes = ctx.render(node.children);
 
   const doc = new Document({
     title,
@@ -284,7 +284,7 @@ export const mdastToDocx = async (
 
 const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
   const list = ctx.list;
-  const nodes = ctx.next(children);
+  const nodes = ctx.render(children);
 
   if (list && list.checked != null) {
     nodes.unshift(
@@ -341,7 +341,7 @@ const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
       headingLevel = HeadingLevel.HEADING_5;
       break;
   }
-  const nodes = ctx.next(children);
+  const nodes = ctx.render(children);
   return new Paragraph({
     heading: headingLevel,
     children: nodes,
@@ -355,7 +355,7 @@ const buildThematicBreak: NodeBuilder<"thematicBreak"> = () => {
 };
 
 const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
-  return ctx.next(children, {
+  return ctx.render(children, {
     ...ctx,
     indent: ctx.indent + 1,
   });
@@ -368,7 +368,7 @@ const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
       ? ctx.numbering.create()
       : ctx.list?.reference || ORDERED_LIST_REF;
 
-  return ctx.next(children, {
+  return ctx.render(children, {
     ...ctx,
     list: {
       level: isTopLevel ? 0 : ctx.list.level + 1,
@@ -379,7 +379,7 @@ const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
 };
 
 const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
-  return ctx.next(children, {
+  return ctx.render(children, {
     ...ctx,
     ...(ctx.list && { list: { ...ctx.list, checked: checked ?? undefined } }),
   });
@@ -414,7 +414,7 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
             children: [
               new Paragraph({
                 alignment: cellAligns?.[i],
-                children: ctx.next(c.children),
+                children: ctx.render(c.children),
               }),
             ],
           });
@@ -434,21 +434,21 @@ const buildText: NodeBuilder<"text"> = ({ value }, { deco }) => {
 };
 
 const buildEmphasis: NodeBuilder<"emphasis"> = ({ children }, ctx) => {
-  return ctx.next(children, {
+  return ctx.render(children, {
     ...ctx,
     deco: { ...ctx.deco, italic: true },
   });
 };
 
 const buildStrong: NodeBuilder<"strong"> = ({ children }, ctx) => {
-  return ctx.next(children, {
+  return ctx.render(children, {
     ...ctx,
     deco: { ...ctx.deco, bold: true },
   });
 };
 
 const buildDelete: NodeBuilder<"delete"> = ({ children }, ctx) => {
-  return ctx.next(children, {
+  return ctx.render(children, {
     ...ctx,
     deco: { ...ctx.deco, strike: true },
   });
@@ -466,7 +466,7 @@ const buildBreak: NodeBuilder<"break"> = () => {
 };
 
 const buildLink: NodeBuilder<"link"> = ({ children, url }, ctx) => {
-  const nodes = ctx.next(children);
+  const nodes = ctx.render(children);
   return new ExternalHyperlink({
     link: url,
     children: nodes,
@@ -479,7 +479,7 @@ const buildLinkReference: NodeBuilder<"linkReference"> = (
 ) => {
   const def = ctx.definition(identifier);
   if (def == null) {
-    return ctx.next(children);
+    return ctx.render(children);
   }
   return buildLink({ type: "link", children, url: def.url }, ctx);
 };
@@ -490,7 +490,7 @@ const buildFootnoteDefinition: NodeBuilder<"footnoteDefinition"> = (
 ) => {
   ctx.footnote.def(
     identifier,
-    ctx.next(children).filter((c) => c instanceof Paragraph),
+    ctx.render(children).filter((c) => c instanceof Paragraph),
   );
   return null;
 };
