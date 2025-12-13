@@ -8,10 +8,13 @@ import docx from "../src";
 import { imagePlugin } from "../src/plugins/image";
 import { shikiPlugin } from "../src/plugins/code";
 import { htmlPlugin } from "../src/plugins/html";
+import { latexPlugin } from "../src/plugins/math";
 // @ts-expect-error no type definition
 import readmeMd from "../README.md?raw";
 // @ts-expect-error no type definition
 import codeTs from "../src/mdast-util-to-docx.ts?raw";
+// @ts-expect-error no type definition
+import latexMd from "../fixtures/latex.md?raw";
 import { saveAs } from "file-saver";
 import { renderAsync } from "docx-preview";
 import debounce from "lodash.debounce";
@@ -25,6 +28,7 @@ const toDocxProcessor = unified()
       imagePlugin(),
       shikiPlugin({ theme: "everforest-dark" }),
       htmlPlugin(),
+      latexPlugin(),
     ],
   });
 
@@ -103,6 +107,10 @@ export const Readme: StoryObj = {
 
 export const Code: StoryObj = {
   render: () => <Component text={"```ts\n" + codeTs + "\n```"} />,
+};
+
+export const Latex: StoryObj = {
+  render: () => <Component text={latexMd} />,
 };
 
 export const Html: StoryObj = {

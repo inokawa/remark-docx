@@ -33,11 +33,13 @@
     "prepublishOnly": "npm run typedoc && rimraf lib && npm run build"
   },
   "dependencies": {
-    "@unified-latex/unified-latex-util-parse": "1.8.3",
+    "@mathjax/src": "^4.0.0",
     "docx": "9.5.1",
+    "fast-xml-parser": "^5.3.2",
     "hast-util-from-html": "^2.0.3",
     "hast-util-to-mdast": "^10.1.2",
     "image-size": "^2.0.2",
+    "mathml2omml": "^0.5.0",
     "mdast-util-definitions": "^6.0.0",
     "shiki": "^3.19.0",
     "unist-util-visit": "^5.0.0"

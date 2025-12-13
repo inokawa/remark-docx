@@ -27,6 +27,7 @@ export default [{
   plugins: [
     typescript({
       tsconfig: "./tsconfig.json",
+      rootDir: "./src",
       outDir: ".",
       declaration: true,
       declarationDir: dirname(pkg.types),
@@ -59,6 +60,7 @@ export default [{
   plugins: [
     typescript({
       tsconfig: "./tsconfig.json",
+      rootDir: "./src",
       outDir: dirname(pkg.module),
       // declaration: true,
       // declarationDir: dirname(pkg.types),

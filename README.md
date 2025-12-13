@@ -131,7 +131,7 @@ const processor = unified()
 
 ### Math
 
-Render LaTeX with [unified-latex](https://github.com/siefkenj/unified-latex).
+Render LaTeX with [MathJax](https://github.com/mathjax/MathJax).
 
 ```javascript
 import { unified } from "unified";
