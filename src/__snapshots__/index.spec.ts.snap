@@ -7783,7 +7783,8 @@ equation.</w:t></w:r></w:p><w:p><m:oMath><m:r><m:t>L</m:t></m:r><m:r><m:t
               >t</m:t></m:r></m:den></m:f><m:r><m:t>=</m:t></m:r><m:r><m:t
           >H</m:t></m:r><m:r><m:t>p</m:t></m:r><m:r><m:t>s</m:t></m:r><m:r><m:t
           >i</m:t></m:r><m:r><m:t>(</m:t></m:r><m:r><m:t>x</m:t></m:r><m:r><m:t
-          >,</m:t></m:r><m:r><m:t>t</m:t></m:r><m:r><m:t>)</m:t></m:r><m:r><m:t
+          >,</m:t></m:r><m:r><m:t>t</m:t></m:r><m:r><m:t
+          >)</m:t></m:r></m:oMath></w:p><w:p><m:oMath><m:r><m:t
           >f</m:t></m:r><m:r><m:t>relax</m:t></m:r><m:r><m:t>x</m:t></m:r><m:r
         ><m:t>=</m:t></m:r><m:sSup><m:sSupPr /><m:e><m:sSub><m:sSubPr /><m:e
               ><m:r><m:t>∫</m:t></m:r></m:e><m:sub><m:r><m:t>-</m:t></m:r><m:r
@@ -7793,19 +7794,22 @@ equation.</w:t></w:r></w:p><w:p><m:oMath><m:r><m:t>L</m:t></m:r><m:r><m:t
         ><m:sSupPr /><m:e><m:r><m:t>e</m:t></m:r></m:e><m:sup><m:r><m:t
               >2</m:t></m:r><m:r><m:t>π</m:t></m:r><m:r><m:t>i</m:t></m:r><m:r
             ><m:t>ξ</m:t></m:r><m:r><m:t>x</m:t></m:r></m:sup></m:sSup><m:r><m:t
-          >,</m:t></m:r><m:r><m:t>d</m:t></m:r><m:r><m:t>ξ</m:t></m:r><m:f
-        ><m:num><m:r><m:t>a</m:t></m:r><m:r><m:t>+</m:t></m:r><m:r><m:t
+          >,</m:t></m:r><m:r><m:t>d</m:t></m:r><m:r><m:t
+          >ξ</m:t></m:r></m:oMath></w:p><w:p><m:oMath><m:f><m:num><m:r><m:t
+              >a</m:t></m:r><m:r><m:t>+</m:t></m:r><m:r><m:t
               >b</m:t></m:r></m:num><m:den><m:r><m:t>c</m:t></m:r><m:r><m:t
-              >+</m:t></m:r><m:r><m:t>d</m:t></m:r></m:den></m:f><m:rad><m:radPr
-          /><m:deg><m:r><m:t>3</m:t></m:r><m:r><m:t>0</m:t></m:r></m:deg><m:e
-          ><m:r><m:t>a</m:t></m:r><m:r><m:t>+</m:t></m:r><m:r><m:t
-              >sqrt</m:t></m:r></m:e></m:rad><m:sSup><m:sSupPr /><m:e><m:sSub
-            ><m:sSubPr /><m:e><m:nary><m:naryPr><m:chr m:val="∑" /><m:limLoc
-                      m:val="undOvr"
-                    /><m:supHide m:val="1" /><m:subHide
+              >+</m:t></m:r><m:r><m:t
+              >d</m:t></m:r></m:den></m:f></m:oMath></w:p><w:p><m:oMath><m:rad
+        ><m:radPr /><m:deg><m:r><m:t>3</m:t></m:r><m:r><m:t
+              >0</m:t></m:r></m:deg><m:e><m:r><m:t>a</m:t></m:r><m:r><m:t
+              >+</m:t></m:r><m:r><m:t
+              >sqrt</m:t></m:r></m:e></m:rad></m:oMath></w:p><w:p><m:oMath
+      ><m:sSup><m:sSupPr /><m:e><m:sSub><m:sSubPr /><m:e><m:nary><m:naryPr
+                  ><m:chr m:val="∑" /><m:limLoc m:val="undOvr" /><m:supHide
                       m:val="1"
-                    /></m:naryPr><m:e /></m:nary></m:e><m:sub><m:r><m:t
-                  >k</m:t></m:r><m:r><m:t>=</m:t></m:r><m:r><m:t
+                    /><m:subHide m:val="1" /></m:naryPr><m:e
+                  /></m:nary></m:e><m:sub><m:r><m:t>k</m:t></m:r><m:r><m:t
+                  >=</m:t></m:r><m:r><m:t
                   >1</m:t></m:r></m:sub></m:sSub></m:e><m:sup><m:r><m:t
               >n</m:t></m:r></m:sup></m:sSup><m:r><m:t>k</m:t></m:r><m:r><m:t
           >=</m:t></m:r><m:f><m:num><m:r><m:t>n</m:t></m:r><m:r><m:t

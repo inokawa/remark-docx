@@ -7,13 +7,21 @@ $$
 
 $$
 i hbar \frac{partial psi}{partial t} = H psi(x,t)
+$$
 
+$$
 \f\relax{x} = \int_{-\infty}^\infty\f\hat\xi\,e^{2 \pi i \xi x}\,d\xi
+$$
 
+$$
 \frac{a+b}{c+d}
+$$
 
+$$
 \sqrt[30]{a+\sqrt{b+c}}
+$$
 
+$$
 \sum_{k=1}^{n} k=\frac{n(n+1)}{2}
 $$
 
