@@ -6667,6 +6667,666 @@ exports[`e2e > image-reference 7`] = `
 "
 `;
 
+exports[`e2e > latex 1`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:document
+  mc:Ignorable="w14 w15 wp14"
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+><w:body><w:p><w:hyperlink w:history="1" r:id="rIdmmmmmmmmmmmmmmmmmmmmm"><w:r
+        ><w:t
+            xml:space="preserve"
+          >https://mathjax.github.io/MathJax-demos-web/page/tex-chtml.html</w:t></w:r></w:hyperlink></w:p><w:p
+    ><w:r><w:t xml:space="preserve">When </w:t></w:r><m:oMath><m:r><m:t
+          >a≠0</m:t></m:r></m:oMath><w:r><w:t
+          xml:space="preserve"
+        >, there are two solutions to (ax^2 + bx + c = 0) and they are
+</w:t></w:r><m:oMath><m:r><m:t>x=</m:t></m:r><m:f><m:fPr><m:type
+              m:val="bar"
+            /></m:fPr><m:num><m:r><m:t>−b±</m:t></m:r><m:rad><m:radPr><m:degHide
+                  m:val="on"
+                /></m:radPr><m:deg /><m:e><m:sSup><m:sSupPr><m:ctrlPr
+                    /></m:sSupPr><m:e><m:r><m:t>b</m:t></m:r></m:e><m:sup><m:r
+                    ><m:t>2</m:t></m:r></m:sup></m:sSup><m:r><m:t
+                  >−4ac</m:t></m:r></m:e></m:rad></m:num><m:den><m:r><m:t
+              >2a</m:t></m:r></m:den></m:f><m:r><m:t
+          >.</m:t></m:r></m:oMath></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >The Lorenz Equations</w:t></w:r></w:p><w:p><m:oMath><m:m><m:mPr
+          ><m:baseJc m:val="center" /><m:plcHide m:val="on" /><m:mcs><m:mc
+              ><m:mcPr><m:count m:val="2" /><m:mcJc
+                    m:val="center"
+                  /></m:mcPr></m:mc></m:mcs></m:mPr><m:mr><m:e><m:limUpp><m:e
+                ><m:r><m:t>x</m:t></m:r></m:e><m:lim><m:r><m:t
+                    >˙</m:t></m:r></m:lim></m:limUpp></m:e><m:e><m:r><m:t
+                >=σ(y−x)</m:t></m:r></m:e></m:mr><m:mr><m:e><m:limUpp><m:e><m:r
+                  ><m:t>y</m:t></m:r></m:e><m:lim><m:r><m:t
+                    >˙</m:t></m:r></m:lim></m:limUpp></m:e><m:e><m:r><m:t
+                >=ρx−y−xz</m:t></m:r></m:e></m:mr><m:mr><m:e><m:limUpp><m:e><m:r
+                  ><m:t>z</m:t></m:r></m:e><m:lim><m:r><m:t
+                    >˙</m:t></m:r></m:lim></m:limUpp></m:e><m:e><m:r><m:t
+                >=−βz+xy</m:t></m:r></m:e></m:mr></m:m></m:oMath></w:p><w:p><w:r
+      ><w:t
+          xml:space="preserve"
+        >The Cauchy-Schwarz Inequality</w:t></w:r></w:p><w:p><m:oMath><m:sSup
+        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t>(∑∗</m:t></m:r><m:sSup
+            ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+                  >k=1</m:t></m:r></m:e><m:sup><m:r><m:t
+                  >n</m:t></m:r></m:sup></m:sSup><m:sSub><m:sSubPr><m:ctrlPr
+                /></m:sSubPr><m:e><m:r><m:t>a</m:t></m:r></m:e><m:sub><m:r><m:t
+                  >k</m:t></m:r></m:sub></m:sSub><m:sSub><m:sSubPr><m:ctrlPr
+                /></m:sSubPr><m:e><m:r><m:t>b</m:t></m:r></m:e><m:sub><m:r><m:t
+                  >k</m:t></m:r></m:sub></m:sSub><m:r><m:t
+              >)</m:t></m:r></m:e><m:sup><m:argPr><m:scrLvl
+                m:val="0"
+              /></m:argPr><m:argPr><m:scrLvl m:val="0" /></m:argPr><m:r><m:t
+              /></m:r><m:r><m:t /></m:r><m:r><m:t
+              >2</m:t></m:r></m:sup></m:sSup><m:r><m:t>≤</m:t></m:r><m:r><m:t
+          >(∑∗</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r
+            ><m:t>k=1</m:t></m:r></m:e><m:sup><m:r><m:t
+              >n</m:t></m:r></m:sup></m:sSup><m:r><m:t>a∗</m:t></m:r><m:sSup
+        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+              >k</m:t></m:r></m:e><m:sup><m:r><m:t
+              >2</m:t></m:r></m:sup></m:sSup><m:r><m:t>)</m:t></m:r><m:r><m:t
+          >(∑∗</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r
+            ><m:t>k=1</m:t></m:r></m:e><m:sup><m:r><m:t
+              >n</m:t></m:r></m:sup></m:sSup><m:sSubSup><m:sSubSupPr><m:ctrlPr
+            /></m:sSubSupPr><m:e><m:r><m:t>b</m:t></m:r></m:e><m:sub><m:r><m:t
+              >k</m:t></m:r></m:sub><m:sup><m:r><m:t
+              >2</m:t></m:r></m:sup></m:sSubSup><m:r><m:t
+          >)</m:t></m:r></m:oMath></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >A Cross Product Formula</w:t></w:r></w:p><w:p><m:oMath><m:r><m:rPr
+          ><m:nor /><m:sty m:val="b" /></m:rPr><m:t>V</m:t></m:r><m:r><m:rPr
+          ><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t>_</m:t></m:r><m:r
+        ><m:t>1×</m:t></m:r><m:r><m:rPr><m:nor /><m:sty m:val="b" /></m:rPr><m:t
+          >V</m:t></m:r><m:r><m:rPr><m:nor /><m:sty
+              m:val="undefined"
+            /></m:rPr><m:t>_</m:t></m:r><m:r><m:t>2=</m:t></m:r><m:r><m:t
+          >|</m:t></m:r><m:m><m:mPr><m:baseJc m:val="center" /><m:plcHide
+              m:val="on"
+            /><m:mcs><m:mc><m:mcPr><m:count m:val="3" /><m:mcJc
+                    m:val="center"
+                  /></m:mcPr></m:mc></m:mcs></m:mPr><m:mr><m:e><m:r><m:rPr
+                ><m:nor /><m:sty m:val="b" /></m:rPr><m:t
+                >i</m:t></m:r></m:e><m:e><m:r><m:rPr><m:nor /><m:sty
+                    m:val="b"
+                  /></m:rPr><m:t>j</m:t></m:r></m:e><m:e><m:r><m:rPr><m:nor
+                  /><m:sty m:val="b" /></m:rPr><m:t
+                >k</m:t></m:r></m:e></m:mr><m:mr><m:e><m:f><m:fPr><m:type
+                    m:val="bar"
+                  /></m:fPr><m:num><m:r><m:t>∂X</m:t></m:r></m:num><m:den><m:r
+                  ><m:t>∂u</m:t></m:r></m:den></m:f></m:e><m:e><m:f><m:fPr
+                ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
+                    >∂Y</m:t></m:r></m:num><m:den><m:r><m:t
+                    >∂u</m:t></m:r></m:den></m:f></m:e><m:e><m:r><m:t
+                >0</m:t></m:r></m:e></m:mr><m:mr><m:e><m:f><m:fPr><m:type
+                    m:val="bar"
+                  /></m:fPr><m:num><m:r><m:t>∂X</m:t></m:r></m:num><m:den><m:r
+                  ><m:t>∂v</m:t></m:r></m:den></m:f></m:e><m:e><m:f><m:fPr
+                ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
+                    >∂Y</m:t></m:r></m:num><m:den><m:r><m:t
+                    >∂v</m:t></m:r></m:den></m:f></m:e><m:e><m:r><m:t
+                >0</m:t></m:r></m:e></m:mr></m:m><m:r><m:t
+          >|</m:t></m:r></m:oMath></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >The probability of getting (k) heads when flipping (n) coins is:</w:t></w:r></w:p><w:p
+    ><m:oMath><m:r><m:t>P(E)=</m:t></m:r><m:r><m:t>(</m:t></m:r><m:f><m:fPr
+          ><m:type m:val="noBar" /></m:fPr><m:num><m:r><m:t
+              >n</m:t></m:r></m:num><m:den><m:r><m:t
+              >k</m:t></m:r></m:den></m:f><m:r><m:t>)</m:t></m:r><m:sSup
+        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+              >p</m:t></m:r></m:e><m:sup><m:r><m:t
+              >k</m:t></m:r></m:sup></m:sSup><m:r><m:t>(1−p</m:t></m:r><m:sSup
+        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+              >)</m:t></m:r></m:e><m:sup><m:r><m:t
+              >n−k</m:t></m:r></m:sup></m:sSup></m:oMath></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >An Identity of Ramanujan</w:t></w:r></w:p><w:p><m:oMath><m:f><m:fPr
+          ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
+              >1</m:t></m:r></m:num><m:den><m:r><m:t>(</m:t></m:r><m:rad
+            ><m:radPr><m:degHide m:val="on" /></m:radPr><m:deg /><m:e><m:r><m:t
+                  >ϕ</m:t></m:r><m:rad><m:radPr><m:degHide
+                      m:val="on"
+                    /></m:radPr><m:deg /><m:e><m:r><m:t
+                      >5</m:t></m:r></m:e></m:rad></m:e></m:rad><m:r><m:t
+              >−ϕ)</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r
+                ><m:t>e</m:t></m:r></m:e><m:sup><m:f><m:fPr><m:type
+                      m:val="bar"
+                    /></m:fPr><m:num><m:r><m:t>2</m:t></m:r></m:num><m:den><m:r
+                    ><m:t>5</m:t></m:r></m:den></m:f><m:r><m:t
+                  >π</m:t></m:r></m:sup></m:sSup></m:den></m:f><m:r><m:t
+          >=1+</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
+          ><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+                  >e</m:t></m:r></m:e><m:sup><m:r><m:t
+                  >−2π</m:t></m:r></m:sup></m:sSup></m:num><m:den><m:r><m:t
+              >1+</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
+              ><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+                      >e</m:t></m:r></m:e><m:sup><m:r><m:t
+                      >−4π</m:t></m:r></m:sup></m:sSup></m:num><m:den><m:r><m:t
+                  >1+</m:t></m:r><m:f><m:fPr><m:type
+                      m:val="bar"
+                    /></m:fPr><m:num><m:sSup><m:sSupPr><m:ctrlPr
+                        /></m:sSupPr><m:e><m:r><m:t>e</m:t></m:r></m:e><m:sup
+                      ><m:r><m:t>−6π</m:t></m:r></m:sup></m:sSup></m:num><m:den
+                  ><m:r><m:t>1+</m:t></m:r><m:f><m:fPr><m:type
+                          m:val="bar"
+                        /></m:fPr><m:num><m:sSup><m:sSupPr><m:ctrlPr
+                            /></m:sSupPr><m:e><m:r><m:t
+                              >e</m:t></m:r></m:e><m:sup><m:r><m:t
+                              >−8π</m:t></m:r></m:sup></m:sSup></m:num><m:den
+                      ><m:r><m:t
+                          >1+…</m:t></m:r></m:den></m:f></m:den></m:f></m:den></m:f></m:den></m:f></m:oMath></w:p><w:p
+    ><w:r><w:t
+          xml:space="preserve"
+        >A Rogers-Ramanujan Identity</w:t></w:r></w:p><w:p><m:oMath><m:r><m:t
+          >1+</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
+          ><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+                  >q</m:t></m:r></m:e><m:sup><m:r><m:t
+                  >2</m:t></m:r></m:sup></m:sSup></m:num><m:den><m:r><m:t
+              >(1−q)</m:t></m:r></m:den></m:f><m:r><m:t>+</m:t></m:r><m:f><m:fPr
+          ><m:type m:val="bar" /></m:fPr><m:num><m:sSup><m:sSupPr><m:ctrlPr
+                /></m:sSupPr><m:e><m:r><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
+                  >6</m:t></m:r></m:sup></m:sSup></m:num><m:den><m:r><m:t
+              >(1−q)(1−</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e
+              ><m:r><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
+                  >2</m:t></m:r></m:sup></m:sSup><m:r><m:t
+              >)</m:t></m:r></m:den></m:f><m:r><m:t>+⋯=∏</m:t></m:r><m:r><m:rPr
+          ><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t>_</m:t></m:r><m:sSup
+        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+              >j=0</m:t></m:r></m:e><m:sup><m:r><m:rPr><m:nor /><m:sty
+                  m:val="undefined"
+                /></m:rPr><m:t>∞</m:t></m:r></m:sup></m:sSup><m:f><m:fPr><m:type
+              m:val="bar"
+            /></m:fPr><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r><m:t
+              >(1−</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r
+                ><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
+                  >5j+2</m:t></m:r></m:sup></m:sSup><m:r><m:t
+              >)(1−</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e
+              ><m:r><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
+                  >5j+3</m:t></m:r></m:sup></m:sSup><m:r><m:t
+              >)</m:t></m:r></m:den></m:f><m:r><m:t>,</m:t></m:r><m:r><m:t
+          /></m:r><m:r><m:t /></m:r><m:r><m:rPr><m:nor /></m:rPr><m:t
+          >for</m:t></m:r><m:r><m:t>|q|<m:r><m:t
+              >.</m:t></m:r></m:t></m:r></m:oMath></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Maxwell&apos;s Equations</w:t></w:r></w:p><w:p><m:oMath><m:m><m:mPr
+          ><m:baseJc m:val="center" /><m:plcHide m:val="on" /><m:mcs><m:mc
+              ><m:mcPr><m:count m:val="2" /><m:mcJc
+                    m:val="center"
+                  /></m:mcPr></m:mc></m:mcs></m:mPr><m:mr><m:e><m:r><m:rPr
+                ><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t
+                >∇</m:t></m:r><m:r><m:t>×</m:t></m:r><m:groupChr><m:groupChrPr
+                ><m:chr m:val="→" m:pos="top" /></m:groupChrPr><m:e><m:r><m:rPr
+                    ><m:nor /><m:sty m:val="b" /></m:rPr><m:t
+                    >B</m:t></m:r></m:e></m:groupChr><m:r><m:t /></m:r><m:r><m:t
+                >−</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
+                ><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r><m:t
+                    >c</m:t></m:r></m:den></m:f><m:r><m:t /></m:r><m:f><m:fPr
+                ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
+                    >∂</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
+                        m:val="→"
+                        m:pos="top"
+                      /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
+                            m:val="b"
+                          /></m:rPr><m:t
+                        >E</m:t></m:r></m:e></m:groupChr></m:num><m:den><m:r
+                  ><m:t>∂t</m:t></m:r></m:den></m:f></m:e><m:e><m:r><m:t
+                >=</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
+                ><m:r><m:t>4π</m:t></m:r></m:num><m:den><m:r><m:t
+                    >c</m:t></m:r></m:den></m:f><m:groupChr><m:groupChrPr><m:chr
+                    m:val="→"
+                    m:pos="top"
+                  /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
+                        m:val="b"
+                      /></m:rPr><m:t
+                    >j</m:t></m:r></m:e></m:groupChr></m:e></m:mr><m:mr><m:e
+            ><m:r><m:rPr><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t
+                >∇</m:t></m:r><m:r><m:t>⋅</m:t></m:r><m:groupChr><m:groupChrPr
+                ><m:chr m:val="→" m:pos="top" /></m:groupChrPr><m:e><m:r><m:rPr
+                    ><m:nor /><m:sty m:val="b" /></m:rPr><m:t
+                    >E</m:t></m:r></m:e></m:groupChr></m:e><m:e><m:r><m:t
+                >=4πρ</m:t></m:r></m:e></m:mr><m:mr><m:e><m:r><m:rPr><m:nor
+                  /><m:sty m:val="undefined" /></m:rPr><m:t>∇</m:t></m:r><m:r
+              ><m:t>×</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
+                    m:val="→"
+                    m:pos="top"
+                  /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
+                        m:val="b"
+                      /></m:rPr><m:t>E</m:t></m:r></m:e></m:groupChr><m:r><m:t
+                /></m:r><m:r><m:t>+</m:t></m:r><m:f><m:fPr><m:type
+                    m:val="bar"
+                  /></m:fPr><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r
+                  ><m:t>c</m:t></m:r></m:den></m:f><m:r><m:t /></m:r><m:f><m:fPr
+                ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
+                    >∂</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
+                        m:val="→"
+                        m:pos="top"
+                      /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
+                            m:val="b"
+                          /></m:rPr><m:t
+                        >B</m:t></m:r></m:e></m:groupChr></m:num><m:den><m:r
+                  ><m:t>∂t</m:t></m:r></m:den></m:f></m:e><m:e><m:r><m:t
+                >=</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
+                    m:val="→"
+                    m:pos="top"
+                  /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
+                        m:val="b"
+                      /></m:rPr><m:t
+                    >0</m:t></m:r></m:e></m:groupChr></m:e></m:mr><m:mr><m:e
+            ><m:r><m:rPr><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t
+                >∇</m:t></m:r><m:r><m:t>⋅</m:t></m:r><m:groupChr><m:groupChrPr
+                ><m:chr m:val="→" m:pos="top" /></m:groupChrPr><m:e><m:r><m:rPr
+                    ><m:nor /><m:sty m:val="b" /></m:rPr><m:t
+                    >B</m:t></m:r></m:e></m:groupChr></m:e><m:e><m:r><m:t
+                >=0</m:t></m:r></m:e></m:mr></m:m></m:oMath></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >In-line Mathematics</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Finally, while display equations look good for a page of samples, the
+ability to mix math and text in a paragraph is also important. This
+expression </w:t></w:r><m:oMath><m:rad><m:radPr><m:degHide
+              m:val="on"
+            /></m:radPr><m:deg /><m:e><m:r><m:t
+              >3x−1</m:t></m:r></m:e></m:rad><m:r><m:t>+(1+x</m:t></m:r><m:sSup
+        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+              >)</m:t></m:r></m:e><m:sup><m:r><m:t
+              >2</m:t></m:r></m:sup></m:sSup></m:oMath><w:r><w:t
+          xml:space="preserve"
+        > is an example of an inline equation. As
+you see, MathJax equations can be used this way as well, without unduly
+disturbing the spacing between lines.</w:t></w:r></w:p><w:sectPr><w:pgSz
+        w:w="11906"
+        w:h="16838"
+        w:orient="portrait"
+      /><w:pgMar
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
+        w:header="708"
+        w:footer="708"
+        w:gutter="0"
+      /><w:pgNumType /><w:docGrid
+        w:linePitch="360"
+      /></w:sectPr></w:body></w:document>
+"
+`;
+
+exports[`e2e > latex 2`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:styles
+  mc:Ignorable="w14 w15"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
+    w:type="paragraph"
+    w:styleId="Title"
+  ><w:name w:val="Title" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:sz w:val="56" /><w:szCs
+        w:val="56"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading1"
+  ><w:name w:val="Heading 1" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="32" /><w:szCs
+        w:val="32"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading2"
+  ><w:name w:val="Heading 2" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="26" /><w:szCs
+        w:val="26"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading3"
+  ><w:name w:val="Heading 3" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /><w:sz w:val="24" /><w:szCs
+        w:val="24"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading4"
+  ><w:name w:val="Heading 4" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:i /><w:iCs /><w:color
+        w:val="2E74B5"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading5"
+  ><w:name w:val="Heading 5" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading6"
+  ><w:name w:val="Heading 6" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Strong"
+  ><w:name w:val="Strong" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:b /><w:bCs /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="ListParagraph"
+  ><w:name w:val="List Paragraph" /><w:basedOn w:val="Normal" /><w:qFormat
+    /></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name
+      w:val="Hyperlink"
+    /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
+      w:val="99"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteReference"
+  ><w:name w:val="footnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="FootnoteText"
+  ><w:name w:val="footnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="FootnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteTextChar"
+  ><w:name w:val="Footnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
+      /></w:rPr></w:style></w:styles>
+"
+`;
+
+exports[`e2e > latex 3`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:numbering
+  mc:Ignorable="w14 w15 wp14"
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+><w:abstractNum
+    w:abstractNumId="1"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="720"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="○" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1440" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="■"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2160"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="2880" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="○"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="3600"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="■" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="4320" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="6"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="5040"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="7" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="5760" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="8"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="6480"
+          w:hanging="360"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="2"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%1."
+      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
+      w:ilvl="1"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%2."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
+        w:val="start"
+      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="3"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%4."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
+        w:val="start"
+      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="5"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%6."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
+      w:val="1"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num></w:numbering>
+"
+`;
+
+exports[`e2e > latex 4`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:footnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:footnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:footnote><w:footnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:footnote></w:footnotes>
+"
+`;
+
+exports[`e2e > latex 5`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:settings
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
+  ><w:compatSetting
+      w:val="15"
+      w:uri="http://schemas.microsoft.com/office/word"
+      w:name="compatibilityMode"
+    /></w:compat></w:settings>
+"
+`;
+
+exports[`e2e > latex 6`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:comments
+  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+/>
+"
+`;
+
+exports[`e2e > latex 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
 exports[`e2e > link-reference 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
@@ -7779,76 +8439,46 @@ exports[`e2e > math 1`] = `
           >L</m:t></m:r></m:oMath><w:r><w:t
           xml:space="preserve"
         >) can be determined by Lift Coefficient (</w:t></w:r><m:oMath><m:sSub
-        ><m:sSubPr /><m:e><m:r><m:t>C</m:t></m:r></m:e><m:sub><m:r><m:t
+        ><m:sSubPr><m:ctrlPr /></m:sSubPr><m:e><m:r><m:t
+              >C</m:t></m:r></m:e><m:sub><m:r><m:t
               >L</m:t></m:r></m:sub></m:sSub></m:oMath><w:r><w:t
           xml:space="preserve"
         >) like the following
-equation.</w:t></w:r></w:p><w:p><m:oMath><m:r><m:t>L</m:t></m:r><m:r><m:t
-          >=</m:t></m:r><m:f><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r
-            ><m:t>2</m:t></m:r></m:den></m:f><m:r><m:t>ρ</m:t></m:r><m:sSup
-        ><m:sSupPr /><m:e><m:r><m:t>v</m:t></m:r></m:e><m:sup><m:r><m:t
+equation.</w:t></w:r></w:p><w:p><m:oMath><m:r><m:t>L=</m:t></m:r><m:f><m:fPr
+          ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
+              >1</m:t></m:r></m:num><m:den><m:r><m:t
+              >2</m:t></m:r></m:den></m:f><m:r><m:t>ρ</m:t></m:r><m:sSup
+        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+              >v</m:t></m:r></m:e><m:sup><m:r><m:t
               >2</m:t></m:r></m:sup></m:sSup><m:r><m:t>S</m:t></m:r><m:sSub
-        ><m:sSubPr /><m:e><m:r><m:t>C</m:t></m:r></m:e><m:sub><m:r><m:t
+        ><m:sSubPr><m:ctrlPr /></m:sSubPr><m:e><m:r><m:t
+              >C</m:t></m:r></m:e><m:sub><m:r><m:t
               >L</m:t></m:r></m:sub></m:sSub></m:oMath></w:p><w:p><m:oMath><m:r
-        ><m:t>i</m:t></m:r><m:r><m:t>h</m:t></m:r><m:r><m:t>b</m:t></m:r><m:r
-        ><m:t>a</m:t></m:r><m:r><m:t>r</m:t></m:r><m:f><m:num><m:r><m:t
-              >p</m:t></m:r><m:r><m:t>a</m:t></m:r><m:r><m:t>r</m:t></m:r><m:r
-            ><m:t>t</m:t></m:r><m:r><m:t>i</m:t></m:r><m:r><m:t
-              >a</m:t></m:r><m:r><m:t>l</m:t></m:r><m:r><m:t>p</m:t></m:r><m:r
-            ><m:t>s</m:t></m:r><m:r><m:t>i</m:t></m:r></m:num><m:den><m:r><m:t
-              >p</m:t></m:r><m:r><m:t>a</m:t></m:r><m:r><m:t>r</m:t></m:r><m:r
-            ><m:t>t</m:t></m:r><m:r><m:t>i</m:t></m:r><m:r><m:t
-              >a</m:t></m:r><m:r><m:t>l</m:t></m:r><m:r><m:t
-              >t</m:t></m:r></m:den></m:f><m:r><m:t>=</m:t></m:r><m:r><m:t
-          >H</m:t></m:r><m:r><m:t>p</m:t></m:r><m:r><m:t>s</m:t></m:r><m:r><m:t
-          >i</m:t></m:r><m:r><m:t>(</m:t></m:r><m:r><m:t>x</m:t></m:r><m:r><m:t
-          >,</m:t></m:r><m:r><m:t>t</m:t></m:r><m:r><m:t
-          >)</m:t></m:r></m:oMath></w:p><w:p><m:oMath><m:r><m:t
-          >f</m:t></m:r><m:r><m:t>relax</m:t></m:r><m:r><m:t>x</m:t></m:r><m:r
-        ><m:t>=</m:t></m:r><m:sSup><m:sSupPr /><m:e><m:sSub><m:sSubPr /><m:e
-              ><m:r><m:t>∫</m:t></m:r></m:e><m:sub><m:r><m:t>-</m:t></m:r><m:r
-                ><m:t>∞</m:t></m:r></m:sub></m:sSub></m:e><m:sup><m:r><m:t
-              >∞</m:t></m:r></m:sup></m:sSup><m:r><m:t>f</m:t></m:r><m:r><m:t
-          >hat</m:t></m:r><m:r><m:t>ξ</m:t></m:r><m:r><m:t>,</m:t></m:r><m:sSup
-        ><m:sSupPr /><m:e><m:r><m:t>e</m:t></m:r></m:e><m:sup><m:r><m:t
-              >2</m:t></m:r><m:r><m:t>π</m:t></m:r><m:r><m:t>i</m:t></m:r><m:r
-            ><m:t>ξ</m:t></m:r><m:r><m:t>x</m:t></m:r></m:sup></m:sSup><m:r><m:t
-          >,</m:t></m:r><m:r><m:t>d</m:t></m:r><m:r><m:t
-          >ξ</m:t></m:r></m:oMath></w:p><w:p><m:oMath><m:f><m:num><m:r><m:t
-              >a</m:t></m:r><m:r><m:t>+</m:t></m:r><m:r><m:t
-              >b</m:t></m:r></m:num><m:den><m:r><m:t>c</m:t></m:r><m:r><m:t
-              >+</m:t></m:r><m:r><m:t
-              >d</m:t></m:r></m:den></m:f></m:oMath></w:p><w:p><m:oMath><m:rad
-        ><m:radPr /><m:deg><m:r><m:t>3</m:t></m:r><m:r><m:t
-              >0</m:t></m:r></m:deg><m:e><m:r><m:t>a</m:t></m:r><m:r><m:t
-              >+</m:t></m:r><m:r><m:t
-              >sqrt</m:t></m:r></m:e></m:rad></m:oMath></w:p><w:p><m:oMath
-      ><m:sSup><m:sSupPr /><m:e><m:sSub><m:sSubPr /><m:e><m:nary><m:naryPr
-                  ><m:chr m:val="∑" /><m:limLoc m:val="undOvr" /><m:supHide
-                      m:val="1"
-                    /><m:subHide m:val="1" /></m:naryPr><m:e
-                  /></m:nary></m:e><m:sub><m:r><m:t>k</m:t></m:r><m:r><m:t
-                  >=</m:t></m:r><m:r><m:t
-                  >1</m:t></m:r></m:sub></m:sSub></m:e><m:sup><m:r><m:t
-              >n</m:t></m:r></m:sup></m:sSup><m:r><m:t>k</m:t></m:r><m:r><m:t
-          >=</m:t></m:r><m:f><m:num><m:r><m:t>n</m:t></m:r><m:r><m:t
-              >(</m:t></m:r><m:r><m:t>n</m:t></m:r><m:r><m:t>+</m:t></m:r><m:r
-            ><m:t>1</m:t></m:r><m:r><m:t>)</m:t></m:r></m:num><m:den><m:r><m:t
-              >2</m:t></m:r></m:den></m:f></m:oMath></w:p><w:p><m:oMath><m:r
-        ><m:t>α</m:t></m:r><m:r><m:t>β</m:t></m:r><m:r><m:t>γ</m:t></m:r><m:r
-        ><m:t>δ</m:t></m:r><m:r><m:t>ϵ</m:t></m:r><m:r><m:t>ζ</m:t></m:r><m:r
-        ><m:t>η</m:t></m:r><m:r><m:t>θ</m:t></m:r><m:r><m:t>ι</m:t></m:r><m:r
-        ><m:t>κ</m:t></m:r><m:r><m:t>λ</m:t></m:r><m:r><m:t>μ</m:t></m:r><m:r
-        ><m:t>ν</m:t></m:r><m:r><m:t>ξ</m:t></m:r><m:r><m:t>o</m:t></m:r><m:r
-        ><m:t>π</m:t></m:r><m:r><m:t>ρ</m:t></m:r><m:r><m:t>σ</m:t></m:r><m:r
-        ><m:t>τ</m:t></m:r><m:r><m:t>υ</m:t></m:r><m:r><m:t>ϕ</m:t></m:r><m:r
-        ><m:t>χ</m:t></m:r><m:r><m:t>ψ</m:t></m:r><m:r><m:t>ω</m:t></m:r><m:r
-        ><m:t>ε</m:t></m:r><m:r><m:t>ϑ</m:t></m:r><m:r><m:t>ϱ</m:t></m:r><m:r
-        ><m:t>ς</m:t></m:r><m:r><m:t>φ</m:t></m:r><m:r><m:t>Γ</m:t></m:r><m:r
-        ><m:t>Δ</m:t></m:r><m:r><m:t>Θ</m:t></m:r><m:r><m:t>Λ</m:t></m:r><m:r
-        ><m:t>Ξ</m:t></m:r><m:r><m:t>Π</m:t></m:r><m:r><m:t>Σ</m:t></m:r><m:r
-        ><m:t>Υ</m:t></m:r><m:r><m:t>Φ</m:t></m:r><m:r><m:t>Ψ</m:t></m:r><m:r
-        ><m:t>Ω</m:t></m:r></m:oMath></w:p><w:sectPr><w:pgSz
+        ><m:t>ihbar</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
+          ><m:r><m:t>partialpsi</m:t></m:r></m:num><m:den><m:r><m:t
+              >partialt</m:t></m:r></m:den></m:f><m:r><m:t
+          >=Hpsi(x,t)</m:t></m:r></m:oMath></w:p><w:p><m:oMath><m:r><m:rPr
+          ><m:nor /></m:rPr><m:t
+          >\\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\pi i \\xi x}\\,d\\xi</m:t></m:r></m:oMath></w:p><w:p
+    ><m:oMath><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
+              >a+b</m:t></m:r></m:num><m:den><m:r><m:t
+              >c+d</m:t></m:r></m:den></m:f></m:oMath></w:p><w:p><m:oMath><m:rad
+        ><m:radPr><m:degHide m:val="off" /></m:radPr><m:deg><m:r><m:t
+              >30</m:t></m:r></m:deg><m:e><m:r><m:t>a+</m:t></m:r><m:rad
+            ><m:radPr><m:degHide m:val="on" /></m:radPr><m:deg /><m:e><m:r><m:t
+                  >b+c</m:t></m:r></m:e></m:rad></m:e></m:rad></m:oMath></w:p><w:p
+    ><m:oMath><m:nary><m:naryPr><m:chr m:val="∑" /><m:limLoc
+              m:val="undOvr"
+            /><m:grow m:val="1" /><m:subHide m:val="off" /><m:supHide
+              m:val="off"
+            /></m:naryPr><m:sub><m:r><m:t>k=1</m:t></m:r></m:sub><m:sup><m:r
+            ><m:t>n</m:t></m:r></m:sup><m:e>=</m:e></m:nary><m:f><m:fPr><m:type
+              m:val="bar"
+            /></m:fPr><m:num><m:r><m:t>n(n+1)</m:t></m:r></m:num><m:den><m:r
+            ><m:t>2</m:t></m:r></m:den></m:f></m:oMath></w:p><w:p><m:oMath><m:r
+        ><m:t>αβγδϵζηθικλμνξoπρστυϕχψωεϑϱςφ</m:t></m:r><m:r><m:rPr><m:nor
+            /><m:sty m:val="undefined" /></m:rPr><m:t
+          >ΓΔΘΛΞΠΣΥΦΨΩ</m:t></m:r></m:oMath></w:p><w:sectPr><w:pgSz
         w:w="11906"
         w:h="16838"
         w:orient="portrait"

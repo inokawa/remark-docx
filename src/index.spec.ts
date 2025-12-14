@@ -176,6 +176,14 @@ describe("e2e", () => {
     }
   });
 
+  it("latex", async () => {
+    const md = fs.readFileSync(path.join(fixturesDir, "latex.md"));
+    const doc = await processor({ plugins: [latexPlugin()] }).process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
   it("ml", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "ml.md"));
     const doc = await processor({ plugins: [htmlPlugin()] }).process(md);
