@@ -448,6 +448,10 @@ const buildText: NodeBuilder<"text"> = ({ value }, { deco }) => {
     bold: deco.bold,
     italics: deco.italic,
     strike: deco.strike,
+    ...(deco.link && {
+      color: "#0563c1",
+      underline: { type: "single" },
+    }),
   });
 };
 
@@ -484,7 +488,10 @@ const buildBreak: NodeBuilder<"break"> = () => {
 };
 
 const buildLink: NodeBuilder<"link"> = ({ children, url }, ctx) => {
-  const nodes = ctx.render(children);
+  const nodes = ctx.render(children, {
+    ...ctx,
+    deco: { ...ctx.deco, link: true },
+  });
   return new ExternalHyperlink({
     link: url,
     children: nodes,

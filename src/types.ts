@@ -21,6 +21,7 @@ type Decoration = Readonly<{
   bold?: boolean;
   italic?: boolean;
   strike?: boolean;
+  link?: boolean;
 }>;
 
 type ListInfo = Readonly<{

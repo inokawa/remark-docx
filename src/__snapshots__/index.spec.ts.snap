@@ -187,7 +187,7 @@ exports[`e2e > article 1`] = `
         >This is </w:t></w:r><w:hyperlink
         w:history="1"
         r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
-      ><w:r><w:t
+      ><w:r><w:rPr><w:color w:val="0563c1" /><w:u w:val="single" /></w:rPr><w:t
             xml:space="preserve"
           >link to GitHub.com</w:t></w:r></w:hyperlink><w:r><w:t
           xml:space="preserve"
@@ -4505,14 +4505,13 @@ exports[`e2e > footnotes2 1`] = `
         >Here is a </w:t></w:r><w:hyperlink
         w:history="1"
         r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
-      ><w:r><w:t xml:space="preserve">link with footnote</w:t></w:r><w:r><w:rPr
-          ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
-            w:id="8"
-          /></w:r></w:hyperlink><w:r><w:t
-          xml:space="preserve"
-        > in the text.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading1"
-        /></w:pPr><w:r><w:t
+      ><w:r><w:rPr><w:color w:val="0563c1" /><w:u w:val="single" /></w:rPr><w:t
+            xml:space="preserve"
+          >link with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
+              w:val="FootnoteReference"
+            /></w:rPr><w:footnoteReference w:id="8" /></w:r></w:hyperlink><w:r
+      ><w:t xml:space="preserve"> in the text.</w:t></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Complex Nested Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -6704,7 +6703,7 @@ exports[`e2e > latex 1`] = `
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
 ><w:body><w:p><w:hyperlink w:history="1" r:id="rIdmmmmmmmmmmmmmmmmmmmmm"><w:r
-        ><w:t
+        ><w:rPr><w:color w:val="0563c1" /><w:u w:val="single" /></w:rPr><w:t
             xml:space="preserve"
           >https://mathjax.github.io/MathJax-demos-web/page/tex-chtml.html</w:t></w:r></w:hyperlink></w:p><w:p
     ><w:r><w:t xml:space="preserve">When </w:t></w:r><m:oMath><m:r><m:t
@@ -7372,7 +7371,7 @@ exports[`e2e > link-reference 1`] = `
 ><w:body><w:p><w:r><w:t xml:space="preserve">This is </w:t></w:r><w:hyperlink
         w:history="1"
         r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
-      ><w:r><w:t
+      ><w:r><w:rPr><w:color w:val="0563c1" /><w:u w:val="single" /></w:rPr><w:t
             xml:space="preserve"
           >link reference</w:t></w:r></w:hyperlink><w:r><w:t
           xml:space="preserve"
@@ -8928,7 +8927,7 @@ exports[`e2e > ml 1`] = `
           /></w:sectPr></w:pPr></w:p><w:p><w:hyperlink
         w:history="1"
         r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
-      ><w:r><w:t
+      ><w:r><w:rPr><w:color w:val="0563c1" /><w:u w:val="single" /></w:rPr><w:t
             xml:space="preserve"
           >mailto:foobarbaz</w:t></w:r></w:hyperlink></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -9787,12 +9786,16 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
         >quote</w:t></w:r></w:p><w:p><w:hyperlink
         w:history="1"
         r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
-      ><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+      ><w:r><w:rPr><w:b /><w:bCs /><w:color w:val="0563c1" /><w:u
+              w:val="single"
+            /></w:rPr><w:t
             xml:space="preserve"
           >link to GitHub.com</w:t></w:r></w:hyperlink></w:p><w:p><w:hyperlink
         w:history="1"
         r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
-      ><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+      ><w:r><w:rPr><w:b /><w:bCs /><w:color w:val="0563c1" /><w:u
+              w:val="single"
+            /></w:rPr><w:t
             xml:space="preserve"
           >link to GitHub.com</w:t></w:r></w:hyperlink></w:p><w:p><w:r
       ><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent
@@ -10220,7 +10223,9 @@ exports[`e2e > phrasing-2 1`] = `
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
 ><w:body><w:p><w:hyperlink w:history="1" r:id="rIdmmmmmmmmmmmmmmmmmmmmm"><w:r
-        ><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+        ><w:rPr><w:b /><w:bCs /><w:color w:val="0563c1" /><w:u
+              w:val="single"
+            /></w:rPr><w:t
             xml:space="preserve"
           >link to GitHub.com</w:t></w:r></w:hyperlink></w:p><w:p><w:r
       ><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent
@@ -10253,7 +10258,8 @@ exports[`e2e > phrasing-2 1`] = `
                         cy="952500"
                       /></a:xfrm><a:prstGeom prst="rect"><a:avLst
                       /></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r></w:p><w:p
-    ><w:hyperlink w:history="1" r:id="rIdmmmmmmmmmmmmmmmmmmmmm"><w:r><w:t
+    ><w:hyperlink w:history="1" r:id="rIdmmmmmmmmmmmmmmmmmmmmm"><w:r><w:rPr
+          ><w:color w:val="0563c1" /><w:u w:val="single" /></w:rPr><w:t
             xml:space="preserve"
           >alpha</w:t></w:r></w:hyperlink></w:p><w:p><w:r><w:drawing><wp:inline
             distT="0"
