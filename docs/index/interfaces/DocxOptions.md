@@ -4,11 +4,11 @@
 
 # Interface: DocxOptions
 
-Defined in: [src/mdast-util-to-docx.ts:156](https://github.com/inokawa/remark-docx/blob/563658fe09ad9cdc75b51d00e8c82f453b72d12d/src/mdast-util-to-docx.ts#L156)
+Defined in: [src/mdast-util-to-docx.ts:156](https://github.com/inokawa/remark-docx/blob/ef329f50840e317903eb3bc0886f571a99e53d07/src/mdast-util-to-docx.ts#L156)
 
 ## Extends
 
-- `Pick`\<`IPropertiesOptions`, `"title"` \| `"subject"` \| `"creator"` \| `"keywords"` \| `"description"` \| `"lastModifiedBy"` \| `"revision"` \| `"styles"` \| `"background"`\>
+- `Pick`\<`IPropertiesOptions`, `"title"` \| `"subject"` \| `"creator"` \| `"keywords"` \| `"description"` \| `"styles"` \| `"background"`\>
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [src/mdast-util-to-docx.ts:156](https://github.com/inokawa/remark-do
 
 > `optional` **plugins**: [`RemarkDocxPlugin`](../type-aliases/RemarkDocxPlugin.md)[]
 
-Defined in: [src/mdast-util-to-docx.ts:171](https://github.com/inokawa/remark-docx/blob/563658fe09ad9cdc75b51d00e8c82f453b72d12d/src/mdast-util-to-docx.ts#L171)
+Defined in: [src/mdast-util-to-docx.ts:169](https://github.com/inokawa/remark-docx/blob/ef329f50840e317903eb3bc0886f571a99e53d07/src/mdast-util-to-docx.ts#L169)
 
 Plugins to customize how mdast nodes are compiled.
 
@@ -79,30 +79,6 @@ Defined in: node\_modules/docx/dist/index.d.ts:1419
 #### Inherited from
 
 `Pick.description`
-
-***
-
-### lastModifiedBy?
-
-> `readonly` `optional` **lastModifiedBy**: `string`
-
-Defined in: node\_modules/docx/dist/index.d.ts:1420
-
-#### Inherited from
-
-`Pick.lastModifiedBy`
-
-***
-
-### revision?
-
-> `readonly` `optional` **revision**: `number`
-
-Defined in: node\_modules/docx/dist/index.d.ts:1421
-
-#### Inherited from
-
-`Pick.revision`
 
 ***
 

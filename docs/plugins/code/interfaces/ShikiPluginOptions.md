@@ -4,7 +4,7 @@
 
 # Interface: ShikiPluginOptions
 
-Defined in: [src/plugins/code/index.ts:29](https://github.com/inokawa/remark-docx/blob/563658fe09ad9cdc75b51d00e8c82f453b72d12d/src/plugins/code/index.ts#L29)
+Defined in: [src/plugins/code/index.ts:29](https://github.com/inokawa/remark-docx/blob/ef329f50840e317903eb3bc0886f571a99e53d07/src/plugins/code/index.ts#L29)
 
 ## Properties
 
@@ -12,6 +12,6 @@ Defined in: [src/plugins/code/index.ts:29](https://github.com/inokawa/remark-doc
 
 > **theme**: `BundledTheme`
 
-Defined in: [src/plugins/code/index.ts:33](https://github.com/inokawa/remark-docx/blob/563658fe09ad9cdc75b51d00e8c82f453b72d12d/src/plugins/code/index.ts#L33)
+Defined in: [src/plugins/code/index.ts:33](https://github.com/inokawa/remark-docx/blob/ef329f50840e317903eb3bc0886f571a99e53d07/src/plugins/code/index.ts#L33)
 
 https://shiki.style/themes
