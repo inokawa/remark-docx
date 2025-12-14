@@ -166,7 +166,7 @@ export interface DocxOptions extends Pick<
   | "background"
 > {
   /**
-   * Plugins to customize how mdast nodes are transformed.
+   * Plugins to customize how mdast nodes are compiled.
    */
   plugins?: RemarkDocxPlugin[];
 }
@@ -233,22 +233,33 @@ export const mdastToDocx = async (
     },
   );
 
+  const renderNode = (
+    node: mdast.RootContent,
+    c: Context,
+  ): DocxContent[] | null => {
+    const builder = builders[node.type];
+    if (!builder) {
+      warnOnce(`${node.type} node is not supported without plugins.`);
+      return null;
+    }
+    const r = builder(node as any, c);
+    if (r) {
+      if (Array.isArray(r)) {
+        return r;
+      } else {
+        return [r];
+      }
+    }
+    return null;
+  };
+
   const ctx: Context = {
     render(nodes, c) {
       const results: DocxContent[] = [];
       for (const node of nodes) {
-        const builder = builders[node.type];
-        if (!builder) {
-          warnOnce(`${node.type} node is not supported without plugins.`);
-          continue;
-        }
-        const r = builder(node as any, c ?? this);
+        const r = renderNode(node, c ?? this);
         if (r) {
-          if (Array.isArray(r)) {
-            results.push(...r);
-          } else {
-            results.push(r);
-          }
+          results.push(...r);
         }
       }
       return results;
@@ -260,7 +271,19 @@ export const mdastToDocx = async (
     numbering,
   };
 
-  const nodes = ctx.render(node.children);
+  const sections: DocxContent[][] = [[]];
+  for (const n of node.children) {
+    const r = renderNode(n, ctx);
+    if (r) {
+      if (!r.length) {
+        // thematicBreak
+        sections.push([]);
+      } else {
+        const lastSection = sections[sections.length - 1]!;
+        lastSection.push(...r);
+      }
+    }
+  }
 
   const doc = new Document({
     title,
@@ -272,8 +295,10 @@ export const mdastToDocx = async (
     revision,
     styles,
     background,
+    sections: sections
+      .filter((s) => s.length)
+      .map((s) => ({ children: s as DocxChild[] })),
     footnotes: footnote.toConfig(),
-    sections: [{ children: nodes as DocxChild[] }],
     numbering: {
       config: numbering.toConfig(),
     },
@@ -349,9 +374,8 @@ const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
 };
 
 const buildThematicBreak: NodeBuilder<"thematicBreak"> = () => {
-  return new Paragraph({
-    thematicBreak: true,
-  });
+  // Returning empty array at toplevel means section insertion.
+  return [];
 };
 
 const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {

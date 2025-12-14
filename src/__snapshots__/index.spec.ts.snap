@@ -361,17 +361,17 @@ quote</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r><w:t
             /></w:tcPr><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
                 xml:space="preserve"
               >aligned</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:pPr
-      ><w:pBdr><w:bottom
-            w:val="single"
-            w:color="auto"
-            w:sz="6"
-            w:space="1"
-          /></w:pBdr></w:pPr></w:p><w:p><w:pPr><w:pBdr><w:bottom
-            w:val="single"
-            w:color="auto"
-            w:sz="6"
-            w:space="1"
-          /></w:pBdr></w:pPr></w:p><w:p><w:pPr><w:shd
+      ><w:sectPr><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
+            w:top="1440"
+            w:right="1440"
+            w:bottom="1440"
+            w:left="1440"
+            w:header="708"
+            w:footer="708"
+            w:gutter="0"
+          /><w:pgNumType /><w:docGrid
+            w:linePitch="360"
+          /></w:sectPr></w:pPr></w:p><w:p><w:pPr><w:shd
           w:fill="1E1E1E"
           w:color="auto"
           w:val="clear"
@@ -1559,19 +1559,33 @@ exports[`e2e > break 1`] = `
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
 ><w:body><w:p><w:r><w:t xml:space="preserve">a</w:t></w:r></w:p><w:p><w:pPr
-      ><w:pBdr><w:bottom
-            w:val="single"
-            w:color="auto"
-            w:sz="6"
-            w:space="1"
-          /></w:pBdr></w:pPr></w:p><w:p><w:r><w:t
+      ><w:sectPr><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
+            w:top="1440"
+            w:right="1440"
+            w:bottom="1440"
+            w:left="1440"
+            w:header="708"
+            w:footer="708"
+            w:gutter="0"
+          /><w:pgNumType /><w:docGrid
+            w:linePitch="360"
+          /></w:sectPr></w:pPr></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        >b</w:t></w:r></w:p><w:p><w:pPr><w:pBdr><w:bottom
-            w:val="single"
-            w:color="auto"
-            w:sz="6"
-            w:space="1"
-          /></w:pBdr></w:pPr></w:p><w:p><w:r><w:t
+        >b</w:t></w:r></w:p><w:p><w:pPr><w:sectPr><w:pgSz
+            w:w="11906"
+            w:h="16838"
+            w:orient="portrait"
+          /><w:pgMar
+            w:top="1440"
+            w:right="1440"
+            w:bottom="1440"
+            w:left="1440"
+            w:header="708"
+            w:footer="708"
+            w:gutter="0"
+          /><w:pgNumType /><w:docGrid
+            w:linePitch="360"
+          /></w:sectPr></w:pPr></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >c</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
@@ -8264,7 +8278,18 @@ exports[`e2e > ml 1`] = `
               w:w="9026"
             /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >aaaaa</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:hyperlink
+              >aaaaa</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:pPr
+      ><w:sectPr><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
+            w:top="1440"
+            w:right="1440"
+            w:bottom="1440"
+            w:left="1440"
+            w:header="708"
+            w:footer="708"
+            w:gutter="0"
+          /><w:pgNumType /><w:docGrid
+            w:linePitch="360"
+          /></w:sectPr></w:pPr></w:p><w:p><w:hyperlink
         w:history="1"
         r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
       ><w:r><w:t
