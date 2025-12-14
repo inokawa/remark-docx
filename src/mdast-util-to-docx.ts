@@ -160,8 +160,6 @@ export interface DocxOptions extends Pick<
   | "creator"
   | "keywords"
   | "description"
-  | "lastModifiedBy"
-  | "revision"
   | "styles"
   | "background"
 > {
@@ -180,8 +178,6 @@ export const mdastToDocx = async (
     creator,
     keywords,
     description,
-    lastModifiedBy,
-    revision,
     styles,
     background,
   }: DocxOptions = {},
@@ -291,8 +287,6 @@ export const mdastToDocx = async (
     creator,
     keywords,
     description,
-    lastModifiedBy,
-    revision,
     styles,
     background,
     sections: sections
