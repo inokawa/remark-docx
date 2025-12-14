@@ -4,7 +4,7 @@
 
 # Interface: DocxOptions
 
-Defined in: [src/mdast-to-docx.ts:156](https://github.com/inokawa/remark-docx/blob/1ddf9d7757e7ff1fae2294c4586139e1681fc3d5/src/mdast-to-docx.ts#L156)
+Defined in: [src/mdast-util-to-docx.ts:156](https://github.com/inokawa/remark-docx/blob/6d3f3952ce686908f92e5b18859e84c2edf90c88/src/mdast-util-to-docx.ts#L156)
 
 ## Extends
 
@@ -16,9 +16,9 @@ Defined in: [src/mdast-to-docx.ts:156](https://github.com/inokawa/remark-docx/bl
 
 > `optional` **plugins**: [`RemarkDocxPlugin`](../type-aliases/RemarkDocxPlugin.md)[]
 
-Defined in: [src/mdast-to-docx.ts:171](https://github.com/inokawa/remark-docx/blob/1ddf9d7757e7ff1fae2294c4586139e1681fc3d5/src/mdast-to-docx.ts#L171)
+Defined in: [src/mdast-util-to-docx.ts:171](https://github.com/inokawa/remark-docx/blob/6d3f3952ce686908f92e5b18859e84c2edf90c88/src/mdast-util-to-docx.ts#L171)
 
-Plugins to customize how mdast nodes are transformed.
+Plugins to customize how mdast nodes are compiled.
 
 ***
 
