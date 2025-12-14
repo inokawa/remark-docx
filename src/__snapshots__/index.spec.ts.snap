@@ -6710,7 +6710,13 @@ exports[`e2e > latex 1`] = `
     ><w:r><w:t xml:space="preserve">When </w:t></w:r><m:oMath><m:r><m:t
           >a≠0</m:t></m:r></m:oMath><w:r><w:t
           xml:space="preserve"
-        >, there are two solutions to (ax^2 + bx + c = 0) and they are
+        >, there are two solutions to </w:t></w:r><m:oMath><m:r><m:t
+          >a</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+              >x</m:t></m:r></m:e><m:sup><m:r><m:t
+              >2</m:t></m:r></m:sup></m:sSup><m:r><m:t
+          >+bx+c=0</m:t></m:r></m:oMath><w:r><w:t
+          xml:space="preserve"
+        > and they are
 </w:t></w:r><m:oMath><m:r><m:t>x=</m:t></m:r><m:f><m:fPr><m:type
               m:val="bar"
             /></m:fPr><m:num><m:r><m:t>−b±</m:t></m:r><m:rad><m:radPr><m:degHide
