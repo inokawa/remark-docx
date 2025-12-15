@@ -23,8 +23,18 @@ type ImageData = Readonly<
   )
 >;
 
-const buildImage = (image: ImageData, node: { alt?: string | null }) => {
-  const altText = node.alt ? { name: node.alt } : undefined;
+const buildImage = (
+  image: ImageData,
+  node: { alt?: string | null; title?: string | null },
+) => {
+  const altText =
+    node.alt || node.title
+      ? {
+          name: "",
+          description: node.alt ?? undefined,
+          title: node.title ?? undefined,
+        }
+      : undefined;
 
   if (image.type === "svg") {
     const { type, data, width, height, fallback } = image;
