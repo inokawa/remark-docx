@@ -107,7 +107,7 @@ Syntax highlighting with [shiki](https://github.com/shikijs/shiki).
 import { unified } from "unified";
 import markdown from "remark-parse";
 import docx from "remark-docx";
-import { shikiPlugin } from "remark-docx/plugins/code";
+import { shikiPlugin } from "remark-docx/plugins/shiki";
 
 const processor = unified()
   .use(markdown)
@@ -138,7 +138,7 @@ import { unified } from "unified";
 import markdown from "remark-parse";
 import math from "remark-math";
 import docx from "remark-docx";
-import { latexPlugin } from "remark-docx/plugins/math";
+import { latexPlugin } from "remark-docx/plugins/latex";
 
 const processor = unified()
   .use(markdown)
