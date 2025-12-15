@@ -9,10 +9,10 @@ import math from "remark-math";
 import Zip from "adm-zip";
 import prettier from "prettier";
 import docx, { type DocxOptions } from ".";
-import { latexPlugin } from "./plugins/math";
+import { latexPlugin } from "./plugins/latex";
 import { imagePlugin } from "./plugins/image";
 import { htmlPlugin } from "./plugins/html";
-import { shikiPlugin } from "./plugins/code";
+import { shikiPlugin } from "./plugins/shiki";
 import { readFile } from "fs/promises";
 
 const FIXTURE_PATH = "../fixtures";
