@@ -145,10 +145,24 @@ describe("e2e", () => {
     }
   });
 
-  it("list-numbering-restart", async () => {
-    const md = fs.readFileSync(
-      path.join(fixturesDir, "list-numbering-restart.md"),
-    );
+  it("list bullet", async () => {
+    const md = fs.readFileSync(path.join(fixturesDir, "list-bullet.md"));
+    const doc = await processor().process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
+  it("list ordered", async () => {
+    const md = fs.readFileSync(path.join(fixturesDir, "list-ordered.md"));
+    const doc = await processor().process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
+  it("list task", async () => {
+    const md = fs.readFileSync(path.join(fixturesDir, "list-task.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();

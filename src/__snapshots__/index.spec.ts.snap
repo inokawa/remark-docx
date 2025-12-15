@@ -7906,7 +7906,7 @@ exports[`e2e > link-reference 7`] = `
 "
 `;
 
-exports[`e2e > list-numbering-restart 1`] = `
+exports[`e2e > list bullet 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
   mc:Ignorable="w14 w15 wp14"
@@ -7944,10 +7944,515 @@ exports[`e2e > list-numbering-restart 1`] = `
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
 ><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
           xml:space="preserve"
-        >Multiple Numbered Lists</w:t></w:r></w:p><w:p><w:r><w:t
+        >Bullet Lists</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        >This tests that separate numbered lists restart numbering at 1.</w:t></w:r></w:p><w:p
-    ><w:pPr><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
+        >This is a test for bullet list.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >First List</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Items in first list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Cherry</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Second List</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Dog</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Elephant</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Fox</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Nested Lists</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Outer list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >First outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >First inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Second outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Third outer</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Another separate list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Alpha</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Beta</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Gamma</w:t></w:r></w:p><w:sectPr><w:pgSz
+        w:w="11906"
+        w:h="16838"
+        w:orient="portrait"
+      /><w:pgMar
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
+        w:header="708"
+        w:footer="708"
+        w:gutter="0"
+      /><w:pgNumType /><w:docGrid
+        w:linePitch="360"
+      /></w:sectPr></w:body></w:document>
+"
+`;
+
+exports[`e2e > list bullet 2`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:styles
+  mc:Ignorable="w14 w15"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
+    w:type="paragraph"
+    w:styleId="Title"
+  ><w:name w:val="Title" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:sz w:val="56" /><w:szCs
+        w:val="56"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading1"
+  ><w:name w:val="Heading 1" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="32" /><w:szCs
+        w:val="32"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading2"
+  ><w:name w:val="Heading 2" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="26" /><w:szCs
+        w:val="26"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading3"
+  ><w:name w:val="Heading 3" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /><w:sz w:val="24" /><w:szCs
+        w:val="24"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading4"
+  ><w:name w:val="Heading 4" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:i /><w:iCs /><w:color
+        w:val="2E74B5"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading5"
+  ><w:name w:val="Heading 5" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading6"
+  ><w:name w:val="Heading 6" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Strong"
+  ><w:name w:val="Strong" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:b /><w:bCs /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="ListParagraph"
+  ><w:name w:val="List Paragraph" /><w:basedOn w:val="Normal" /><w:qFormat
+    /></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name
+      w:val="Hyperlink"
+    /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
+      w:val="99"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteReference"
+  ><w:name w:val="footnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="FootnoteText"
+  ><w:name w:val="footnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="FootnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteTextChar"
+  ><w:name w:val="Footnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
+      /></w:rPr></w:style></w:styles>
+"
+`;
+
+exports[`e2e > list bullet 3`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:numbering
+  mc:Ignorable="w14 w15 wp14"
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+><w:abstractNum
+    w:abstractNumId="1"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="720"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="○" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1440" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="■"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2160"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="2880" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="○"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="3600"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="■" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="4320" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="6"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="5040"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="7" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="5760" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="8"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="6480"
+          w:hanging="360"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="2"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%1."
+      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
+      w:ilvl="1"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%2."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
+        w:val="start"
+      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="3"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%4."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
+        w:val="start"
+      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="5"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%6."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
+      w:val="1"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num></w:numbering>
+"
+`;
+
+exports[`e2e > list bullet 4`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:footnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:footnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:footnote><w:footnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:footnote></w:footnotes>
+"
+`;
+
+exports[`e2e > list bullet 5`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:settings
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
+  ><w:compatSetting
+      w:val="15"
+      w:uri="http://schemas.microsoft.com/office/word"
+      w:name="compatibilityMode"
+    /></w:compat></w:settings>
+"
+`;
+
+exports[`e2e > list bullet 6`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:comments
+  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+/>
+"
+`;
+
+exports[`e2e > list bullet 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
+exports[`e2e > list ordered 1`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:document
+  mc:Ignorable="w14 w15 wp14"
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Ordered Lists</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >This is a test for ordered list.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
           xml:space="preserve"
         >First List</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -8065,7 +8570,7 @@ exports[`e2e > list-numbering-restart 1`] = `
 "
 `;
 
-exports[`e2e > list-numbering-restart 2`] = `
+exports[`e2e > list ordered 2`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:styles
   mc:Ignorable="w14 w15"
@@ -8159,7 +8664,7 @@ exports[`e2e > list-numbering-restart 2`] = `
 "
 `;
 
-exports[`e2e > list-numbering-restart 3`] = `
+exports[`e2e > list ordered 3`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
   mc:Ignorable="w14 w15 wp14"
@@ -8447,7 +8952,7 @@ exports[`e2e > list-numbering-restart 3`] = `
 "
 `;
 
-exports[`e2e > list-numbering-restart 4`] = `
+exports[`e2e > list ordered 4`] = `
 "<?xml version="1.0" encoding="UTF-8" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -8488,7 +8993,7 @@ exports[`e2e > list-numbering-restart 4`] = `
 "
 `;
 
-exports[`e2e > list-numbering-restart 5`] = `
+exports[`e2e > list ordered 5`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -8517,7 +9022,7 @@ exports[`e2e > list-numbering-restart 5`] = `
 "
 `;
 
-exports[`e2e > list-numbering-restart 6`] = `
+exports[`e2e > list ordered 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -8555,7 +9060,665 @@ exports[`e2e > list-numbering-restart 6`] = `
 "
 `;
 
-exports[`e2e > list-numbering-restart 7`] = `
+exports[`e2e > list ordered 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
+exports[`e2e > list task 1`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:document
+  mc:Ignorable="w14 w15 wp14"
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Task Lists</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >This is a test for task list.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >First List</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Items in first list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="0"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2610"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="0"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2610"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="1"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2611"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Cherry</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Second List</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="0"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2610"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Dog</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="1"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2611"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Elephant</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="1"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2611"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Fox</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading1"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Nested Lists</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Outer list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="0"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2610"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >First outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="0"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2610"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >First inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="1"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2611"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="0"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2610"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Second outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="0"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2610"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Third outer</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Another separate list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="0"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2610"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Alpha</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="1"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2611"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Beta</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="0"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2610"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Gamma</w:t></w:r></w:p><w:sectPr><w:pgSz
+        w:w="11906"
+        w:h="16838"
+        w:orient="portrait"
+      /><w:pgMar
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
+        w:header="708"
+        w:footer="708"
+        w:gutter="0"
+      /><w:pgNumType /><w:docGrid
+        w:linePitch="360"
+      /></w:sectPr></w:body></w:document>
+"
+`;
+
+exports[`e2e > list task 2`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:styles
+  mc:Ignorable="w14 w15"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
+    w:type="paragraph"
+    w:styleId="Title"
+  ><w:name w:val="Title" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:sz w:val="56" /><w:szCs
+        w:val="56"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading1"
+  ><w:name w:val="Heading 1" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="32" /><w:szCs
+        w:val="32"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading2"
+  ><w:name w:val="Heading 2" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="26" /><w:szCs
+        w:val="26"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading3"
+  ><w:name w:val="Heading 3" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /><w:sz w:val="24" /><w:szCs
+        w:val="24"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading4"
+  ><w:name w:val="Heading 4" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:i /><w:iCs /><w:color
+        w:val="2E74B5"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading5"
+  ><w:name w:val="Heading 5" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading6"
+  ><w:name w:val="Heading 6" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Strong"
+  ><w:name w:val="Strong" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:b /><w:bCs /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="ListParagraph"
+  ><w:name w:val="List Paragraph" /><w:basedOn w:val="Normal" /><w:qFormat
+    /></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name
+      w:val="Hyperlink"
+    /><w:basedOn w:val="DefaultParagraphFont" /><w:uiPriority
+      w:val="99"
+    /><w:unhideWhenUsed /><w:rPr><w:color w:val="0563C1" /><w:u
+        w:val="single"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteReference"
+  ><w:name w:val="footnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="FootnoteText"
+  ><w:name w:val="footnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="FootnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteTextChar"
+  ><w:name w:val="Footnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
+      /></w:rPr></w:style></w:styles>
+"
+`;
+
+exports[`e2e > list task 3`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:numbering
+  mc:Ignorable="w14 w15 wp14"
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+><w:abstractNum
+    w:abstractNumId="1"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="720"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="○" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1440" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="■"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2160"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="2880" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="○"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="3600"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="■" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="4320" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="6"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="5040"
+          w:hanging="360"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="7" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="5760" w:hanging="360" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="8"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="6480"
+          w:hanging="360"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="2"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%1."
+      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
+      w:ilvl="1"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%2."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
+        w:val="start"
+      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="3"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%4."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
+        w:val="start"
+      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="5"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%6."
+      /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
+      w:val="1"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num></w:numbering>
+"
+`;
+
+exports[`e2e > list task 4`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:footnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:footnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:footnote><w:footnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:footnote></w:footnotes>
+"
+`;
+
+exports[`e2e > list task 5`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:settings
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
+  ><w:compatSetting
+      w:val="15"
+      w:uri="http://schemas.microsoft.com/office/word"
+      w:name="compatibilityMode"
+    /></w:compat></w:settings>
+"
+`;
+
+exports[`e2e > list task 6`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:comments
+  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+/>
+"
+`;
+
+exports[`e2e > list task 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
