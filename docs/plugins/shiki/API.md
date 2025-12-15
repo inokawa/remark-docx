@@ -2,7 +2,7 @@
 
 ***
 
-# plugins/code
+# plugins/shiki
 
 ## Functions
 

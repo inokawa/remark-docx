@@ -2,7 +2,7 @@
 
 ***
 
-# plugins/math
+# plugins/latex
 
 ## Functions
 

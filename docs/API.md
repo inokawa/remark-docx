@@ -7,7 +7,7 @@
 ## Modules
 
 - [index](index/API.md)
-- [plugins/code](plugins/code/API.md)
 - [plugins/html](plugins/html/API.md)
 - [plugins/image](plugins/image/API.md)
-- [plugins/math](plugins/math/API.md)
+- [plugins/latex](plugins/latex/API.md)
+- [plugins/shiki](plugins/shiki/API.md)
