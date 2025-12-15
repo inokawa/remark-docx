@@ -23,6 +23,7 @@ Outer list:
 - First outer
   - First inner
   - Second inner
+    - Third
 - Second outer
 - Third outer
 

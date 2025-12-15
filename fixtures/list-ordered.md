@@ -25,6 +25,7 @@ Outer list:
 1. First outer
    1. First inner
    2. Second inner
+     1. Third
 2. Second outer
 3. Third outer
 

@@ -8018,6 +8018,12 @@ exports[`e2e > list bullet 1`] = `
           xml:space="preserve"
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="2" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Third</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="1"
           /></w:numPr></w:pPr><w:r><w:t
@@ -8522,6 +8528,12 @@ exports[`e2e > list ordered 1`] = `
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="4"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Third</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="4"
@@ -9288,6 +9300,23 @@ exports[`e2e > list task 1`] = `
             /></w:r></w:sdtContent></w:sdt><w:r><w:t
           xml:space="preserve"
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="2" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
+              w14:val="0"
+            /><w14:checkedState
+              w14:val="2611"
+              w14:font="MS Gothic"
+            /><w14:uncheckedState
+              w14:val="2610"
+              w14:font="MS Gothic"
+            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
+              w:char="2610"
+              w:font="MS Gothic"
+            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          xml:space="preserve"
+        >Third</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="1"
