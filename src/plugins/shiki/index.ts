@@ -7,6 +7,7 @@ import {
 } from "shiki";
 import { visit } from "unist-util-visit";
 import type { FontStyle } from "shiki/textmate";
+import { warnOnce } from "../../utils";
 
 /**
  * Format to 6 disit hex
@@ -41,6 +42,7 @@ export const shikiPlugin = ({
 }: ShikiPluginOptions): RemarkDocxPlugin => {
   let highlighter: Awaited<ReturnType<typeof createHighlighter>> | undefined;
   const langs = new Set<string>();
+  const failedLangs = new Set<string>();
 
   return async ({ root }) => {
     const newLangs: string[] = [];
@@ -57,17 +59,23 @@ export const shikiPlugin = ({
     if (!highlighter) {
       highlighter = await createHighlighter({
         themes: [theme],
-        langs: [...langs],
+        langs: [],
       });
-    } else {
-      await Promise.all(
-        newLangs.map((l) => highlighter!.loadLanguage(l as BundledLanguage)),
-      );
     }
+    await Promise.all(
+      newLangs.map(async (l) => {
+        try {
+          await highlighter!.loadLanguage(l as BundledLanguage);
+        } catch (e) {
+          failedLangs.add(l);
+          warnOnce(String(e));
+        }
+      }),
+    );
 
     return {
       code: ({ value, lang }) => {
-        if (!lang) {
+        if (!lang || failedLangs.has(lang)) {
           return null;
         }
         const res = highlighter!.codeToTokens(value, {

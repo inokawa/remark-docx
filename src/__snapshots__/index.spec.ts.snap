@@ -3307,7 +3307,9 @@ exports[`e2e > code 1`] = `
             w:val="false"
           /><w:color w:val="6A9955" /></w:rPr><w:t
           xml:space="preserve"
-        >// fat arrow syntax</w:t></w:r></w:p><w:sectPr><w:pgSz
+        >// fat arrow syntax</w:t></w:r></w:p><w:r><w:t
+        xml:space="preserve"
+      >unknown lang</w:t></w:r><w:sectPr><w:pgSz
         w:w="11906"
         w:h="16838"
         w:orient="portrait"

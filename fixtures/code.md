@@ -60,3 +60,7 @@ module MyModule {
 declare magicNumber number;
 myArray.forEach(() => { }); // fat arrow syntax
 ```
+
+```unknown
+unknown lang
+```
