@@ -76,72 +76,34 @@ const createFootnoteRegistry = (): FootnoteRegistry => {
   };
 };
 
-const createNumberingRegistry = (): NumberingRegistry => {
+type OrderedListFormat = {
+  format: keyof typeof LevelFormat;
+  text: string;
+};
+
+const createNumberingRegistry = (
+  orderedList: readonly OrderedListFormat[],
+): NumberingRegistry => {
   let counter = 1;
 
-  const DEFAULT_NUMBERINGS: ILevelsOptions[] = [
-    {
-      level: 0,
-      format: LevelFormat.DECIMAL,
-      text: "%1.",
-      alignment: AlignmentType.START,
+  const DEFAULT_NUMBERINGS: ILevelsOptions[] = orderedList.map(
+    ({ format, text }, i) => {
+      return {
+        level: i,
+        format: LevelFormat[format],
+        text: text,
+        alignment: AlignmentType.START,
+        style:
+          i === 0
+            ? undefined
+            : {
+                paragraph: {
+                  indent: { start: convertInchesToTwip(INDENT * i) },
+                },
+              },
+      };
     },
-    {
-      level: 1,
-      format: LevelFormat.DECIMAL,
-      text: "%2.",
-      alignment: AlignmentType.START,
-      style: {
-        paragraph: {
-          indent: { start: convertInchesToTwip(INDENT * 1) },
-        },
-      },
-    },
-    {
-      level: 2,
-      format: LevelFormat.DECIMAL,
-      text: "%3.",
-      alignment: AlignmentType.START,
-      style: {
-        paragraph: {
-          indent: { start: convertInchesToTwip(INDENT * 2) },
-        },
-      },
-    },
-    {
-      level: 3,
-      format: LevelFormat.DECIMAL,
-      text: "%4.",
-      alignment: AlignmentType.START,
-      style: {
-        paragraph: {
-          indent: { start: convertInchesToTwip(INDENT * 3) },
-        },
-      },
-    },
-    {
-      level: 4,
-      format: LevelFormat.DECIMAL,
-      text: "%5.",
-      alignment: AlignmentType.START,
-      style: {
-        paragraph: {
-          indent: { start: convertInchesToTwip(INDENT * 4) },
-        },
-      },
-    },
-    {
-      level: 5,
-      format: LevelFormat.DECIMAL,
-      text: "%6.",
-      alignment: AlignmentType.START,
-      style: {
-        paragraph: {
-          indent: { start: convertInchesToTwip(INDENT * 5) },
-        },
-      },
-    },
-  ];
+  );
 
   return {
     create: () => {
@@ -180,6 +142,15 @@ const composeBuilders = (
   }, defaultBuilders);
 };
 
+const defaultOrderedList: OrderedListFormat[] = [
+  { text: "%1.", format: "DECIMAL" },
+  { text: "%2.", format: "DECIMAL" },
+  { text: "%3.", format: "DECIMAL" },
+  { text: "%4.", format: "DECIMAL" },
+  { text: "%5.", format: "DECIMAL" },
+  { text: "%6.", format: "DECIMAL" },
+];
+
 export interface DocxOptions extends Pick<
   IPropertiesOptions,
   | "title"
@@ -190,6 +161,12 @@ export interface DocxOptions extends Pick<
   | "styles"
   | "background"
 > {
+  /**
+   * An option to override the text format of ordered list.
+   * See https://docx.js.org/#/usage/numbering?id=level-options for more details.
+   * @default {@link defaultOrderedList}
+   */
+  orderedListFormat?: OrderedListFormat[];
   /**
    * Plugins to customize how mdast nodes are compiled.
    */
@@ -207,12 +184,13 @@ export const mdastToDocx = async (
     description,
     styles,
     background,
+    orderedListFormat = defaultOrderedList,
   }: DocxOptions = {},
 ): Promise<ArrayBuffer> => {
   const definition = definitions(node);
 
   const footnote = createFootnoteRegistry();
-  const numbering = createNumberingRegistry();
+  const numbering = createNumberingRegistry(orderedListFormat);
 
   const pluginCtx = { root: node, definition };
 
