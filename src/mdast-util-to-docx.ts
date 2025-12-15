@@ -162,8 +162,7 @@ const composeBuilders = (
 ): NodeBuilders => {
   return pluginsBuilders.reduceRight<NodeBuilders>((acc, p) => {
     type Key = keyof typeof p;
-    for (const k of Object.keys(p)) {
-      const cur = p[k as Key]!;
+    for (const [k, cur] of Object.entries(p)) {
       const prev = acc[k as Key];
       acc[k as Key] = (
         prev
