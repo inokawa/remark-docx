@@ -17,6 +17,8 @@ import {
   type IPropertiesOptions,
   sectionPageSizeDefaults,
   sectionMarginDefaults,
+  type IRunOptions,
+  type IParagraphOptions,
 } from "docx";
 import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
@@ -30,6 +32,7 @@ import type {
   NodeBuilders,
   NumberingRegistry,
   RemarkDocxPlugin,
+  Writeable,
 } from "./types";
 
 const CONTENT_WIDTH =
@@ -305,37 +308,40 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
   const list = ctx.list;
   const nodes = ctx.render(children);
 
-  if (list && list.checked != null) {
-    nodes.unshift(
-      new CheckBox({
-        checked: list.checked,
-        checkedState: { value: "2611" },
-        uncheckedState: { value: "2610" },
-      }),
-    );
-  }
-  return new Paragraph({
+  const options: Writeable<IParagraphOptions> = {
     children: nodes,
-    indent:
-      ctx.indent > 0
-        ? {
-            start: convertInchesToTwip(INDENT * ctx.indent),
-          }
-        : undefined,
-    ...(list &&
-      (list.ordered
-        ? {
-            numbering: {
-              reference: list.reference,
-              level: list.level,
-            },
-          }
-        : {
-            bullet: {
-              level: list.level,
-            },
-          })),
-  });
+  };
+
+  if (ctx.indent > 0) {
+    options.indent = {
+      start: convertInchesToTwip(INDENT * ctx.indent),
+    };
+  }
+
+  if (list) {
+    if (list.checked != null) {
+      nodes.unshift(
+        new CheckBox({
+          checked: list.checked,
+          checkedState: { value: "2611" },
+          uncheckedState: { value: "2610" },
+        }),
+      );
+    }
+
+    if (list.ordered) {
+      options.numbering = {
+        reference: list.reference,
+        level: list.level,
+      };
+    } else {
+      options.bullet = {
+        level: list.level,
+      };
+    }
+  }
+
+  return new Paragraph(options);
 };
 
 const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
@@ -443,16 +449,17 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
 };
 
 const buildText: NodeBuilder<"text"> = ({ value }, { deco }) => {
-  return new TextRun({
+  const options: Writeable<IRunOptions> = {
     text: value,
     bold: deco.bold,
     italics: deco.italic,
     strike: deco.strike,
-    ...(deco.link && {
-      color: "#0563c1",
-      underline: { type: "single" },
-    }),
-  });
+  };
+  if (deco.link) {
+    options.color = "#0563c1";
+    options.underline = { type: "single" };
+  }
+  return new TextRun(options);
 };
 
 const buildEmphasis: NodeBuilder<"emphasis"> = ({ children }, ctx) => {

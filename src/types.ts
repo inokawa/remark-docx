@@ -8,6 +8,13 @@ import type {
 import type * as mdast from "mdast";
 import type { GetDefinition } from "mdast-util-definitions";
 
+/**
+ * @internal
+ */
+export type Writeable<T> = {
+  -readonly [key in keyof T]: T[key];
+};
+
 export type DocxChild = Paragraph | Table | TableOfContents;
 export type DocxContent = DocxChild | ParagraphChild;
 
