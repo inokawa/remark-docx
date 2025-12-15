@@ -86,7 +86,7 @@ const createNumberingRegistry = (
 ): NumberingRegistry => {
   let counter = 1;
 
-  const DEFAULT_NUMBERINGS: ILevelsOptions[] = orderedList.map(
+  const levels: ILevelsOptions[] = orderedList.map(
     ({ format, text }, i) => {
       return {
         level: i,
@@ -112,7 +112,7 @@ const createNumberingRegistry = (
     toConfig: () => {
       return Array.from({ length: counter }, (_, i) => ({
         reference: `${ORDERED_LIST_REF}-${i}`,
-        levels: DEFAULT_NUMBERINGS,
+        levels: levels,
       }));
     },
   };
