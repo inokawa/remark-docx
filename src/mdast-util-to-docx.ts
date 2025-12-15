@@ -81,39 +81,18 @@ type OrderedListFormat = {
   text: string;
 };
 
-const createNumberingRegistry = (
-  orderedList: readonly OrderedListFormat[],
-): NumberingRegistry => {
+const createNumberingRegistry = (): NumberingRegistry => {
   let counter = 1;
-
-  const levels: ILevelsOptions[] = orderedList.map(
-    ({ format, text }, i) => {
-      return {
-        level: i,
-        format: LevelFormat[format],
-        text: text,
-        alignment: AlignmentType.START,
-        style:
-          i === 0
-            ? undefined
-            : {
-                paragraph: {
-                  indent: { start: convertInchesToTwip(INDENT * i) },
-                },
-              },
-      };
-    },
-  );
 
   return {
     create: () => {
       return `${ORDERED_LIST_REF}-${counter++}`;
     },
     toConfig: () => {
-      return Array.from({ length: counter }, (_, i) => ({
-        reference: `${ORDERED_LIST_REF}-${i}`,
-        levels: levels,
-      }));
+      return Array.from(
+        { length: counter },
+        (_, i) => `${ORDERED_LIST_REF}-${i}`,
+      );
     },
   };
 };
@@ -190,7 +169,7 @@ export const mdastToDocx = async (
   const definition = definitions(node);
 
   const footnote = createFootnoteRegistry();
-  const numbering = createNumberingRegistry(orderedListFormat);
+  const numbering = createNumberingRegistry();
 
   const pluginCtx = { root: node, definition };
 
@@ -278,6 +257,25 @@ export const mdastToDocx = async (
     }
   }
 
+  const levels: ILevelsOptions[] = orderedListFormat.map(
+    ({ format, text }, i) => {
+      return {
+        level: i,
+        format: LevelFormat[format],
+        text: text,
+        alignment: AlignmentType.START,
+        style:
+          i === 0
+            ? undefined
+            : {
+                paragraph: {
+                  indent: { start: convertInchesToTwip(INDENT * i) },
+                },
+              },
+      };
+    },
+  );
+
   const doc = new Document({
     title,
     subject,
@@ -291,7 +289,10 @@ export const mdastToDocx = async (
       .map((s) => ({ children: s as DocxChild[] })),
     footnotes: footnote.toConfig(),
     numbering: {
-      config: numbering.toConfig(),
+      config: numbering.toConfig().map((ref) => ({
+        reference: ref,
+        levels,
+      })),
     },
   });
 
@@ -381,6 +382,8 @@ const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
 
 const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
   const isTopLevel = !ctx.list;
+  const level = isTopLevel ? 0 : ctx.list.level + 1;
+
   const reference =
     isTopLevel && ordered
       ? ctx.numbering.create()
@@ -389,7 +392,7 @@ const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
   return ctx.render(children, {
     ...ctx,
     list: {
-      level: isTopLevel ? 0 : ctx.list.level + 1,
+      level,
       ordered: !!ordered,
       reference,
     },

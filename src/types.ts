@@ -48,7 +48,7 @@ export type FootnoteRegistry = {
 
 export type NumberingRegistry = {
   create: () => string;
-  toConfig: () => Array<{ reference: string; levels: ILevelsOptions[] }>;
+  toConfig: () => string[];
 };
 
 export type Context = Readonly<{
