@@ -39,6 +39,7 @@ const CONTENT_WIDTH =
   sectionMarginDefaults.LEFT -
   sectionMarginDefaults.RIGHT;
 const ORDERED_LIST_REF = "ordered";
+const HYPERLINK_STYLE_ID = "Hyperlink";
 const INDENT = 0.5;
 
 const createFootnoteRegistry = (): FootnoteRegistry => {
@@ -456,8 +457,8 @@ const buildText: NodeBuilder<"text"> = ({ value }, { deco }) => {
     strike: deco.strike,
   };
   if (deco.link) {
-    options.color = "#0563c1";
-    options.underline = { type: "single" };
+    // https://docx.js.org/#/usage/hyperlinks?id=styling-hyperlinks
+    options.style = HYPERLINK_STYLE_ID;
   }
   return new TextRun(options);
 };
