@@ -301,6 +301,34 @@ exports[`e2e > alt 3`] = `
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
@@ -529,7 +557,7 @@ exports[`e2e > article 1`] = `
         >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="0"
             /><w14:checkedState
@@ -546,7 +574,7 @@ exports[`e2e > article 1`] = `
         >not checked</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="1"
             /><w14:checkedState
@@ -563,55 +591,55 @@ exports[`e2e > article 1`] = `
         >checked</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
+            w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
+            w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
+            w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="2"
+            w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="2"
+            w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
-            w:val="2"
+            w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >eeeee</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
-            w:val="2"
+            w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >eeeee</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="2"
+            w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
+            w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:r><w:t
@@ -1062,11 +1090,43 @@ exports[`e2e > article 3`] = `
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="2"><w:abstractNumId
+      w:val="4"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num><w:num w:numId="3"><w:abstractNumId
       w:val="3"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
@@ -1497,6 +1557,34 @@ exports[`e2e > break 3`] = `
     ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
@@ -3552,6 +3640,34 @@ exports[`e2e > code 3`] = `
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
@@ -4042,6 +4158,34 @@ exports[`e2e > decoration 3`] = `
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
@@ -4444,6 +4588,34 @@ exports[`e2e > footnotes 3`] = `
     ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
@@ -5000,6 +5172,34 @@ exports[`e2e > footnotes2 3`] = `
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
@@ -5475,6 +5675,34 @@ exports[`e2e > frontmatter-toml 3`] = `
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
@@ -5881,6 +6109,34 @@ exports[`e2e > frontmatter-yaml 3`] = `
     ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
@@ -6307,6 +6563,34 @@ exports[`e2e > heading 3`] = `
     ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
@@ -6742,6 +7026,34 @@ exports[`e2e > image-reference 3`] = `
     ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
@@ -7414,6 +7726,34 @@ exports[`e2e > latex 3`] = `
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
@@ -7823,6 +8163,34 @@ exports[`e2e > link-reference 3`] = `
     ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
@@ -8338,6 +8706,34 @@ exports[`e2e > list bullet 3`] = `
     ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
@@ -9002,6 +9398,34 @@ exports[`e2e > list ordered 3`] = `
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="7"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
@@ -9201,7 +9625,7 @@ exports[`e2e > list task 1`] = `
         >Items in first list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="0"
             /><w14:checkedState
@@ -9218,7 +9642,7 @@ exports[`e2e > list task 1`] = `
         >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="0"
             /><w14:checkedState
@@ -9235,7 +9659,7 @@ exports[`e2e > list task 1`] = `
         >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="1"
             /><w14:checkedState
@@ -9256,7 +9680,7 @@ exports[`e2e > list task 1`] = `
         >Second List</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="0"
             /><w14:checkedState
@@ -9273,7 +9697,7 @@ exports[`e2e > list task 1`] = `
         >Dog</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="1"
             /><w14:checkedState
@@ -9290,7 +9714,7 @@ exports[`e2e > list task 1`] = `
         >Elephant</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="1"
             /><w14:checkedState
@@ -9313,7 +9737,7 @@ exports[`e2e > list task 1`] = `
         >Outer list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="0"
             /><w14:checkedState
@@ -9330,7 +9754,7 @@ exports[`e2e > list task 1`] = `
         >First outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="0"
             /><w14:checkedState
@@ -9347,7 +9771,7 @@ exports[`e2e > list task 1`] = `
         >First inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="1"
             /><w14:checkedState
@@ -9364,7 +9788,7 @@ exports[`e2e > list task 1`] = `
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="0"
             /><w14:checkedState
@@ -9381,7 +9805,7 @@ exports[`e2e > list task 1`] = `
         >Third</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="0"
             /><w14:checkedState
@@ -9398,7 +9822,7 @@ exports[`e2e > list task 1`] = `
         >Second outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="0"
             /><w14:checkedState
@@ -9417,7 +9841,7 @@ exports[`e2e > list task 1`] = `
         >Another separate list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="0"
             /><w14:checkedState
@@ -9434,7 +9858,7 @@ exports[`e2e > list task 1`] = `
         >Alpha</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="1"
             /><w14:checkedState
@@ -9451,7 +9875,7 @@ exports[`e2e > list task 1`] = `
         >Beta</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="1"
+            w:val="2"
           /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
               w14:val="0"
             /><w14:checkedState
@@ -9698,8 +10122,40 @@ exports[`e2e > list task 3`] = `
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num><w:num w:numId="2"><w:abstractNumId
+      w:val="3"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num></w:numbering>
@@ -10143,6 +10599,34 @@ exports[`e2e > math 3`] = `
     ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
@@ -10597,6 +11081,34 @@ exports[`e2e > ml 3`] = `
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
@@ -11002,6 +11514,34 @@ exports[`e2e > paragraph 3`] = `
     ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
         w:val="%6."
       /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="3600"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+        w:val="start"
+      /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="720"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="1440"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2160"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
+          w:start="2880"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="none" /><w:lvlJc w:val="start" /><w:pPr><w:ind
           w:start="3600"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId
       w:val="1"

@@ -25,12 +25,26 @@ type Decoration = Readonly<{
   link?: boolean;
 }>;
 
-type ListInfo = Readonly<{
-  level: number;
-  ordered: boolean;
-  reference: string;
-  checked?: boolean;
-}>;
+type CommonListInfo = { level: number };
+type BulletList = Readonly<
+  CommonListInfo & {
+    type: "bullet";
+  }
+>;
+type OrderedList = Readonly<
+  CommonListInfo & {
+    type: "ordered";
+    reference: string;
+  }
+>;
+type TaskList = Readonly<
+  CommonListInfo & {
+    type: "task";
+    checked: boolean;
+  }
+>;
+
+export type ListInfo = BulletList | OrderedList | TaskList;
 
 export type FootnoteRegistry = {
   ref: (id: string) => number;
