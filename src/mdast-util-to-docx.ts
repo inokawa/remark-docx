@@ -156,6 +156,31 @@ const createNumberingRegistry = (): NumberingRegistry => {
   };
 };
 
+const composeBuilders = (
+  pluginsBuilders: readonly NodeBuilders[],
+  defaultBuilders: NodeBuilders,
+): NodeBuilders => {
+  return pluginsBuilders.reduceRight<NodeBuilders>((acc, p) => {
+    type Key = keyof typeof p;
+    for (const k of Object.keys(p)) {
+      const cur = p[k as Key]!;
+      const prev = acc[k as Key];
+      acc[k as Key] = (
+        prev
+          ? (n, c) => {
+              const r = cur(n as any, c);
+              if (r) {
+                return r;
+              }
+              return prev(n as any, c);
+            }
+          : cur
+      ) as NodeBuilder<any>;
+    }
+    return acc;
+  }, defaultBuilders);
+};
+
 export interface DocxOptions extends Pick<
   IPropertiesOptions,
   | "title"
@@ -192,16 +217,8 @@ export const mdastToDocx = async (
 
   const pluginCtx = { root: node, definition };
 
-  const builders = (
-    await Promise.all(plugins.map((p) => p(pluginCtx)))
-  ).reduceRight<NodeBuilders>(
-    (acc, p) => {
-      type Key = keyof typeof p;
-      for (const k of Object.keys(p)) {
-        acc[k as Key] = p[k as Key] as any;
-      }
-      return acc;
-    },
+  const builders = composeBuilders(
+    await Promise.all(plugins.map((p) => p(pluginCtx))),
     {
       paragraph: buildParagraph,
       heading: buildHeading,
