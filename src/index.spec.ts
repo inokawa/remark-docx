@@ -8,14 +8,16 @@ import frontmatter from "remark-frontmatter";
 import math from "remark-math";
 import Zip from "adm-zip";
 import prettier from "prettier";
-import { createCanvas } from "@napi-rs/canvas";
 import docx, { type DocxOptions } from ".";
 import { latexPlugin } from "./plugins/math";
 import { imagePlugin } from "./plugins/image";
 import { htmlPlugin } from "./plugins/html";
 import { shikiPlugin } from "./plugins/code";
+import { readFile } from "fs/promises";
 
 const FIXTURE_PATH = "../fixtures";
+
+const fixturesDir = path.join(__dirname, FIXTURE_PATH);
 
 // mock unique id
 beforeEach(() => {
@@ -25,23 +27,15 @@ afterEach(() => {
   vitest.spyOn(global.Math, "random").mockRestore();
 });
 
-let imageId = 0;
 const loaded = new Map<string, ArrayBuffer>();
 const dummyImage = async (url: string): Promise<ArrayBuffer> => {
   if (loaded.has(url)) {
     return loaded.get(url)!;
   }
-  const canvas = createCanvas(100, 100);
-  const ctx = canvas.getContext("2d");
 
-  const n = (0xfffff * (1000000 - ++imageId)).toString(16);
-  ctx.fillStyle = "#" + n.slice(0, 6);
-  ctx.fillRect(0, 0, 100, 100);
-  const buffer = await canvas
-    .encode("png")
-    .then((d) => d.buffer as ArrayBuffer);
-  loaded.set(url, buffer);
-  return buffer;
+  const img = await readFile(path.join(fixturesDir, "img.png"));
+
+  return img.buffer as ArrayBuffer;
 };
 
 describe("e2e", () => {
@@ -67,16 +61,9 @@ describe("e2e", () => {
     }
   }
 
-  const fixturesDir = path.join(__dirname, FIXTURE_PATH);
-
   it("article", async () => {
     const md = fs.readFileSync(path.join(fixturesDir, "article.md"));
-    const doc = await processor({
-      plugins: [
-        imagePlugin({ load: dummyImage }),
-        shikiPlugin({ theme: "dark-plus" }),
-      ],
-    }).process(md);
+    const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
@@ -200,8 +187,8 @@ describe("e2e", () => {
     }
   });
 
-  it("phrasing-1", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "phrasing-1.md"));
+  it("decoration", async () => {
+    const md = fs.readFileSync(path.join(fixturesDir, "decoration.md"));
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
@@ -210,8 +197,8 @@ describe("e2e", () => {
     }
   });
 
-  it("phrasing-2", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "phrasing-2.md"));
+  it("alt", async () => {
+    const md = fs.readFileSync(path.join(fixturesDir, "alt.md"));
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
