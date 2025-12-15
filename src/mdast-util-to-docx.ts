@@ -171,8 +171,8 @@ export const mdastToDocx = async (
 ): Promise<ArrayBuffer> => {
   const definition = definitions(node);
 
-  const footnote = createFootnoteRegistry();
   const numbering = createNumberingRegistry();
+  const footnote = createFootnoteRegistry();
 
   const pluginCtx = { root: node, definition };
 
