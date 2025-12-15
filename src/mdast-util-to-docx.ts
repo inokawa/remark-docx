@@ -40,6 +40,7 @@ const CONTENT_WIDTH =
   sectionMarginDefaults.RIGHT;
 const ORDERED_LIST_REF = "ordered";
 const HYPERLINK_STYLE_ID = "Hyperlink";
+const INLINE_CODE_STYLE_ID = "InlineCode";
 const INDENT = 0.5;
 
 const createFootnoteRegistry = (): FootnoteRegistry => {
@@ -286,7 +287,18 @@ export const mdastToDocx = async (
     creator,
     keywords,
     description,
-    styles,
+    styles: {
+      ...styles,
+      characterStyles: [
+        ...(styles?.characterStyles ?? []),
+        {
+          id: INLINE_CODE_STYLE_ID,
+          run: {
+            highlight: "lightGray",
+          },
+        },
+      ],
+    },
     background,
     sections: sections
       .filter((s) => s.length)
@@ -487,7 +499,7 @@ const buildDelete: NodeBuilder<"delete"> = ({ children }, ctx) => {
 const buildInlineCode: NodeBuilder<"inlineCode"> = ({ value }) => {
   return new TextRun({
     text: value,
-    highlight: "lightGray",
+    style: INLINE_CODE_STYLE_ID,
   });
 };
 
