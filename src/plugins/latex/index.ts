@@ -90,7 +90,7 @@ const buildElement = (o: XmlElement): XmlComponent | null => {
 };
 
 /**
- * A plugin to render latex inside "math" and "inlineMath" nodes
+ * A plugin to render LaTeX inside "math" and "inlineMath" nodes
  */
 export const latexPlugin = (): RemarkDocxPlugin => {
   // https://github.com/mathjax/MathJax-demos-node/blob/master/mjs/mixed/tex2mml
