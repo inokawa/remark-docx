@@ -30,7 +30,6 @@ import type {
   FootnoteRegistry,
   NodeBuilder,
   NodeBuilders,
-  NumberingRegistry,
   RemarkDocxPlugin,
   Writeable,
 } from "./types";
@@ -81,14 +80,18 @@ type OrderedListFormat = {
   text: string;
 };
 
+type NumberingRegistry = {
+  createId: () => string;
+  getIds: () => string[];
+};
 const createNumberingRegistry = (): NumberingRegistry => {
   let counter = 1;
 
   return {
-    create: () => {
+    createId: () => {
       return `${ORDERED_LIST_REF}-${counter++}`;
     },
-    toConfig: () => {
+    getIds: () => {
       return Array.from(
         { length: counter },
         (_, i) => `${ORDERED_LIST_REF}-${i}`,
@@ -240,7 +243,7 @@ export const mdastToDocx = async (
     indent: 0,
     definition: definition,
     footnote,
-    numbering,
+    orderedListId: numbering.createId,
   };
 
   const sections: DocxContent[][] = [[]];
@@ -289,7 +292,7 @@ export const mdastToDocx = async (
       .map((s) => ({ children: s as DocxChild[] })),
     footnotes: footnote.toConfig(),
     numbering: {
-      config: numbering.toConfig().map((ref) => ({
+      config: numbering.getIds().map((ref) => ({
         reference: ref,
         levels,
       })),
@@ -386,7 +389,7 @@ const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
 
   const reference =
     isTopLevel && ordered
-      ? ctx.numbering.create()
+      ? ctx.orderedListId()
       : ctx.list?.reference || ORDERED_LIST_REF;
 
   return ctx.render(children, {

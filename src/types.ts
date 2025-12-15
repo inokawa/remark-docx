@@ -1,10 +1,4 @@
-import type {
-  ILevelsOptions,
-  Paragraph,
-  ParagraphChild,
-  Table,
-  TableOfContents,
-} from "docx";
+import type { Paragraph, ParagraphChild, Table, TableOfContents } from "docx";
 import type * as mdast from "mdast";
 import type { GetDefinition } from "mdast-util-definitions";
 
@@ -46,11 +40,6 @@ export type FootnoteRegistry = {
   };
 };
 
-export type NumberingRegistry = {
-  create: () => string;
-  toConfig: () => string[];
-};
-
 export type Context = Readonly<{
   render: (node: readonly mdast.RootContent[], ctx?: Context) => DocxContent[];
   /**
@@ -76,7 +65,7 @@ export type Context = Readonly<{
   /**
    * @internal
    */
-  numbering: NumberingRegistry;
+  orderedListId: () => string;
 }>;
 
 export type NodeBuilder<T extends string> = (
