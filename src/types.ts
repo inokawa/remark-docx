@@ -55,6 +55,10 @@ export type Context = Readonly<{
   /**
    * @internal
    */
+  width: number;
+  /**
+   * @internal
+   */
   deco: DecorationContext;
   /**
    * @internal
@@ -75,7 +79,7 @@ export type Context = Readonly<{
   /**
    * @internal
    */
-  orderedListId: () => string;
+  orderedId: () => string;
 }>;
 
 export type NodeBuilder<T extends string> = (

@@ -35,10 +35,6 @@ import type {
   Writeable,
 } from "./types";
 
-const CONTENT_WIDTH =
-  sectionPageSizeDefaults.WIDTH -
-  sectionMarginDefaults.LEFT -
-  sectionMarginDefaults.RIGHT;
 const ORDERED_LIST_REF = "ordered";
 const TASK_LIST_REF = "task";
 const HYPERLINK_STYLE_ID = "Hyperlink";
@@ -269,11 +265,15 @@ export const mdastToDocx = async (
       }
       return results;
     },
+    width:
+      sectionPageSizeDefaults.WIDTH -
+      sectionMarginDefaults.LEFT -
+      sectionMarginDefaults.RIGHT,
     deco: {},
     indent: 0,
     definition: definition,
     footnote,
-    orderedListId: numbering.createId,
+    orderedId: numbering.createId,
   };
 
   const sections: DocxContent[][] = [[]];
@@ -426,7 +426,7 @@ const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
       reference:
         parentList && parentList.meta.type === "ordered"
           ? parentList.meta.reference
-          : ctx.orderedListId(),
+          : ctx.orderedId(),
     };
   } else {
     meta = { type: "bullet" };
@@ -478,7 +478,7 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
   });
 
   const columnLength = children[0]!.children.length;
-  const columnWidth = CONTENT_WIDTH / columnLength;
+  const columnWidth = ctx.width / columnLength;
 
   return new Table({
     columnWidths: Array.from({ length: columnLength }).map(() => columnWidth),
