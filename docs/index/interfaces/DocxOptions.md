@@ -4,7 +4,7 @@
 
 # Interface: DocxOptions
 
-Defined in: [src/mdast-util-to-docx.ts:159](https://github.com/inokawa/remark-docx/blob/9a83998b0f53ab952f1abbadee66a57d53a91264/src/mdast-util-to-docx.ts#L159)
+Defined in: [src/mdast-util-to-docx.ts:166](https://github.com/inokawa/remark-docx/blob/af0a1bf4d0ff4192c71f226d015f416f8a35afe9/src/mdast-util-to-docx.ts#L166)
 
 ## Extends
 
@@ -12,11 +12,26 @@ Defined in: [src/mdast-util-to-docx.ts:159](https://github.com/inokawa/remark-do
 
 ## Properties
 
+### orderedListFormat?
+
+> `optional` **orderedListFormat**: `ListFormat`[]
+
+Defined in: [src/mdast-util-to-docx.ts:181](https://github.com/inokawa/remark-docx/blob/af0a1bf4d0ff4192c71f226d015f416f8a35afe9/src/mdast-util-to-docx.ts#L181)
+
+An option to override the text format of ordered list.
+See https://docx.js.org/#/usage/numbering?id=level-options for more details.
+
+#### Default
+
+defaultOrderedList
+
+***
+
 ### plugins?
 
 > `optional` **plugins**: [`RemarkDocxPlugin`](../type-aliases/RemarkDocxPlugin.md)[]
 
-Defined in: [src/mdast-util-to-docx.ts:172](https://github.com/inokawa/remark-docx/blob/9a83998b0f53ab952f1abbadee66a57d53a91264/src/mdast-util-to-docx.ts#L172)
+Defined in: [src/mdast-util-to-docx.ts:185](https://github.com/inokawa/remark-docx/blob/af0a1bf4d0ff4192c71f226d015f416f8a35afe9/src/mdast-util-to-docx.ts#L185)
 
 Plugins to customize how mdast nodes are compiled.
 
