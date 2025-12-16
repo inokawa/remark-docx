@@ -18,7 +18,7 @@ type MdastNode<T extends string> = T extends KnownNodeType
   ? Extract<mdast.RootContent, { type: T }>
   : unknown;
 
-type Decoration = Readonly<{
+type DecorationContext = Readonly<{
   bold?: boolean;
   italic?: boolean;
   strike?: boolean;
@@ -44,7 +44,7 @@ type TaskList = Readonly<
   }
 >;
 
-export type ListInfo = BulletList | OrderedList | TaskList;
+export type ListContext = BulletList | OrderedList | TaskList;
 
 export type FootnoteRegistry = {
   ref: (id: string) => number;
@@ -59,7 +59,7 @@ export type Context = Readonly<{
   /**
    * @internal
    */
-  deco: Decoration;
+  deco: DecorationContext;
   /**
    * @internal
    */
@@ -67,7 +67,7 @@ export type Context = Readonly<{
   /**
    * @internal
    */
-  list?: ListInfo;
+  list?: ListContext;
   /**
    * @internal
    */

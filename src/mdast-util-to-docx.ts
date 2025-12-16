@@ -28,7 +28,7 @@ import type {
   DocxChild,
   DocxContent,
   FootnoteRegistry,
-  ListInfo,
+  ListContext,
   NodeBuilder,
   NodeBuilders,
   RemarkDocxPlugin,
@@ -416,11 +416,10 @@ const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
 };
 
 const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
-  const isTopLevel = !ctx.list;
-  const level = isTopLevel ? 0 : ctx.list.level + 1;
-
   const parentList = ctx.list;
-  let list: ListInfo;
+  const level = !parentList ? 0 : parentList.level + 1;
+
+  let list: ListContext;
   if (ordered) {
     list = {
       type: "ordered",
