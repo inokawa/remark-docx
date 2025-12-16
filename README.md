@@ -14,7 +14,7 @@ Currently, some of the default styles may not be nice. If you have feature reque
 
 - [x] paragraph
 - [x] heading
-- [x] thematicBreak
+- [x] thematicBreak (rendered as Page Break/Section Break)
 - [x] blockquote
 - [x] list / listItem
 - [x] table / tableRow / tableCell
@@ -86,7 +86,7 @@ const text = "# hello world";
 
 ### Image
 
-Fetch image data and embed into docx.
+Fetch image data and embed into docx. `png`, `jpg`, `gif`, `bmp`, `svg` urls are supported.
 
 ```javascript
 import { unified } from "unified";
