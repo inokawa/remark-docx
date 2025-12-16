@@ -418,7 +418,7 @@ const buildThematicBreak: NodeBuilder<"thematicBreak"> = (_, ctx) => {
     // Returning empty array at toplevel means section insertion.
     return [];
   }
-  return new PageBreak();
+  return new Paragraph({ children: [new PageBreak()] });
 };
 
 const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
