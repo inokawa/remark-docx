@@ -216,7 +216,7 @@ export const imagePlugin = ({
         if (!data) {
           return null;
         }
-        return buildImage(data, node);
+        return buildImage(data, { alt: node.alt, title: def.title });
       },
     };
   };
