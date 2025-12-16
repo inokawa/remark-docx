@@ -28,6 +28,7 @@ import type {
   DocxChild,
   DocxContent,
   FootnoteRegistry,
+  ListInfo,
   NodeBuilder,
   NodeBuilders,
   RemarkDocxPlugin,
@@ -39,6 +40,7 @@ const CONTENT_WIDTH =
   sectionMarginDefaults.LEFT -
   sectionMarginDefaults.RIGHT;
 const ORDERED_LIST_REF = "ordered";
+const TASK_LIST_REF = "task";
 const HYPERLINK_STYLE_ID = "Hyperlink";
 const INLINE_CODE_STYLE_ID = "InlineCode";
 const INDENT = 0.5;
@@ -77,7 +79,7 @@ const createFootnoteRegistry = (): FootnoteRegistry => {
   };
 };
 
-type OrderedListFormat = {
+type ListFormat = {
   format: keyof typeof LevelFormat;
   text: string;
 };
@@ -125,8 +127,16 @@ const composeBuilders = (
     return acc;
   }, defaultBuilders);
 };
+const defaultTaskList: ListFormat[] = [
+  { text: "", format: "NONE" },
+  { text: "", format: "NONE" },
+  { text: "", format: "NONE" },
+  { text: "", format: "NONE" },
+  { text: "", format: "NONE" },
+  { text: "", format: "NONE" },
+];
 
-const defaultOrderedList: OrderedListFormat[] = [
+const defaultOrderedList: ListFormat[] = [
   { text: "%1.", format: "DECIMAL" },
   { text: "%2.", format: "DECIMAL" },
   { text: "%3.", format: "DECIMAL" },
@@ -134,6 +144,24 @@ const defaultOrderedList: OrderedListFormat[] = [
   { text: "%5.", format: "DECIMAL" },
   { text: "%6.", format: "DECIMAL" },
 ];
+
+const buildLevels = (formats: readonly ListFormat[]): ILevelsOptions[] =>
+  formats.map(({ format, text }, i) => {
+    return {
+      level: i,
+      format: LevelFormat[format],
+      text: text,
+      alignment: AlignmentType.START,
+      style:
+        i === 0
+          ? undefined
+          : {
+              paragraph: {
+                indent: { start: convertInchesToTwip(INDENT * i) },
+              },
+            },
+    };
+  });
 
 export interface DocxOptions extends Pick<
   IPropertiesOptions,
@@ -150,7 +178,7 @@ export interface DocxOptions extends Pick<
    * See https://docx.js.org/#/usage/numbering?id=level-options for more details.
    * @default {@link defaultOrderedList}
    */
-  orderedListFormat?: OrderedListFormat[];
+  orderedListFormat?: ListFormat[];
   /**
    * Plugins to customize how mdast nodes are compiled.
    */
@@ -262,24 +290,7 @@ export const mdastToDocx = async (
     }
   }
 
-  const levels: ILevelsOptions[] = orderedListFormat.map(
-    ({ format, text }, i) => {
-      return {
-        level: i,
-        format: LevelFormat[format],
-        text: text,
-        alignment: AlignmentType.START,
-        style:
-          i === 0
-            ? undefined
-            : {
-                paragraph: {
-                  indent: { start: convertInchesToTwip(INDENT * i) },
-                },
-              },
-      };
-    },
-  );
+  const orderedLevels = buildLevels(orderedListFormat);
 
   const doc = new Document({
     title,
@@ -305,10 +316,16 @@ export const mdastToDocx = async (
       .map((s) => ({ children: s as DocxChild[] })),
     footnotes: footnote.toConfig(),
     numbering: {
-      config: numbering.getIds().map((ref) => ({
-        reference: ref,
-        levels,
-      })),
+      config: [
+        ...numbering.getIds().map((ref) => ({
+          reference: ref,
+          levels: orderedLevels,
+        })),
+        {
+          reference: TASK_LIST_REF,
+          levels: buildLevels(defaultTaskList),
+        },
+      ],
     },
   });
 
@@ -330,7 +347,7 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
   }
 
   if (list) {
-    if (list.checked != null) {
+    if (list.type === "task") {
       nodes.unshift(
         new CheckBox({
           checked: list.checked,
@@ -338,9 +355,11 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
           uncheckedState: { value: "2610" },
         }),
       );
-    }
-
-    if (list.ordered) {
+      options.numbering = {
+        reference: TASK_LIST_REF,
+        level: list.level,
+      };
+    } else if (list.type === "ordered") {
       options.numbering = {
         reference: list.reference,
         level: list.level,
@@ -400,25 +419,42 @@ const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
   const isTopLevel = !ctx.list;
   const level = isTopLevel ? 0 : ctx.list.level + 1;
 
-  const reference =
-    isTopLevel && ordered
-      ? ctx.orderedListId()
-      : ctx.list?.reference || ORDERED_LIST_REF;
+  const parentList = ctx.list;
+  let list: ListInfo;
+  if (ordered) {
+    list = {
+      type: "ordered",
+      level,
+      reference:
+        parentList && parentList.type === "ordered"
+          ? parentList.reference
+          : ctx.orderedListId(),
+    };
+  } else {
+    list = { type: "bullet", level };
+  }
 
   return ctx.render(children, {
     ...ctx,
-    list: {
-      level,
-      ordered: !!ordered,
-      reference,
-    },
+    list,
   });
 };
 
 const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
+  let list = ctx.list;
+  if (list) {
+    // listItem must be the child of list
+    if (checked != null) {
+      list = {
+        type: "task",
+        level: list.level,
+        checked,
+      };
+    }
+  }
   return ctx.render(children, {
     ...ctx,
-    ...(ctx.list && { list: { ...ctx.list, checked: checked ?? undefined } }),
+    list,
   });
 };
 
