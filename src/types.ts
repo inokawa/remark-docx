@@ -25,26 +25,22 @@ type DecorationContext = Readonly<{
   link?: boolean;
 }>;
 
-type CommonListInfo = { level: number };
-type BulletList = Readonly<
-  CommonListInfo & {
-    type: "bullet";
-  }
->;
-type OrderedList = Readonly<
-  CommonListInfo & {
-    type: "ordered";
-    reference: string;
-  }
->;
-type TaskList = Readonly<
-  CommonListInfo & {
-    type: "task";
-    checked: boolean;
-  }
->;
+type BulletList = Readonly<{
+  type: "bullet";
+}>;
+type OrderedList = Readonly<{
+  type: "ordered";
+  reference: string;
+}>;
+type TaskList = Readonly<{
+  type: "task";
+  checked: boolean;
+}>;
 
-export type ListContext = BulletList | OrderedList | TaskList;
+export type ListContext = Readonly<{
+  level: number;
+  meta: BulletList | OrderedList | TaskList;
+}>;
 
 export type FootnoteRegistry = {
   ref: (id: string) => number;

@@ -347,26 +347,27 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
   }
 
   if (list) {
-    if (list.type === "task") {
+    const { level, meta } = list;
+    if (meta.type === "task") {
       nodes.unshift(
         new CheckBox({
-          checked: list.checked,
+          checked: meta.checked,
           checkedState: { value: "2611" },
           uncheckedState: { value: "2610" },
         }),
       );
       options.numbering = {
         reference: TASK_LIST_REF,
-        level: list.level,
+        level,
       };
-    } else if (list.type === "ordered") {
+    } else if (meta.type === "ordered") {
       options.numbering = {
-        reference: list.reference,
-        level: list.level,
+        reference: meta.reference,
+        level,
       };
     } else {
       options.bullet = {
-        level: list.level,
+        level,
       };
     }
   }
@@ -417,25 +418,26 @@ const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
 
 const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
   const parentList = ctx.list;
-  const level = !parentList ? 0 : parentList.level + 1;
 
-  let list: ListContext;
+  let meta: ListContext["meta"];
   if (ordered) {
-    list = {
+    meta = {
       type: "ordered",
-      level,
       reference:
-        parentList && parentList.type === "ordered"
-          ? parentList.reference
+        parentList && parentList.meta.type === "ordered"
+          ? parentList.meta.reference
           : ctx.orderedListId(),
     };
   } else {
-    list = { type: "bullet", level };
+    meta = { type: "bullet" };
   }
 
   return ctx.render(children, {
     ...ctx,
-    list,
+    list: {
+      level: !parentList ? 0 : parentList.level + 1,
+      meta,
+    },
   });
 };
 
@@ -445,9 +447,11 @@ const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
     // listItem must be the child of list
     if (checked != null) {
       list = {
-        type: "task",
         level: list.level,
-        checked,
+        meta: {
+          type: "task",
+          checked,
+        },
       };
     }
   }
