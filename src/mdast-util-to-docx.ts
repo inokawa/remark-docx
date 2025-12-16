@@ -19,6 +19,7 @@ import {
   sectionMarginDefaults,
   type IRunOptions,
   type IParagraphOptions,
+  PageBreak,
 } from "docx";
 import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
@@ -32,6 +33,7 @@ import type {
   NodeBuilder,
   NodeBuilders,
   RemarkDocxPlugin,
+  ThematicBreakType,
   Writeable,
 } from "./types";
 
@@ -176,6 +178,11 @@ export interface DocxOptions extends Pick<
    */
   orderedListFormat?: ListFormat[];
   /**
+   * An option to select how thematicBreak works. "page" is Page Break. "section" is Section Break.
+   * @default "page"
+   */
+  thematicBreak?: ThematicBreakType;
+  /**
    * Plugins to customize how mdast nodes are compiled.
    */
   plugins?: RemarkDocxPlugin[];
@@ -192,6 +199,7 @@ export const mdastToDocx = async (
     description,
     styles,
     background,
+    thematicBreak = "page",
     orderedListFormat = defaultOrderedList,
   }: DocxOptions = {},
 ): Promise<ArrayBuffer> => {
@@ -271,6 +279,7 @@ export const mdastToDocx = async (
       sectionMarginDefaults.RIGHT,
     deco: {},
     indent: 0,
+    thematicBreak,
     definition: definition,
     footnote,
     orderedId: numbering.createId,
@@ -404,9 +413,12 @@ const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
   });
 };
 
-const buildThematicBreak: NodeBuilder<"thematicBreak"> = () => {
-  // Returning empty array at toplevel means section insertion.
-  return [];
+const buildThematicBreak: NodeBuilder<"thematicBreak"> = (_, ctx) => {
+  if (ctx.thematicBreak === "section") {
+    // Returning empty array at toplevel means section insertion.
+    return [];
+  }
+  return new PageBreak();
 };
 
 const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {

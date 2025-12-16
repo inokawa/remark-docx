@@ -787,18 +787,9 @@ quote</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r><w:t
               w:w="3008"
             /></w:tcPr><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
                 xml:space="preserve"
-              >aligned</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:pPr
-      ><w:sectPr><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
-            w:top="1440"
-            w:right="1440"
-            w:bottom="1440"
-            w:left="1440"
-            w:header="708"
-            w:footer="708"
-            w:gutter="0"
-          /><w:pgNumType /><w:docGrid
-            w:linePitch="360"
-          /></w:sectPr></w:pPr></w:p><w:r><w:t
+              >aligned</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:r><w:br
+        w:type="page"
+      /></w:r><w:r><w:br w:type="page" /></w:r><w:r><w:t
         xml:space="preserve"
       >function $initHighlight(block, cls) {
   try {
@@ -1296,40 +1287,12 @@ exports[`e2e > break 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:r><w:t xml:space="preserve">a</w:t></w:r></w:p><w:p><w:pPr
-      ><w:sectPr><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
-            w:top="1440"
-            w:right="1440"
-            w:bottom="1440"
-            w:left="1440"
-            w:header="708"
-            w:footer="708"
-            w:gutter="0"
-          /><w:pgNumType /><w:docGrid
-            w:linePitch="360"
-          /></w:sectPr></w:pPr></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >b</w:t></w:r></w:p><w:p><w:pPr><w:sectPr><w:pgSz
-            w:w="11906"
-            w:h="16838"
-            w:orient="portrait"
-          /><w:pgMar
-            w:top="1440"
-            w:right="1440"
-            w:bottom="1440"
-            w:left="1440"
-            w:header="708"
-            w:footer="708"
-            w:gutter="0"
-          /><w:pgNumType /><w:docGrid
-            w:linePitch="360"
-          /></w:sectPr></w:pPr></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >c</w:t></w:r></w:p><w:sectPr><w:pgSz
-        w:w="11906"
-        w:h="16838"
-        w:orient="portrait"
-      /><w:pgMar
+><w:body><w:p><w:r><w:t xml:space="preserve">a</w:t></w:r></w:p><w:r><w:br
+        w:type="page"
+      /></w:r><w:p><w:r><w:t xml:space="preserve">b</w:t></w:r></w:p><w:r><w:br
+        w:type="page"
+      /></w:r><w:p><w:r><w:t xml:space="preserve">c</w:t></w:r></w:p><w:sectPr
+    ><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
         w:top="1440"
         w:right="1440"
         w:bottom="1440"

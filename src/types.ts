@@ -50,6 +50,8 @@ export type FootnoteRegistry = {
   };
 };
 
+export type ThematicBreakType = "page" | "section";
+
 export type Context = Readonly<{
   render: (node: readonly mdast.RootContent[], ctx?: Context) => DocxContent[];
   /**
@@ -68,6 +70,10 @@ export type Context = Readonly<{
    * @internal
    */
   list?: ListContext;
+  /**
+   * @internal
+   */
+  thematicBreak: ThematicBreakType;
   /**
    * @internal
    */
