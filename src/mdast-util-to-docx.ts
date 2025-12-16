@@ -20,6 +20,7 @@ import {
   type IRunOptions,
   type IParagraphOptions,
   PageBreak,
+  type ISectionPropertiesOptions,
 } from "docx";
 import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
@@ -172,6 +173,16 @@ export interface DocxOptions extends Pick<
   | "background"
 > {
   /**
+   * Page size defined in twip (1 twip == 1/1440 inch).
+   * @default A4 ({@link sectionPageSizeDefaults})
+   */
+  size?: { width?: number; height?: number };
+  /**
+   * Page margin defined in twip (1 twip == 1/1440 inch).
+   * @default 1 inch ({@link sectionMarginDefaults})
+   */
+  margin?: { top?: number; left?: number; bottom?: number; right?: number };
+  /**
    * An option to override the text format of ordered list.
    * See https://docx.js.org/#/usage/numbering?id=level-options for more details.
    * @default {@link defaultOrderedList}
@@ -198,6 +209,8 @@ export const mdastToDocx = async (
     keywords,
     description,
     styles,
+    size,
+    margin,
     background,
     thematicBreak = "page",
     orderedListFormat = defaultOrderedList,
@@ -262,6 +275,36 @@ export const mdastToDocx = async (
     return null;
   };
 
+  let { WIDTH: pageWidth, HEIGHT: pageHeight } = sectionPageSizeDefaults;
+  if (size) {
+    if (size.width != null) {
+      pageWidth = size.width;
+    }
+    if (size.height != null) {
+      pageHeight = size.height;
+    }
+  }
+  let {
+    TOP: marginTop,
+    LEFT: marginLeft,
+    BOTTOM: marginBottom,
+    RIGHT: marginRight,
+  } = sectionMarginDefaults;
+  if (margin) {
+    if (margin.top != null) {
+      marginTop = margin.top;
+    }
+    if (margin.left != null) {
+      marginLeft = margin.left;
+    }
+    if (margin.bottom != null) {
+      marginBottom = margin.bottom;
+    }
+    if (margin.right != null) {
+      marginRight = margin.right;
+    }
+  }
+
   const ctx: Context = {
     render(nodes, c) {
       const results: DocxContent[] = [];
@@ -273,10 +316,7 @@ export const mdastToDocx = async (
       }
       return results;
     },
-    width:
-      sectionPageSizeDefaults.WIDTH -
-      sectionMarginDefaults.LEFT -
-      sectionMarginDefaults.RIGHT,
+    width: pageWidth - marginLeft - marginRight,
     deco: {},
     indent: 0,
     thematicBreak,
@@ -301,6 +341,18 @@ export const mdastToDocx = async (
 
   const orderedLevels = buildLevels(orderedListFormat);
 
+  const sectionProperties: ISectionPropertiesOptions = {
+    page: {
+      size: { width: pageWidth, height: pageHeight },
+      margin: {
+        top: marginTop,
+        left: marginLeft,
+        bottom: marginBottom,
+        right: marginRight,
+      },
+    },
+  };
+
   const doc = new Document({
     title,
     subject,
@@ -322,7 +374,10 @@ export const mdastToDocx = async (
     background,
     sections: sections
       .filter((s) => s.length)
-      .map((s) => ({ children: s as DocxChild[] })),
+      .map((s) => ({
+        properties: sectionProperties,
+        children: s as DocxChild[],
+      })),
     footnotes: footnote.toConfig(),
     numbering: {
       config: [
