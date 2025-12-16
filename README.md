@@ -114,21 +114,6 @@ const processor = unified()
   .use(docx, { plugins: [shikiPlugin({ theme: "dark-plus" })] });
 ```
 
-### HTML
-
-Transform HTML to markdown.
-
-```javascript
-import { unified } from "unified";
-import markdown from "remark-parse";
-import docx from "remark-docx";
-import { htmlPlugin } from "remark-docx/plugins/html";
-
-const processor = unified()
-  .use(markdown)
-  .use(docx, { plugins: [htmlPlugin()] });
-```
-
 ### Math
 
 Render LaTeX with [MathJax](https://github.com/mathjax/MathJax).
@@ -144,6 +129,21 @@ const processor = unified()
   .use(markdown)
   .use(math)
   .use(docx, { plugins: [latexPlugin()] });
+```
+
+### HTML
+
+Transform HTML to markdown.
+
+```javascript
+import { unified } from "unified";
+import markdown from "remark-parse";
+import docx from "remark-docx";
+import { htmlPlugin } from "remark-docx/plugins/html";
+
+const processor = unified()
+  .use(markdown)
+  .use(docx, { plugins: [htmlPlugin()] });
 ```
 
 ## Documentation
