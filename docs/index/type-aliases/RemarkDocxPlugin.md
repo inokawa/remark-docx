@@ -6,7 +6,7 @@
 
 > **RemarkDocxPlugin** = (`ctx`) => `Promise`\<`NodeBuilders`\>
 
-Defined in: [src/types.ts:94](https://github.com/inokawa/remark-docx/blob/af0a1bf4d0ff4192c71f226d015f416f8a35afe9/src/types.ts#L94)
+Defined in: [src/types.ts:100](https://github.com/inokawa/remark-docx/blob/c102acc6098b0564f374c93c08938c77615e7871/src/types.ts#L100)
 
 ## Parameters
 
