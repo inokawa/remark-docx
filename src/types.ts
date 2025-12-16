@@ -25,21 +25,21 @@ type DecorationContext = Readonly<{
   link?: boolean;
 }>;
 
-type BulletList = Readonly<{
-  type: "bullet";
-}>;
-type OrderedList = Readonly<{
-  type: "ordered";
-  reference: string;
-}>;
-type TaskList = Readonly<{
-  type: "task";
-  checked: boolean;
-}>;
-
 export type ListContext = Readonly<{
   level: number;
-  meta: BulletList | OrderedList | TaskList;
+  meta: Readonly<
+    | {
+        type: "bullet";
+      }
+    | {
+        type: "ordered";
+        reference: string;
+      }
+    | {
+        type: "task";
+        checked: boolean;
+      }
+  >;
 }>;
 
 export type FootnoteRegistry = {
