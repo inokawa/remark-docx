@@ -4,7 +4,7 @@
 
 # Interface: DocxOptions
 
-Defined in: [src/mdast-util-to-docx.ts:164](https://github.com/inokawa/remark-docx/blob/c102acc6098b0564f374c93c08938c77615e7871/src/mdast-util-to-docx.ts#L164)
+Defined in: [src/mdast-util-to-docx.ts:164](https://github.com/inokawa/remark-docx/blob/4a768649423164be1b6603c2c99793b2a24c097f/src/mdast-util-to-docx.ts#L164)
 
 ## Extends
 
@@ -16,7 +16,7 @@ Defined in: [src/mdast-util-to-docx.ts:164](https://github.com/inokawa/remark-do
 
 > `optional` **orderedListFormat**: `ListFormat`[]
 
-Defined in: [src/mdast-util-to-docx.ts:179](https://github.com/inokawa/remark-docx/blob/c102acc6098b0564f374c93c08938c77615e7871/src/mdast-util-to-docx.ts#L179)
+Defined in: [src/mdast-util-to-docx.ts:179](https://github.com/inokawa/remark-docx/blob/4a768649423164be1b6603c2c99793b2a24c097f/src/mdast-util-to-docx.ts#L179)
 
 An option to override the text format of ordered list.
 See https://docx.js.org/#/usage/numbering?id=level-options for more details.
@@ -31,7 +31,7 @@ defaultOrderedList
 
 > `optional` **thematicBreak**: `ThematicBreakType`
 
-Defined in: [src/mdast-util-to-docx.ts:184](https://github.com/inokawa/remark-docx/blob/c102acc6098b0564f374c93c08938c77615e7871/src/mdast-util-to-docx.ts#L184)
+Defined in: [src/mdast-util-to-docx.ts:184](https://github.com/inokawa/remark-docx/blob/4a768649423164be1b6603c2c99793b2a24c097f/src/mdast-util-to-docx.ts#L184)
 
 An option to select how thematicBreak works. "page" is Page Break. "section" is Section Break.
 
@@ -47,7 +47,7 @@ An option to select how thematicBreak works. "page" is Page Break. "section" is 
 
 > `optional` **plugins**: [`RemarkDocxPlugin`](../type-aliases/RemarkDocxPlugin.md)[]
 
-Defined in: [src/mdast-util-to-docx.ts:188](https://github.com/inokawa/remark-docx/blob/c102acc6098b0564f374c93c08938c77615e7871/src/mdast-util-to-docx.ts#L188)
+Defined in: [src/mdast-util-to-docx.ts:188](https://github.com/inokawa/remark-docx/blob/4a768649423164be1b6603c2c99793b2a24c097f/src/mdast-util-to-docx.ts#L188)
 
 Plugins to customize how mdast nodes are compiled.
 
