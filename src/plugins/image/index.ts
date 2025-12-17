@@ -79,7 +79,7 @@ type SvgToPngFn = (options: {
   buffer: ArrayBuffer;
   width: number;
   height: number;
-}) => Promise<ArrayBuffer>;
+}) => Promise<ArrayBufferLike>;
 
 const loadWithFetch: LoadFn = async (url) => {
   const res = await fetch(url);
@@ -182,7 +182,7 @@ export const imagePlugin = ({
                     width,
                     height,
                     data,
-                    fallback: fallback,
+                    fallback: fallback as ArrayBuffer,
                   });
                 } catch (e) {
                   warnOnce(`Failed to create fallback image: ${url} ${e}`);

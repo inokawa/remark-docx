@@ -99,6 +99,19 @@ const processor = unified()
   .use(docx, { plugins: [imagePlugin()] });
 ```
 
+When we embed `svg` to docx, it also requires `png` image for compatibility reason. On browser, this plugin generate it automatically. On other enviroment like Node.js, please implement `fallbackSvg` prop.
+
+```javascript
+import sharp from "sharp";
+
+imagePlugin({
+  fallbackSvg: async ({ buffer }) => {
+    const png = await sharp(buffer).png().toBuffer();
+    return png.buffer;
+  },
+});
+```
+
 ### Code
 
 Syntax highlighting with [shiki](https://github.com/shikijs/shiki).
