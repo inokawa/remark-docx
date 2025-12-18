@@ -1287,12 +1287,20 @@ exports[`e2e > break 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:r><w:t xml:space="preserve">a</w:t></w:r></w:p><w:p><w:r><w:br
+><w:body><w:p><w:r><w:t xml:space="preserve">a</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >hard</w:t></w:r><w:r><w:br /><w:t xml:space="preserve" /></w:r><w:r
+      ><w:t xml:space="preserve">break</w:t></w:r></w:p><w:p><w:r><w:br
           w:type="page"
         /></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        >b</w:t></w:r></w:p><w:p><w:r><w:br w:type="page" /></w:r></w:p><w:p
-    ><w:r><w:t xml:space="preserve">c</w:t></w:r></w:p><w:sectPr><w:pgSz
+        >b</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >thematic break</w:t></w:r></w:p><w:p><w:r><w:br
+          w:type="page"
+        /></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >c</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
         w:h="16838"
         w:orient="portrait"
