@@ -1,5 +1,5 @@
 import { vitest, beforeEach, afterEach, it, describe, expect } from "vitest";
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 import { unified } from "unified";
 import markdown from "remark-parse";
@@ -62,7 +62,7 @@ describe("e2e", () => {
   }
 
   it("article", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "article.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "article.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -70,7 +70,7 @@ describe("e2e", () => {
   });
 
   it("break", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "break.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "break.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -78,7 +78,7 @@ describe("e2e", () => {
   });
 
   it("code", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "code.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "code.md"));
     const doc = await processor({
       plugins: [shikiPlugin({ theme: "dark-plus" })],
     }).process(md);
@@ -88,7 +88,7 @@ describe("e2e", () => {
   });
 
   it("footnotes", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "footnotes.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "footnotes.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -96,7 +96,7 @@ describe("e2e", () => {
   });
 
   it("footnotes2", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "footnotes2.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "footnotes2.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -104,7 +104,7 @@ describe("e2e", () => {
   });
 
   it("frontmatter", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "frontmatter.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "frontmatter.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -112,7 +112,7 @@ describe("e2e", () => {
   });
 
   it("heading", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "heading.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "heading.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -120,7 +120,7 @@ describe("e2e", () => {
   });
 
   it("reference", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "reference.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "reference.md"));
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
@@ -130,7 +130,7 @@ describe("e2e", () => {
   });
 
   it("list bullet", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "list-bullet.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "list-bullet.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -138,7 +138,7 @@ describe("e2e", () => {
   });
 
   it("list ordered", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "list-ordered.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "list-ordered.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -146,7 +146,7 @@ describe("e2e", () => {
   });
 
   it("list task", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "list-task.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "list-task.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -154,7 +154,7 @@ describe("e2e", () => {
   });
 
   it("math", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "math.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "math.md"));
     const doc = await processor({ plugins: [latexPlugin()] }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -162,7 +162,7 @@ describe("e2e", () => {
   });
 
   it("latex", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "latex.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "latex.md"));
     const doc = await processor({ plugins: [latexPlugin()] }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -170,7 +170,7 @@ describe("e2e", () => {
   });
 
   it("tag", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "tag.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "tag.md"));
     const doc = await processor({ plugins: [htmlPlugin()] }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -178,7 +178,7 @@ describe("e2e", () => {
   });
 
   it("paragraph", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "paragraph.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "paragraph.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -186,7 +186,7 @@ describe("e2e", () => {
   });
 
   it("decoration", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "decoration.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "decoration.md"));
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
@@ -196,7 +196,7 @@ describe("e2e", () => {
   });
 
   it("alt", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "alt.md"));
+    const md = await fs.readFile(path.join(fixturesDir, "alt.md"));
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
