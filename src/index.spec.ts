@@ -103,16 +103,8 @@ describe("e2e", () => {
     }
   });
 
-  it("frontmatter-toml", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "frontmatter-toml.md"));
-    const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
-      expect(xml).toMatchSnapshot();
-    }
-  });
-
-  it("frontmatter-yaml", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "frontmatter-yaml.md"));
+  it("frontmatter", async () => {
+    const md = fs.readFileSync(path.join(fixturesDir, "frontmatter.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -127,19 +119,11 @@ describe("e2e", () => {
     }
   });
 
-  it("image-reference", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "image-reference.md"));
+  it("reference", async () => {
+    const md = fs.readFileSync(path.join(fixturesDir, "reference.md"));
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
-      expect(xml).toMatchSnapshot();
-    }
-  });
-
-  it("link-reference", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "link-reference.md"));
-    const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
@@ -185,8 +169,8 @@ describe("e2e", () => {
     }
   });
 
-  it("ml", async () => {
-    const md = fs.readFileSync(path.join(fixturesDir, "ml.md"));
+  it("tag", async () => {
+    const md = fs.readFileSync(path.join(fixturesDir, "tag.md"));
     const doc = await processor({ plugins: [htmlPlugin()] }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
