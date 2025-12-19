@@ -176,12 +176,7 @@ exports[`e2e > alt 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -523,12 +518,15 @@ exports[`e2e > article 1`] = `
           xml:space="preserve"
         >emphasis</w:t></w:r><w:r><w:rPr><w:strike /></w:rPr><w:t
           xml:space="preserve"
-        >delete</w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="InlineCode"
-          /></w:rPr><w:t xml:space="preserve">inline code</w:t></w:r></w:p><w:p
-    ><w:pPr><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl
-            w:val="0"
-          /><w:numId w:val="1" /></w:numPr></w:pPr><w:r><w:t
+        >delete</w:t></w:r><w:r><w:rPr><w:highlight
+            w:val="lightGray"
+          /><w:highlightCs w:val="lightGray" /></w:rPr><w:t
+          xml:space="preserve"
+        >inline code</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="1"
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
@@ -919,12 +917,7 @@ exports[`e2e > article 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -1408,12 +1401,7 @@ exports[`e2e > break 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -3490,12 +3478,7 @@ exports[`e2e > code 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -3822,11 +3805,11 @@ exports[`e2e > decoration 1`] = `
           xml:space="preserve"
         >aaaaaaa</w:t></w:r><w:r><w:t
           xml:space="preserve"
-        > aaaa </w:t></w:r><w:r><w:rPr><w:rStyle
-            w:val="InlineCode"
-          /></w:rPr><w:t xml:space="preserve">aaaaaaaa</w:t></w:r><w:r><w:t
+        > aaaa </w:t></w:r><w:r><w:rPr><w:highlight
+            w:val="lightGray"
+          /><w:highlightCs w:val="lightGray" /></w:rPr><w:t
           xml:space="preserve"
-        > aaa
+        >aaaaaaaa</w:t></w:r><w:r><w:t xml:space="preserve"> aaa
 aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           xml:space="preserve"
         >aa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:strike /></w:rPr><w:t
@@ -3840,14 +3823,18 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           /></w:rPr><w:t xml:space="preserve">aa</w:t></w:r><w:r><w:rPr><w:b
           /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           xml:space="preserve"
-        > aa </w:t></w:r><w:r><w:rPr><w:rStyle w:val="InlineCode" /></w:rPr><w:t
-          xml:space="preserve"
-        >aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
+        > aa </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs
+          /><w:highlight w:val="lightGray" /><w:highlightCs
+            w:val="lightGray"
+          /></w:rPr><w:t xml:space="preserve">aaa</w:t></w:r><w:r><w:rPr><w:b
+          /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           xml:space="preserve"
         > aaaaa</w:t></w:r><w:r><w:rPr><w:i /><w:iCs /></w:rPr><w:t
           xml:space="preserve"
         > aaaa</w:t></w:r><w:r><w:t xml:space="preserve"> aa</w:t></w:r><w:r
-      ><w:rPr><w:rStyle w:val="InlineCode" /></w:rPr><w:t
+      ><w:rPr><w:highlight w:val="lightGray" /><w:highlightCs
+            w:val="lightGray"
+          /></w:rPr><w:t
           xml:space="preserve"
         >a*aa*aa_aa_a~~aa~~a</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Title"
@@ -4008,12 +3995,7 @@ exports[`e2e > decoration 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -4439,12 +4421,7 @@ exports[`e2e > footnotes 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -4985,12 +4962,7 @@ exports[`e2e > footnotes2 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -5532,12 +5504,7 @@ exports[`e2e > frontmatter 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -5986,12 +5953,7 @@ exports[`e2e > heading 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -6685,12 +6647,7 @@ exports[`e2e > latex 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -7228,12 +7185,7 @@ exports[`e2e > list bullet 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -7771,12 +7723,7 @@ exports[`e2e > list ordered 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -8643,12 +8590,7 @@ exports[`e2e > list task 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -9121,12 +9063,7 @@ exports[`e2e > math 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -9555,12 +9492,7 @@ exports[`e2e > paragraph 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -10034,12 +9966,7 @@ exports[`e2e > reference 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
@@ -10515,12 +10442,7 @@ exports[`e2e > tag 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="InlineCode"
-  ><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:highlight
-        w:val="lightGray"
-      /><w:highlightCs w:val="lightGray" /></w:rPr></w:style></w:styles>
+      /></w:rPr></w:style></w:styles>
 "
 `;
 
