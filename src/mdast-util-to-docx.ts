@@ -41,7 +41,6 @@ import type {
 const ORDERED_LIST_REF = "ordered";
 const TASK_LIST_REF = "task";
 const HYPERLINK_STYLE_ID = "Hyperlink";
-const INLINE_CODE_STYLE_ID = "InlineCode";
 const INDENT = 0.5;
 
 const createFootnoteRegistry = (): FootnoteRegistry => {
@@ -359,18 +358,7 @@ export const mdastToDocx = async (
     creator,
     keywords,
     description,
-    styles: {
-      ...styles,
-      characterStyles: [
-        ...(styles?.characterStyles ?? []),
-        {
-          id: INLINE_CODE_STYLE_ID,
-          run: {
-            highlight: "lightGray",
-          },
-        },
-      ],
-    },
+    styles: styles,
     background,
     sections: sections
       .filter((s) => s.length)
@@ -574,6 +562,9 @@ const buildText: NodeBuilder<"text"> = ({ value }, { deco }) => {
     italics: deco.italic,
     strike: deco.strike,
   };
+  if (deco.inlineCode) {
+    options.highlight = "lightGray";
+  }
   if (deco.link) {
     // https://docx.js.org/#/usage/hyperlinks?id=styling-hyperlinks
     options.style = HYPERLINK_STYLE_ID;
@@ -602,11 +593,14 @@ const buildDelete: NodeBuilder<"delete"> = ({ children }, ctx) => {
   });
 };
 
-const buildInlineCode: NodeBuilder<"inlineCode"> = ({ value }) => {
-  return new TextRun({
-    text: value,
-    style: INLINE_CODE_STYLE_ID,
-  });
+const buildInlineCode: NodeBuilder<"inlineCode"> = ({ value }, ctx) => {
+  return buildText(
+    { type: "text", value },
+    {
+      ...ctx,
+      deco: { ...ctx.deco, inlineCode: true },
+    },
+  );
 };
 
 const buildBreak: NodeBuilder<"break"> = () => {

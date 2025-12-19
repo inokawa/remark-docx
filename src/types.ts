@@ -22,6 +22,7 @@ type DecorationContext = Readonly<{
   bold?: boolean;
   italic?: boolean;
   strike?: boolean;
+  inlineCode?: boolean;
   link?: boolean;
 }>;
 
