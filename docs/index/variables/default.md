@@ -6,4 +6,4 @@
 
 > `const` **default**: `Plugin`\<\[[`DocxOptions`](../interfaces/DocxOptions.md)?\], `Root`, `Promise`\<`ArrayBuffer`\>\>
 
-Defined in: [src/plugin.ts:13](https://github.com/inokawa/remark-docx/blob/4a768649423164be1b6603c2c99793b2a24c097f/src/plugin.ts#L13)
+Defined in: [src/plugin.ts:13](https://github.com/inokawa/remark-docx/blob/c9a70652456207aa404e894435515e6511ac224f/src/plugin.ts#L13)

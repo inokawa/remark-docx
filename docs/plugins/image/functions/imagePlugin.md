@@ -6,7 +6,7 @@
 
 > **imagePlugin**(`__namedParameters`): [`RemarkDocxPlugin`](../../../index/type-aliases/RemarkDocxPlugin.md)
 
-Defined in: [src/plugins/image/index.ts:134](https://github.com/inokawa/remark-docx/blob/4a768649423164be1b6603c2c99793b2a24c097f/src/plugins/image/index.ts#L134)
+Defined in: [src/plugins/image/index.ts:134](https://github.com/inokawa/remark-docx/blob/c9a70652456207aa404e894435515e6511ac224f/src/plugins/image/index.ts#L134)
 
 A plugin to render "image" nodes
 
