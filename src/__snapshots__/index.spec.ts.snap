@@ -3857,10 +3857,21 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           >link to GitHub.com</w:t></w:r></w:hyperlink></w:p><w:p><w:hyperlink
         w:history="1"
         r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
-      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /></w:rPr><w:t
+      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /><w:highlight
+              w:val="lightGray"
+            /><w:highlightCs w:val="lightGray" /></w:rPr><w:t
             xml:space="preserve"
-          >link to GitHub.com</w:t></w:r></w:hyperlink></w:p><w:p><w:r
-      ><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent
+          >link</w:t></w:r><w:r><w:rPr><w:rStyle w:val="Hyperlink" /><w:b
+            /><w:bCs /></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:r
+        ><w:rPr><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /><w:strike
+            /></w:rPr><w:t xml:space="preserve">to</w:t></w:r><w:r><w:rPr
+          ><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /></w:rPr><w:t
+            xml:space="preserve"
+          > </w:t></w:r><w:r><w:rPr><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs
+            /><w:i /><w:iCs /></w:rPr><w:t
+            xml:space="preserve"
+          >GitHub.com</w:t></w:r></w:hyperlink></w:p><w:p><w:r><w:drawing
+        ><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent
               cx="1143000"
               cy="952500"
             /><wp:effectExtent t="0" r="0" b="0" l="0" /><wp:docPr
