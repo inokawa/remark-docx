@@ -66,25 +66,13 @@ exports[`e2e > article 1`] = `
           xml:space="preserve"
         >inline code</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="2" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="3" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -97,18 +85,42 @@ exports[`e2e > article 1`] = `
         >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >not checked</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="4"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >checked</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="5"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="5"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -118,33 +130,15 @@ exports[`e2e > article 1`] = `
             w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
-        >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+        >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
-            w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="3" /><w:numId
-            w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >eeeee</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="3" /><w:numId
             w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -154,9 +148,15 @@ exports[`e2e > article 1`] = `
             w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
-        >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+        >eeeee</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="5"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -3371,7 +3371,7 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           xml:space="preserve"
         >heading</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
@@ -4316,21 +4316,21 @@ exports[`e2e > footnotes2 1`] = `
           xml:space="preserve"
         >Footnotes in Lists</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >List item with footnote</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
           /></w:rPr><w:footnoteReference w:id="4" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="2" /><w:numId
+      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Nested item with reference</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
           /></w:rPr><w:footnoteReference w:id="5" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
+      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -7466,19 +7466,19 @@ exports[`e2e > list bullet 1`] = `
           xml:space="preserve"
         >Items in first list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -7488,19 +7488,19 @@ exports[`e2e > list bullet 1`] = `
           xml:space="preserve"
         >Second List</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Dog</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Elephant</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -7512,37 +7512,37 @@ exports[`e2e > list bullet 1`] = `
           xml:space="preserve"
         >Outer list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >First outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="2" /><w:numId
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >First inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="2" /><w:numId
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="3" /><w:numId
+        /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -7550,19 +7550,19 @@ exports[`e2e > list bullet 1`] = `
           xml:space="preserve"
         >Another separate list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Alpha</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Beta</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -8006,19 +8006,19 @@ exports[`e2e > list ordered 1`] = `
           xml:space="preserve"
         >Items in first list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -8029,19 +8029,19 @@ exports[`e2e > list ordered 1`] = `
         >Second List</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >Items in second list should restart at 1:</w:t></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
+      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Dog</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Elephant</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -8053,56 +8053,56 @@ exports[`e2e > list ordered 1`] = `
           xml:space="preserve"
         >Outer list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="4"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >First outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="2" /><w:numId
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="4"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >First inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="2" /><w:numId
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="4"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="3" /><w:numId
+        /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="4"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="4"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="4"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third outer</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >Another separate list should restart:</w:t></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
+      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Alpha</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Beta</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -8726,19 +8726,19 @@ exports[`e2e > list task 1`] = `
           xml:space="preserve"
         >Items in first list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -8748,19 +8748,19 @@ exports[`e2e > list task 1`] = `
           xml:space="preserve"
         >Second List</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Dog</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Elephant</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -8772,37 +8772,37 @@ exports[`e2e > list task 1`] = `
           xml:space="preserve"
         >Outer list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >First outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="2" /><w:numId
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >First inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="2" /><w:numId
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="3" /><w:numId
+        /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -8810,19 +8810,19 @@ exports[`e2e > list task 1`] = `
           xml:space="preserve"
         >Another separate list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Alpha</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Beta</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
