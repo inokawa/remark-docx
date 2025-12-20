@@ -6658,12 +6658,9 @@ exports[`e2e > link 1`] = `
           xml:space="preserve"
         >Sub Header</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        >This is </w:t></w:r><w:hyperlink
-        w:history="1"
-        r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
-      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
-            xml:space="preserve"
-          >link to header</w:t></w:r></w:hyperlink><w:r><w:t
+        >This is </w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        >link to header</w:t></w:r><w:r><w:t
           xml:space="preserve"
         >.</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"

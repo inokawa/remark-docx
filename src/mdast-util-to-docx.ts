@@ -608,6 +608,10 @@ const buildBreak: NodeBuilder<"break"> = () => {
 };
 
 const buildLink: NodeBuilder<"link"> = ({ children, url }, ctx) => {
+  if (url.startsWith("#")) {
+    // TODO support anchor link
+    return ctx.render(children);
+  }
   const nodes = ctx.render(children, {
     ...ctx,
     deco: { ...ctx.deco, link: true },
