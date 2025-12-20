@@ -428,29 +428,29 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
 };
 
 const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
-  let headingLevel: (typeof HeadingLevel)[keyof typeof HeadingLevel];
+  let level: keyof typeof HeadingLevel;
   switch (depth) {
     case 1:
-      headingLevel = HeadingLevel.TITLE;
+      level = "TITLE";
       break;
     case 2:
-      headingLevel = HeadingLevel.HEADING_1;
+      level = "HEADING_1";
       break;
     case 3:
-      headingLevel = HeadingLevel.HEADING_2;
+      level = "HEADING_2";
       break;
     case 4:
-      headingLevel = HeadingLevel.HEADING_3;
+      level = "HEADING_3";
       break;
     case 5:
-      headingLevel = HeadingLevel.HEADING_4;
+      level = "HEADING_4";
       break;
     case 6:
-      headingLevel = HeadingLevel.HEADING_5;
+      level = "HEADING_5";
       break;
   }
   return new Paragraph({
-    heading: headingLevel,
+    heading: HeadingLevel[level],
     children: ctx.render(children),
   });
 };
