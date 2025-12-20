@@ -82,11 +82,11 @@ type ListFormat = {
   text: string;
 };
 
-type NumberingRegistry = {
+type OrderedListRegistry = {
   createId: () => string;
   getIds: () => string[];
 };
-const createNumberingRegistry = (): NumberingRegistry => {
+const createOrderedListRegistry = (): OrderedListRegistry => {
   let counter = 1;
 
   const ids: string[] = [];
@@ -199,7 +199,7 @@ export const mdastToDocx = async (
 ): Promise<ArrayBuffer> => {
   const definition = definitions(node);
 
-  const numbering = createNumberingRegistry();
+  const ordered = createOrderedListRegistry();
   const footnote = createFootnoteRegistry();
 
   const pluginCtx = { root: node, definition };
@@ -303,7 +303,7 @@ export const mdastToDocx = async (
     thematicBreak,
     definition: definition,
     footnote,
-    orderedId: numbering.createId,
+    orderedId: ordered.createId,
   };
 
   const sections: DocxContent[][] = [[]];
@@ -371,7 +371,7 @@ export const mdastToDocx = async (
             { text: "\u25A0", format: "BULLET" },
           ]),
         },
-        ...numbering.getIds().map((ref) => ({
+        ...ordered.getIds().map((ref) => ({
           reference: ref,
           levels: orderedLevels,
         })),
