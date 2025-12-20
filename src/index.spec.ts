@@ -77,16 +77,6 @@ describe("e2e", () => {
     }
   });
 
-  it("code", async () => {
-    const md = await fs.readFile(path.join(fixturesDir, "code.md"));
-    const doc = await processor({
-      plugins: [shikiPlugin({ theme: "dark-plus" })],
-    }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
-      expect(xml).toMatchSnapshot();
-    }
-  });
-
   it("footnotes", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "footnotes.md"));
     const doc = await processor().process(md);
@@ -103,17 +93,27 @@ describe("e2e", () => {
     }
   });
 
-  it("frontmatter", async () => {
-    const md = await fs.readFile(path.join(fixturesDir, "frontmatter.md"));
+  it("heading", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "heading.md"));
     const doc = await processor().process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
   });
 
-  it("heading", async () => {
-    const md = await fs.readFile(path.join(fixturesDir, "heading.md"));
+  it("paragraph", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "paragraph.md"));
     const doc = await processor().process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
+  it("decoration", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "decoration.md"));
+    const doc = await processor({
+      plugins: [imagePlugin({ load: dummyImage })],
+    }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
@@ -163,6 +163,24 @@ describe("e2e", () => {
     }
   });
 
+  it("code", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "code.md"));
+    const doc = await processor({
+      plugins: [shikiPlugin({ theme: "dark-plus" })],
+    }).process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
+  it("frontmatter", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "frontmatter.md"));
+    const doc = await processor().process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
   it("math", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "math.md"));
     const doc = await processor({ plugins: [latexPlugin()] }).process(md);
@@ -182,24 +200,6 @@ describe("e2e", () => {
   it("tag", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "tag.md"));
     const doc = await processor({ plugins: [htmlPlugin()] }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
-      expect(xml).toMatchSnapshot();
-    }
-  });
-
-  it("paragraph", async () => {
-    const md = await fs.readFile(path.join(fixturesDir, "paragraph.md"));
-    const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
-      expect(xml).toMatchSnapshot();
-    }
-  });
-
-  it("decoration", async () => {
-    const md = await fs.readFile(path.join(fixturesDir, "decoration.md"));
-    const doc = await processor({
-      plugins: [imagePlugin({ load: dummyImage })],
-    }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
