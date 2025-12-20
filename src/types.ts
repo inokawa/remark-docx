@@ -66,7 +66,7 @@ export type Context = Readonly<{
   /**
    * @internal
    */
-  indent?: number;
+  quote?: number;
   /**
    * @internal
    */

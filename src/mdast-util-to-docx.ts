@@ -421,8 +421,8 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
     children: nodes,
   };
 
-  if (ctx.indent != null) {
-    options.indent = calcIndent(ctx.indent);
+  if (ctx.quote != null) {
+    options.indent = calcIndent(ctx.quote);
   }
 
   if (list) {
@@ -489,7 +489,7 @@ const buildThematicBreak: NodeBuilder<"thematicBreak"> = (_, ctx) => {
 const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
   return ctx.render(children, {
     ...ctx,
-    indent: ctx.indent == null ? 0 : ctx.indent + 1,
+    quote: ctx.quote == null ? 0 : ctx.quote + 1,
   });
 };
 
