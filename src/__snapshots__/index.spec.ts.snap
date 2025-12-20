@@ -174,16 +174,16 @@ exports[`e2e > article 1`] = `
         >This is </w:t></w:r><w:r><w:t
           xml:space="preserve"
         >.</w:t></w:r></w:p><w:p><w:pPr><w:ind
-          w:left="400"
+          w:left="800"
           w:hanging="400"
         /></w:pPr><w:r><w:t xml:space="preserve">quote
 quote
 quote
 quote</w:t></w:r></w:p><w:p><w:pPr><w:ind
-          w:left="400"
+          w:left="800"
           w:hanging="400"
         /></w:pPr><w:r><w:t xml:space="preserve">quote</w:t></w:r></w:p><w:p
-    ><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr><w:r><w:t
+    ><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >quoted quote</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblW
           w:type="auto"
@@ -3376,7 +3376,7 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           /></w:numPr></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
         >list</w:t></w:r></w:p><w:p><w:pPr><w:ind
-          w:left="400"
+          w:left="800"
           w:hanging="400"
         /></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
@@ -4340,7 +4340,7 @@ exports[`e2e > footnotes2 1`] = `
       ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Footnotes in Blockquotes</w:t></w:r></w:p><w:p><w:pPr><w:ind
-          w:left="400"
+          w:left="800"
           w:hanging="400"
         /></w:pPr><w:r><w:t
           xml:space="preserve"

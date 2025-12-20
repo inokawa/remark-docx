@@ -489,7 +489,7 @@ const buildThematicBreak: NodeBuilder<"thematicBreak"> = (_, ctx) => {
 const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
   return ctx.render(children, {
     ...ctx,
-    quote: ctx.quote == null ? 0 : ctx.quote + 1,
+    quote: ctx.quote == null ? 1 : ctx.quote + 1,
   });
 };
 
