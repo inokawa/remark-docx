@@ -512,7 +512,7 @@ const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
   return ctx.render(children, {
     ...ctx,
     list: {
-      level: !parentList ? 0 : parentList.level + 1,
+      level: !parentList ? 1 : parentList.level + 1,
       meta,
     },
   });
