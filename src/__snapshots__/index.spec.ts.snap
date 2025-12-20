@@ -265,43 +265,6 @@ exports[`e2e > alt 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
     ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
         w:val="start"
       /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
@@ -1043,43 +1006,6 @@ exports[`e2e > article 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="4"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
     ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
         w:val="start"
       /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
@@ -1107,11 +1033,11 @@ exports[`e2e > article 3`] = `
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="2"><w:abstractNumId
-      w:val="4"
+      w:val="3"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="3"><w:abstractNumId
-      w:val="3"
+      w:val="2"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num></w:numbering>
@@ -1486,43 +1412,6 @@ exports[`e2e > break 3`] = `
           w:hanging="360"
         /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
     w:abstractNumId="2"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
     w15:restartNumberingAfterBreak="0"
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
@@ -3567,43 +3456,6 @@ exports[`e2e > code 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
     ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
         w:val="start"
       /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
@@ -4095,43 +3947,6 @@ exports[`e2e > decoration 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
     ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
         w:val="start"
       /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
@@ -4517,43 +4332,6 @@ exports[`e2e > footnotes 3`] = `
           w:hanging="360"
         /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
     w:abstractNumId="2"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
     w15:restartNumberingAfterBreak="0"
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
@@ -5099,43 +4877,6 @@ exports[`e2e > footnotes2 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="4"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
     ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
         w:val="start"
       /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
@@ -5163,7 +4904,7 @@ exports[`e2e > footnotes2 3`] = `
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="2"><w:abstractNumId
-      w:val="3"
+      w:val="2"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num></w:numbering>
@@ -5604,43 +5345,6 @@ exports[`e2e > frontmatter 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
     ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
         w:val="start"
       /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
@@ -6049,43 +5753,6 @@ exports[`e2e > heading 3`] = `
           w:hanging="360"
         /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
     w:abstractNumId="2"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
     w15:restartNumberingAfterBreak="0"
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
@@ -6747,43 +6414,6 @@ exports[`e2e > latex 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
     ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
         w:val="start"
       /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
@@ -7281,43 +6911,6 @@ exports[`e2e > list bullet 3`] = `
           w:hanging="360"
         /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
     w:abstractNumId="2"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
     w15:restartNumberingAfterBreak="0"
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
@@ -7971,43 +7564,6 @@ exports[`e2e > list ordered 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="7"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
     ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
         w:val="start"
       /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
@@ -8035,19 +7591,19 @@ exports[`e2e > list ordered 3`] = `
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="2"><w:abstractNumId
-      w:val="3"
+      w:val="2"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="3"><w:abstractNumId
-      w:val="4"
+      w:val="3"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="4"><w:abstractNumId
-      w:val="5"
+      w:val="4"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="5"><w:abstractNumId
-      w:val="6"
+      w:val="5"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num></w:numbering>
@@ -8690,43 +8246,6 @@ exports[`e2e > list task 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
     ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
         w:val="start"
       /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
@@ -8754,7 +8273,7 @@ exports[`e2e > list task 3`] = `
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="2"><w:abstractNumId
-      w:val="3"
+      w:val="2"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num></w:numbering>
@@ -9163,43 +8682,6 @@ exports[`e2e > math 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
     ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
         w:val="start"
       /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
@@ -9588,43 +9070,6 @@ exports[`e2e > paragraph 3`] = `
           w:hanging="360"
         /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
     w:abstractNumId="2"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
     w15:restartNumberingAfterBreak="0"
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
@@ -10066,43 +9511,6 @@ exports[`e2e > reference 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
     ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
         w:val="start"
       /></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
@@ -10538,43 +9946,6 @@ exports[`e2e > tag 3`] = `
           w:hanging="360"
         /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
     w:abstractNumId="2"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%1."
-      /><w:lvlJc w:val="start" /></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%2."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="720"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="2" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%3." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="1440" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%4."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="2160"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="4" w15:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%5." /><w:lvlJc
-        w:val="start"
-      /><w:pPr><w:ind w:start="2880" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
-        w:val="%6."
-      /><w:lvlJc w:val="start" /><w:pPr><w:ind
-          w:start="3600"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
     w15:restartNumberingAfterBreak="0"
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"

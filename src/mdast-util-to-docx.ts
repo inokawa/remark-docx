@@ -88,15 +88,16 @@ type NumberingRegistry = {
 const createNumberingRegistry = (): NumberingRegistry => {
   let counter = 1;
 
+  const ids: string[] = [];
+
   return {
     createId: () => {
-      return `${ORDERED_LIST_REF}-${counter++}`;
+      const id = `${ORDERED_LIST_REF}-${counter++}`;
+      ids.push(id);
+      return id;
     },
     getIds: () => {
-      return Array.from(
-        { length: counter },
-        (_, i) => `${ORDERED_LIST_REF}-${i}`,
-      );
+      return ids;
     },
   };
 };
