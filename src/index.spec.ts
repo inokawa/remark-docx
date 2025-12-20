@@ -119,8 +119,18 @@ describe("e2e", () => {
     }
   });
 
-  it("reference", async () => {
-    const md = await fs.readFile(path.join(fixturesDir, "reference.md"));
+  it("link", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "link.md"));
+    const doc = await processor({
+      plugins: [imagePlugin({ load: dummyImage })],
+    }).process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
+  it("image", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "image.md"));
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
@@ -187,16 +197,6 @@ describe("e2e", () => {
 
   it("decoration", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "decoration.md"));
-    const doc = await processor({
-      plugins: [imagePlugin({ load: dummyImage })],
-    }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
-      expect(xml).toMatchSnapshot();
-    }
-  });
-
-  it("alt", async () => {
-    const md = await fs.readFile(path.join(fixturesDir, "alt.md"));
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
