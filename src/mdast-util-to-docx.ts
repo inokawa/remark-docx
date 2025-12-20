@@ -489,7 +489,7 @@ const buildThematicBreak: NodeBuilder<"thematicBreak"> = (_, ctx) => {
 const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
   return ctx.render(children, {
     ...ctx,
-    quote: ctx.quote == null ? 0 : ctx.quote + 1,
+    quote: ctx.quote == null ? 1 : ctx.quote + 1,
   });
 };
 
@@ -512,7 +512,7 @@ const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
   return ctx.render(children, {
     ...ctx,
     list: {
-      level: !parentList ? 1 : parentList.level + 1,
+      level: !parentList ? 0 : parentList.level + 1,
       meta,
     },
   });
