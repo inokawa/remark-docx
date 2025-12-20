@@ -516,18 +516,16 @@ const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
 };
 
 const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
-  const cellAligns:
-    | (typeof AlignmentType)[keyof typeof AlignmentType][]
-    | undefined = align?.map((a) => {
+  const textAlign = align?.map((a): keyof typeof AlignmentType => {
     switch (a) {
       case "left":
-        return AlignmentType.LEFT;
+        return "LEFT";
       case "right":
-        return AlignmentType.RIGHT;
+        return "RIGHT";
       case "center":
-        return AlignmentType.CENTER;
+        return "CENTER";
       default:
-        return AlignmentType.LEFT;
+        return "LEFT";
     }
   });
 
@@ -543,7 +541,7 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
             width: { size: columnWidth, type: "dxa" },
             children: [
               new Paragraph({
-                alignment: cellAligns?.[i],
+                alignment: AlignmentType[textAlign?.[i] ?? "LEFT"],
                 children: ctx.render(c.children),
               }),
             ],
