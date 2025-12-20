@@ -403,7 +403,7 @@ export const mdastToDocx = async (
     },
   });
 
-  // HACK: docx.js has no way to remove default numberings styles from .docx. So do it here for now.
+  // HACK: docx.js has no option to remove default numbering definitions from .docx. So do it here for now.
   // https://github.com/dolanmiu/docx/blob/master/src/file/numbering/numbering.ts
   const defaultBulletKey = "default-bullet-numbering";
   const _numbering = (doc as any).numbering;
