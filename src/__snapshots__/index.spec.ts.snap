@@ -173,28 +173,30 @@ exports[`e2e > article 1`] = `
           xml:space="preserve"
         >This is </w:t></w:r><w:r><w:t
           xml:space="preserve"
-        >.</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >quote
+        >.</w:t></w:r></w:p><w:p><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr><w:r><w:t xml:space="preserve">quote
 quote
 quote
-quote</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r><w:t
+quote</w:t></w:r></w:p><w:p><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr><w:r><w:t xml:space="preserve">quote</w:t></w:r></w:p><w:p
+    ><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr><w:r><w:t
           xml:space="preserve"
-        >quote</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="1440" /></w:pPr><w:r
-      ><w:t xml:space="preserve">quoted quote</w:t></w:r></w:p><w:tbl><w:tblPr
-      ><w:tblW w:type="auto" w:w="100" /><w:tblBorders><w:top
+        >quoted quote</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblW
+          w:type="auto"
+          w:w="100"
+        /><w:tblBorders><w:top w:val="single" w:color="auto" w:sz="4" /><w:left
             w:val="single"
             w:color="auto"
             w:sz="4"
-          /><w:left w:val="single" w:color="auto" w:sz="4" /><w:bottom
+          /><w:bottom w:val="single" w:color="auto" w:sz="4" /><w:right
             w:val="single"
             w:color="auto"
             w:sz="4"
-          /><w:right w:val="single" w:color="auto" w:sz="4" /><w:insideH
-            w:val="single"
-            w:color="auto"
-            w:sz="4"
-          /><w:insideV
+          /><w:insideH w:val="single" w:color="auto" w:sz="4" /><w:insideV
             w:val="single"
             w:color="auto"
             w:sz="4"
@@ -3373,8 +3375,10 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
             w:val="2"
           /></w:numPr></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
-        >list</w:t></w:r></w:p><w:p><w:pPr><w:ind w:start="720" /></w:pPr><w:r
-      ><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+        >list</w:t></w:r></w:p><w:p><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
         >quote</w:t></w:r></w:p><w:p><w:hyperlink
         w:history="1"
@@ -4336,7 +4340,8 @@ exports[`e2e > footnotes2 1`] = `
       ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Footnotes in Blockquotes</w:t></w:r></w:p><w:p><w:pPr><w:ind
-          w:start="720"
+          w:left="400"
+          w:hanging="400"
         /></w:pPr><w:r><w:t
           xml:space="preserve"
         >This blockquote has a footnote</w:t></w:r><w:r><w:rPr><w:rStyle
