@@ -7638,7 +7638,7 @@ exports[`e2e > list ordered 1`] = `
           xml:space="preserve"
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="1" /><w:numId
+        /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="4"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
