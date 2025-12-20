@@ -449,10 +449,9 @@ const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
       headingLevel = HeadingLevel.HEADING_5;
       break;
   }
-  const nodes = ctx.render(children);
   return new Paragraph({
     heading: headingLevel,
-    children: nodes,
+    children: ctx.render(children),
   });
 };
 
@@ -612,13 +611,12 @@ const buildLink: NodeBuilder<"link"> = ({ children, url }, ctx) => {
     // TODO support anchor link
     return ctx.render(children);
   }
-  const nodes = ctx.render(children, {
-    ...ctx,
-    deco: { ...ctx.deco, link: true },
-  });
   return new ExternalHyperlink({
     link: url,
-    children: nodes,
+    children: ctx.render(children, {
+      ...ctx,
+      deco: { ...ctx.deco, link: true },
+    }),
   });
 };
 
