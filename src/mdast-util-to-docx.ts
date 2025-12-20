@@ -38,6 +38,7 @@ import type {
   Writeable,
 } from "./types";
 
+const BULLET_LIST_REF = "bullet";
 const ORDERED_LIST_REF = "ordered";
 const TASK_LIST_REF = "task";
 const HYPERLINK_STYLE_ID = "Hyperlink";
@@ -125,41 +126,23 @@ const composeBuilders = (
     return acc;
   }, defaultBuilders);
 };
-const defaultTaskList: ListFormat[] = [
-  { text: "", format: "NONE" },
-  { text: "", format: "NONE" },
-  { text: "", format: "NONE" },
-  { text: "", format: "NONE" },
-  { text: "", format: "NONE" },
-  { text: "", format: "NONE" },
-];
 
-const defaultOrderedList: ListFormat[] = [
-  { text: "%1.", format: "DECIMAL" },
-  { text: "%2.", format: "DECIMAL" },
-  { text: "%3.", format: "DECIMAL" },
-  { text: "%4.", format: "DECIMAL" },
-  { text: "%5.", format: "DECIMAL" },
-  { text: "%6.", format: "DECIMAL" },
-];
-
-const buildLevels = (formats: readonly ListFormat[]): ILevelsOptions[] =>
-  formats.map(({ format, text }, i) => {
+const buildLevels = (formats: readonly ListFormat[]): ILevelsOptions[] => {
+  const INDENT_UNIT = 10 * 40;
+  return formats.map(({ format, text }, i) => {
     return {
       level: i,
       format: LevelFormat[format],
       text: text,
-      alignment: AlignmentType.START,
-      style:
-        i === 0
-          ? undefined
-          : {
-              paragraph: {
-                indent: { start: convertInchesToTwip(INDENT * i) },
-              },
-            },
+      alignment: AlignmentType.LEFT,
+      style: {
+        paragraph: {
+          indent: { hanging: INDENT_UNIT, left: INDENT_UNIT * (i + 1) },
+        },
+      },
     };
   });
+};
 
 export interface DocxOptions extends Pick<
   IPropertiesOptions,
@@ -184,7 +167,6 @@ export interface DocxOptions extends Pick<
   /**
    * An option to override the text format of ordered list.
    * See https://docx.js.org/#/usage/numbering?id=level-options for more details.
-   * @default {@link defaultOrderedList}
    */
   orderedListFormat?: ListFormat[];
   /**
@@ -212,7 +194,7 @@ export const mdastToDocx = async (
     margin,
     background,
     thematicBreak = "page",
-    orderedListFormat = defaultOrderedList,
+    orderedListFormat,
   }: DocxOptions = {},
 ): Promise<ArrayBuffer> => {
   const definition = definitions(node);
@@ -338,7 +320,16 @@ export const mdastToDocx = async (
     }
   }
 
-  const orderedLevels = buildLevels(orderedListFormat);
+  const orderedLevels = buildLevels(
+    orderedListFormat ?? [
+      { text: "%1.", format: "DECIMAL" },
+      { text: "%2.", format: "DECIMAL" },
+      { text: "%3.", format: "DECIMAL" },
+      { text: "%4.", format: "DECIMAL" },
+      { text: "%5.", format: "DECIMAL" },
+      { text: "%6.", format: "DECIMAL" },
+    ],
+  );
 
   const sectionProperties: ISectionPropertiesOptions = {
     page: {
@@ -369,17 +360,42 @@ export const mdastToDocx = async (
     footnotes: footnote.toConfig(),
     numbering: {
       config: [
+        {
+          reference: BULLET_LIST_REF,
+          levels: buildLevels([
+            { text: "\u25CF", format: "BULLET" },
+            { text: "\u25CB", format: "BULLET" },
+            { text: "\u25A0", format: "BULLET" },
+            { text: "\u25CF", format: "BULLET" },
+            { text: "\u25CB", format: "BULLET" },
+            { text: "\u25A0", format: "BULLET" },
+          ]),
+        },
         ...numbering.getIds().map((ref) => ({
           reference: ref,
           levels: orderedLevels,
         })),
         {
           reference: TASK_LIST_REF,
-          levels: buildLevels(defaultTaskList),
+          levels: buildLevels([
+            { text: "", format: "NONE" },
+            { text: "", format: "NONE" },
+            { text: "", format: "NONE" },
+            { text: "", format: "NONE" },
+            { text: "", format: "NONE" },
+            { text: "", format: "NONE" },
+          ]),
         },
       ],
     },
   });
+
+  // HACK: docx.js has no way to remove default numberings styles from .docx. So do it here for now.
+  // https://github.com/dolanmiu/docx/blob/master/src/file/numbering/numbering.ts
+  const defaultBulletKey = "default-bullet-numbering";
+  const _numbering = (doc as any).numbering;
+  _numbering.abstractNumberingMap.delete(defaultBulletKey);
+  _numbering.concreteNumberingMap.delete(defaultBulletKey);
 
   return Packer.toArrayBuffer(doc);
 };
@@ -418,7 +434,8 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
         level,
       };
     } else {
-      options.bullet = {
+      options.numbering = {
+        reference: BULLET_LIST_REF,
         level,
       };
     }
