@@ -1,5 +1,4 @@
 import {
-  convertInchesToTwip,
   Packer,
   Document,
   Paragraph,
@@ -20,6 +19,7 @@ import {
   type IParagraphOptions,
   PageBreak,
   type ISectionPropertiesOptions,
+  type IIndentAttributesProperties,
 } from "docx";
 import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
@@ -42,7 +42,11 @@ const ORDERED_LIST_REF = "ordered";
 const COMPLETE_TASK_LIST_REF = "task-complete";
 const INCOMPLETE_TASK_LIST_REF = "task-incomplete";
 const HYPERLINK_STYLE_ID = "Hyperlink";
-const INDENT = 0.5;
+
+const calcIndent = (i: number): IIndentAttributesProperties => {
+  const INDENT_UNIT = 10 * 40;
+  return { hanging: INDENT_UNIT, left: INDENT_UNIT * (i + 1) };
+};
 
 const createFootnoteRegistry = (): FootnoteRegistry => {
   const idToInternalId = new Map<string, number>();
@@ -128,7 +132,6 @@ const composeBuilders = (
 };
 
 const buildLevels = (formats: readonly ListFormat[]): ILevelsOptions[] => {
-  const INDENT_UNIT = 10 * 40;
   return formats.map(({ format, text }, i) => {
     return {
       level: i,
@@ -137,7 +140,7 @@ const buildLevels = (formats: readonly ListFormat[]): ILevelsOptions[] => {
       alignment: AlignmentType.LEFT,
       style: {
         paragraph: {
-          indent: { hanging: INDENT_UNIT, left: INDENT_UNIT * (i + 1) },
+          indent: calcIndent(i),
         },
       },
     };
@@ -299,7 +302,6 @@ export const mdastToDocx = async (
     },
     width: pageWidth - marginLeft - marginRight,
     deco: {},
-    indent: 0,
     thematicBreak,
     definition: definition,
     footnote,
@@ -419,10 +421,8 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
     children: nodes,
   };
 
-  if (ctx.indent > 0) {
-    options.indent = {
-      start: convertInchesToTwip(INDENT * ctx.indent),
-    };
+  if (ctx.indent != null) {
+    options.indent = calcIndent(ctx.indent);
   }
 
   if (list) {
@@ -489,7 +489,7 @@ const buildThematicBreak: NodeBuilder<"thematicBreak"> = (_, ctx) => {
 const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
   return ctx.render(children, {
     ...ctx,
-    indent: ctx.indent + 1,
+    indent: ctx.indent == null ? 0 : ctx.indent + 1,
   });
 };
 
