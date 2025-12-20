@@ -13,7 +13,6 @@ import {
   AlignmentType,
   type ILevelsOptions,
   FootnoteReferenceRun,
-  CheckBox,
   type IPropertiesOptions,
   sectionPageSizeDefaults,
   sectionMarginDefaults,
@@ -40,7 +39,8 @@ import type {
 
 const BULLET_LIST_REF = "bullet";
 const ORDERED_LIST_REF = "ordered";
-const TASK_LIST_REF = "task";
+const COMPLETE_TASK_LIST_REF = "task-complete";
+const INCOMPLETE_TASK_LIST_REF = "task-incomplete";
 const HYPERLINK_STYLE_ID = "Hyperlink";
 const INDENT = 0.5;
 
@@ -376,14 +376,25 @@ export const mdastToDocx = async (
           levels: orderedLevels,
         })),
         {
-          reference: TASK_LIST_REF,
+          reference: COMPLETE_TASK_LIST_REF,
           levels: buildLevels([
-            { text: "", format: "NONE" },
-            { text: "", format: "NONE" },
-            { text: "", format: "NONE" },
-            { text: "", format: "NONE" },
-            { text: "", format: "NONE" },
-            { text: "", format: "NONE" },
+            { text: "\u2611", format: "BULLET" },
+            { text: "\u2611", format: "BULLET" },
+            { text: "\u2611", format: "BULLET" },
+            { text: "\u2611", format: "BULLET" },
+            { text: "\u2611", format: "BULLET" },
+            { text: "\u2611", format: "BULLET" },
+          ]),
+        },
+        {
+          reference: INCOMPLETE_TASK_LIST_REF,
+          levels: buildLevels([
+            { text: "\u2610", format: "BULLET" },
+            { text: "\u2610", format: "BULLET" },
+            { text: "\u2610", format: "BULLET" },
+            { text: "\u2610", format: "BULLET" },
+            { text: "\u2610", format: "BULLET" },
+            { text: "\u2610", format: "BULLET" },
           ]),
         },
       ],
@@ -417,15 +428,10 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
   if (list) {
     const { level, meta } = list;
     if (meta.type === "task") {
-      nodes.unshift(
-        new CheckBox({
-          checked: meta.checked,
-          checkedState: { value: "2611" },
-          uncheckedState: { value: "2610" },
-        }),
-      );
       options.numbering = {
-        reference: TASK_LIST_REF,
+        reference: meta.checked
+          ? COMPLETE_TASK_LIST_REF
+          : INCOMPLETE_TASK_LIST_REF,
         level,
       };
     } else if (meta.type === "ordered") {

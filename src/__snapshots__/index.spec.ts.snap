@@ -98,88 +98,66 @@ exports[`e2e > article 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="0"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2610"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >not checked</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="3"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="1"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2611"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+            w:val="4"
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >checked</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="4"
+            w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="4"
+            w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="4"
+            w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="4"
+            w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="4"
+            w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
-            w:val="4"
+            w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >eeeee</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
-            w:val="4"
+            w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >eeeee</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="4"
+            w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="4"
+            w:val="5"
           /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:r><w:t
@@ -573,32 +551,80 @@ exports[`e2e > article 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="5"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -608,10 +634,14 @@ exports[`e2e > article 3`] = `
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="3"><w:abstractNumId
-      w:val="4"
+      w:val="5"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
       /></w:lvlOverride></w:num><w:num w:numId="4"><w:abstractNumId
+      w:val="4"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num><w:num w:numId="5"><w:abstractNumId
       w:val="3"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
@@ -974,32 +1004,80 @@ exports[`e2e > break 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -3001,32 +3079,80 @@ exports[`e2e > code 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -3479,32 +3605,80 @@ exports[`e2e > decoration 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -3859,32 +4033,80 @@ exports[`e2e > footnotes 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -4392,32 +4614,80 @@ exports[`e2e > footnotes2 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="5"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -4851,32 +5121,80 @@ exports[`e2e > frontmatter 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -5250,32 +5568,80 @@ exports[`e2e > heading 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -5698,32 +6064,80 @@ exports[`e2e > image 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -6342,32 +6756,80 @@ exports[`e2e > latex 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -6743,32 +7205,80 @@ exports[`e2e > link 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -7231,32 +7741,80 @@ exports[`e2e > list bullet 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -7891,32 +8449,80 @@ exports[`e2e > list ordered 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="8"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -8117,52 +8723,19 @@ exports[`e2e > list task 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="0"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2610"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="0"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2610"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="1"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2611"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+            w:val="3"
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Cherry</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
@@ -8172,52 +8745,19 @@ exports[`e2e > list task 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="0"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2610"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Dog</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="1"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2611"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+            w:val="3"
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Elephant</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="1"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2611"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+            w:val="3"
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Fox</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
@@ -8229,103 +8769,37 @@ exports[`e2e > list task 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="0"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2610"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >First outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="0"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2610"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >First inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="1"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2611"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+            w:val="3"
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="0"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2610"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="0"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2610"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="0"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2610"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third outer</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -8333,52 +8807,19 @@ exports[`e2e > list task 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="0"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2610"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Alpha</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="1"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2611"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+            w:val="3"
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Beta</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:sdt><w:sdtPr><w14:checkbox><w14:checked
-              w14:val="0"
-            /><w14:checkedState
-              w14:val="2611"
-              w14:font="MS Gothic"
-            /><w14:uncheckedState
-              w14:val="2610"
-              w14:font="MS Gothic"
-            /></w14:checkbox></w:sdtPr><w:sdtContent><w:r><w:sym
-              w:char="2610"
-              w:font="MS Gothic"
-            /></w:r></w:sdtContent></w:sdt><w:r><w:t
+          /></w:numPr></w:pPr><w:r><w:t
           xml:space="preserve"
         >Gamma</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
@@ -8560,37 +9001,89 @@ exports[`e2e > list task 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
           w:hanging="400"
         /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="2"><w:abstractNumId
+      w:val="4"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num><w:num w:numId="3"><w:abstractNumId
       w:val="3"
     /><w:lvlOverride w:ilvl="0"><w:startOverride
         w:val="1"
@@ -8983,32 +9476,80 @@ exports[`e2e > math 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -9362,32 +9903,80 @@ exports[`e2e > paragraph 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
@@ -9788,32 +10377,80 @@ exports[`e2e > tag 3`] = `
   ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
       w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="400" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="1"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="2"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1200" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="3"
-      w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
       w:ilvl="4"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
         w:val="left"
-      /><w:pPr><w:ind w:left="2000" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="5"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
       w15:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="none" /><w:lvlJc
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w15:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w15:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
         w:val="left"
       /><w:pPr><w:ind
           w:left="2400"
