@@ -44,8 +44,8 @@ export type ListContext = Readonly<{
 }>;
 
 export type FootnoteRegistry = {
-  ref: (id: string) => number;
-  def: (id: string, children: Paragraph[]) => void;
+  id: (id: string) => number;
+  set: (id: number, children: Paragraph[]) => void;
   toConfig: () => {
     [key: string]: { children: Paragraph[] };
   };

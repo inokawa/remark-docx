@@ -56,12 +56,11 @@ const createFootnoteRegistry = (): FootnoteRegistry => {
   };
 
   return {
-    ref: (id) => {
+    id: (id) => {
       return getId(id);
     },
-    def: (id, def) => {
-      const internalId = getId(id);
-      defs.set(internalId, def);
+    set: (id, def) => {
+      defs.set(id, def);
     },
     toConfig: () => {
       return defs.entries().reduce(
@@ -633,10 +632,8 @@ const buildFootnoteDefinition: NodeBuilder<"footnoteDefinition"> = (
   { children, identifier },
   ctx,
 ) => {
-  ctx.footnote.def(
-    identifier,
-    ctx.render(children).filter((c) => c instanceof Paragraph),
-  );
+  const contents = ctx.render(children).filter((c) => c instanceof Paragraph);
+  ctx.footnote.set(ctx.footnote.id(identifier), contents);
   return null;
 };
 
@@ -644,7 +641,7 @@ const buildFootnoteReference: NodeBuilder<"footnoteReference"> = (
   { identifier },
   ctx,
 ) => {
-  return new FootnoteReferenceRun(ctx.footnote.ref(identifier));
+  return new FootnoteReferenceRun(ctx.footnote.id(identifier));
 };
 
 const noop = () => {
