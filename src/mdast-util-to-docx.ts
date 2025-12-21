@@ -52,17 +52,13 @@ const createFootnoteRegistry = (): FootnoteRegistry => {
   const idToInternalId = new Map<string, number>();
   const defs = new Map<number, Paragraph[]>();
 
-  const getId = (id: string): number => {
-    let internalId = idToInternalId.get(id);
-    if (internalId == null) {
-      idToInternalId.set(id, (internalId = idToInternalId.size + 1));
-    }
-    return internalId;
-  };
-
   return {
     id: (id) => {
-      return getId(id);
+      let internalId = idToInternalId.get(id);
+      if (internalId == null) {
+        idToInternalId.set(id, (internalId = idToInternalId.size + 1));
+      }
+      return internalId;
     },
     set: (id, def) => {
       defs.set(id, def);
