@@ -1,104 +1,34 @@
 import { warnOnce } from "../../utils";
-import type { RemarkDocxPlugin } from "../../types";
+import {
+  isSupportedType,
+  type DocxImageData,
+  type RemarkDocxPlugin,
+} from "../../types";
 import type * as mdast from "mdast";
-import { ImageRun } from "docx";
 import { visit } from "unist-util-visit";
 import { imageSize } from "image-size";
 
-const supportedTypes = ["png", "jpg", "gif", "bmp", "svg"] as const;
-
-type SupportedImageType = (typeof supportedTypes)[number];
-
-type ImageData = Readonly<
-  {
-    data: ArrayBuffer;
-    width: number;
-    height: number;
-  } & (
-    | { type: Exclude<SupportedImageType, "svg"> }
-    | {
-        type: Extract<SupportedImageType, "svg">;
-        fallback: ArrayBuffer;
-      }
-  )
->;
-
-const buildImage = (
-  image: ImageData,
-  node: { alt?: string | null; title?: string | null },
-  pageWidth: number,
-) => {
-  let { width, height } = image;
-
-  const pageWidthInch = pageWidth / 1440;
-  const DPI = 96;
-  const pageWidthPx = pageWidthInch * DPI;
-  if (width > pageWidthPx) {
-    const scale = pageWidthPx / width;
-    width *= scale;
-    height *= scale;
-  }
-
-  const altText =
-    node.alt || node.title
-      ? {
-          name: "",
-          description: node.alt ?? undefined,
-          title: node.title ?? undefined,
-        }
-      : undefined;
-
-  if (image.type === "svg") {
-    const { type, data, fallback } = image;
-    return new ImageRun({
-      type: type,
-      data: data,
-      transformation: {
-        width,
-        height,
-      },
-      // https://github.com/dolanmiu/docx/issues/1162#issuecomment-3228368003
-      fallback: { type: "png", data: fallback },
-      altText,
-    });
-  }
-
-  const { type, data } = image;
-  return new ImageRun({
-    type: type,
-    data: data,
-    transformation: {
-      width,
-      height,
-    },
-    altText,
-  });
-};
-
-const isSupportedType = (
-  type: string | undefined,
-): type is SupportedImageType => {
-  if (!type) return false;
-  if ((supportedTypes as readonly string[]).includes(type)) {
-    return true;
-  }
-  return false;
-};
-
-type LoadFn = (url: string) => Promise<ArrayBufferLike>;
+type LoadFn = (url: string) => Promise<ArrayBuffer>;
 
 type SvgToPngFn = (options: {
   buffer: ArrayBuffer;
   width: number;
   height: number;
-}) => Promise<ArrayBufferLike>;
+}) => Promise<ArrayBuffer>;
 
 const loadWithFetch: LoadFn = async (url) => {
   const res = await fetch(url);
   return res.arrayBuffer();
 };
 
-const browserSvgToPng: SvgToPngFn = async ({ buffer, width, height }) => {
+/**
+ * @internal
+ */
+export const browserSvgToPng: SvgToPngFn = async ({
+  buffer,
+  width,
+  height,
+}) => {
   const svgBlob = new Blob([buffer], { type: "image/svg+xml" });
   const url = URL.createObjectURL(svgBlob);
 
@@ -147,9 +77,9 @@ export const imagePlugin = ({
   load = loadWithFetch,
   fallbackSvg = browserSvgToPng,
 }: ImagePluginOptions = {}): RemarkDocxPlugin => {
-  const images = new Map<string, ImageData>();
+  const cache = new Map<string, DocxImageData>();
 
-  return async ({ root, definition }) => {
+  return async ({ root, definition, images }) => {
     const imageList: (mdast.Image | mdast.Definition)[] = [];
     visit(root, "image", (node) => {
       imageList.push(node);
@@ -164,13 +94,20 @@ export const imagePlugin = ({
     if (imageList.length !== 0) {
       const promises = new Map<string, Promise<void>>();
       imageList.forEach(({ url }) => {
-        if (!images.has(url) && !promises.has(url)) {
+        if (images.has(url)) {
+          return;
+        }
+        if (cache.has(url)) {
+          images.set(url, cache.get(url)!);
+          return;
+        }
+        if (!promises.has(url)) {
           promises.set(
             url,
             (async () => {
               let data: ArrayBuffer;
               try {
-                data = (await load(url)) as ArrayBuffer;
+                data = await load(url);
               } catch (e) {
                 warnOnce(`Failed to load image: ${url} ${e}`);
                 return;
@@ -189,19 +126,23 @@ export const imagePlugin = ({
                     width,
                     height,
                   });
-                  images.set(url, {
+                  const docxImage: DocxImageData = {
                     type,
                     width,
                     height,
                     data,
-                    fallback: fallback as ArrayBuffer,
-                  });
+                    fallback,
+                  };
+                  images.set(url, docxImage);
+                  cache.set(url, docxImage);
                 } catch (e) {
                   warnOnce(`Failed to create fallback image: ${url} ${e}`);
                   return;
                 }
               } else {
-                images.set(url, { type, width, height, data });
+                const docxImage: DocxImageData = { type, width, height, data };
+                images.set(url, docxImage);
+                cache.set(url, docxImage);
               }
             })(),
           );
@@ -211,25 +152,6 @@ export const imagePlugin = ({
       await Promise.all(promises.values());
     }
 
-    return {
-      image: (node, ctx) => {
-        const data = images.get(node.url);
-        if (!data) {
-          return null;
-        }
-        return buildImage(data, node, ctx.width);
-      },
-      imageReference: (node, ctx) => {
-        const def = definition(node.identifier);
-        if (def == null) {
-          return null;
-        }
-        const data = images.get(def.url);
-        if (!data) {
-          return null;
-        }
-        return buildImage(data, { alt: node.alt, title: def.title }, ctx.width);
-      },
-    };
+    return {};
   };
 };

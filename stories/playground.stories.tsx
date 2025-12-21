@@ -9,12 +9,15 @@ import { imagePlugin } from "../src/plugins/image";
 import { shikiPlugin } from "../src/plugins/shiki";
 import { htmlPlugin } from "../src/plugins/html";
 import { latexPlugin } from "../src/plugins/latex";
+import { mermaidPlugin } from "../src/plugins/mermaid";
 // @ts-expect-error no type definition
 import readmeMd from "../README.md?raw";
 // @ts-expect-error no type definition
 import codeTs from "../src/mdast-util-to-docx.ts?raw";
 // @ts-expect-error no type definition
 import latexMd from "../fixtures/latex.md?raw";
+// @ts-expect-error no type definition
+import mermaidMd from "../fixtures/mermaid.md?raw";
 import { saveAs } from "file-saver";
 import { renderAsync } from "docx-preview";
 import debounce from "lodash.debounce";
@@ -26,6 +29,7 @@ const toDocxProcessor = unified()
   .use(docx, {
     plugins: [
       imagePlugin(),
+      mermaidPlugin(),
       shikiPlugin({ theme: "everforest-dark" }),
       htmlPlugin(),
       latexPlugin(),
@@ -111,6 +115,10 @@ export const Code: StoryObj = {
 
 export const Latex: StoryObj = {
   render: () => <Component text={latexMd} />,
+};
+
+export const Mermaid: StoryObj = {
+  render: () => <Component text={mermaidMd} />,
 };
 
 export const Html: StoryObj = {

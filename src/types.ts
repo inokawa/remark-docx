@@ -18,6 +18,33 @@ type MdastNode<T extends string> = T extends KnownNodeType
   ? Extract<mdast.RootContent, { type: T }>
   : unknown;
 
+const supportedTypes = ["png", "jpg", "gif", "bmp", "svg"] as const;
+type SupportedImageType = (typeof supportedTypes)[number];
+
+export const isSupportedType = (
+  type: string | undefined,
+): type is SupportedImageType => {
+  if (!type) return false;
+  if ((supportedTypes as readonly string[]).includes(type)) {
+    return true;
+  }
+  return false;
+};
+
+export type DocxImageData = Readonly<
+  {
+    data: ArrayBuffer;
+    width: number;
+    height: number;
+  } & (
+    | { type: Exclude<SupportedImageType, "svg"> }
+    | {
+        type: Extract<SupportedImageType, "svg">;
+        fallback: ArrayBuffer;
+      }
+  )
+>;
+
 type StyleContext = Readonly<{
   bold?: boolean;
   italic?: boolean;
@@ -62,6 +89,7 @@ export type Context = Readonly<{
   thematicBreak: ThematicBreakType;
   rtl?: boolean;
   definition: GetDefinition;
+  images: ReadonlyMap<string, DocxImageData | null>;
   footnote: FootnoteRegistry;
   orderedId: () => string;
 }>;
@@ -78,6 +106,7 @@ export type NodeBuilders = {
 export type RemarkDocxPlugin = (
   ctx: Readonly<{
     root: mdast.Root;
+    images: Map<string, DocxImageData | null>;
     definition: GetDefinition;
   }>,
 ) => Promise<NodeBuilders>;
