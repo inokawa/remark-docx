@@ -9,48 +9,24 @@ const external = (id) => [
   ...Object.keys(pkg.devDependencies),
 ].some((d) => id.startsWith(d));
 
-export default [{
-  input: "src/index.ts",
-  output: [
-    {
-      file: pkg.main,
-      format: "cjs",
-      sourcemap: true,
-    },
-    {
-      file: pkg.module,
-      format: "es",
-      sourcemap: true,
-    },
-  ],
-  external,
-  plugins: [
-    typescript({
-      tsconfig: "./tsconfig.json",
-      rootDir: "./src",
-      outDir: ".",
-      declaration: true,
-      declarationDir: dirname(pkg.types),
-      exclude: ["**/*.{spec,stories}.*"],
-    }),
-  ],
-},
-{
+const publishDir = dirname(pkg.module)
+
+export default {
   input: Object.fromEntries(
-    globSync('src/plugins/*/index.ts').map((file) => [
+    ["src/index.ts", ...globSync('src/plugins/*/index.ts')].map((file) => [
       relative('./src', file.slice(0, file.length - extname(file).length)),
       fileURLToPath(new URL(file, import.meta.url)),
     ]),
   ),
   output: [
     {
-      dir: dirname(pkg.module),
+      dir: publishDir,
       format: "cjs",
       sourcemap: true,
       entryFileNames: '[name].cjs',
     },
     {
-      dir: dirname(pkg.module),
+      dir: publishDir,
       format: "es",
       sourcemap: true,
       entryFileNames: '[name].js',
@@ -61,10 +37,10 @@ export default [{
     typescript({
       tsconfig: "./tsconfig.json",
       rootDir: "./src",
-      outDir: dirname(pkg.module),
-      // declaration: true,
-      // declarationDir: dirname(pkg.types),
+      outDir: publishDir,
+      declaration: true,
+      declarationDir: publishDir,
       exclude: ["**/*.{spec,stories}.*"],
     }),
   ],
-}];
+}
