@@ -100,6 +100,18 @@ const processor = unified()
   .use(docx, { plugins: [imagePlugin()] });
 ```
 
+URLs are resolved with [fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API) by default. You can use other methods such as file system.
+
+```javascript
+import * as fs from "fs/promises";
+
+imagePlugin({
+  load: async (url) => {
+    return (await fs.readFile(url)).buffer;
+  },
+});
+```
+
 When we embed `svg` to docx, it also requires `png` image since legacy Word can't render `svg`. On browser, this plugin generate it automatically. On other enviroment like Node.js, please implement `fallbackSvg` prop.
 
 ```javascript
@@ -107,8 +119,7 @@ import sharp from "sharp";
 
 imagePlugin({
   fallbackSvg: async ({ buffer }) => {
-    const png = await sharp(buffer).png().toBuffer();
-    return png.buffer;
+    return (await sharp(buffer).png().toBuffer()).buffer;
   },
 });
 ```
