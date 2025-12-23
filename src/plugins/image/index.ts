@@ -73,7 +73,7 @@ const isSupportedType = (
   return false;
 };
 
-type LoadFn = (url: string) => Promise<ArrayBuffer>;
+type LoadFn = (url: string) => Promise<ArrayBufferLike>;
 
 type SvgToPngFn = (options: {
   buffer: ArrayBuffer;
@@ -158,7 +158,7 @@ export const imagePlugin = ({
             (async () => {
               let data: ArrayBuffer;
               try {
-                data = await load(url);
+                data = (await load(url)) as ArrayBuffer;
               } catch (e) {
                 warnOnce(`Failed to load image: ${url} ${e}`);
                 return;
