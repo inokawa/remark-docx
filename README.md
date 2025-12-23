@@ -7,15 +7,15 @@
 - Uses [docx](https://github.com/dolanmiu/docx) for compilation.
 - Works in any environment (e.g. browser, Node.js).
 - Provides reasonable default style and also tunable enough (WIP).
-- Has own plugin system. You can fully customize [mdast](https://github.com/syntax-tree/mdast) to Word transformation.
+- Has own plugin system. You can fully customize markdown to Word transformation.
 
-### Supported mdast nodes
+### Supported [mdast](https://github.com/syntax-tree/mdast) nodes
 
 Currently, some of the default styles may not be nice. If you have feature requests or improvements, please create a [issue](https://github.com/inokawa/remark-docx/issues) or [PR](https://github.com/inokawa/remark-docx/pulls).
 
 - [x] paragraph
 - [x] heading
-- [x] thematicBreak (rendered as Page Break/Section Break)
+- [x] thematicBreak (rendered as Page Break / Section Break)
 - [x] blockquote
 - [x] list / listItem
 - [x] table / tableRow / tableCell
