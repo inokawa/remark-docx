@@ -6,7 +6,8 @@
 
 - Uses [docx](https://github.com/dolanmiu/docx) for compilation.
 - Works in any environment (e.g. browser, Node.js).
-- You can customize [mdast](https://github.com/syntax-tree/mdast) to Word transformation with plugin system.
+- Provides reasonable default style and also tunable enough (WIP).
+- Has own plugin system. You can fully customize [mdast](https://github.com/syntax-tree/mdast) to Word transformation.
 
 ### Supported mdast nodes
 
