@@ -15,7 +15,7 @@ Currently, some of the default styles may not be nice. If you have feature reque
 
 - [x] paragraph
 - [x] heading
-- [x] thematicBreak (rendered as Page Break / Section Break)
+- [x] thematicBreak (rendered as Page Break / Section Break / Vertical line)
 - [x] blockquote
 - [x] list / listItem
 - [x] table / tableRow / tableCell
