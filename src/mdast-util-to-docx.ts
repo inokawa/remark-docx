@@ -173,7 +173,7 @@ export interface DocxOptions extends Pick<
    *
    * - "page": Page Break
    * - "section": Section Break
-   * - "line": Vertical line
+   * - "line": Horizontal line
    * @default "page"
    */
   thematicBreak?: ThematicBreakType;
