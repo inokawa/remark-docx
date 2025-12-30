@@ -51,7 +51,7 @@ export type FootnoteRegistry = {
   };
 };
 
-export type ThematicBreakType = "page" | "section";
+export type ThematicBreakType = "page" | "section" | "line";
 
 export type Context = Readonly<{
   render: (node: readonly mdast.RootContent[], ctx?: Context) => DocxContent[];

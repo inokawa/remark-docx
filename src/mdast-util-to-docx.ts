@@ -169,7 +169,11 @@ export interface DocxOptions extends Pick<
    */
   orderedListFormat?: ListFormat[];
   /**
-   * An option to select how thematicBreak works. "page" is Page Break. "section" is Section Break.
+   * An option to select how thematicBreak works.
+   *
+   * - "page": Page Break
+   * - "section": Section Break
+   * - "line": Vertical line
    * @default "page"
    */
   thematicBreak?: ThematicBreakType;
@@ -475,11 +479,18 @@ const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
 };
 
 const buildThematicBreak: NodeBuilder<"thematicBreak"> = (_, ctx) => {
-  if (ctx.thematicBreak === "section") {
-    // Returning empty array at toplevel means section insertion.
-    return [];
+  switch (ctx.thematicBreak) {
+    case "page": {
+      return new Paragraph({ children: [new PageBreak()] });
+    }
+    case "section": {
+      // Returning empty array at toplevel means section insertion.
+      return [];
+    }
+    case "line": {
+      return new Paragraph({ thematicBreak: true });
+    }
   }
-  return new Paragraph({ children: [new PageBreak()] });
 };
 
 const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
