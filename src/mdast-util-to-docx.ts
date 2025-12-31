@@ -222,7 +222,7 @@ export interface DocxOptions extends Pick<
    * Direction of texts.
    * @default "ltr"
    */
-  direction?: "ltr" | "rtl";
+  direction?: "ltr" | "rtl" | "vertical";
   /**
    * An option to override the text format of ordered list.
    * See https://docx.js.org/#/usage/numbering?id=level-options for more details.
@@ -401,6 +401,7 @@ export const mdastToDocx = async (
   const sectionProperties: ISectionPropertiesOptions = {
     column: columns ? { count: columns } : undefined,
     page: {
+      textDirection: direction === "vertical" ? "tbRl" : undefined,
       size: { width: pageWidth, height: pageHeight, orientation },
       margin: {
         top: marginTop,
