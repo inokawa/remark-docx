@@ -5393,9 +5393,12 @@ exports[`e2e > heading 1`] = `
         /></w:pPr><w:r><w:t xml:space="preserve">G</w:t></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="Heading5" /></w:pPr><w:r><w:t
           xml:space="preserve"
-        >H</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r
-      ><w:t xml:space="preserve">listed heading</w:t></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
+        >H</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="Title" /><w:numPr
+        ><w:ilvl w:val="0" /><w:numId w:val="2" /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >listed heading</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Title"
+        /><w:ind w:left="800" w:hanging="400" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >quoted heading</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
@@ -5655,7 +5658,11 @@ exports[`e2e > heading 3`] = `
       /><w:pPr><w:ind
           w:left="2400"
           w:hanging="400"
-        /></w:pPr></w:lvl></w:abstractNum></w:numbering>
+        /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="2"><w:abstractNumId
+      w:val="2"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num></w:numbering>
 "
 `;
 

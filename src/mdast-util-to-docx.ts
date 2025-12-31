@@ -145,6 +145,38 @@ const buildLevels = (formats: readonly ListFormat[]): ILevelsOptions[] => {
   });
 };
 
+const docxParagraph = (
+  options: Writeable<IParagraphOptions>,
+  ctx: Context,
+): Paragraph => {
+  if (ctx.quote != null) {
+    options.indent = calcIndent(ctx.quote + 1);
+  }
+
+  if (ctx.list) {
+    const { level, meta } = ctx.list;
+    if (meta.type === "task") {
+      options.numbering = {
+        reference: meta.checked
+          ? COMPLETE_TASK_LIST_REF
+          : INCOMPLETE_TASK_LIST_REF,
+        level,
+      };
+    } else if (meta.type === "ordered") {
+      options.numbering = {
+        reference: meta.reference,
+        level,
+      };
+    } else {
+      options.numbering = {
+        reference: BULLET_LIST_REF,
+        level,
+      };
+    }
+  }
+  return new Paragraph(options);
+};
+
 export interface DocxOptions extends Pick<
   IPropertiesOptions,
   | "title"
@@ -433,40 +465,12 @@ export const mdastToDocx = async (
 };
 
 const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
-  const list = ctx.list;
-  const nodes = ctx.render(children);
-
-  const options: Writeable<IParagraphOptions> = {
-    children: nodes,
-  };
-
-  if (ctx.quote != null) {
-    options.indent = calcIndent(ctx.quote + 1);
-  }
-
-  if (list) {
-    const { level, meta } = list;
-    if (meta.type === "task") {
-      options.numbering = {
-        reference: meta.checked
-          ? COMPLETE_TASK_LIST_REF
-          : INCOMPLETE_TASK_LIST_REF,
-        level,
-      };
-    } else if (meta.type === "ordered") {
-      options.numbering = {
-        reference: meta.reference,
-        level,
-      };
-    } else {
-      options.numbering = {
-        reference: BULLET_LIST_REF,
-        level,
-      };
-    }
-  }
-
-  return new Paragraph(options);
+  return docxParagraph(
+    {
+      children: ctx.render(children),
+    },
+    ctx,
+  );
 };
 
 const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
@@ -491,10 +495,13 @@ const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
       level = "HEADING_5";
       break;
   }
-  return new Paragraph({
-    heading: HeadingLevel[level],
-    children: ctx.render(children),
-  });
+  return docxParagraph(
+    {
+      heading: HeadingLevel[level],
+      children: ctx.render(children),
+    },
+    ctx,
+  );
 };
 
 const buildThematicBreak: NodeBuilder<"thematicBreak"> = (_, ctx) => {
