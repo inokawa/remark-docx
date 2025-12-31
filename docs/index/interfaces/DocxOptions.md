@@ -4,7 +4,7 @@
 
 # Interface: DocxOptions
 
-Defined in: [src/mdast-util-to-docx.ts:146](https://github.com/inokawa/remark-docx/blob/65b87a3cc90a089781958fa03527ab158540575e/src/mdast-util-to-docx.ts#L146)
+Defined in: [src/mdast-util-to-docx.ts:186](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/mdast-util-to-docx.ts#L186)
 
 ## Extends
 
@@ -16,7 +16,7 @@ Defined in: [src/mdast-util-to-docx.ts:146](https://github.com/inokawa/remark-do
 
 > `optional` **size**: `object`
 
-Defined in: [src/mdast-util-to-docx.ts:160](https://github.com/inokawa/remark-docx/blob/65b87a3cc90a089781958fa03527ab158540575e/src/mdast-util-to-docx.ts#L160)
+Defined in: [src/mdast-util-to-docx.ts:200](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/mdast-util-to-docx.ts#L200)
 
 Page size defined in twip (1 twip == 1/1440 inch).
 
@@ -38,7 +38,7 @@ A4 (sectionPageSizeDefaults)
 
 > `optional` **margin**: `object`
 
-Defined in: [src/mdast-util-to-docx.ts:165](https://github.com/inokawa/remark-docx/blob/65b87a3cc90a089781958fa03527ab158540575e/src/mdast-util-to-docx.ts#L165)
+Defined in: [src/mdast-util-to-docx.ts:205](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/mdast-util-to-docx.ts#L205)
 
 Page margin defined in twip (1 twip == 1/1440 inch).
 
@@ -64,11 +64,59 @@ Page margin defined in twip (1 twip == 1/1440 inch).
 
 ***
 
+### orientation?
+
+> `optional` **orientation**: `"portrait"` \| `"landscape"`
+
+Defined in: [src/mdast-util-to-docx.ts:210](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/mdast-util-to-docx.ts#L210)
+
+Page orientation.
+
+#### Default
+
+```ts
+"portrait"
+```
+
+***
+
+### spacing?
+
+> `optional` **spacing**: `number`
+
+Defined in: [src/mdast-util-to-docx.ts:215](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/mdast-util-to-docx.ts#L215)
+
+Spacing after Paragraphs in twip (1 twip == 1/1440 inch).
+
+#### Default
+
+```ts
+0
+```
+
+***
+
+### direction?
+
+> `optional` **direction**: `"ltr"` \| `"rtl"`
+
+Defined in: [src/mdast-util-to-docx.ts:220](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/mdast-util-to-docx.ts#L220)
+
+Direction of texts.
+
+#### Default
+
+```ts
+"ltr"
+```
+
+***
+
 ### orderedListFormat?
 
 > `optional` **orderedListFormat**: `ListFormat`[]
 
-Defined in: [src/mdast-util-to-docx.ts:170](https://github.com/inokawa/remark-docx/blob/65b87a3cc90a089781958fa03527ab158540575e/src/mdast-util-to-docx.ts#L170)
+Defined in: [src/mdast-util-to-docx.ts:225](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/mdast-util-to-docx.ts#L225)
 
 An option to override the text format of ordered list.
 See https://docx.js.org/#/usage/numbering?id=level-options for more details.
@@ -79,13 +127,13 @@ See https://docx.js.org/#/usage/numbering?id=level-options for more details.
 
 > `optional` **thematicBreak**: `ThematicBreakType`
 
-Defined in: [src/mdast-util-to-docx.ts:179](https://github.com/inokawa/remark-docx/blob/65b87a3cc90a089781958fa03527ab158540575e/src/mdast-util-to-docx.ts#L179)
+Defined in: [src/mdast-util-to-docx.ts:234](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/mdast-util-to-docx.ts#L234)
 
 An option to select how thematicBreak works.
 
 - "page": Page Break
 - "section": Section Break
-- "line": Vertical line
+- "line": Horizontal line
 
 #### Default
 
@@ -99,7 +147,7 @@ An option to select how thematicBreak works.
 
 > `optional` **plugins**: [`RemarkDocxPlugin`](../type-aliases/RemarkDocxPlugin.md)[]
 
-Defined in: [src/mdast-util-to-docx.ts:183](https://github.com/inokawa/remark-docx/blob/65b87a3cc90a089781958fa03527ab158540575e/src/mdast-util-to-docx.ts#L183)
+Defined in: [src/mdast-util-to-docx.ts:238](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/mdast-util-to-docx.ts#L238)
 
 Plugins to customize how mdast nodes are compiled.
 
