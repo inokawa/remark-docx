@@ -69,6 +69,14 @@ describe("e2e", () => {
     }
   });
 
+  it("article rtl", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "article.md"));
+    const doc = await processor({ direction: "rtl" }).process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
   it("break", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "break.md"));
     const doc = await processor().process(md);

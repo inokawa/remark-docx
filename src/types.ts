@@ -78,6 +78,10 @@ export type Context = Readonly<{
   /**
    * @internal
    */
+  rtl?: boolean;
+  /**
+   * @internal
+   */
   definition: GetDefinition;
   /**
    * @internal
