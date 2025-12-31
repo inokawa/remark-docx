@@ -204,6 +204,11 @@ export interface DocxOptions extends Pick<
    */
   margin?: { top?: number; left?: number; bottom?: number; right?: number };
   /**
+   * Page orientation.
+   * @default "portrait"
+   */
+  orientation?: "portrait" | "landscape";
+  /**
    * Spacing after Paragraphs in twip (1 twip == 1/1440 inch).
    * @default 0
    */
@@ -245,6 +250,7 @@ export const mdastToDocx = async (
     styles,
     size,
     margin,
+    orientation,
     spacing,
     direction,
     background,
@@ -388,7 +394,7 @@ export const mdastToDocx = async (
 
   const sectionProperties: ISectionPropertiesOptions = {
     page: {
-      size: { width: pageWidth, height: pageHeight },
+      size: { width: pageWidth, height: pageHeight, orientation },
       margin: {
         top: marginTop,
         left: marginLeft,
