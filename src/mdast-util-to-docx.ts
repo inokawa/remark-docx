@@ -20,10 +20,12 @@ import {
   PageBreak,
   type ISectionPropertiesOptions,
   type IIndentAttributesProperties,
+  type IStylesOptions,
 } from "docx";
 import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
 import { definitions } from "mdast-util-definitions";
+import deepmerge from "deepmerge";
 import type {
   Context,
   DocxChild,
@@ -164,6 +166,11 @@ export interface DocxOptions extends Pick<
    */
   margin?: { top?: number; left?: number; bottom?: number; right?: number };
   /**
+   * Spacing after Paragraphs in twip (1 twip == 1/1440 inch).
+   * @default 0
+   */
+  spacing?: number;
+  /**
    * An option to override the text format of ordered list.
    * See https://docx.js.org/#/usage/numbering?id=level-options for more details.
    */
@@ -195,6 +202,7 @@ export const mdastToDocx = async (
     styles,
     size,
     margin,
+    spacing,
     background,
     thematicBreak = "page",
     orderedListFormat,
@@ -351,7 +359,18 @@ export const mdastToDocx = async (
     creator,
     keywords,
     description,
-    styles: styles,
+    styles: deepmerge<IStylesOptions>(
+      {
+        default: {
+          document: {
+            paragraph: {
+              spacing: spacing ? { after: spacing } : undefined,
+            },
+          },
+        },
+      },
+      styles || {},
+    ),
     background,
     sections: sections
       .filter((s) => s.length)
