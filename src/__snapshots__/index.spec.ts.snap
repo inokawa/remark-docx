@@ -5393,7 +5393,11 @@ exports[`e2e > heading 1`] = `
         /></w:pPr><w:r><w:t xml:space="preserve">G</w:t></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="Heading5" /></w:pPr><w:r><w:t
           xml:space="preserve"
-        >H</w:t></w:r></w:p><w:sectPr><w:pgSz
+        >H</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r
+      ><w:t xml:space="preserve">listed heading</w:t></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >quoted heading</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
         w:h="16838"
         w:orient="portrait"
