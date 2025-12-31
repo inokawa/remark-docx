@@ -21,6 +21,7 @@ import {
   type ISectionPropertiesOptions,
   type IIndentAttributesProperties,
   type IStylesOptions,
+  type ITableOptions,
 } from "docx";
 import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
@@ -174,6 +175,11 @@ const docxParagraph = (
       };
     }
   }
+
+  if (ctx.rtl) {
+    options.bidirectional = true;
+  }
+
   return new Paragraph(options);
 };
 
@@ -202,6 +208,11 @@ export interface DocxOptions extends Pick<
    * @default 0
    */
   spacing?: number;
+  /**
+   * Direction of texts.
+   * @default "ltr"
+   */
+  direction?: "ltr" | "rtl";
   /**
    * An option to override the text format of ordered list.
    * See https://docx.js.org/#/usage/numbering?id=level-options for more details.
@@ -235,6 +246,7 @@ export const mdastToDocx = async (
     size,
     margin,
     spacing,
+    direction,
     background,
     thematicBreak = "page",
     orderedListFormat,
@@ -343,6 +355,7 @@ export const mdastToDocx = async (
     width: pageWidth - marginLeft - marginRight,
     deco: {},
     thematicBreak,
+    rtl: direction === "rtl",
     definition: definition,
     footnote,
     orderedId: ordered.createId,
@@ -588,7 +601,7 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
   const columnLength = children[0]!.children.length;
   const columnWidth = ctx.width / columnLength;
 
-  return new Table({
+  const options: Writeable<ITableOptions> = {
     columnWidths: Array.from({ length: columnLength }).map(() => columnWidth),
     rows: children.map((r) => {
       return new TableRow({
@@ -598,17 +611,27 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
             children: [
               new Paragraph({
                 alignment: AlignmentType[textAlign?.[i] ?? "LEFT"],
-                children: ctx.render(c.children),
+                children: ctx.render(c.children, {
+                  ...ctx,
+                  // https://github.com/dolanmiu/docx/blob/master/demo/22-right-to-left-text.ts
+                  rtl: undefined,
+                }),
               }),
             ],
           });
         }),
       });
     }),
-  });
+  };
+
+  if (ctx.rtl) {
+    options.visuallyRightToLeft = true;
+  }
+
+  return new Table(options);
 };
 
-const buildText: NodeBuilder<"text"> = ({ value }, { deco }) => {
+const buildText: NodeBuilder<"text"> = ({ value }, { deco, rtl }) => {
   const options: Writeable<IRunOptions> = {
     text: value,
     bold: deco.bold,
@@ -622,6 +645,10 @@ const buildText: NodeBuilder<"text"> = ({ value }, { deco }) => {
     // https://docx.js.org/#/usage/hyperlinks?id=styling-hyperlinks
     options.style = HYPERLINK_STYLE_ID;
   }
+  if (rtl) {
+    options.rightToLeft = true;
+  }
+
   return new TextRun(options);
 };
 

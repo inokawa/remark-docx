@@ -7,6 +7,7 @@
 - Uses [docx](https://github.com/dolanmiu/docx) for compilation.
 - Works in any environment (e.g. browser, Node.js).
 - Provides reasonable default style and also tunable enough (WIP).
+- Supports RTL.
 - Has own plugin system. You can fully customize markdown to Word transformation.
 
 ### Supported [mdast](https://github.com/syntax-tree/mdast) nodes
