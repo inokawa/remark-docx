@@ -4,7 +4,7 @@
 
 # Interface: ImagePluginOptions
 
-Defined in: [src/plugins/image/index.ts:118](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/plugins/image/index.ts#L118)
+Defined in: [src/plugins/image/index.ts:118](https://github.com/inokawa/remark-docx/blob/8503d167fc89562de8d2f890d1f1434f22e8c620/src/plugins/image/index.ts#L118)
 
 ## Properties
 
@@ -12,7 +12,7 @@ Defined in: [src/plugins/image/index.ts:118](https://github.com/inokawa/remark-d
 
 > `optional` **load**: `LoadFn`
 
-Defined in: [src/plugins/image/index.ts:123](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/plugins/image/index.ts#L123)
+Defined in: [src/plugins/image/index.ts:123](https://github.com/inokawa/remark-docx/blob/8503d167fc89562de8d2f890d1f1434f22e8c620/src/plugins/image/index.ts#L123)
 
 A function to resolve image data from url.
 
@@ -26,7 +26,7 @@ loadWithFetch
 
 > `optional` **fallbackSvg**: `SvgToPngFn`
 
-Defined in: [src/plugins/image/index.ts:128](https://github.com/inokawa/remark-docx/blob/1bfc2167155a9ae3dde0f83c015e204707e5104a/src/plugins/image/index.ts#L128)
+Defined in: [src/plugins/image/index.ts:128](https://github.com/inokawa/remark-docx/blob/8503d167fc89562de8d2f890d1f1434f22e8c620/src/plugins/image/index.ts#L128)
 
 A function to convert SVG to PNG. According to the docx specifications, embedding SVG images also requires including PNG.
 
