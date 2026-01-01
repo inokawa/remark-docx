@@ -365,7 +365,7 @@ export const mdastToDocx = async (
       return results;
     },
     width: pageWidth - marginLeft - marginRight,
-    deco: {},
+    style: {},
     thematicBreak,
     rtl: direction === "rtl",
     definition: definition,
@@ -645,17 +645,17 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
   return new Table(options);
 };
 
-const buildText: NodeBuilder<"text"> = ({ value }, { deco, rtl }) => {
+const buildText: NodeBuilder<"text"> = ({ value }, { style, rtl }) => {
   const options: Writeable<IRunOptions> = {
     text: value,
-    bold: deco.bold,
-    italics: deco.italic,
-    strike: deco.strike,
+    bold: style.bold,
+    italics: style.italic,
+    strike: style.strike,
   };
-  if (deco.inlineCode) {
+  if (style.inlineCode) {
     options.highlight = "lightGray";
   }
-  if (deco.link) {
+  if (style.link) {
     // https://docx.js.org/#/usage/hyperlinks?id=styling-hyperlinks
     options.style = HYPERLINK_STYLE_ID;
   }
@@ -669,21 +669,21 @@ const buildText: NodeBuilder<"text"> = ({ value }, { deco, rtl }) => {
 const buildEmphasis: NodeBuilder<"emphasis"> = ({ children }, ctx) => {
   return ctx.render(children, {
     ...ctx,
-    deco: { ...ctx.deco, italic: true },
+    style: { ...ctx.style, italic: true },
   });
 };
 
 const buildStrong: NodeBuilder<"strong"> = ({ children }, ctx) => {
   return ctx.render(children, {
     ...ctx,
-    deco: { ...ctx.deco, bold: true },
+    style: { ...ctx.style, bold: true },
   });
 };
 
 const buildDelete: NodeBuilder<"delete"> = ({ children }, ctx) => {
   return ctx.render(children, {
     ...ctx,
-    deco: { ...ctx.deco, strike: true },
+    style: { ...ctx.style, strike: true },
   });
 };
 
@@ -692,7 +692,7 @@ const buildInlineCode: NodeBuilder<"inlineCode"> = ({ value }, ctx) => {
     { type: "text", value },
     {
       ...ctx,
-      deco: { ...ctx.deco, inlineCode: true },
+      style: { ...ctx.style, inlineCode: true },
     },
   );
 };
@@ -710,7 +710,7 @@ const buildLink: NodeBuilder<"link"> = ({ children, url }, ctx) => {
     link: url,
     children: ctx.render(children, {
       ...ctx,
-      deco: { ...ctx.deco, link: true },
+      style: { ...ctx.style, link: true },
     }),
   });
 };

@@ -18,7 +18,7 @@ type MdastNode<T extends string> = T extends KnownNodeType
   ? Extract<mdast.RootContent, { type: T }>
   : unknown;
 
-type DecorationContext = Readonly<{
+type StyleContext = Readonly<{
   bold?: boolean;
   italic?: boolean;
   strike?: boolean;
@@ -55,41 +55,14 @@ export type ThematicBreakType = "page" | "section" | "line";
 
 export type Context = Readonly<{
   render: (node: readonly mdast.RootContent[], ctx?: Context) => DocxContent[];
-  /**
-   * @internal
-   */
   width: number;
-  /**
-   * @internal
-   */
-  deco: DecorationContext;
-  /**
-   * @internal
-   */
+  style: StyleContext;
   quote?: number;
-  /**
-   * @internal
-   */
   list?: ListContext;
-  /**
-   * @internal
-   */
   thematicBreak: ThematicBreakType;
-  /**
-   * @internal
-   */
   rtl?: boolean;
-  /**
-   * @internal
-   */
   definition: GetDefinition;
-  /**
-   * @internal
-   */
   footnote: FootnoteRegistry;
-  /**
-   * @internal
-   */
   orderedId: () => string;
 }>;
 
