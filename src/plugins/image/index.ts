@@ -26,7 +26,19 @@ type ImageData = Readonly<
 const buildImage = (
   image: ImageData,
   node: { alt?: string | null; title?: string | null },
+  pageWidth: number,
 ) => {
+  let { width, height } = image;
+
+  const inchPageWidth = pageWidth / 1440;
+  const DPI = 96;
+  const maxImageWidthPx = inchPageWidth * DPI;
+  if (width > maxImageWidthPx) {
+    const scale = maxImageWidthPx / width;
+    width *= scale;
+    height *= scale;
+  }
+
   const altText =
     node.alt || node.title
       ? {
@@ -37,7 +49,7 @@ const buildImage = (
       : undefined;
 
   if (image.type === "svg") {
-    const { type, data, width, height, fallback } = image;
+    const { type, data, fallback } = image;
     return new ImageRun({
       type: type,
       data: data,
@@ -51,7 +63,7 @@ const buildImage = (
     });
   }
 
-  const { type, data, width, height } = image;
+  const { type, data } = image;
   return new ImageRun({
     type: type,
     data: data,
@@ -200,14 +212,14 @@ export const imagePlugin = ({
     }
 
     return {
-      image: (node) => {
+      image: (node, ctx) => {
         const data = images.get(node.url);
         if (!data) {
           return null;
         }
-        return buildImage(data, node);
+        return buildImage(data, node, ctx.width);
       },
-      imageReference: (node) => {
+      imageReference: (node, ctx) => {
         const def = definition(node.identifier);
         if (def == null) {
           return null;
@@ -216,7 +228,7 @@ export const imagePlugin = ({
         if (!data) {
           return null;
         }
-        return buildImage(data, { alt: node.alt, title: def.title });
+        return buildImage(data, { alt: node.alt, title: def.title }, ctx.width);
       },
     };
   };
