@@ -30,11 +30,11 @@ const buildImage = (
 ) => {
   let { width, height } = image;
 
-  const inchPageWidth = pageWidth / 1440;
+  const pageWidthInch = pageWidth / 1440;
   const DPI = 96;
-  const maxImageWidthPx = inchPageWidth * DPI;
-  if (width > maxImageWidthPx) {
-    const scale = maxImageWidthPx / width;
+  const pageWidthPx = pageWidthInch * DPI;
+  if (width > pageWidthPx) {
+    const scale = pageWidthPx / width;
     width *= scale;
     height *= scale;
   }
