@@ -1,6 +1,7 @@
 import type { Paragraph, ParagraphChild, Table, TableOfContents } from "docx";
 import type * as mdast from "mdast";
 import type { GetDefinition } from "mdast-util-definitions";
+import type { SupportedImageType } from "./utils";
 
 /**
  * @internal
@@ -16,19 +17,6 @@ type KnownNodeType = mdast.RootContent["type"];
 type MdastNode<T extends string> = T extends KnownNodeType
   ? Extract<mdast.RootContent, { type: T }>
   : unknown;
-
-const supportedTypes = ["png", "jpg", "gif", "bmp", "svg"] as const;
-type SupportedImageType = (typeof supportedTypes)[number];
-
-export const isSupportedType = (
-  type: string | undefined,
-): type is SupportedImageType => {
-  if (!type) return false;
-  if ((supportedTypes as readonly string[]).includes(type)) {
-    return true;
-  }
-  return false;
-};
 
 export type DocxImageData = Readonly<
   {

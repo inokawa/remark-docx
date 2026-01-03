@@ -1,9 +1,5 @@
-import { warnOnce } from "../../utils";
-import {
-  isSupportedType,
-  type DocxImageData,
-  type RemarkDocxPlugin,
-} from "../../types";
+import { isSupportedType, warnOnce } from "../../utils";
+import { type DocxImageData, type RemarkDocxPlugin } from "../../types";
 import type * as mdast from "mdast";
 import { visit } from "unist-util-visit";
 import { imageSize } from "image-size";
