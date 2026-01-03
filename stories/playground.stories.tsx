@@ -13,13 +13,13 @@ import { mermaidPlugin } from "../src/plugins/mermaid";
 // @ts-expect-error no type definition
 import readmeMd from "../README.md?raw";
 // @ts-expect-error no type definition
+import footnotesMd from "../fixtures/footnotes.md?raw";
+// @ts-expect-error no type definition
 import codeTs from "../src/mdast-util-to-docx.ts?raw";
 // @ts-expect-error no type definition
 import latexMd from "../fixtures/latex.md?raw";
 // @ts-expect-error no type definition
 import mermaidMd from "../fixtures/mermaid.md?raw";
-// @ts-expect-error no type definition
-import footnotesMd from "../fixtures/footnotes.md?raw";
 import { saveAs } from "file-saver";
 import { renderAsync } from "docx-preview";
 import debounce from "lodash.debounce";
@@ -111,6 +111,10 @@ export const Readme: StoryObj = {
   render: () => <Component text={readmeMd} />,
 };
 
+export const Footnotes: StoryObj = {
+  render: () => <Component text={footnotesMd} />,
+};
+
 export const Code: StoryObj = {
   render: () => <Component text={"```ts\n" + codeTs + "\n```"} />,
 };
@@ -121,10 +125,6 @@ export const Latex: StoryObj = {
 
 export const Mermaid: StoryObj = {
   render: () => <Component text={mermaidMd} />,
-};
-
-export const Footnotes: StoryObj = {
-  render: () => <Component text={footnotesMd} />,
 };
 
 export const Html: StoryObj = {

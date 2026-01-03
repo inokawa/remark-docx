@@ -4,51 +4,57 @@ This is footnote[^hi].
 
 [^hi]: Here is the footnote definition.
 
-## Footnotes
+## Footnotes[^heading]
 
-Here is a footnote[^1] in a paragraph. Another footnote[^note-2] with a string identifier.
+Here is footnotes[^1][^note-2][^bignote].
 
-### Footnotes in Headings
+### Footnotes in Lists
 
-This heading has a footnote[^heading-note]
+- List item[^3]
+  - Nested item[^4]
 
-## Footnotes in Lists
+1. Ordered list[^5]
 
-- List item[^4]
-  - Nested item[^5]
+### Footnotes in Blockquotes
 
-1. Ordered list[^6]
+> Blockquote[^6].
 
-## Footnotes in Blockquotes
+### Footnotes in Links
 
-> Blockquote[^7].
+Here is a [link[^link]](https://example.com) in the text.
 
-## Footnotes in Links
+### Complex Nested Footnotes
 
-Here is a [link[^8]](https://example.com) in the text.
-
-## Complex Nested Footnotes
-
-This is a **bold text[^9]** and _italic[^10]_.
-
-## Footnote Definitions
+This is a **bold text[^bold]** and _italic[^italic]_.
 
 [^1]: Footnote definition.
 
 [^note-2]: String identifier with dashes.
 
-[^heading-note]: Heading.
+[^3]: Unordered list.
 
-[^4]: Unordered list.
+[^4]: Nested list item.
 
-[^5]: Nested list item.
+[^5]: Ordered list.
 
-[^6]: Ordered list.
+[^6]: Blockquote.
 
-[^7]: Blockquote.
+[^heading]: Heading.
 
-[^8]: Link to [example.com](https://example.com/).
+[^link]: Link to [example.com](https://example.com/).
 
-[^9]: **Bold** text.
+[^bold]: **Bold** text.
 
-[^10]: _Italic_ text.
+[^italic]: _Italic_ text.
+
+[^bignote]: Here’s one with multiple paragraphs and code.
+
+    Indent paragraphs to include them in the footnote.
+
+    ```js
+    function add(a, b) {
+      return a + b;
+    }
+    ```
+
+    Add as many paragraphs as you like.
