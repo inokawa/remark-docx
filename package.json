@@ -42,6 +42,7 @@
     "image-size": "^2.0.2",
     "mathml2omml": "^0.5.0",
     "mdast-util-definitions": "^6.0.0",
+    "mermaid": "^11.12.2",
     "shiki": "^3.19.0",
     "unist-util-visit": "^5.0.0"
   },
@@ -54,7 +55,7 @@
     "@types/file-saver": "^2.0.7",
     "@types/lodash.debounce": "^4.0.9",
     "@types/mdast": "^4.0.3",
-    "@types/node": "^24.0.10",
+    "@types/node": "^24.10.4",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@types/unist": "^3.0.0",

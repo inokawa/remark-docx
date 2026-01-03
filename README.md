@@ -127,6 +127,8 @@ imagePlugin({
 
 ### Code
 
+### Syntax highlight
+
 Syntax highlighting with [shiki](https://github.com/shikijs/shiki).
 
 ```javascript
@@ -138,6 +140,21 @@ import { shikiPlugin } from "remark-docx/plugins/shiki";
 const processor = unified()
   .use(markdown)
   .use(docx, { plugins: [shikiPlugin({ theme: "dark-plus" })] });
+```
+
+### Mermaid
+
+Render [Mermaid](https://mermaid.js.org/) in code blocks with `mermaid` language. It only works in browser for now.
+
+```javascript
+import { unified } from "unified";
+import markdown from "remark-parse";
+import docx from "remark-docx";
+import { mermaidPlugin } from "remark-docx/plugins/mermaid";
+
+const processor = unified()
+  .use(markdown)
+  .use(docx, { plugins: [mermaidPlugin()] });
 ```
 
 ### Math

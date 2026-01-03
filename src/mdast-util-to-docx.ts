@@ -22,6 +22,7 @@ import {
   type IIndentAttributesProperties,
   type IStylesOptions,
   type ITableOptions,
+  ImageRun,
 } from "docx";
 import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
@@ -31,6 +32,7 @@ import type {
   Context,
   DocxChild,
   DocxContent,
+  DocxImageData,
   FootnoteRegistry,
   ListContext,
   NodeBuilder,
@@ -183,6 +185,58 @@ const docxParagraph = (
   return new Paragraph(options);
 };
 
+const docxImage = (
+  image: DocxImageData,
+  node: { alt?: string | null; title?: string | null },
+  { width: pageWidth }: Context,
+) => {
+  let { width, height } = image;
+
+  const pageWidthInch = pageWidth / 1440;
+  const DPI = 96;
+  const pageWidthPx = pageWidthInch * DPI;
+  if (width > pageWidthPx) {
+    const scale = pageWidthPx / width;
+    width *= scale;
+    height *= scale;
+  }
+
+  const altText =
+    node.alt || node.title
+      ? {
+          name: "",
+          description: node.alt ?? undefined,
+          title: node.title ?? undefined,
+        }
+      : undefined;
+
+  if (image.type === "svg") {
+    const { type, data, fallback } = image;
+    return new ImageRun({
+      type: type,
+      data: data,
+      transformation: {
+        width,
+        height,
+      },
+      // https://github.com/dolanmiu/docx/issues/1162#issuecomment-3228368003
+      fallback: { type: "png", data: fallback },
+      altText,
+    });
+  }
+
+  const { type, data } = image;
+  return new ImageRun({
+    type: type,
+    data: data,
+    transformation: {
+      width,
+      height,
+    },
+    altText,
+  });
+};
+
 export interface DocxOptions extends Pick<
   IPropertiesOptions,
   | "title"
@@ -269,7 +323,8 @@ export const mdastToDocx = async (
   const ordered = createOrderedListRegistry();
   const footnote = createFootnoteRegistry();
 
-  const pluginCtx = { root: node, definition };
+  const images = new Map<string, DocxImageData>();
+  const pluginCtx = { root: node, images, definition };
 
   const builders = composeBuilders(
     await Promise.all(plugins.map((p) => p(pluginCtx))),
@@ -295,8 +350,8 @@ export const mdastToDocx = async (
       break: buildBreak,
       link: buildLink,
       linkReference: buildLinkReference,
-      // image: warnImage,
-      // imageReference: warnImage,
+      image: buildImage,
+      imageReference: buildImageReference,
       footnoteReference: buildFootnoteReference,
       math: fallbackText,
       inlineMath: fallbackText,
@@ -369,6 +424,7 @@ export const mdastToDocx = async (
     thematicBreak,
     rtl: direction === "rtl",
     definition: definition,
+    images,
     footnote,
     orderedId: ordered.createId,
   };
@@ -724,6 +780,26 @@ const buildLinkReference: NodeBuilder<"linkReference"> = (
     return ctx.render(children);
   }
   return buildLink({ type: "link", children, url: def.url }, ctx);
+};
+
+const buildImage: NodeBuilder<"image"> = (node, ctx) => {
+  const data = ctx.images.get(node.url);
+  if (!data) {
+    return null;
+  }
+  return docxImage(data, node, ctx);
+};
+
+const buildImageReference: NodeBuilder<"imageReference"> = (node, ctx) => {
+  const def = ctx.definition(node.identifier);
+  if (def == null) {
+    return null;
+  }
+  const data = ctx.images.get(def.url);
+  if (!data) {
+    return null;
+  }
+  return docxImage(data, { alt: node.alt, title: def.title }, ctx);
 };
 
 const buildFootnoteDefinition: NodeBuilder<"footnoteDefinition"> = (

@@ -35,7 +35,7 @@ const dummyImage = async (url: string): Promise<ArrayBuffer> => {
 
   const img = await readFile(path.join(fixturesDir, "img.png"));
 
-  return img.buffer as ArrayBuffer;
+  return img.buffer;
 };
 
 describe("e2e", () => {
