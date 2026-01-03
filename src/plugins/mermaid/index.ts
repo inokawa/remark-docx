@@ -44,10 +44,11 @@ export const mermaidPlugin = (): RemarkDocxPlugin => {
                 });
 
                 images.set(value, {
-                  type: "png",
+                  type: "svg",
                   width,
                   height,
-                  data: pngBuffer,
+                  data: data.buffer,
+                  fallback: pngBuffer,
                 });
               } catch (e) {
                 warnOnce(String(e));
