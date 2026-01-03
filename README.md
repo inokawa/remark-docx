@@ -28,7 +28,7 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] inlineCode
 - [x] break
 - [x] link / linkReference
-- [x] footnote / footnoteReference / footnoteDefinition
+- [x] footnoteReference / footnoteDefinition
 - [x] image / imageReference ([plugin](#image))
 - [x] html ([plugin](#html))
 - [x] code ([plugin](#code))
