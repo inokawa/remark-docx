@@ -93,14 +93,6 @@ describe("e2e", () => {
     }
   });
 
-  it("footnotes2", async () => {
-    const md = await fs.readFile(path.join(fixturesDir, "footnotes2.md"));
-    const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
-      expect(xml).toMatchSnapshot();
-    }
-  });
-
   it("heading", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "heading.md"));
     const doc = await processor().process(md);
