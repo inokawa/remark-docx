@@ -6,13 +6,13 @@
 
 > **RemarkDocxPlugin** = (`ctx`) => `Promise`\<`NodeBuilders`\>
 
-Defined in: [src/types.ts:105](https://github.com/inokawa/remark-docx/blob/8503d167fc89562de8d2f890d1f1434f22e8c620/src/types.ts#L105)
+Defined in: [src/types.ts:106](https://github.com/inokawa/remark-docx/blob/7af433469f4246f0e13c6b3b2d40b84089f854cc/src/types.ts#L106)
 
 ## Parameters
 
 ### ctx
 
-`Readonly`\<\{ `root`: `mdast.Root`; `definition`: `GetDefinition`; \}\>
+`Readonly`\<\{ `root`: `mdast.Root`; `images`: `Map`\<`string`, `DocxImageData` \| `null`\>; `definition`: `GetDefinition`; \}\>
 
 ## Returns
 
