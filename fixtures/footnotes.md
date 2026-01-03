@@ -1,14 +1,12 @@
-# Comprehensive Footnote Test
-
-This document tests various footnote scenarios to ensure proper rendering in DOCX format.
+# Footnotes
 
 This is footnote[^hi].
 
 [^hi]: Here is the footnote definition.
 
-## Reference Style Footnotes
+## Footnotes
 
-Here is a reference footnote[^1] in a paragraph. Another reference footnote[^note-2] with a string identifier.
+Here is a footnote[^1] in a paragraph. Another footnote[^note-2] with a string identifier.
 
 ### Footnotes in Headings
 
@@ -16,41 +14,41 @@ This heading has a footnote[^heading-note]
 
 ## Footnotes in Lists
 
-- List item with footnote[^4]
-  - Nested item with reference[^5]
+- List item[^4]
+  - Nested item[^5]
 
-1. Ordered list with footnote[^6]
+1. Ordered list[^6]
 
 ## Footnotes in Blockquotes
 
-> This blockquote has a footnote[^7].
+> Blockquote[^7].
 
 ## Footnotes in Links
 
-Here is a [link with footnote[^8]](https://example.com) in the text.
+Here is a [link[^8]](https://example.com) in the text.
 
 ## Complex Nested Footnotes
 
-This is a **bold text with footnote[^9]** and _italic with footnote[^10]_.
+This is a **bold text[^9]** and _italic[^10]_.
 
 ## Footnote Definitions
 
-[^1]: This is the first footnote definition.
+[^1]: Footnote definition.
 
-[^note-2]: This footnote has a string identifier with dashes.
+[^note-2]: String identifier with dashes.
 
-[^heading-note]: This footnote was referenced in a heading.
+[^heading-note]: Heading.
 
-[^4]: Footnote from unordered list.
+[^4]: Unordered list.
 
-[^5]: Footnote from nested list item.
+[^5]: Nested list item.
 
-[^6]: Footnote from ordered list.
+[^6]: Ordered list.
 
-[^7]: Footnote from blockquote.
+[^7]: Blockquote.
 
-[^8]: Footnote from within a link.
+[^8]: Link to [example.com](https://example.com/).
 
-[^9]: Footnote from bold text.
+[^9]: **Bold** text.
 
-[^10]: Footnote from italic text.
+[^10]: _Italic_ text.
