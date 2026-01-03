@@ -9,8 +9,7 @@ export type Writeable<T> = {
   -readonly [key in keyof T]: T[key];
 };
 
-export type DocxChild = Paragraph | Table | TableOfContents;
-export type DocxContent = DocxChild | ParagraphChild;
+export type DocxContent = Paragraph | Table | TableOfContents | ParagraphChild;
 
 type KnownNodeType = mdast.RootContent["type"];
 

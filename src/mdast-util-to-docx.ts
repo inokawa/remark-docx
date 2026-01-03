@@ -23,6 +23,7 @@ import {
   type IStylesOptions,
   type ITableOptions,
   ImageRun,
+  type FileChild,
 } from "docx";
 import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
@@ -30,7 +31,6 @@ import { definitions } from "mdast-util-definitions";
 import deepmerge from "deepmerge";
 import type {
   Context,
-  DocxChild,
   DocxContent,
   DocxImageData,
   FootnoteRegistry,
@@ -189,7 +189,7 @@ const docxImage = (
   image: DocxImageData,
   node: { alt?: string | null; title?: string | null },
   { width: pageWidth }: Context,
-) => {
+): ImageRun => {
   let { width, height } = image;
 
   const pageWidthInch = pageWidth / 1440;
@@ -491,7 +491,7 @@ export const mdastToDocx = async (
       .filter((s) => s.length)
       .map((s) => ({
         properties: sectionProperties,
-        children: s as DocxChild[],
+        children: s as FileChild[],
       })),
     footnotes: footnote.toConfig(),
     numbering: {
