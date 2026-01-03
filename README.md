@@ -84,7 +84,7 @@ const text = "# hello world";
 })();
 ```
 
-## With plugins
+## Plugins
 
 ### Image
 
@@ -127,7 +127,7 @@ imagePlugin({
 
 ### Code
 
-### Syntax highlight
+#### Syntax highlight
 
 Syntax highlighting with [shiki](https://github.com/shikijs/shiki).
 
@@ -142,7 +142,7 @@ const processor = unified()
   .use(docx, { plugins: [shikiPlugin({ theme: "dark-plus" })] });
 ```
 
-### Mermaid
+#### Mermaid
 
 Render [Mermaid](https://mermaid.js.org/) in code blocks with `mermaid` language. It only works in browser for now.
 
