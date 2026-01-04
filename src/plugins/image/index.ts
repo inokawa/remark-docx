@@ -75,6 +75,8 @@ export const imagePlugin = ({
 }: ImagePluginOptions = {}): RemarkDocxPlugin => {
   const cache = new Map<string, DocxImageData>();
 
+  const maxCacheLength = 100;
+
   return async ({ root, definition, images }) => {
     const imageList: (mdast.Image | mdast.Definition)[] = [];
     visit(root, "image", (node) => {
@@ -146,6 +148,17 @@ export const imagePlugin = ({
       });
 
       await Promise.all(promises.values());
+    }
+
+    if (cache.size > maxCacheLength) {
+      let deleteCount = cache.size - maxCacheLength;
+      for (const key of cache.keys()) {
+        cache.delete(key);
+        deleteCount--;
+        if (deleteCount <= 0) {
+          break;
+        }
+      }
     }
 
     return {};
