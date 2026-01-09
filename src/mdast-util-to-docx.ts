@@ -266,7 +266,7 @@ export const mdastToDocx = async (
     thematicBreak = "page",
     orderedListFormat,
   }: DocxOptions = {},
-): Promise<ArrayBuffer> => {
+): Promise<Uint8Array> => {
   const definition = definitions(node);
 
   const ordered = createOrderedListRegistry();
@@ -493,7 +493,7 @@ export const mdastToDocx = async (
   _numbering.abstractNumberingMap.delete(defaultBulletKey);
   _numbering.concreteNumberingMap.delete(defaultBulletKey);
 
-  return Packer.toArrayBuffer(doc);
+  return new Uint8Array(await Packer.toArrayBuffer(doc));
 };
 
 const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
