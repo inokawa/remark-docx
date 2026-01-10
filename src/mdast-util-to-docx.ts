@@ -185,58 +185,6 @@ const docxParagraph = (
   return new Paragraph(options);
 };
 
-const docxImage = (
-  image: DocxImageData,
-  node: { alt?: string | null; title?: string | null },
-  { width: pageWidth }: Context,
-): ImageRun => {
-  let { width, height } = image;
-
-  const pageWidthInch = pageWidth / 1440;
-  const DPI = 96;
-  const pageWidthPx = pageWidthInch * DPI;
-  if (width > pageWidthPx) {
-    const scale = pageWidthPx / width;
-    width *= scale;
-    height *= scale;
-  }
-
-  const altText =
-    node.alt || node.title
-      ? {
-          name: "",
-          description: node.alt ?? undefined,
-          title: node.title ?? undefined,
-        }
-      : undefined;
-
-  if (image.type === "svg") {
-    const { type, data, fallback } = image;
-    return new ImageRun({
-      type: type,
-      data: data,
-      transformation: {
-        width,
-        height,
-      },
-      // https://github.com/dolanmiu/docx/issues/1162#issuecomment-3228368003
-      fallback: { type: "png", data: fallback },
-      altText,
-    });
-  }
-
-  const { type, data } = image;
-  return new ImageRun({
-    type: type,
-    data: data,
-    transformation: {
-      width,
-      height,
-    },
-    altText,
-  });
-};
-
 export interface DocxOptions extends Pick<
   IPropertiesOptions,
   | "title"
@@ -783,11 +731,55 @@ const buildLinkReference: NodeBuilder<"linkReference"> = (
 };
 
 const buildImage: NodeBuilder<"image"> = (node, ctx) => {
-  const data = ctx.images.get(node.url);
-  if (!data) {
+  const image = ctx.images.get(node.url);
+  if (!image) {
     return null;
   }
-  return docxImage(data, node, ctx);
+
+  let { width, height } = image;
+  const pageWidthInch = ctx.width / 1440;
+  const DPI = 96;
+  const pageWidthPx = pageWidthInch * DPI;
+  if (width > pageWidthPx) {
+    const scale = pageWidthPx / width;
+    width *= scale;
+    height *= scale;
+  }
+
+  const altText =
+    node.alt || node.title
+      ? {
+          name: "",
+          description: node.alt ?? undefined,
+          title: node.title ?? undefined,
+        }
+      : undefined;
+
+  if (image.type === "svg") {
+    const { type, data, fallback } = image;
+    return new ImageRun({
+      type: type,
+      data: data,
+      transformation: {
+        width,
+        height,
+      },
+      // https://github.com/dolanmiu/docx/issues/1162#issuecomment-3228368003
+      fallback: { type: "png", data: fallback },
+      altText,
+    });
+  }
+
+  const { type, data } = image;
+  return new ImageRun({
+    type: type,
+    data: data,
+    transformation: {
+      width,
+      height,
+    },
+    altText,
+  });
 };
 
 const buildImageReference: NodeBuilder<"imageReference"> = (node, ctx) => {
@@ -795,11 +787,10 @@ const buildImageReference: NodeBuilder<"imageReference"> = (node, ctx) => {
   if (def == null) {
     return null;
   }
-  const data = ctx.images.get(def.url);
-  if (!data) {
-    return null;
-  }
-  return docxImage(data, { alt: node.alt, title: def.title }, ctx);
+  return buildImage(
+    { type: "image", url: def.url, alt: node.alt, title: def.title },
+    ctx,
+  );
 };
 
 const buildFootnoteDefinition: NodeBuilder<"footnoteDefinition"> = (
