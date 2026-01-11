@@ -48,7 +48,7 @@ describe("e2e", () => {
       .use(docx, options);
   };
 
-  async function* readDocx(buffer: ArrayBuffer) {
+  async function* readDocx(buffer: Uint8Array | string) {
     const z = new Zip(Buffer.from(buffer));
     for (const e of z.getEntries()) {
       if (e.entryName.match(/word\/.*\.xml$/)) {
@@ -64,7 +64,7 @@ describe("e2e", () => {
   it("article", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "article.md"));
     const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -72,7 +72,7 @@ describe("e2e", () => {
   it("article rtl", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "article.md"));
     const doc = await processor({ direction: "rtl" }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -80,7 +80,7 @@ describe("e2e", () => {
   it("break", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "break.md"));
     const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -88,7 +88,7 @@ describe("e2e", () => {
   it("footnotes", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "footnotes.md"));
     const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -96,7 +96,7 @@ describe("e2e", () => {
   it("heading", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "heading.md"));
     const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -104,7 +104,7 @@ describe("e2e", () => {
   it("paragraph", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "paragraph.md"));
     const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -114,7 +114,7 @@ describe("e2e", () => {
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -124,7 +124,7 @@ describe("e2e", () => {
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -134,7 +134,7 @@ describe("e2e", () => {
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -142,7 +142,7 @@ describe("e2e", () => {
   it("list bullet", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "list-bullet.md"));
     const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -150,7 +150,7 @@ describe("e2e", () => {
   it("list ordered", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "list-ordered.md"));
     const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -158,7 +158,7 @@ describe("e2e", () => {
   it("list task", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "list-task.md"));
     const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -168,7 +168,7 @@ describe("e2e", () => {
     const doc = await processor({
       plugins: [shikiPlugin({ theme: "dark-plus" })],
     }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -176,7 +176,7 @@ describe("e2e", () => {
   it("frontmatter", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "frontmatter.md"));
     const doc = await processor().process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -184,7 +184,7 @@ describe("e2e", () => {
   it("math", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "math.md"));
     const doc = await processor({ plugins: [latexPlugin()] }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -192,7 +192,7 @@ describe("e2e", () => {
   it("latex", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "latex.md"));
     const doc = await processor({ plugins: [latexPlugin()] }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
@@ -200,7 +200,7 @@ describe("e2e", () => {
   it("tag", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "tag.md"));
     const doc = await processor({ plugins: [htmlPlugin()] }).process(md);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });
