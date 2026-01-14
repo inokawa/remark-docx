@@ -33,7 +33,7 @@ const dummyImage = async (url: string): Promise<ArrayBuffer> => {
     return loaded.get(url)!;
   }
 
-  const img = await readFile(path.join(fixturesDir, "img.png"));
+  const img = await readFile(path.join(fixturesDir, "images/img.png"));
 
   return img.buffer;
 };
@@ -134,6 +134,24 @@ describe("e2e", () => {
     const doc = await processor({
       plugins: [imagePlugin({ load: dummyImage })],
     }).process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
+  it("svg", async () => {
+    const doc = await processor({
+      plugins: [
+        imagePlugin({
+          load: async () => {
+            const img = await fs.readFile(
+              path.join(fixturesDir, "images/tiger.svg"),
+            );
+            return img.buffer;
+          },
+        }),
+      ],
+    }).process(`svg ![tiger](image.svg) test`);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
     }
