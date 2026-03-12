@@ -119,12 +119,12 @@ const composeBuilders = (
       acc[k as Key] = (
         prev
           ? (n, c) => {
-              const r = cur(n as any, c);
-              if (r) {
-                return r;
-              }
-              return prev(n as any, c);
+            const r = cur(n as any, c);
+            if (r) {
+              return r;
             }
+            return prev(n as any, c);
+          }
           : cur
       ) as NodeBuilder<any>;
     }
@@ -529,6 +529,7 @@ const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
   return docxParagraph(
     {
       heading: HeadingLevel[level],
+      outlineLevel: depth - 1,
       children: ctx.render(children),
     },
     ctx,
@@ -749,10 +750,10 @@ const buildImage: NodeBuilder<"image"> = (node, ctx) => {
   const altText =
     node.alt || node.title
       ? {
-          name: "",
-          description: node.alt ?? undefined,
-          title: node.title ?? undefined,
-        }
+        name: "",
+        description: node.alt ?? undefined,
+        title: node.title ?? undefined,
+      }
       : undefined;
 
   if (image.type === "svg") {
