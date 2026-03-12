@@ -36,22 +36,26 @@ exports[`e2e > article 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >heading 1</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading1"
-        /></w:pPr><w:r><w:t xml:space="preserve">heading 2</w:t></w:r></w:p><w:p
-    ><w:pPr><w:pStyle w:val="Heading2" /></w:pPr><w:r><w:t
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t xml:space="preserve">heading 1</w:t></w:r></w:p><w:p
+    ><w:pPr><w:pStyle w:val="Heading1" /><w:outlineLvl w:val="1" /></w:pPr><w:r
+      ><w:t xml:space="preserve">heading 2</w:t></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="Heading2" /><w:outlineLvl w:val="2" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >heading 3</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading3"
-        /></w:pPr><w:r><w:t xml:space="preserve">heading 4</w:t></w:r></w:p><w:p
-    ><w:pPr><w:pStyle w:val="Heading4" /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="3" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >heading 4</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading4"
+        /><w:outlineLvl w:val="4" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >heading 5</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading5"
-        /></w:pPr><w:r><w:t xml:space="preserve">heading 6</w:t></w:r></w:p><w:p
-    ><w:r><w:t
+        /><w:outlineLvl w:val="5" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >heading 6</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</w:t></w:r></w:p><w:p
     ><w:r><w:t xml:space="preserve">aaaaaaaa</w:t></w:r><w:r><w:rPr><w:b
@@ -813,31 +817,31 @@ exports[`e2e > article rtl 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:bidi /></w:pPr><w:r><w:rPr
-        ><w:rtl /></w:rPr><w:t
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:bidi /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >heading 1</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /><w:bidi /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
-          xml:space="preserve"
-        >heading 2</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading2"
-        /><w:bidi /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:bidi /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:rPr><w:rtl
+          /></w:rPr><w:t xml:space="preserve">heading 2</w:t></w:r></w:p><w:p
+    ><w:pPr><w:pStyle w:val="Heading2" /><w:bidi /><w:outlineLvl
+          w:val="2"
+        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >heading 3</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading3"
-        /><w:bidi /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
-          xml:space="preserve"
-        >heading 4</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading4"
-        /><w:bidi /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:bidi /><w:outlineLvl w:val="3" /></w:pPr><w:r><w:rPr><w:rtl
+          /></w:rPr><w:t xml:space="preserve">heading 4</w:t></w:r></w:p><w:p
+    ><w:pPr><w:pStyle w:val="Heading4" /><w:bidi /><w:outlineLvl
+          w:val="4"
+        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >heading 5</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading5"
-        /><w:bidi /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
-          xml:space="preserve"
-        >heading 6</w:t></w:r></w:p><w:p><w:pPr><w:bidi /></w:pPr><w:r><w:rPr
-        ><w:rtl /></w:rPr><w:t
+        /><w:bidi /><w:outlineLvl w:val="5" /></w:pPr><w:r><w:rPr><w:rtl
+          /></w:rPr><w:t xml:space="preserve">heading 6</w:t></w:r></w:p><w:p
+    ><w:pPr><w:bidi /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</w:t></w:r></w:p><w:p
     ><w:pPr><w:bidi /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
@@ -4145,23 +4149,16 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           xml:space="preserve"
         >a*aa*aa_aa_a~~aa~~a</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Title"
-        /></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
-          xml:space="preserve"
-        >heading</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="0" /><w:numId
-            w:val="2"
-          /></w:numPr></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
-          xml:space="preserve"
-        >list</w:t></w:r></w:p><w:p><w:pPr><w:ind
-          w:left="800"
-          w:hanging="400"
-        /></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
-          xml:space="preserve"
-        >quote</w:t></w:r></w:p><w:p><w:hyperlink
-        w:history="1"
-        r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
-      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /></w:rPr><w:t
+        /><w:outlineLvl w:val="0" /></w:pPr><w:r><w:rPr><w:b /><w:bCs
+          /></w:rPr><w:t xml:space="preserve">heading</w:t></w:r></w:p><w:p
+    ><w:pPr><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl
+            w:val="0"
+          /><w:numId w:val="2" /></w:numPr></w:pPr><w:r><w:rPr><w:b /><w:bCs
+          /></w:rPr><w:t xml:space="preserve">list</w:t></w:r></w:p><w:p><w:pPr
+      ><w:ind w:left="800" w:hanging="400" /></w:pPr><w:r><w:rPr><w:b /><w:bCs
+          /></w:rPr><w:t xml:space="preserve">quote</w:t></w:r></w:p><w:p
+    ><w:hyperlink w:history="1" r:id="rIdmmmmmmmmmmmmmmmmmmmmm"><w:r><w:rPr
+          ><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /></w:rPr><w:t
             xml:space="preserve"
           >link to GitHub.com</w:t></w:r></w:hyperlink></w:p><w:p><w:hyperlink
         w:history="1"
@@ -4635,20 +4632,18 @@ exports[`e2e > footnotes 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t xml:space="preserve">Footnotes</w:t></w:r></w:p><w:p
+    ><w:r><w:t xml:space="preserve">This is footnote</w:t></w:r><w:r><w:rPr
+        ><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
+          w:id="1"
+        /></w:r><w:r><w:t xml:space="preserve">.</w:t></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="Heading1" /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
-        >Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >This is footnote</w:t></w:r><w:r><w:rPr><w:rStyle
+        >Footnotes</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
-          /></w:rPr><w:footnoteReference w:id="1" /></w:r><w:r><w:t
-          xml:space="preserve"
-        >.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading1"
-        /></w:pPr><w:r><w:t xml:space="preserve">Footnotes</w:t></w:r><w:r
-      ><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
-          w:id="2"
-        /></w:r></w:p><w:p><w:r><w:t
+          /></w:rPr><w:footnoteReference w:id="2" /></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >Here is footnotes</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
@@ -4660,7 +4655,7 @@ exports[`e2e > footnotes 1`] = `
           xml:space="preserve"
         >.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading2"
-        /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="2" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Footnotes in Lists</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
@@ -4685,7 +4680,7 @@ exports[`e2e > footnotes 1`] = `
         >Ordered list</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
           /></w:rPr><w:footnoteReference w:id="8" /></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="Heading2" /></w:pPr><w:r><w:t
+      ><w:pStyle w:val="Heading2" /><w:outlineLvl w:val="2" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Footnotes in Blockquotes</w:t></w:r></w:p><w:p><w:pPr><w:ind
           w:left="800"
@@ -4694,7 +4689,7 @@ exports[`e2e > footnotes 1`] = `
       ><w:rPr><w:rStyle w:val="FootnoteReference" /></w:rPr><w:footnoteReference
           w:id="9"
         /></w:r><w:r><w:t xml:space="preserve">.</w:t></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="Heading2" /></w:pPr><w:r><w:t
+      ><w:pStyle w:val="Heading2" /><w:outlineLvl w:val="2" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Footnotes in Links</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -4707,7 +4702,7 @@ exports[`e2e > footnotes 1`] = `
               w:val="FootnoteReference"
             /></w:rPr><w:footnoteReference w:id="10" /></w:r></w:hyperlink><w:r
       ><w:t xml:space="preserve"> in the text.</w:t></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="Heading2" /></w:pPr><w:r><w:t
+      ><w:pStyle w:val="Heading2" /><w:outlineLvl w:val="2" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Complex Nested Footnotes</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -5265,14 +5260,18 @@ exports[`e2e > frontmatter 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Other markdown</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >blablabla</w:t></w:r></w:p><w:p><w:r><w:t xml:space="preserve">+++
 title = &quot;This is toml&quot;
 date = &quot;2020-04-30 22:34&quot;
-+++</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
++++</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="Title" /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Other markdown</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -5700,35 +5699,53 @@ exports[`e2e > heading 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Alpha</w:t></w:r></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >aaaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t xml:space="preserve">Alpha</w:t></w:r></w:p><w:p
+    ><w:r><w:t xml:space="preserve">aaaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /></w:pPr><w:r><w:t xml:space="preserve">Bravo</w:t></w:r></w:p><w:p
-    ><w:r><w:t xml:space="preserve">bbbb</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+        /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Bravo</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >bbbb</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading2"
-        /></w:pPr><w:r><w:t xml:space="preserve">Charlie</w:t></w:r></w:p><w:p
-    ><w:r><w:t xml:space="preserve">cccc</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+        /><w:outlineLvl w:val="2" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Charlie</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >cccc</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /></w:pPr><w:r><w:t xml:space="preserve">Delta</w:t></w:r></w:p><w:p
-    ><w:r><w:t xml:space="preserve">dddd</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+        /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Delta</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >dddd</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading2"
-        /></w:pPr><w:r><w:t xml:space="preserve">E</w:t></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="Heading3" /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="2" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >E</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading3"
+        /><w:outlineLvl w:val="3" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >F</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading4"
-        /></w:pPr><w:r><w:t xml:space="preserve">G</w:t></w:r></w:p><w:p><w:pPr
-      ><w:pStyle w:val="Heading5" /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="4" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >G</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading5"
+        /><w:outlineLvl w:val="5" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >H</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="Title" /><w:numPr
-        ><w:ilvl w:val="0" /><w:numId w:val="2" /></w:numPr></w:pPr><w:r><w:t
+        ><w:ilvl w:val="0" /><w:numId w:val="2" /></w:numPr><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t
           xml:space="preserve"
         >listed heading</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Title"
-        /><w:ind w:left="800" w:hanging="400" /></w:pPr><w:r><w:t
+        /><w:ind w:left="800" w:hanging="400" /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t
           xml:space="preserve"
         >quoted heading</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
@@ -7346,15 +7363,14 @@ exports[`e2e > link 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Header</w:t></w:r></w:p><w:p><w:hyperlink
-        w:history="1"
-        r:id="rIdmmmmmmmmmmmmmmmmmmmmm"
-      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /></w:rPr><w:t
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t xml:space="preserve">Header</w:t></w:r></w:p><w:p
+    ><w:hyperlink w:history="1" r:id="rIdmmmmmmmmmmmmmmmmmmmmm"><w:r><w:rPr
+          ><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /></w:rPr><w:t
             xml:space="preserve"
           >link to GitHub.com</w:t></w:r></w:hyperlink></w:p><w:p><w:pPr
-      ><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
+      ><w:pStyle w:val="Heading1" /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Sub Header</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -7795,13 +7811,15 @@ exports[`e2e > list bullet 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Bullet Lists</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >This is a test for bullet list.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >First List</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -7825,7 +7843,7 @@ exports[`e2e > list bullet 1`] = `
           xml:space="preserve"
         >Cherry</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second List</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
@@ -7847,7 +7865,7 @@ exports[`e2e > list bullet 1`] = `
           xml:space="preserve"
         >Fox</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Nested Lists</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -8335,13 +8353,15 @@ exports[`e2e > list ordered 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Ordered Lists</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >This is a test for ordered list.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >First List</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -8365,7 +8385,7 @@ exports[`e2e > list ordered 1`] = `
           xml:space="preserve"
         >Cherry</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second List</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -8388,7 +8408,7 @@ exports[`e2e > list ordered 1`] = `
           xml:space="preserve"
         >Fox</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Nested Lists</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -9055,13 +9075,15 @@ exports[`e2e > list task 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:pPr><w:pStyle w:val="Title" /></w:pPr><w:r><w:t
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Task Lists</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >This is a test for task list.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >First List</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -9085,7 +9107,7 @@ exports[`e2e > list task 1`] = `
           xml:space="preserve"
         >Cherry</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second List</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
@@ -9107,7 +9129,7 @@ exports[`e2e > list task 1`] = `
           xml:space="preserve"
         >Fox</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading1"
-        /></w:pPr><w:r><w:t
+        /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Nested Lists</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
