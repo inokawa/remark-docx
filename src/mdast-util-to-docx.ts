@@ -23,6 +23,8 @@ import {
   type IStylesOptions,
   type ITableOptions,
   ImageRun,
+  Header,
+  Footer,
   type FileChild,
 } from "docx";
 import type * as mdast from "mdast";
@@ -243,6 +245,26 @@ export interface DocxOptions extends Pick<
    * Plugins to customize how mdast nodes are compiled.
    */
   plugins?: RemarkDocxPlugin[];
+  /**
+   * Headers for each page. Supports different headers for default, first, and even pages.
+   * Uses docx.js Header class directly.
+   * @see https://docx.js.org/#/usage/headers-and-footers
+   */
+  headers?: {
+    default?: Header;
+    first?: Header;
+    even?: Header;
+  };
+  /**
+   * Footers for each page. Supports different footers for default, first, and even pages.
+   * Uses docx.js Footer class directly.
+   * @see https://docx.js.org/#/usage/headers-and-footers
+   */
+  footers?: {
+    default?: Footer;
+    first?: Footer;
+    even?: Footer;
+  };
 }
 
 export const mdastToDocx = async (
@@ -264,6 +286,8 @@ export const mdastToDocx = async (
     background,
     thematicBreak = "page",
     orderedListFormat,
+    headers,
+    footers,
   }: DocxOptions = {},
 ): Promise<ArrayBuffer> => {
   const definition = definitions(node);
@@ -438,6 +462,8 @@ export const mdastToDocx = async (
     sections: sections
       .filter((s) => s.length)
       .map((s) => ({
+        headers,
+        footers,
         properties: sectionProperties,
         children: s as FileChild[],
       })),
