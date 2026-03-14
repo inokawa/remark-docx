@@ -6933,7 +6933,9 @@ exports[`e2e > header and footer 4`] = `
   xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
   xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:p><w:r><w:t xml:space="preserve">Default Header</w:t></w:r></w:p></w:hdr>
+><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
+        xml:space="preserve"
+      >Default Header</w:t></w:r></w:p></w:hdr>
 "
 `;
 
@@ -6967,7 +6969,9 @@ exports[`e2e > header and footer 5`] = `
   xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
   xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:p><w:r><w:t xml:space="preserve">First Page Header</w:t></w:r></w:p></w:hdr>
+><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
+        xml:space="preserve"
+      >First Page Header</w:t></w:r></w:p></w:hdr>
 "
 `;
 
@@ -6990,7 +6994,9 @@ exports[`e2e > header and footer 6`] = `
   xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
   xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
   xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-><w:p><w:r><w:t xml:space="preserve">Page Footer</w:t></w:r></w:p></w:ftr>
+><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
+        xml:space="preserve"
+      >Page Footer</w:t></w:r></w:p></w:ftr>
 "
 `;
 

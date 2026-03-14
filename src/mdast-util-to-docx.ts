@@ -246,26 +246,66 @@ export interface DocxOptions extends Pick<
    */
   plugins?: RemarkDocxPlugin[];
   /**
-   * Headers for each page. Supports different headers for default, first, and even pages.
-   * Uses docx.js Header class directly.
+   * Headers for each page.
+   * Pass a string for a simple centered header on all pages,
+   * or an object with `default`, `first`, and/or `even` keys for per-variant headers.
    * @see https://docx.js.org/#/usage/headers-and-footers
    */
-  headers?: {
-    default?: Header;
-    first?: Header;
-    even?: Header;
-  };
+  headers?:
+    | string
+    | {
+        default?: string;
+        first?: string;
+        even?: string;
+      };
   /**
-   * Footers for each page. Supports different footers for default, first, and even pages.
-   * Uses docx.js Footer class directly.
+   * Footers for each page.
+   * Pass a string for a simple centered footer on all pages,
+   * or an object with `default`, `first`, and/or `even` keys for per-variant footers.
    * @see https://docx.js.org/#/usage/headers-and-footers
    */
-  footers?: {
-    default?: Footer;
-    first?: Footer;
-    even?: Footer;
-  };
+  footers?:
+    | string
+    | {
+        default?: string;
+        first?: string;
+        even?: string;
+      };
 }
+
+type HeaderFooterInput =
+  | string
+  | {
+      default?: string;
+      first?: string;
+      even?: string;
+    };
+
+const buildHeaderFooter = <T extends Header | Footer>(
+  input: HeaderFooterInput | undefined,
+  Ctor: new (opts: { children: Paragraph[] }) => T,
+): Record<string, T> | undefined => {
+  if (input == null) return undefined;
+
+  const entries: Record<string, string> =
+    typeof input === "string" ? { default: input } : input;
+
+  const result: Record<string, T> = {};
+  for (const [key, text] of Object.entries(entries)) {
+    if (text != null) {
+      result[key] = new Ctor({
+        children: [
+          new Paragraph({
+            children: [new TextRun(text)],
+            alignment: AlignmentType.CENTER,
+          }),
+        ],
+      });
+    }
+  }
+
+  return Object.keys(result).length > 0 ? result : undefined;
+};
 
 export const mdastToDocx = async (
   node: mdast.Root,
@@ -462,8 +502,8 @@ export const mdastToDocx = async (
     sections: sections
       .filter((s) => s.length)
       .map((s) => ({
-        headers,
-        footers,
+        headers: buildHeaderFooter(headers, Header),
+        footers: buildHeaderFooter(footers, Footer),
         properties: sectionProperties,
         children: s as FileChild[],
       })),

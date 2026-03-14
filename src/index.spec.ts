@@ -8,7 +8,6 @@ import frontmatter from "remark-frontmatter";
 import math from "remark-math";
 import Zip from "adm-zip";
 import prettier from "prettier";
-import { Header, Footer, Paragraph, TextRun, AlignmentType } from "docx";
 import docx, { type DocxOptions } from ".";
 import { latexPlugin } from "./plugins/latex";
 import { imagePlugin } from "./plugins/image";
@@ -227,16 +226,7 @@ describe("e2e", () => {
   it("header", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "header-footer.md"));
     const doc = await processor({
-      headers: {
-        default: new Header({
-          children: [
-            new Paragraph({
-              children: [new TextRun("Default Header")],
-              alignment: AlignmentType.CENTER,
-            }),
-          ],
-        }),
-      },
+      headers: "Default Header",
     }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -246,16 +236,7 @@ describe("e2e", () => {
   it("footer", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "header-footer.md"));
     const doc = await processor({
-      footers: {
-        default: new Footer({
-          children: [
-            new Paragraph({
-              children: [new TextRun("Default Footer")],
-              alignment: AlignmentType.CENTER,
-            }),
-          ],
-        }),
-      },
+      footers: "Default Footer",
     }).process(md);
     for await (const xml of readDocx(await doc.result)) {
       expect(xml).toMatchSnapshot();
@@ -266,29 +247,11 @@ describe("e2e", () => {
     const md = await fs.readFile(path.join(fixturesDir, "header-footer.md"));
     const doc = await processor({
       headers: {
-        default: new Header({
-          children: [
-            new Paragraph({
-              children: [new TextRun("Default Header")],
-            }),
-          ],
-        }),
-        first: new Header({
-          children: [
-            new Paragraph({
-              children: [new TextRun("First Page Header")],
-            }),
-          ],
-        }),
+        default: "Default Header",
+        first: "First Page Header",
       },
       footers: {
-        default: new Footer({
-          children: [
-            new Paragraph({
-              children: [new TextRun("Page Footer")],
-            }),
-          ],
-        }),
+        default: "Page Footer",
       },
     }).process(md);
     for await (const xml of readDocx(await doc.result)) {
