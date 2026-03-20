@@ -1,0 +1,1 @@
+import{n as e}from"./chunk-vNrZSFDR.js";import{et as t,tt as n}from"./src-BkJa-o8q.js";var r,i=e((()=>{n(),r=t(({flowchart:e})=>{let t=e?.subGraphTitleMargin?.top??0,n=e?.subGraphTitleMargin?.bottom??0;return{subGraphTitleTopMargin:t,subGraphTitleBottomMargin:n,subGraphTitleTotalMargin:t+n}},`getSubGraphTitleMargins`)}));export{i as n,r as t};
