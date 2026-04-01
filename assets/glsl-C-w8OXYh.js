@@ -1,1 +1,0 @@
-import{n as e,t}from"./glsl-BZlc2y3w.js";e();export{t as default};
