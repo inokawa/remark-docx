@@ -6,7 +6,7 @@
 
 > **shikiPlugin**(`__namedParameters`): [`RemarkDocxPlugin`](../../../index/type-aliases/RemarkDocxPlugin.md)
 
-Defined in: [src/plugins/shiki/index.ts:40](https://github.com/inokawa/remark-docx/blob/b937c08ac4cbc850df98aebcd10a83f7274f9c72/src/plugins/shiki/index.ts#L40)
+Defined in: [src/plugins/shiki/index.ts:40](https://github.com/inokawa/remark-docx/blob/82015585db17f0921fa08ccb6e9e326278fa3244/src/plugins/shiki/index.ts#L40)
 
 A plugin to render "code" nodes, with syntax highlighting powered by shiki.
 

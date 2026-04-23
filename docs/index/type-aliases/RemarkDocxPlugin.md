@@ -2,11 +2,11 @@
 
 ***
 
-# Type Alias: RemarkDocxPlugin()
+# Type Alias: RemarkDocxPlugin
 
 > **RemarkDocxPlugin** = (`ctx`) => `Promise`\<`NodeBuilders`\>
 
-Defined in: [src/types.ts:93](https://github.com/inokawa/remark-docx/blob/b937c08ac4cbc850df98aebcd10a83f7274f9c72/src/types.ts#L93)
+Defined in: [src/types.ts:93](https://github.com/inokawa/remark-docx/blob/82015585db17f0921fa08ccb6e9e326278fa3244/src/types.ts#L93)
 
 ## Parameters
 
