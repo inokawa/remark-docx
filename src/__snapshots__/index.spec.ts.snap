@@ -443,6 +443,27 @@ exports[`e2e > article 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -656,7 +677,7 @@ exports[`e2e > article 3`] = `
 `;
 
 exports[`e2e > article 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -697,6 +718,47 @@ exports[`e2e > article 4`] = `
 `;
 
 exports[`e2e > article 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > article 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -719,13 +781,13 @@ exports[`e2e > article 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > article 6`] = `
+exports[`e2e > article 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -763,7 +825,7 @@ exports[`e2e > article 6`] = `
 "
 `;
 
-exports[`e2e > article 7`] = `
+exports[`e2e > article 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -1221,6 +1283,27 @@ exports[`e2e > article rtl 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -1434,7 +1517,7 @@ exports[`e2e > article rtl 3`] = `
 `;
 
 exports[`e2e > article rtl 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -1475,6 +1558,47 @@ exports[`e2e > article rtl 4`] = `
 `;
 
 exports[`e2e > article rtl 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > article rtl 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -1497,13 +1621,13 @@ exports[`e2e > article rtl 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > article rtl 6`] = `
+exports[`e2e > article rtl 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -1541,7 +1665,7 @@ exports[`e2e > article rtl 6`] = `
 "
 `;
 
-exports[`e2e > article rtl 7`] = `
+exports[`e2e > article rtl 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -1716,6 +1840,27 @@ exports[`e2e > break 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -1871,7 +2016,7 @@ exports[`e2e > break 3`] = `
 `;
 
 exports[`e2e > break 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -1912,6 +2057,47 @@ exports[`e2e > break 4`] = `
 `;
 
 exports[`e2e > break 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > break 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -1934,13 +2120,13 @@ exports[`e2e > break 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > break 6`] = `
+exports[`e2e > break 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -1978,7 +2164,7 @@ exports[`e2e > break 6`] = `
 "
 `;
 
-exports[`e2e > break 7`] = `
+exports[`e2e > break 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -3791,6 +3977,27 @@ exports[`e2e > code 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -3946,7 +4153,7 @@ exports[`e2e > code 3`] = `
 `;
 
 exports[`e2e > code 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -3987,6 +4194,47 @@ exports[`e2e > code 4`] = `
 `;
 
 exports[`e2e > code 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > code 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -4009,13 +4257,13 @@ exports[`e2e > code 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > code 6`] = `
+exports[`e2e > code 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -4053,7 +4301,7 @@ exports[`e2e > code 6`] = `
 "
 `;
 
-exports[`e2e > code 7`] = `
+exports[`e2e > code 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -4198,7 +4446,7 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
                         noChangeAspect="1"
                         noChangeArrowheads="1"
                       /></pic:cNvPicPr></pic:nvPicPr><pic:blipFill><a:blip
-                      r:embed="rId6"
+                      r:embed="rId7"
                       cstate="none"
                     /><a:srcRect /><a:stretch><a:fillRect
                       /></a:stretch></pic:blipFill><pic:spPr
@@ -4310,6 +4558,27 @@ exports[`e2e > decoration 2`] = `
   ><w:name w:val="Footnote Text Char" /><w:basedOn
       w:val="DefaultParagraphFont"
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
       /></w:rPr></w:style></w:styles>
@@ -4471,7 +4740,7 @@ exports[`e2e > decoration 3`] = `
 `;
 
 exports[`e2e > decoration 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -4512,6 +4781,47 @@ exports[`e2e > decoration 4`] = `
 `;
 
 exports[`e2e > decoration 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > decoration 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -4534,13 +4844,13 @@ exports[`e2e > decoration 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > decoration 6`] = `
+exports[`e2e > decoration 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -4578,7 +4888,7 @@ exports[`e2e > decoration 6`] = `
 "
 `;
 
-exports[`e2e > decoration 7`] = `
+exports[`e2e > decoration 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -4826,6 +5136,27 @@ exports[`e2e > footnotes 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -5031,7 +5362,7 @@ exports[`e2e > footnotes 3`] = `
 `;
 
 exports[`e2e > footnotes 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -5140,6 +5471,47 @@ exports[`e2e > footnotes 4`] = `
 `;
 
 exports[`e2e > footnotes 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > footnotes 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -5162,13 +5534,13 @@ exports[`e2e > footnotes 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > footnotes 6`] = `
+exports[`e2e > footnotes 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -5206,7 +5578,7 @@ exports[`e2e > footnotes 6`] = `
 "
 `;
 
-exports[`e2e > footnotes 7`] = `
+exports[`e2e > footnotes 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -5383,6 +5755,27 @@ exports[`e2e > frontmatter 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -5538,7 +5931,7 @@ exports[`e2e > frontmatter 3`] = `
 `;
 
 exports[`e2e > frontmatter 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -5579,6 +5972,47 @@ exports[`e2e > frontmatter 4`] = `
 `;
 
 exports[`e2e > frontmatter 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > frontmatter 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -5601,13 +6035,13 @@ exports[`e2e > frontmatter 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > frontmatter 6`] = `
+exports[`e2e > frontmatter 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -5645,7 +6079,7 @@ exports[`e2e > frontmatter 6`] = `
 "
 `;
 
-exports[`e2e > frontmatter 7`] = `
+exports[`e2e > frontmatter 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -5855,6 +6289,27 @@ exports[`e2e > heading 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -6014,7 +6469,7 @@ exports[`e2e > heading 3`] = `
 `;
 
 exports[`e2e > heading 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -6055,6 +6510,47 @@ exports[`e2e > heading 4`] = `
 `;
 
 exports[`e2e > heading 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > heading 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -6077,13 +6573,13 @@ exports[`e2e > heading 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > heading 6`] = `
+exports[`e2e > heading 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -6121,7 +6617,7 @@ exports[`e2e > heading 6`] = `
 "
 `;
 
-exports[`e2e > heading 7`] = `
+exports[`e2e > heading 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -6204,7 +6700,7 @@ exports[`e2e > image 1`] = `
                         noChangeAspect="1"
                         noChangeArrowheads="1"
                       /></pic:cNvPicPr></pic:nvPicPr><pic:blipFill><a:blip
-                      r:embed="rId6"
+                      r:embed="rId7"
                       cstate="none"
                     /><a:srcRect /><a:stretch><a:fillRect
                       /></a:stretch></pic:blipFill><pic:spPr
@@ -6237,7 +6733,7 @@ exports[`e2e > image 1`] = `
                         noChangeAspect="1"
                         noChangeArrowheads="1"
                       /></pic:cNvPicPr></pic:nvPicPr><pic:blipFill><a:blip
-                      r:embed="rId6"
+                      r:embed="rId7"
                       cstate="none"
                     /><a:srcRect /><a:stretch><a:fillRect
                       /></a:stretch></pic:blipFill><pic:spPr
@@ -6353,6 +6849,27 @@ exports[`e2e > image 2`] = `
   ><w:name w:val="Footnote Text Char" /><w:basedOn
       w:val="DefaultParagraphFont"
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
       /></w:rPr></w:style></w:styles>
@@ -6510,7 +7027,7 @@ exports[`e2e > image 3`] = `
 `;
 
 exports[`e2e > image 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -6551,6 +7068,47 @@ exports[`e2e > image 4`] = `
 `;
 
 exports[`e2e > image 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > image 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -6573,13 +7131,13 @@ exports[`e2e > image 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > image 6`] = `
+exports[`e2e > image 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -6617,7 +7175,7 @@ exports[`e2e > image 6`] = `
 "
 `;
 
-exports[`e2e > image 7`] = `
+exports[`e2e > image 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7047,6 +7605,27 @@ exports[`e2e > latex 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -7202,7 +7781,7 @@ exports[`e2e > latex 3`] = `
 `;
 
 exports[`e2e > latex 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7243,6 +7822,47 @@ exports[`e2e > latex 4`] = `
 `;
 
 exports[`e2e > latex 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > latex 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -7265,13 +7885,13 @@ exports[`e2e > latex 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > latex 6`] = `
+exports[`e2e > latex 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -7309,7 +7929,7 @@ exports[`e2e > latex 6`] = `
 "
 `;
 
-exports[`e2e > latex 7`] = `
+exports[`e2e > latex 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7495,6 +8115,27 @@ exports[`e2e > link 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -7650,7 +8291,7 @@ exports[`e2e > link 3`] = `
 `;
 
 exports[`e2e > link 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7691,6 +8332,47 @@ exports[`e2e > link 4`] = `
 `;
 
 exports[`e2e > link 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > link 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -7713,13 +8395,13 @@ exports[`e2e > link 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > link 6`] = `
+exports[`e2e > link 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -7757,7 +8439,7 @@ exports[`e2e > link 6`] = `
 "
 `;
 
-exports[`e2e > link 7`] = `
+exports[`e2e > link 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -8033,6 +8715,27 @@ exports[`e2e > list bullet 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -8192,7 +8895,7 @@ exports[`e2e > list bullet 3`] = `
 `;
 
 exports[`e2e > list bullet 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -8233,6 +8936,47 @@ exports[`e2e > list bullet 4`] = `
 `;
 
 exports[`e2e > list bullet 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > list bullet 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -8255,13 +8999,13 @@ exports[`e2e > list bullet 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > list bullet 6`] = `
+exports[`e2e > list bullet 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -8299,7 +9043,7 @@ exports[`e2e > list bullet 6`] = `
 "
 `;
 
-exports[`e2e > list bullet 7`] = `
+exports[`e2e > list bullet 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -8573,6 +9317,27 @@ exports[`e2e > list ordered 2`] = `
   ><w:name w:val="Footnote Text Char" /><w:basedOn
       w:val="DefaultParagraphFont"
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
       /></w:rPr></w:style></w:styles>
@@ -8914,7 +9679,7 @@ exports[`e2e > list ordered 3`] = `
 `;
 
 exports[`e2e > list ordered 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -8955,6 +9720,47 @@ exports[`e2e > list ordered 4`] = `
 `;
 
 exports[`e2e > list ordered 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > list ordered 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -8977,13 +9783,13 @@ exports[`e2e > list ordered 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > list ordered 6`] = `
+exports[`e2e > list ordered 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -9021,7 +9827,7 @@ exports[`e2e > list ordered 6`] = `
 "
 `;
 
-exports[`e2e > list ordered 7`] = `
+exports[`e2e > list ordered 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -9297,6 +10103,27 @@ exports[`e2e > list task 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -9460,7 +10287,7 @@ exports[`e2e > list task 3`] = `
 `;
 
 exports[`e2e > list task 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -9501,6 +10328,47 @@ exports[`e2e > list task 4`] = `
 `;
 
 exports[`e2e > list task 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > list task 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -9523,13 +10391,13 @@ exports[`e2e > list task 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > list task 6`] = `
+exports[`e2e > list task 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -9567,7 +10435,7 @@ exports[`e2e > list task 6`] = `
 "
 `;
 
-exports[`e2e > list task 7`] = `
+exports[`e2e > list task 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -9772,6 +10640,27 @@ exports[`e2e > math 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -9927,7 +10816,7 @@ exports[`e2e > math 3`] = `
 `;
 
 exports[`e2e > math 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -9968,6 +10857,47 @@ exports[`e2e > math 4`] = `
 `;
 
 exports[`e2e > math 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > math 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -9990,13 +10920,13 @@ exports[`e2e > math 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > math 6`] = `
+exports[`e2e > math 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -10034,7 +10964,7 @@ exports[`e2e > math 6`] = `
 "
 `;
 
-exports[`e2e > math 7`] = `
+exports[`e2e > math 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -10199,6 +11129,27 @@ exports[`e2e > paragraph 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -10354,7 +11305,7 @@ exports[`e2e > paragraph 3`] = `
 `;
 
 exports[`e2e > paragraph 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -10395,6 +11346,47 @@ exports[`e2e > paragraph 4`] = `
 `;
 
 exports[`e2e > paragraph 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > paragraph 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -10417,13 +11409,13 @@ exports[`e2e > paragraph 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > paragraph 6`] = `
+exports[`e2e > paragraph 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -10461,7 +11453,7 @@ exports[`e2e > paragraph 6`] = `
 "
 `;
 
-exports[`e2e > paragraph 7`] = `
+exports[`e2e > paragraph 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -10625,6 +11617,27 @@ exports[`e2e > svg 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -10780,7 +11793,7 @@ exports[`e2e > svg 3`] = `
 `;
 
 exports[`e2e > svg 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -10821,6 +11834,47 @@ exports[`e2e > svg 4`] = `
 `;
 
 exports[`e2e > svg 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > svg 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -10843,13 +11897,13 @@ exports[`e2e > svg 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > svg 6`] = `
+exports[`e2e > svg 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -10887,7 +11941,7 @@ exports[`e2e > svg 6`] = `
 "
 `;
 
-exports[`e2e > svg 7`] = `
+exports[`e2e > svg 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -11099,6 +12153,27 @@ exports[`e2e > tag 2`] = `
     /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
     /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
         w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
       /></w:rPr></w:style></w:styles>
 "
 `;
@@ -11254,7 +12329,7 @@ exports[`e2e > tag 3`] = `
 `;
 
 exports[`e2e > tag 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:footnotes
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -11295,6 +12370,47 @@ exports[`e2e > tag 4`] = `
 `;
 
 exports[`e2e > tag 5`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > tag 6`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:settings
   xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -11317,13 +12433,13 @@ exports[`e2e > tag 5`] = `
 ><w:displayBackgroundShape /><w:evenAndOddHeaders w:val="false" /><w:compat
   ><w:compatSetting
       w:val="15"
-      w:uri="http://schemas.microsoft.com/office/word"
       w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
     /></w:compat></w:settings>
 "
 `;
 
-exports[`e2e > tag 6`] = `
+exports[`e2e > tag 7`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:comments
   xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
@@ -11361,7 +12477,7 @@ exports[`e2e > tag 6`] = `
 "
 `;
 
-exports[`e2e > tag 7`] = `
+exports[`e2e > tag 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:fonts
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
