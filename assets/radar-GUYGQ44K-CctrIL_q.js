@@ -1,0 +1,1 @@
+import{n as e}from"./chunk-BneVvdWh.js";import{y as t}from"./chunk-NNHCCRGN-DDC-1kLY.js";import{n,r}from"./chunk-FHYWG6QK-alsTfiJt.js";e((()=>{r(),t()}))();export{n as createRadarServices};
