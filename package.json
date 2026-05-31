@@ -78,7 +78,7 @@
     "tslib": "^2.8.1",
     "typedoc": "^0.28.14",
     "typedoc-plugin-markdown": "^4.9.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.0",
     "unified": "^11.0.4",
     "vite": "^8.0.1",
     "vitest": "^4.1.0"
