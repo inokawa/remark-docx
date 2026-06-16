@@ -1,6 +1,6 @@
 import { globSync } from "node:fs";
 import pkg from "./package.json" with { type: "json" };
-import { basename, extname, relative } from "node:path";
+import { extname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";

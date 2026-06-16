@@ -6,7 +6,7 @@
 
 > **mermaidPlugin**(): [`RemarkDocxPlugin`](../../../index/type-aliases/RemarkDocxPlugin.md)
 
-Defined in: [src/plugins/mermaid/index.ts:24](https://github.com/inokawa/remark-docx/blob/0ad8da24eb16e8d1e3d8d357ede297b8e2551b74/src/plugins/mermaid/index.ts#L24)
+Defined in: [src/plugins/mermaid/index.ts:24](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/plugins/mermaid/index.ts#L24)
 
 A plugin to render Mermaid inside "code" nodes with "mermaid" language.
 
