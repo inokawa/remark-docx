@@ -287,7 +287,7 @@ export const mdastToDocx = async (
       tableRow: noop,
       tableCell: noop,
       html: fallbackText,
-      code: fallbackText,
+      code: fallbackCode,
       definition: noop,
       footnoteDefinition: buildFootnoteDefinition,
       text: buildText,
@@ -818,11 +818,24 @@ const fallbackText = (node: { type: string; value: string }, ctx: Context) => {
   warnOnce(
     `${node.type} node is not supported without plugins, falling back to text.`,
   );
-  const text = buildText({ type: "text", value: node.value }, ctx) as TextRun;
+  return buildText({ type: "text", value: node.value }, ctx);
+};
+
+const fallbackCode = (node: { type: string; value: string }, ctx: Context) => {
+  warnOnce(
+    `${node.type} node is not supported without plugins, falling back to text.`,
+  );
+  const children = node.value.split(/\r?\n/).map(
+    (line, index) =>
+      new TextRun({
+        text: line,
+        break: index === 0 ? undefined : 1,
+      }),
+  );
   return docxParagraph(
     {
-      children: [text],
+      children,
     },
-    ctx,
+    { ...ctx, rtl: false },
   );
 };
