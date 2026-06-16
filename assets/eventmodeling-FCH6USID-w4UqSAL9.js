@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{y as t}from"./chunk-NNHCCRGN-yYS-AIPO.js";import{O as n,k as r}from"./mermaid-parser.core-BY3AD9j8.js";e((()=>{r(),t()}))();export{n as createEventModelingServices};

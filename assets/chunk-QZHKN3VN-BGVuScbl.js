@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{Bt as t,Vt as n}from"./src-BbDJI_sc.js";var r,i=e((()=>{n(),r=class{constructor(e){this.init=e,this.records=this.init()}static{t(this,`ImperativeState`)}reset(){this.records=this.init()}}}));export{i as n,r as t};
