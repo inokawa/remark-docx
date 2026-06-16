@@ -313,29 +313,46 @@ quote</w:t></w:r></w:p><w:p><w:pPr><w:ind
                 xml:space="preserve"
               >aligned</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:r><w:br
           w:type="page"
-        /></w:r></w:p><w:p><w:r><w:br w:type="page" /></w:r></w:p><w:r><w:t
-        xml:space="preserve"
-      >function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/\\bno\\-highlight\\b/) != -1)
-      return process(block, true, 0x0F) +
-             \` class=&quot;\${cls}&quot;\`;
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i &lt; classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log(&apos;undefined&apos;);
-  }
-
-  return (
-    &lt;div&gt;
-      &lt;web-component&gt;{block}&lt;/web-component&gt;
-    &lt;/div&gt;
-  )
-}
-
-export  $initHighlight;</w:t></w:r><w:sectPr><w:pgSz
+        /></w:r></w:p><w:p><w:r><w:br w:type="page" /></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >function $initHighlight(block, cls) {</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >  try {</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >    if (cls.search(/\\bno\\-highlight\\b/) != -1)</w:t></w:r><w:r><w:br
+        /><w:t
+          xml:space="preserve"
+        >      return process(block, true, 0x0F) +</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >             \` class=&quot;\${cls}&quot;\`;</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >  } catch (e) {</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >    /* handle exception */</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >  }</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >  for (var i = 0 / 2; i &lt; classes.length; i++) {</w:t></w:r><w:r
+      ><w:br /><w:t
+          xml:space="preserve"
+        >    if (checkCondition(classes[i]) === undefined)</w:t></w:r><w:r><w:br
+        /><w:t
+          xml:space="preserve"
+        >      console.log(&apos;undefined&apos;);</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >  }</w:t></w:r><w:r><w:br /><w:t xml:space="preserve" /></w:r><w:r
+      ><w:br /><w:t xml:space="preserve">  return (</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >    &lt;div&gt;</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >      &lt;web-component&gt;{block}&lt;/web-component&gt;</w:t></w:r><w:r
+      ><w:br /><w:t xml:space="preserve">    &lt;/div&gt;</w:t></w:r><w:r><w:br
+        /><w:t xml:space="preserve">  )</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >}</w:t></w:r><w:r><w:br /><w:t xml:space="preserve" /></w:r><w:r><w:br
+        /><w:t
+          xml:space="preserve"
+        >export  $initHighlight;</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
         w:h="16838"
         w:orient="portrait"
@@ -1152,30 +1169,47 @@ quote</w:t></w:r></w:p><w:p><w:pPr><w:bidi /><w:ind
                 xml:space="preserve"
               >aligned</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:r><w:br
           w:type="page"
-        /></w:r></w:p><w:p><w:r><w:br w:type="page" /></w:r></w:p><w:r><w:rPr
-      ><w:rtl /></w:rPr><w:t
-        xml:space="preserve"
-      >function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/\\bno\\-highlight\\b/) != -1)
-      return process(block, true, 0x0F) +
-             \` class=&quot;\${cls}&quot;\`;
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i &lt; classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log(&apos;undefined&apos;);
-  }
-
-  return (
-    &lt;div&gt;
-      &lt;web-component&gt;{block}&lt;/web-component&gt;
-    &lt;/div&gt;
-  )
-}
-
-export  $initHighlight;</w:t></w:r><w:sectPr><w:pgSz
+        /></w:r></w:p><w:p><w:r><w:br w:type="page" /></w:r></w:p><w:p><w:pPr
+      ><w:bidi /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >function $initHighlight(block, cls) {</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >  try {</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >    if (cls.search(/\\bno\\-highlight\\b/) != -1)</w:t></w:r><w:r><w:br
+        /><w:t
+          xml:space="preserve"
+        >      return process(block, true, 0x0F) +</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >             \` class=&quot;\${cls}&quot;\`;</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >  } catch (e) {</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >    /* handle exception */</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >  }</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >  for (var i = 0 / 2; i &lt; classes.length; i++) {</w:t></w:r><w:r
+      ><w:br /><w:t
+          xml:space="preserve"
+        >    if (checkCondition(classes[i]) === undefined)</w:t></w:r><w:r><w:br
+        /><w:t
+          xml:space="preserve"
+        >      console.log(&apos;undefined&apos;);</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >  }</w:t></w:r><w:r><w:br /><w:t xml:space="preserve" /></w:r><w:r
+      ><w:br /><w:t xml:space="preserve">  return (</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >    &lt;div&gt;</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >      &lt;web-component&gt;{block}&lt;/web-component&gt;</w:t></w:r><w:r
+      ><w:br /><w:t xml:space="preserve">    &lt;/div&gt;</w:t></w:r><w:r><w:br
+        /><w:t xml:space="preserve">  )</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >}</w:t></w:r><w:r><w:br /><w:t xml:space="preserve" /></w:r><w:r><w:br
+        /><w:t
+          xml:space="preserve"
+        >export  $initHighlight;</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
         w:h="16838"
         w:orient="portrait"
@@ -3867,9 +3901,9 @@ exports[`e2e > code 1`] = `
             w:val="false"
           /><w:color w:val="6A9955" /></w:rPr><w:t
           xml:space="preserve"
-        >// fat arrow syntax</w:t></w:r></w:p><w:r><w:t
-        xml:space="preserve"
-      >unknown lang</w:t></w:r><w:sectPr><w:pgSz
+        >// fat arrow syntax</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >unknown lang</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
         w:h="16838"
         w:orient="portrait"
@@ -5425,7 +5459,10 @@ exports[`e2e > footnotes 4`] = `
     ><w:r><w:t
           xml:space="preserve"
         >Indent paragraphs to include them in the footnote.</w:t></w:r></w:p><w:p
-    ><w:r><w:t
+    ><w:r><w:t xml:space="preserve">function add(a, b) {</w:t></w:r><w:r><w:br
+        /><w:t xml:space="preserve">  return a + b;</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >}</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >Add as many paragraphs as you like.</w:t></w:r></w:p></w:footnote><w:footnote
     w:id="6"
