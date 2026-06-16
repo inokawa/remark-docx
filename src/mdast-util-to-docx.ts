@@ -818,5 +818,11 @@ const fallbackText = (node: { type: string; value: string }, ctx: Context) => {
   warnOnce(
     `${node.type} node is not supported without plugins, falling back to text.`,
   );
-  return buildText({ type: "text", value: node.value }, ctx);
+  const text = buildText({ type: "text", value: node.value }, ctx) as TextRun;
+  return docxParagraph(
+    {
+      children: [text],
+    },
+    ctx,
+  );
 };
