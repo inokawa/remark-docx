@@ -1169,7 +1169,8 @@ quote</w:t></w:r></w:p><w:p><w:pPr><w:bidi /><w:ind
                 xml:space="preserve"
               >aligned</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:r><w:br
           w:type="page"
-        /></w:r></w:p><w:p><w:r><w:br w:type="page" /></w:r></w:p><w:p><w:r><w:t
+        /></w:r></w:p><w:p><w:r><w:br w:type="page" /></w:r></w:p><w:p><w:pPr
+      ><w:bidi /></w:pPr><w:r><w:t
           xml:space="preserve"
         >function $initHighlight(block, cls) {</w:t></w:r><w:r><w:br /><w:t
           xml:space="preserve"

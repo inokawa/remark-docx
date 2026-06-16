@@ -836,6 +836,6 @@ const fallbackCode = (node: { type: string; value: string }, ctx: Context) => {
     {
       children,
     },
-    { ...ctx, rtl: false },
+    ctx,
   );
 };
