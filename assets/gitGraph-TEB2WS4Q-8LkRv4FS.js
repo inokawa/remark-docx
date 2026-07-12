@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-BdFrVu1K.js";import{w as t}from"./chunk-KEIR6QF5-D1qeH5JX.js";import{R as n,z as r}from"./mermaid-parser.core-BXIgKahk.js";e((()=>{r(),t()}))();export{n as createGitGraphServices};
