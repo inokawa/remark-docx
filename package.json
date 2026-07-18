@@ -58,7 +58,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@types/unist": "^3.0.0",
-    "adm-zip": "^0.5.9",
+    "adm-zip": "^0.6.0",
     "docx-preview": "^0.3.7",
     "file-saver": "^2.0.5",
     "lodash.debounce": "^4.0.8",
