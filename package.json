@@ -59,7 +59,7 @@
     "@types/react-dom": "^19.2.3",
     "@types/unist": "^3.0.0",
     "adm-zip": "^0.6.0",
-    "docx-preview": "^0.3.7",
+    "docx-preview": "^0.4.0",
     "file-saver": "^2.0.5",
     "lodash.debounce": "^4.0.8",
     "prettier": "^3.7.4",
