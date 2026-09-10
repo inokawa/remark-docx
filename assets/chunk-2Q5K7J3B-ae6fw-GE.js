@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{n as t,r as n}from"./chunk-Y2CYZVJY-C0ErJKbO.js";var r;function i(){return(i=e((()=>{n(),r=class{constructor(e){this.init=e,this.records=this.init()}static{t(this,`ImperativeState`)}reset(){this.records=this.init()}}})))()}export{i as n,r as t};

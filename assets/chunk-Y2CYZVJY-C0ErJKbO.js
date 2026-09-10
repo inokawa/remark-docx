@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";var t,n,r;function i(){return(i=e((()=>{t=Object.defineProperty,n=(e,n)=>t(e,`name`,{value:n,configurable:!0}),r=(e,n)=>{for(var r in n)t(e,r,{get:n[r],enumerable:!0})}})))()}export{n,i as r,r as t};
