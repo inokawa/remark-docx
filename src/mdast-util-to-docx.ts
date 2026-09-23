@@ -23,6 +23,8 @@ import {
   type IStylesOptions,
   type ITableOptions,
   ImageRun,
+  Header,
+  Footer,
   type FileChild,
 } from "docx";
 import type * as mdast from "mdast";
@@ -243,7 +245,67 @@ export interface DocxOptions extends Pick<
    * Plugins to customize how mdast nodes are compiled.
    */
   plugins?: RemarkDocxPlugin[];
+  /**
+   * Headers for each page.
+   * Pass a string for a simple centered header on all pages,
+   * or an object with `default`, `first`, and/or `even` keys for per-variant headers.
+   * @see https://docx.js.org/#/usage/headers-and-footers
+   */
+  headers?:
+    | string
+    | {
+        default?: string;
+        first?: string;
+        even?: string;
+      };
+  /**
+   * Footers for each page.
+   * Pass a string for a simple centered footer on all pages,
+   * or an object with `default`, `first`, and/or `even` keys for per-variant footers.
+   * @see https://docx.js.org/#/usage/headers-and-footers
+   */
+  footers?:
+    | string
+    | {
+        default?: string;
+        first?: string;
+        even?: string;
+      };
 }
+
+type HeaderFooterInput =
+  | string
+  | {
+      default?: string;
+      first?: string;
+      even?: string;
+    };
+
+const buildHeaderFooter = <T extends Header | Footer>(
+  input: HeaderFooterInput | undefined,
+  Ctor: new (opts: { children: Paragraph[] }) => T,
+): Record<string, T> | undefined => {
+  if (input == null) return undefined;
+
+  const entries: Record<string, string> =
+    typeof input === "string" ? { default: input } : input;
+
+  const result: Record<string, T> = {};
+  for (const [key, text] of Object.entries(entries)) {
+    if (text != null) {
+      result[key] = new Ctor({
+        children: [
+          new Paragraph({
+            children: [new TextRun(text)],
+            alignment: AlignmentType.CENTER,
+          }),
+        ],
+      });
+    }
+  }
+
+  return Object.keys(result).length > 0 ? result : undefined;
+};
 
 export const mdastToDocx = async (
   node: mdast.Root,
@@ -264,6 +326,8 @@ export const mdastToDocx = async (
     background,
     thematicBreak = "page",
     orderedListFormat,
+    headers,
+    footers,
   }: DocxOptions = {},
 ): Promise<ArrayBuffer> => {
   const definition = definitions(node);
@@ -438,6 +502,8 @@ export const mdastToDocx = async (
     sections: sections
       .filter((s) => s.length)
       .map((s) => ({
+        headers: buildHeaderFooter(headers, Header),
+        footers: buildHeaderFooter(footers, Footer),
         properties: sectionProperties,
         children: s as FileChild[],
       })),

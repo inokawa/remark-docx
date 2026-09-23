@@ -222,4 +222,40 @@ describe("e2e", () => {
       expect(xml).toMatchSnapshot();
     }
   });
+
+  it("header", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "header-footer.md"));
+    const doc = await processor({
+      headers: "Default Header",
+    }).process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
+  it("footer", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "header-footer.md"));
+    const doc = await processor({
+      footers: "Default Footer",
+    }).process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
+  it("header and footer", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "header-footer.md"));
+    const doc = await processor({
+      headers: {
+        default: "Default Header",
+        first: "First Page Header",
+      },
+      footers: {
+        default: "Page Footer",
+      },
+    }).process(md);
+    for await (const xml of readDocx(await doc.result)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
 });
