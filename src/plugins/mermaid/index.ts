@@ -4,7 +4,7 @@ import mermaid from "mermaid";
 import { visit } from "unist-util-visit";
 import { imageSize } from "image-size";
 import { browserSvgToPng } from "../image";
-import { Paragraph } from "docx";
+import { Paragraph, type ParagraphChild } from "docx";
 
 const browserRender = async (value: string): Promise<string> => {
   const element = document.createElement("div");
@@ -72,7 +72,9 @@ export const mermaidPlugin = (): RemarkDocxPlugin => {
         }
 
         return new Paragraph({
-          children: ctx.render([{ type: "image", url: value }]),
+          children: ctx.render([
+            { type: "image", url: value },
+          ]) as ParagraphChild[],
         });
       },
     };
