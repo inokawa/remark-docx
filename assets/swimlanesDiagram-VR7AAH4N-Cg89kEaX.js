@@ -1,0 +1,8 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{n as t,r as n}from"./chunk-Y2CYZVJY-C0ErJKbO.js";import{C as r}from"./src-CDmLAV0k.js";import{j as i}from"./chunk-DU6HZSFF-C9fd2hl3.js";import{d as a}from"./chunk-75Z2AOVW-B3S5zNH_.js";import{n as o}from"./chunk-PWAF6VOD-D3hGRMuk.js";import{i as s}from"./chunk-GMAD6QVW-BVYY8_I0.js";import{n as c}from"./chunk-P2QGCYS3-8KLYecn5.js";import{r as l}from"./chunk-4HAMMTFA-eFl30p1E.js";import{r as u}from"./chunk-GVQU2GXP-D4TGaECM.js";import{i as d}from"./chunk-OSK3NFVY-BmqcJXUV.js";import{l as f}from"./chunk-F27PBJKO-CakB6LRp.js";import{n as p}from"./chunk-XXDRQBXY-D1QmqXmQ.js";import{t as m}from"./chunk-POPQ4Y6H-CjKXNII5.js";import{n as h}from"./chunk-L3NEJ4N5-gLpHtVtE.js";import{i as g,r as _,t as v}from"./chunk-SHT3W25Y-CD6zBouP.js";import{h as y,i as b}from"./playground.stories-DXsVP08V.js";var x;function S(){return(S=e((()=>{_(),p(),m(),b(),y(),f(),h(),d(),u(),l(),c(),s(),o(),a(),i(),r(),n(),x=v({defaultLayout:`swimlane`,styles:t(e=>`${g(e)}
+  .swimlane.cluster rect {
+    stroke: ${e.clusterBorder} !important;
+  }
+  [data-look="neo"].cluster rect {
+    filter: none;
+  }
+`,`getStyles`)})})))()}S();export{x as diagram};
