@@ -6,7 +6,7 @@
 
 > **latexPlugin**(): [`RemarkDocxPlugin`](../../../index/type-aliases/RemarkDocxPlugin.md)
 
-Defined in: [src/plugins/latex/index.ts:95](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/plugins/latex/index.ts#L95)
+Defined in: [src/plugins/latex/index.ts:100](https://github.com/inokawa/remark-docx/blob/f6f57050d759e6359a8e75dbfeceaae6d6934e98/src/plugins/latex/index.ts#L100)
 
 A plugin to render LaTeX inside "math" and "inlineMath" nodes
 

@@ -4,7 +4,7 @@
 
 # Interface: DocxOptions
 
-Defined in: [src/mdast-util-to-docx.ts:188](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/mdast-util-to-docx.ts#L188)
+Defined in: [src/mdast-util-to-docx.ts:189](https://github.com/inokawa/remark-docx/blob/f6f57050d759e6359a8e75dbfeceaae6d6934e98/src/mdast-util-to-docx.ts#L189)
 
 ## Extends
 
@@ -16,7 +16,7 @@ Defined in: [src/mdast-util-to-docx.ts:188](https://github.com/inokawa/remark-do
 
 > `optional` **size?**: `object`
 
-Defined in: [src/mdast-util-to-docx.ts:202](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/mdast-util-to-docx.ts#L202)
+Defined in: [src/mdast-util-to-docx.ts:203](https://github.com/inokawa/remark-docx/blob/f6f57050d759e6359a8e75dbfeceaae6d6934e98/src/mdast-util-to-docx.ts#L203)
 
 Page size defined in twip (1 twip == 1/1440 inch).
 
@@ -38,7 +38,7 @@ A4 (sectionPageSizeDefaults)
 
 > `optional` **margin?**: `object`
 
-Defined in: [src/mdast-util-to-docx.ts:207](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/mdast-util-to-docx.ts#L207)
+Defined in: [src/mdast-util-to-docx.ts:208](https://github.com/inokawa/remark-docx/blob/f6f57050d759e6359a8e75dbfeceaae6d6934e98/src/mdast-util-to-docx.ts#L208)
 
 Page margin defined in twip (1 twip == 1/1440 inch).
 
@@ -68,7 +68,7 @@ Page margin defined in twip (1 twip == 1/1440 inch).
 
 > `optional` **orientation?**: `"portrait"` \| `"landscape"`
 
-Defined in: [src/mdast-util-to-docx.ts:212](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/mdast-util-to-docx.ts#L212)
+Defined in: [src/mdast-util-to-docx.ts:213](https://github.com/inokawa/remark-docx/blob/f6f57050d759e6359a8e75dbfeceaae6d6934e98/src/mdast-util-to-docx.ts#L213)
 
 Page orientation.
 
@@ -84,7 +84,7 @@ Page orientation.
 
 > `optional` **columns?**: `number`
 
-Defined in: [src/mdast-util-to-docx.ts:217](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/mdast-util-to-docx.ts#L217)
+Defined in: [src/mdast-util-to-docx.ts:218](https://github.com/inokawa/remark-docx/blob/f6f57050d759e6359a8e75dbfeceaae6d6934e98/src/mdast-util-to-docx.ts#L218)
 
 Number of page columns.
 
@@ -100,7 +100,7 @@ Number of page columns.
 
 > `optional` **spacing?**: `number`
 
-Defined in: [src/mdast-util-to-docx.ts:222](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/mdast-util-to-docx.ts#L222)
+Defined in: [src/mdast-util-to-docx.ts:223](https://github.com/inokawa/remark-docx/blob/f6f57050d759e6359a8e75dbfeceaae6d6934e98/src/mdast-util-to-docx.ts#L223)
 
 Spacing after Paragraphs in twip (1 twip == 1/1440 inch).
 
@@ -116,7 +116,7 @@ Spacing after Paragraphs in twip (1 twip == 1/1440 inch).
 
 > `optional` **direction?**: `"ltr"` \| `"rtl"` \| `"vertical"`
 
-Defined in: [src/mdast-util-to-docx.ts:227](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/mdast-util-to-docx.ts#L227)
+Defined in: [src/mdast-util-to-docx.ts:228](https://github.com/inokawa/remark-docx/blob/f6f57050d759e6359a8e75dbfeceaae6d6934e98/src/mdast-util-to-docx.ts#L228)
 
 Direction of texts.
 
@@ -132,7 +132,7 @@ Direction of texts.
 
 > `optional` **orderedListFormat?**: `ListFormat`[]
 
-Defined in: [src/mdast-util-to-docx.ts:232](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/mdast-util-to-docx.ts#L232)
+Defined in: [src/mdast-util-to-docx.ts:233](https://github.com/inokawa/remark-docx/blob/f6f57050d759e6359a8e75dbfeceaae6d6934e98/src/mdast-util-to-docx.ts#L233)
 
 An option to override the text format of ordered list.
 See https://docx.js.org/#/usage/numbering?id=level-options for more details.
@@ -143,7 +143,7 @@ See https://docx.js.org/#/usage/numbering?id=level-options for more details.
 
 > `optional` **thematicBreak?**: `ThematicBreakType`
 
-Defined in: [src/mdast-util-to-docx.ts:241](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/mdast-util-to-docx.ts#L241)
+Defined in: [src/mdast-util-to-docx.ts:242](https://github.com/inokawa/remark-docx/blob/f6f57050d759e6359a8e75dbfeceaae6d6934e98/src/mdast-util-to-docx.ts#L242)
 
 An option to select how thematicBreak works.
 
@@ -163,7 +163,7 @@ An option to select how thematicBreak works.
 
 > `optional` **plugins?**: [`RemarkDocxPlugin`](../type-aliases/RemarkDocxPlugin.md)[]
 
-Defined in: [src/mdast-util-to-docx.ts:245](https://github.com/inokawa/remark-docx/blob/b84f2b867c0db0ace3d7f17af78ba8e653d60d55/src/mdast-util-to-docx.ts#L245)
+Defined in: [src/mdast-util-to-docx.ts:246](https://github.com/inokawa/remark-docx/blob/f6f57050d759e6359a8e75dbfeceaae6d6934e98/src/mdast-util-to-docx.ts#L246)
 
 Plugins to customize how mdast nodes are compiled.
 
@@ -173,7 +173,7 @@ Plugins to customize how mdast nodes are compiled.
 
 > `readonly` `optional` **title?**: `string`
 
-Defined in: node\_modules/docx/dist/index.d.ts:1594
+Defined in: node\_modules/docx/dist/index.d.ts:7399
 
 #### Inherited from
 
@@ -185,7 +185,7 @@ Defined in: node\_modules/docx/dist/index.d.ts:1594
 
 > `readonly` `optional` **subject?**: `string`
 
-Defined in: node\_modules/docx/dist/index.d.ts:1595
+Defined in: node\_modules/docx/dist/index.d.ts:7400
 
 #### Inherited from
 
@@ -197,7 +197,7 @@ Defined in: node\_modules/docx/dist/index.d.ts:1595
 
 > `readonly` `optional` **creator?**: `string`
 
-Defined in: node\_modules/docx/dist/index.d.ts:1596
+Defined in: node\_modules/docx/dist/index.d.ts:7401
 
 #### Inherited from
 
@@ -209,7 +209,7 @@ Defined in: node\_modules/docx/dist/index.d.ts:1596
 
 > `readonly` `optional` **keywords?**: `string`
 
-Defined in: node\_modules/docx/dist/index.d.ts:1597
+Defined in: node\_modules/docx/dist/index.d.ts:7402
 
 #### Inherited from
 
@@ -221,7 +221,7 @@ Defined in: node\_modules/docx/dist/index.d.ts:1597
 
 > `readonly` `optional` **description?**: `string`
 
-Defined in: node\_modules/docx/dist/index.d.ts:1598
+Defined in: node\_modules/docx/dist/index.d.ts:7403
 
 #### Inherited from
 
@@ -233,7 +233,7 @@ Defined in: node\_modules/docx/dist/index.d.ts:1598
 
 > `readonly` `optional` **styles?**: `IStylesOptions`
 
-Defined in: node\_modules/docx/dist/index.d.ts:1602
+Defined in: node\_modules/docx/dist/index.d.ts:7407
 
 #### Inherited from
 
@@ -245,7 +245,7 @@ Defined in: node\_modules/docx/dist/index.d.ts:1602
 
 > `readonly` `optional` **background?**: `IDocumentBackgroundOptions`
 
-Defined in: node\_modules/docx/dist/index.d.ts:1611
+Defined in: node\_modules/docx/dist/index.d.ts:7416
 
 #### Inherited from
 
