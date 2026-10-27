@@ -24,6 +24,7 @@ import {
   type ITableOptions,
   ImageRun,
   type FileChild,
+  type ParagraphChild,
 } from "docx";
 import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
@@ -498,7 +499,7 @@ export const mdastToDocx = async (
 const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
   return docxParagraph(
     {
-      children: ctx.render(children),
+      children: ctx.render(children) as ParagraphChild[],
     },
     ctx,
   );
@@ -530,7 +531,7 @@ const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
     {
       heading: HeadingLevel[level],
       outlineLevel: depth - 1,
-      children: ctx.render(children),
+      children: ctx.render(children) as ParagraphChild[],
     },
     ctx,
   );
@@ -634,7 +635,7 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
                   ...ctx,
                   // https://github.com/dolanmiu/docx/blob/master/demo/22-right-to-left-text.ts
                   rtl: undefined,
-                }),
+                }) as ParagraphChild[],
               }),
             ],
           });
@@ -716,7 +717,7 @@ const buildLink: NodeBuilder<"link"> = ({ children, url }, ctx) => {
     children: ctx.render(children, {
       ...ctx,
       style: { ...ctx.style, link: true },
-    }),
+    }) as ParagraphChild[],
   });
 };
 

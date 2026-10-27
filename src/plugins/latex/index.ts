@@ -1,5 +1,10 @@
 import type { RemarkDocxPlugin } from "../../types";
-import { Paragraph, XmlAttributeComponent, XmlComponent } from "docx";
+import {
+  Paragraph,
+  XmlAttributeComponent,
+  XmlComponent,
+  type ParagraphChild,
+} from "docx";
 import { mml2omml } from "mathml2omml";
 import { XMLParser } from "fast-xml-parser";
 import { mathjax } from "@mathjax/src/js/mathjax.js";
@@ -136,11 +141,11 @@ export const latexPlugin = (): RemarkDocxPlugin => {
           return null;
         }
         return new Paragraph({
-          children: [math],
+          children: [math as unknown as ParagraphChild],
         });
       },
       inlineMath: ({ value }) => {
-        return parseLatex(value);
+        return parseLatex(value) as unknown as ParagraphChild | null;
       },
     };
   };
