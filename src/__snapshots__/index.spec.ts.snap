@@ -10344,7 +10344,7 @@ exports[`e2e > latex 1`] = `
               >)</m:t></m:r></m:e><m:sup><m:argPr><m:scrLvl
                 m:val="0"
               /></m:argPr><m:argPr><m:scrLvl m:val="0" /></m:argPr><m:r><m:t
-              /></m:r><m:r><m:t /></m:r><m:r><m:t
+              > </m:t></m:r><m:r><m:t> </m:t></m:r><m:r><m:t
               >2</m:t></m:r></m:sup></m:sSup><m:r><m:t>≤</m:t></m:r><m:r><m:t
           >(∑∗</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r
             ><m:t>k=1</m:t></m:r></m:e><m:sup><m:r><m:t
@@ -10362,12 +10362,10 @@ exports[`e2e > latex 1`] = `
           xml:space="preserve"
         >A Cross Product Formula</w:t></w:r></w:p><w:p><m:oMath><m:r><m:rPr
           ><m:nor /><m:sty m:val="b" /></m:rPr><m:t>V</m:t></m:r><m:r><m:rPr
-          ><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t>_</m:t></m:r><m:r
-        ><m:t>1×</m:t></m:r><m:r><m:rPr><m:nor /><m:sty m:val="b" /></m:rPr><m:t
-          >V</m:t></m:r><m:r><m:rPr><m:nor /><m:sty
-              m:val="undefined"
-            /></m:rPr><m:t>_</m:t></m:r><m:r><m:t>2=</m:t></m:r><m:r><m:t
-          >|</m:t></m:r><m:m><m:mPr><m:baseJc m:val="center" /><m:plcHide
+          ><m:nor /></m:rPr><m:t>_</m:t></m:r><m:r><m:t>1×</m:t></m:r><m:r
+        ><m:rPr><m:nor /><m:sty m:val="b" /></m:rPr><m:t>V</m:t></m:r><m:r
+        ><m:rPr><m:nor /></m:rPr><m:t>_</m:t></m:r><m:r><m:t>2=</m:t></m:r><m:r
+        ><m:t>|</m:t></m:r><m:m><m:mPr><m:baseJc m:val="center" /><m:plcHide
               m:val="on"
             /><m:mcs><m:mc><m:mcPr><m:count m:val="3" /><m:mcJc
                     m:val="center"
@@ -10456,38 +10454,39 @@ exports[`e2e > latex 1`] = `
               ><m:r><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
                   >2</m:t></m:r></m:sup></m:sSup><m:r><m:t
               >)</m:t></m:r></m:den></m:f><m:r><m:t>+⋯=∏</m:t></m:r><m:r><m:rPr
-          ><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t>_</m:t></m:r><m:sSup
-        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
-              >j=0</m:t></m:r></m:e><m:sup><m:r><m:rPr><m:nor /><m:sty
-                  m:val="undefined"
-                /></m:rPr><m:t>∞</m:t></m:r></m:sup></m:sSup><m:f><m:fPr><m:type
-              m:val="bar"
-            /></m:fPr><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r><m:t
-              >(1−</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r
-                ><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
+          ><m:nor /></m:rPr><m:t>_</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr
+            /></m:sSupPr><m:e><m:r><m:t>j=0</m:t></m:r></m:e><m:sup><m:r><m:rPr
+              ><m:nor /></m:rPr><m:t>∞</m:t></m:r></m:sup></m:sSup><m:f><m:fPr
+          ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
+              >1</m:t></m:r></m:num><m:den><m:r><m:t>(1−</m:t></m:r><m:sSup
+            ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+                  >q</m:t></m:r></m:e><m:sup><m:r><m:t
                   >5j+2</m:t></m:r></m:sup></m:sSup><m:r><m:t
               >)(1−</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e
               ><m:r><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
                   >5j+3</m:t></m:r></m:sup></m:sSup><m:r><m:t
               >)</m:t></m:r></m:den></m:f><m:r><m:t>,</m:t></m:r><m:r><m:t
-          /></m:r><m:r><m:t /></m:r><m:r><m:rPr><m:nor /></m:rPr><m:t
-          >for</m:t></m:r><m:r><m:t>|q|<m:r><m:t
-              >.</m:t></m:r></m:t></m:r></m:oMath></w:p><w:p><w:r><w:t
+          > </m:t></m:r><m:r><m:t> </m:t></m:r><m:r><m:rPr><m:nor /></m:rPr><m:t
+          >for </m:t></m:r><m:r><m:t>|q|&lt;1</m:t></m:r><m:r><m:t
+          >.</m:t></m:r></m:oMath></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >Maxwell&apos;s Equations</w:t></w:r></w:p><w:p><m:oMath><m:m><m:mPr
           ><m:baseJc m:val="center" /><m:plcHide m:val="on" /><m:mcs><m:mc
               ><m:mcPr><m:count m:val="2" /><m:mcJc
                     m:val="center"
                   /></m:mcPr></m:mc></m:mcs></m:mPr><m:mr><m:e><m:r><m:rPr
-                ><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t
-                >∇</m:t></m:r><m:r><m:t>×</m:t></m:r><m:groupChr><m:groupChrPr
-                ><m:chr m:val="→" m:pos="top" /></m:groupChrPr><m:e><m:r><m:rPr
-                    ><m:nor /><m:sty m:val="b" /></m:rPr><m:t
-                    >B</m:t></m:r></m:e></m:groupChr><m:r><m:t /></m:r><m:r><m:t
-                >−</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
-                ><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r><m:t
-                    >c</m:t></m:r></m:den></m:f><m:r><m:t /></m:r><m:f><m:fPr
-                ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
+                ><m:nor /></m:rPr><m:t>∇</m:t></m:r><m:r><m:t
+                >×</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
+                    m:val="→"
+                    m:pos="top"
+                  /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
+                        m:val="b"
+                      /></m:rPr><m:t>B</m:t></m:r></m:e></m:groupChr><m:r><m:t
+                > </m:t></m:r><m:r><m:t>−</m:t></m:r><m:f><m:fPr><m:type
+                    m:val="bar"
+                  /></m:fPr><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r
+                  ><m:t>c</m:t></m:r></m:den></m:f><m:r><m:t> </m:t></m:r><m:f
+              ><m:fPr><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
                     >∂</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
                         m:val="→"
                         m:pos="top"
@@ -10505,24 +10504,26 @@ exports[`e2e > latex 1`] = `
                         m:val="b"
                       /></m:rPr><m:t
                     >j</m:t></m:r></m:e></m:groupChr></m:e></m:mr><m:mr><m:e
-            ><m:r><m:rPr><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t
-                >∇</m:t></m:r><m:r><m:t>⋅</m:t></m:r><m:groupChr><m:groupChrPr
-                ><m:chr m:val="→" m:pos="top" /></m:groupChrPr><m:e><m:r><m:rPr
-                    ><m:nor /><m:sty m:val="b" /></m:rPr><m:t
-                    >E</m:t></m:r></m:e></m:groupChr></m:e><m:e><m:r><m:t
-                >=4πρ</m:t></m:r></m:e></m:mr><m:mr><m:e><m:r><m:rPr><m:nor
-                  /><m:sty m:val="undefined" /></m:rPr><m:t>∇</m:t></m:r><m:r
-              ><m:t>×</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
+            ><m:r><m:rPr><m:nor /></m:rPr><m:t>∇</m:t></m:r><m:r><m:t
+                >⋅</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
+                    m:val="→"
+                    m:pos="top"
+                  /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
+                        m:val="b"
+                      /></m:rPr><m:t>E</m:t></m:r></m:e></m:groupChr></m:e><m:e
+            ><m:r><m:t>=4πρ</m:t></m:r></m:e></m:mr><m:mr><m:e><m:r><m:rPr
+                ><m:nor /></m:rPr><m:t>∇</m:t></m:r><m:r><m:t
+                >×</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
                     m:val="→"
                     m:pos="top"
                   /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
                         m:val="b"
                       /></m:rPr><m:t>E</m:t></m:r></m:e></m:groupChr><m:r><m:t
-                /></m:r><m:r><m:t>+</m:t></m:r><m:f><m:fPr><m:type
+                > </m:t></m:r><m:r><m:t>+</m:t></m:r><m:f><m:fPr><m:type
                     m:val="bar"
                   /></m:fPr><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r
-                  ><m:t>c</m:t></m:r></m:den></m:f><m:r><m:t /></m:r><m:f><m:fPr
-                ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
+                  ><m:t>c</m:t></m:r></m:den></m:f><m:r><m:t> </m:t></m:r><m:f
+              ><m:fPr><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
                     >∂</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
                         m:val="→"
                         m:pos="top"
@@ -10538,14 +10539,16 @@ exports[`e2e > latex 1`] = `
                         m:val="b"
                       /></m:rPr><m:t
                     >0</m:t></m:r></m:e></m:groupChr></m:e></m:mr><m:mr><m:e
-            ><m:r><m:rPr><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t
-                >∇</m:t></m:r><m:r><m:t>⋅</m:t></m:r><m:groupChr><m:groupChrPr
-                ><m:chr m:val="→" m:pos="top" /></m:groupChrPr><m:e><m:r><m:rPr
-                    ><m:nor /><m:sty m:val="b" /></m:rPr><m:t
-                    >B</m:t></m:r></m:e></m:groupChr></m:e><m:e><m:r><m:t
-                >=0</m:t></m:r></m:e></m:mr></m:m></m:oMath></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >In-line Mathematics</w:t></w:r></w:p><w:p><w:r><w:t
+            ><m:r><m:rPr><m:nor /></m:rPr><m:t>∇</m:t></m:r><m:r><m:t
+                >⋅</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
+                    m:val="→"
+                    m:pos="top"
+                  /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
+                        m:val="b"
+                      /></m:rPr><m:t>B</m:t></m:r></m:e></m:groupChr></m:e><m:e
+            ><m:r><m:t>=0</m:t></m:r></m:e></m:mr></m:m></m:oMath></w:p><w:p
+    ><w:r><w:t xml:space="preserve">In-line Mathematics</w:t></w:r></w:p><w:p
+    ><w:r><w:t
           xml:space="preserve"
         >Finally, while display equations look good for a page of samples, the
 ability to mix math and text in a paragraph is also important. This
@@ -15283,12 +15286,8 @@ equation.</w:t></w:r></w:p><w:p><m:oMath><m:r><m:t>L=</m:t></m:r><m:f><m:fPr
             /></m:fPr><m:num><m:r><m:t>n(n+1)</m:t></m:r></m:num><m:den><m:r
             ><m:t>2</m:t></m:r></m:den></m:f></m:oMath></w:p><w:p><m:oMath><m:r
         ><m:t>αβγδϵζηθικλμνξoπρστυϕχψωεϑϱςφ</m:t></m:r><m:r><m:rPr><m:nor
-            /><m:sty m:val="undefined" /></m:rPr><m:t
-          >ΓΔΘΛΞΠΣΥΦΨΩ</m:t></m:r></m:oMath></w:p><w:sectPr><w:pgSz
-        w:w="11906"
-        w:h="16838"
-        w:orient="portrait"
-      /><w:pgMar
+            /></m:rPr><m:t>ΓΔΘΛΞΠΣΥΦΨΩ</m:t></m:r></m:oMath></w:p><w:sectPr
+    ><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
         w:top="1440"
         w:right="1440"
         w:bottom="1440"
