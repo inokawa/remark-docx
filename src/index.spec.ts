@@ -215,6 +215,35 @@ describe("e2e", () => {
     }
   });
 
+  // https://github.com/inokawa/remark-docx/issues/210
+  it("latex preserves equation text", async () => {
+    const cases: Array<[string, string[]]> = [
+      ["x^2 + 1", ["x", "2", "+1"]],
+      ["\\frac{1}{2.50}", ["1", "2.50"]],
+      ["x_{01}", ["x", "01"]],
+      ["e^{+3}", ["e", "+3"]],
+      ["a < b", ["a&lt;b"]],
+      ["\\infty", ["∞"]],
+      // The trailing space of "\text{if }" is a non-breaking space.
+      ["\\text{if } x", ["if\u00a0", "x"]],
+      ["\\mathrm{d}x", ["d", "x"]],
+      ["x \\& y", ["x", "&amp;", "y"]],
+    ];
+    for (const [latex, expected] of cases) {
+      const doc = await processor({ plugins: [latexPlugin()] }).process(
+        `$$\n${latex}\n$$`,
+      );
+      const z = new Zip(Buffer.from(await doc.result));
+      const xml = z.readAsText(z.getEntry("word/document.xml")!);
+      expect(xml).not.toContain('m:val="undefined"');
+      const omml = xml.match(/<m:oMath[\s\S]*?<\/m:oMath>/)?.[0] ?? "";
+      const runs = [...omml.matchAll(/<m:t[^>]*>([^<]*)<\/m:t>/g)].map(
+        (m) => m[1],
+      );
+      expect(runs).toEqual(expected);
+    }
+  });
+
   it("tag", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "tag.md"));
     const doc = await processor({ plugins: [htmlPlugin()] }).process(md);
