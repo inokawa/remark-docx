@@ -157,7 +157,9 @@ const docxParagraph = (
     options.indent = calcIndent(ctx.quote + 1);
   }
 
-  if (ctx.list) {
+  if (ctx.list?.continuation) {
+    options.indent = { left: calcIndent(ctx.list.level).left };
+  } else if (ctx.list) {
     const { level, meta } = ctx.list;
     if (meta.type === "task") {
       options.numbering = {
@@ -598,10 +600,16 @@ const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
       };
     }
   }
-  return ctx.render(children, {
-    ...ctx,
-    list,
-  });
+  // Only the first block of an item gets the marker.
+  return children.flatMap((child, i) =>
+    ctx.render([child], {
+      ...ctx,
+      list:
+        list && i > 0 && child.type !== "list"
+          ? { ...list, continuation: true }
+          : list,
+    }),
+  );
 };
 
 const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
