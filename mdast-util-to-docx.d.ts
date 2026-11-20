@@ -63,5 +63,5 @@ export interface DocxOptions extends Pick<IPropertiesOptions, "title" | "subject
      */
     plugins?: RemarkDocxPlugin[];
 }
-export declare const mdastToDocx: (node: mdast.Root, { plugins, title, subject, creator, keywords, description, styles, size, margin, orientation, columns, spacing, direction, background, thematicBreak, orderedListFormat, }?: DocxOptions) => Promise<ArrayBuffer>;
+export declare const mdastToDocx: (node: mdast.Root, { plugins, title, subject, creator, keywords, description, styles, size, margin, orientation, columns, spacing, direction, background, thematicBreak, orderedListFormat, }?: DocxOptions) => Promise<Uint8Array>;
 export {};
