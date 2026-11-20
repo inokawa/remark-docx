@@ -48,7 +48,7 @@ npm install remark-docx
 
 ### Browser
 
-```javascript
+```ts
 import { unified } from "unified";
 import markdown from "remark-parse";
 import docx from "remark-docx";
@@ -60,14 +60,14 @@ const text = "# hello world";
 
 (async () => {
   const doc = await processor.process(text);
-  const arrayBuffer = await doc.result;
-  saveAs(new Blob([arrayBuffer]), "example.docx");
+  const uint8Array = doc.value;
+  saveAs(new Blob([uint8Array as BlobPart]), "example.docx");
 })();
 ```
 
 ### Node.js
 
-```javascript
+```ts
 import { unified } from "unified";
 import markdown from "remark-parse";
 import docx from "remark-docx";
@@ -79,9 +79,18 @@ const text = "# hello world";
 
 (async () => {
   const doc = await processor.process(text);
-  const arrayBuffer = await doc.result;
-  fs.writeFileSync("example.docx", Buffer.from(arrayBuffer));
+  const uint8Array = doc.value;
+  fs.writeFileSync("example.docx", uint8Array);
 })();
+```
+
+### CLI
+
+See [remark-cli](https://github.com/remarkjs/remark/tree/main/packages/remark-cli) for usage.
+
+```sh
+npm install remark-cli
+npx remark input.md --use remark-docx --output output.docx
 ```
 
 ## Plugins
