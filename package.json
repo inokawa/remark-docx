@@ -25,7 +25,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "vite build",
-    "test": "vitest run",
+    "test": "vitest run --project unit",
+    "test:cli": "vitest run --project cli",
     "tsc": "tsc -p . --noEmit",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
@@ -66,6 +67,7 @@
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-is": "^19.2.1",
+    "remark-cli": "^12.0.1",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.0",
     "remark-math": "^6.0.0",

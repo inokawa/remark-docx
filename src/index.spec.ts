@@ -152,7 +152,7 @@ describe("e2e", () => {
         }),
       ],
     }).process(`svg ![tiger](image.svg) test`);
-    for await (const xml of readDocx(await doc.result)) {
+    for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
   });

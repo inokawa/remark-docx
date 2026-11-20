@@ -84,6 +84,15 @@ const text = "# hello world";
 })();
 ```
 
+### CLI
+
+See [remark-cli](https://github.com/remarkjs/remark/tree/main/packages/remark-cli) for usage.
+
+```sh
+npm install remark-cli
+npx remark input.md --use remark-docx --output output.docx
+```
+
 ## Plugins
 
 ### Image

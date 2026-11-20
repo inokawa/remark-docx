@@ -25,6 +25,7 @@ jobs:
       - run: npm run tsc
       - run: npm run test
       - run: npm run build
+      - run: npm run test:cli
 
       # - name: Install Playwright Browsers
       #   run: npx playwright install chromium --with-deps
