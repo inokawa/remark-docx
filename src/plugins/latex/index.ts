@@ -123,12 +123,24 @@ export const latexPlugin = (): RemarkDocxPlugin => {
     ignoreAttributes: false,
     preserveOrder: true,
     attributeNamePrefix: "",
+    // Keep equation text verbatim: the defaults would coerce "+1" to the
+    // number 1, "2.50" to 2.5 and trim the space in "\text{if } x".
+    parseTagValue: false,
+    trimValues: false,
   });
 
   const parseLatex = (value: string): XmlComponent | null => {
     const node = doc.convert(value, { end: STATE["CONVERT"] });
     const mathml = visitor.visitTree(node);
-    const omml = mml2omml(mathml);
+    // mathml2omml writes `<` and `&` unescaped inside `<m:t>` (e.g. `a < b`
+    // becomes `<m:t>a<b</m:t>`, losing everything after `<` when parsed) and
+    // emits `<m:sty m:val="undefined"/>` for symbols such as `\infty`.
+    // Repair both in the plugin output instead of patching mathml2omml.
+    const omml = mml2omml(mathml)
+      .replace(/<m:sty m:val="undefined"\/>/g, "")
+      .replace(/(<m:t\b[^>]*>)([\s\S]*?)(<\/m:t>)/g, (_match, open, text, close) =>
+        open + text.replace(/&/g, "&amp;").replace(/</g, "&lt;") + close,
+      );
     const obj = parser.parse(omml);
     return buildElement(obj[0]);
   };
