@@ -34,6 +34,10 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] code ([plugin](#code))
 - [x] math / inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [plugin](#math))
 
+Links to headings in the same document use GitHub-style fragments, including
+the `-1`, `-2` suffixes for duplicate headings. For example, `[Go](#中文-标题)`
+links to `## 中文 标题`. Unmatched or malformed fragments remain plain text.
+
 ## Demo
 
 https://inokawa.github.io/remark-docx/

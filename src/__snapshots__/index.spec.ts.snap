@@ -11371,18 +11371,24 @@ exports[`e2e > link 1`] = `
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
 ><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:outlineLvl
           w:val="0"
-        /></w:pPr><w:r><w:t xml:space="preserve">Header</w:t></w:r></w:p><w:p
-    ><w:hyperlink w:history="1" r:id="rIdqqqqqqqqqqqqqqqqqqqqq"><w:r><w:rPr
-          ><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /></w:rPr><w:t
+        /></w:pPr><w:bookmarkStart w:name="md_heading_1" w:id="1" /><w:r><w:t
+          xml:space="preserve"
+        >Header</w:t></w:r><w:bookmarkEnd w:id="1" /></w:p><w:p><w:hyperlink
+        w:history="1"
+        r:id="rIdqqqqqqqqqqqqqqqqqqqqq"
+      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /></w:rPr><w:t
             xml:space="preserve"
           >link to GitHub.com</w:t></w:r></w:hyperlink></w:p><w:p><w:pPr
       ><w:pStyle w:val="Heading1" /><w:outlineLvl w:val="1" /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Sub Header</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        >This is </w:t></w:r><w:r><w:t
-          xml:space="preserve"
-        >link to header</w:t></w:r><w:r><w:t
+        >This is </w:t></w:r><w:hyperlink
+        w:history="1"
+        w:anchor="md_heading_1"
+      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
+            xml:space="preserve"
+          >link to header</w:t></w:r></w:hyperlink><w:r><w:t
           xml:space="preserve"
         >.</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
