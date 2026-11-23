@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-DI2KeLah.js";e();

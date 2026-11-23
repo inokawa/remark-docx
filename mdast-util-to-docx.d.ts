@@ -1,10 +1,24 @@
 import { LevelFormat, IPropertiesOptions } from 'docx';
+import { SvgToPngFn } from './utils';
 import { RemarkDocxPlugin, ThematicBreakType } from './types';
 import type * as mdast from "mdast";
 type ListFormat = {
     format: keyof typeof LevelFormat;
     text: string;
 };
+type LoadFn = (url: string) => Promise<ArrayBuffer>;
+export interface ImageOptions {
+    /**
+     * A function to resolve image data from url.
+     * @default {@link loadWithFetch}
+     */
+    load?: LoadFn;
+    /**
+     * A function to convert SVG to PNG. Required to embed SVG images, because the docx specifications require PNG fallback for them.
+     * On browser, you can use {@link browserSvgToPng}.
+     */
+    svgToPng?: SvgToPngFn;
+}
 interface TocOptions {
     /**
      * Title of the table of contents.
@@ -75,9 +89,14 @@ export interface DocxOptions extends Pick<IPropertiesOptions, "title" | "subject
      */
     toc?: boolean | TocOptions;
     /**
+     * Embed images of `image` / `imageReference` nodes. `png`, `jpg`, `gif`, `bmp` and `svg` are supported.
+     * Images are not embedded if not set.
+     */
+    image?: boolean | ImageOptions;
+    /**
      * Plugins to customize how mdast nodes are compiled.
      */
     plugins?: RemarkDocxPlugin[];
 }
-export declare const mdastToDocx: (node: mdast.Root, { plugins, title, subject, creator, keywords, description, styles, size, margin, orientation, columns, spacing, direction, background, thematicBreak, toc, orderedListFormat, }?: DocxOptions) => Promise<Uint8Array>;
+export declare const mdastToDocx: (node: mdast.Root, { plugins, image, title, subject, creator, keywords, description, styles, size, margin, orientation, columns, spacing, direction, background, thematicBreak, toc, orderedListFormat, }?: DocxOptions, imageCache?: ImageCache) => Promise<Uint8Array>;
 export {};
