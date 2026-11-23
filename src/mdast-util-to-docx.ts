@@ -13,6 +13,7 @@ import {
   LevelFormat,
   AlignmentType,
   type ILevelsOptions,
+  type INumberingOptions,
   FootnoteReferenceRun,
   type IPropertiesOptions,
   sectionPageSizeDefaults,
@@ -100,21 +101,31 @@ type ListFormat = {
 
 type OrderedListRegistry = {
   createId: () => string;
-  getIds: () => string[];
+  setStart: (id: string, level: number, start: number) => void;
+  toConfig: (levels: readonly ILevelsOptions[]) => INumberingOptions["config"];
 };
 const createOrderedListRegistry = (): OrderedListRegistry => {
   let counter = 1;
 
-  const ids: string[] = [];
+  const starts = new Map<string, (number | undefined)[]>();
 
   return {
     createId: () => {
       const id = `${ORDERED_LIST_REF}-${counter++}`;
-      ids.push(id);
+      starts.set(id, []);
       return id;
     },
-    getIds: () => {
-      return ids;
+    setStart: (id, level, start) => {
+      // Nested lists at the same level share a numbering, so the first one wins.
+      starts.get(id)![level] ??= start;
+    },
+    toConfig: (levels) => {
+      return [...starts].map(([id, s]) => ({
+        reference: id,
+        levels: levels.map((l, i) =>
+          s[i] != null ? { ...l, start: s[i] } : l,
+        ),
+      }));
     },
   };
 };
@@ -475,6 +486,7 @@ export const mdastToDocx = async (
     images,
     footnote,
     orderedId: ordered.createId,
+    orderedStart: ordered.setStart,
     bookmarks,
   };
 
@@ -597,10 +609,7 @@ export const mdastToDocx = async (
             { text: "\u25A0", format: "BULLET" },
           ]),
         },
-        ...ordered.getIds().map((ref) => ({
-          reference: ref,
-          levels: orderedLevels,
-        })),
+        ...ordered.toConfig(orderedLevels),
         {
           reference: COMPLETE_TASK_LIST_REF,
           levels: buildLevels([
@@ -680,18 +689,20 @@ const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
   });
 };
 
-const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
+const buildList: NodeBuilder<"list"> = ({ children, ordered, start }, ctx) => {
   const parentList = ctx.list;
+  const level = !parentList ? 0 : parentList.level + 1;
 
   let meta: ListContext["meta"];
   if (ordered) {
-    meta = {
-      type: "ordered",
-      reference:
-        parentList && parentList.meta.type === "ordered"
-          ? parentList.meta.reference
-          : ctx.orderedId(),
-    };
+    const reference =
+      parentList && parentList.meta.type === "ordered"
+        ? parentList.meta.reference
+        : ctx.orderedId();
+    if (start != null) {
+      ctx.orderedStart(reference, level, start);
+    }
+    meta = { type: "ordered", reference };
   } else {
     meta = { type: "bullet" };
   }
@@ -699,7 +710,7 @@ const buildList: NodeBuilder<"list"> = ({ children, ordered }, ctx) => {
   return ctx.render(children, {
     ...ctx,
     list: {
-      level: !parentList ? 0 : parentList.level + 1,
+      level,
       meta,
     },
   });
