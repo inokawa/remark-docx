@@ -35,7 +35,7 @@ const plugin: Plugin<[DocxOptions?], Root, Uint8Array> = function (opts) {
   };
 
   const transformer: Transformer<Root, Root> = async (node, file) => {
-    file.data.docx = await mdastToDocx(node as Root, opts, imageCache);
+    file.data.docx = await mdastToDocx(node as Root, opts, imageCache, file);
     return node;
   };
 

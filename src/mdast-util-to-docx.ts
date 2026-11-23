@@ -34,6 +34,7 @@ import {
 import { latexToMath } from "docx/math";
 import { htmlToContent, htmlToRuns, type HtmlOptions } from "docx/html";
 import type * as mdast from "mdast";
+import type { VFile } from "vfile";
 import {
   isSupportedType,
   warnOnce,
@@ -219,7 +220,7 @@ const docxParagraph = (
   return new Paragraph(options);
 };
 
-type LoadFn = (url: string) => Promise<ArrayBuffer | Uint8Array>;
+type LoadFn = (url: string, file: VFile) => Promise<ArrayBuffer | Uint8Array>;
 
 const loadWithFetch: LoadFn = async (url) => {
   const res = await fetch(url);
@@ -231,7 +232,7 @@ const loadWithFetch: LoadFn = async (url) => {
 
 export interface ImageOptions {
   /**
-   * A function to resolve image data from url.
+   * A function to resolve image data from url. `file` is the processed file, which can be used to resolve relative urls.
    * @default {@link loadWithFetch}
    */
   load?: LoadFn;
@@ -251,12 +252,13 @@ const MAX_CACHE_SIZE = 100;
 
 const loadImage = async (
   url: string,
+  file: VFile,
   load: LoadFn,
   svgToPng: SvgToPngFn | undefined,
 ): Promise<DocxImageData | undefined> => {
   let data: ArrayBuffer;
   try {
-    const result = await load(url);
+    const result = await load(url, file);
     // Node.js Buffer may be a view of a shared pool
     data = ArrayBuffer.isView(result)
       ? new Uint8Array(result.buffer, result.byteOffset, result.byteLength).slice()
@@ -301,6 +303,7 @@ const loadImages = async (
   definition: GetDefinition,
   images: Map<string, DocxImageData | null>,
   cache: ImageCache,
+  file: VFile,
   { load = loadWithFetch, svgToPng }: ImageOptions,
 ): Promise<void> => {
   const urls = new Set<string>();
@@ -320,11 +323,14 @@ const loadImages = async (
       if (images.has(url)) {
         return;
       }
-      const image = cache.get(url) ?? (await loadImage(url, load, svgToPng));
+      // Relative urls may point to different images from other files
+      const key = `${file.dirname}\0${url}`;
+      const image =
+        cache.get(key) ?? (await loadImage(url, file, load, svgToPng));
       if (!image) {
         return;
       }
-      cache.set(url, image);
+      cache.set(key, image);
       // Plugins may have set this url while loading.
       if (!images.has(url)) {
         images.set(url, image);
@@ -444,7 +450,8 @@ export const mdastToDocx = async (
     toc,
     orderedListFormat,
   }: DocxOptions = {},
-  imageCache: ImageCache = new Map(),
+  imageCache: ImageCache,
+  file: VFile,
 ): Promise<Uint8Array> => {
   const definition = definitions(node);
 
@@ -530,6 +537,7 @@ export const mdastToDocx = async (
         definition,
         images,
         imageCache,
+        file,
         image === true ? {} : image,
       ),
   ]);

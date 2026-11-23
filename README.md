@@ -107,16 +107,17 @@ Set `image` option to embed `png`, `jpg`, `gif` and `bmp` images.
 const processor = unified().use(markdown).use(docx, { image: true });
 ```
 
-Images are fetched with [fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API) by default. You can customize it with `load` option.
+Images are fetched with [fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API) by default. You can customize it with `load` option, which also receives the processed file to resolve relative urls.
 
 ```javascript
 import * as fs from "node:fs/promises";
+import { pathToFileURL } from "node:url";
 
 const processor = unified()
   .use(markdown)
   .use(docx, {
     image: {
-      load: (url) => fs.readFile(url),
+      load: (url, file) => fs.readFile(new URL(url, pathToFileURL(file.path))),
     },
   });
 ```

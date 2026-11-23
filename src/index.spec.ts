@@ -310,6 +310,23 @@ describe("e2e", () => {
     expect(xml).toContain("<a:blip ");
   });
 
+  it("image loaded relative to the file", async () => {
+    const loaded: string[] = [];
+    const p = processor({
+      image: {
+        load: async (url, file) => {
+          const resolved = path.resolve(file.dirname!, url);
+          loaded.push(resolved);
+          return fs.readFile(path.join(fixturesDir, "images/img.png"));
+        },
+      },
+    });
+    await p.process({ path: "/a/doc.md", value: "![](img.png)" });
+    await p.process({ path: "/b/doc.md", value: "![](img.png)" });
+    await p.process({ path: "/b/doc2.md", value: "![](img.png)" });
+    expect(loaded).toEqual(["/a/img.png", "/b/img.png"]);
+  });
+
   it("image with invalid data", async () => {
     const doc = await processor({
       image: {
