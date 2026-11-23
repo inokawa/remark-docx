@@ -9373,6 +9373,1011 @@ exports[`e2e > heading 8`] = `
 "
 `;
 
+exports[`e2e > html 1`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:document
+  mc:Ignorable="w14 w15 wp14"
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+><w:body><w:p><w:pPr><w:pStyle w:val="Title" /><w:outlineLvl
+          w:val="0"
+        /></w:pPr><w:r><w:t xml:space="preserve">HTML</w:t></w:r></w:p><w:p
+    ><w:pPr><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Heading 1</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading2"
+        /></w:pPr><w:r><w:t xml:space="preserve">Heading </w:t></w:r><w:r><w:rPr
+        ><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >2</w:t></w:r></w:p><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >centered </w:t></w:r><w:r><w:rPr><w:u w:val="single" /></w:rPr><w:t
+          xml:space="preserve"
+        >underline</w:t></w:r><w:r><w:t xml:space="preserve"> </w:t></w:r><w:r
+      ><w:rPr><w:color w:val="FF0000" /></w:rPr><w:t
+          xml:space="preserve"
+        >red</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Multiline </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >block</w:t></w:r><w:r><w:t xml:space="preserve"> with </w:t></w:r><w:r
+      ><w:rPr><w:u w:val="single" /></w:rPr><w:t
+          xml:space="preserve"
+        >inline</w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        >.</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblW
+          w:type="auto"
+          w:w="100"
+        /><w:tblBorders><w:top w:val="single" w:color="auto" w:sz="4" /><w:left
+            w:val="single"
+            w:color="auto"
+            w:sz="4"
+          /><w:bottom w:val="single" w:color="auto" w:sz="4" /><w:right
+            w:val="single"
+            w:color="auto"
+            w:sz="4"
+          /><w:insideH w:val="single" w:color="auto" w:sz="4" /><w:insideV
+            w:val="single"
+            w:color="auto"
+            w:sz="4"
+          /></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol
+          w:w="4513"
+        /><w:gridCol w:w="4513" /></w:tblGrid><w:tr><w:trPr><w:tblHeader
+          /></w:trPr><w:tc><w:tcPr><w:gridSpan w:val="2" /></w:tcPr><w:p><w:pPr
+            ><w:jc w:val="center" /></w:pPr><w:r><w:rPr><w:b /><w:bCs
+                /></w:rPr><w:t
+                xml:space="preserve"
+              >header</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:p><w:r><w:t
+                xml:space="preserve"
+              >a</w:t></w:r></w:p></w:tc><w:tc><w:p><w:r><w:t
+                xml:space="preserve"
+              >b</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:r><w:t
+          xml:space="preserve"
+        >Inline </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >bold</w:t></w:r><w:r><w:t xml:space="preserve">, </w:t></w:r><w:r
+      ><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >nested</w:t></w:r><w:r><w:t xml:space="preserve"> span</w:t></w:r><w:r
+      ><w:t xml:space="preserve">, x</w:t></w:r><w:r><w:rPr><w:vertAlign
+            w:val="superscript"
+          /></w:rPr><w:t xml:space="preserve">2</w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        > and H</w:t></w:r><w:r><w:rPr><w:vertAlign
+            w:val="subscript"
+          /></w:rPr><w:t xml:space="preserve">2</w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        >O.</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Break</w:t></w:r><w:r><w:br /><w:t xml:space="preserve" /></w:r><w:r
+      ><w:t xml:space="preserve">line and </w:t></w:r><w:hyperlink
+        w:history="1"
+        r:id="rIdqqqqqqqqqqqqqqqqqqqqq"
+      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
+            xml:space="preserve"
+          >link</w:t></w:r></w:hyperlink><w:r><w:t
+          xml:space="preserve"
+        >.</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Whitespace</w:t></w:r><w:r><w:t xml:space="preserve"> </w:t></w:r><w:r
+      ><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >inside</w:t></w:r><w:r><w:t xml:space="preserve"> </w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        >tags and</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >​ after</w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        > void.</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Self-closing </w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        >non-void</w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        > tag.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >Strong </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs
+          /></w:rPr><w:t xml:space="preserve">italic</w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        > and </w:t></w:r><w:hyperlink
+        w:history="1"
+        r:id="rIdqqqqqqqqqqqqqqqqqqqqq"
+      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
+            xml:space="preserve"
+          >link </w:t></w:r><w:r><w:rPr><w:rStyle w:val="Hyperlink" /><w:b
+            /><w:bCs /></w:rPr><w:t
+            xml:space="preserve"
+          >bold</w:t></w:r></w:hyperlink><w:r><w:t
+          xml:space="preserve"
+        >.</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Unclosed </w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        >tag and stray </w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        > tag.</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Mixed </w:t></w:r><w:r><w:t xml:space="preserve">with </w:t></w:r><w:r
+      ><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >markdown</w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        > content.</w:t></w:r></w:p><w:p><w:pPr><w:ind
+          w:left="800"
+          w:hanging="400"
+        /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >quoted html</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >listed html</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >item </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+          xml:space="preserve"
+        >bold</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblW
+          w:type="auto"
+          w:w="100"
+        /><w:tblBorders><w:top w:val="single" w:color="auto" w:sz="4" /><w:left
+            w:val="single"
+            w:color="auto"
+            w:sz="4"
+          /><w:bottom w:val="single" w:color="auto" w:sz="4" /><w:right
+            w:val="single"
+            w:color="auto"
+            w:sz="4"
+          /><w:insideH w:val="single" w:color="auto" w:sz="4" /><w:insideV
+            w:val="single"
+            w:color="auto"
+            w:sz="4"
+          /></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol
+          w:w="4513"
+        /><w:gridCol w:w="4513" /></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="4513"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:rPr><w:b
+                /><w:bCs /></w:rPr><w:t
+                xml:space="preserve"
+              >a</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="4513"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
+                xml:space="preserve"
+              >b</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="4513"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
+                xml:space="preserve"
+              >c</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="4513"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:rPr><w:i
+                /><w:iCs /></w:rPr><w:t
+                xml:space="preserve"
+              >d</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:sectPr><w:pgSz
+        w:w="11906"
+        w:h="16838"
+        w:orient="portrait"
+      /><w:pgMar
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
+        w:header="708"
+        w:footer="708"
+        w:gutter="0"
+      /><w:pgNumType /><w:docGrid
+        w:linePitch="360"
+      /></w:sectPr></w:body></w:document>
+"
+`;
+
+exports[`e2e > html 2`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:styles
+  mc:Ignorable="w14 w15"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
+    w:type="paragraph"
+    w:styleId="Normal"
+    w:default="1"
+  ><w:name w:val="Normal" /><w:qFormat /></w:style><w:style
+    w:type="table"
+    w:styleId="TableNormal"
+    w:default="true"
+  ><w:name w:val="Normal Table" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:tblPr><w:tblInd
+        w:type="dxa"
+        w:w="0"
+      /><w:tblCellMar><w:top w:type="dxa" w:w="0" /><w:left
+          w:type="dxa"
+          w:w="108"
+        /><w:bottom w:type="dxa" w:w="0" /><w:right
+          w:type="dxa"
+          w:w="108"
+        /></w:tblCellMar></w:tblPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Title"
+  ><w:name w:val="Title" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:sz w:val="56" /><w:szCs
+        w:val="56"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading1"
+  ><w:name w:val="Heading 1" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="32" /><w:szCs
+        w:val="32"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading2"
+  ><w:name w:val="Heading 2" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="26" /><w:szCs
+        w:val="26"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading3"
+  ><w:name w:val="Heading 3" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /><w:sz w:val="24" /><w:szCs
+        w:val="24"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading4"
+  ><w:name w:val="Heading 4" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:i /><w:iCs /><w:color
+        w:val="2E74B5"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading5"
+  ><w:name w:val="Heading 5" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading6"
+  ><w:name w:val="Heading 6" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Strong"
+  ><w:name w:val="Strong" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:b /><w:bCs /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="ListParagraph"
+  ><w:name w:val="List Paragraph" /><w:basedOn w:val="Normal" /><w:qFormat
+    /></w:style><w:style w:type="paragraph" w:styleId="Caption"><w:name
+      w:val="caption"
+    /><w:basedOn w:val="Normal" /><w:next w:val="Normal" /><w:uiPriority
+      w:val="35"
+    /><w:semiHidden /><w:unhideWhenUsed /><w:qFormat /><w:pPr><w:spacing
+        w:after="200"
+      /></w:pPr><w:rPr><w:i /><w:iCs /><w:color
+        w:val="44546A"
+        w:themeColor="dark2"
+      /><w:sz w:val="18" /><w:szCs w:val="18" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Bibliography"
+  ><w:name w:val="Bibliography" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="37" /><w:unhideWhenUsed /></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC1"
+  ><w:name w:val="toc 1" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC2"
+  ><w:name w:val="toc 2" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind w:left="200" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC3"
+  ><w:name w:val="toc 3" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind w:left="400" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC4"
+  ><w:name w:val="toc 4" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind w:left="600" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC5"
+  ><w:name w:val="toc 5" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind w:left="800" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC6"
+  ><w:name w:val="toc 6" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind
+        w:left="1000"
+      /></w:pPr></w:style><w:style w:type="paragraph" w:styleId="TOC7"><w:name
+      w:val="toc 7"
+    /><w:basedOn w:val="Normal" /><w:next w:val="Normal" /><w:uiPriority
+      w:val="39"
+    /><w:semiHidden /><w:unhideWhenUsed /><w:pPr><w:spacing
+        w:after="100"
+      /><w:ind w:left="1200" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC8"
+  ><w:name w:val="toc 8" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind
+        w:left="1400"
+      /></w:pPr></w:style><w:style w:type="paragraph" w:styleId="TOC9"><w:name
+      w:val="toc 9"
+    /><w:basedOn w:val="Normal" /><w:next w:val="Normal" /><w:uiPriority
+      w:val="39"
+    /><w:semiHidden /><w:unhideWhenUsed /><w:pPr><w:spacing
+        w:after="100"
+      /><w:ind w:left="1600" /></w:pPr></w:style><w:style
+    w:type="character"
+    w:styleId="Hyperlink"
+  ><w:name w:val="Hyperlink" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:color
+        w:val="0563C1"
+      /><w:u w:val="single" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteReference"
+  ><w:name w:val="footnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="FootnoteText"
+  ><w:name w:val="footnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="FootnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteTextChar"
+  ><w:name w:val="Footnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="LineNumber"
+  ><w:name w:val="line number" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed
+    /></w:style></w:styles>
+"
+`;
+
+exports[`e2e > html 3`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:footnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:footnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:footnote><w:footnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:footnote></w:footnotes>
+"
+`;
+
+exports[`e2e > html 4`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > html 5`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:settings
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:displayBackgroundShape /><w:defaultTabStop
+    w:val="720"
+  /><w:evenAndOddHeaders w:val="false" /><w:compat><w:compatSetting
+      w:val="15"
+      w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
+    /></w:compat></w:settings>
+"
+`;
+
+exports[`e2e > html 6`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
+exports[`e2e > html 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<a:theme
+  xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+  name="Office Theme"
+><a:themeElements><a:clrScheme name="Office"><a:dk1><a:sysClr
+          val="windowText"
+          lastClr="000000"
+        /></a:dk1><a:lt1><a:sysClr
+          val="window"
+          lastClr="FFFFFF"
+        /></a:lt1><a:dk2><a:srgbClr val="44546A" /></a:dk2><a:lt2><a:srgbClr
+          val="E7E6E6"
+        /></a:lt2><a:accent1><a:srgbClr val="4472C4" /></a:accent1><a:accent2
+      ><a:srgbClr val="ED7D31" /></a:accent2><a:accent3><a:srgbClr
+          val="A5A5A5"
+        /></a:accent3><a:accent4><a:srgbClr
+          val="FFC000"
+        /></a:accent4><a:accent5><a:srgbClr
+          val="5B9BD5"
+        /></a:accent5><a:accent6><a:srgbClr val="70AD47" /></a:accent6><a:hlink
+      ><a:srgbClr val="0563C1" /></a:hlink><a:folHlink><a:srgbClr
+          val="954F72"
+        /></a:folHlink></a:clrScheme><a:fontScheme name="Office"><a:majorFont
+      ><a:latin typeface="Calibri Light" panose="020F0302020204030204" /><a:ea
+          typeface=""
+        /><a:cs typeface="" /><a:font
+          script="Jpan"
+          typeface="游ゴシック Light"
+        /><a:font script="Hang" typeface="맑은 고딕" /><a:font
+          script="Hans"
+          typeface="等线 Light"
+        /><a:font script="Hant" typeface="新細明體" /><a:font
+          script="Arab"
+          typeface="Times New Roman"
+        /><a:font script="Hebr" typeface="Times New Roman" /><a:font
+          script="Thai"
+          typeface="Angsana New"
+        /><a:font script="Ethi" typeface="Nyala" /><a:font
+          script="Beng"
+          typeface="Vrinda"
+        /><a:font script="Gujr" typeface="Shruti" /><a:font
+          script="Khmr"
+          typeface="MoolBoran"
+        /><a:font script="Knda" typeface="Tunga" /><a:font
+          script="Guru"
+          typeface="Raavi"
+        /><a:font script="Cans" typeface="Euphemia" /><a:font
+          script="Cher"
+          typeface="Plantagenet Cherokee"
+        /><a:font script="Yiii" typeface="Microsoft Yi Baiti" /><a:font
+          script="Tibt"
+          typeface="Microsoft Himalaya"
+        /><a:font script="Thaa" typeface="MV Boli" /><a:font
+          script="Deva"
+          typeface="Mangal"
+        /><a:font script="Telu" typeface="Gautami" /><a:font
+          script="Taml"
+          typeface="Latha"
+        /><a:font script="Syrc" typeface="Estrangelo Edessa" /><a:font
+          script="Orya"
+          typeface="Kalinga"
+        /><a:font script="Mlym" typeface="Kartika" /><a:font
+          script="Laoo"
+          typeface="DokChampa"
+        /><a:font script="Sinh" typeface="Iskoola Pota" /><a:font
+          script="Mong"
+          typeface="Mongolian Baiti"
+        /><a:font script="Viet" typeface="Times New Roman" /><a:font
+          script="Uigh"
+          typeface="Microsoft Uighur"
+        /><a:font script="Geor" typeface="Sylfaen" /><a:font
+          script="Armn"
+          typeface="Arial"
+        /><a:font script="Bugi" typeface="Leelawadee UI" /><a:font
+          script="Bopo"
+          typeface="Microsoft JhengHei"
+        /><a:font script="Java" typeface="Javanese Text" /><a:font
+          script="Lisu"
+          typeface="Segoe UI"
+        /><a:font script="Mymr" typeface="Myanmar Text" /><a:font
+          script="Nkoo"
+          typeface="Ebrima"
+        /><a:font script="Olck" typeface="Nirmala UI" /><a:font
+          script="Osma"
+          typeface="Ebrima"
+        /><a:font script="Phag" typeface="Phagspa" /><a:font
+          script="Syrn"
+          typeface="Estrangelo Edessa"
+        /><a:font script="Syrj" typeface="Estrangelo Edessa" /><a:font
+          script="Syre"
+          typeface="Estrangelo Edessa"
+        /><a:font script="Sora" typeface="Nirmala UI" /><a:font
+          script="Tale"
+          typeface="Microsoft Tai Le"
+        /><a:font script="Talu" typeface="Microsoft New Tai Lue" /><a:font
+          script="Tfng"
+          typeface="Ebrima"
+        /></a:majorFont><a:minorFont><a:latin
+          typeface="Calibri"
+          panose="020F0502020204030204"
+        /><a:ea typeface="" /><a:cs typeface="" /><a:font
+          script="Jpan"
+          typeface="游明朝"
+        /><a:font script="Hang" typeface="맑은 고딕" /><a:font
+          script="Hans"
+          typeface="等线"
+        /><a:font script="Hant" typeface="新細明體" /><a:font
+          script="Arab"
+          typeface="Arial"
+        /><a:font script="Hebr" typeface="Arial" /><a:font
+          script="Thai"
+          typeface="Cordia New"
+        /><a:font script="Ethi" typeface="Nyala" /><a:font
+          script="Beng"
+          typeface="Vrinda"
+        /><a:font script="Gujr" typeface="Shruti" /><a:font
+          script="Khmr"
+          typeface="DaunPenh"
+        /><a:font script="Knda" typeface="Tunga" /><a:font
+          script="Guru"
+          typeface="Raavi"
+        /><a:font script="Cans" typeface="Euphemia" /><a:font
+          script="Cher"
+          typeface="Plantagenet Cherokee"
+        /><a:font script="Yiii" typeface="Microsoft Yi Baiti" /><a:font
+          script="Tibt"
+          typeface="Microsoft Himalaya"
+        /><a:font script="Thaa" typeface="MV Boli" /><a:font
+          script="Deva"
+          typeface="Mangal"
+        /><a:font script="Telu" typeface="Gautami" /><a:font
+          script="Taml"
+          typeface="Latha"
+        /><a:font script="Syrc" typeface="Estrangelo Edessa" /><a:font
+          script="Orya"
+          typeface="Kalinga"
+        /><a:font script="Mlym" typeface="Kartika" /><a:font
+          script="Laoo"
+          typeface="DokChampa"
+        /><a:font script="Sinh" typeface="Iskoola Pota" /><a:font
+          script="Mong"
+          typeface="Mongolian Baiti"
+        /><a:font script="Viet" typeface="Arial" /><a:font
+          script="Uigh"
+          typeface="Microsoft Uighur"
+        /><a:font script="Geor" typeface="Sylfaen" /><a:font
+          script="Armn"
+          typeface="Arial"
+        /><a:font script="Bugi" typeface="Leelawadee UI" /><a:font
+          script="Bopo"
+          typeface="Microsoft JhengHei"
+        /><a:font script="Java" typeface="Javanese Text" /><a:font
+          script="Lisu"
+          typeface="Segoe UI"
+        /><a:font script="Mymr" typeface="Myanmar Text" /><a:font
+          script="Nkoo"
+          typeface="Ebrima"
+        /><a:font script="Olck" typeface="Nirmala UI" /><a:font
+          script="Osma"
+          typeface="Ebrima"
+        /><a:font script="Phag" typeface="Phagspa" /><a:font
+          script="Syrn"
+          typeface="Estrangelo Edessa"
+        /><a:font script="Syrj" typeface="Estrangelo Edessa" /><a:font
+          script="Syre"
+          typeface="Estrangelo Edessa"
+        /><a:font script="Sora" typeface="Nirmala UI" /><a:font
+          script="Tale"
+          typeface="Microsoft Tai Le"
+        /><a:font script="Talu" typeface="Microsoft New Tai Lue" /><a:font
+          script="Tfng"
+          typeface="Ebrima"
+        /></a:minorFont></a:fontScheme><a:fmtScheme
+      name="Office"
+    ><a:fillStyleLst><a:solidFill><a:schemeClr
+            val="phClr"
+          /></a:solidFill><a:gradFill rotWithShape="true"><a:gsLst><a:gs
+              pos="0"
+            ><a:schemeClr val="phClr"><a:lumMod val="110000" /><a:satMod
+                  val="105000"
+                /><a:tint val="67000" /></a:schemeClr></a:gs><a:gs
+              pos="50000"
+            ><a:schemeClr val="phClr"><a:lumMod val="105000" /><a:satMod
+                  val="103000"
+                /><a:tint val="73000" /></a:schemeClr></a:gs><a:gs
+              pos="100000"
+            ><a:schemeClr val="phClr"><a:lumMod val="105000" /><a:satMod
+                  val="109000"
+                /><a:tint val="81000" /></a:schemeClr></a:gs></a:gsLst><a:lin
+            ang="5400000"
+            scaled="false"
+          /></a:gradFill><a:gradFill rotWithShape="true"><a:gsLst><a:gs
+              pos="0"
+            ><a:schemeClr val="phClr"><a:satMod val="103000" /><a:lumMod
+                  val="102000"
+                /><a:tint val="94000" /></a:schemeClr></a:gs><a:gs
+              pos="50000"
+            ><a:schemeClr val="phClr"><a:satMod val="110000" /><a:lumMod
+                  val="100000"
+                /><a:shade val="100000" /></a:schemeClr></a:gs><a:gs
+              pos="100000"
+            ><a:schemeClr val="phClr"><a:lumMod val="99000" /><a:satMod
+                  val="120000"
+                /><a:shade val="78000" /></a:schemeClr></a:gs></a:gsLst><a:lin
+            ang="5400000"
+            scaled="false"
+          /></a:gradFill></a:fillStyleLst><a:lnStyleLst><a:ln
+          w="6350"
+          cap="flat"
+          cmpd="sng"
+          algn="ctr"
+        ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:prstDash
+            val="solid"
+          /><a:miter lim="800000" /></a:ln><a:ln
+          w="12700"
+          cap="flat"
+          cmpd="sng"
+          algn="ctr"
+        ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:prstDash
+            val="solid"
+          /><a:miter lim="800000" /></a:ln><a:ln
+          w="19050"
+          cap="flat"
+          cmpd="sng"
+          algn="ctr"
+        ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:prstDash
+            val="solid"
+          /><a:miter lim="800000" /></a:ln></a:lnStyleLst><a:effectStyleLst
+      ><a:effectStyle><a:effectLst /></a:effectStyle><a:effectStyle><a:effectLst
+          /></a:effectStyle><a:effectStyle><a:effectLst><a:outerShdw
+              blurRad="57150"
+              dist="19050"
+              dir="5400000"
+              algn="ctr"
+              rotWithShape="false"
+            ><a:srgbClr val="000000"><a:alpha
+                  val="63000"
+                /></a:srgbClr></a:outerShdw></a:effectLst></a:effectStyle></a:effectStyleLst><a:bgFillStyleLst
+      ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:solidFill
+        ><a:schemeClr val="phClr"><a:tint val="95000" /><a:satMod
+              val="170000"
+            /></a:schemeClr></a:solidFill><a:gradFill
+          rotWithShape="true"
+        ><a:gsLst><a:gs pos="0"><a:schemeClr val="phClr"><a:tint
+                  val="93000"
+                /><a:satMod val="150000" /><a:shade val="98000" /><a:lumMod
+                  val="102000"
+                /></a:schemeClr></a:gs><a:gs pos="50000"><a:schemeClr
+                val="phClr"
+              ><a:tint val="98000" /><a:satMod val="130000" /><a:shade
+                  val="90000"
+                /><a:lumMod val="103000" /></a:schemeClr></a:gs><a:gs
+              pos="100000"
+            ><a:schemeClr val="phClr"><a:shade val="63000" /><a:satMod
+                  val="120000"
+                /></a:schemeClr></a:gs></a:gsLst><a:lin
+            ang="5400000"
+            scaled="false"
+          /></a:gradFill></a:bgFillStyleLst></a:fmtScheme></a:themeElements><a:objectDefaults
+  /><a:extraClrSchemeLst /></a:theme>
+"
+`;
+
+exports[`e2e > html 8`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:numbering
+  mc:Ignorable="w14 w15 wp14"
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+><w:abstractNum
+    w:abstractNumId="2"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="○" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="■"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="○"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="■" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="2"><w:abstractNumId
+      w:val="2"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="1"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="2"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="3"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="4"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="5"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num></w:numbering>
+"
+`;
+
 exports[`e2e > image 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
@@ -10299,262 +11304,226 @@ exports[`e2e > latex 1`] = `
           >a≠0</m:t></m:r></m:oMath><w:r><w:t
           xml:space="preserve"
         >, there are two solutions to </w:t></w:r><m:oMath><m:r><m:t
-          >a</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+          >a</m:t></m:r><m:sSup><m:sSupPr /><m:e><m:r><m:t
               >x</m:t></m:r></m:e><m:sup><m:r><m:t
               >2</m:t></m:r></m:sup></m:sSup><m:r><m:t
           >+bx+c=0</m:t></m:r></m:oMath><w:r><w:t
           xml:space="preserve"
         > and they are
-</w:t></w:r><m:oMath><m:r><m:t>x=</m:t></m:r><m:f><m:fPr><m:type
-              m:val="bar"
-            /></m:fPr><m:num><m:r><m:t>−b±</m:t></m:r><m:rad><m:radPr><m:degHide
-                  m:val="on"
-                /></m:radPr><m:deg /><m:e><m:sSup><m:sSupPr><m:ctrlPr
-                    /></m:sSupPr><m:e><m:r><m:t>b</m:t></m:r></m:e><m:sup><m:r
-                    ><m:t>2</m:t></m:r></m:sup></m:sSup><m:r><m:t
+</w:t></w:r><m:oMath><m:r><m:t>x=</m:t></m:r><m:f><m:num><m:r><m:t
+              >−b±</m:t></m:r><m:rad><m:radPr><m:degHide
+                  m:val="1"
+                /></m:radPr><m:deg /><m:e><m:sSup><m:sSupPr /><m:e><m:r><m:t
+                      >b</m:t></m:r></m:e><m:sup><m:r><m:t
+                      >2</m:t></m:r></m:sup></m:sSup><m:r><m:t
                   >−4ac</m:t></m:r></m:e></m:rad></m:num><m:den><m:r><m:t
               >2a</m:t></m:r></m:den></m:f><m:r><m:t
           >.</m:t></m:r></m:oMath></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        >The Lorenz Equations</w:t></w:r></w:p><w:p><m:oMath><m:m><m:mPr
-          ><m:baseJc m:val="center" /><m:plcHide m:val="on" /><m:mcs><m:mc
-              ><m:mcPr><m:count m:val="2" /><m:mcJc
-                    m:val="center"
-                  /></m:mcPr></m:mc></m:mcs></m:mPr><m:mr><m:e><m:limUpp><m:e
-                ><m:r><m:t>x</m:t></m:r></m:e><m:lim><m:r><m:t
-                    >˙</m:t></m:r></m:lim></m:limUpp></m:e><m:e><m:r><m:t
-                >=σ(y−x)</m:t></m:r></m:e></m:mr><m:mr><m:e><m:limUpp><m:e><m:r
-                  ><m:t>y</m:t></m:r></m:e><m:lim><m:r><m:t
-                    >˙</m:t></m:r></m:lim></m:limUpp></m:e><m:e><m:r><m:t
-                >=ρx−y−xz</m:t></m:r></m:e></m:mr><m:mr><m:e><m:limUpp><m:e><m:r
-                  ><m:t>z</m:t></m:r></m:e><m:lim><m:r><m:t
-                    >˙</m:t></m:r></m:lim></m:limUpp></m:e><m:e><m:r><m:t
-                >=−βz+xy</m:t></m:r></m:e></m:mr></m:m></m:oMath></w:p><w:p><w:r
+        >The Lorenz Equations</w:t></w:r></w:p><w:p><m:oMath><m:eqArr><m:e
+          ><m:acc><m:accPr><m:chr m:val="̇" /></m:accPr><m:e><m:r><m:t
+                  >x</m:t></m:r></m:e></m:acc><m:r><m:t>&amp;</m:t></m:r><m:r
+            ><m:t>=σ(y−x)</m:t></m:r></m:e><m:e><m:acc><m:accPr><m:chr
+                  m:val="̇"
+                /></m:accPr><m:e><m:r><m:t>y</m:t></m:r></m:e></m:acc><m:r><m:t
+              >&amp;</m:t></m:r><m:r><m:t>=ρx−y−xz</m:t></m:r></m:e><m:e><m:acc
+            ><m:accPr><m:chr m:val="̇" /></m:accPr><m:e><m:r><m:t
+                  >z</m:t></m:r></m:e></m:acc><m:r><m:t>&amp;</m:t></m:r><m:r
+            ><m:t>=−βz+xy</m:t></m:r></m:e></m:eqArr></m:oMath></w:p><w:p><w:r
       ><w:t
           xml:space="preserve"
         >The Cauchy-Schwarz Inequality</w:t></w:r></w:p><w:p><m:oMath><m:sSup
-        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t>(∑∗</m:t></m:r><m:sSup
-            ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
-                  >k=1</m:t></m:r></m:e><m:sup><m:r><m:t
-                  >n</m:t></m:r></m:sup></m:sSup><m:sSub><m:sSubPr><m:ctrlPr
-                /></m:sSubPr><m:e><m:r><m:t>a</m:t></m:r></m:e><m:sub><m:r><m:t
-                  >k</m:t></m:r></m:sub></m:sSub><m:sSub><m:sSubPr><m:ctrlPr
-                /></m:sSubPr><m:e><m:r><m:t>b</m:t></m:r></m:e><m:sub><m:r><m:t
-                  >k</m:t></m:r></m:sub></m:sSub><m:r><m:t
-              >)</m:t></m:r></m:e><m:sup><m:argPr><m:scrLvl
-                m:val="0"
-              /></m:argPr><m:argPr><m:scrLvl m:val="0" /></m:argPr><m:r><m:t
-              /></m:r><m:r><m:t /></m:r><m:r><m:t
-              >2</m:t></m:r></m:sup></m:sSup><m:r><m:t>≤</m:t></m:r><m:r><m:t
-          >(∑∗</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r
-            ><m:t>k=1</m:t></m:r></m:e><m:sup><m:r><m:t
-              >n</m:t></m:r></m:sup></m:sSup><m:r><m:t>a∗</m:t></m:r><m:sSup
-        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
-              >k</m:t></m:r></m:e><m:sup><m:r><m:t
-              >2</m:t></m:r></m:sup></m:sSup><m:r><m:t>)</m:t></m:r><m:r><m:t
-          >(∑∗</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r
-            ><m:t>k=1</m:t></m:r></m:e><m:sup><m:r><m:t
-              >n</m:t></m:r></m:sup></m:sSup><m:sSubSup><m:sSubSupPr><m:ctrlPr
-            /></m:sSubSupPr><m:e><m:r><m:t>b</m:t></m:r></m:e><m:sub><m:r><m:t
-              >k</m:t></m:r></m:sub><m:sup><m:r><m:t
-              >2</m:t></m:r></m:sup></m:sSubSup><m:r><m:t
-          >)</m:t></m:r></m:oMath></w:p><w:p><w:r><w:t
+        ><m:sSupPr /><m:e><m:d><m:dPr><m:begChr m:val="(" /><m:endChr
+                  m:val=")"
+                /></m:dPr><m:e><m:nary><m:naryPr><m:chr m:val="∑" /><m:limLoc
+                      m:val="undOvr"
+                    /><m:subHide m:val="1" /><m:supHide
+                      m:val="1"
+                    /></m:naryPr><m:sub /><m:sup /><m:e><m:r><m:t
+                      >∗</m:t></m:r><m:sSup><m:sSupPr /><m:e><m:r><m:t
+                          >k=1</m:t></m:r></m:e><m:sup><m:r><m:t
+                          >n</m:t></m:r></m:sup></m:sSup><m:sSub><m:sSubPr
+                      /><m:e><m:r><m:t>a</m:t></m:r></m:e><m:sub><m:r><m:t
+                          >k</m:t></m:r></m:sub></m:sSub><m:sSub><m:sSubPr
+                      /><m:e><m:r><m:t>b</m:t></m:r></m:e><m:sub><m:r><m:t
+                          >k</m:t></m:r></m:sub></m:sSub></m:e></m:nary></m:e></m:d></m:e><m:sup
+          ><m:r><m:t>2</m:t></m:r></m:sup></m:sSup><m:r><m:t>≤</m:t></m:r><m:d
+        ><m:dPr><m:begChr m:val="(" /><m:endChr m:val=")" /></m:dPr><m:e><m:nary
+            ><m:naryPr><m:chr m:val="∑" /><m:limLoc m:val="undOvr" /><m:subHide
+                  m:val="1"
+                /><m:supHide m:val="1" /></m:naryPr><m:sub /><m:sup /><m:e><m:r
+                ><m:t>∗</m:t></m:r><m:sSup><m:sSupPr /><m:e><m:r><m:t
+                      >k=1</m:t></m:r></m:e><m:sup><m:r><m:t
+                      >n</m:t></m:r></m:sup></m:sSup><m:r><m:t
+                  >a∗</m:t></m:r><m:sSup><m:sSupPr /><m:e><m:r><m:t
+                      >k</m:t></m:r></m:e><m:sup><m:r><m:t
+                      >2</m:t></m:r></m:sup></m:sSup></m:e></m:nary></m:e></m:d><m:d
+        ><m:dPr><m:begChr m:val="(" /><m:endChr m:val=")" /></m:dPr><m:e><m:nary
+            ><m:naryPr><m:chr m:val="∑" /><m:limLoc m:val="undOvr" /><m:subHide
+                  m:val="1"
+                /><m:supHide m:val="1" /></m:naryPr><m:sub /><m:sup /><m:e><m:r
+                ><m:t>∗</m:t></m:r><m:sSup><m:sSupPr /><m:e><m:r><m:t
+                      >k=1</m:t></m:r></m:e><m:sup><m:r><m:t
+                      >n</m:t></m:r></m:sup></m:sSup><m:sSubSup><m:sSubSupPr
+                  /><m:e><m:r><m:t>b</m:t></m:r></m:e><m:sub><m:r><m:t
+                      >k</m:t></m:r></m:sub><m:sup><m:r><m:t
+                      >2</m:t></m:r></m:sup></m:sSubSup></m:e></m:nary></m:e></m:d></m:oMath></w:p><w:p
+    ><w:r><w:t
           xml:space="preserve"
         >A Cross Product Formula</w:t></w:r></w:p><w:p><m:oMath><m:r><m:rPr
-          ><m:nor /><m:sty m:val="b" /></m:rPr><m:t>V</m:t></m:r><m:r><m:rPr
-          ><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t>_</m:t></m:r><m:r
-        ><m:t>1×</m:t></m:r><m:r><m:rPr><m:nor /><m:sty m:val="b" /></m:rPr><m:t
-          >V</m:t></m:r><m:r><m:rPr><m:nor /><m:sty
-              m:val="undefined"
-            /></m:rPr><m:t>_</m:t></m:r><m:r><m:t>2=</m:t></m:r><m:r><m:t
-          >|</m:t></m:r><m:m><m:mPr><m:baseJc m:val="center" /><m:plcHide
-              m:val="on"
-            /><m:mcs><m:mc><m:mcPr><m:count m:val="3" /><m:mcJc
-                    m:val="center"
-                  /></m:mcPr></m:mc></m:mcs></m:mPr><m:mr><m:e><m:r><m:rPr
-                ><m:nor /><m:sty m:val="b" /></m:rPr><m:t
-                >i</m:t></m:r></m:e><m:e><m:r><m:rPr><m:nor /><m:sty
-                    m:val="b"
-                  /></m:rPr><m:t>j</m:t></m:r></m:e><m:e><m:r><m:rPr><m:nor
-                  /><m:sty m:val="b" /></m:rPr><m:t
-                >k</m:t></m:r></m:e></m:mr><m:mr><m:e><m:f><m:fPr><m:type
-                    m:val="bar"
-                  /></m:fPr><m:num><m:r><m:t>∂X</m:t></m:r></m:num><m:den><m:r
-                  ><m:t>∂u</m:t></m:r></m:den></m:f></m:e><m:e><m:f><m:fPr
-                ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
-                    >∂Y</m:t></m:r></m:num><m:den><m:r><m:t
-                    >∂u</m:t></m:r></m:den></m:f></m:e><m:e><m:r><m:t
-                >0</m:t></m:r></m:e></m:mr><m:mr><m:e><m:f><m:fPr><m:type
-                    m:val="bar"
-                  /></m:fPr><m:num><m:r><m:t>∂X</m:t></m:r></m:num><m:den><m:r
-                  ><m:t>∂v</m:t></m:r></m:den></m:f></m:e><m:e><m:f><m:fPr
-                ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
-                    >∂Y</m:t></m:r></m:num><m:den><m:r><m:t
-                    >∂v</m:t></m:r></m:den></m:f></m:e><m:e><m:r><m:t
-                >0</m:t></m:r></m:e></m:mr></m:m><m:r><m:t
-          >|</m:t></m:r></m:oMath></w:p><w:p><w:r><w:t
+          ><m:sty m:val="b" /></m:rPr><m:t>V</m:t></m:r><m:r><m:t
+          >_1×</m:t></m:r><m:r><m:rPr><m:sty m:val="b" /></m:rPr><m:t
+          >V</m:t></m:r><m:r><m:t>_2=</m:t></m:r><m:d><m:dPr><m:begChr
+              m:val="|"
+            /><m:endChr m:val="|" /></m:dPr><m:e><m:m><m:mPr><m:baseJc
+                  m:val="center"
+                /><m:plcHide m:val="1" /><m:mcs><m:mc><m:mcPr><m:count
+                        m:val="3"
+                      /><m:mcJc
+                        m:val="center"
+                      /></m:mcPr></m:mc></m:mcs></m:mPr><m:mr><m:e><m:r><m:rPr
+                    ><m:sty m:val="b" /></m:rPr><m:t>i</m:t></m:r></m:e><m:e
+                ><m:r><m:rPr><m:sty m:val="b" /></m:rPr><m:t
+                    >j</m:t></m:r></m:e><m:e><m:r><m:rPr><m:sty
+                        m:val="b"
+                      /></m:rPr><m:t>k</m:t></m:r></m:e></m:mr><m:mr><m:e><m:f
+                  ><m:num><m:r><m:t>∂X</m:t></m:r></m:num><m:den><m:r><m:t
+                        >∂u</m:t></m:r></m:den></m:f></m:e><m:e><m:f><m:num><m:r
+                      ><m:t>∂Y</m:t></m:r></m:num><m:den><m:r><m:t
+                        >∂u</m:t></m:r></m:den></m:f></m:e><m:e><m:r><m:t
+                    >0</m:t></m:r></m:e></m:mr><m:mr><m:e><m:f><m:num><m:r><m:t
+                        >∂X</m:t></m:r></m:num><m:den><m:r><m:t
+                        >∂v</m:t></m:r></m:den></m:f></m:e><m:e><m:f><m:num><m:r
+                      ><m:t>∂Y</m:t></m:r></m:num><m:den><m:r><m:t
+                        >∂v</m:t></m:r></m:den></m:f></m:e><m:e><m:r><m:t
+                    >0</m:t></m:r></m:e></m:mr></m:m></m:e></m:d></m:oMath></w:p><w:p
+    ><w:r><w:t
           xml:space="preserve"
         >The probability of getting (k) heads when flipping (n) coins is:</w:t></w:r></w:p><w:p
-    ><m:oMath><m:r><m:t>P(E)=</m:t></m:r><m:r><m:t>(</m:t></m:r><m:f><m:fPr
-          ><m:type m:val="noBar" /></m:fPr><m:num><m:r><m:t
-              >n</m:t></m:r></m:num><m:den><m:r><m:t
-              >k</m:t></m:r></m:den></m:f><m:r><m:t>)</m:t></m:r><m:sSup
-        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
-              >p</m:t></m:r></m:e><m:sup><m:r><m:t
+    ><m:oMath><m:r><m:t>P(E)=</m:t></m:r><m:d><m:dPr><m:begChr
+              m:val="("
+            /><m:endChr m:val=")" /></m:dPr><m:e><m:f><m:fPr><m:type
+                  m:val="noBar"
+                /></m:fPr><m:num><m:r><m:t>n</m:t></m:r></m:num><m:den><m:r><m:t
+                  >k</m:t></m:r></m:den></m:f></m:e></m:d><m:sSup><m:sSupPr
+          /><m:e><m:r><m:t>p</m:t></m:r></m:e><m:sup><m:r><m:t
               >k</m:t></m:r></m:sup></m:sSup><m:r><m:t>(1−p</m:t></m:r><m:sSup
-        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
-              >)</m:t></m:r></m:e><m:sup><m:r><m:t
+        ><m:sSupPr /><m:e><m:r><m:t>)</m:t></m:r></m:e><m:sup><m:r><m:t
               >n−k</m:t></m:r></m:sup></m:sSup></m:oMath></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        >An Identity of Ramanujan</w:t></w:r></w:p><w:p><m:oMath><m:f><m:fPr
-          ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
-              >1</m:t></m:r></m:num><m:den><m:r><m:t>(</m:t></m:r><m:rad
-            ><m:radPr><m:degHide m:val="on" /></m:radPr><m:deg /><m:e><m:r><m:t
-                  >ϕ</m:t></m:r><m:rad><m:radPr><m:degHide
-                      m:val="on"
-                    /></m:radPr><m:deg /><m:e><m:r><m:t
-                      >5</m:t></m:r></m:e></m:rad></m:e></m:rad><m:r><m:t
-              >−ϕ)</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r
-                ><m:t>e</m:t></m:r></m:e><m:sup><m:f><m:fPr><m:type
-                      m:val="bar"
-                    /></m:fPr><m:num><m:r><m:t>2</m:t></m:r></m:num><m:den><m:r
-                    ><m:t>5</m:t></m:r></m:den></m:f><m:r><m:t
+        >An Identity of Ramanujan</w:t></w:r></w:p><w:p><m:oMath><m:f><m:num
+          ><m:r><m:t>1</m:t></m:r></m:num><m:den><m:d><m:dPr><m:begChr
+                  m:val="("
+                /><m:endChr m:val=")" /></m:dPr><m:e><m:rad><m:radPr><m:degHide
+                      m:val="1"
+                    /></m:radPr><m:deg /><m:e><m:r><m:t>ϕ</m:t></m:r><m:rad
+                    ><m:radPr><m:degHide m:val="1" /></m:radPr><m:deg /><m:e
+                      ><m:r><m:t>5</m:t></m:r></m:e></m:rad></m:e></m:rad><m:r
+                ><m:t>−ϕ</m:t></m:r></m:e></m:d><m:sSup><m:sSupPr /><m:e><m:r
+                ><m:t>e</m:t></m:r></m:e><m:sup><m:f><m:num><m:r><m:t
+                      >2</m:t></m:r></m:num><m:den><m:r><m:t
+                      >5</m:t></m:r></m:den></m:f><m:r><m:t
                   >π</m:t></m:r></m:sup></m:sSup></m:den></m:f><m:r><m:t
-          >=1+</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
-          ><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+          >=1+</m:t></m:r><m:f><m:num><m:sSup><m:sSupPr /><m:e><m:r><m:t
                   >e</m:t></m:r></m:e><m:sup><m:r><m:t
                   >−2π</m:t></m:r></m:sup></m:sSup></m:num><m:den><m:r><m:t
-              >1+</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
-              ><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+              >1+</m:t></m:r><m:f><m:num><m:sSup><m:sSupPr /><m:e><m:r><m:t
                       >e</m:t></m:r></m:e><m:sup><m:r><m:t
                       >−4π</m:t></m:r></m:sup></m:sSup></m:num><m:den><m:r><m:t
-                  >1+</m:t></m:r><m:f><m:fPr><m:type
-                      m:val="bar"
-                    /></m:fPr><m:num><m:sSup><m:sSupPr><m:ctrlPr
-                        /></m:sSupPr><m:e><m:r><m:t>e</m:t></m:r></m:e><m:sup
-                      ><m:r><m:t>−6π</m:t></m:r></m:sup></m:sSup></m:num><m:den
-                  ><m:r><m:t>1+</m:t></m:r><m:f><m:fPr><m:type
-                          m:val="bar"
-                        /></m:fPr><m:num><m:sSup><m:sSupPr><m:ctrlPr
-                            /></m:sSupPr><m:e><m:r><m:t
-                              >e</m:t></m:r></m:e><m:sup><m:r><m:t
+                  >1+</m:t></m:r><m:f><m:num><m:sSup><m:sSupPr /><m:e><m:r><m:t
+                          >e</m:t></m:r></m:e><m:sup><m:r><m:t
+                          >−6π</m:t></m:r></m:sup></m:sSup></m:num><m:den><m:r
+                    ><m:t>1+</m:t></m:r><m:f><m:num><m:sSup><m:sSupPr /><m:e
+                          ><m:r><m:t>e</m:t></m:r></m:e><m:sup><m:r><m:t
                               >−8π</m:t></m:r></m:sup></m:sSup></m:num><m:den
                       ><m:r><m:t
                           >1+…</m:t></m:r></m:den></m:f></m:den></m:f></m:den></m:f></m:den></m:f></m:oMath></w:p><w:p
     ><w:r><w:t
           xml:space="preserve"
         >A Rogers-Ramanujan Identity</w:t></w:r></w:p><w:p><m:oMath><m:r><m:t
-          >1+</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
-          ><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
+          >1+</m:t></m:r><m:f><m:num><m:sSup><m:sSupPr /><m:e><m:r><m:t
                   >q</m:t></m:r></m:e><m:sup><m:r><m:t
                   >2</m:t></m:r></m:sup></m:sSup></m:num><m:den><m:r><m:t
-              >(1−q)</m:t></m:r></m:den></m:f><m:r><m:t>+</m:t></m:r><m:f><m:fPr
-          ><m:type m:val="bar" /></m:fPr><m:num><m:sSup><m:sSupPr><m:ctrlPr
-                /></m:sSupPr><m:e><m:r><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
-                  >6</m:t></m:r></m:sup></m:sSup></m:num><m:den><m:r><m:t
-              >(1−q)(1−</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e
-              ><m:r><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
+              >(1−q)</m:t></m:r></m:den></m:f><m:r><m:t>+</m:t></m:r><m:f><m:num
+          ><m:sSup><m:sSupPr /><m:e><m:r><m:t>q</m:t></m:r></m:e><m:sup><m:r
+                ><m:t>6</m:t></m:r></m:sup></m:sSup></m:num><m:den><m:r><m:t
+              >(1−q)(1−</m:t></m:r><m:sSup><m:sSupPr /><m:e><m:r><m:t
+                  >q</m:t></m:r></m:e><m:sup><m:r><m:t
                   >2</m:t></m:r></m:sup></m:sSup><m:r><m:t
-              >)</m:t></m:r></m:den></m:f><m:r><m:t>+⋯=∏</m:t></m:r><m:r><m:rPr
-          ><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t>_</m:t></m:r><m:sSup
-        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
-              >j=0</m:t></m:r></m:e><m:sup><m:r><m:rPr><m:nor /><m:sty
-                  m:val="undefined"
-                /></m:rPr><m:t>∞</m:t></m:r></m:sup></m:sSup><m:f><m:fPr><m:type
-              m:val="bar"
-            /></m:fPr><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r><m:t
-              >(1−</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r
-                ><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
-                  >5j+2</m:t></m:r></m:sup></m:sSup><m:r><m:t
-              >)(1−</m:t></m:r><m:sSup><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e
-              ><m:r><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
-                  >5j+3</m:t></m:r></m:sup></m:sSup><m:r><m:t
-              >)</m:t></m:r></m:den></m:f><m:r><m:t>,</m:t></m:r><m:r><m:t
-          /></m:r><m:r><m:t /></m:r><m:r><m:rPr><m:nor /></m:rPr><m:t
-          >for</m:t></m:r><m:r><m:t>|q|<m:r><m:t
-              >.</m:t></m:r></m:t></m:r></m:oMath></w:p><w:p><w:r><w:t
+              >)</m:t></m:r></m:den></m:f><m:r><m:t>+⋯=</m:t></m:r><m:nary
+        ><m:naryPr><m:chr m:val="∏" /><m:limLoc m:val="undOvr" /><m:subHide
+              m:val="1"
+            /><m:supHide m:val="1" /></m:naryPr><m:sub /><m:sup /><m:e><m:r><m:t
+              >_</m:t></m:r><m:sSup><m:sSupPr /><m:e><m:r><m:t
+                  >j=0</m:t></m:r></m:e><m:sup><m:r><m:t
+                  >∞</m:t></m:r></m:sup></m:sSup><m:f><m:num><m:r><m:t
+                  >1</m:t></m:r></m:num><m:den><m:r><m:t>(1−</m:t></m:r><m:sSup
+                ><m:sSupPr /><m:e><m:r><m:t>q</m:t></m:r></m:e><m:sup><m:r><m:t
+                      >5j+2</m:t></m:r></m:sup></m:sSup><m:r><m:t
+                  >)(1−</m:t></m:r><m:sSup><m:sSupPr /><m:e><m:r><m:t
+                      >q</m:t></m:r></m:e><m:sup><m:r><m:t
+                      >5j+3</m:t></m:r></m:sup></m:sSup><m:r><m:t
+                  >)</m:t></m:r></m:den></m:f></m:e></m:nary><m:r><m:t
+            xml:space="preserve"
+          >,  </m:t></m:r><m:r><m:rPr><m:nor m:val="1" /></m:rPr><m:t
+            xml:space="preserve"
+          >for </m:t></m:r><m:r><m:t>|q|&lt;1.</m:t></m:r></m:oMath></w:p><w:p
+    ><w:r><w:t
           xml:space="preserve"
-        >Maxwell&apos;s Equations</w:t></w:r></w:p><w:p><m:oMath><m:m><m:mPr
-          ><m:baseJc m:val="center" /><m:plcHide m:val="on" /><m:mcs><m:mc
-              ><m:mcPr><m:count m:val="2" /><m:mcJc
-                    m:val="center"
-                  /></m:mcPr></m:mc></m:mcs></m:mPr><m:mr><m:e><m:r><m:rPr
-                ><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t
-                >∇</m:t></m:r><m:r><m:t>×</m:t></m:r><m:groupChr><m:groupChrPr
-                ><m:chr m:val="→" m:pos="top" /></m:groupChrPr><m:e><m:r><m:rPr
-                    ><m:nor /><m:sty m:val="b" /></m:rPr><m:t
-                    >B</m:t></m:r></m:e></m:groupChr><m:r><m:t /></m:r><m:r><m:t
-                >−</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
-                ><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r><m:t
-                    >c</m:t></m:r></m:den></m:f><m:r><m:t /></m:r><m:f><m:fPr
-                ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
-                    >∂</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
-                        m:val="→"
-                        m:pos="top"
-                      /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
-                            m:val="b"
-                          /></m:rPr><m:t
-                        >E</m:t></m:r></m:e></m:groupChr></m:num><m:den><m:r
-                  ><m:t>∂t</m:t></m:r></m:den></m:f></m:e><m:e><m:r><m:t
-                >=</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
-                ><m:r><m:t>4π</m:t></m:r></m:num><m:den><m:r><m:t
-                    >c</m:t></m:r></m:den></m:f><m:groupChr><m:groupChrPr><m:chr
-                    m:val="→"
-                    m:pos="top"
-                  /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
-                        m:val="b"
-                      /></m:rPr><m:t
-                    >j</m:t></m:r></m:e></m:groupChr></m:e></m:mr><m:mr><m:e
-            ><m:r><m:rPr><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t
-                >∇</m:t></m:r><m:r><m:t>⋅</m:t></m:r><m:groupChr><m:groupChrPr
-                ><m:chr m:val="→" m:pos="top" /></m:groupChrPr><m:e><m:r><m:rPr
-                    ><m:nor /><m:sty m:val="b" /></m:rPr><m:t
-                    >E</m:t></m:r></m:e></m:groupChr></m:e><m:e><m:r><m:t
-                >=4πρ</m:t></m:r></m:e></m:mr><m:mr><m:e><m:r><m:rPr><m:nor
-                  /><m:sty m:val="undefined" /></m:rPr><m:t>∇</m:t></m:r><m:r
-              ><m:t>×</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
-                    m:val="→"
-                    m:pos="top"
-                  /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
-                        m:val="b"
-                      /></m:rPr><m:t>E</m:t></m:r></m:e></m:groupChr><m:r><m:t
-                /></m:r><m:r><m:t>+</m:t></m:r><m:f><m:fPr><m:type
-                    m:val="bar"
-                  /></m:fPr><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r
-                  ><m:t>c</m:t></m:r></m:den></m:f><m:r><m:t /></m:r><m:f><m:fPr
-                ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
-                    >∂</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
-                        m:val="→"
-                        m:pos="top"
-                      /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
-                            m:val="b"
-                          /></m:rPr><m:t
-                        >B</m:t></m:r></m:e></m:groupChr></m:num><m:den><m:r
-                  ><m:t>∂t</m:t></m:r></m:den></m:f></m:e><m:e><m:r><m:t
-                >=</m:t></m:r><m:groupChr><m:groupChrPr><m:chr
-                    m:val="→"
-                    m:pos="top"
-                  /></m:groupChrPr><m:e><m:r><m:rPr><m:nor /><m:sty
-                        m:val="b"
-                      /></m:rPr><m:t
-                    >0</m:t></m:r></m:e></m:groupChr></m:e></m:mr><m:mr><m:e
-            ><m:r><m:rPr><m:nor /><m:sty m:val="undefined" /></m:rPr><m:t
-                >∇</m:t></m:r><m:r><m:t>⋅</m:t></m:r><m:groupChr><m:groupChrPr
-                ><m:chr m:val="→" m:pos="top" /></m:groupChrPr><m:e><m:r><m:rPr
-                    ><m:nor /><m:sty m:val="b" /></m:rPr><m:t
-                    >B</m:t></m:r></m:e></m:groupChr></m:e><m:e><m:r><m:t
-                >=0</m:t></m:r></m:e></m:mr></m:m></m:oMath></w:p><w:p><w:r><w:t
+        >Maxwell&apos;s Equations</w:t></w:r></w:p><w:p><m:oMath><m:eqArr><m:e
+          ><m:r><m:t>∇×</m:t></m:r><m:acc><m:accPr><m:chr
+                  m:val="⃗"
+                /></m:accPr><m:e><m:r><m:rPr><m:sty m:val="b" /></m:rPr><m:t
+                  >B</m:t></m:r></m:e></m:acc><m:r><m:t
+                xml:space="preserve"
+              > −</m:t></m:r><m:f><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den
+              ><m:r><m:t>c</m:t></m:r></m:den></m:f><m:r><m:t
+                xml:space="preserve"
+              > </m:t></m:r><m:f><m:num><m:r><m:t>∂</m:t></m:r><m:acc><m:accPr
+                  ><m:chr m:val="⃗" /></m:accPr><m:e><m:r><m:rPr><m:sty
+                          m:val="b"
+                        /></m:rPr><m:t>E</m:t></m:r></m:e></m:acc></m:num><m:den
+              ><m:r><m:t>∂t</m:t></m:r></m:den></m:f><m:r><m:t
+              >&amp;</m:t></m:r><m:r><m:t>=</m:t></m:r><m:f><m:num><m:r><m:t
+                  >4π</m:t></m:r></m:num><m:den><m:r><m:t
+                  >c</m:t></m:r></m:den></m:f><m:acc><m:accPr><m:chr
+                  m:val="⃗"
+                /></m:accPr><m:e><m:r><m:rPr><m:sty m:val="b" /></m:rPr><m:t
+                  >j</m:t></m:r></m:e></m:acc></m:e><m:e><m:r><m:t
+              >∇⋅</m:t></m:r><m:acc><m:accPr><m:chr m:val="⃗" /></m:accPr><m:e
+              ><m:r><m:rPr><m:sty m:val="b" /></m:rPr><m:t
+                  >E</m:t></m:r></m:e></m:acc><m:r><m:t>&amp;</m:t></m:r><m:r
+            ><m:t>=4πρ</m:t></m:r></m:e><m:e><m:r><m:t>∇×</m:t></m:r><m:acc
+            ><m:accPr><m:chr m:val="⃗" /></m:accPr><m:e><m:r><m:rPr><m:sty
+                      m:val="b"
+                    /></m:rPr><m:t>E</m:t></m:r></m:e></m:acc><m:r><m:t
+                xml:space="preserve"
+              > +</m:t></m:r><m:f><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den
+              ><m:r><m:t>c</m:t></m:r></m:den></m:f><m:r><m:t
+                xml:space="preserve"
+              > </m:t></m:r><m:f><m:num><m:r><m:t>∂</m:t></m:r><m:acc><m:accPr
+                  ><m:chr m:val="⃗" /></m:accPr><m:e><m:r><m:rPr><m:sty
+                          m:val="b"
+                        /></m:rPr><m:t>B</m:t></m:r></m:e></m:acc></m:num><m:den
+              ><m:r><m:t>∂t</m:t></m:r></m:den></m:f><m:r><m:t
+              >&amp;</m:t></m:r><m:r><m:t>=</m:t></m:r><m:acc><m:accPr><m:chr
+                  m:val="⃗"
+                /></m:accPr><m:e><m:r><m:rPr><m:sty m:val="b" /></m:rPr><m:t
+                  >0</m:t></m:r></m:e></m:acc></m:e><m:e><m:r><m:t
+              >∇⋅</m:t></m:r><m:acc><m:accPr><m:chr m:val="⃗" /></m:accPr><m:e
+              ><m:r><m:rPr><m:sty m:val="b" /></m:rPr><m:t
+                  >B</m:t></m:r></m:e></m:acc><m:r><m:t>&amp;</m:t></m:r><m:r
+            ><m:t>=0</m:t></m:r></m:e></m:eqArr></m:oMath></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >In-line Mathematics</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >Finally, while display equations look good for a page of samples, the
 ability to mix math and text in a paragraph is also important. This
 expression </w:t></w:r><m:oMath><m:rad><m:radPr><m:degHide
-              m:val="on"
+              m:val="1"
             /></m:radPr><m:deg /><m:e><m:r><m:t
               >3x−1</m:t></m:r></m:e></m:rad><m:r><m:t>+(1+x</m:t></m:r><m:sSup
-        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
-              >)</m:t></m:r></m:e><m:sup><m:r><m:t
+        ><m:sSupPr /><m:e><m:r><m:t>)</m:t></m:r></m:e><m:sup><m:r><m:t
               >2</m:t></m:r></m:sup></m:sSup></m:oMath><w:r><w:t
           xml:space="preserve"
         > is an example of an inline equation. As
@@ -11392,6 +12361,22 @@ exports[`e2e > link 1`] = `
       ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
             xml:space="preserve"
           >link reference</w:t></w:r></w:hyperlink><w:r><w:t
+          xml:space="preserve"
+        >.</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >This is autolink </w:t></w:r><w:hyperlink
+        w:history="1"
+        r:id="rIdqqqqqqqqqqqqqqqqqqqqq"
+      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
+            xml:space="preserve"
+          >https://github.com/</w:t></w:r></w:hyperlink><w:r><w:t
+          xml:space="preserve"
+        > and </w:t></w:r><w:hyperlink
+        w:history="1"
+        r:id="rIdqqqqqqqqqqqqqqqqqqqqq"
+      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
+            xml:space="preserve"
+          >mailto:foobarbaz</w:t></w:r></w:hyperlink><w:r><w:t
           xml:space="preserve"
         >.</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
@@ -15245,50 +16230,41 @@ exports[`e2e > math 1`] = `
           >L</m:t></m:r></m:oMath><w:r><w:t
           xml:space="preserve"
         >) can be determined by Lift Coefficient (</w:t></w:r><m:oMath><m:sSub
-        ><m:sSubPr><m:ctrlPr /></m:sSubPr><m:e><m:r><m:t
-              >C</m:t></m:r></m:e><m:sub><m:r><m:t
+        ><m:sSubPr /><m:e><m:r><m:t>C</m:t></m:r></m:e><m:sub><m:r><m:t
               >L</m:t></m:r></m:sub></m:sSub></m:oMath><w:r><w:t
           xml:space="preserve"
         >) like the following
-equation.</w:t></w:r></w:p><w:p><m:oMath><m:r><m:t>L=</m:t></m:r><m:f><m:fPr
-          ><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
-              >1</m:t></m:r></m:num><m:den><m:r><m:t
+equation.</w:t></w:r></w:p><w:p><m:oMath><m:r><m:t>L=</m:t></m:r><m:f><m:num
+          ><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r><m:t
               >2</m:t></m:r></m:den></m:f><m:r><m:t>ρ</m:t></m:r><m:sSup
-        ><m:sSupPr><m:ctrlPr /></m:sSupPr><m:e><m:r><m:t
-              >v</m:t></m:r></m:e><m:sup><m:r><m:t
+        ><m:sSupPr /><m:e><m:r><m:t>v</m:t></m:r></m:e><m:sup><m:r><m:t
               >2</m:t></m:r></m:sup></m:sSup><m:r><m:t>S</m:t></m:r><m:sSub
-        ><m:sSubPr><m:ctrlPr /></m:sSubPr><m:e><m:r><m:t
-              >C</m:t></m:r></m:e><m:sub><m:r><m:t
+        ><m:sSubPr /><m:e><m:r><m:t>C</m:t></m:r></m:e><m:sub><m:r><m:t
               >L</m:t></m:r></m:sub></m:sSub></m:oMath></w:p><w:p><m:oMath><m:r
-        ><m:t>ihbar</m:t></m:r><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num
-          ><m:r><m:t>partialpsi</m:t></m:r></m:num><m:den><m:r><m:t
+        ><m:t>ihbar</m:t></m:r><m:f><m:num><m:r><m:t
+              >partialpsi</m:t></m:r></m:num><m:den><m:r><m:t
               >partialt</m:t></m:r></m:den></m:f><m:r><m:t
-          >=Hpsi(x,t)</m:t></m:r></m:oMath></w:p><w:p><m:oMath><m:r><m:rPr
-          ><m:nor /></m:rPr><m:t
-          >\\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\pi i \\xi x}\\,d\\xi</m:t></m:r></m:oMath></w:p><w:p
-    ><m:oMath><m:f><m:fPr><m:type m:val="bar" /></m:fPr><m:num><m:r><m:t
-              >a+b</m:t></m:r></m:num><m:den><m:r><m:t
+          >=Hpsi(x,t)</m:t></m:r></m:oMath></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >\\f\\relax{x} = \\int_{-\\infty}^\\infty\\f\\hat\\xi\\,e^{2 \\pi i \\xi x}\\,d\\xi</w:t></w:r></w:p><w:p
+    ><m:oMath><m:f><m:num><m:r><m:t>a+b</m:t></m:r></m:num><m:den><m:r><m:t
               >c+d</m:t></m:r></m:den></m:f></m:oMath></w:p><w:p><m:oMath><m:rad
-        ><m:radPr><m:degHide m:val="off" /></m:radPr><m:deg><m:r><m:t
-              >30</m:t></m:r></m:deg><m:e><m:r><m:t>a+</m:t></m:r><m:rad
-            ><m:radPr><m:degHide m:val="on" /></m:radPr><m:deg /><m:e><m:r><m:t
+        ><m:radPr /><m:deg><m:r><m:t>30</m:t></m:r></m:deg><m:e><m:r><m:t
+              >a+</m:t></m:r><m:rad><m:radPr><m:degHide
+                  m:val="1"
+                /></m:radPr><m:deg /><m:e><m:r><m:t
                   >b+c</m:t></m:r></m:e></m:rad></m:e></m:rad></m:oMath></w:p><w:p
     ><m:oMath><m:nary><m:naryPr><m:chr m:val="∑" /><m:limLoc
               m:val="undOvr"
-            /><m:grow m:val="1" /><m:subHide m:val="off" /><m:supHide
-              m:val="off"
             /></m:naryPr><m:sub><m:r><m:t>k=1</m:t></m:r></m:sub><m:sup><m:r
-            ><m:t>n</m:t></m:r></m:sup><m:e>=</m:e></m:nary><m:f><m:fPr><m:type
-              m:val="bar"
-            /></m:fPr><m:num><m:r><m:t>n(n+1)</m:t></m:r></m:num><m:den><m:r
-            ><m:t>2</m:t></m:r></m:den></m:f></m:oMath></w:p><w:p><m:oMath><m:r
-        ><m:t>αβγδϵζηθικλμνξoπρστυϕχψωεϑϱςφ</m:t></m:r><m:r><m:rPr><m:nor
-            /><m:sty m:val="undefined" /></m:rPr><m:t
-          >ΓΔΘΛΞΠΣΥΦΨΩ</m:t></m:r></m:oMath></w:p><w:sectPr><w:pgSz
-        w:w="11906"
-        w:h="16838"
-        w:orient="portrait"
-      /><w:pgMar
+            ><m:t>n</m:t></m:r></m:sup><m:e><m:r><m:t
+              >k</m:t></m:r></m:e></m:nary><m:r><m:t>=</m:t></m:r><m:f><m:num
+          ><m:r><m:t>n(n+1)</m:t></m:r></m:num><m:den><m:r><m:t
+              >2</m:t></m:r></m:den></m:f></m:oMath></w:p><w:p><m:oMath><m:r
+        ><m:t>αβγδϵζηθικλμνξoπρστυϕχψωεϑϱςφ</m:t></m:r><m:r><m:rPr><m:sty
+              m:val="p"
+            /></m:rPr><m:t>ΓΔΘΛΞΠΣΥΦΨΩ</m:t></m:r></m:oMath></w:p><w:sectPr
+    ><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
         w:top="1440"
         w:right="1440"
         w:bottom="1440"
@@ -17534,866 +18510,6 @@ exports[`e2e > svg 7`] = `
 `;
 
 exports[`e2e > svg 8`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<w:numbering
-  mc:Ignorable="w14 w15 wp14"
-  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
-  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
-  xmlns:w10="urn:schemas-microsoft-com:office:word"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
-  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
-  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
-  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-><w:abstractNum
-    w:abstractNumId="2"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="●"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="400"
-          w:hanging="400"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="○" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="2"
-      w:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="■"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="1200"
-          w:hanging="400"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="4"
-      w:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="○"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="2000"
-          w:hanging="400"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="■" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind
-          w:left="2400"
-          w:hanging="400"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="3"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="☑"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="400"
-          w:hanging="400"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="2"
-      w:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="☑"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="1200"
-          w:hanging="400"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="4"
-      w:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="☑"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="2000"
-          w:hanging="400"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind
-          w:left="2400"
-          w:hanging="400"
-        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
-    w:abstractNumId="4"
-    w15:restartNumberingAfterBreak="0"
-  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
-      w:ilvl="0"
-      w:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="☐"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="400"
-          w:hanging="400"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="2"
-      w:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="☐"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="1200"
-          w:hanging="400"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
-      w:ilvl="4"
-      w:tentative="1"
-    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
-        w:val="☐"
-      /><w:lvlJc w:val="left" /><w:pPr><w:ind
-          w:left="2000"
-          w:hanging="400"
-        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w:tentative="1"><w:start
-        w:val="1"
-      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
-        w:val="left"
-      /><w:pPr><w:ind
-          w:left="2400"
-          w:hanging="400"
-        /></w:pPr></w:lvl></w:abstractNum></w:numbering>
-"
-`;
-
-exports[`e2e > tag 1`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<w:document
-  mc:Ignorable="w14 w15 wp14"
-  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
-  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
-  xmlns:w10="urn:schemas-microsoft-com:office:word"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
-  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
-  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
-  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
-  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
-  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
-  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
-  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
-  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
-  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
-  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
-  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
-  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
-  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
-  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
-  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
-  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
-  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
-  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:r><w:t xml:space="preserve">This is </w:t></w:r><w:r><w:rPr
-        ><w:b /><w:bCs /></w:rPr><w:t xml:space="preserve">html</w:t></w:r><w:r
-      ><w:t xml:space="preserve"> inside </w:t></w:r><w:r><w:rPr><w:i /><w:iCs
-          /></w:rPr><w:t xml:space="preserve">docx</w:t></w:r><w:r><w:t
-          xml:space="preserve"
-        >.</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblW
-          w:type="auto"
-          w:w="100"
-        /><w:tblBorders><w:top w:val="single" w:color="auto" w:sz="4" /><w:left
-            w:val="single"
-            w:color="auto"
-            w:sz="4"
-          /><w:bottom w:val="single" w:color="auto" w:sz="4" /><w:right
-            w:val="single"
-            w:color="auto"
-            w:sz="4"
-          /><w:insideH w:val="single" w:color="auto" w:sz="4" /><w:insideV
-            w:val="single"
-            w:color="auto"
-            w:sz="4"
-          /></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol
-          w:w="9026"
-        /></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW
-              w:type="dxa"
-              w:w="9026"
-            /></w:tcPr><w:p><w:pPr><w:jc
-                w:val="left"
-              /></w:pPr></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW
-              w:type="dxa"
-              w:w="9026"
-            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
-                xml:space="preserve"
-              >aaaaa</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:pPr
-      ><w:sectPr><w:pgSz w:w="11906" w:h="16838" w:orient="portrait" /><w:pgMar
-            w:top="1440"
-            w:right="1440"
-            w:bottom="1440"
-            w:left="1440"
-            w:header="708"
-            w:footer="708"
-            w:gutter="0"
-          /><w:pgNumType /><w:docGrid
-            w:linePitch="360"
-          /></w:sectPr></w:pPr></w:p><w:p><w:hyperlink
-        w:history="1"
-        r:id="rIdqqqqqqqqqqqqqqqqqqqqq"
-      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
-            xml:space="preserve"
-          >mailto:foobarbaz</w:t></w:r></w:hyperlink></w:p><w:p><w:r><w:t
-          xml:space="preserve"
-        >aaaaaa</w:t></w:r></w:p><w:sectPr><w:pgSz
-        w:w="11906"
-        w:h="16838"
-        w:orient="portrait"
-      /><w:pgMar
-        w:top="1440"
-        w:right="1440"
-        w:bottom="1440"
-        w:left="1440"
-        w:header="708"
-        w:footer="708"
-        w:gutter="0"
-      /><w:pgNumType /><w:docGrid
-        w:linePitch="360"
-      /></w:sectPr></w:body></w:document>
-"
-`;
-
-exports[`e2e > tag 2`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<w:styles
-  mc:Ignorable="w14 w15"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
-    w:type="paragraph"
-    w:styleId="Normal"
-    w:default="1"
-  ><w:name w:val="Normal" /><w:qFormat /></w:style><w:style
-    w:type="table"
-    w:styleId="TableNormal"
-    w:default="true"
-  ><w:name w:val="Normal Table" /><w:uiPriority w:val="99" /><w:semiHidden
-    /><w:unhideWhenUsed /><w:tblPr><w:tblInd
-        w:type="dxa"
-        w:w="0"
-      /><w:tblCellMar><w:top w:type="dxa" w:w="0" /><w:left
-          w:type="dxa"
-          w:w="108"
-        /><w:bottom w:type="dxa" w:w="0" /><w:right
-          w:type="dxa"
-          w:w="108"
-        /></w:tblCellMar></w:tblPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Title"
-  ><w:name w:val="Title" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:sz w:val="56" /><w:szCs
-        w:val="56"
-      /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading1"
-  ><w:name w:val="Heading 1" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="32" /><w:szCs
-        w:val="32"
-      /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading2"
-  ><w:name w:val="Heading 2" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /><w:sz w:val="26" /><w:szCs
-        w:val="26"
-      /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading3"
-  ><w:name w:val="Heading 3" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /><w:sz w:val="24" /><w:szCs
-        w:val="24"
-      /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading4"
-  ><w:name w:val="Heading 4" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:i /><w:iCs /><w:color
-        w:val="2E74B5"
-      /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading5"
-  ><w:name w:val="Heading 5" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:color w:val="2E74B5" /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Heading6"
-  ><w:name w:val="Heading 6" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:color w:val="1F4D78" /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Strong"
-  ><w:name w:val="Strong" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:qFormat /><w:rPr><w:b /><w:bCs /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="ListParagraph"
-  ><w:name w:val="List Paragraph" /><w:basedOn w:val="Normal" /><w:qFormat
-    /></w:style><w:style w:type="paragraph" w:styleId="Caption"><w:name
-      w:val="caption"
-    /><w:basedOn w:val="Normal" /><w:next w:val="Normal" /><w:uiPriority
-      w:val="35"
-    /><w:semiHidden /><w:unhideWhenUsed /><w:qFormat /><w:pPr><w:spacing
-        w:after="200"
-      /></w:pPr><w:rPr><w:i /><w:iCs /><w:color
-        w:val="44546A"
-        w:themeColor="dark2"
-      /><w:sz w:val="18" /><w:szCs w:val="18" /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="Bibliography"
-  ><w:name w:val="Bibliography" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:uiPriority w:val="37" /><w:unhideWhenUsed /></w:style><w:style
-    w:type="paragraph"
-    w:styleId="TOC1"
-  ><w:name w:val="toc 1" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
-    ><w:spacing w:after="100" /></w:pPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="TOC2"
-  ><w:name w:val="toc 2" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
-    ><w:spacing w:after="100" /><w:ind w:left="200" /></w:pPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="TOC3"
-  ><w:name w:val="toc 3" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
-    ><w:spacing w:after="100" /><w:ind w:left="400" /></w:pPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="TOC4"
-  ><w:name w:val="toc 4" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
-    ><w:spacing w:after="100" /><w:ind w:left="600" /></w:pPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="TOC5"
-  ><w:name w:val="toc 5" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
-    ><w:spacing w:after="100" /><w:ind w:left="800" /></w:pPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="TOC6"
-  ><w:name w:val="toc 6" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
-    ><w:spacing w:after="100" /><w:ind
-        w:left="1000"
-      /></w:pPr></w:style><w:style w:type="paragraph" w:styleId="TOC7"><w:name
-      w:val="toc 7"
-    /><w:basedOn w:val="Normal" /><w:next w:val="Normal" /><w:uiPriority
-      w:val="39"
-    /><w:semiHidden /><w:unhideWhenUsed /><w:pPr><w:spacing
-        w:after="100"
-      /><w:ind w:left="1200" /></w:pPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="TOC8"
-  ><w:name w:val="toc 8" /><w:basedOn w:val="Normal" /><w:next
-      w:val="Normal"
-    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
-    ><w:spacing w:after="100" /><w:ind
-        w:left="1400"
-      /></w:pPr></w:style><w:style w:type="paragraph" w:styleId="TOC9"><w:name
-      w:val="toc 9"
-    /><w:basedOn w:val="Normal" /><w:next w:val="Normal" /><w:uiPriority
-      w:val="39"
-    /><w:semiHidden /><w:unhideWhenUsed /><w:pPr><w:spacing
-        w:after="100"
-      /><w:ind w:left="1600" /></w:pPr></w:style><w:style
-    w:type="character"
-    w:styleId="Hyperlink"
-  ><w:name w:val="Hyperlink" /><w:basedOn
-      w:val="DefaultParagraphFont"
-    /><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:color
-        w:val="0563C1"
-      /><w:u w:val="single" /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="FootnoteReference"
-  ><w:name w:val="footnote reference" /><w:basedOn
-      w:val="DefaultParagraphFont"
-    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
-    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="FootnoteText"
-  ><w:name w:val="footnote text" /><w:basedOn w:val="Normal" /><w:link
-      w:val="FootnoteTextChar"
-    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
-    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
-    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="FootnoteTextChar"
-  ><w:name w:val="Footnote Text Char" /><w:basedOn
-      w:val="DefaultParagraphFont"
-    /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
-    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
-        w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="EndnoteReference"
-  ><w:name w:val="endnote reference" /><w:basedOn
-      w:val="DefaultParagraphFont"
-    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
-    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
-    w:type="paragraph"
-    w:styleId="EndnoteText"
-  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
-      w:val="EndnoteTextChar"
-    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
-    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
-    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="EndnoteTextChar"
-  ><w:name w:val="Endnote Text Char" /><w:basedOn
-      w:val="DefaultParagraphFont"
-    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
-    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
-        w:val="20"
-      /></w:rPr></w:style><w:style
-    w:type="character"
-    w:styleId="LineNumber"
-  ><w:name w:val="line number" /><w:basedOn
-      w:val="DefaultParagraphFont"
-    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed
-    /></w:style></w:styles>
-"
-`;
-
-exports[`e2e > tag 3`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<w:footnotes
-  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
-  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
-  xmlns:w10="urn:schemas-microsoft-com:office:word"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
-  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
-  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
-  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
-><w:footnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
-          w:after="0"
-          w:line="240"
-          w:lineRule="auto"
-        /></w:pPr><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteRef /></w:r><w:r><w:separator
-        /></w:r></w:p></w:footnote><w:footnote
-    w:type="continuationSeparator"
-    w:id="0"
-  ><w:p><w:pPr><w:spacing
-          w:after="0"
-          w:line="240"
-          w:lineRule="auto"
-        /></w:pPr><w:r><w:rPr><w:rStyle
-            w:val="FootnoteReference"
-          /></w:rPr><w:footnoteRef /></w:r><w:r><w:continuationSeparator
-        /></w:r></w:p></w:footnote></w:footnotes>
-"
-`;
-
-exports[`e2e > tag 4`] = `
-"<?xml version="1.0" encoding="UTF-8" ?>
-<w:endnotes
-  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
-  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
-  xmlns:w10="urn:schemas-microsoft-com:office:word"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
-  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
-  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
-  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
-><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
-          w:after="0"
-          w:line="240"
-          w:lineRule="auto"
-        /></w:pPr><w:r><w:rPr><w:rStyle
-            w:val="EndnoteReference"
-          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
-        /></w:r></w:p></w:endnote><w:endnote
-    w:type="continuationSeparator"
-    w:id="0"
-  ><w:p><w:pPr><w:spacing
-          w:after="0"
-          w:line="240"
-          w:lineRule="auto"
-        /></w:pPr><w:r><w:rPr><w:rStyle
-            w:val="EndnoteReference"
-          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
-        /></w:r></w:p></w:endnote></w:endnotes>
-"
-`;
-
-exports[`e2e > tag 5`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<w:settings
-  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
-  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
-  xmlns:w10="urn:schemas-microsoft-com:office:word"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
-  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
-  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
-  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  mc:Ignorable="w14 w15 wp14"
-><w:displayBackgroundShape /><w:defaultTabStop
-    w:val="720"
-  /><w:evenAndOddHeaders w:val="false" /><w:compat><w:compatSetting
-      w:val="15"
-      w:name="compatibilityMode"
-      w:uri="http://schemas.microsoft.com/office/word"
-    /></w:compat></w:settings>
-"
-`;
-
-exports[`e2e > tag 6`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<w:fonts
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
-  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
-  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
-  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
-  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
-/>
-"
-`;
-
-exports[`e2e > tag 7`] = `
-"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<a:theme
-  xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
-  name="Office Theme"
-><a:themeElements><a:clrScheme name="Office"><a:dk1><a:sysClr
-          val="windowText"
-          lastClr="000000"
-        /></a:dk1><a:lt1><a:sysClr
-          val="window"
-          lastClr="FFFFFF"
-        /></a:lt1><a:dk2><a:srgbClr val="44546A" /></a:dk2><a:lt2><a:srgbClr
-          val="E7E6E6"
-        /></a:lt2><a:accent1><a:srgbClr val="4472C4" /></a:accent1><a:accent2
-      ><a:srgbClr val="ED7D31" /></a:accent2><a:accent3><a:srgbClr
-          val="A5A5A5"
-        /></a:accent3><a:accent4><a:srgbClr
-          val="FFC000"
-        /></a:accent4><a:accent5><a:srgbClr
-          val="5B9BD5"
-        /></a:accent5><a:accent6><a:srgbClr val="70AD47" /></a:accent6><a:hlink
-      ><a:srgbClr val="0563C1" /></a:hlink><a:folHlink><a:srgbClr
-          val="954F72"
-        /></a:folHlink></a:clrScheme><a:fontScheme name="Office"><a:majorFont
-      ><a:latin typeface="Calibri Light" panose="020F0302020204030204" /><a:ea
-          typeface=""
-        /><a:cs typeface="" /><a:font
-          script="Jpan"
-          typeface="游ゴシック Light"
-        /><a:font script="Hang" typeface="맑은 고딕" /><a:font
-          script="Hans"
-          typeface="等线 Light"
-        /><a:font script="Hant" typeface="新細明體" /><a:font
-          script="Arab"
-          typeface="Times New Roman"
-        /><a:font script="Hebr" typeface="Times New Roman" /><a:font
-          script="Thai"
-          typeface="Angsana New"
-        /><a:font script="Ethi" typeface="Nyala" /><a:font
-          script="Beng"
-          typeface="Vrinda"
-        /><a:font script="Gujr" typeface="Shruti" /><a:font
-          script="Khmr"
-          typeface="MoolBoran"
-        /><a:font script="Knda" typeface="Tunga" /><a:font
-          script="Guru"
-          typeface="Raavi"
-        /><a:font script="Cans" typeface="Euphemia" /><a:font
-          script="Cher"
-          typeface="Plantagenet Cherokee"
-        /><a:font script="Yiii" typeface="Microsoft Yi Baiti" /><a:font
-          script="Tibt"
-          typeface="Microsoft Himalaya"
-        /><a:font script="Thaa" typeface="MV Boli" /><a:font
-          script="Deva"
-          typeface="Mangal"
-        /><a:font script="Telu" typeface="Gautami" /><a:font
-          script="Taml"
-          typeface="Latha"
-        /><a:font script="Syrc" typeface="Estrangelo Edessa" /><a:font
-          script="Orya"
-          typeface="Kalinga"
-        /><a:font script="Mlym" typeface="Kartika" /><a:font
-          script="Laoo"
-          typeface="DokChampa"
-        /><a:font script="Sinh" typeface="Iskoola Pota" /><a:font
-          script="Mong"
-          typeface="Mongolian Baiti"
-        /><a:font script="Viet" typeface="Times New Roman" /><a:font
-          script="Uigh"
-          typeface="Microsoft Uighur"
-        /><a:font script="Geor" typeface="Sylfaen" /><a:font
-          script="Armn"
-          typeface="Arial"
-        /><a:font script="Bugi" typeface="Leelawadee UI" /><a:font
-          script="Bopo"
-          typeface="Microsoft JhengHei"
-        /><a:font script="Java" typeface="Javanese Text" /><a:font
-          script="Lisu"
-          typeface="Segoe UI"
-        /><a:font script="Mymr" typeface="Myanmar Text" /><a:font
-          script="Nkoo"
-          typeface="Ebrima"
-        /><a:font script="Olck" typeface="Nirmala UI" /><a:font
-          script="Osma"
-          typeface="Ebrima"
-        /><a:font script="Phag" typeface="Phagspa" /><a:font
-          script="Syrn"
-          typeface="Estrangelo Edessa"
-        /><a:font script="Syrj" typeface="Estrangelo Edessa" /><a:font
-          script="Syre"
-          typeface="Estrangelo Edessa"
-        /><a:font script="Sora" typeface="Nirmala UI" /><a:font
-          script="Tale"
-          typeface="Microsoft Tai Le"
-        /><a:font script="Talu" typeface="Microsoft New Tai Lue" /><a:font
-          script="Tfng"
-          typeface="Ebrima"
-        /></a:majorFont><a:minorFont><a:latin
-          typeface="Calibri"
-          panose="020F0502020204030204"
-        /><a:ea typeface="" /><a:cs typeface="" /><a:font
-          script="Jpan"
-          typeface="游明朝"
-        /><a:font script="Hang" typeface="맑은 고딕" /><a:font
-          script="Hans"
-          typeface="等线"
-        /><a:font script="Hant" typeface="新細明體" /><a:font
-          script="Arab"
-          typeface="Arial"
-        /><a:font script="Hebr" typeface="Arial" /><a:font
-          script="Thai"
-          typeface="Cordia New"
-        /><a:font script="Ethi" typeface="Nyala" /><a:font
-          script="Beng"
-          typeface="Vrinda"
-        /><a:font script="Gujr" typeface="Shruti" /><a:font
-          script="Khmr"
-          typeface="DaunPenh"
-        /><a:font script="Knda" typeface="Tunga" /><a:font
-          script="Guru"
-          typeface="Raavi"
-        /><a:font script="Cans" typeface="Euphemia" /><a:font
-          script="Cher"
-          typeface="Plantagenet Cherokee"
-        /><a:font script="Yiii" typeface="Microsoft Yi Baiti" /><a:font
-          script="Tibt"
-          typeface="Microsoft Himalaya"
-        /><a:font script="Thaa" typeface="MV Boli" /><a:font
-          script="Deva"
-          typeface="Mangal"
-        /><a:font script="Telu" typeface="Gautami" /><a:font
-          script="Taml"
-          typeface="Latha"
-        /><a:font script="Syrc" typeface="Estrangelo Edessa" /><a:font
-          script="Orya"
-          typeface="Kalinga"
-        /><a:font script="Mlym" typeface="Kartika" /><a:font
-          script="Laoo"
-          typeface="DokChampa"
-        /><a:font script="Sinh" typeface="Iskoola Pota" /><a:font
-          script="Mong"
-          typeface="Mongolian Baiti"
-        /><a:font script="Viet" typeface="Arial" /><a:font
-          script="Uigh"
-          typeface="Microsoft Uighur"
-        /><a:font script="Geor" typeface="Sylfaen" /><a:font
-          script="Armn"
-          typeface="Arial"
-        /><a:font script="Bugi" typeface="Leelawadee UI" /><a:font
-          script="Bopo"
-          typeface="Microsoft JhengHei"
-        /><a:font script="Java" typeface="Javanese Text" /><a:font
-          script="Lisu"
-          typeface="Segoe UI"
-        /><a:font script="Mymr" typeface="Myanmar Text" /><a:font
-          script="Nkoo"
-          typeface="Ebrima"
-        /><a:font script="Olck" typeface="Nirmala UI" /><a:font
-          script="Osma"
-          typeface="Ebrima"
-        /><a:font script="Phag" typeface="Phagspa" /><a:font
-          script="Syrn"
-          typeface="Estrangelo Edessa"
-        /><a:font script="Syrj" typeface="Estrangelo Edessa" /><a:font
-          script="Syre"
-          typeface="Estrangelo Edessa"
-        /><a:font script="Sora" typeface="Nirmala UI" /><a:font
-          script="Tale"
-          typeface="Microsoft Tai Le"
-        /><a:font script="Talu" typeface="Microsoft New Tai Lue" /><a:font
-          script="Tfng"
-          typeface="Ebrima"
-        /></a:minorFont></a:fontScheme><a:fmtScheme
-      name="Office"
-    ><a:fillStyleLst><a:solidFill><a:schemeClr
-            val="phClr"
-          /></a:solidFill><a:gradFill rotWithShape="true"><a:gsLst><a:gs
-              pos="0"
-            ><a:schemeClr val="phClr"><a:lumMod val="110000" /><a:satMod
-                  val="105000"
-                /><a:tint val="67000" /></a:schemeClr></a:gs><a:gs
-              pos="50000"
-            ><a:schemeClr val="phClr"><a:lumMod val="105000" /><a:satMod
-                  val="103000"
-                /><a:tint val="73000" /></a:schemeClr></a:gs><a:gs
-              pos="100000"
-            ><a:schemeClr val="phClr"><a:lumMod val="105000" /><a:satMod
-                  val="109000"
-                /><a:tint val="81000" /></a:schemeClr></a:gs></a:gsLst><a:lin
-            ang="5400000"
-            scaled="false"
-          /></a:gradFill><a:gradFill rotWithShape="true"><a:gsLst><a:gs
-              pos="0"
-            ><a:schemeClr val="phClr"><a:satMod val="103000" /><a:lumMod
-                  val="102000"
-                /><a:tint val="94000" /></a:schemeClr></a:gs><a:gs
-              pos="50000"
-            ><a:schemeClr val="phClr"><a:satMod val="110000" /><a:lumMod
-                  val="100000"
-                /><a:shade val="100000" /></a:schemeClr></a:gs><a:gs
-              pos="100000"
-            ><a:schemeClr val="phClr"><a:lumMod val="99000" /><a:satMod
-                  val="120000"
-                /><a:shade val="78000" /></a:schemeClr></a:gs></a:gsLst><a:lin
-            ang="5400000"
-            scaled="false"
-          /></a:gradFill></a:fillStyleLst><a:lnStyleLst><a:ln
-          w="6350"
-          cap="flat"
-          cmpd="sng"
-          algn="ctr"
-        ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:prstDash
-            val="solid"
-          /><a:miter lim="800000" /></a:ln><a:ln
-          w="12700"
-          cap="flat"
-          cmpd="sng"
-          algn="ctr"
-        ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:prstDash
-            val="solid"
-          /><a:miter lim="800000" /></a:ln><a:ln
-          w="19050"
-          cap="flat"
-          cmpd="sng"
-          algn="ctr"
-        ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:prstDash
-            val="solid"
-          /><a:miter lim="800000" /></a:ln></a:lnStyleLst><a:effectStyleLst
-      ><a:effectStyle><a:effectLst /></a:effectStyle><a:effectStyle><a:effectLst
-          /></a:effectStyle><a:effectStyle><a:effectLst><a:outerShdw
-              blurRad="57150"
-              dist="19050"
-              dir="5400000"
-              algn="ctr"
-              rotWithShape="false"
-            ><a:srgbClr val="000000"><a:alpha
-                  val="63000"
-                /></a:srgbClr></a:outerShdw></a:effectLst></a:effectStyle></a:effectStyleLst><a:bgFillStyleLst
-      ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:solidFill
-        ><a:schemeClr val="phClr"><a:tint val="95000" /><a:satMod
-              val="170000"
-            /></a:schemeClr></a:solidFill><a:gradFill
-          rotWithShape="true"
-        ><a:gsLst><a:gs pos="0"><a:schemeClr val="phClr"><a:tint
-                  val="93000"
-                /><a:satMod val="150000" /><a:shade val="98000" /><a:lumMod
-                  val="102000"
-                /></a:schemeClr></a:gs><a:gs pos="50000"><a:schemeClr
-                val="phClr"
-              ><a:tint val="98000" /><a:satMod val="130000" /><a:shade
-                  val="90000"
-                /><a:lumMod val="103000" /></a:schemeClr></a:gs><a:gs
-              pos="100000"
-            ><a:schemeClr val="phClr"><a:shade val="63000" /><a:satMod
-                  val="120000"
-                /></a:schemeClr></a:gs></a:gsLst><a:lin
-            ang="5400000"
-            scaled="false"
-          /></a:gradFill></a:bgFillStyleLst></a:fmtScheme></a:themeElements><a:objectDefaults
-  /><a:extraClrSchemeLst /></a:theme>
-"
-`;
-
-exports[`e2e > tag 8`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:numbering
   mc:Ignorable="w14 w15 wp14"

@@ -25,10 +25,14 @@ import {
   ImageRun,
   type FileChild,
   type ParagraphChild,
+  Math as DocxMath,
 } from "docx";
+import { latexToMath } from "docx/math";
+import { htmlToContent, htmlToRuns, type HtmlOptions } from "docx/html";
 import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
 import { definitions } from "mdast-util-definitions";
+import { visit } from "unist-util-visit";
 import deepmerge from "deepmerge";
 import type {
   Context,
@@ -268,11 +272,35 @@ export const mdastToDocx = async (
     thematicBreak = "page",
     orderedListFormat,
   }: DocxOptions = {},
-): Promise<ArrayBuffer> => {
+): Promise<Uint8Array> => {
   const definition = definitions(node);
 
   const ordered = createOrderedListRegistry();
   const footnote = createFootnoteRegistry();
+
+  // Inline html nodes (raw HTML in phrasing content) are rendered as runs, others as blocks.
+  const inlineHtml = new WeakSet<mdast.Html>();
+  // Children with inline html joined, keyed by the original children
+  const joinedChildren = new WeakMap<
+    readonly mdast.RootContent[],
+    mdast.RootContent[]
+  >();
+  visit(node, (n) => {
+    if (
+      !("children" in n) ||
+      FLOW_PARENTS.has(n.type) ||
+      !n.children.some((c) => c.type === "html")
+    ) {
+      return;
+    }
+    const joined = joinInlineHtml(n.children);
+    for (const c of joined) {
+      if (c.type === "html") {
+        inlineHtml.add(c);
+      }
+    }
+    joinedChildren.set(n.children, joined);
+  });
 
   const images = new Map<string, DocxImageData>();
   const pluginCtx = { root: node, images, definition };
@@ -289,7 +317,7 @@ export const mdastToDocx = async (
       table: buildTable,
       tableRow: noop,
       tableCell: noop,
-      html: fallbackText,
+      html: (n, c) => buildHtml(n, c, inlineHtml.has(n)),
       code: fallbackCode,
       definition: noop,
       footnoteDefinition: buildFootnoteDefinition,
@@ -304,8 +332,8 @@ export const mdastToDocx = async (
       image: buildImage,
       imageReference: buildImageReference,
       footnoteReference: buildFootnoteReference,
-      math: fallbackText,
-      inlineMath: fallbackText,
+      math: buildMath,
+      inlineMath: buildInlineMath,
     },
   );
 
@@ -362,7 +390,7 @@ export const mdastToDocx = async (
   const ctx: Context = {
     render(nodes, c) {
       const results: DocxContent[] = [];
-      for (const node of nodes) {
+      for (const node of joinedChildren.get(nodes) ?? nodes) {
         const r = renderNode(node, c ?? this);
         if (r) {
           results.push(...r);
@@ -495,7 +523,7 @@ export const mdastToDocx = async (
   _numbering.abstractNumberingMap.delete(defaultBulletKey);
   _numbering.concreteNumberingMap.delete(defaultBulletKey);
 
-  return Packer.toArrayBuffer(doc);
+  return new Uint8Array(await Packer.toArrayBuffer(doc));
 };
 
 const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
@@ -819,15 +847,204 @@ const buildFootnoteReference: NodeBuilder<"footnoteReference"> = (
   return new FootnoteReferenceRun(ctx.footnote.id(identifier));
 };
 
-const noop = () => {
-  return null;
+const parseLatex = (value: string): DocxMath | null => {
+  try {
+    return new DocxMath({ children: latexToMath(value) });
+  } catch (e) {
+    warnOnce(
+      `Failed to convert LaTeX to a Word equation, falling back to text.\n` +
+        (e instanceof Error ? e.message : String(e)),
+    );
+    return null;
+  }
 };
 
-const fallbackText = (node: { type: string; value: string }, ctx: Context) => {
-  warnOnce(
-    `${node.type} node is not supported without plugins, falling back to text.`,
-  );
-  return buildText({ type: "text", value: node.value }, ctx);
+const buildMath: NodeBuilder<"math"> = ({ value }, ctx) => {
+  const math = parseLatex(value);
+  if (!math) {
+    return docxParagraph(
+      {
+        children: value.split(/\r?\n/).map(
+          (line, index) =>
+            new TextRun({
+              text: line,
+              break: index === 0 ? undefined : 1,
+            }),
+        ),
+      },
+      ctx,
+    );
+  }
+  return docxParagraph({ children: [math] }, ctx);
+};
+
+const buildInlineMath: NodeBuilder<"inlineMath"> = ({ value }, ctx) => {
+  const math = parseLatex(value);
+  if (!math) {
+    return buildText({ type: "text", value }, ctx);
+  }
+  return math;
+};
+
+const FLOW_PARENTS = new Set<mdast.Parents["type"]>([
+  "root",
+  "blockquote",
+  "listItem",
+  "footnoteDefinition",
+]);
+
+// https://html.spec.whatwg.org/multipage/syntax.html#void-elements
+const VOID_ELEMENTS = new Set([
+  "area",
+  "base",
+  "br",
+  "col",
+  "embed",
+  "hr",
+  "img",
+  "input",
+  "link",
+  "meta",
+  "source",
+  "track",
+  "wbr",
+]);
+
+/**
+ * Returns the tag name if the value is an opening or closing tag of non-void element.
+ * The syntax of inline html is already validated by markdown parser, so only tag name is needed.
+ * "/>" is ignored like browsers.
+ */
+const parseTag = (value: string): { name: string; closing: boolean } | null => {
+  const match = /^<(\/?)([a-zA-Z][a-zA-Z0-9-]*)/.exec(value);
+  if (!match) {
+    return null;
+  }
+  const name = match[2]!.toLowerCase();
+  return VOID_ELEMENTS.has(name) ? null : { name, closing: !!match[1] };
+};
+
+/**
+ * In markdown, inline raw HTML is split into a node per tag, so join an element back into one node.
+ * According to CommonMark, each inline html node is a single tag, comment, etc.
+ * https://spec.commonmark.org/0.31.2/#raw-html
+ */
+const joinInlineHtml = (
+  nodes: readonly mdast.RootContent[],
+): mdast.RootContent[] => {
+  const results: mdast.RootContent[] = [];
+  for (let i = 0; i < nodes.length; i++) {
+    const node = nodes[i]!;
+    if (node.type !== "html") {
+      results.push(node);
+      continue;
+    }
+
+    const first = parseTag(node.value);
+    if (first && !first.closing) {
+      const stack = [first.name];
+      let html = node.value;
+      let head: mdast.RootContent | undefined;
+      let tail: mdast.RootContent | undefined;
+      let j = i + 1;
+      for (; j < nodes.length && stack.length; j++) {
+        const n = nodes[j]!;
+        if (n.type === "text") {
+          html += n.value
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+        } else if (n.type === "break") {
+          html += "<br>";
+        } else if (n.type === "html") {
+          html += n.value;
+          const tag = parseTag(n.value);
+          if (tag) {
+            if (!tag.closing) {
+              stack.push(tag.name);
+            } else {
+              const index = stack.lastIndexOf(tag.name);
+              if (index !== -1) {
+                stack.length = index;
+              }
+            }
+            continue;
+          }
+        } else {
+          // contains nodes that can't be stringified to HTML
+          break;
+        }
+        head ??= n;
+        tail = n;
+      }
+
+      if (!stack.length) {
+        // docx.js trims whitespaces at the edges of HTML like browsers, so keep them outside
+        const space: mdast.Text = { type: "text", value: " " };
+        if (head?.type === "text" && /^\s/.test(head.value)) {
+          results.push(space);
+        }
+        results.push({ type: "html", value: html });
+        if (tail?.type === "text" && /\s$/.test(tail.value)) {
+          results.push(space);
+        }
+        i = j - 1;
+        continue;
+      }
+    } else if (/^<br[\s/>]/i.test(node.value)) {
+      // docx.js also trims <br> at the edges of HTML, so keep it outside
+      results.push({ type: "break" });
+      continue;
+    }
+    results.push(node);
+  }
+  return results;
+};
+
+const HTML_LINK_CLASS = "remark-docx-link";
+
+const htmlOptions: HtmlOptions = {
+  styleMap: {
+    [`.${HTML_LINK_CLASS}`]: HYPERLINK_STYLE_ID,
+  },
+  onWarning: ({ message }) => {
+    warnOnce(
+      `Failed to convert some HTML to Word as is, leaving it out or changing it.\n` +
+        message,
+    );
+  },
+};
+
+const buildHtml = (
+  { value }: mdast.Html,
+  ctx: Context,
+  inline: boolean,
+): DocxContent | DocxContent[] | null => {
+  // Apply the context of markdown to HTML
+  const { style, rtl } = ctx;
+  if (style.bold) value = `<b>${value}</b>`;
+  if (style.italic) value = `<i>${value}</i>`;
+  if (style.strike) value = `<s>${value}</s>`;
+  if (style.link) value = `<span class="${HTML_LINK_CLASS}">${value}</span>`;
+  if (rtl) value = `<div dir="rtl">${value}</div>`;
+
+  // Paragraphs from docx.js can't be indented or numbered afterwards, so wrap runs with a paragraph instead.
+  const paragraph = !inline && (ctx.quote != null || !!ctx.list);
+  const results =
+    inline || paragraph
+      ? htmlToRuns(value, htmlOptions)
+      : htmlToContent(value, htmlOptions);
+  if (!results.length) {
+    // Returning an empty array at root means a section break, so return null instead.
+    return null;
+  }
+  return paragraph
+    ? docxParagraph({ children: results as readonly ParagraphChild[] }, ctx)
+    : (results as DocxContent[]);
+};
+
+const noop = () => {
+  return null;
 };
 
 const fallbackCode = (node: { type: string; value: string }, ctx: Context) => {
