@@ -20,6 +20,10 @@ const plugin: Plugin<[DocxOptions?], Root, Uint8Array> = function (opts) {
     // - `jszip` used by `docx` lib doesn't have synchronous zip function
     // - resolving assets such as images is asynchronous
     // So we use it in an async transformer and pass the result to compiler by VFile.data for now.
+    if (file.path) {
+      // remark-cli keeps the input name (e.g. `input.md`) when writing output.
+      file.extname = ".docx";
+    }
     return file.data.docx!;
   };
 
