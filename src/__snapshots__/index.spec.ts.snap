@@ -200,9 +200,10 @@ quote</w:t></w:r></w:p><w:p><w:pPr><w:ind
           /></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol
           w:w="3008"
         /><w:gridCol w:w="3008" /><w:gridCol w:w="3008" /></w:tblGrid><w:tr
-      ><w:tc><w:tcPr><w:tcW w:type="dxa" w:w="3008" /></w:tcPr><w:p><w:pPr><w:jc
-                w:val="left"
-              /></w:pPr><w:r><w:t
+      ><w:trPr><w:tblHeader /></w:trPr><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
                 xml:space="preserve"
               >Left align</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
               w:type="dxa"
@@ -1417,9 +1418,10 @@ quote</w:t></w:r></w:p><w:p><w:pPr><w:bidi /><w:ind
           /></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol
           w:w="3008"
         /><w:gridCol w:w="3008" /><w:gridCol w:w="3008" /></w:tblGrid><w:tr
-      ><w:tc><w:tcPr><w:tcW w:type="dxa" w:w="3008" /></w:tcPr><w:p><w:pPr><w:jc
-                w:val="left"
-              /></w:pPr><w:r><w:t
+      ><w:trPr><w:tblHeader /></w:trPr><w:tc><w:tcPr><w:tcW
+              w:type="dxa"
+              w:w="3008"
+            /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:t
                 xml:space="preserve"
               >Left align</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW
               w:type="dxa"
@@ -11592,7 +11594,8 @@ exports[`e2e > html 1`] = `
             w:sz="4"
           /></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol
           w:w="4513"
-        /><w:gridCol w:w="4513" /></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW
+        /><w:gridCol w:w="4513" /></w:tblGrid><w:tr><w:trPr><w:tblHeader
+          /></w:trPr><w:tc><w:tcPr><w:tcW
               w:type="dxa"
               w:w="4513"
             /></w:tcPr><w:p><w:pPr><w:jc w:val="left" /></w:pPr><w:r><w:rPr><w:b

@@ -757,8 +757,9 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
 
   const options: Writeable<ITableOptions> = {
     columnWidths: Array.from({ length: columnLength }).map(() => columnWidth),
-    rows: children.map((r) => {
+    rows: children.map((r, rowIndex) => {
       return new TableRow({
+        tableHeader: rowIndex === 0 || undefined,
         children: r.children.map((c, i) => {
           return new TableCell({
             width: { size: columnWidth, type: "dxa" },
