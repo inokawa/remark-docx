@@ -99,6 +99,24 @@ describe("e2e", () => {
     }
   });
 
+  it("heading toc", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "heading.md"));
+    const doc = await processor({ toc: true }).process(md);
+    for await (const xml of readDocx(doc.value)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
+  it("heading toc with options", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "heading.md"));
+    const doc = await processor({
+      toc: { title: "Contents", depth: 6 },
+    }).process(md);
+    for await (const xml of readDocx(doc.value)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
   it("paragraph", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "paragraph.md"));
     const doc = await processor().process(md);

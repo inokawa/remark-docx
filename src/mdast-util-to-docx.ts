@@ -26,6 +26,7 @@ import {
   type FileChild,
   type ParagraphChild,
   Math as DocxMath,
+  TableOfContents,
 } from "docx";
 import { latexToMath } from "docx/math";
 import { htmlToContent, htmlToRuns, type HtmlOptions } from "docx/html";
@@ -52,6 +53,7 @@ const ORDERED_LIST_REF = "ordered";
 const COMPLETE_TASK_LIST_REF = "task-complete";
 const INCOMPLETE_TASK_LIST_REF = "task-incomplete";
 const HYPERLINK_STYLE_ID = "Hyperlink";
+const TOC_HEADING_STYLE_ID = "TOCHeading";
 
 const calcIndent = (i: number): IIndentAttributesProperties => {
   const INDENT_UNIT = 10 * 40;
@@ -194,6 +196,18 @@ const docxParagraph = (
   return new Paragraph(options);
 };
 
+interface TocOptions {
+  /**
+   * Title of the table of contents.
+   */
+  title?: string;
+  /**
+   * Max depth of headings listed in the table of contents.
+   * @default 3
+   */
+  depth?: 1 | 2 | 3 | 4 | 5 | 6;
+}
+
 export interface DocxOptions extends Pick<
   IPropertiesOptions,
   | "title"
@@ -249,6 +263,11 @@ export interface DocxOptions extends Pick<
    */
   thematicBreak?: ThematicBreakType;
   /**
+   * Insert a table of contents generated from headings at the beginning of the document.
+   * Word asks to update fields on open to fill in its page numbers.
+   */
+  toc?: boolean | TocOptions;
+  /**
    * Plugins to customize how mdast nodes are compiled.
    */
   plugins?: RemarkDocxPlugin[];
@@ -272,6 +291,7 @@ export const mdastToDocx = async (
     direction,
     background,
     thematicBreak = "page",
+    toc,
     orderedListFormat,
   }: DocxOptions = {},
 ): Promise<Uint8Array> => {
@@ -424,6 +444,25 @@ export const mdastToDocx = async (
     }
   }
 
+  const tocOptions: TocOptions | undefined =
+    toc === true ? {} : toc || undefined;
+  if (tocOptions) {
+    const { title: tocTitle, depth = 3 } = tocOptions;
+    const first = sections[0]!;
+    const hasContent = first.length > 0;
+    first.unshift(
+      ...(tocTitle
+        ? [docxParagraph({ style: TOC_HEADING_STYLE_ID, text: tocTitle }, ctx)]
+        : []),
+      new TableOfContents(undefined, {
+        headingStyleRange: `1-${depth}`,
+        hyperlink: true,
+      }),
+      // The next section break already starts a new page
+      ...(hasContent ? [new Paragraph({ children: [new PageBreak()] })] : []),
+    );
+  }
+
   const orderedLevels = buildLevels(
     orderedListFormat ?? [
       { text: "%1.", format: "DECIMAL" },
@@ -471,10 +510,25 @@ export const mdastToDocx = async (
           heading5: { paragraph: { outlineLevel: 4 } },
           heading6: { paragraph: { outlineLevel: 5 } },
         },
+        // Word's built-in "TOC Heading" style.
+        // Outline level 9 (body text) keeps it out of the navigation pane.
+        paragraphStyles:
+          tocOptions?.title &&
+          !styles?.paragraphStyles?.some((s) => s.id === TOC_HEADING_STYLE_ID)
+            ? [
+                {
+                  id: TOC_HEADING_STYLE_ID,
+                  name: "TOC Heading",
+                  basedOn: "Heading1",
+                  paragraph: { outlineLevel: 9 },
+                },
+              ]
+            : [],
       },
       styles || {},
     ),
     background,
+    features: tocOptions ? { updateFields: true } : undefined,
     sections: sections
       .filter((s) => s.length)
       .map((s) => ({
