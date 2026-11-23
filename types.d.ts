@@ -51,6 +51,7 @@ export type ThematicBreakType = "page" | "section" | "line";
 export type Context = Readonly<{
     render: (node: readonly mdast.RootContent[], ctx?: Context) => DocxContent[];
     width: number;
+    height: number;
     style: StyleContext;
     quote?: number;
     list?: ListContext;
