@@ -1,6 +1,6 @@
 {
   "name": "remark-docx",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "remark plugin to compile markdown to docx (Microsoft Word, Office Open XML).",
   "main": "lib/index.cjs",
   "module": "lib/index.js",
@@ -34,15 +34,10 @@
     "prepublishOnly": "npm run typedoc && rimraf lib && npm run build"
   },
   "dependencies": {
-    "@mathjax/src": "^4.1.2",
     "deepmerge": "^4.3.1",
     "docx": "^9.16.0",
-    "fast-xml-parser": "^5.12.1",
     "github-slugger": "^2.0.0",
-    "hast-util-from-html": "^2.1.0",
-    "hast-util-to-mdast": "^10.1.3",
     "image-size": "^2.1.0",
-    "mathml2omml": "^0.5.0",
     "mdast-util-definitions": "^6.0.0",
     "mdast-util-to-string": "^4.0.0",
     "mermaid": "^12.3.0",

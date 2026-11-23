@@ -7,8 +7,6 @@ import math from "remark-math";
 import docx from "../src";
 import { imagePlugin } from "../src/plugins/image";
 import { shikiPlugin } from "../src/plugins/shiki";
-import { htmlPlugin } from "../src/plugins/html";
-import { latexPlugin } from "../src/plugins/latex";
 import { mermaidPlugin } from "../src/plugins/mermaid";
 // @ts-expect-error no type definition
 import readmeMd from "../README.md?raw";
@@ -33,8 +31,6 @@ const toDocxProcessor = unified()
       imagePlugin(),
       mermaidPlugin(),
       shikiPlugin({ theme: "everforest-dark" }),
-      htmlPlugin(),
-      latexPlugin(),
     ],
   });
 

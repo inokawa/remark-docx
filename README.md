@@ -30,9 +30,9 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] link / linkReference
 - [x] footnoteReference / footnoteDefinition
 - [x] image / imageReference ([plugin](#image))
-- [x] html ([plugin](#html))
+- [x] html (see [supported HTML](https://docx.js.org/#/usage/html))
 - [x] code ([plugin](#code))
-- [x] math / inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [plugin](#math))
+- [x] math / inlineMath (requires [remark-math](https://github.com/remarkjs/remark-math), supports [LaTeX](https://docx.js.org/#/usage/math-latex) only)
 
 Links to headings in the same document use GitHub-style fragments, including
 the `-1`, `-2` suffixes for duplicate headings. For example, `[Go](#中文-标题)`
@@ -168,38 +168,6 @@ import { mermaidPlugin } from "remark-docx/plugins/mermaid";
 const processor = unified()
   .use(markdown)
   .use(docx, { plugins: [mermaidPlugin()] });
-```
-
-### Math
-
-Render LaTeX with [MathJax](https://github.com/mathjax/MathJax).
-
-```javascript
-import { unified } from "unified";
-import markdown from "remark-parse";
-import math from "remark-math";
-import docx from "remark-docx";
-import { latexPlugin } from "remark-docx/plugins/latex";
-
-const processor = unified()
-  .use(markdown)
-  .use(math)
-  .use(docx, { plugins: [latexPlugin()] });
-```
-
-### HTML
-
-Transform HTML to markdown.
-
-```javascript
-import { unified } from "unified";
-import markdown from "remark-parse";
-import docx from "remark-docx";
-import { htmlPlugin } from "remark-docx/plugins/html";
-
-const processor = unified()
-  .use(markdown)
-  .use(docx, { plugins: [htmlPlugin()] });
 ```
 
 ## Documentation
