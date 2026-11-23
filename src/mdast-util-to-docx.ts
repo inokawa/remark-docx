@@ -25,7 +25,9 @@ import {
   ImageRun,
   type FileChild,
   type ParagraphChild,
+  Math as DocxMath,
 } from "docx";
+import { latexToMath } from "docx/math";
 import type * as mdast from "mdast";
 import { warnOnce } from "./utils";
 import { definitions } from "mdast-util-definitions";
@@ -302,8 +304,8 @@ export const mdastToDocx = async (
       image: buildImage,
       imageReference: buildImageReference,
       footnoteReference: buildFootnoteReference,
-      math: fallbackText,
-      inlineMath: fallbackText,
+      math: buildMath,
+      inlineMath: buildInlineMath,
     },
   );
 
@@ -809,6 +811,45 @@ const buildFootnoteReference: NodeBuilder<"footnoteReference"> = (
   ctx,
 ) => {
   return new FootnoteReferenceRun(ctx.footnote.id(identifier));
+};
+
+const parseLatex = (value: string): DocxMath | null => {
+  try {
+    return new DocxMath({ children: latexToMath(value) });
+  } catch (e) {
+    warnOnce(
+      `Failed to convert LaTeX to a Word equation, falling back to text.\n` +
+        (e instanceof Error ? e.message : String(e)),
+    );
+    return null;
+  }
+};
+
+const buildMath: NodeBuilder<"math"> = ({ value }, ctx) => {
+  const math = parseLatex(value);
+  if (!math) {
+    return docxParagraph(
+      {
+        children: value.split(/\r?\n/).map(
+          (line, index) =>
+            new TextRun({
+              text: line,
+              break: index === 0 ? undefined : 1,
+            }),
+        ),
+      },
+      ctx,
+    );
+  }
+  return docxParagraph({ children: [math] }, ctx);
+};
+
+const buildInlineMath: NodeBuilder<"inlineMath"> = ({ value }, ctx) => {
+  const math = parseLatex(value);
+  if (!math) {
+    return buildText({ type: "text", value }, ctx);
+  }
+  return math;
 };
 
 const noop = () => {
