@@ -145,59 +145,11 @@ describe("e2e", () => {
     }
   });
 
-  it("links to GitHub-style heading fragments with Word bookmarks", async () => {
-    const doc = await processor().process(`
-[first](#中文-公式) [second](#%E4%B8%AD%E6%96%87-%E5%85%AC%E5%BC%8F-1)
-[formatted](#hello-world) [reference][ref] [missing](#missing)
-[external](https://example.com/#中文-公式)
-
-[ref]: #中文-公式-1
-
-## 中文 公式
-## 中文 公式
-## **Hello**, \`world\`!
-`);
-    const zip = new Zip(Buffer.from(doc.value));
-    const xml = zip.readAsText("word/document.xml");
-    const rels = zip.readAsText("word/_rels/document.xml.rels");
-
-    const starts = [...xml.matchAll(/<w:bookmarkStart\b[^>]*w:name="([^"]+)"[^>]*w:id="([^"]+)"[^>]*\/>/g)];
-    const ends = [...xml.matchAll(/<w:bookmarkEnd\b[^>]*w:id="([^"]+)"[^>]*\/>/g)];
-    expect(starts.map((match) => match[1])).toEqual([
-        "md_heading_1", "md_heading_2", "md_heading_3",
-      ]);
-    expect(ends.map((match) => match[1])).toEqual(starts.map((match) => match[2]));
-    expect(new Set(starts.map((match) => match[2])).size).toBe(3);
-    for (const [i, start] of starts.entries()) {
-      expect(start.index).toBeLessThan(ends[i]!.index!);
-      if (i + 1 < starts.length) {
-        expect(ends[i]!.index).toBeLessThan(starts[i + 1]!.index!);
-      }
-    }
-    expect([...xml.matchAll(/w:hyperlink(?![^>]*r:id=)[^>]*w:anchor="([^"]+)"/g)]
-      .map((match) => match[1])).toEqual([
-        "md_heading_1", "md_heading_2", "md_heading_3", "md_heading_2",
-      ]);
-    expect(xml).toContain("missing");
-    expect(rels).toContain("https://example.com/");
-    expect(xml).toContain('w:anchor="中文-公式"');
-    expect(rels).toContain('TargetMode="External"');
-  });
-
-  it("counts unreferenced duplicate headings and preserves broken links as text", async () => {
-    const doc = await processor().process(`
-[third](#重复-2) [missing](#not-found) [empty](#) [invalid](#%E0%A4%A)
-
-## 重复
-## 重复
-## 重复
-`);
-    const xml = new Zip(Buffer.from(doc.value)).readAsText("word/document.xml");
-    expect(xml.match(/<w:bookmarkStart\b/g)).toHaveLength(1);
-    expect(xml.match(/<w:hyperlink\b/g)).toHaveLength(1);
-    expect(xml).toContain('w:anchor="md_heading_1"');
-    for (const text of ["third", "missing", "empty", "invalid"]) {
-      expect(xml).toContain(`>${text}</w:t>`);
+  it("link heading", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "link-heading.md"));
+    const doc = await processor().process(md);
+    for await (const xml of readDocx(doc.value)) {
+      expect(xml).toMatchSnapshot();
     }
   });
 

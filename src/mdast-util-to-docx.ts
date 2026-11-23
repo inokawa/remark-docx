@@ -59,15 +59,6 @@ const INCOMPLETE_TASK_LIST_REF = "task-incomplete";
 const HYPERLINK_STYLE_ID = "Hyperlink";
 const TOC_HEADING_STYLE_ID = "TOCHeading";
 
-const getFragment = (url: string): string | undefined => {
-  if (!url.startsWith("#") || url.length === 1) return undefined;
-  try {
-    return decodeURIComponent(url.slice(1));
-  } catch {
-    return undefined;
-  }
-};
-
 const calcIndent = (i: number): IIndentAttributesProperties => {
   const INDENT_UNIT = 10 * 40;
   return { hanging: INDENT_UNIT, left: INDENT_UNIT * (i + 1) };
@@ -310,29 +301,48 @@ export const mdastToDocx = async (
 ): Promise<Uint8Array> => {
   const definition = definitions(node);
 
-  // Word bookmark names have a stricter syntax and length limit than GitHub
-  // fragments. Keep the user-facing slug separate from the generated name.
-  const referencedFragments = new Set<string>();
-  visit(node, (item) => {
-    const url =
-      item.type === "link"
-        ? item.url
-        : item.type === "linkReference"
-          ? definition(item.identifier)?.url
-          : undefined;
-    const fragment = url && getFragment(url);
-    if (fragment) referencedFragments.add(fragment);
-  });
+  // Bookmark headings referenced by links. Word bookmark names are stricter
+  // than GitHub-style slugs, so generate them.
   const slugger = new GithubSlugger();
-  const headingBookmarks = new Map<mdast.Heading, string>();
-  const fragmentBookmarks = new Map<string, string>();
-  visit(node, "heading", (heading) => {
-    const slug = slugger.slug(toString(heading));
-    if (!referencedFragments.has(slug)) return;
-    const bookmark = `md_heading_${headingBookmarks.size + 1}`;
-    headingBookmarks.set(heading, bookmark);
-    fragmentBookmarks.set(slug, bookmark);
+  const slugs = new Map<mdast.Heading, string>();
+  const fragments = new Map<string, string>();
+  visit(node, (n) => {
+    if (n.type === "heading") {
+      // Like GitHub, slug the rendered text
+      const text = toString(n, { includeHtml: false, includeImageAlt: false });
+      slugs.set(n, slugger.slug(text));
+    } else if (n.type === "link" || n.type === "linkReference") {
+      const url = n.type === "link" ? n.url : definition(n.identifier)?.url;
+      if (url?.startsWith("#")) {
+        try {
+          fragments.set(url, decodeURIComponent(url.slice(1)));
+        } catch {
+          // Leave malformed fragments unlinked
+        }
+      }
+    }
   });
+  const referenced = new Set(fragments.values());
+  const anchors = new Map<string, string>();
+  // Bookmark names keyed by heading or link url
+  const bookmarks = new Map<mdast.Heading | string, string>();
+  for (const [heading, slug] of slugs) {
+    if (referenced.has(slug)) {
+      const name = `md_heading_${anchors.size + 1}`;
+      anchors.set(slug, name);
+      bookmarks.set(heading, name);
+    }
+  }
+  for (const [url, fragment] of fragments) {
+    // Like HTML, `#` and `#top` go to the top unless a heading has that slug.
+    // `_top` is Word's reserved bookmark for the beginning of the document.
+    const anchor =
+      anchors.get(fragment) ??
+      (/^(top)?$/i.test(fragment) ? "_top" : undefined);
+    if (anchor) {
+      bookmarks.set(url, anchor);
+    }
+  }
 
   const ordered = createOrderedListRegistry();
   const footnote = createFootnoteRegistry();
@@ -465,8 +475,7 @@ export const mdastToDocx = async (
     images,
     footnote,
     orderedId: ordered.createId,
-    headingBookmarks,
-    fragmentBookmarks,
+    bookmarks,
   };
 
   const sections: DocxContent[][] = [[]];
@@ -638,15 +647,12 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
 };
 
 const buildHeading: NodeBuilder<"heading"> = (node, ctx) => {
-  const { children, depth } = node;
-  const bookmark = ctx.headingBookmarks.get(node);
-  const runs = ctx.render(children) as ParagraphChild[];
+  const id = ctx.bookmarks.get(node);
+  const children = ctx.render(node.children) as ParagraphChild[];
   return docxParagraph(
     {
-      heading: HeadingLevel[`HEADING_${depth}`],
-      children: bookmark
-        ? [new Bookmark({ id: bookmark, children: runs })]
-        : runs,
+      heading: HeadingLevel[`HEADING_${node.depth}`],
+      children: id ? [new Bookmark({ id, children })] : children,
     },
     ctx,
   );
@@ -826,9 +832,10 @@ const buildBreak: NodeBuilder<"break"> = () => {
 
 const buildLink: NodeBuilder<"link"> = ({ children, url }, ctx) => {
   if (url.startsWith("#")) {
-    const fragment = getFragment(url);
-    const anchor = fragment && ctx.fragmentBookmarks.get(fragment);
-    if (!anchor) return ctx.render(children);
+    const anchor = ctx.bookmarks.get(url);
+    if (!anchor) {
+      return ctx.render(children);
+    }
     return new InternalHyperlink({
       anchor,
       children: ctx.render(children, {
