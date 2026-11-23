@@ -1,4 +1,5 @@
 import { LevelFormat, IPropertiesOptions } from 'docx';
+import { VFile } from 'vfile';
 import { SvgToPngFn } from './utils';
 import { RemarkDocxPlugin, ThematicBreakType } from './types';
 import type * as mdast from "mdast";
@@ -6,10 +7,10 @@ type ListFormat = {
     format: keyof typeof LevelFormat;
     text: string;
 };
-type LoadFn = (url: string) => Promise<ArrayBuffer>;
+type LoadFn = (url: string, file: VFile) => Promise<ArrayBuffer | Uint8Array>;
 export interface ImageOptions {
     /**
-     * A function to resolve image data from url.
+     * A function to resolve image data from url. `file` is the processed file, which can be used to resolve relative urls.
      * @default {@link loadWithFetch}
      */
     load?: LoadFn;
@@ -98,5 +99,5 @@ export interface DocxOptions extends Pick<IPropertiesOptions, "title" | "subject
      */
     plugins?: RemarkDocxPlugin[];
 }
-export declare const mdastToDocx: (node: mdast.Root, { plugins, image, title, subject, creator, keywords, description, styles, size, margin, orientation, columns, spacing, direction, background, thematicBreak, toc, orderedListFormat, }?: DocxOptions, imageCache?: ImageCache) => Promise<Uint8Array>;
+export declare const mdastToDocx: (node: mdast.Root, { plugins, image, title, subject, creator, keywords, description, styles, size, margin, orientation, columns, spacing, direction, background, thematicBreak, toc, orderedListFormat, }: DocxOptions | undefined, imageCache: ImageCache, file: VFile) => Promise<Uint8Array>;
 export {};
