@@ -71,25 +71,25 @@ exports[`e2e > article 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
@@ -107,55 +107,55 @@ exports[`e2e > article 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >eeeee</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >eeeee</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -1298,22 +1298,22 @@ exports[`e2e > article rtl 1`] = `
           /></w:rPr><w:t xml:space="preserve">list</w:t></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
-          /></w:numPr><w:bidi /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
-          xml:space="preserve"
-        >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="ListParagraph"
-        /><w:numPr><w:ilvl w:val="2" /><w:numId w:val="2" /></w:numPr><w:bidi
+          /></w:numPr><w:bidi /><w:contextualSpacing /></w:pPr><w:r><w:rPr
+        ><w:rtl /></w:rPr><w:t xml:space="preserve">list</w:t></w:r></w:p><w:p
+    ><w:pPr><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl
+            w:val="2"
+          /><w:numId w:val="2" /></w:numPr><w:bidi /><w:contextualSpacing
         /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId w:val="2" /></w:numPr><w:bidi
-        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId w:val="2" /></w:numPr><w:bidi
-        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
@@ -1328,47 +1328,47 @@ exports[`e2e > article rtl 1`] = `
         >checked</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="5" /></w:numPr><w:bidi
-        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="5" /></w:numPr><w:bidi
-        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="5" /></w:numPr><w:bidi
-        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId w:val="5" /></w:numPr><w:bidi
-        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId w:val="5" /></w:numPr><w:bidi
-        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId w:val="5" /></w:numPr><w:bidi
-        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >eeeee</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId w:val="5" /></w:numPr><w:bidi
-        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >eeeee</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId w:val="5" /></w:numPr><w:bidi
-        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >aaa</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId w:val="5" /></w:numPr><w:bidi
-        /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
+        /><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >ordered list</w:t></w:r></w:p><w:p><w:pPr><w:bidi /></w:pPr><w:r><w:rPr
         ><w:rtl /></w:rPr><w:t
@@ -5805,17 +5805,12 @@ aaa</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
-          xml:space="preserve"
-        >list</w:t></w:r></w:p><w:p><w:pPr><w:ind
-          w:left="800"
-          w:hanging="400"
-        /></w:pPr><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
-          xml:space="preserve"
-        >quote</w:t></w:r></w:p><w:p><w:hyperlink
-        w:history="1"
-        r:id="rIdqqqqqqqqqqqqqqqqqqqqq"
-      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /></w:rPr><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:rPr><w:b /><w:bCs
+          /></w:rPr><w:t xml:space="preserve">list</w:t></w:r></w:p><w:p><w:pPr
+      ><w:ind w:left="800" w:hanging="400" /></w:pPr><w:r><w:rPr><w:b /><w:bCs
+          /></w:rPr><w:t xml:space="preserve">quote</w:t></w:r></w:p><w:p
+    ><w:hyperlink w:history="1" r:id="rIdqqqqqqqqqqqqqqqqqqqqq"><w:r><w:rPr
+          ><w:rStyle w:val="Hyperlink" /><w:b /><w:bCs /></w:rPr><w:t
             xml:space="preserve"
           >link to GitHub.com</w:t></w:r></w:hyperlink></w:p><w:p><w:hyperlink
         w:history="1"
@@ -6716,21 +6711,21 @@ exports[`e2e > footnotes 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >List item</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
           /></w:rPr><w:footnoteReference w:id="6" /></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Nested item</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
           /></w:rPr><w:footnoteReference w:id="7" /></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Ordered list</w:t></w:r><w:r><w:rPr><w:rStyle
             w:val="FootnoteReference"
@@ -11573,7 +11568,7 @@ exports[`e2e > html 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >item </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
@@ -15230,7 +15225,7 @@ exports[`e2e > link heading 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:hyperlink
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:hyperlink
         w:history="1"
         w:anchor="md_heading_1"
       ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
@@ -15239,7 +15234,7 @@ exports[`e2e > link heading 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:hyperlink
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:hyperlink
         w:history="1"
         w:anchor="md_heading_2"
       ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
@@ -15247,7 +15242,7 @@ exports[`e2e > link heading 1`] = `
           >duplicated heading</w:t></w:r></w:hyperlink></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:hyperlink
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:hyperlink
         w:history="1"
         w:anchor="md_heading_3"
       ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
@@ -15256,7 +15251,7 @@ exports[`e2e > link heading 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:hyperlink
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:hyperlink
         w:history="1"
         w:anchor="md_heading_2"
       ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
@@ -15265,7 +15260,7 @@ exports[`e2e > link heading 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:hyperlink
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:hyperlink
         w:history="1"
         w:anchor="md_heading_4"
       ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
@@ -15273,7 +15268,7 @@ exports[`e2e > link heading 1`] = `
           >formatted heading</w:t></w:r></w:hyperlink></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:hyperlink
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:hyperlink
         w:history="1"
         w:anchor="md_heading_5"
       ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
@@ -15281,7 +15276,7 @@ exports[`e2e > link heading 1`] = `
           >heading with html</w:t></w:r></w:hyperlink></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:hyperlink
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:hyperlink
         w:history="1"
         w:anchor="md_heading_6"
       ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
@@ -15289,7 +15284,7 @@ exports[`e2e > link heading 1`] = `
           >heading with image</w:t></w:r></w:hyperlink></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:hyperlink
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:hyperlink
         w:history="1"
         w:anchor="md_heading_7"
       ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
@@ -15297,33 +15292,37 @@ exports[`e2e > link heading 1`] = `
           >heading named top</w:t></w:r></w:hyperlink></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:hyperlink w:history="1" w:anchor="_top"><w:r
-        ><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:hyperlink
+        w:history="1"
+        w:anchor="_top"
+      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
             xml:space="preserve"
           >top</w:t></w:r></w:hyperlink></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:hyperlink w:history="1" w:anchor="_top"><w:r
-        ><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:hyperlink
+        w:history="1"
+        w:anchor="_top"
+      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
             xml:space="preserve"
           >empty</w:t></w:r></w:hyperlink></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >missing</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >malformed</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:hyperlink
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:hyperlink
         w:history="1"
         w:anchor="section-one"
         r:id="rIdqqqqqqqqqqqqqqqqqqqqq"
@@ -16210,19 +16209,19 @@ exports[`e2e > list bullet 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Cherry</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading2"
@@ -16232,19 +16231,19 @@ exports[`e2e > list bullet 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Dog</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Elephant</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Fox</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading2"
@@ -16256,37 +16255,37 @@ exports[`e2e > list bullet 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >First outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >First inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third outer</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -16294,19 +16293,19 @@ exports[`e2e > list bullet 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Alpha</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Beta</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Gamma</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
@@ -18084,19 +18083,19 @@ exports[`e2e > list ordered 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Cherry</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading2"
@@ -18107,19 +18106,19 @@ exports[`e2e > list ordered 1`] = `
         >Items in second list should restart at 1:</w:t></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Dog</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Elephant</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Fox</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading2"
@@ -18131,56 +18130,56 @@ exports[`e2e > list ordered 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="4"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >First outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="4"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >First inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="4"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="4"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="4"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="4"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third outer</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
         >Another separate list should restart:</w:t></w:r></w:p><w:p><w:pPr
       ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Alpha</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Beta</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="5"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Gamma</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
@@ -19225,19 +19224,19 @@ exports[`e2e > list ordered start 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Three</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Four</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Five</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -19245,13 +19244,13 @@ exports[`e2e > list ordered start 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Zero</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >One</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -19265,13 +19264,13 @@ exports[`e2e > list ordered start 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="4"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Fifth inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="4"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Sixth inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
@@ -19283,7 +19282,7 @@ exports[`e2e > list ordered start 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="4"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Fifth inner again</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -19296,13 +19295,13 @@ exports[`e2e > list ordered start 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="6"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Ten</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="6"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Eleven</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
@@ -20317,6 +20316,1075 @@ exports[`e2e > list ordered start 8`] = `
 "
 `;
 
+exports[`e2e > list spread 1`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:document
+  mc:Ignorable="w14 w15 wp14"
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+  xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+  xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+  xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+  xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+  xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+  xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+  xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+  xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+  xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+  xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+><w:body><w:p><w:r><w:t xml:space="preserve">Tight list:</w:t></w:r></w:p><w:p
+    ><w:pPr><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl
+            w:val="0"
+          /><w:numId w:val="2" /></w:numPr><w:contextualSpacing /></w:pPr><w:r
+      ><w:t xml:space="preserve">Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="2"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="2"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana inner 2</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Cherry</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Loose list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="2"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="2"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana inner 2</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Cherry</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Loose item:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="3"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="3"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="400" /></w:pPr><w:r
+      ><w:t xml:space="preserve">Banana paragraph.</w:t></w:r></w:p><w:p><w:pPr
+      ><w:pStyle w:val="ListParagraph" /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="3"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Cherry</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Tight list in loose list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="2"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="2" /><w:numId
+            w:val="2"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana inner inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Cherry</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Loose list in tight list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="1" /><w:numId
+            w:val="2"
+          /></w:numPr></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana inner 2</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="2"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Cherry</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Tight task list:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="4"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="ListParagraph"
+        /><w:numPr><w:ilvl w:val="0" /><w:numId
+            w:val="5"
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >Banana</w:t></w:r></w:p><w:p><w:r><w:t
+          xml:space="preserve"
+        >Paragraph.</w:t></w:r></w:p><w:sectPr><w:pgSz
+        w:w="11906"
+        w:h="16838"
+        w:orient="portrait"
+      /><w:pgMar
+        w:top="1440"
+        w:right="1440"
+        w:bottom="1440"
+        w:left="1440"
+        w:header="708"
+        w:footer="708"
+        w:gutter="0"
+      /><w:pgNumType /><w:docGrid
+        w:linePitch="360"
+      /></w:sectPr></w:body></w:document>
+"
+`;
+
+exports[`e2e > list spread 2`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:styles
+  mc:Ignorable="w14 w15"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+><w:docDefaults><w:rPrDefault /><w:pPrDefault /></w:docDefaults><w:style
+    w:type="paragraph"
+    w:styleId="Normal"
+    w:default="1"
+  ><w:name w:val="Normal" /><w:qFormat /></w:style><w:style
+    w:type="table"
+    w:styleId="TableNormal"
+    w:default="true"
+  ><w:name w:val="Normal Table" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:tblPr><w:tblInd
+        w:type="dxa"
+        w:w="0"
+      /><w:tblCellMar><w:top w:type="dxa" w:w="0" /><w:left
+          w:type="dxa"
+          w:w="108"
+        /><w:bottom w:type="dxa" w:w="0" /><w:right
+          w:type="dxa"
+          w:w="108"
+        /></w:tblCellMar></w:tblPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Title"
+  ><w:name w:val="Title" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:rPr><w:sz w:val="56" /><w:szCs
+        w:val="56"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading1"
+  ><w:name w:val="Heading 1" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:pPr><w:outlineLvl w:val="0" /></w:pPr><w:rPr><w:color
+        w:val="2E74B5"
+      /><w:sz w:val="32" /><w:szCs w:val="32" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading2"
+  ><w:name w:val="Heading 2" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:pPr><w:outlineLvl w:val="1" /></w:pPr><w:rPr><w:color
+        w:val="2E74B5"
+      /><w:sz w:val="26" /><w:szCs w:val="26" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading3"
+  ><w:name w:val="Heading 3" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:pPr><w:outlineLvl w:val="2" /></w:pPr><w:rPr><w:color
+        w:val="1F4D78"
+      /><w:sz w:val="24" /><w:szCs w:val="24" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading4"
+  ><w:name w:val="Heading 4" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:pPr><w:outlineLvl w:val="3" /></w:pPr><w:rPr><w:i /><w:iCs
+      /><w:color w:val="2E74B5" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading5"
+  ><w:name w:val="Heading 5" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:pPr><w:outlineLvl w:val="4" /></w:pPr><w:rPr><w:color
+        w:val="2E74B5"
+      /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Heading6"
+  ><w:name w:val="Heading 6" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:qFormat /><w:pPr><w:outlineLvl w:val="5" /></w:pPr><w:rPr><w:color
+        w:val="1F4D78"
+      /></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Strong"><w:name
+      w:val="Strong"
+    /><w:basedOn w:val="Normal" /><w:next w:val="Normal" /><w:qFormat /><w:rPr
+    ><w:b /><w:bCs /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="ListParagraph"
+  ><w:name w:val="List Paragraph" /><w:basedOn w:val="Normal" /><w:qFormat
+    /></w:style><w:style w:type="paragraph" w:styleId="Caption"><w:name
+      w:val="caption"
+    /><w:basedOn w:val="Normal" /><w:next w:val="Normal" /><w:uiPriority
+      w:val="35"
+    /><w:semiHidden /><w:unhideWhenUsed /><w:qFormat /><w:pPr><w:spacing
+        w:after="200"
+      /></w:pPr><w:rPr><w:i /><w:iCs /><w:color
+        w:val="44546A"
+        w:themeColor="dark2"
+      /><w:sz w:val="18" /><w:szCs w:val="18" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="Bibliography"
+  ><w:name w:val="Bibliography" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="37" /><w:unhideWhenUsed /></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC1"
+  ><w:name w:val="toc 1" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC2"
+  ><w:name w:val="toc 2" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind w:left="200" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC3"
+  ><w:name w:val="toc 3" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind w:left="400" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC4"
+  ><w:name w:val="toc 4" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind w:left="600" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC5"
+  ><w:name w:val="toc 5" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind w:left="800" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC6"
+  ><w:name w:val="toc 6" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind
+        w:left="1000"
+      /></w:pPr></w:style><w:style w:type="paragraph" w:styleId="TOC7"><w:name
+      w:val="toc 7"
+    /><w:basedOn w:val="Normal" /><w:next w:val="Normal" /><w:uiPriority
+      w:val="39"
+    /><w:semiHidden /><w:unhideWhenUsed /><w:pPr><w:spacing
+        w:after="100"
+      /><w:ind w:left="1200" /></w:pPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="TOC8"
+  ><w:name w:val="toc 8" /><w:basedOn w:val="Normal" /><w:next
+      w:val="Normal"
+    /><w:uiPriority w:val="39" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="100" /><w:ind
+        w:left="1400"
+      /></w:pPr></w:style><w:style w:type="paragraph" w:styleId="TOC9"><w:name
+      w:val="toc 9"
+    /><w:basedOn w:val="Normal" /><w:next w:val="Normal" /><w:uiPriority
+      w:val="39"
+    /><w:semiHidden /><w:unhideWhenUsed /><w:pPr><w:spacing
+        w:after="100"
+      /><w:ind w:left="1600" /></w:pPr></w:style><w:style
+    w:type="character"
+    w:styleId="Hyperlink"
+  ><w:name w:val="Hyperlink" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:unhideWhenUsed /><w:rPr><w:color
+        w:val="0563C1"
+      /><w:u w:val="single" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteReference"
+  ><w:name w:val="footnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="FootnoteText"
+  ><w:name w:val="footnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="FootnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="FootnoteTextChar"
+  ><w:name w:val="Footnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="FootnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteReference"
+  ><w:name w:val="endnote reference" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:rPr
+    ><w:vertAlign w:val="superscript" /></w:rPr></w:style><w:style
+    w:type="paragraph"
+    w:styleId="EndnoteText"
+  ><w:name w:val="endnote text" /><w:basedOn w:val="Normal" /><w:link
+      w:val="EndnoteTextChar"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:pPr
+    ><w:spacing w:after="0" w:line="240" w:lineRule="auto" /></w:pPr><w:rPr
+    ><w:sz w:val="20" /><w:szCs w:val="20" /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="EndnoteTextChar"
+  ><w:name w:val="Endnote Text Char" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:link w:val="EndnoteText" /><w:uiPriority w:val="99" /><w:semiHidden
+    /><w:unhideWhenUsed /><w:rPr><w:sz w:val="20" /><w:szCs
+        w:val="20"
+      /></w:rPr></w:style><w:style
+    w:type="character"
+    w:styleId="LineNumber"
+  ><w:name w:val="line number" /><w:basedOn
+      w:val="DefaultParagraphFont"
+    /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed
+    /></w:style></w:styles>
+"
+`;
+
+exports[`e2e > list spread 3`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:footnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:footnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:footnote><w:footnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="FootnoteReference"
+          /></w:rPr><w:footnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:footnote></w:footnotes>
+"
+`;
+
+exports[`e2e > list spread 4`] = `
+"<?xml version="1.0" encoding="UTF-8" ?>
+<w:endnotes
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:endnote w:type="separator" w:id="-1"><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:separator
+        /></w:r></w:p></w:endnote><w:endnote
+    w:type="continuationSeparator"
+    w:id="0"
+  ><w:p><w:pPr><w:spacing
+          w:after="0"
+          w:line="240"
+          w:lineRule="auto"
+        /></w:pPr><w:r><w:rPr><w:rStyle
+            w:val="EndnoteReference"
+          /></w:rPr><w:endnoteRef /></w:r><w:r><w:continuationSeparator
+        /></w:r></w:p></w:endnote></w:endnotes>
+"
+`;
+
+exports[`e2e > list spread 5`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:settings
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 w15 wp14"
+><w:displayBackgroundShape /><w:defaultTabStop
+    w:val="720"
+  /><w:evenAndOddHeaders w:val="false" /><w:compat><w:compatSetting
+      w:val="15"
+      w:name="compatibilityMode"
+      w:uri="http://schemas.microsoft.com/office/word"
+    /></w:compat></w:settings>
+"
+`;
+
+exports[`e2e > list spread 6`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:fonts
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+  xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+  xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+  xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+  xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+  mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh"
+/>
+"
+`;
+
+exports[`e2e > list spread 7`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<a:theme
+  xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+  name="Office Theme"
+><a:themeElements><a:clrScheme name="Office"><a:dk1><a:sysClr
+          val="windowText"
+          lastClr="000000"
+        /></a:dk1><a:lt1><a:sysClr
+          val="window"
+          lastClr="FFFFFF"
+        /></a:lt1><a:dk2><a:srgbClr val="44546A" /></a:dk2><a:lt2><a:srgbClr
+          val="E7E6E6"
+        /></a:lt2><a:accent1><a:srgbClr val="4472C4" /></a:accent1><a:accent2
+      ><a:srgbClr val="ED7D31" /></a:accent2><a:accent3><a:srgbClr
+          val="A5A5A5"
+        /></a:accent3><a:accent4><a:srgbClr
+          val="FFC000"
+        /></a:accent4><a:accent5><a:srgbClr
+          val="5B9BD5"
+        /></a:accent5><a:accent6><a:srgbClr val="70AD47" /></a:accent6><a:hlink
+      ><a:srgbClr val="0563C1" /></a:hlink><a:folHlink><a:srgbClr
+          val="954F72"
+        /></a:folHlink></a:clrScheme><a:fontScheme name="Office"><a:majorFont
+      ><a:latin typeface="Calibri Light" panose="020F0302020204030204" /><a:ea
+          typeface=""
+        /><a:cs typeface="" /><a:font
+          script="Jpan"
+          typeface="游ゴシック Light"
+        /><a:font script="Hang" typeface="맑은 고딕" /><a:font
+          script="Hans"
+          typeface="等线 Light"
+        /><a:font script="Hant" typeface="新細明體" /><a:font
+          script="Arab"
+          typeface="Times New Roman"
+        /><a:font script="Hebr" typeface="Times New Roman" /><a:font
+          script="Thai"
+          typeface="Angsana New"
+        /><a:font script="Ethi" typeface="Nyala" /><a:font
+          script="Beng"
+          typeface="Vrinda"
+        /><a:font script="Gujr" typeface="Shruti" /><a:font
+          script="Khmr"
+          typeface="MoolBoran"
+        /><a:font script="Knda" typeface="Tunga" /><a:font
+          script="Guru"
+          typeface="Raavi"
+        /><a:font script="Cans" typeface="Euphemia" /><a:font
+          script="Cher"
+          typeface="Plantagenet Cherokee"
+        /><a:font script="Yiii" typeface="Microsoft Yi Baiti" /><a:font
+          script="Tibt"
+          typeface="Microsoft Himalaya"
+        /><a:font script="Thaa" typeface="MV Boli" /><a:font
+          script="Deva"
+          typeface="Mangal"
+        /><a:font script="Telu" typeface="Gautami" /><a:font
+          script="Taml"
+          typeface="Latha"
+        /><a:font script="Syrc" typeface="Estrangelo Edessa" /><a:font
+          script="Orya"
+          typeface="Kalinga"
+        /><a:font script="Mlym" typeface="Kartika" /><a:font
+          script="Laoo"
+          typeface="DokChampa"
+        /><a:font script="Sinh" typeface="Iskoola Pota" /><a:font
+          script="Mong"
+          typeface="Mongolian Baiti"
+        /><a:font script="Viet" typeface="Times New Roman" /><a:font
+          script="Uigh"
+          typeface="Microsoft Uighur"
+        /><a:font script="Geor" typeface="Sylfaen" /><a:font
+          script="Armn"
+          typeface="Arial"
+        /><a:font script="Bugi" typeface="Leelawadee UI" /><a:font
+          script="Bopo"
+          typeface="Microsoft JhengHei"
+        /><a:font script="Java" typeface="Javanese Text" /><a:font
+          script="Lisu"
+          typeface="Segoe UI"
+        /><a:font script="Mymr" typeface="Myanmar Text" /><a:font
+          script="Nkoo"
+          typeface="Ebrima"
+        /><a:font script="Olck" typeface="Nirmala UI" /><a:font
+          script="Osma"
+          typeface="Ebrima"
+        /><a:font script="Phag" typeface="Phagspa" /><a:font
+          script="Syrn"
+          typeface="Estrangelo Edessa"
+        /><a:font script="Syrj" typeface="Estrangelo Edessa" /><a:font
+          script="Syre"
+          typeface="Estrangelo Edessa"
+        /><a:font script="Sora" typeface="Nirmala UI" /><a:font
+          script="Tale"
+          typeface="Microsoft Tai Le"
+        /><a:font script="Talu" typeface="Microsoft New Tai Lue" /><a:font
+          script="Tfng"
+          typeface="Ebrima"
+        /></a:majorFont><a:minorFont><a:latin
+          typeface="Calibri"
+          panose="020F0502020204030204"
+        /><a:ea typeface="" /><a:cs typeface="" /><a:font
+          script="Jpan"
+          typeface="游明朝"
+        /><a:font script="Hang" typeface="맑은 고딕" /><a:font
+          script="Hans"
+          typeface="等线"
+        /><a:font script="Hant" typeface="新細明體" /><a:font
+          script="Arab"
+          typeface="Arial"
+        /><a:font script="Hebr" typeface="Arial" /><a:font
+          script="Thai"
+          typeface="Cordia New"
+        /><a:font script="Ethi" typeface="Nyala" /><a:font
+          script="Beng"
+          typeface="Vrinda"
+        /><a:font script="Gujr" typeface="Shruti" /><a:font
+          script="Khmr"
+          typeface="DaunPenh"
+        /><a:font script="Knda" typeface="Tunga" /><a:font
+          script="Guru"
+          typeface="Raavi"
+        /><a:font script="Cans" typeface="Euphemia" /><a:font
+          script="Cher"
+          typeface="Plantagenet Cherokee"
+        /><a:font script="Yiii" typeface="Microsoft Yi Baiti" /><a:font
+          script="Tibt"
+          typeface="Microsoft Himalaya"
+        /><a:font script="Thaa" typeface="MV Boli" /><a:font
+          script="Deva"
+          typeface="Mangal"
+        /><a:font script="Telu" typeface="Gautami" /><a:font
+          script="Taml"
+          typeface="Latha"
+        /><a:font script="Syrc" typeface="Estrangelo Edessa" /><a:font
+          script="Orya"
+          typeface="Kalinga"
+        /><a:font script="Mlym" typeface="Kartika" /><a:font
+          script="Laoo"
+          typeface="DokChampa"
+        /><a:font script="Sinh" typeface="Iskoola Pota" /><a:font
+          script="Mong"
+          typeface="Mongolian Baiti"
+        /><a:font script="Viet" typeface="Arial" /><a:font
+          script="Uigh"
+          typeface="Microsoft Uighur"
+        /><a:font script="Geor" typeface="Sylfaen" /><a:font
+          script="Armn"
+          typeface="Arial"
+        /><a:font script="Bugi" typeface="Leelawadee UI" /><a:font
+          script="Bopo"
+          typeface="Microsoft JhengHei"
+        /><a:font script="Java" typeface="Javanese Text" /><a:font
+          script="Lisu"
+          typeface="Segoe UI"
+        /><a:font script="Mymr" typeface="Myanmar Text" /><a:font
+          script="Nkoo"
+          typeface="Ebrima"
+        /><a:font script="Olck" typeface="Nirmala UI" /><a:font
+          script="Osma"
+          typeface="Ebrima"
+        /><a:font script="Phag" typeface="Phagspa" /><a:font
+          script="Syrn"
+          typeface="Estrangelo Edessa"
+        /><a:font script="Syrj" typeface="Estrangelo Edessa" /><a:font
+          script="Syre"
+          typeface="Estrangelo Edessa"
+        /><a:font script="Sora" typeface="Nirmala UI" /><a:font
+          script="Tale"
+          typeface="Microsoft Tai Le"
+        /><a:font script="Talu" typeface="Microsoft New Tai Lue" /><a:font
+          script="Tfng"
+          typeface="Ebrima"
+        /></a:minorFont></a:fontScheme><a:fmtScheme
+      name="Office"
+    ><a:fillStyleLst><a:solidFill><a:schemeClr
+            val="phClr"
+          /></a:solidFill><a:gradFill rotWithShape="true"><a:gsLst><a:gs
+              pos="0"
+            ><a:schemeClr val="phClr"><a:lumMod val="110000" /><a:satMod
+                  val="105000"
+                /><a:tint val="67000" /></a:schemeClr></a:gs><a:gs
+              pos="50000"
+            ><a:schemeClr val="phClr"><a:lumMod val="105000" /><a:satMod
+                  val="103000"
+                /><a:tint val="73000" /></a:schemeClr></a:gs><a:gs
+              pos="100000"
+            ><a:schemeClr val="phClr"><a:lumMod val="105000" /><a:satMod
+                  val="109000"
+                /><a:tint val="81000" /></a:schemeClr></a:gs></a:gsLst><a:lin
+            ang="5400000"
+            scaled="false"
+          /></a:gradFill><a:gradFill rotWithShape="true"><a:gsLst><a:gs
+              pos="0"
+            ><a:schemeClr val="phClr"><a:satMod val="103000" /><a:lumMod
+                  val="102000"
+                /><a:tint val="94000" /></a:schemeClr></a:gs><a:gs
+              pos="50000"
+            ><a:schemeClr val="phClr"><a:satMod val="110000" /><a:lumMod
+                  val="100000"
+                /><a:shade val="100000" /></a:schemeClr></a:gs><a:gs
+              pos="100000"
+            ><a:schemeClr val="phClr"><a:lumMod val="99000" /><a:satMod
+                  val="120000"
+                /><a:shade val="78000" /></a:schemeClr></a:gs></a:gsLst><a:lin
+            ang="5400000"
+            scaled="false"
+          /></a:gradFill></a:fillStyleLst><a:lnStyleLst><a:ln
+          w="6350"
+          cap="flat"
+          cmpd="sng"
+          algn="ctr"
+        ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:prstDash
+            val="solid"
+          /><a:miter lim="800000" /></a:ln><a:ln
+          w="12700"
+          cap="flat"
+          cmpd="sng"
+          algn="ctr"
+        ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:prstDash
+            val="solid"
+          /><a:miter lim="800000" /></a:ln><a:ln
+          w="19050"
+          cap="flat"
+          cmpd="sng"
+          algn="ctr"
+        ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:prstDash
+            val="solid"
+          /><a:miter lim="800000" /></a:ln></a:lnStyleLst><a:effectStyleLst
+      ><a:effectStyle><a:effectLst /></a:effectStyle><a:effectStyle><a:effectLst
+          /></a:effectStyle><a:effectStyle><a:effectLst><a:outerShdw
+              blurRad="57150"
+              dist="19050"
+              dir="5400000"
+              algn="ctr"
+              rotWithShape="false"
+            ><a:srgbClr val="000000"><a:alpha
+                  val="63000"
+                /></a:srgbClr></a:outerShdw></a:effectLst></a:effectStyle></a:effectStyleLst><a:bgFillStyleLst
+      ><a:solidFill><a:schemeClr val="phClr" /></a:solidFill><a:solidFill
+        ><a:schemeClr val="phClr"><a:tint val="95000" /><a:satMod
+              val="170000"
+            /></a:schemeClr></a:solidFill><a:gradFill
+          rotWithShape="true"
+        ><a:gsLst><a:gs pos="0"><a:schemeClr val="phClr"><a:tint
+                  val="93000"
+                /><a:satMod val="150000" /><a:shade val="98000" /><a:lumMod
+                  val="102000"
+                /></a:schemeClr></a:gs><a:gs pos="50000"><a:schemeClr
+                val="phClr"
+              ><a:tint val="98000" /><a:satMod val="130000" /><a:shade
+                  val="90000"
+                /><a:lumMod val="103000" /></a:schemeClr></a:gs><a:gs
+              pos="100000"
+            ><a:schemeClr val="phClr"><a:shade val="63000" /><a:satMod
+                  val="120000"
+                /></a:schemeClr></a:gs></a:gsLst><a:lin
+            ang="5400000"
+            scaled="false"
+          /></a:gradFill></a:bgFillStyleLst></a:fmtScheme></a:themeElements><a:objectDefaults
+  /><a:extraClrSchemeLst /></a:theme>
+"
+`;
+
+exports[`e2e > list spread 8`] = `
+"<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<w:numbering
+  mc:Ignorable="w14 w15 wp14"
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+><w:abstractNum
+    w:abstractNumId="2"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="●"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="○" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="■"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="●" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="○"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="■" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="3"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%1."
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%2." /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%3."
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%4." /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="decimal" /><w:lvlText
+        w:val="%5."
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="decimal" /><w:lvlText w:val="%6." /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="4"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☑"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☑" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:abstractNum
+    w:abstractNumId="5"
+    w15:restartNumberingAfterBreak="0"
+  ><w:multiLevelType w:val="hybridMultilevel" /><w:lvl
+      w:ilvl="0"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="400"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="1" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="2"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="1200"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="3" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind w:left="1600" w:hanging="400" /></w:pPr></w:lvl><w:lvl
+      w:ilvl="4"
+      w:tentative="1"
+    ><w:start w:val="1" /><w:numFmt w:val="bullet" /><w:lvlText
+        w:val="☐"
+      /><w:lvlJc w:val="left" /><w:pPr><w:ind
+          w:left="2000"
+          w:hanging="400"
+        /></w:pPr></w:lvl><w:lvl w:ilvl="5" w:tentative="1"><w:start
+        w:val="1"
+      /><w:numFmt w:val="bullet" /><w:lvlText w:val="☐" /><w:lvlJc
+        w:val="left"
+      /><w:pPr><w:ind
+          w:left="2400"
+          w:hanging="400"
+        /></w:pPr></w:lvl></w:abstractNum><w:num w:numId="2"><w:abstractNumId
+      w:val="2"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="1"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="2"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="3"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="4"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="5"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num><w:num w:numId="3"><w:abstractNumId
+      w:val="3"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="1"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="2"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="3"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="4"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="5"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num><w:num w:numId="4"><w:abstractNumId
+      w:val="5"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="1"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="2"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="3"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="4"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="5"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num><w:num w:numId="5"><w:abstractNumId
+      w:val="4"
+    /><w:lvlOverride w:ilvl="0"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="1"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="2"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="3"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="4"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride><w:lvlOverride w:ilvl="5"><w:startOverride
+        w:val="1"
+      /></w:lvlOverride></w:num></w:numbering>
+"
+`;
+
 exports[`e2e > list task 1`] = `
 "<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <w:document
@@ -20367,19 +21435,19 @@ exports[`e2e > list task 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Apple</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Banana</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Cherry</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading2"
@@ -20389,19 +21457,19 @@ exports[`e2e > list task 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Dog</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Elephant</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Fox</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading2"
@@ -20413,37 +21481,37 @@ exports[`e2e > list task 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >First outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >First inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="1" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second inner</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="2" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Second outer</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Third outer</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
@@ -20451,19 +21519,19 @@ exports[`e2e > list task 1`] = `
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Alpha</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="3"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Beta</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="ListParagraph"
         /><w:numPr><w:ilvl w:val="0" /><w:numId
             w:val="2"
-          /></w:numPr></w:pPr><w:r><w:t
+          /></w:numPr><w:contextualSpacing /></w:pPr><w:r><w:t
           xml:space="preserve"
         >Gamma</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"

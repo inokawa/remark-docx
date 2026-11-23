@@ -215,6 +215,14 @@ describe("e2e", () => {
     }
   });
 
+  it("list spread", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "list-spread.md"));
+    const doc = await processor().process(md);
+    for await (const xml of readDocx(doc.value)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
   it("list task", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "list-task.md"));
     const doc = await processor().process(md);
