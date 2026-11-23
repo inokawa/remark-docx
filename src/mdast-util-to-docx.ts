@@ -65,6 +65,9 @@ const INCOMPLETE_TASK_LIST_REF = "task-incomplete";
 const HYPERLINK_STYLE_ID = "Hyperlink";
 const TOC_HEADING_STYLE_ID = "TOCHeading";
 
+const COLUMN_SPACE = 720;
+const TABLE_CELL_MARGIN = 108;
+
 const calcIndent = (i: number): IIndentAttributesProperties => {
   const INDENT_UNIT = 10 * 40;
   return { hanging: INDENT_UNIT, left: INDENT_UNIT * (i + 1) };
@@ -608,6 +611,13 @@ export const mdastToDocx = async (
     }
   }
 
+  // docx swaps width and height of landscape pages
+  const [bodyWidth, bodyHeight] =
+    orientation === "landscape"
+      ? [pageHeight, pageWidth]
+      : [pageWidth, pageHeight];
+  const columnCount = columns || 1;
+
   const ctx: Context = {
     render(nodes, c) {
       const results: DocxContent[] = [];
@@ -619,7 +629,10 @@ export const mdastToDocx = async (
       }
       return results;
     },
-    width: pageWidth - marginLeft - marginRight,
+    width:
+      (bodyWidth - marginLeft - marginRight - COLUMN_SPACE * (columnCount - 1)) /
+      columnCount,
+    height: bodyHeight - marginTop - marginBottom,
     style: {},
     thematicBreak,
     rtl: direction === "rtl",
@@ -914,6 +927,9 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
                 alignment: cellAlign ? AlignmentType[cellAlign] : undefined,
                 children: ctx.render(c.children, {
                   ...ctx,
+                  width: columnWidth - TABLE_CELL_MARGIN * 2,
+                  quote: undefined,
+                  list: undefined,
                   // https://github.com/dolanmiu/docx/blob/master/demo/22-right-to-left-text.ts
                   rtl: undefined,
                 }) as ParagraphChild[],
@@ -1029,15 +1045,10 @@ const buildImage: NodeBuilder<"image"> = (node, ctx) => {
     return node.alt ? buildText({ type: "text", value: node.alt }, ctx) : null;
   }
 
-  let { width, height } = image;
-  const pageWidthInch = ctx.width / 1440;
-  const DPI = 96;
-  const pageWidthPx = pageWidthInch * DPI;
-  if (width > pageWidthPx) {
-    const scale = pageWidthPx / width;
-    width *= scale;
-    height *= scale;
-  }
+  const max = maxImageSize(ctx);
+  const scale = Math.min(1, max.width / image.width, max.height / image.height);
+  const width = image.width * scale;
+  const height = image.height * scale;
 
   const altText =
     node.alt || node.title
@@ -1073,6 +1084,16 @@ const buildImage: NodeBuilder<"image"> = (node, ctx) => {
     },
     altText,
   });
+};
+
+const maxImageSize = (ctx: Context): { width: number; height: number } => {
+  const level = ctx.quote != null ? ctx.quote + 1 : ctx.list?.level;
+  const indent = level != null ? (calcIndent(level).left as number) : 0;
+  // twip to px
+  return {
+    width: ((ctx.width - indent) / 1440) * 96,
+    height: (ctx.height / 1440) * 96,
+  };
 };
 
 const buildImageReference: NodeBuilder<"imageReference"> = (node, ctx) => {
@@ -1285,10 +1306,14 @@ const buildHtml = (
 
   // Paragraphs from docx.js can't be indented or numbered afterwards, so wrap runs with a paragraph instead.
   const paragraph = !inline && (ctx.quote != null || !!ctx.list);
+  const options: HtmlOptions = {
+    ...htmlOptions,
+    maxImageWidth: maxImageSize(ctx).width,
+  };
   const results =
     inline || paragraph
-      ? htmlToRuns(value, htmlOptions)
-      : htmlToContent(value, htmlOptions);
+      ? htmlToRuns(value, options)
+      : htmlToContent(value, options);
   if (!results.length) {
     // Returning an empty array at root means a section break, so return null instead.
     return null;
