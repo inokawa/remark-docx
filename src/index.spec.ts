@@ -197,6 +197,16 @@ describe("e2e", () => {
     }
   });
 
+  it("list ordered start", async () => {
+    const md = await fs.readFile(
+      path.join(fixturesDir, "list-ordered-start.md"),
+    );
+    const doc = await processor().process(md);
+    for await (const xml of readDocx(doc.value)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
   it("list task", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "list-task.md"));
     const doc = await processor().process(md);
