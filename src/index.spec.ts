@@ -10,7 +10,6 @@ import Zip from "adm-zip";
 import prettier from "prettier";
 import docx, { type DocxOptions } from ".";
 import { imagePlugin } from "./plugins/image";
-import { htmlPlugin } from "./plugins/html";
 import { shikiPlugin } from "./plugins/shiki";
 import { readFile } from "fs/promises";
 
@@ -268,9 +267,9 @@ describe("e2e", () => {
     }
   });
 
-  it("tag", async () => {
-    const md = await fs.readFile(path.join(fixturesDir, "tag.md"));
-    const doc = await processor({ plugins: [htmlPlugin()] }).process(md);
+  it("html", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "html.md"));
+    const doc = await processor().process(md);
     for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }

@@ -30,7 +30,7 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] link / linkReference
 - [x] footnoteReference / footnoteDefinition
 - [x] image / imageReference ([plugin](#image))
-- [x] html ([plugin](#html))
+- [x] html (see [supported HTML](https://docx.js.org/#/usage/html))
 - [x] code ([plugin](#code))
 - [x] math / inlineMath (requires [remark-math](https://github.com/remarkjs/remark-math), supports [LaTeX](https://docx.js.org/#/usage/math-latex) only)
 
@@ -164,21 +164,6 @@ import { mermaidPlugin } from "remark-docx/plugins/mermaid";
 const processor = unified()
   .use(markdown)
   .use(docx, { plugins: [mermaidPlugin()] });
-```
-
-### HTML
-
-Transform HTML to markdown.
-
-```javascript
-import { unified } from "unified";
-import markdown from "remark-parse";
-import docx from "remark-docx";
-import { htmlPlugin } from "remark-docx/plugins/html";
-
-const processor = unified()
-  .use(markdown)
-  .use(docx, { plugins: [htmlPlugin()] });
 ```
 
 ## Documentation
