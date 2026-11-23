@@ -145,6 +145,14 @@ describe("e2e", () => {
     }
   });
 
+  it("link heading", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "link-heading.md"));
+    const doc = await processor().process(md);
+    for await (const xml of readDocx(doc.value)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
   it("image", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "image.md"));
     const doc = await processor({
