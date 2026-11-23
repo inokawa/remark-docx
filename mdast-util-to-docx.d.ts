@@ -1,6 +1,6 @@
 import { LevelFormat, IPropertiesOptions } from 'docx';
 import { VFile } from 'vfile';
-import { SvgToPngFn } from './utils';
+import { ToPngFn } from './utils';
 import { RemarkDocxPlugin, ThematicBreakType } from './types';
 import type * as mdast from "mdast";
 type ListFormat = {
@@ -15,10 +15,11 @@ export interface ImageOptions {
      */
     load?: LoadFn;
     /**
-     * A function to convert SVG to PNG. Required to embed SVG images, because the docx specifications require PNG fallback for them.
-     * On browser, you can use {@link browserSvgToPng}.
+     * A function to convert images to PNG. Required to embed images other than PNG, JPEG, GIF and BMP, such as SVG and WebP.
+     * SVG is embedded with the PNG as fallback, because Word requires it. Others are embedded as PNG.
+     * On browser, you can use {@link browserToPng}.
      */
-    svgToPng?: SvgToPngFn;
+    toPng?: ToPngFn;
 }
 interface TocOptions {
     /**
