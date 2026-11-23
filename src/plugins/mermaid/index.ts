@@ -1,9 +1,8 @@
 import type { RemarkDocxPlugin } from "../../types";
-import { warnOnce } from "../../utils";
+import { browserSvgToPng, warnOnce } from "../../utils";
 import mermaid from "mermaid";
 import { visit } from "unist-util-visit";
 import { imageSize } from "image-size";
-import { browserSvgToPng } from "../image";
 import { Paragraph, type ParagraphChild } from "docx";
 
 const browserRender = async (value: string): Promise<string> => {

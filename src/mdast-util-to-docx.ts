@@ -34,8 +34,13 @@ import {
 import { latexToMath } from "docx/math";
 import { htmlToContent, htmlToRuns, type HtmlOptions } from "docx/html";
 import type * as mdast from "mdast";
-import { warnOnce } from "./utils";
-import { definitions } from "mdast-util-definitions";
+import {
+  isSupportedType,
+  warnOnce,
+  type SvgToPngFn,
+} from "./utils";
+import { definitions, type GetDefinition } from "mdast-util-definitions";
+import { imageSize } from "image-size";
 import { visit } from "unist-util-visit";
 import deepmerge from "deepmerge";
 import GithubSlugger from "github-slugger";
@@ -211,6 +216,122 @@ const docxParagraph = (
   return new Paragraph(options);
 };
 
+type LoadFn = (url: string) => Promise<ArrayBuffer>;
+
+const loadWithFetch: LoadFn = async (url) => {
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+  return res.arrayBuffer();
+};
+
+export interface ImageOptions {
+  /**
+   * A function to resolve image data from url.
+   * @default {@link loadWithFetch}
+   */
+  load?: LoadFn;
+  /**
+   * A function to convert SVG to PNG. Required to embed SVG images, because the docx specifications require PNG fallback for them.
+   * On browser, you can use {@link browserSvgToPng}.
+   */
+  svgToPng?: SvgToPngFn;
+}
+
+/**
+ * @internal
+ */
+export type ImageCache = Map<string, DocxImageData>;
+
+const MAX_CACHE_SIZE = 100;
+
+const loadImage = async (
+  url: string,
+  load: LoadFn,
+  svgToPng: SvgToPngFn | undefined,
+): Promise<DocxImageData | undefined> => {
+  let data: ArrayBuffer;
+  try {
+    data = await load(url);
+  } catch (e) {
+    warnOnce(`Failed to load image: ${url} ${e}`);
+    return;
+  }
+
+  let size: ReturnType<typeof imageSize>;
+  try {
+    size = imageSize(new Uint8Array(data));
+  } catch (e) {
+    warnOnce(`Failed to detect image type: ${url} ${e}`);
+    return;
+  }
+  const { width, height, type } = size;
+  if (!isSupportedType(type)) {
+    warnOnce(`Not supported image type: ${type}`);
+    return;
+  }
+
+  if (type !== "svg") {
+    return { type, width, height, data };
+  }
+  if (!svgToPng) {
+    warnOnce(`svgToPng option is required to embed svg: ${url}`);
+    return;
+  }
+  try {
+    const fallback = await svgToPng({ buffer: data, width, height });
+    return { type, width, height, data, fallback };
+  } catch (e) {
+    warnOnce(`Failed to create fallback image: ${url} ${e}`);
+    return;
+  }
+};
+
+const loadImages = async (
+  root: mdast.Root,
+  definition: GetDefinition,
+  images: Map<string, DocxImageData | null>,
+  cache: ImageCache,
+  { load = loadWithFetch, svgToPng }: ImageOptions,
+): Promise<void> => {
+  const urls = new Set<string>();
+  visit(root, (node) => {
+    if (node.type === "image") {
+      urls.add(node.url);
+    } else if (node.type === "imageReference") {
+      const def = definition(node.identifier);
+      if (def) {
+        urls.add(def.url);
+      }
+    }
+  });
+
+  await Promise.all(
+    Array.from(urls, async (url) => {
+      if (images.has(url)) {
+        return;
+      }
+      const image = cache.get(url) ?? (await loadImage(url, load, svgToPng));
+      if (!image) {
+        return;
+      }
+      cache.set(url, image);
+      // Plugins may have set this url while loading.
+      if (!images.has(url)) {
+        images.set(url, image);
+      }
+    }),
+  );
+
+  for (const key of cache.keys()) {
+    if (cache.size <= MAX_CACHE_SIZE) {
+      break;
+    }
+    cache.delete(key);
+  }
+};
+
 interface TocOptions {
   /**
    * Title of the table of contents.
@@ -283,6 +404,11 @@ export interface DocxOptions extends Pick<
    */
   toc?: boolean | TocOptions;
   /**
+   * Embed images of `image` / `imageReference` nodes. `png`, `jpg`, `gif`, `bmp` and `svg` are supported.
+   * Images are not embedded if not set.
+   */
+  image?: boolean | ImageOptions;
+  /**
    * Plugins to customize how mdast nodes are compiled.
    */
   plugins?: RemarkDocxPlugin[];
@@ -292,6 +418,7 @@ export const mdastToDocx = async (
   node: mdast.Root,
   {
     plugins = [],
+    image,
     title,
     subject,
     creator,
@@ -309,6 +436,7 @@ export const mdastToDocx = async (
     toc,
     orderedListFormat,
   }: DocxOptions = {},
+  imageCache: ImageCache = new Map(),
 ): Promise<Uint8Array> => {
   const definition = definitions(node);
 
@@ -382,11 +510,24 @@ export const mdastToDocx = async (
     joinedChildren.set(n.children, joined);
   });
 
-  const images = new Map<string, DocxImageData>();
+  const images = new Map<string, DocxImageData | null>();
   const pluginCtx = { root: node, images, definition };
 
+  const [pluginBuilders] = await Promise.all([
+    Promise.all(plugins.map((p) => p(pluginCtx))),
+    // Images set by plugins take precedence.
+    image &&
+      loadImages(
+        node,
+        definition,
+        images,
+        imageCache,
+        image === true ? {} : image,
+      ),
+  ]);
+
   const builders = composeBuilders(
-    await Promise.all(plugins.map((p) => p(pluginCtx))),
+    pluginBuilders,
     {
       paragraph: buildParagraph,
       heading: buildHeading,

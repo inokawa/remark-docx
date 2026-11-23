@@ -4,8 +4,7 @@ import { unified } from "unified";
 import markdown from "remark-parse";
 import gfm from "remark-gfm";
 import math from "remark-math";
-import docx from "../src";
-import { imagePlugin } from "../src/plugins/image";
+import docx, { browserSvgToPng } from "../src";
 import { shikiPlugin } from "../src/plugins/shiki";
 import { mermaidPlugin } from "../src/plugins/mermaid";
 // @ts-expect-error no type definition
@@ -27,11 +26,8 @@ const toDocxProcessor = unified()
   .use(gfm)
   .use(math)
   .use(docx, {
-    plugins: [
-      imagePlugin(),
-      mermaidPlugin(),
-      shikiPlugin({ theme: "everforest-dark" }),
-    ],
+    image: { svgToPng: browserSvgToPng },
+    plugins: [mermaidPlugin(), shikiPlugin({ theme: "everforest-dark" })],
   });
 
 export default {
