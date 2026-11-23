@@ -116,7 +116,7 @@ const processor = unified()
   .use(markdown)
   .use(docx, {
     image: {
-      load: async (url) => (await fs.readFile(url)).buffer,
+      load: (url) => fs.readFile(url),
     },
   });
 ```

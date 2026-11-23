@@ -298,6 +298,18 @@ describe("e2e", () => {
     });
   });
 
+  it("image loaded as Uint8Array", async () => {
+    const img = await fs.readFile(path.join(fixturesDir, "images/img.png"));
+    // A view with other bytes around, like Node.js Buffer in a shared pool
+    const pool = new Uint8Array(img.byteLength + 20);
+    pool.set(img, 10);
+    const doc = await processor({
+      image: { load: async () => pool.subarray(10, 10 + img.byteLength) },
+    }).process(`![a](foo.png)`);
+    const xml = new Zip(Buffer.from(doc.value)).readAsText("word/document.xml");
+    expect(xml).toContain("<a:blip ");
+  });
+
   it("image with invalid data", async () => {
     const doc = await processor({
       image: {

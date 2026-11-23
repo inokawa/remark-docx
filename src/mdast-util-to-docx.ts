@@ -219,7 +219,7 @@ const docxParagraph = (
   return new Paragraph(options);
 };
 
-type LoadFn = (url: string) => Promise<ArrayBuffer>;
+type LoadFn = (url: string) => Promise<ArrayBuffer | Uint8Array>;
 
 const loadWithFetch: LoadFn = async (url) => {
   const res = await fetch(url);
@@ -256,7 +256,12 @@ const loadImage = async (
 ): Promise<DocxImageData | undefined> => {
   let data: ArrayBuffer;
   try {
-    data = await load(url);
+    const result = await load(url);
+    // Node.js Buffer may be a view of a shared pool
+    data = ArrayBuffer.isView(result)
+      ? new Uint8Array(result.buffer, result.byteOffset, result.byteLength).slice()
+          .buffer
+      : result;
   } catch (e) {
     warnOnce(`Failed to load image: ${url} ${e}`);
     return;
