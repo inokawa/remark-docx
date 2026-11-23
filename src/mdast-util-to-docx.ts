@@ -739,7 +739,7 @@ const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
 };
 
 const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
-  const textAlign = align?.map((a): keyof typeof AlignmentType => {
+  const textAlign = align?.map((a): keyof typeof AlignmentType | undefined => {
     switch (a) {
       case "left":
         return "LEFT";
@@ -748,7 +748,7 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
       case "center":
         return "CENTER";
       default:
-        return "LEFT";
+        return undefined;
     }
   });
 
@@ -761,11 +761,12 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
       return new TableRow({
         tableHeader: rowIndex === 0 || undefined,
         children: r.children.map((c, i) => {
+          const cellAlign = textAlign?.[i];
           return new TableCell({
             width: { size: columnWidth, type: "dxa" },
             children: [
               new Paragraph({
-                alignment: AlignmentType[textAlign?.[i] ?? "LEFT"],
+                alignment: cellAlign ? AlignmentType[cellAlign] : undefined,
                 children: ctx.render(c.children, {
                   ...ctx,
                   // https://github.com/dolanmiu/docx/blob/master/demo/22-right-to-left-text.ts
