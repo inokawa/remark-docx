@@ -9,7 +9,6 @@ import math from "remark-math";
 import Zip from "adm-zip";
 import prettier from "prettier";
 import docx, { type DocxOptions } from ".";
-import { imagePlugin } from "./plugins/image";
 import { shikiPlugin } from "./plugins/shiki";
 import { readFile } from "fs/promises";
 
@@ -128,7 +127,7 @@ describe("e2e", () => {
   it("decoration", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "decoration.md"));
     const doc = await processor({
-      plugins: [imagePlugin({ load: dummyImage })],
+      image: { load: dummyImage },
     }).process(md);
     for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
@@ -138,7 +137,7 @@ describe("e2e", () => {
   it("link", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "link.md"));
     const doc = await processor({
-      plugins: [imagePlugin({ load: dummyImage })],
+      image: { load: dummyImage },
     }).process(md);
     for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
@@ -156,7 +155,7 @@ describe("e2e", () => {
   it("image", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "image.md"));
     const doc = await processor({
-      plugins: [imagePlugin({ load: dummyImage })],
+      image: { load: dummyImage },
     }).process(md);
     for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
@@ -165,16 +164,14 @@ describe("e2e", () => {
 
   it("svg", async () => {
     const doc = await processor({
-      plugins: [
-        imagePlugin({
-          load: async () => {
-            const img = await fs.readFile(
-              path.join(fixturesDir, "images/tiger.svg"),
-            );
-            return img.buffer;
-          },
-        }),
-      ],
+      image: {
+        load: async () => {
+          const img = await fs.readFile(
+            path.join(fixturesDir, "images/tiger.svg"),
+          );
+          return img.buffer;
+        },
+      },
     }).process(`svg ![tiger](image.svg) test`);
     for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
@@ -187,6 +184,131 @@ describe("e2e", () => {
     for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
+  });
+
+  it("svg with svgToPng", async () => {
+    const doc = await processor({
+      image: {
+        load: async () => {
+          const img = await fs.readFile(
+            path.join(fixturesDir, "images/tiger.svg"),
+          );
+          return img.buffer;
+        },
+        // dummy png
+        svgToPng: async () => {
+          const img = await fs.readFile(
+            path.join(fixturesDir, "images/img.png"),
+          );
+          return img.buffer;
+        },
+      },
+    }).process(`svg ![tiger](image.svg) test`);
+    const z = new Zip(Buffer.from(doc.value));
+    const media = z
+      .getEntries()
+      .map((e) => e.entryName)
+      .filter((n) => n.startsWith("word/media/"));
+    expect(media.some((n) => n.endsWith(".svg"))).toBe(true);
+    expect(media.some((n) => n.endsWith(".png"))).toBe(true);
+  });
+
+  it("image with data uri", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "image-data-uri.md"));
+    const doc = await processor({ image: true }).process(md);
+    const xml = new Zip(Buffer.from(doc.value)).readAsText("word/document.xml");
+    expect(xml).toContain("<a:blip ");
+  });
+
+  it("image with invalid data", async () => {
+    const doc = await processor({
+      image: {
+        load: async () =>
+          new TextEncoder().encode("<html>Not Found</html>").buffer,
+      },
+    }).process(`![a](foo.png)`);
+    const xml = new Zip(Buffer.from(doc.value)).readAsText("word/document.xml");
+    expect(xml).not.toContain("<a:blip ");
+  });
+
+  it("image resolved by plugins takes precedence", async () => {
+    const svg = await fs.readFile(path.join(fixturesDir, "images/tiger.svg"));
+    const png = await fs.readFile(path.join(fixturesDir, "images/img.png"));
+    const doc = await processor({
+      image: { load: dummyImage },
+      plugins: [
+        async ({ images }) => {
+          images.set("foo.png", {
+            type: "svg",
+            width: 10,
+            height: 10,
+            data: svg.buffer,
+            fallback: png.buffer,
+          });
+          return {};
+        },
+      ],
+    }).process(`![a](foo.png)`);
+    const media = new Zip(Buffer.from(doc.value))
+      .getEntries()
+      .map((e) => e.entryName)
+      .filter((n) => n.startsWith("word/media/"));
+    expect(media.some((n) => n.endsWith(".svg"))).toBe(true);
+  });
+
+  it("image set by async plugins takes precedence", async () => {
+    const svg = await fs.readFile(path.join(fixturesDir, "images/tiger.svg"));
+    const png = await fs.readFile(path.join(fixturesDir, "images/img.png"));
+    const doc = await processor({
+      image: {
+        load: async (url) => {
+          await new Promise((r) => setTimeout(r, 10));
+          return dummyImage(url);
+        },
+      },
+      plugins: [
+        async ({ images }) => {
+          await Promise.resolve();
+          images.set("foo.png", {
+            type: "svg",
+            width: 10,
+            height: 10,
+            data: svg.buffer,
+            fallback: png.buffer,
+          });
+          return {};
+        },
+      ],
+    }).process(`![a](foo.png)`);
+    const media = new Zip(Buffer.from(doc.value))
+      .getEntries()
+      .map((e) => e.entryName)
+      .filter((n) => n.startsWith("word/media/"));
+    expect(media.some((n) => n.endsWith(".svg"))).toBe(true);
+  });
+
+  it("image cached in the same processor", async () => {
+    let count = 0;
+    const p = processor({
+      image: {
+        load: async (url) => {
+          count++;
+          return dummyImage(url);
+        },
+      },
+    });
+    await p.process(`![a](foo.png) ![b](foo.png)`);
+    await p.process(`![a](foo.png)`);
+    expect(count).toBe(1);
+  });
+
+  it("image disabled by default", async () => {
+    const doc = await processor().process({
+      path: path.join(fixturesDir, "dummy.md"),
+      value: `![a](images/img.png)`,
+    });
+    const xml = new Zip(Buffer.from(doc.value)).readAsText("word/document.xml");
+    expect(xml).not.toContain("<a:blip ");
   });
 
   it("list bullet", async () => {

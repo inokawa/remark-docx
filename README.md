@@ -29,7 +29,7 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] break
 - [x] link / linkReference (links to headings like `[text](#heading-text)` are resolved by [github-slugger](https://github.com/Flet/github-slugger))
 - [x] footnoteReference / footnoteDefinition
-- [x] image / imageReference ([plugin](#image))
+- [x] image / imageReference (requires [`image` option](#image))
 - [x] html (see [supported HTML](https://docx.js.org/#/usage/html))
 - [x] code ([plugin](#code))
 - [x] math / inlineMath (requires [remark-math](https://github.com/remarkjs/remark-math), supports [LaTeX](https://docx.js.org/#/usage/math-latex) only)
@@ -93,46 +93,60 @@ npm install remark-cli
 npx remark input.md --use remark-docx --output output.docx
 ```
 
-## Plugins
+To embed local images, use [remark-embed-images](https://github.com/remarkjs/remark-embed-images) with `image` option.
 
-### Image
+```sh
+npx remark input.md --use remark-embed-images --use remark-docx=image:true --output output.docx
+```
 
-Fetch image data and embed into docx. `png`, `jpg`, `gif`, `bmp`, `svg` urls are supported.
+## Image
+
+Set `image` option to embed `png`, `jpg`, `gif` and `bmp` images.
 
 ```javascript
-import { unified } from "unified";
-import markdown from "remark-parse";
-import docx from "remark-docx";
-import { imagePlugin } from "remark-docx/plugins/image";
+const processor = unified().use(markdown).use(docx, { image: true });
+```
+
+Images are fetched with [fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API) by default. You can customize it with `load` option.
+
+```javascript
+import * as fs from "node:fs/promises";
 
 const processor = unified()
   .use(markdown)
-  .use(docx, { plugins: [imagePlugin()] });
+  .use(docx, {
+    image: {
+      load: async (url) => (await fs.readFile(url)).buffer,
+    },
+  });
 ```
 
-URLs are resolved with [fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API) by default. You can use other methods such as file system.
+To embed `svg` images, also set `svgToPng` option because Word requires `png` fallback for them. On browser, you can use `browserSvgToPng`.
 
 ```javascript
-import * as fs from "fs/promises";
+import docx, { browserSvgToPng } from "remark-docx";
 
-imagePlugin({
-  load: async (url) => {
-    return (await fs.readFile(url)).buffer;
-  },
-});
+const processor = unified()
+  .use(markdown)
+  .use(docx, { image: { svgToPng: browserSvgToPng } });
 ```
 
-When we embed `svg` to docx, it also requires `png` image since legacy Word can't render `svg`. On browser, this plugin generate it automatically. On other enviroment like Node.js, please implement `fallbackSvg` prop.
+On other environments like Node.js, implement it by yourself.
 
 ```javascript
 import sharp from "sharp";
 
-imagePlugin({
-  fallbackSvg: async ({ buffer }) => {
-    return (await sharp(buffer).png().toBuffer()).buffer;
-  },
-});
+const processor = unified()
+  .use(markdown)
+  .use(docx, {
+    image: {
+      svgToPng: async ({ buffer }) =>
+        (await sharp(buffer).png().toBuffer()).buffer,
+    },
+  });
 ```
+
+## Plugins
 
 ### Code
 

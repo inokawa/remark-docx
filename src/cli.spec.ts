@@ -33,3 +33,29 @@ it("cli", async () => {
     await fs.rm(tmpDir, { recursive: true, force: true });
   }
 });
+
+it("cli with image option", async () => {
+  const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), "remark-docx-"));
+  try {
+    const output = path.join(tmpDir, "output.docx");
+    await promisify(execFile)(
+      process.execPath,
+      [
+        path.join(rootDir, "node_modules/remark-cli/cli.js"),
+        "fixtures/image-data-uri.md",
+        "--use",
+        "remark-docx=image:true",
+        "--output",
+        output,
+      ],
+      { cwd: rootDir },
+    );
+
+    const zip = new Zip(await fs.readFile(output));
+    expect(
+      zip.getEntries().some((e) => e.entryName.startsWith("word/media/")),
+    ).toBe(true);
+  } finally {
+    await fs.rm(tmpDir, { recursive: true, force: true });
+  }
+});
