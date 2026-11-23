@@ -194,7 +194,7 @@ describe("e2e", () => {
     }
   });
 
-  it("svg with svgToPng", async () => {
+  it("svg with toPng", async () => {
     const doc = await processor({
       image: {
         load: async () => {
@@ -204,7 +204,7 @@ describe("e2e", () => {
           return img.buffer;
         },
         // dummy png
-        svgToPng: async () => {
+        toPng: async () => {
           const img = await fs.readFile(
             path.join(fixturesDir, "images/img.png"),
           );
@@ -238,7 +238,7 @@ describe("e2e", () => {
         const [w, h] = url.replace(".svg", "").split("x").map(Number);
         return svg(w!, h!);
       },
-      svgToPng: async () => {
+      toPng: async () => {
         const img = await fs.readFile(path.join(fixturesDir, "images/img.png"));
         return img.buffer;
       },
@@ -325,6 +325,50 @@ describe("e2e", () => {
     await p.process({ path: "/b/doc.md", value: "![](img.png)" });
     await p.process({ path: "/b/doc2.md", value: "![](img.png)" });
     expect(loaded).toEqual(["/a/img.png", "/b/img.png"]);
+  });
+
+  describe("image not supported by Word", () => {
+    // VP8X header of WebP
+    const webp = Buffer.alloc(30);
+    webp.write("RIFF", 0, "latin1");
+    webp.writeUInt32LE(22, 4);
+    webp.write("WEBPVP8X", 8, "latin1");
+    webp.writeUInt32LE(10, 16);
+    webp.writeUIntLE(120 - 1, 24, 3);
+    webp.writeUIntLE(100 - 1, 27, 3);
+
+    it("converted with toPng", async () => {
+      const converted: { width: number; height: number }[] = [];
+      const doc = await processor({
+        image: {
+          load: async () => webp.buffer,
+          toPng: async ({ width, height }) => {
+            converted.push({ width, height });
+            const img = await fs.readFile(
+              path.join(fixturesDir, "images/img.png"),
+            );
+            return img.buffer;
+          },
+        },
+      }).process(`![a](image.webp)`);
+      expect(converted).toEqual([{ width: 120, height: 100 }]);
+      const media = new Zip(Buffer.from(doc.value))
+        .getEntries()
+        .map((e) => e.entryName)
+        .filter((n) => n.startsWith("word/media/"));
+      expect(media).toHaveLength(1);
+      expect(media[0]).toMatch(/\.png$/);
+    });
+
+    it("not embedded without toPng", async () => {
+      const doc = await processor({
+        image: { load: async () => webp.buffer },
+      }).process(`![a](image.webp)`);
+      const xml = new Zip(Buffer.from(doc.value)).readAsText(
+        "word/document.xml",
+      );
+      expect(xml).not.toContain("<a:blip ");
+    });
   });
 
   it("image with invalid data", async () => {

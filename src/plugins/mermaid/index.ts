@@ -1,5 +1,5 @@
 import type { RemarkDocxPlugin } from "../../types";
-import { browserSvgToPng, warnOnce } from "../../utils";
+import { browserToPng, warnOnce } from "../../utils";
 import mermaid from "mermaid";
 import { visit } from "unist-util-visit";
 import { imageSize } from "image-size";
@@ -36,7 +36,7 @@ export const mermaidPlugin = (): RemarkDocxPlugin => {
                 const svg = await renderSvg(value);
                 const data = new TextEncoder().encode(svg);
                 const { width, height } = imageSize(data);
-                const pngBuffer = await browserSvgToPng({
+                const pngBuffer = await browserToPng({
                   buffer: data.buffer,
                   width,
                   height,

@@ -38,7 +38,7 @@ import type { VFile } from "vfile";
 import {
   isSupportedType,
   warnOnce,
-  type SvgToPngFn,
+  type ToPngFn,
 } from "./utils";
 import { definitions, type GetDefinition } from "mdast-util-definitions";
 import { imageSize } from "image-size";
@@ -237,10 +237,11 @@ export interface ImageOptions {
    */
   load?: LoadFn;
   /**
-   * A function to convert SVG to PNG. Required to embed SVG images, because the docx specifications require PNG fallback for them.
-   * On browser, you can use {@link browserSvgToPng}.
+   * A function to convert images to PNG. Required to embed images other than PNG, JPEG, GIF and BMP, such as SVG and WebP.
+   * SVG is embedded with the PNG as fallback, because Word requires it. Others are embedded as PNG.
+   * On browser, you can use {@link browserToPng}.
    */
-  svgToPng?: SvgToPngFn;
+  toPng?: ToPngFn;
 }
 
 /**
@@ -254,7 +255,7 @@ const loadImage = async (
   url: string,
   file: VFile,
   load: LoadFn,
-  svgToPng: SvgToPngFn | undefined,
+  toPng: ToPngFn | undefined,
 ): Promise<DocxImageData | undefined> => {
   let data: ArrayBuffer;
   try {
@@ -276,26 +277,25 @@ const loadImage = async (
     warnOnce(`Failed to detect image type: ${url} ${e}`);
     return;
   }
-  const { width, height, type } = size;
-  if (!isSupportedType(type)) {
-    warnOnce(`Not supported image type: ${type}`);
-    return;
-  }
-
-  if (type !== "svg") {
+  const { width, height } = size;
+  const type = size.type!;
+  if (isSupportedType(type) && type !== "svg") {
     return { type, width, height, data };
   }
-  if (!svgToPng) {
-    warnOnce(`svgToPng option is required to embed svg: ${url}`);
+  if (!toPng) {
+    warnOnce(`toPng option is required to embed ${type}: ${url}`);
     return;
   }
+  let png: ArrayBuffer;
   try {
-    const fallback = await svgToPng({ buffer: data, width, height });
-    return { type, width, height, data, fallback };
+    png = await toPng({ buffer: data, width, height });
   } catch (e) {
-    warnOnce(`Failed to create fallback image: ${url} ${e}`);
+    warnOnce(`Failed to convert image to png: ${url} ${e}`);
     return;
   }
+  return type === "svg"
+    ? { type, width, height, data, fallback: png }
+    : { type: "png", width, height, data: png };
 };
 
 const loadImages = async (
@@ -304,7 +304,7 @@ const loadImages = async (
   images: Map<string, DocxImageData | null>,
   cache: ImageCache,
   file: VFile,
-  { load = loadWithFetch, svgToPng }: ImageOptions,
+  { load = loadWithFetch, toPng }: ImageOptions,
 ): Promise<void> => {
   const urls = new Set<string>();
   visit(root, (node) => {
@@ -326,7 +326,7 @@ const loadImages = async (
       // Relative urls may point to different images from other files
       const key = `${file.dirname}\0${url}`;
       const image =
-        cache.get(key) ?? (await loadImage(url, file, load, svgToPng));
+        cache.get(key) ?? (await loadImage(url, file, load, toPng));
       if (!image) {
         return;
       }
