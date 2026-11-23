@@ -59,6 +59,7 @@ export type Context = Readonly<{
     images: ReadonlyMap<string, DocxImageData | null>;
     footnote: FootnoteRegistry;
     orderedId: () => string;
+    orderedStart: (id: string, level: number, start: number) => void;
     bookmarks: ReadonlyMap<mdast.Heading | string, string>;
 }>;
 export type NodeBuilder<T extends string> = (node: MdastNode<T>, ctx: Context) => DocxContent | DocxContent[] | null;
