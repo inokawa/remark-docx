@@ -181,6 +181,14 @@ describe("e2e", () => {
     }
   });
 
+  it("table align", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "table-align.md"));
+    const doc = await processor().process(md);
+    for await (const xml of readDocx(doc.value)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
   it("list bullet", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "list-bullet.md"));
     const doc = await processor().process(md);
