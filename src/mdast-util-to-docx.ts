@@ -463,6 +463,13 @@ export const mdastToDocx = async (
               spacing: spacing ? { after: spacing } : undefined,
             },
           },
+          // Outline levels of Word's built-in heading styles, for the navigation pane and the TOC
+          heading1: { paragraph: { outlineLevel: 0 } },
+          heading2: { paragraph: { outlineLevel: 1 } },
+          heading3: { paragraph: { outlineLevel: 2 } },
+          heading4: { paragraph: { outlineLevel: 3 } },
+          heading5: { paragraph: { outlineLevel: 4 } },
+          heading6: { paragraph: { outlineLevel: 5 } },
         },
       },
       styles || {},
@@ -538,31 +545,9 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
 };
 
 const buildHeading: NodeBuilder<"heading"> = ({ children, depth }, ctx) => {
-  let level: keyof typeof HeadingLevel;
-  switch (depth) {
-    case 1:
-      level = "TITLE";
-      break;
-    case 2:
-      level = "HEADING_1";
-      break;
-    case 3:
-      level = "HEADING_2";
-      break;
-    case 4:
-      level = "HEADING_3";
-      break;
-    case 5:
-      level = "HEADING_4";
-      break;
-    case 6:
-      level = "HEADING_5";
-      break;
-  }
   return docxParagraph(
     {
-      heading: HeadingLevel[level],
-      outlineLevel: depth - 1,
+      heading: HeadingLevel[`HEADING_${depth}`],
       children: ctx.render(children) as ParagraphChild[],
     },
     ctx,
