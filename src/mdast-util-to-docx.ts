@@ -650,6 +650,8 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
   return docxParagraph(
     {
       children: ctx.render(children) as ParagraphChild[],
+      // Later blocks of an item in tight lists aren't paragraphs of the item itself (e.g. in blockquotes)
+      contextualSpacing: (ctx.list?.tight && !ctx.list.continuation) || undefined,
     },
     ctx,
   );
@@ -689,7 +691,7 @@ const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
   });
 };
 
-const buildList: NodeBuilder<"list"> = ({ children, ordered, start }, ctx) => {
+const buildList: NodeBuilder<"list"> = ({ children, ordered, start, spread }, ctx) => {
   const parentList = ctx.list;
   const level = !parentList ? 0 : parentList.level + 1;
 
@@ -712,6 +714,8 @@ const buildList: NodeBuilder<"list"> = ({ children, ordered, start }, ctx) => {
     list: {
       level,
       meta,
+      // https://spec.commonmark.org/0.31.2/#loose
+      tight: !spread && !children.some((c) => c.spread),
     },
   });
 };
@@ -722,7 +726,7 @@ const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
     // listItem must be the child of list
     if (checked != null) {
       list = {
-        level: list.level,
+        ...list,
         meta: {
           type: "task",
           checked,

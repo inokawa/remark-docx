@@ -43,6 +43,7 @@ type StyleContext = Readonly<{
 export type ListContext = Readonly<{
   level: number;
   continuation?: boolean;
+  tight?: boolean;
   meta: Readonly<
     | {
         type: "bullet";
