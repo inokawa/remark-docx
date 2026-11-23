@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-BgeXT2E4.js";e();

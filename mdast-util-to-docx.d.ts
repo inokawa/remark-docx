@@ -5,6 +5,17 @@ type ListFormat = {
     format: keyof typeof LevelFormat;
     text: string;
 };
+interface TocOptions {
+    /**
+     * Title of the table of contents.
+     */
+    title?: string;
+    /**
+     * Max depth of headings listed in the table of contents.
+     * @default 3
+     */
+    depth?: 1 | 2 | 3 | 4 | 5 | 6;
+}
 export interface DocxOptions extends Pick<IPropertiesOptions, "title" | "subject" | "creator" | "keywords" | "description" | "styles" | "background"> {
     /**
      * Page size defined in twip (1 twip == 1/1440 inch).
@@ -59,9 +70,14 @@ export interface DocxOptions extends Pick<IPropertiesOptions, "title" | "subject
      */
     thematicBreak?: ThematicBreakType;
     /**
+     * Insert a table of contents generated from headings at the beginning of the document.
+     * Word asks to update fields on open to fill in its page numbers.
+     */
+    toc?: boolean | TocOptions;
+    /**
      * Plugins to customize how mdast nodes are compiled.
      */
     plugins?: RemarkDocxPlugin[];
 }
-export declare const mdastToDocx: (node: mdast.Root, { plugins, title, subject, creator, keywords, description, styles, size, margin, orientation, columns, spacing, direction, background, thematicBreak, orderedListFormat, }?: DocxOptions) => Promise<Uint8Array>;
+export declare const mdastToDocx: (node: mdast.Root, { plugins, title, subject, creator, keywords, description, styles, size, margin, orientation, columns, spacing, direction, background, thematicBreak, toc, orderedListFormat, }?: DocxOptions) => Promise<Uint8Array>;
 export {};
