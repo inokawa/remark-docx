@@ -5,7 +5,7 @@
 > [remark](https://github.com/remarkjs/remark) plugin to compile markdown to docx (Microsoft Word, Office Open XML).
 
 - Uses [docx](https://github.com/dolanmiu/docx) for compilation.
-- Works in any environment (e.g. browser, Node.js).
+- Works in any environment (e.g. browser, Node.js, CLI).
 - Provides reasonable default style and also tunable enough (WIP).
 - Supports advanced layouts (RTL, vertical, 2 columns).
 - Has own plugin system. You can fully customize markdown to Word transformation.
