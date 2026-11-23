@@ -9,7 +9,6 @@ import math from "remark-math";
 import Zip from "adm-zip";
 import prettier from "prettier";
 import docx, { type DocxOptions } from ".";
-import { latexPlugin } from "./plugins/latex";
 import { imagePlugin } from "./plugins/image";
 import { htmlPlugin } from "./plugins/html";
 import { shikiPlugin } from "./plugins/shiki";
@@ -201,7 +200,7 @@ describe("e2e", () => {
 
   it("math", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "math.md"));
-    const doc = await processor({ plugins: [latexPlugin()] }).process(md);
+    const doc = await processor().process(md);
     for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
@@ -209,9 +208,63 @@ describe("e2e", () => {
 
   it("latex", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "latex.md"));
-    const doc = await processor({ plugins: [latexPlugin()] }).process(md);
+    const doc = await processor().process(md);
     for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
+    }
+  });
+
+  it("math text", async () => {
+    // https://github.com/inokawa/remark-docx/issues/210
+    const md = [
+      "$x^2 + 1$",
+      "$\\frac{1}{2.50}$",
+      "$x_{01}$",
+      "$e^{+3}$",
+      "$a < b$",
+      "$a \\& b$",
+      "$\\text{if } x$",
+      "$\\infty \\mathrm{d}x \\mathbb{R} \\%$",
+    ].join("\n\n");
+    const doc = await processor().process(md);
+    const xml = new Zip(Buffer.from(doc.value as Uint8Array)).readAsText(
+      "word/document.xml",
+    );
+    const texts = [...xml.matchAll(/<m:t[^>]*>([^<]*)<\/m:t>/g)].map(
+      (m) => m[1],
+    );
+    expect(texts).toEqual(
+      expect.arrayContaining([
+        "+1",
+        "2.50",
+        "01",
+        "+3",
+        "a&lt;b",
+        "&amp;",
+        "if ",
+      ]),
+    );
+    expect(xml).not.toContain('m:val="undefined"');
+  });
+
+  it("math fallback", async () => {
+    const warn = vitest.spyOn(console, "warn").mockImplementation(() => {});
+    try {
+      const md = [
+        "inline $\\newcommand{\\R}{\\mathbb{R}}\\R$ math",
+        "$$\n\\frac{a}\n\\undefinedcommand\n$$",
+      ].join("\n\n");
+      const doc = await processor().process(md);
+      const xml = new Zip(Buffer.from(doc.value as Uint8Array)).readAsText(
+        "word/document.xml",
+      );
+      expect(xml).not.toContain("<m:oMath");
+      expect(xml).toContain("\\newcommand{\\R}{\\mathbb{R}}\\R");
+      expect(xml).toContain("\\frac{a}");
+      expect(xml).toContain("\\undefinedcommand");
+      expect(warn).toHaveBeenCalled();
+    } finally {
+      warn.mockRestore();
     }
   });
 

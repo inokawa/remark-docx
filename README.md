@@ -32,7 +32,7 @@ Currently, some of the default styles may not be nice. If you have feature reque
 - [x] image / imageReference ([plugin](#image))
 - [x] html ([plugin](#html))
 - [x] code ([plugin](#code))
-- [x] math / inlineMath ([remark-math](https://github.com/remarkjs/remark-math) and [plugin](#math))
+- [x] math / inlineMath (requires [remark-math](https://github.com/remarkjs/remark-math), supports [LaTeX](https://docx.js.org/#/usage/math-latex) only)
 
 ## Demo
 
@@ -164,23 +164,6 @@ import { mermaidPlugin } from "remark-docx/plugins/mermaid";
 const processor = unified()
   .use(markdown)
   .use(docx, { plugins: [mermaidPlugin()] });
-```
-
-### Math
-
-Render LaTeX with [MathJax](https://github.com/mathjax/MathJax).
-
-```javascript
-import { unified } from "unified";
-import markdown from "remark-parse";
-import math from "remark-math";
-import docx from "remark-docx";
-import { latexPlugin } from "remark-docx/plugins/latex";
-
-const processor = unified()
-  .use(markdown)
-  .use(math)
-  .use(docx, { plugins: [latexPlugin()] });
 ```
 
 ### HTML
