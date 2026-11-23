@@ -42,7 +42,6 @@ type StyleContext = Readonly<{
 
 export type ListContext = Readonly<{
   level: number;
-  /** A later block of a list item: indented like the item, without a marker. */
   continuation?: boolean;
   meta: Readonly<
     | {

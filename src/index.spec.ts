@@ -171,18 +171,18 @@ describe("e2e", () => {
     }
   });
 
-  it("list item with more than one block", async () => {
-    const doc = await processor().process(
-      "1. A\n\n   more about A\n\n   ```\n   code\n   ```\n2. B\n",
-    );
-    const xml = new Zip(Buffer.from(await doc.result)).readAsText(
-      "word/document.xml",
-    );
-    expect(xml.match(/<w:numPr>/g)).toHaveLength(2);
-  });
-
   it("list task", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "list-task.md"));
+    const doc = await processor().process(md);
+    for await (const xml of readDocx(doc.value)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
+  it("list multiple blocks", async () => {
+    const md = await fs.readFile(
+      path.join(fixturesDir, "list-multiple-blocks.md"),
+    );
     const doc = await processor().process(md);
     for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
