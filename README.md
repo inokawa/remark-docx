@@ -122,14 +122,14 @@ const processor = unified()
   });
 ```
 
-To embed `svg` images, also set `svgToPng` option because Word requires `png` fallback for them. On browser, you can use `browserSvgToPng`.
+To embed other images such as `svg` and `webp`, also set `toPng` option to convert them to `png`, which Word can show. On browser, you can use `browserToPng`, which converts images that the browser can show.
 
 ```javascript
-import docx, { browserSvgToPng } from "remark-docx";
+import docx, { browserToPng } from "remark-docx";
 
 const processor = unified()
   .use(markdown)
-  .use(docx, { image: { svgToPng: browserSvgToPng } });
+  .use(docx, { image: { toPng: browserToPng } });
 ```
 
 On other environments like Node.js, implement it by yourself.
@@ -141,7 +141,7 @@ const processor = unified()
   .use(markdown)
   .use(docx, {
     image: {
-      svgToPng: async ({ buffer }) =>
+      toPng: async ({ buffer }) =>
         (await sharp(buffer).png().toBuffer()).buffer,
     },
   });
