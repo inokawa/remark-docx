@@ -1025,7 +1025,8 @@ const buildLinkReference: NodeBuilder<"linkReference"> = (
 const buildImage: NodeBuilder<"image"> = (node, ctx) => {
   const image = ctx.images.get(node.url);
   if (!image) {
-    return null;
+    // Keep the description of the image if it can't be embedded
+    return node.alt ? buildText({ type: "text", value: node.alt }, ctx) : null;
   }
 
   let { width, height } = image;

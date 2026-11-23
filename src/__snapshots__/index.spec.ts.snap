@@ -170,10 +170,10 @@ exports[`e2e > article 1`] = `
           xml:space="preserve"
         >This is </w:t></w:r><w:r><w:t
           xml:space="preserve"
-        >.</w:t></w:r></w:p><w:p><w:pPr><w:ind
-          w:left="800"
-          w:hanging="400"
-        /></w:pPr><w:r><w:t xml:space="preserve">quote
+        >image</w:t></w:r><w:r><w:t xml:space="preserve">.</w:t></w:r></w:p><w:p
+    ><w:pPr><w:ind w:left="800" w:hanging="400" /></w:pPr><w:r><w:t
+          xml:space="preserve"
+        >quote
 quote
 quote
 quote</w:t></w:r></w:p><w:p><w:pPr><w:ind
@@ -1383,6 +1383,8 @@ exports[`e2e > article rtl 1`] = `
       ><w:bidi /></w:pPr><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >This is </w:t></w:r><w:r><w:rPr><w:rtl /></w:rPr><w:t
+          xml:space="preserve"
+        >image</w:t></w:r><w:r><w:rPr><w:rtl /></w:rPr><w:t
           xml:space="preserve"
         >.</w:t></w:r></w:p><w:p><w:pPr><w:bidi /><w:ind
           w:left="800"
@@ -15362,6 +15364,8 @@ exports[`e2e > link heading 1`] = `
           w:val="Heading2"
         /></w:pPr><w:bookmarkStart w:name="md_heading_6" w:id="24" /><w:r><w:t
           xml:space="preserve"
+        >alt</w:t></w:r><w:r><w:t
+          xml:space="preserve"
         > Bar</w:t></w:r><w:bookmarkEnd w:id="24" /></w:p><w:p><w:pPr><w:pStyle
           w:val="Heading2"
         /></w:pPr><w:bookmarkStart w:name="md_heading_7" w:id="25" /><w:r><w:t
@@ -24032,6 +24036,8 @@ exports[`e2e > svg 1`] = `
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
 ><w:body><w:p><w:r><w:t xml:space="preserve">svg </w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        >tiger</w:t></w:r><w:r><w:t
           xml:space="preserve"
         > test</w:t></w:r></w:p><w:sectPr><w:pgSz
         w:w="11906"
