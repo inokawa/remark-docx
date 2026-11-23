@@ -35,6 +35,14 @@ const dummyImage = async (url: string): Promise<ArrayBuffer> => {
   return img.buffer;
 };
 
+const readExtents = (docx: Uint8Array): [number, number][] => {
+  const xml = new Zip(Buffer.from(docx)).readAsText("word/document.xml");
+  return [...xml.matchAll(/<wp:extent cx="(\d+)" cy="(\d+)"/g)].map((m) => [
+    Math.round(Number(m[1]) / 9525),
+    Math.round(Number(m[2]) / 9525),
+  ]);
+};
+
 describe("e2e", () => {
   const processor = (options: DocxOptions = {}) => {
     return unified()
@@ -218,6 +226,76 @@ describe("e2e", () => {
     const doc = await processor({ image: true }).process(md);
     const xml = new Zip(Buffer.from(doc.value)).readAsText("word/document.xml");
     expect(xml).toContain("<a:blip ");
+  });
+
+  describe("image size limited by the area", () => {
+    const svg = (width: number, height: number) =>
+      new TextEncoder().encode(
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"/>`,
+      ).buffer;
+    const image: DocxOptions["image"] = {
+      load: async (url) => {
+        const [w, h] = url.replace(".svg", "").split("x").map(Number);
+        return svg(w!, h!);
+      },
+      svgToPng: async () => {
+        const img = await fs.readFile(path.join(fixturesDir, "images/img.png"));
+        return img.buffer;
+      },
+    };
+    const extents = async (md: string, options: DocxOptions = {}) => {
+      const doc = await processor({ image, ...options }).process(md);
+      return readExtents(doc.value as Uint8Array);
+    };
+
+    it("page", async () => {
+      expect(await extents("![](3000x300.svg)")).toEqual([[602, 60]]);
+      expect(await extents("![](500x5000.svg)")).toEqual([[93, 931]]);
+    });
+
+    it("landscape", async () => {
+      expect(
+        await extents("![](3000x300.svg) ![](500x5000.svg)", {
+          orientation: "landscape",
+        }),
+      ).toEqual([
+        [931, 93],
+        [60, 602],
+      ]);
+    });
+
+    it("columns", async () => {
+      expect(await extents("![](3000x300.svg)", { columns: 2 })).toEqual([
+        [277, 28],
+      ]);
+    });
+
+    it("table cell", async () => {
+      expect(
+        await extents("|a|b|c|d|\n|-|-|-|-|\n|![](3000x300.svg)|x|y|z|"),
+      ).toEqual([[136, 14]]);
+    });
+
+    it("list and blockquote", async () => {
+      expect(
+        await extents(
+          "- a\n  - b\n    - ![](3000x300.svg)\n\n> ![](3000x300.svg)",
+        ),
+      ).toEqual([
+        [522, 52],
+        [548, 55],
+      ]);
+    });
+
+    it("html", async () => {
+      const png = await fs.readFile(path.join(fixturesDir, "images/img.png"));
+      expect(
+        await extents(
+          `<img src="data:image/png;base64,${png.toString("base64")}" width="1200">`,
+          { columns: 2 },
+        ),
+      ).toEqual([[277, 231]]);
+    });
   });
 
   it("image with invalid data", async () => {
