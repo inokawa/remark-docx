@@ -162,8 +162,12 @@ const docxParagraph = (
   }
 
   if (ctx.list) {
-    const { level, meta } = ctx.list;
-    if (meta.type === "task") {
+    const { level, meta, continuation } = ctx.list;
+    if (continuation) {
+      options.indent = {
+        left: calcIndent(ctx.quote != null ? ctx.quote + 1 : level).left,
+      };
+    } else if (meta.type === "task") {
       options.numbering = {
         reference: meta.checked
           ? COMPLETE_TASK_LIST_REF
@@ -626,10 +630,12 @@ const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
       };
     }
   }
-  return ctx.render(children, {
-    ...ctx,
-    list,
-  });
+  return children.flatMap((child, i) =>
+    ctx.render([child], {
+      ...ctx,
+      list: list && i > 0 ? { ...list, continuation: true } : list,
+    }),
+  );
 };
 
 const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {

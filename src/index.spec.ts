@@ -179,6 +179,16 @@ describe("e2e", () => {
     }
   });
 
+  it("list multiple blocks", async () => {
+    const md = await fs.readFile(
+      path.join(fixturesDir, "list-multiple-blocks.md"),
+    );
+    const doc = await processor().process(md);
+    for await (const xml of readDocx(doc.value)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
   it("code", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "code.md"));
     const doc = await processor({
