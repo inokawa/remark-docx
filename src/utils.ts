@@ -55,11 +55,14 @@ export const browserSvgToPng: SvgToPngFn = async ({
     const ctx = canvas.getContext("2d")!;
     ctx.drawImage(img, 0, 0, scaledWidth, scaledHeight);
 
-    return new Promise<ArrayBuffer>((resolve) => {
-      canvas.toBlob((blob) => {
-        blob!.arrayBuffer().then(resolve);
-      }, "image/png");
+    const blob = await new Promise<Blob | null>((resolve) => {
+      canvas.toBlob(resolve, "image/png");
     });
+    if (!blob) {
+      // e.g. the canvas exceeds the size limit of the browser
+      throw new Error("Failed to convert canvas to PNG");
+    }
+    return blob.arrayBuffer();
   } finally {
     URL.revokeObjectURL(url);
   }
