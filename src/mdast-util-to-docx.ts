@@ -6,6 +6,8 @@ import {
   TableRow,
   TableCell,
   TextRun,
+  Footer,
+  PageNumber,
   ExternalHyperlink,
   InternalHyperlink,
   Bookmark,
@@ -417,6 +419,8 @@ export interface DocxOptions extends Pick<
    * Word asks to update fields on open to fill in its page numbers.
    */
   toc?: boolean | TocOptions;
+  /** Show the current page number in a centered footer. */
+  pageNumbers?: boolean;
   /**
    * Embed images of `image` / `imageReference` nodes. `png`, `jpg`, `gif`, `bmp` and `svg` are supported.
    * Images are not embedded if not set.
@@ -448,6 +452,7 @@ export const mdastToDocx = async (
     background,
     thematicBreak = "page",
     toc,
+    pageNumbers,
     orderedListFormat,
   }: DocxOptions = {},
   imageCache: ImageCache,
@@ -759,6 +764,18 @@ export const mdastToDocx = async (
     sections: sections
       .filter((s) => s.length)
       .map((s) => ({
+        footers: pageNumbers
+          ? {
+              default: new Footer({
+                children: [
+                  new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [new TextRun({ children: [PageNumber.CURRENT] })],
+                  }),
+                ],
+              }),
+            }
+          : undefined,
         properties: sectionProperties,
         children: s as FileChild[],
       })),
