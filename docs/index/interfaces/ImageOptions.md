@@ -4,7 +4,7 @@
 
 # Interface: ImageOptions
 
-Defined in: [src/mdast-util-to-docx.ts:233](https://github.com/inokawa/remark-docx/blob/7cc61bae2cf9b6ec1b7d26122aa1d57bf1436ec7/src/mdast-util-to-docx.ts#L233)
+Defined in: [src/mdast-util-to-docx.ts:235](https://github.com/inokawa/remark-docx/blob/3e43711c62b7e099eee74bf0405f50515237f051/src/mdast-util-to-docx.ts#L235)
 
 ## Properties
 
@@ -12,7 +12,7 @@ Defined in: [src/mdast-util-to-docx.ts:233](https://github.com/inokawa/remark-do
 
 > `optional` **load?**: `LoadFn`
 
-Defined in: [src/mdast-util-to-docx.ts:238](https://github.com/inokawa/remark-docx/blob/7cc61bae2cf9b6ec1b7d26122aa1d57bf1436ec7/src/mdast-util-to-docx.ts#L238)
+Defined in: [src/mdast-util-to-docx.ts:240](https://github.com/inokawa/remark-docx/blob/3e43711c62b7e099eee74bf0405f50515237f051/src/mdast-util-to-docx.ts#L240)
 
 A function to resolve image data from url. `file` is the processed file, which can be used to resolve relative urls.
 
@@ -26,7 +26,7 @@ loadWithFetch
 
 > `optional` **toPng?**: [`ToPngFn`](../type-aliases/ToPngFn.md)
 
-Defined in: [src/mdast-util-to-docx.ts:244](https://github.com/inokawa/remark-docx/blob/7cc61bae2cf9b6ec1b7d26122aa1d57bf1436ec7/src/mdast-util-to-docx.ts#L244)
+Defined in: [src/mdast-util-to-docx.ts:246](https://github.com/inokawa/remark-docx/blob/3e43711c62b7e099eee74bf0405f50515237f051/src/mdast-util-to-docx.ts#L246)
 
 A function to convert images to PNG. Required to embed images other than PNG, JPEG, GIF and BMP, such as SVG and WebP.
 SVG is embedded with the PNG as fallback, because Word requires it. Others are embedded as PNG.
