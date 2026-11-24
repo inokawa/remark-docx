@@ -90,6 +90,8 @@ export interface DocxOptions extends Pick<IPropertiesOptions, "title" | "subject
      * Word asks to update fields on open to fill in its page numbers.
      */
     toc?: boolean | TocOptions;
+    /** Show the current page number in a centered footer. */
+    pageNumbers?: boolean;
     /**
      * Embed images of `image` / `imageReference` nodes. `png`, `jpg`, `gif`, `bmp` and `svg` are supported.
      * Images are not embedded if not set.
@@ -100,5 +102,5 @@ export interface DocxOptions extends Pick<IPropertiesOptions, "title" | "subject
      */
     plugins?: RemarkDocxPlugin[];
 }
-export declare const mdastToDocx: (node: mdast.Root, { plugins, image, title, subject, creator, keywords, description, styles, size, margin, orientation, columns, spacing, direction, background, thematicBreak, toc, orderedListFormat, }: DocxOptions | undefined, imageCache: ImageCache, file: VFile) => Promise<Uint8Array>;
+export declare const mdastToDocx: (node: mdast.Root, { plugins, image, title, subject, creator, keywords, description, styles, size, margin, orientation, columns, spacing, direction, background, thematicBreak, toc, pageNumbers, orderedListFormat, }: DocxOptions | undefined, imageCache: ImageCache, file: VFile) => Promise<Uint8Array>;
 export {};
