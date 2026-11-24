@@ -66,6 +66,15 @@ describe("e2e", () => {
     }
   }
 
+  it("writes a page-number field in the footer when requested", async () => {
+    const result = await processor({ pageNumbers: true }).process("content");
+    const zip = new Zip(Buffer.from(result.value));
+    expect(zip.readAsText("word/document.xml")).toContain("<w:footerReference");
+    expect(zip.readAsText("word/footer1.xml")).toMatch(
+      /<w:instrText[^>]*>\s*PAGE\s*<\/w:instrText>/,
+    );
+  });
+
   it("article", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "article.md"));
     const doc = await processor().process(md);
