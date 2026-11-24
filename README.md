@@ -181,10 +181,6 @@ const processor = unified()
   .use(docx, { plugins: [mermaidPlugin()] });
 ```
 
-## Page numbers
-
-Pass `{ pageNumbers: true }` to the plugin to show the current page number in a centered footer.
-
 ## Documentation
 
 - [API reference](./docs/API.md)
