@@ -91,6 +91,14 @@ describe("e2e", () => {
     }
   });
 
+  it("blockquote", async () => {
+    const md = await fs.readFile(path.join(fixturesDir, "blockquote.md"));
+    const doc = await processor().process(md);
+    for await (const xml of readDocx(doc.value)) {
+      expect(xml).toMatchSnapshot();
+    }
+  });
+
   it("break", async () => {
     const md = await fs.readFile(path.join(fixturesDir, "break.md"));
     const doc = await processor().process(md);
@@ -292,7 +300,7 @@ describe("e2e", () => {
         ),
       ).toEqual([
         [522, 52],
-        [548, 55],
+        [506, 51],
       ]);
     });
 

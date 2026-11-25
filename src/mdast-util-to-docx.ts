@@ -67,14 +67,19 @@ const COMPLETE_TASK_LIST_REF = "task-complete";
 const INCOMPLETE_TASK_LIST_REF = "task-incomplete";
 const HYPERLINK_STYLE_ID = "Hyperlink";
 const TOC_HEADING_STYLE_ID = "TOCHeading";
+const QUOTE_STYLE_ID = "Quote";
 
 const COLUMN_SPACE = 720;
 const TABLE_CELL_MARGIN = 108;
 
+const INDENT_UNIT = 10 * 40;
+
 const calcIndent = (i: number): IIndentAttributesProperties => {
-  const INDENT_UNIT = 10 * 40;
   return { hanging: INDENT_UNIT, left: INDENT_UNIT * (i + 1) };
 };
+
+const QUOTE_INDENT = 720;
+const quoteIndent = (depth: number): number => QUOTE_INDENT * (depth + 1);
 
 const createFootnoteRegistry = (): FootnoteRegistry => {
   const idToInternalId = new Map<string, number>();
@@ -186,15 +191,25 @@ const docxParagraph = (
   ctx: Context,
 ): Paragraph => {
   if (ctx.quote != null) {
-    options.indent = calcIndent(ctx.quote + 1);
+    if (!options.heading) {
+      options.style = QUOTE_STYLE_ID;
+    }
+    // The style indents the outermost blockquote
+    if (options.heading || ctx.quote > 0) {
+      options.indent = { left: quoteIndent(ctx.quote) };
+    }
   }
 
   if (ctx.list) {
     const { level, meta, continuation } = ctx.list;
+    const indent = calcIndent(level);
+    const left =
+      (ctx.quote != null ? quoteIndent(ctx.quote) : 0) + (indent.left as number);
+    if (ctx.quote != null) {
+      options.indent = { ...indent, left };
+    }
     if (continuation) {
-      options.indent = {
-        left: calcIndent(ctx.quote != null ? ctx.quote + 1 : level).left,
-      };
+      options.indent = { left };
     } else if (meta.type === "task") {
       options.numbering = {
         reference: meta.checked
@@ -465,8 +480,11 @@ export const mdastToDocx = async (
   const slugger = new GithubSlugger();
   const slugs = new Map<mdast.Heading, string>();
   const fragments = new Map<string, string>();
+  let hasBlockquote = false;
   visit(node, (n) => {
-    if (n.type === "heading") {
+    if (n.type === "blockquote") {
+      hasBlockquote = true;
+    } else if (n.type === "heading") {
       // Like GitHub, slug the rendered text
       const text = toString(n, { includeHtml: false, includeImageAlt: false });
       slugs.set(n, slugger.slug(text));
@@ -742,10 +760,10 @@ export const mdastToDocx = async (
           heading5: { paragraph: { outlineLevel: 4 } },
           heading6: { paragraph: { outlineLevel: 5 } },
         },
-        // Word's built-in "TOC Heading" style.
-        // Outline level 9 (body text) keeps it out of the navigation pane.
-        paragraphStyles:
-          tocOptions?.title &&
+        paragraphStyles: [
+          // Word's built-in "TOC Heading" style.
+          // Outline level 9 (body text) keeps it out of the navigation pane.
+          ...(tocOptions?.title &&
           !styles?.paragraphStyles?.some((s) => s.id === TOC_HEADING_STYLE_ID)
             ? [
                 {
@@ -755,7 +773,23 @@ export const mdastToDocx = async (
                   paragraph: { outlineLevel: 9 },
                 },
               ]
-            : [],
+            : []),
+          // Word's built-in "Quote" style.
+          ...(hasBlockquote
+            ? [
+                {
+                  id: QUOTE_STYLE_ID,
+                  name: "Quote",
+                  basedOn: "Normal",
+                  next: "Normal",
+                  quickFormat: true,
+                  paragraph: {
+                    indent: { left: quoteIndent(0), right: QUOTE_INDENT },
+                  },
+                },
+              ]
+            : []),
+        ],
       },
       styles || {},
     ),
@@ -1117,8 +1151,9 @@ const buildImage: NodeBuilder<"image"> = (node, ctx) => {
 };
 
 const maxImageSize = (ctx: Context): { width: number; height: number } => {
-  const level = ctx.quote != null ? ctx.quote + 1 : ctx.list?.level;
-  const indent = level != null ? (calcIndent(level).left as number) : 0;
+  const indent =
+    (ctx.quote != null ? quoteIndent(ctx.quote) + QUOTE_INDENT : 0) +
+    (ctx.list ? (calcIndent(ctx.list.level).left as number) : 0);
   // twip to px
   return {
     width: ((ctx.width - indent) / 1440) * 96,
