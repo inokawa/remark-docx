@@ -10,9 +10,9 @@ import type { FontStyle } from "shiki/textmate";
 import { warnOnce } from "../../utils";
 
 /**
- * Format to 6 disit hex
+ * Format to 6 disit hex. Alpha is blended onto base (6 digit hex) because docx doesn't support it.
  */
-const formatHex = (str: string): string => {
+const formatHex = (str: string, base = "#ffffff"): string => {
   // #RGB
   if (str.length === 4) {
     const r = str[1]!;
@@ -22,7 +22,16 @@ const formatHex = (str: string): string => {
   }
   // #RRGGBBAA
   if (str.length === 9) {
-    return str.slice(0, 7);
+    const alpha = parseInt(str.slice(7), 16) / 255;
+    let res = "#";
+    for (let i = 1; i < 7; i += 2) {
+      const c = parseInt(str.slice(i, i + 2), 16);
+      const b = parseInt(base.slice(i, i + 2), 16);
+      res += Math.round(c * alpha + b * (1 - alpha))
+        .toString(16)
+        .padStart(2, "0");
+    }
+    return res;
   }
   return str;
 };
@@ -83,11 +92,11 @@ export const shikiPlugin = ({
           theme,
         });
         let { bg, fg } = res;
-        if (fg) {
-          fg = formatHex(fg);
-        }
         if (bg) {
           bg = formatHex(bg);
+        }
+        if (fg) {
+          fg = formatHex(fg, bg);
         }
 
         return res.tokens.map((r) => {
@@ -98,12 +107,13 @@ export const shikiPlugin = ({
               fill: bg,
             },
             children: r.map(({ content, bgColor, color, fontStyle }) => {
-              if (color) {
-                color = formatHex(color);
-              }
               if (bgColor) {
-                bgColor = formatHex(bgColor);
+                bgColor = formatHex(bgColor, bg);
               }
+              if (color) {
+                color = formatHex(color, bgColor ?? bg);
+              }
+              const style = fontStyle ?? 0;
               return new TextRun({
                 text: content,
                 color: color ?? fg,
@@ -114,13 +124,13 @@ export const shikiPlugin = ({
                       fill: bgColor,
                     }
                   : undefined,
-                bold: fontStyle === (2 satisfies FontStyle.Bold),
-                italics: fontStyle === (1 satisfies FontStyle.Italic),
+                bold: !!(style & (2 satisfies FontStyle.Bold)),
+                italics: !!(style & (1 satisfies FontStyle.Italic)),
                 underline:
-                  fontStyle === (4 satisfies FontStyle.Underline)
+                  style & (4 satisfies FontStyle.Underline)
                     ? { type: "single", color: fg }
                     : undefined,
-                strike: fontStyle === (8 satisfies FontStyle.Strikethrough),
+                strike: !!(style & (8 satisfies FontStyle.Strikethrough)),
               });
             }),
           });
