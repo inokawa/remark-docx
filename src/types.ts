@@ -67,6 +67,7 @@ export type Context = Readonly<{
   style: StyleContext;
   quote?: number;
   list?: ListContext;
+  inFootnote?: boolean;
   thematicBreak: ThematicBreakType;
   rtl?: boolean;
   definition: GetDefinition;
