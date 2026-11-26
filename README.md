@@ -165,20 +165,119 @@ const processor = unified()
   .use(docx, { plugins: [shikiPlugin({ theme: "dark-plus" })] });
 ```
 
-#### Mermaid
+#### Image
 
-Render [Mermaid](https://mermaid.js.org/) in code blocks with `mermaid` language. It only works in browser for now.
+Render code blocks as images with `codeToImagePlugin`. `render` returns SVG or image data such as PNG, or `null` to leave the code block to the next plugins. Set `toPng` to embed SVG like [`toPng` option of image](#image).
+
+##### Mermaid
+
+Render [Mermaid](https://mermaid.js.org/) in code blocks with `mermaid` language. It only works in browser.
+
+```javascript
+import { unified } from "unified";
+import markdown from "remark-parse";
+import docx, { browserToPng } from "remark-docx";
+import { codeToImagePlugin } from "remark-docx/plugins/code-to-image";
+import mermaid from "mermaid";
+
+let id = 0;
+const processor = unified()
+  .use(markdown)
+  .use(docx, {
+    plugins: [
+      codeToImagePlugin({
+        render: async ({ lang, value }) =>
+          lang === "mermaid"
+            ? (await mermaid.render(`mermaid-${id++}`, value)).svg
+            : null,
+        toPng: browserToPng,
+      }),
+    ],
+  });
+```
+
+##### Graphviz
+
+Render [Graphviz](https://graphviz.org/) in code blocks with `dot` language.
 
 ```javascript
 import { unified } from "unified";
 import markdown from "remark-parse";
 import docx from "remark-docx";
-import { mermaidPlugin } from "remark-docx/plugins/mermaid";
+import { codeToImagePlugin } from "remark-docx/plugins/code-to-image";
+import sharp from "sharp";
+import { instance } from "@viz-js/viz";
+
+const viz = await instance();
+const processor = unified()
+  .use(markdown)
+  .use(docx, {
+    plugins: [
+      codeToImagePlugin({
+        render: ({ lang, value }) =>
+          lang === "dot" ? viz.renderString(value, { format: "svg" }) : null,
+        toPng: ({ buffer }) => sharp(buffer).png().toBuffer(),
+      }),
+    ],
+  });
+```
+
+##### Vega-Lite
+
+Render [Vega-Lite](https://vega.github.io/vega-lite/) in code blocks with `vega-lite` language.
+
+```javascript
+import { unified } from "unified";
+import markdown from "remark-parse";
+import docx from "remark-docx";
+import { codeToImagePlugin } from "remark-docx/plugins/code-to-image";
+import sharp from "sharp";
+import { View, parse } from "vega";
+import { compile } from "vega-lite";
 
 const processor = unified()
   .use(markdown)
-  .use(docx, { plugins: [mermaidPlugin()] });
+  .use(docx, {
+    plugins: [
+      codeToImagePlugin({
+        render: ({ lang, value }) =>
+          lang === "vega-lite"
+            ? new View(parse(compile(JSON.parse(value)).spec), {
+                renderer: "none",
+              }).toSVG()
+            : null,
+        toPng: ({ buffer }) => sharp(buffer).png().toBuffer(),
+      }),
+    ],
+  });
 ```
+
+##### SMILES
+
+Render [SMILES](https://en.wikipedia.org/wiki/Simplified_Molecular_Input_Line_Entry_System) in code blocks with `smiles` language, using [OpenChemLib](https://github.com/cheminfo/openchemlib-js).
+
+```javascript
+import { unified } from "unified";
+import markdown from "remark-parse";
+import docx from "remark-docx";
+import { codeToImagePlugin } from "remark-docx/plugins/code-to-image";
+import sharp from "sharp";
+import { Molecule } from "openchemlib";
+
+const processor = unified()
+  .use(markdown)
+  .use(docx, {
+    plugins: [
+      codeToImagePlugin({
+        render: ({ lang, value }) =>
+          lang === "smiles" ? Molecule.fromSmiles(value).toSVG(300, 200) : null,
+        toPng: ({ buffer }) => sharp(buffer).png().toBuffer(),
+      }),
+    ],
+  });
+```
+
+Other languages can be rendered with servers such as [Kroki](https://kroki.io/). Note that code blocks are sent to the server.
 
 ## Documentation
 

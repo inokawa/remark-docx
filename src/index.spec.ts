@@ -10,6 +10,7 @@ import Zip from "adm-zip";
 import prettier from "prettier";
 import docx, { type DocxOptions } from ".";
 import { shikiPlugin } from "./plugins/shiki";
+import { codeToImagePlugin } from "./plugins/code-to-image";
 import { readFile } from "fs/promises";
 
 const FIXTURE_PATH = "../fixtures";
@@ -537,6 +538,114 @@ describe("e2e", () => {
     for await (const xml of readDocx(doc.value)) {
       expect(xml).toMatchSnapshot();
     }
+  });
+
+  describe("code to image", () => {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="20"/>`;
+    const png = () => fs.readFile(path.join(fixturesDir, "images/img.png"));
+    const toPng = async () => (await png()).buffer;
+    const read = (doc: Uint8Array) => {
+      const z = new Zip(Buffer.from(doc));
+      return {
+        xml: z.readAsText("word/document.xml"),
+        media: z
+          .getEntries()
+          .map((e) => e.entryName)
+          .filter((n) => n.startsWith("word/media/")),
+      };
+    };
+
+    it("renders code in the language as svg with png fallback", async () => {
+      const rendered: string[] = [];
+      const doc = await processor({
+        plugins: [
+          codeToImagePlugin({
+            render: ({ lang, value }) => {
+              if (lang !== "diagram") return null;
+              rendered.push(value);
+              return svg;
+            },
+            toPng,
+          }),
+        ],
+      }).process(
+        "```diagram\na -> b\n```\n\n```diagram\na -> b\n```\n\n```js\nconst a = 1;\n```",
+      );
+      const { xml, media } = read(doc.value as Uint8Array);
+      // Same code is rendered once
+      expect(rendered).toEqual(["a -> b"]);
+      expect(xml.match(/<a:blip /g)).toHaveLength(2);
+      expect(xml).not.toContain("a -&gt; b");
+      expect(xml).toContain("const a = 1;");
+      expect(media.some((n) => n.endsWith(".svg"))).toBe(true);
+      expect(media.some((n) => n.endsWith(".png"))).toBe(true);
+      expect(readExtents(doc.value as Uint8Array)).toEqual([
+        [40, 20],
+        [40, 20],
+      ]);
+    });
+
+    it("embeds png without toPng", async () => {
+      const buf = await png();
+      const doc = await processor({
+        plugins: [
+          codeToImagePlugin({
+            // A view of a larger buffer, like Buffer of Node.js
+            render: () => Buffer.concat([Buffer.alloc(8), buf]).subarray(8),
+          }),
+        ],
+      }).process("```diagram\na\n```");
+      const { xml, media } = read(doc.value as Uint8Array);
+      expect(xml).toContain("<a:blip ");
+      expect(media).toHaveLength(1);
+      expect(media[0]).toMatch(/\.png$/);
+    });
+
+    it("falls back to code if it can't be embedded", async () => {
+      const warn = vitest.spyOn(console, "warn").mockImplementation(() => {});
+      try {
+        for (const render of [
+          // svg without toPng
+          () => svg,
+          () => {
+            throw new Error("syntax error");
+          },
+          () => "not an image",
+        ]) {
+          warn.mockClear();
+          const doc = await processor({
+            plugins: [codeToImagePlugin({ render })],
+          }).process("```diagram\na -> b\n```");
+          const { xml } = read(doc.value as Uint8Array);
+          expect(xml).not.toContain("<a:blip ");
+          expect(xml).toContain("a -&gt; b");
+          expect(warn).toHaveBeenCalledOnce();
+        }
+      } finally {
+        warn.mockRestore();
+      }
+    });
+
+    it("leaves code to the next plugins", async () => {
+      const doc = await processor({
+        plugins: [
+          codeToImagePlugin({
+            render: ({ lang }) => (lang === "a" ? svg : null),
+            toPng,
+          }),
+          codeToImagePlugin({
+            render: async ({ lang }) => (lang === "b" ? png() : null),
+          }),
+          shikiPlugin({ theme: "dark-plus" }),
+        ],
+      }).process("```a\nx\n```\n\n```b\nx\n```\n\n```js\nx\n```");
+      const { xml } = read(doc.value as Uint8Array);
+      expect(xml.match(/<a:blip /g)).toHaveLength(2);
+      // Only the code in "a" is svg, though the code in "b" is the same
+      expect(xml.match(/<asvg:svgBlip /g)).toHaveLength(1);
+      // Highlighted by shiki
+      expect(xml).toContain("<w:color ");
+    });
   });
 
   it("code", async () => {

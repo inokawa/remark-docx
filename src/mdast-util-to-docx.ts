@@ -33,14 +33,8 @@ import { latexToMath } from "docx/math";
 import { htmlToContent, htmlToRuns } from "docx/html";
 import type * as mdast from "mdast";
 import type { VFile } from "vfile";
-import {
-  isSupportedType,
-  toArrayBuffer,
-  warnOnce,
-  type ToPngFn,
-} from "./utils";
+import { readImage, toArrayBuffer, warnOnce, type ToPngFn } from "./utils";
 import { definitions } from "mdast-util-definitions";
-import { imageSize } from "image-size";
 import { visit } from "unist-util-visit";
 import deepmerge from "deepmerge";
 import GithubSlugger from "github-slugger";
@@ -825,33 +819,7 @@ const loadImage = async (
     warnOnce(`Failed to load image: ${url} ${e}`);
     return;
   }
-
-  let size: ReturnType<typeof imageSize>;
-  try {
-    size = imageSize(new Uint8Array(data));
-  } catch (e) {
-    warnOnce(`Failed to detect image type: ${url} ${e}`);
-    return;
-  }
-  const { width, height } = size;
-  const type = size.type!;
-  if (isSupportedType(type) && type !== "svg") {
-    return { type, width, height, data };
-  }
-  if (!toPng) {
-    warnOnce(`toPng option is required to embed ${type}: ${url}`);
-    return;
-  }
-  let png: ArrayBuffer;
-  try {
-    png = toArrayBuffer(await toPng({ buffer: data, width, height }));
-  } catch (e) {
-    warnOnce(`Failed to convert image to png: ${url} ${e}`);
-    return;
-  }
-  return type === "svg"
-    ? { type, width, height, data, fallback: png }
-    : { type: "png", width, height, data: png };
+  return readImage(data, toPng, url);
 };
 
 const loadImages = async (
