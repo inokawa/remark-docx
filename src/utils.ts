@@ -29,12 +29,22 @@ export type ToPngFn = (options: {
   buffer: ArrayBuffer;
   width: number;
   height: number;
-}) => Promise<ArrayBuffer>;
+}) => Promise<ArrayBuffer | Uint8Array>;
+
+/**
+ * @internal
+ */
+export const toArrayBuffer = (data: ArrayBuffer | Uint8Array): ArrayBuffer =>
+  ArrayBuffer.isView(data)
+    ? // Node.js Buffer may be a view of a shared pool
+      new Uint8Array(data.buffer, data.byteOffset, data.byteLength).slice()
+        .buffer
+    : data;
 
 /**
  * Converts images to PNG with canvas. Works only on browser.
  */
-export const browserToPng: ToPngFn = async ({ buffer, width, height }) => {
+export const browserToPng = (async ({ buffer, width, height }) => {
   const svg = imageSize(new Uint8Array(buffer)).type === "svg";
   const blob = new Blob([buffer], svg ? { type: "image/svg+xml" } : undefined);
   const url = URL.createObjectURL(blob);
@@ -66,4 +76,4 @@ export const browserToPng: ToPngFn = async ({ buffer, width, height }) => {
   } finally {
     URL.revokeObjectURL(url);
   }
-};
+}) satisfies ToPngFn;

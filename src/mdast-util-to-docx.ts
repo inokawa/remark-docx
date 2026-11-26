@@ -33,7 +33,12 @@ import { latexToMath } from "docx/math";
 import { htmlToContent, htmlToRuns } from "docx/html";
 import type * as mdast from "mdast";
 import type { VFile } from "vfile";
-import { isSupportedType, warnOnce, type ToPngFn } from "./utils";
+import {
+  isSupportedType,
+  toArrayBuffer,
+  warnOnce,
+  type ToPngFn,
+} from "./utils";
 import { definitions } from "mdast-util-definitions";
 import { imageSize } from "image-size";
 import { visit } from "unist-util-visit";
@@ -815,15 +820,7 @@ const loadImage = async (
 ): Promise<DocxImageData | undefined> => {
   let data: ArrayBuffer;
   try {
-    const result = await load(url, file);
-    // Node.js Buffer may be a view of a shared pool
-    data = ArrayBuffer.isView(result)
-      ? new Uint8Array(
-          result.buffer,
-          result.byteOffset,
-          result.byteLength,
-        ).slice().buffer
-      : result;
+    data = toArrayBuffer(await load(url, file));
   } catch (e) {
     warnOnce(`Failed to load image: ${url} ${e}`);
     return;
@@ -847,7 +844,7 @@ const loadImage = async (
   }
   let png: ArrayBuffer;
   try {
-    png = await toPng({ buffer: data, width, height });
+    png = toArrayBuffer(await toPng({ buffer: data, width, height }));
   } catch (e) {
     warnOnce(`Failed to convert image to png: ${url} ${e}`);
     return;
