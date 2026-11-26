@@ -4,9 +4,9 @@
 
 # Type Alias: ToPngFn
 
-> **ToPngFn** = (`options`) => `Promise`\<`ArrayBuffer`\>
+> **ToPngFn** = (`options`) => `Promise`\<`ArrayBuffer` \| `Uint8Array`\>
 
-Defined in: [src/utils.ts:28](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/utils.ts#L28)
+Defined in: [src/utils.ts:29](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/utils.ts#L29)
 
 ## Parameters
 
@@ -26,4 +26,4 @@ Defined in: [src/utils.ts:28](https://github.com/inokawa/remark-docx/blob/abed5b
 
 ## Returns
 
-`Promise`\<`ArrayBuffer`\>
+`Promise`\<`ArrayBuffer` \| `Uint8Array`\>

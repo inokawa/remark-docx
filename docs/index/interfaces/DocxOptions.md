@@ -4,7 +4,7 @@
 
 # Interface: DocxOptions
 
-Defined in: [src/mdast-util-to-docx.ts:105](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L105)
+Defined in: [src/mdast-util-to-docx.ts:104](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L104)
 
 ## Extends
 
@@ -16,7 +16,7 @@ Defined in: [src/mdast-util-to-docx.ts:105](https://github.com/inokawa/remark-do
 
 > `optional` **size?**: `object`
 
-Defined in: [src/mdast-util-to-docx.ts:119](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L119)
+Defined in: [src/mdast-util-to-docx.ts:118](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L118)
 
 Page size defined in twip (1 twip == 1/1440 inch).
 
@@ -38,7 +38,7 @@ A4 (sectionPageSizeDefaults)
 
 > `optional` **margin?**: `object`
 
-Defined in: [src/mdast-util-to-docx.ts:124](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L124)
+Defined in: [src/mdast-util-to-docx.ts:123](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L123)
 
 Page margin defined in twip (1 twip == 1/1440 inch).
 
@@ -68,7 +68,7 @@ Page margin defined in twip (1 twip == 1/1440 inch).
 
 > `optional` **orientation?**: `"portrait"` \| `"landscape"`
 
-Defined in: [src/mdast-util-to-docx.ts:129](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L129)
+Defined in: [src/mdast-util-to-docx.ts:128](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L128)
 
 Page orientation.
 
@@ -84,7 +84,7 @@ Page orientation.
 
 > `optional` **columns?**: `number`
 
-Defined in: [src/mdast-util-to-docx.ts:134](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L134)
+Defined in: [src/mdast-util-to-docx.ts:133](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L133)
 
 Number of page columns.
 
@@ -100,7 +100,7 @@ Number of page columns.
 
 > `optional` **spacing?**: `number`
 
-Defined in: [src/mdast-util-to-docx.ts:139](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L139)
+Defined in: [src/mdast-util-to-docx.ts:138](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L138)
 
 Spacing after Paragraphs in twip (1 twip == 1/1440 inch).
 
@@ -116,7 +116,7 @@ Spacing after Paragraphs in twip (1 twip == 1/1440 inch).
 
 > `optional` **direction?**: `"ltr"` \| `"rtl"` \| `"vertical"`
 
-Defined in: [src/mdast-util-to-docx.ts:144](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L144)
+Defined in: [src/mdast-util-to-docx.ts:143](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L143)
 
 Direction of texts.
 
@@ -132,7 +132,7 @@ Direction of texts.
 
 > `optional` **orderedListFormat?**: `ListFormat`[]
 
-Defined in: [src/mdast-util-to-docx.ts:149](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L149)
+Defined in: [src/mdast-util-to-docx.ts:148](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L148)
 
 An option to override the text format of ordered list.
 See https://docx.js.org/#/usage/numbering?id=level-options for more details.
@@ -143,7 +143,7 @@ See https://docx.js.org/#/usage/numbering?id=level-options for more details.
 
 > `optional` **thematicBreak?**: `ThematicBreakType`
 
-Defined in: [src/mdast-util-to-docx.ts:158](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L158)
+Defined in: [src/mdast-util-to-docx.ts:157](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L157)
 
 An option to select how thematicBreak works.
 
@@ -163,7 +163,7 @@ An option to select how thematicBreak works.
 
 > `optional` **toc?**: `boolean` \| `TocOptions`
 
-Defined in: [src/mdast-util-to-docx.ts:163](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L163)
+Defined in: [src/mdast-util-to-docx.ts:162](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L162)
 
 Insert a table of contents generated from headings at the beginning of the document.
 Word asks to update fields on open to fill in its page numbers.
@@ -174,7 +174,7 @@ Word asks to update fields on open to fill in its page numbers.
 
 > `optional` **pageNumbers?**: `boolean`
 
-Defined in: [src/mdast-util-to-docx.ts:165](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L165)
+Defined in: [src/mdast-util-to-docx.ts:164](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L164)
 
 Show the current page number in a centered footer.
 
@@ -184,7 +184,7 @@ Show the current page number in a centered footer.
 
 > `optional` **image?**: `boolean` \| [`ImageOptions`](ImageOptions.md)
 
-Defined in: [src/mdast-util-to-docx.ts:170](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L170)
+Defined in: [src/mdast-util-to-docx.ts:169](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L169)
 
 Embed images of `image` / `imageReference` nodes. `png`, `jpg`, `gif`, `bmp` and `svg` are supported.
 Images are not embedded if not set.
@@ -195,7 +195,7 @@ Images are not embedded if not set.
 
 > `optional` **plugins?**: [`RemarkDocxPlugin`](../type-aliases/RemarkDocxPlugin.md)[]
 
-Defined in: [src/mdast-util-to-docx.ts:174](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/mdast-util-to-docx.ts#L174)
+Defined in: [src/mdast-util-to-docx.ts:173](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/mdast-util-to-docx.ts#L173)
 
 Plugins to customize how mdast nodes are compiled.
 

@@ -7,5 +7,5 @@
 ## Modules
 
 - [index](index/API.md)
-- [plugins/mermaid](plugins/mermaid/API.md)
+- [plugins/code-to-image](plugins/code-to-image/API.md)
 - [plugins/shiki](plugins/shiki/API.md)
