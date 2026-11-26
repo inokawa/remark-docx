@@ -75,7 +75,7 @@ export type Context = Readonly<{
   orderedId: () => string;
   orderedStart: (id: string, level: number, start: number) => void;
   bookmarks: ReadonlyMap<mdast.Heading | string, string>;
-  inlineHtml: ReadonlySet<mdast.Html>;
+  inlineHtml: ReadonlyMap<mdast.Html, readonly mdast.RootContent[]>;
 }>;
 
 export type NodeBuilder<T extends KnownNodeType> = (

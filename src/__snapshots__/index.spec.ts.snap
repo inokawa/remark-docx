@@ -12410,14 +12410,17 @@ exports[`e2e > html 1`] = `
   xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
   xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
   xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
-><w:body><w:p><w:pPr><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
+><w:body><w:p><w:pPr><w:pStyle w:val="Heading1" /></w:pPr><w:bookmarkStart
+        w:name="md_heading_1"
+        w:id="26"
+      /><w:r><w:t xml:space="preserve">HTML</w:t></w:r><w:bookmarkEnd
+        w:id="26"
+      /></w:p><w:p><w:pPr><w:pStyle w:val="Heading1" /></w:pPr><w:r><w:t
           xml:space="preserve"
-        >HTML</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
-          w:val="Heading1"
-        /></w:pPr><w:r><w:t xml:space="preserve">Heading 1</w:t></w:r></w:p><w:p
-    ><w:pPr><w:pStyle w:val="Heading2" /></w:pPr><w:r><w:t
-          xml:space="preserve"
-        >Heading </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+        >Heading 1</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+          w:val="Heading2"
+        /></w:pPr><w:r><w:t xml:space="preserve">Heading </w:t></w:r><w:r><w:rPr
+        ><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
         >2</w:t></w:r></w:p><w:p><w:pPr><w:jc w:val="center" /></w:pPr><w:r><w:t
           xml:space="preserve"
@@ -12468,8 +12471,9 @@ exports[`e2e > html 1`] = `
         >bold</w:t></w:r><w:r><w:t xml:space="preserve">, </w:t></w:r><w:r
       ><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
-        >nested</w:t></w:r><w:r><w:t xml:space="preserve"> span</w:t></w:r><w:r
-      ><w:t xml:space="preserve">, x</w:t></w:r><w:r><w:rPr><w:vertAlign
+        >nested</w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        > span, x</w:t></w:r><w:r><w:rPr><w:vertAlign
             w:val="superscript"
           /></w:rPr><w:t xml:space="preserve">2</w:t></w:r><w:r><w:t
           xml:space="preserve"
@@ -12479,8 +12483,9 @@ exports[`e2e > html 1`] = `
           xml:space="preserve"
         >O.</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        >Break</w:t></w:r><w:r><w:br /><w:t xml:space="preserve" /></w:r><w:r
-      ><w:t xml:space="preserve">line and </w:t></w:r><w:hyperlink
+        >Break</w:t></w:r><w:r><w:br /><w:t
+          xml:space="preserve"
+        >line and </w:t></w:r><w:hyperlink
         w:history="1"
         r:id="rIdqqqqqqqqqqqqqqqqqqqqq"
       ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /></w:rPr><w:t
@@ -12489,10 +12494,9 @@ exports[`e2e > html 1`] = `
           xml:space="preserve"
         >.</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        >Whitespace</w:t></w:r><w:r><w:t xml:space="preserve"> </w:t></w:r><w:r
-      ><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+        >Whitespace</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
-        >inside</w:t></w:r><w:r><w:t xml:space="preserve"> </w:t></w:r><w:r><w:t
+        > inside </w:t></w:r><w:r><w:t
           xml:space="preserve"
         >tags and</w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
@@ -12500,14 +12504,11 @@ exports[`e2e > html 1`] = `
           xml:space="preserve"
         > void.</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        >Self-closing </w:t></w:r><w:r><w:t
+        >Self-closing non-void tag.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b
+          /><w:bCs /></w:rPr><w:t xml:space="preserve">Strong </w:t></w:r><w:r
+      ><w:rPr><w:b /><w:bCs /><w:i /><w:iCs /></w:rPr><w:t
           xml:space="preserve"
-        >non-void</w:t></w:r><w:r><w:t
-          xml:space="preserve"
-        > tag.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
-          xml:space="preserve"
-        >Strong </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /><w:i /><w:iCs
-          /></w:rPr><w:t xml:space="preserve">italic</w:t></w:r><w:r><w:t
+        >italic</w:t></w:r><w:r><w:t
           xml:space="preserve"
         > and </w:t></w:r><w:hyperlink
         w:history="1"
@@ -12521,18 +12522,42 @@ exports[`e2e > html 1`] = `
           xml:space="preserve"
         >.</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        >Unclosed </w:t></w:r><w:r><w:t
+        >Unclosed </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
-        >tag and stray </w:t></w:r><w:r><w:t
+        >tag and stray tag.</w:t></w:r></w:p><w:p><w:r><w:t
           xml:space="preserve"
-        > tag.</w:t></w:r></w:p><w:p><w:r><w:t
+        >Mixed </w:t></w:r><w:r><w:rPr><w:b /><w:bCs /></w:rPr><w:t
           xml:space="preserve"
-        >Mixed </w:t></w:r><w:r><w:t xml:space="preserve">with </w:t></w:r><w:r
-      ><w:rPr><w:b /><w:bCs /></w:rPr><w:t
+        >with markdown</w:t></w:r><w:r><w:t
           xml:space="preserve"
-        >markdown</w:t></w:r><w:r><w:t
+        > content.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:color
+            w:val="FF0000"
+          /></w:rPr><w:t xml:space="preserve">Colored </w:t></w:r><w:r><w:rPr
+        ><w:b /><w:bCs /><w:color w:val="FF0000" /></w:rPr><w:t
           xml:space="preserve"
-        > content.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
+        >strong</w:t></w:r><w:r><w:rPr><w:color w:val="FF0000" /></w:rPr><w:t
+          xml:space="preserve"
+        > and </w:t></w:r><w:r><w:rPr><w:color w:val="FF0000" /><w:highlight
+            w:val="lightGray"
+          /></w:rPr><w:t xml:space="preserve">code</w:t></w:r><w:r><w:t
+          xml:space="preserve"
+        >, </w:t></w:r><w:r><w:rPr><w:i /><w:iCs /><w:u
+            w:val="single"
+          /></w:rPr><w:t xml:space="preserve">underlined</w:t></w:r><w:r><w:rPr
+        ><w:u w:val="single" /></w:rPr><w:t
+          xml:space="preserve"
+        > </w:t></w:r><w:hyperlink w:history="1" w:anchor="md_heading_1"><w:r
+        ><w:rPr><w:rStyle w:val="Hyperlink" /><w:u w:val="single" /></w:rPr><w:t
+            xml:space="preserve"
+          >link</w:t></w:r></w:hyperlink><w:r><w:t
+          xml:space="preserve"
+        > and x</w:t></w:r><w:hyperlink
+        w:history="1"
+        w:anchor="md_heading_1"
+      ><w:r><w:rPr><w:rStyle w:val="Hyperlink" /><w:vertAlign
+              w:val="superscript"
+            /></w:rPr><w:t xml:space="preserve">1</w:t></w:r></w:hyperlink><w:r
+      ><w:t xml:space="preserve">.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle
           w:val="Quote"
         /></w:pPr><w:r><w:t
           xml:space="preserve"
