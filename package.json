@@ -31,6 +31,8 @@
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
     "typedoc": "typedoc",
+    "format": "prettier '**/*.{js,ts,jsx,tsx}' --write --cache",
+    "format:ci": "prettier '**/*.{js,ts,jsx,tsx}' -l",
     "prepublishOnly": "npm run typedoc && npm run build"
   },
   "dependencies": {

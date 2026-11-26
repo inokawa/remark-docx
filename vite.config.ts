@@ -10,8 +10,8 @@ export default defineConfig({
     outDir: "./lib",
     lib: {
       entry: Object.fromEntries(
-        ["src/index.ts", ...globSync('src/plugins/*/index.ts')].map((file) => [
-          relative('./src', file.slice(0, file.length - extname(file).length)),
+        ["src/index.ts", ...globSync("src/plugins/*/index.ts")].map((file) => [
+          relative("./src", file.slice(0, file.length - extname(file).length)),
           fileURLToPath(new URL(file, import.meta.url)),
         ]),
       ),

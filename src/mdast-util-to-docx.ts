@@ -37,11 +37,7 @@ import { latexToMath } from "docx/math";
 import { htmlToContent, htmlToRuns, type HtmlOptions } from "docx/html";
 import type * as mdast from "mdast";
 import type { VFile } from "vfile";
-import {
-  isSupportedType,
-  warnOnce,
-  type ToPngFn,
-} from "./utils";
+import { isSupportedType, warnOnce, type ToPngFn } from "./utils";
 import { definitions, type GetDefinition } from "mdast-util-definitions";
 import { imageSize } from "image-size";
 import { visit } from "unist-util-visit";
@@ -157,12 +153,12 @@ const composeBuilders = (
       acc[k as Key] = (
         prev
           ? (n, c) => {
-            const r = cur(n as any, c);
-            if (r) {
-              return r;
+              const r = cur(n as any, c);
+              if (r) {
+                return r;
+              }
+              return prev(n as any, c);
             }
-            return prev(n as any, c);
-          }
           : cur
       ) as NodeBuilder<any>;
     }
@@ -204,7 +200,8 @@ const docxParagraph = (
     const { level, meta, continuation } = ctx.list;
     const indent = calcIndent(level);
     const left =
-      (ctx.quote != null ? quoteIndent(ctx.quote) : 0) + (indent.left as number);
+      (ctx.quote != null ? quoteIndent(ctx.quote) : 0) +
+      (indent.left as number);
     if (ctx.quote != null) {
       options.indent = { ...indent, left };
     }
@@ -279,8 +276,11 @@ const loadImage = async (
     const result = await load(url, file);
     // Node.js Buffer may be a view of a shared pool
     data = ArrayBuffer.isView(result)
-      ? new Uint8Array(result.buffer, result.byteOffset, result.byteLength).slice()
-          .buffer
+      ? new Uint8Array(
+          result.buffer,
+          result.byteOffset,
+          result.byteLength,
+        ).slice().buffer
       : result;
   } catch (e) {
     warnOnce(`Failed to load image: ${url} ${e}`);
@@ -342,8 +342,7 @@ const loadImages = async (
       }
       // Relative urls may point to different images from other files
       const key = `${file.dirname}\0${url}`;
-      const image =
-        cache.get(key) ?? (await loadImage(url, file, load, toPng));
+      const image = cache.get(key) ?? (await loadImage(url, file, load, toPng));
       if (!image) {
         return;
       }
@@ -565,37 +564,34 @@ export const mdastToDocx = async (
       ),
   ]);
 
-  const builders = composeBuilders(
-    pluginBuilders,
-    {
-      paragraph: buildParagraph,
-      heading: buildHeading,
-      thematicBreak: buildThematicBreak,
-      blockquote: buildBlockquote,
-      list: buildList,
-      listItem: buildListItem,
-      table: buildTable,
-      tableRow: noop,
-      tableCell: noop,
-      html: (n, c) => buildHtml(n, c, inlineHtml.has(n)),
-      code: fallbackCode,
-      definition: noop,
-      footnoteDefinition: buildFootnoteDefinition,
-      text: buildText,
-      emphasis: buildEmphasis,
-      strong: buildStrong,
-      delete: buildDelete,
-      inlineCode: buildInlineCode,
-      break: buildBreak,
-      link: buildLink,
-      linkReference: buildLinkReference,
-      image: buildImage,
-      imageReference: buildImageReference,
-      footnoteReference: buildFootnoteReference,
-      math: buildMath,
-      inlineMath: buildInlineMath,
-    },
-  );
+  const builders = composeBuilders(pluginBuilders, {
+    paragraph: buildParagraph,
+    heading: buildHeading,
+    thematicBreak: buildThematicBreak,
+    blockquote: buildBlockquote,
+    list: buildList,
+    listItem: buildListItem,
+    table: buildTable,
+    tableRow: noop,
+    tableCell: noop,
+    html: (n, c) => buildHtml(n, c, inlineHtml.has(n)),
+    code: fallbackCode,
+    definition: noop,
+    footnoteDefinition: buildFootnoteDefinition,
+    text: buildText,
+    emphasis: buildEmphasis,
+    strong: buildStrong,
+    delete: buildDelete,
+    inlineCode: buildInlineCode,
+    break: buildBreak,
+    link: buildLink,
+    linkReference: buildLinkReference,
+    image: buildImage,
+    imageReference: buildImageReference,
+    footnoteReference: buildFootnoteReference,
+    math: buildMath,
+    inlineMath: buildInlineMath,
+  });
 
   const renderNode = (
     node: mdast.RootContent,
@@ -666,7 +662,10 @@ export const mdastToDocx = async (
       return results;
     },
     width:
-      (bodyWidth - marginLeft - marginRight - COLUMN_SPACE * (columnCount - 1)) /
+      (bodyWidth -
+        marginLeft -
+        marginRight -
+        COLUMN_SPACE * (columnCount - 1)) /
       columnCount,
     height: bodyHeight - marginTop - marginBottom,
     style: {},
@@ -869,7 +868,8 @@ const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
     {
       children: ctx.render(children) as ParagraphChild[],
       // Later blocks of an item in tight lists aren't paragraphs of the item itself (e.g. in blockquotes)
-      contextualSpacing: (ctx.list?.tight && !ctx.list.continuation) || undefined,
+      contextualSpacing:
+        (ctx.list?.tight && !ctx.list.continuation) || undefined,
     },
     ctx,
   );
@@ -909,7 +909,10 @@ const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
   });
 };
 
-const buildList: NodeBuilder<"list"> = ({ children, ordered, start, spread }, ctx) => {
+const buildList: NodeBuilder<"list"> = (
+  { children, ordered, start, spread },
+  ctx,
+) => {
   const parentList = ctx.list;
   const level = !parentList ? 0 : parentList.level + 1;
 
@@ -1117,10 +1120,10 @@ const buildImage: NodeBuilder<"image"> = (node, ctx) => {
   const altText =
     node.alt || node.title
       ? {
-        name: "",
-        description: node.alt ?? undefined,
-        title: node.title ?? undefined,
-      }
+          name: "",
+          description: node.alt ?? undefined,
+          title: node.title ?? undefined,
+        }
       : undefined;
 
   if (image.type === "svg") {
