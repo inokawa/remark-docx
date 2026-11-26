@@ -15,7 +15,6 @@ import {
   LevelFormat,
   AlignmentType,
   type ILevelsOptions,
-  type INumberingOptions,
   FootnoteReferenceRun,
   type IPropertiesOptions,
   sectionPageSizeDefaults,
@@ -24,7 +23,6 @@ import {
   type IParagraphOptions,
   PageBreak,
   type ISectionPropertiesOptions,
-  type IIndentAttributesProperties,
   type IStylesOptions,
   type ITableOptions,
   ImageRun,
@@ -38,7 +36,7 @@ import { htmlToContent, htmlToRuns, type HtmlOptions } from "docx/html";
 import type * as mdast from "mdast";
 import type { VFile } from "vfile";
 import { isSupportedType, warnOnce, type ToPngFn } from "./utils";
-import { definitions, type GetDefinition } from "mdast-util-definitions";
+import { definitions } from "mdast-util-definitions";
 import { imageSize } from "image-size";
 import { visit } from "unist-util-visit";
 import deepmerge from "deepmerge";
@@ -48,7 +46,6 @@ import type {
   Context,
   DocxContent,
   DocxImageData,
-  FootnoteRegistry,
   ListContext,
   NodeBuilder,
   NodeBuilders,
@@ -70,100 +67,20 @@ const TABLE_CELL_MARGIN = 108;
 
 const INDENT_UNIT = 10 * 40;
 
-const calcIndent = (i: number): IIndentAttributesProperties => {
+const calcIndent = (i: number): { hanging: number; left: number } => {
   return { hanging: INDENT_UNIT, left: INDENT_UNIT * (i + 1) };
 };
 
 const QUOTE_INDENT = 720;
 const quoteIndent = (depth: number): number => QUOTE_INDENT * (depth + 1);
 
-const createFootnoteRegistry = (): FootnoteRegistry => {
-  const idToInternalId = new Map<string, number>();
-  const defs = new Map<number, Paragraph[]>();
-
-  return {
-    id: (id) => {
-      let internalId = idToInternalId.get(id);
-      if (internalId == null) {
-        idToInternalId.set(id, (internalId = idToInternalId.size + 1));
-      }
-      return internalId;
-    },
-    set: (id, def) => {
-      defs.set(id, def);
-    },
-    toConfig: () => {
-      return defs.entries().reduce(
-        (acc, [key, def]) => {
-          acc[key] = { children: def };
-          return acc;
-        },
-        {} as {
-          [key: string]: { children: Paragraph[] };
-        },
-      );
-    },
-  };
-};
+const contentIndent = ({ quote, list }: Context): number =>
+  (quote != null ? quoteIndent(quote) : 0) +
+  (list ? calcIndent(list.level).left : 0);
 
 type ListFormat = {
   format: keyof typeof LevelFormat;
   text: string;
-};
-
-type OrderedListRegistry = {
-  createId: () => string;
-  setStart: (id: string, level: number, start: number) => void;
-  toConfig: (levels: readonly ILevelsOptions[]) => INumberingOptions["config"];
-};
-const createOrderedListRegistry = (): OrderedListRegistry => {
-  let counter = 1;
-
-  const starts = new Map<string, (number | undefined)[]>();
-
-  return {
-    createId: () => {
-      const id = `${ORDERED_LIST_REF}-${counter++}`;
-      starts.set(id, []);
-      return id;
-    },
-    setStart: (id, level, start) => {
-      // Nested lists at the same level share a numbering, so the first one wins.
-      starts.get(id)![level] ??= start;
-    },
-    toConfig: (levels) => {
-      return [...starts].map(([id, s]) => ({
-        reference: id,
-        levels: levels.map((l, i) =>
-          s[i] != null ? { ...l, start: s[i] } : l,
-        ),
-      }));
-    },
-  };
-};
-
-const composeBuilders = (
-  pluginsBuilders: readonly NodeBuilders[],
-  defaultBuilders: NodeBuilders,
-): NodeBuilders => {
-  return pluginsBuilders.reduceRight<NodeBuilders>((acc, p) => {
-    type Key = keyof typeof p;
-    for (const [k, cur] of Object.entries(p)) {
-      const prev = acc[k as Key];
-      acc[k as Key] = (
-        prev
-          ? (n, c) => {
-              const r = cur(n as any, c);
-              if (r) {
-                return r;
-              }
-              return prev(n as any, c);
-            }
-          : cur
-      ) as NodeBuilder<any>;
-    }
-    return acc;
-  }, defaultBuilders);
 };
 
 const buildLevels = (formats: readonly ListFormat[]): ILevelsOptions[] => {
@@ -199,9 +116,7 @@ const docxParagraph = (
   if (ctx.list) {
     const { level, meta, continuation } = ctx.list;
     const indent = calcIndent(level);
-    const left =
-      (ctx.quote != null ? quoteIndent(ctx.quote) : 0) +
-      (indent.left as number);
+    const left = contentIndent(ctx);
     if (ctx.quote != null) {
       options.indent = { ...indent, left };
     }
@@ -316,25 +231,12 @@ const loadImage = async (
 };
 
 const loadImages = async (
-  root: mdast.Root,
-  definition: GetDefinition,
+  urls: ReadonlySet<string>,
   images: Map<string, DocxImageData | null>,
   cache: ImageCache,
   file: VFile,
   { load = loadWithFetch, toPng }: ImageOptions,
 ): Promise<void> => {
-  const urls = new Set<string>();
-  visit(root, (node) => {
-    if (node.type === "image") {
-      urls.add(node.url);
-    } else if (node.type === "imageReference") {
-      const def = definition(node.identifier);
-      if (def) {
-        urls.add(def.url);
-      }
-    }
-  });
-
   await Promise.all(
     Array.from(urls, async (url) => {
       if (images.has(url)) {
@@ -477,86 +379,106 @@ export const mdastToDocx = async (
   // Bookmark headings referenced by links. Word bookmark names are stricter
   // than GitHub-style slugs, so generate them.
   const slugger = new GithubSlugger();
-  const slugs = new Map<mdast.Heading, string>();
+  // Slugs are unique, so headings can be keyed by them
+  const headings = new Map<string, mdast.Heading>();
   const fragments = new Map<string, string>();
   let hasBlockquote = false;
-  visit(node, (n) => {
-    if (n.type === "blockquote") {
-      hasBlockquote = true;
-    } else if (n.type === "heading") {
-      // Like GitHub, slug the rendered text
-      const text = toString(n, { includeHtml: false, includeImageAlt: false });
-      slugs.set(n, slugger.slug(text));
-    } else if (n.type === "link" || n.type === "linkReference") {
-      const url = n.type === "link" ? n.url : definition(n.identifier)?.url;
-      if (url?.startsWith("#")) {
-        try {
-          fragments.set(url, decodeURIComponent(url.slice(1)));
-        } catch {
-          // Leave malformed fragments unlinked
-        }
-      }
-    }
-  });
-  const referenced = new Set(fragments.values());
-  const anchors = new Map<string, string>();
-  // Bookmark names keyed by heading or link url
-  const bookmarks = new Map<mdast.Heading | string, string>();
-  for (const [heading, slug] of slugs) {
-    if (referenced.has(slug)) {
-      const name = `md_heading_${anchors.size + 1}`;
-      anchors.set(slug, name);
-      bookmarks.set(heading, name);
-    }
-  }
-  for (const [url, fragment] of fragments) {
-    // Like HTML, `#` and `#top` go to the top unless a heading has that slug.
-    // `_top` is Word's reserved bookmark for the beginning of the document.
-    const anchor =
-      anchors.get(fragment) ??
-      (/^(top)?$/i.test(fragment) ? "_top" : undefined);
-    if (anchor) {
-      bookmarks.set(url, anchor);
-    }
-  }
-
-  const ordered = createOrderedListRegistry();
-  const footnote = createFootnoteRegistry();
-
-  // Inline html nodes (raw HTML in phrasing content) are rendered as runs, others as blocks.
-  const inlineHtml = new WeakSet<mdast.Html>();
+  const imageUrls = new Set<string>();
+  const inlineHtml = new Set<mdast.Html>();
   // Children with inline html joined, keyed by the original children
   const joinedChildren = new WeakMap<
     readonly mdast.RootContent[],
     mdast.RootContent[]
   >();
   visit(node, (n) => {
-    if (
-      !("children" in n) ||
-      FLOW_PARENTS.has(n.type) ||
-      !n.children.some((c) => c.type === "html")
-    ) {
-      return;
-    }
-    const joined = joinInlineHtml(n.children);
-    for (const c of joined) {
-      if (c.type === "html") {
-        inlineHtml.add(c);
+    switch (n.type) {
+      case "blockquote":
+        hasBlockquote = true;
+        break;
+      case "heading": {
+        // Like GitHub, slug the rendered text
+        const text = toString(n, {
+          includeHtml: false,
+          includeImageAlt: false,
+        });
+        headings.set(slugger.slug(text), n);
+        break;
+      }
+      case "link":
+      case "linkReference": {
+        const url = n.type === "link" ? n.url : definition(n.identifier)?.url;
+        if (url?.startsWith("#")) {
+          try {
+            fragments.set(url, decodeURIComponent(url.slice(1)));
+          } catch {
+            // Leave malformed fragments unlinked
+          }
+        }
+        break;
+      }
+      case "image":
+        imageUrls.add(n.url);
+        break;
+      case "imageReference": {
+        const def = definition(n.identifier);
+        if (def) {
+          imageUrls.add(def.url);
+        }
+        break;
       }
     }
-    joinedChildren.set(n.children, joined);
+
+    if (
+      "children" in n &&
+      !FLOW_PARENTS.has(n.type) &&
+      n.children.some((c) => c.type === "html")
+    ) {
+      const joined = joinInlineHtml(n.children);
+      for (const c of joined) {
+        if (c.type === "html") {
+          inlineHtml.add(c);
+        }
+      }
+      joinedChildren.set(n.children, joined);
+    }
   });
+  const referenced = new Set(fragments.values());
+  // Bookmark names keyed by heading or link url
+  const bookmarks = new Map<mdast.Heading | string, string>();
+  for (const [slug, heading] of headings) {
+    if (referenced.has(slug)) {
+      bookmarks.set(heading, `md_heading_${bookmarks.size + 1}`);
+    }
+  }
+  for (const [url, fragment] of fragments) {
+    // Like HTML, `#` and `#top` go to the top unless a heading has that slug.
+    // `_top` is Word's reserved bookmark for the beginning of the document.
+    const heading = headings.get(fragment);
+    const anchor = heading
+      ? bookmarks.get(heading)
+      : /^(top)?$/i.test(fragment)
+        ? "_top"
+        : undefined;
+    if (anchor) {
+      bookmarks.set(url, anchor);
+    }
+  }
+
+  // Start numbers by level, keyed by ordered list references
+  const orderedStarts = new Map<string, (number | undefined)[]>();
+  // Numbered in the order of rendering
+  const footnoteIds = new Map<string, number>();
+  const footnotes: { [id: number]: { children: Paragraph[] } } = {};
 
   const images = new Map<string, DocxImageData | null>();
-  const pluginCtx = { root: node, images, definition };
+  const pluginCtx = { root: node, images };
 
   const [pluginBuilders] = await Promise.all([
     Promise.all(plugins.map((p) => p(pluginCtx))),
     // Images set by plugins take precedence.
     image &&
       loadImages(
-        node,
-        definition,
+        imageUrls,
         images,
         imageCache,
         file,
@@ -564,90 +486,70 @@ export const mdastToDocx = async (
       ),
   ]);
 
-  const builders = composeBuilders(pluginBuilders, {
-    paragraph: buildParagraph,
-    heading: buildHeading,
-    thematicBreak: buildThematicBreak,
-    blockquote: buildBlockquote,
-    list: buildList,
-    listItem: buildListItem,
-    table: buildTable,
-    tableRow: noop,
-    tableCell: noop,
-    html: (n, c) => buildHtml(n, c, inlineHtml.has(n)),
-    code: fallbackCode,
-    definition: noop,
-    footnoteDefinition: buildFootnoteDefinition,
-    text: buildText,
-    emphasis: buildEmphasis,
-    strong: buildStrong,
-    delete: buildDelete,
-    inlineCode: buildInlineCode,
-    break: buildBreak,
-    link: buildLink,
-    linkReference: buildLinkReference,
-    image: buildImage,
-    imageReference: buildImageReference,
-    footnoteReference: buildFootnoteReference,
-    math: buildMath,
-    inlineMath: buildInlineMath,
-  });
+  const layers: NodeBuilders[] = [
+    ...pluginBuilders,
+    {
+      paragraph: buildParagraph,
+      heading: buildHeading,
+      thematicBreak: buildThematicBreak,
+      blockquote: buildBlockquote,
+      list: buildList,
+      listItem: buildListItem,
+      table: buildTable,
+      tableRow: noop,
+      tableCell: noop,
+      html: buildHtml,
+      code: fallbackCode,
+      definition: noop,
+      footnoteDefinition: buildFootnoteDefinition,
+      text: buildText,
+      emphasis: buildEmphasis,
+      strong: buildStrong,
+      delete: buildDelete,
+      inlineCode: buildInlineCode,
+      break: buildBreak,
+      link: buildLink,
+      linkReference: buildLinkReference,
+      image: buildImage,
+      imageReference: buildImageReference,
+      footnoteReference: buildFootnoteReference,
+      math: buildMath,
+      inlineMath: buildInlineMath,
+    },
+  ];
 
   const renderNode = (
     node: mdast.RootContent,
     c: Context,
   ): DocxContent[] | null => {
-    const builder = builders[node.type];
-    if (!builder) {
-      warnOnce(`${node.type} node is not supported without plugins.`);
-      return null;
-    }
-    const r = builder(node as any, c);
-    if (r) {
-      if (Array.isArray(r)) {
-        return r;
-      } else {
-        return [r];
+    let supported = false;
+    for (const layer of layers) {
+      const builder = layer[node.type] as
+        NodeBuilder<mdast.RootContent["type"]> | undefined;
+      if (builder) {
+        supported = true;
+        const r = builder(node, c);
+        if (r) {
+          return Array.isArray(r) ? r : [r];
+        }
       }
+    }
+    if (!supported) {
+      warnOnce(`${node.type} node is not supported without plugins.`);
     }
     return null;
   };
 
-  let { WIDTH: pageWidth, HEIGHT: pageHeight } = sectionPageSizeDefaults;
-  if (size) {
-    if (size.width != null) {
-      pageWidth = size.width;
-    }
-    if (size.height != null) {
-      pageHeight = size.height;
-    }
-  }
-  let {
-    TOP: marginTop,
-    LEFT: marginLeft,
-    BOTTOM: marginBottom,
-    RIGHT: marginRight,
-  } = sectionMarginDefaults;
-  if (margin) {
-    if (margin.top != null) {
-      marginTop = margin.top;
-    }
-    if (margin.left != null) {
-      marginLeft = margin.left;
-    }
-    if (margin.bottom != null) {
-      marginBottom = margin.bottom;
-    }
-    if (margin.right != null) {
-      marginRight = margin.right;
-    }
-  }
+  const pageWidth = size?.width ?? sectionPageSizeDefaults.WIDTH;
+  const pageHeight = size?.height ?? sectionPageSizeDefaults.HEIGHT;
+  const marginTop = margin?.top ?? sectionMarginDefaults.TOP;
+  const marginLeft = margin?.left ?? sectionMarginDefaults.LEFT;
+  const marginBottom = margin?.bottom ?? sectionMarginDefaults.BOTTOM;
+  const marginRight = margin?.right ?? sectionMarginDefaults.RIGHT;
 
   // docx swaps width and height of landscape pages
-  const [bodyWidth, bodyHeight] =
-    orientation === "landscape"
-      ? [pageHeight, pageWidth]
-      : [pageWidth, pageHeight];
+  const bodyWidth = orientation === "landscape" ? pageHeight : pageWidth;
+  const bodyHeight = orientation === "landscape" ? pageWidth : pageHeight;
   const columnCount = columns || 1;
 
   const ctx: Context = {
@@ -673,10 +575,29 @@ export const mdastToDocx = async (
     rtl: direction === "rtl",
     definition: definition,
     images,
-    footnote,
-    orderedId: ordered.createId,
-    orderedStart: ordered.setStart,
+    footnote: {
+      id: (identifier) => {
+        let id = footnoteIds.get(identifier);
+        if (id == null) {
+          footnoteIds.set(identifier, (id = footnoteIds.size + 1));
+        }
+        return id;
+      },
+      set: (id, children) => {
+        footnotes[id] = { children };
+      },
+    },
+    orderedId: () => {
+      const id = `${ORDERED_LIST_REF}-${orderedStarts.size + 1}`;
+      orderedStarts.set(id, []);
+      return id;
+    },
+    orderedStart: (id, level, start) => {
+      // Nested lists at the same level share a numbering, so the first one wins.
+      orderedStarts.get(id)![level] ??= start;
+    },
     bookmarks,
+    inlineHtml,
   };
 
   const sections: DocxContent[][] = [[]];
@@ -812,7 +733,7 @@ export const mdastToDocx = async (
         properties: sectionProperties,
         children: s as FileChild[],
       })),
-    footnotes: footnote.toConfig(),
+    footnotes,
     numbering: {
       config: [
         {
@@ -826,7 +747,12 @@ export const mdastToDocx = async (
             { text: "\u25A0", format: "BULLET" },
           ]),
         },
-        ...ordered.toConfig(orderedLevels),
+        ...Array.from(orderedStarts, ([reference, starts]) => ({
+          reference,
+          levels: orderedLevels.map((l, i) =>
+            starts[i] != null ? { ...l, start: starts[i] } : l,
+          ),
+        })),
         {
           reference: COMPLETE_TASK_LIST_REF,
           levels: buildLevels([
@@ -964,19 +890,6 @@ const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
 };
 
 const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
-  const textAlign = align?.map((a): keyof typeof AlignmentType | undefined => {
-    switch (a) {
-      case "left":
-        return "LEFT";
-      case "right":
-        return "RIGHT";
-      case "center":
-        return "CENTER";
-      default:
-        return undefined;
-    }
-  });
-
   const columnLength = children[0]!.children.length;
   const columnWidth = ctx.width / columnLength;
 
@@ -986,12 +899,11 @@ const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
       return new TableRow({
         tableHeader: rowIndex === 0 || undefined,
         children: r.children.map((c, i) => {
-          const cellAlign = textAlign?.[i];
           return new TableCell({
             width: { size: columnWidth, type: "dxa" },
             children: [
               new Paragraph({
-                alignment: cellAlign ? AlignmentType[cellAlign] : undefined,
+                alignment: align?.[i] ?? undefined,
                 children: ctx.render(c.children, {
                   ...ctx,
                   width: columnWidth - TABLE_CELL_MARGIN * 2,
@@ -1154,9 +1066,8 @@ const buildImage: NodeBuilder<"image"> = (node, ctx) => {
 };
 
 const maxImageSize = (ctx: Context): { width: number; height: number } => {
-  const indent =
-    (ctx.quote != null ? quoteIndent(ctx.quote) + QUOTE_INDENT : 0) +
-    (ctx.list ? (calcIndent(ctx.list.level).left as number) : 0);
+  // The Quote style also indents the right
+  const indent = contentIndent(ctx) + (ctx.quote != null ? QUOTE_INDENT : 0);
   // twip to px
   return {
     width: ((ctx.width - indent) / 1440) * 96,
@@ -1203,23 +1114,19 @@ const parseLatex = (value: string): DocxMath | null => {
   }
 };
 
+const textLines = (value: string): TextRun[] => {
+  return value.split(/\r?\n/).map(
+    (line, index) =>
+      new TextRun({
+        text: line,
+        break: index === 0 ? undefined : 1,
+      }),
+  );
+};
+
 const buildMath: NodeBuilder<"math"> = ({ value }, ctx) => {
   const math = parseLatex(value);
-  if (!math) {
-    return docxParagraph(
-      {
-        children: value.split(/\r?\n/).map(
-          (line, index) =>
-            new TextRun({
-              text: line,
-              break: index === 0 ? undefined : 1,
-            }),
-        ),
-      },
-      ctx,
-    );
-  }
-  return docxParagraph({ children: [math] }, ctx);
+  return docxParagraph({ children: math ? [math] : textLines(value) }, ctx);
 };
 
 const buildInlineMath: NodeBuilder<"inlineMath"> = ({ value }, ctx) => {
@@ -1359,11 +1266,9 @@ const htmlOptions: HtmlOptions = {
   },
 };
 
-const buildHtml = (
-  { value }: mdast.Html,
-  ctx: Context,
-  inline: boolean,
-): DocxContent | DocxContent[] | null => {
+const buildHtml: NodeBuilder<"html"> = (node, ctx) => {
+  let { value } = node;
+  const inline = ctx.inlineHtml.has(node);
   // Apply the context of markdown to HTML
   const { style, rtl } = ctx;
   if (style.bold) value = `<b>${value}</b>`;
@@ -1395,21 +1300,7 @@ const noop = () => {
   return null;
 };
 
-const fallbackCode = (node: { type: string; value: string }, ctx: Context) => {
-  warnOnce(
-    `${node.type} node is not supported without plugins, falling back to text.`,
-  );
-  const children = node.value.split(/\r?\n/).map(
-    (line, index) =>
-      new TextRun({
-        text: line,
-        break: index === 0 ? undefined : 1,
-      }),
-  );
-  return docxParagraph(
-    {
-      children,
-    },
-    ctx,
-  );
+const fallbackCode: NodeBuilder<"code"> = ({ value }, ctx) => {
+  warnOnce(`code node is not supported without plugins, falling back to text.`);
+  return docxParagraph({ children: textLines(value) }, ctx);
 };
