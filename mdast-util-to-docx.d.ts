@@ -3,10 +3,6 @@ import { VFile } from 'vfile';
 import { ToPngFn } from './utils';
 import { RemarkDocxPlugin, ThematicBreakType } from './types';
 import type * as mdast from "mdast";
-type ListFormat = {
-    format: keyof typeof LevelFormat;
-    text: string;
-};
 type LoadFn = (url: string, file: VFile) => Promise<ArrayBuffer | Uint8Array>;
 export interface ImageOptions {
     /**
@@ -32,6 +28,10 @@ interface TocOptions {
      */
     depth?: 1 | 2 | 3 | 4 | 5 | 6;
 }
+type ListFormat = {
+    format: keyof typeof LevelFormat;
+    text: string;
+};
 export interface DocxOptions extends Pick<IPropertiesOptions, "title" | "subject" | "creator" | "keywords" | "description" | "styles" | "background"> {
     /**
      * Page size defined in twip (1 twip == 1/1440 inch).
