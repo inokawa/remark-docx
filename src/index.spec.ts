@@ -315,6 +315,14 @@ describe("e2e", () => {
     });
   });
 
+  it("image in html", async () => {
+    const doc = await processor({
+      image: { load: dummyImage },
+    }).process(`<img src="foo.png">`);
+    const xml = new Zip(Buffer.from(doc.value)).readAsText("word/document.xml");
+    expect(xml).toContain("<a:blip ");
+  });
+
   it("image loaded as Uint8Array", async () => {
     const img = await fs.readFile(path.join(fixturesDir, "images/img.png"));
     // A view with other bytes around, like Node.js Buffer in a shared pool
