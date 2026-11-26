@@ -6,7 +6,7 @@
 
 > **codeToImagePlugin**(`__namedParameters`): [`RemarkDocxPlugin`](../../../index/type-aliases/RemarkDocxPlugin.md)
 
-Defined in: [src/plugins/code-to-image/index.ts:35](https://github.com/inokawa/remark-docx/blob/5c16511c356dbeca44eade6652cad52ca3117d4c/src/plugins/code-to-image/index.ts#L35)
+Defined in: [src/plugins/code-to-image/index.ts:25](https://github.com/inokawa/remark-docx/blob/04cd4532e52c156d348ed47710f3607801c67aa5/src/plugins/code-to-image/index.ts#L25)
 
 A plugin to render "code" nodes as images, such as diagrams and charts written in their own languages.
 
