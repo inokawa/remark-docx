@@ -14,9 +14,10 @@ export type DocxContent = Paragraph | Table | TableOfContents | ParagraphChild;
 
 type KnownNodeType = mdast.RootContent["type"];
 
-type MdastNode<T extends string> = T extends KnownNodeType
-  ? Extract<mdast.RootContent, { type: T }>
-  : unknown;
+type MdastNode<T extends KnownNodeType> = Extract<
+  mdast.RootContent,
+  { type: T }
+>;
 
 export type DocxImageData = Readonly<
   {
@@ -62,9 +63,6 @@ export type ListContext = Readonly<{
 export type FootnoteRegistry = {
   id: (id: string) => number;
   set: (id: number, children: Paragraph[]) => void;
-  toConfig: () => {
-    [key: string]: { children: Paragraph[] };
-  };
 };
 
 export type ThematicBreakType = "page" | "section" | "line";
@@ -84,9 +82,10 @@ export type Context = Readonly<{
   orderedId: () => string;
   orderedStart: (id: string, level: number, start: number) => void;
   bookmarks: ReadonlyMap<mdast.Heading | string, string>;
+  inlineHtml: ReadonlySet<mdast.Html>;
 }>;
 
-export type NodeBuilder<T extends string> = (
+export type NodeBuilder<T extends KnownNodeType> = (
   node: MdastNode<T>,
   ctx: Context,
 ) => DocxContent | DocxContent[] | null;
@@ -99,6 +98,5 @@ export type RemarkDocxPlugin = (
   ctx: Readonly<{
     root: mdast.Root;
     images: Map<string, DocxImageData | null>;
-    definition: GetDefinition;
   }>,
 ) => Promise<NodeBuilders>;
