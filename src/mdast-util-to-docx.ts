@@ -58,6 +58,7 @@ const INCOMPLETE_TASK_LIST_REF = "task-incomplete";
 const HYPERLINK_STYLE_ID = "Hyperlink";
 const TOC_HEADING_STYLE_ID = "TOCHeading";
 const QUOTE_STYLE_ID = "Quote";
+const FOOTNOTE_TEXT_STYLE_ID = "FootnoteText";
 
 const COLUMN_SPACE = 720;
 const TABLE_CELL_MARGIN = 108;
@@ -268,8 +269,10 @@ const numberingLevels = (formats: readonly ListFormat[]): ILevelsOptions[] => {
 };
 
 const docxParagraph = (options: IParagraphOptions, ctx: Context): Paragraph => {
-  const { quote, list, rtl } = ctx;
-  const { left } = textIndent(quote, list);
+  const { quote, list, rtl, inFootnote } = ctx;
+  const { left, right } = textIndent(quote, list);
+  // Footnotes keep their text style in blockquotes, so indent them directly instead of the Quote style
+  const quoteStyle = quote != null && !options.heading && !inFootnote;
   let indent: IParagraphOptions["indent"];
   let numbering: IParagraphOptions["numbering"];
   if (list) {
@@ -292,14 +295,20 @@ const docxParagraph = (options: IParagraphOptions, ctx: Context): Paragraph => {
         level,
       };
     }
-  } else if (quote != null && (options.heading || quote > 0)) {
+  } else if (quote != null && (!quoteStyle || quote > 0)) {
     // The Quote style indents the outermost blockquote
     indent = { left };
+  }
+  if (quote != null && !quoteStyle) {
+    indent = { ...indent, right };
   }
 
   return new Paragraph({
     ...options,
-    style: quote != null && !options.heading ? QUOTE_STYLE_ID : options.style,
+    style: quoteStyle
+      ? QUOTE_STYLE_ID
+      : (options.style ??
+        (inFootnote && !options.heading ? FOOTNOTE_TEXT_STYLE_ID : undefined)),
     indent,
     numbering,
     bidirectional: rtl || undefined,
@@ -674,7 +683,9 @@ const buildFootnoteDefinition: NodeBuilder<"footnoteDefinition"> = (
   { children, identifier },
   ctx,
 ) => {
-  const contents = ctx.render(children).filter((c) => c instanceof Paragraph);
+  const contents = ctx
+    .render(children, { ...ctx, inFootnote: true })
+    .filter((c) => c instanceof Paragraph);
   ctx.footnote.set(ctx.footnote.id(identifier), contents);
   return null;
 };

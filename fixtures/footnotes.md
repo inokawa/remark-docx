@@ -57,4 +57,8 @@ This is a **bold text[^bold]** and _italic[^italic]_.
     }
     ```
 
+    > Blockquote in a footnote.
+    >
+    > > Nested blockquote in a footnote.
+
     Add as many paragraphs as you like.
