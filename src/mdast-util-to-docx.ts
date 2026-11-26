@@ -200,6 +200,15 @@ const maxImageSize = (ctx: Context): { width: number; height: number } => {
   };
 };
 
+const imageTransformation = (
+  image: DocxImageData,
+  ctx: Context,
+): { width: number; height: number } => {
+  const max = maxImageSize(ctx);
+  const scale = Math.min(1, max.width / image.width, max.height / image.height);
+  return { width: image.width * scale, height: image.height * scale };
+};
+
 const numberingLevels = (formats: readonly ListFormat[]): ILevelsOptions[] => {
   return formats.map(({ format, text }, i) => {
     return {
@@ -414,124 +423,163 @@ const FLOW_PARENTS = new Set<mdast.Parents["type"]>([
   "footnoteDefinition",
 ]);
 
-// https://html.spec.whatwg.org/multipage/syntax.html#void-elements
-const VOID_ELEMENTS = new Set([
-  "area",
-  "base",
-  "br",
-  "col",
-  "embed",
-  "hr",
-  "img",
-  "input",
+const escapeHtml = (value: string): string =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+
+// Nodes that toHtml can convert
+const HTML_PHRASING = new Set<string>([
+  "html",
+  "text",
+  "break",
+  "strong",
+  "emphasis",
+  "delete",
+  "inlineCode",
   "link",
-  "meta",
-  "source",
-  "track",
-  "wbr",
+  "linkReference",
+  "image",
+  "imageReference",
+  "inlineMath",
 ]);
 
-/**
- * Returns the tag name if the value is an opening or closing tag of non-void element.
- * The syntax of inline html is already validated by markdown parser, so only tag name is needed.
- * "/>" is ignored like browsers.
- */
-const parseTag = (value: string): { name: string; closing: boolean } | null => {
-  const match = /^<(\/?)([a-zA-Z][a-zA-Z0-9-]*)/.exec(value);
-  if (!match) {
-    return null;
-  }
-  const name = match[2]!.toLowerCase();
-  return VOID_ELEMENTS.has(name) ? null : { name, closing: !!match[1] };
-};
+const isHtmlPhrasing = (node: mdast.RootContent): boolean =>
+  HTML_PHRASING.has(node.type) &&
+  (!("children" in node) || node.children.every(isHtmlPhrasing));
 
 /**
- * In markdown, inline raw HTML is split into a node per tag, so join an element back into one node.
- * According to CommonMark, each inline html node is a single tag, comment, etc.
+ * In markdown, inline raw HTML is split into a node per tag, with markdown parsed between them.
  * https://spec.commonmark.org/0.31.2/#raw-html
+ * So join nodes around it into one node, to let docx.js parse them as HTML like browsers.
  */
 const joinInlineHtml = (
   nodes: readonly mdast.RootContent[],
+  joined: Map<mdast.Html, readonly mdast.RootContent[]>,
 ): mdast.RootContent[] => {
   const results: mdast.RootContent[] = [];
-  for (let i = 0; i < nodes.length; i++) {
-    const node = nodes[i]!;
-    if (node.type !== "html") {
-      results.push(node);
-      continue;
-    }
-    if (/^<br[\s/>]/i.test(node.value)) {
-      // docx.js trims <br> at the edges of HTML, so keep it outside
-      results.push({ type: "break" });
-      continue;
-    }
-    const first = parseTag(node.value);
-    if (!first || first.closing) {
-      results.push(node);
-      continue;
-    }
-
-    const stack = [first.name];
-    let html = node.value;
-    let head: mdast.RootContent | undefined;
-    let tail: mdast.RootContent | undefined;
-    let j = i + 1;
-    for (; j < nodes.length && stack.length; j++) {
-      const n = nodes[j]!;
-      if (n.type === "html") {
-        html += n.value;
-        const tag = parseTag(n.value);
-        if (tag && !tag.closing) {
-          stack.push(tag.name);
-          continue;
-        }
-        if (tag) {
-          const index = stack.lastIndexOf(tag.name);
-          if (index !== -1) {
-            stack.length = index;
-          }
-          continue;
-        }
-      } else if (n.type === "text") {
-        html += n.value
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;");
-      } else if (n.type === "break") {
-        html += "<br>";
-      } else {
-        // contains nodes that can't be stringified to HTML
-        break;
+  let run: mdast.RootContent[] = [];
+  const flush = () => {
+    // docx.js trims whitespaces at the edges and line breaks at the end of HTML like browsers, so keep them outside
+    let end = run.length;
+    while (end && run[end - 1]!.type === "break") end--;
+    const content = run.slice(0, end);
+    if (content.some((n) => n.type === "html")) {
+      const head = content[0]!;
+      const tail = content[content.length - 1]!;
+      if (head.type === "text" && /^\s/.test(head.value)) {
+        results.push({ type: "text", value: " " });
       }
-      head ??= n;
-      tail = n;
-    }
-    if (stack.length) {
+      const node: mdast.Html = { type: "html", value: "" };
+      joined.set(node, content);
       results.push(node);
-      continue;
+      if (tail.type === "text" && /\s$/.test(tail.value)) {
+        results.push({ type: "text", value: " " });
+      }
+      results.push(...run.slice(end));
+    } else {
+      results.push(...run);
     }
-
-    // docx.js trims whitespaces at the edges of HTML like browsers, so keep them outside
-    const space: mdast.Text = { type: "text", value: " " };
-    if (head?.type === "text" && /^\s/.test(head.value)) {
-      results.push(space);
+    run = [];
+  };
+  for (const n of nodes) {
+    if (isHtmlPhrasing(n)) {
+      run.push(
+        n.type === "html" && /^<br[\s/>]/i.test(n.value)
+          ? { type: "break" }
+          : n,
+      );
+    } else {
+      flush();
+      results.push(n);
     }
-    results.push({ type: "html", value: html });
-    if (tail?.type === "text" && /\s$/.test(tail.value)) {
-      results.push(space);
-    }
-    i = j - 1;
   }
+  flush();
   return results;
 };
 
 const HTML_LINK_CLASS = "remark-docx-link";
 
+/**
+ * Converts markdown to HTML that docx.js renders like the default builders.
+ */
+const toHtml = (node: mdast.RootContent, ctx: Context): string => {
+  const children = () =>
+    "children" in node ? node.children.map((c) => toHtml(c, ctx)).join("") : "";
+  switch (node.type) {
+    case "html":
+      // Hyperlinks can't be nested
+      return ctx.style.link
+        ? node.value.replace(/^<(\/?)a(?=[\s/>])/i, "<$1span")
+        : node.value;
+    case "text":
+      return escapeHtml(node.value);
+    case "break":
+      return "<br>";
+    case "strong":
+      return `<b>${children()}</b>`;
+    case "emphasis":
+      return `<i>${children()}</i>`;
+    case "delete":
+      return `<s>${children()}</s>`;
+    case "inlineCode":
+      // Converted to lightGray highlight by docx.js
+      return `<span style="background-color:#c0c0c0">${escapeHtml(node.value)}</span>`;
+    case "link": {
+      let href: string | undefined = node.url;
+      if (href.startsWith("#")) {
+        const anchor = ctx.bookmarks.get(href);
+        href = anchor && (anchor === "_top" ? "#" : `#${anchor}`);
+      }
+      return href
+        ? `<a href="${escapeHtml(href)}">${children()}</a>`
+        : children();
+    }
+    case "linkReference": {
+      const def = ctx.definition(node.identifier);
+      return def
+        ? toHtml({ type: "link", url: def.url, children: node.children }, ctx)
+        : children();
+    }
+    case "image": {
+      const image = ctx.images.get(node.url);
+      if (!image) {
+        return escapeHtml(node.alt ?? "");
+      }
+      const { width, height } = imageTransformation(image, ctx);
+      return (
+        `<img src="${escapeHtml(node.url)}" width="${width}" height="${height}"` +
+        ` alt="${escapeHtml(node.alt ?? "")}" title="${escapeHtml(node.title ?? "")}">`
+      );
+    }
+    case "imageReference": {
+      const def = ctx.definition(node.identifier);
+      return def
+        ? toHtml(
+            { type: "image", url: def.url, alt: node.alt, title: def.title },
+            ctx,
+          )
+        : "";
+    }
+    case "inlineMath":
+      // docx.js reads LaTeX in MathML annotation like KaTeX's output
+      return docxMath(node.value)
+        ? `<math><annotation encoding="application/x-tex">${escapeHtml(node.value)}</annotation></math>`
+        : escapeHtml(node.value);
+  }
+  return "";
+};
+
 const buildHtml: NodeBuilder<"html"> = (node, ctx) => {
-  const inline = ctx.inlineHtml.has(node);
+  const element = ctx.inlineHtml.get(node);
+  const inline = !!element;
   // Apply the context of markdown to HTML
   const { style, rtl } = ctx;
-  let { value } = node;
+  let value = element
+    ? element.map((n) => toHtml(n, ctx)).join("")
+    : node.value;
   if (style.bold) value = `<b>${value}</b>`;
   if (style.italic) value = `<i>${value}</i>`;
   if (style.strike) value = `<s>${value}</s>`;
@@ -670,12 +718,7 @@ const buildImage: NodeBuilder<"image"> = (node, ctx) => {
     return node.alt ? buildText({ type: "text", value: node.alt }, ctx) : null;
   }
 
-  const max = maxImageSize(ctx);
-  const scale = Math.min(1, max.width / image.width, max.height / image.height);
-  const transformation = {
-    width: image.width * scale,
-    height: image.height * scale,
-  };
+  const transformation = imageTransformation(image, ctx);
   const altText =
     node.alt || node.title
       ? {
@@ -884,7 +927,7 @@ export const mdastToDocx = async (
   const fragments = new Map<string, string>();
   let hasBlockquote = false;
   const imageUrls = new Set<string>();
-  const inlineHtml = new Set<mdast.Html>();
+  const inlineHtml = new Map<mdast.Html, readonly mdast.RootContent[]>();
   // Children with inline html joined, keyed by the original children
   const joinedChildren = new WeakMap<
     readonly mdast.RootContent[],
@@ -928,7 +971,7 @@ export const mdastToDocx = async (
       }
       case "html":
         if (image) {
-          // Collect <img> sources as docx.js reads them. Data URLs are embedded by docx.js itself.
+          // Collect <img> sources as docx.js reads them
           htmlToRuns(n.value, {
             images: (source) => {
               imageUrls.add(source);
@@ -944,13 +987,7 @@ export const mdastToDocx = async (
       !FLOW_PARENTS.has(n.type) &&
       n.children.some((c) => c.type === "html")
     ) {
-      const joined = joinInlineHtml(n.children);
-      for (const c of joined) {
-        if (c.type === "html") {
-          inlineHtml.add(c);
-        }
-      }
-      joinedChildren.set(n.children, joined);
+      joinedChildren.set(n.children, joinInlineHtml(n.children, inlineHtml));
     }
   });
 

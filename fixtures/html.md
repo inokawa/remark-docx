@@ -30,6 +30,8 @@ Unclosed <b>tag and stray </i> tag.
 
 Mixed <b>with **markdown**</b> content.
 
+<span style="color:red">Colored **strong** and `code`</span>, <u>*underlined* [link](#html)</u> and x<sup>[1](#html)</sup>.
+
 > <div>quoted html</div>
 
 - <div>listed html</div>
