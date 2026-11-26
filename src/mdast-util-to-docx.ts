@@ -19,12 +19,10 @@ import {
   type IPropertiesOptions,
   sectionPageSizeDefaults,
   sectionMarginDefaults,
-  type IRunOptions,
   type IParagraphOptions,
   PageBreak,
   type ISectionPropertiesOptions,
   type IStylesOptions,
-  type ITableOptions,
   ImageRun,
   type FileChild,
   type ParagraphChild,
@@ -51,7 +49,6 @@ import type {
   NodeBuilders,
   RemarkDocxPlugin,
   ThematicBreakType,
-  Writeable,
 } from "./types";
 
 const BULLET_LIST_REF = "bullet";
@@ -64,100 +61,10 @@ const QUOTE_STYLE_ID = "Quote";
 
 const COLUMN_SPACE = 720;
 const TABLE_CELL_MARGIN = 108;
-
 const INDENT_UNIT = 10 * 40;
-
-const calcIndent = (i: number): { hanging: number; left: number } => {
-  return { hanging: INDENT_UNIT, left: INDENT_UNIT * (i + 1) };
-};
-
 const QUOTE_INDENT = 720;
-const quoteIndent = (depth: number): number => QUOTE_INDENT * (depth + 1);
-
-const contentIndent = ({ quote, list }: Context): number =>
-  (quote != null ? quoteIndent(quote) : 0) +
-  (list ? calcIndent(list.level).left : 0);
-
-type ListFormat = {
-  format: keyof typeof LevelFormat;
-  text: string;
-};
-
-const buildLevels = (formats: readonly ListFormat[]): ILevelsOptions[] => {
-  return formats.map(({ format, text }, i) => {
-    return {
-      level: i,
-      format: LevelFormat[format],
-      text: text,
-      alignment: AlignmentType.LEFT,
-      style: {
-        paragraph: {
-          indent: calcIndent(i),
-        },
-      },
-    };
-  });
-};
-
-const docxParagraph = (
-  options: Writeable<IParagraphOptions>,
-  ctx: Context,
-): Paragraph => {
-  if (ctx.quote != null) {
-    if (!options.heading) {
-      options.style = QUOTE_STYLE_ID;
-    }
-    // The style indents the outermost blockquote
-    if (options.heading || ctx.quote > 0) {
-      options.indent = { left: quoteIndent(ctx.quote) };
-    }
-  }
-
-  if (ctx.list) {
-    const { level, meta, continuation } = ctx.list;
-    const indent = calcIndent(level);
-    const left = contentIndent(ctx);
-    if (ctx.quote != null) {
-      options.indent = { ...indent, left };
-    }
-    if (continuation) {
-      options.indent = { left };
-    } else if (meta.type === "task") {
-      options.numbering = {
-        reference: meta.checked
-          ? COMPLETE_TASK_LIST_REF
-          : INCOMPLETE_TASK_LIST_REF,
-        level,
-      };
-    } else if (meta.type === "ordered") {
-      options.numbering = {
-        reference: meta.reference,
-        level,
-      };
-    } else {
-      options.numbering = {
-        reference: BULLET_LIST_REF,
-        level,
-      };
-    }
-  }
-
-  if (ctx.rtl) {
-    options.bidirectional = true;
-  }
-
-  return new Paragraph(options);
-};
 
 type LoadFn = (url: string, file: VFile) => Promise<ArrayBuffer | Uint8Array>;
-
-const loadWithFetch: LoadFn = async (url) => {
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`${res.status} ${res.statusText}`);
-  }
-  return res.arrayBuffer();
-};
 
 export interface ImageOptions {
   /**
@@ -177,6 +84,681 @@ export interface ImageOptions {
  * @internal
  */
 export type ImageCache = Map<string, DocxImageData>;
+
+interface TocOptions {
+  /**
+   * Title of the table of contents.
+   */
+  title?: string;
+  /**
+   * Max depth of headings listed in the table of contents.
+   * @default 3
+   */
+  depth?: 1 | 2 | 3 | 4 | 5 | 6;
+}
+
+type ListFormat = {
+  format: keyof typeof LevelFormat;
+  text: string;
+};
+
+export interface DocxOptions extends Pick<
+  IPropertiesOptions,
+  | "title"
+  | "subject"
+  | "creator"
+  | "keywords"
+  | "description"
+  | "styles"
+  | "background"
+> {
+  /**
+   * Page size defined in twip (1 twip == 1/1440 inch).
+   * @default A4 ({@link sectionPageSizeDefaults})
+   */
+  size?: { width?: number; height?: number };
+  /**
+   * Page margin defined in twip (1 twip == 1/1440 inch).
+   * @default 1 inch ({@link sectionMarginDefaults})
+   */
+  margin?: { top?: number; left?: number; bottom?: number; right?: number };
+  /**
+   * Page orientation.
+   * @default "portrait"
+   */
+  orientation?: "portrait" | "landscape";
+  /**
+   * Number of page columns.
+   * @default 1
+   */
+  columns?: number;
+  /**
+   * Spacing after Paragraphs in twip (1 twip == 1/1440 inch).
+   * @default 0
+   */
+  spacing?: number;
+  /**
+   * Direction of texts.
+   * @default "ltr"
+   */
+  direction?: "ltr" | "rtl" | "vertical";
+  /**
+   * An option to override the text format of ordered list.
+   * See https://docx.js.org/#/usage/numbering?id=level-options for more details.
+   */
+  orderedListFormat?: ListFormat[];
+  /**
+   * An option to select how thematicBreak works.
+   *
+   * - "page": Page Break
+   * - "section": Section Break
+   * - "line": Horizontal line
+   * @default "page"
+   */
+  thematicBreak?: ThematicBreakType;
+  /**
+   * Insert a table of contents generated from headings at the beginning of the document.
+   * Word asks to update fields on open to fill in its page numbers.
+   */
+  toc?: boolean | TocOptions;
+  /** Show the current page number in a centered footer. */
+  pageNumbers?: boolean;
+  /**
+   * Embed images of `image` / `imageReference` nodes. `png`, `jpg`, `gif`, `bmp` and `svg` are supported.
+   * Images are not embedded if not set.
+   */
+  image?: boolean | ImageOptions;
+  /**
+   * Plugins to customize how mdast nodes are compiled.
+   */
+  plugins?: RemarkDocxPlugin[];
+}
+
+const calcIndent = (i: number): { hanging: number; left: number } => {
+  return { hanging: INDENT_UNIT, left: INDENT_UNIT * (i + 1) };
+};
+
+const quoteIndent = (depth: number): number => QUOTE_INDENT * (depth + 1);
+
+const contentIndent = ({ quote, list }: Context): number =>
+  (quote != null ? quoteIndent(quote) : 0) +
+  (list ? calcIndent(list.level).left : 0);
+
+const maxImageSize = (ctx: Context): { width: number; height: number } => {
+  // The Quote style also indents the right
+  const indent = contentIndent(ctx) + (ctx.quote != null ? QUOTE_INDENT : 0);
+  // twip to px
+  return {
+    width: ((ctx.width - indent) / 1440) * 96,
+    height: (ctx.height / 1440) * 96,
+  };
+};
+
+const buildLevels = (formats: readonly ListFormat[]): ILevelsOptions[] => {
+  return formats.map(({ format, text }, i) => {
+    return {
+      level: i,
+      format: LevelFormat[format],
+      text: text,
+      alignment: AlignmentType.LEFT,
+      style: {
+        paragraph: {
+          indent: calcIndent(i),
+        },
+      },
+    };
+  });
+};
+
+const numberingReference = (meta: ListContext["meta"]): string => {
+  switch (meta.type) {
+    case "task":
+      return meta.checked ? COMPLETE_TASK_LIST_REF : INCOMPLETE_TASK_LIST_REF;
+    case "ordered":
+      return meta.reference;
+    case "bullet":
+      return BULLET_LIST_REF;
+  }
+};
+
+const paragraphIndent = (
+  { heading }: IParagraphOptions,
+  ctx: Context,
+): IParagraphOptions["indent"] => {
+  const { quote, list } = ctx;
+  const left = contentIndent(ctx);
+  if (list) {
+    if (list.continuation) {
+      return { left };
+    }
+    return quote != null ? { ...calcIndent(list.level), left } : undefined;
+  }
+  // The Quote style indents the outermost blockquote
+  return quote != null && (heading || quote > 0) ? { left } : undefined;
+};
+
+const docxParagraph = (options: IParagraphOptions, ctx: Context): Paragraph => {
+  const { quote, list, rtl } = ctx;
+  return new Paragraph({
+    ...options,
+    style: quote != null && !options.heading ? QUOTE_STYLE_ID : options.style,
+    indent: paragraphIndent(options, ctx),
+    numbering:
+      list && !list.continuation
+        ? { reference: numberingReference(list.meta), level: list.level }
+        : undefined,
+    bidirectional: rtl || undefined,
+  });
+};
+
+const pageBreak = (): Paragraph =>
+  new Paragraph({ children: [new PageBreak()] });
+
+const textLines = (value: string): TextRun[] => {
+  return value.split(/\r?\n/).map(
+    (line, index) =>
+      new TextRun({
+        text: line,
+        break: index === 0 ? undefined : 1,
+      }),
+  );
+};
+
+const parseLatex = (value: string): DocxMath | null => {
+  try {
+    return new DocxMath({ children: latexToMath(value) });
+  } catch (e) {
+    warnOnce(
+      `Failed to convert LaTeX to a Word equation, falling back to text.\n` +
+        (e instanceof Error ? e.message : String(e)),
+    );
+    return null;
+  }
+};
+
+const noop = () => {
+  return null;
+};
+
+const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
+  return docxParagraph(
+    {
+      children: ctx.render(children) as ParagraphChild[],
+      // Later blocks of an item in tight lists aren't paragraphs of the item itself (e.g. in blockquotes)
+      contextualSpacing:
+        (ctx.list?.tight && !ctx.list.continuation) || undefined,
+    },
+    ctx,
+  );
+};
+
+const buildHeading: NodeBuilder<"heading"> = (node, ctx) => {
+  const id = ctx.bookmarks.get(node);
+  const children = ctx.render(node.children) as ParagraphChild[];
+  return docxParagraph(
+    {
+      heading: HeadingLevel[`HEADING_${node.depth}`],
+      children: id ? [new Bookmark({ id, children })] : children,
+    },
+    ctx,
+  );
+};
+
+const buildThematicBreak: NodeBuilder<"thematicBreak"> = (_, ctx) => {
+  switch (ctx.thematicBreak) {
+    case "page":
+      return pageBreak();
+    case "section":
+      // Returning empty array at toplevel means section insertion.
+      return [];
+    case "line":
+      return new Paragraph({ thematicBreak: true });
+  }
+};
+
+const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
+  return ctx.render(children, {
+    ...ctx,
+    quote: ctx.quote == null ? 0 : ctx.quote + 1,
+  });
+};
+
+const buildList: NodeBuilder<"list"> = (
+  { children, ordered, start, spread },
+  ctx,
+) => {
+  const parentList = ctx.list;
+  const level = parentList ? parentList.level + 1 : 0;
+
+  let meta: ListContext["meta"] = { type: "bullet" };
+  if (ordered) {
+    const reference =
+      parentList?.meta.type === "ordered"
+        ? parentList.meta.reference
+        : ctx.orderedId();
+    if (start != null) {
+      ctx.orderedStart(reference, level, start);
+    }
+    meta = { type: "ordered", reference };
+  }
+
+  return ctx.render(children, {
+    ...ctx,
+    list: {
+      level,
+      meta,
+      // https://spec.commonmark.org/0.31.2/#loose
+      tight: !spread && !children.some((c) => c.spread),
+    },
+  });
+};
+
+const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
+  let list = ctx.list;
+  // listItem must be the child of list
+  if (list && checked != null) {
+    list = { ...list, meta: { type: "task", checked } };
+  }
+  return children.flatMap((child, i) =>
+    ctx.render([child], {
+      ...ctx,
+      list: list && i > 0 ? { ...list, continuation: true } : list,
+    }),
+  );
+};
+
+const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
+  const columnLength = children[0]!.children.length;
+  const columnWidth = ctx.width / columnLength;
+  const cellCtx: Context = {
+    ...ctx,
+    width: columnWidth - TABLE_CELL_MARGIN * 2,
+    quote: undefined,
+    list: undefined,
+    // https://github.com/dolanmiu/docx/blob/master/demo/22-right-to-left-text.ts
+    rtl: undefined,
+  };
+
+  return new Table({
+    columnWidths: Array.from({ length: columnLength }, () => columnWidth),
+    rows: children.map(
+      (row, rowIndex) =>
+        new TableRow({
+          tableHeader: rowIndex === 0 || undefined,
+          children: row.children.map(
+            (cell, i) =>
+              new TableCell({
+                width: { size: columnWidth, type: "dxa" },
+                children: [
+                  new Paragraph({
+                    alignment: align?.[i] ?? undefined,
+                    children: ctx.render(
+                      cell.children,
+                      cellCtx,
+                    ) as ParagraphChild[],
+                  }),
+                ],
+              }),
+          ),
+        }),
+    ),
+    visuallyRightToLeft: ctx.rtl || undefined,
+  });
+};
+
+const HTML_LINK_CLASS = "remark-docx-link";
+
+const htmlOptions: HtmlOptions = {
+  styleMap: {
+    [`.${HTML_LINK_CLASS}`]: HYPERLINK_STYLE_ID,
+  },
+  onWarning: ({ message }) => {
+    warnOnce(
+      `Failed to convert some HTML to Word as is, leaving it out or changing it.\n` +
+        message,
+    );
+  },
+};
+
+const buildHtml: NodeBuilder<"html"> = (node, ctx) => {
+  const inline = ctx.inlineHtml.has(node);
+  // Apply the context of markdown to HTML
+  const { style, rtl } = ctx;
+  let { value } = node;
+  if (style.bold) value = `<b>${value}</b>`;
+  if (style.italic) value = `<i>${value}</i>`;
+  if (style.strike) value = `<s>${value}</s>`;
+  if (style.link) value = `<span class="${HTML_LINK_CLASS}">${value}</span>`;
+  if (rtl) value = `<div dir="rtl">${value}</div>`;
+
+  // Paragraphs from docx.js can't be indented or numbered afterwards, so wrap runs with a paragraph instead.
+  const paragraph = !inline && (ctx.quote != null || !!ctx.list);
+  const options: HtmlOptions = {
+    ...htmlOptions,
+    maxImageWidth: maxImageSize(ctx).width,
+  };
+  const results =
+    inline || paragraph
+      ? htmlToRuns(value, options)
+      : htmlToContent(value, options);
+  if (!results.length) {
+    // Returning an empty array at root means a section break, so return null instead.
+    return null;
+  }
+  return paragraph
+    ? docxParagraph({ children: results as readonly ParagraphChild[] }, ctx)
+    : (results as DocxContent[]);
+};
+
+const buildCode: NodeBuilder<"code"> = ({ value }, ctx) => {
+  warnOnce(`code node is not supported without plugins, falling back to text.`);
+  return docxParagraph({ children: textLines(value) }, ctx);
+};
+
+const buildMath: NodeBuilder<"math"> = ({ value }, ctx) => {
+  const math = parseLatex(value);
+  return docxParagraph({ children: math ? [math] : textLines(value) }, ctx);
+};
+
+const buildFootnoteDefinition: NodeBuilder<"footnoteDefinition"> = (
+  { children, identifier },
+  ctx,
+) => {
+  const contents = ctx.render(children).filter((c) => c instanceof Paragraph);
+  ctx.footnote.set(ctx.footnote.id(identifier), contents);
+  return null;
+};
+
+const buildText: NodeBuilder<"text"> = ({ value }, { style, rtl }) => {
+  return new TextRun({
+    text: value,
+    bold: style.bold,
+    italics: style.italic,
+    strike: style.strike,
+    highlight: style.inlineCode ? "lightGray" : undefined,
+    // https://docx.js.org/#/usage/hyperlinks?id=styling-hyperlinks
+    style: style.link ? HYPERLINK_STYLE_ID : undefined,
+    rightToLeft: rtl || undefined,
+  });
+};
+
+const buildEmphasis: NodeBuilder<"emphasis"> = ({ children }, ctx) => {
+  return ctx.render(children, {
+    ...ctx,
+    style: { ...ctx.style, italic: true },
+  });
+};
+
+const buildStrong: NodeBuilder<"strong"> = ({ children }, ctx) => {
+  return ctx.render(children, {
+    ...ctx,
+    style: { ...ctx.style, bold: true },
+  });
+};
+
+const buildDelete: NodeBuilder<"delete"> = ({ children }, ctx) => {
+  return ctx.render(children, {
+    ...ctx,
+    style: { ...ctx.style, strike: true },
+  });
+};
+
+const buildInlineCode: NodeBuilder<"inlineCode"> = ({ value }, ctx) => {
+  return buildText(
+    { type: "text", value },
+    { ...ctx, style: { ...ctx.style, inlineCode: true } },
+  );
+};
+
+const buildBreak: NodeBuilder<"break"> = () => {
+  return new TextRun({ text: "", break: 1 });
+};
+
+const buildLink: NodeBuilder<"link"> = ({ children, url }, ctx) => {
+  const linkCtx: Context = { ...ctx, style: { ...ctx.style, link: true } };
+  if (!url.startsWith("#")) {
+    return new ExternalHyperlink({
+      link: url,
+      children: ctx.render(children, linkCtx) as ParagraphChild[],
+    });
+  }
+  const anchor = ctx.bookmarks.get(url);
+  if (!anchor) {
+    return ctx.render(children);
+  }
+  return new InternalHyperlink({
+    anchor,
+    children: ctx.render(children, linkCtx) as ParagraphChild[],
+  });
+};
+
+const buildLinkReference: NodeBuilder<"linkReference"> = (
+  { children, identifier },
+  ctx,
+) => {
+  const def = ctx.definition(identifier);
+  if (def == null) {
+    return ctx.render(children);
+  }
+  return buildLink({ type: "link", children, url: def.url }, ctx);
+};
+
+const buildImage: NodeBuilder<"image"> = (node, ctx) => {
+  const image = ctx.images.get(node.url);
+  if (!image) {
+    // Keep the description of the image if it can't be embedded
+    return node.alt ? buildText({ type: "text", value: node.alt }, ctx) : null;
+  }
+
+  const max = maxImageSize(ctx);
+  const scale = Math.min(1, max.width / image.width, max.height / image.height);
+  const transformation = {
+    width: image.width * scale,
+    height: image.height * scale,
+  };
+  const altText =
+    node.alt || node.title
+      ? {
+          name: "",
+          description: node.alt ?? undefined,
+          title: node.title ?? undefined,
+        }
+      : undefined;
+
+  if (image.type === "svg") {
+    return new ImageRun({
+      type: image.type,
+      data: image.data,
+      transformation,
+      // https://github.com/dolanmiu/docx/issues/1162#issuecomment-3228368003
+      fallback: { type: "png", data: image.fallback },
+      altText,
+    });
+  }
+  return new ImageRun({
+    type: image.type,
+    data: image.data,
+    transformation,
+    altText,
+  });
+};
+
+const buildImageReference: NodeBuilder<"imageReference"> = (node, ctx) => {
+  const def = ctx.definition(node.identifier);
+  if (def == null) {
+    return null;
+  }
+  return buildImage(
+    { type: "image", url: def.url, alt: node.alt, title: def.title },
+    ctx,
+  );
+};
+
+const buildFootnoteReference: NodeBuilder<"footnoteReference"> = (
+  { identifier },
+  ctx,
+) => {
+  return new FootnoteReferenceRun(ctx.footnote.id(identifier));
+};
+
+const buildInlineMath: NodeBuilder<"inlineMath"> = ({ value }, ctx) => {
+  return parseLatex(value) ?? buildText({ type: "text", value }, ctx);
+};
+
+const defaultBuilders: NodeBuilders = {
+  paragraph: buildParagraph,
+  heading: buildHeading,
+  thematicBreak: buildThematicBreak,
+  blockquote: buildBlockquote,
+  list: buildList,
+  listItem: buildListItem,
+  table: buildTable,
+  tableRow: noop,
+  tableCell: noop,
+  html: buildHtml,
+  code: buildCode,
+  definition: noop,
+  footnoteDefinition: buildFootnoteDefinition,
+  text: buildText,
+  emphasis: buildEmphasis,
+  strong: buildStrong,
+  delete: buildDelete,
+  inlineCode: buildInlineCode,
+  break: buildBreak,
+  link: buildLink,
+  linkReference: buildLinkReference,
+  image: buildImage,
+  imageReference: buildImageReference,
+  footnoteReference: buildFootnoteReference,
+  math: buildMath,
+  inlineMath: buildInlineMath,
+};
+
+const FLOW_PARENTS = new Set<mdast.Parents["type"]>([
+  "root",
+  "blockquote",
+  "listItem",
+  "footnoteDefinition",
+]);
+
+// https://html.spec.whatwg.org/multipage/syntax.html#void-elements
+const VOID_ELEMENTS = new Set([
+  "area",
+  "base",
+  "br",
+  "col",
+  "embed",
+  "hr",
+  "img",
+  "input",
+  "link",
+  "meta",
+  "source",
+  "track",
+  "wbr",
+]);
+
+/**
+ * Returns the tag name if the value is an opening or closing tag of non-void element.
+ * The syntax of inline html is already validated by markdown parser, so only tag name is needed.
+ * "/>" is ignored like browsers.
+ */
+const parseTag = (value: string): { name: string; closing: boolean } | null => {
+  const match = /^<(\/?)([a-zA-Z][a-zA-Z0-9-]*)/.exec(value);
+  if (!match) {
+    return null;
+  }
+  const name = match[2]!.toLowerCase();
+  return VOID_ELEMENTS.has(name) ? null : { name, closing: !!match[1] };
+};
+
+const escapeHtml = (value: string): string =>
+  value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+/**
+ * In markdown, inline raw HTML is split into a node per tag, so join an element back into one node.
+ * According to CommonMark, each inline html node is a single tag, comment, etc.
+ * https://spec.commonmark.org/0.31.2/#raw-html
+ */
+const joinInlineHtml = (
+  nodes: readonly mdast.RootContent[],
+): mdast.RootContent[] => {
+  const results: mdast.RootContent[] = [];
+  for (let i = 0; i < nodes.length; i++) {
+    const node = nodes[i]!;
+    if (node.type !== "html") {
+      results.push(node);
+      continue;
+    }
+    if (/^<br[\s/>]/i.test(node.value)) {
+      // docx.js trims <br> at the edges of HTML, so keep it outside
+      results.push({ type: "break" });
+      continue;
+    }
+    const first = parseTag(node.value);
+    if (!first || first.closing) {
+      results.push(node);
+      continue;
+    }
+
+    const stack = [first.name];
+    let html = node.value;
+    let head: mdast.RootContent | undefined;
+    let tail: mdast.RootContent | undefined;
+    let j = i + 1;
+    for (; j < nodes.length && stack.length; j++) {
+      const n = nodes[j]!;
+      if (n.type === "html") {
+        html += n.value;
+        const tag = parseTag(n.value);
+        if (tag && !tag.closing) {
+          stack.push(tag.name);
+          continue;
+        }
+        if (tag) {
+          const index = stack.lastIndexOf(tag.name);
+          if (index !== -1) {
+            stack.length = index;
+          }
+          continue;
+        }
+      } else if (n.type === "text") {
+        html += escapeHtml(n.value);
+      } else if (n.type === "break") {
+        html += "<br>";
+      } else {
+        // contains nodes that can't be stringified to HTML
+        break;
+      }
+      head ??= n;
+      tail = n;
+    }
+    if (stack.length) {
+      results.push(node);
+      continue;
+    }
+
+    // docx.js trims whitespaces at the edges of HTML like browsers, so keep them outside
+    const space: mdast.Text = { type: "text", value: " " };
+    if (head?.type === "text" && /^\s/.test(head.value)) {
+      results.push(space);
+    }
+    results.push({ type: "html", value: html });
+    if (tail?.type === "text" && /\s$/.test(tail.value)) {
+      results.push(space);
+    }
+    i = j - 1;
+  }
+  return results;
+};
+
+const loadWithFetch: LoadFn = async (url) => {
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`${res.status} ${res.statusText}`);
+  }
+  return res.arrayBuffer();
+};
 
 const MAX_CACHE_SIZE = 100;
 
@@ -263,90 +845,6 @@ const loadImages = async (
     cache.delete(key);
   }
 };
-
-interface TocOptions {
-  /**
-   * Title of the table of contents.
-   */
-  title?: string;
-  /**
-   * Max depth of headings listed in the table of contents.
-   * @default 3
-   */
-  depth?: 1 | 2 | 3 | 4 | 5 | 6;
-}
-
-export interface DocxOptions extends Pick<
-  IPropertiesOptions,
-  | "title"
-  | "subject"
-  | "creator"
-  | "keywords"
-  | "description"
-  | "styles"
-  | "background"
-> {
-  /**
-   * Page size defined in twip (1 twip == 1/1440 inch).
-   * @default A4 ({@link sectionPageSizeDefaults})
-   */
-  size?: { width?: number; height?: number };
-  /**
-   * Page margin defined in twip (1 twip == 1/1440 inch).
-   * @default 1 inch ({@link sectionMarginDefaults})
-   */
-  margin?: { top?: number; left?: number; bottom?: number; right?: number };
-  /**
-   * Page orientation.
-   * @default "portrait"
-   */
-  orientation?: "portrait" | "landscape";
-  /**
-   * Number of page columns.
-   * @default 1
-   */
-  columns?: number;
-  /**
-   * Spacing after Paragraphs in twip (1 twip == 1/1440 inch).
-   * @default 0
-   */
-  spacing?: number;
-  /**
-   * Direction of texts.
-   * @default "ltr"
-   */
-  direction?: "ltr" | "rtl" | "vertical";
-  /**
-   * An option to override the text format of ordered list.
-   * See https://docx.js.org/#/usage/numbering?id=level-options for more details.
-   */
-  orderedListFormat?: ListFormat[];
-  /**
-   * An option to select how thematicBreak works.
-   *
-   * - "page": Page Break
-   * - "section": Section Break
-   * - "line": Horizontal line
-   * @default "page"
-   */
-  thematicBreak?: ThematicBreakType;
-  /**
-   * Insert a table of contents generated from headings at the beginning of the document.
-   * Word asks to update fields on open to fill in its page numbers.
-   */
-  toc?: boolean | TocOptions;
-  /** Show the current page number in a centered footer. */
-  pageNumbers?: boolean;
-  /**
-   * Embed images of `image` / `imageReference` nodes. `png`, `jpg`, `gif`, `bmp` and `svg` are supported.
-   * Images are not embedded if not set.
-   */
-  image?: boolean | ImageOptions;
-  /**
-   * Plugins to customize how mdast nodes are compiled.
-   */
-  plugins?: RemarkDocxPlugin[];
-}
 
 export const mdastToDocx = async (
   node: mdast.Root,
@@ -442,6 +940,7 @@ export const mdastToDocx = async (
       joinedChildren.set(n.children, joined);
     }
   });
+
   const referenced = new Set(fragments.values());
   // Bookmark names keyed by heading or link url
   const bookmarks = new Map<mdast.Heading | string, string>();
@@ -464,17 +963,9 @@ export const mdastToDocx = async (
     }
   }
 
-  // Start numbers by level, keyed by ordered list references
-  const orderedStarts = new Map<string, (number | undefined)[]>();
-  // Numbered in the order of rendering
-  const footnoteIds = new Map<string, number>();
-  const footnotes: { [id: number]: { children: Paragraph[] } } = {};
-
   const images = new Map<string, DocxImageData | null>();
-  const pluginCtx = { root: node, images };
-
   const [pluginBuilders] = await Promise.all([
-    Promise.all(plugins.map((p) => p(pluginCtx))),
+    Promise.all(plugins.map((p) => p({ root: node, images }))),
     // Images set by plugins take precedence.
     image &&
       loadImages(
@@ -485,38 +976,7 @@ export const mdastToDocx = async (
         image === true ? {} : image,
       ),
   ]);
-
-  const layers: NodeBuilders[] = [
-    ...pluginBuilders,
-    {
-      paragraph: buildParagraph,
-      heading: buildHeading,
-      thematicBreak: buildThematicBreak,
-      blockquote: buildBlockquote,
-      list: buildList,
-      listItem: buildListItem,
-      table: buildTable,
-      tableRow: noop,
-      tableCell: noop,
-      html: buildHtml,
-      code: fallbackCode,
-      definition: noop,
-      footnoteDefinition: buildFootnoteDefinition,
-      text: buildText,
-      emphasis: buildEmphasis,
-      strong: buildStrong,
-      delete: buildDelete,
-      inlineCode: buildInlineCode,
-      break: buildBreak,
-      link: buildLink,
-      linkReference: buildLinkReference,
-      image: buildImage,
-      imageReference: buildImageReference,
-      footnoteReference: buildFootnoteReference,
-      math: buildMath,
-      inlineMath: buildInlineMath,
-    },
-  ];
+  const layers: NodeBuilders[] = [...pluginBuilders, defaultBuilders];
 
   const renderNode = (
     node: mdast.RootContent,
@@ -546,11 +1006,16 @@ export const mdastToDocx = async (
   const marginLeft = margin?.left ?? sectionMarginDefaults.LEFT;
   const marginBottom = margin?.bottom ?? sectionMarginDefaults.BOTTOM;
   const marginRight = margin?.right ?? sectionMarginDefaults.RIGHT;
-
   // docx swaps width and height of landscape pages
   const bodyWidth = orientation === "landscape" ? pageHeight : pageWidth;
   const bodyHeight = orientation === "landscape" ? pageWidth : pageHeight;
   const columnCount = columns || 1;
+
+  // Numbered in the order of rendering
+  const footnoteIds = new Map<string, number>();
+  const footnotes: { [id: number]: { children: Paragraph[] } } = {};
+  // Start numbers by level, keyed by ordered list references
+  const orderedStarts = new Map<string, (number | undefined)[]>();
 
   const ctx: Context = {
     render(nodes, c) {
@@ -573,7 +1038,7 @@ export const mdastToDocx = async (
     style: {},
     thematicBreak,
     rtl: direction === "rtl",
-    definition: definition,
+    definition,
     images,
     footnote: {
       id: (identifier) => {
@@ -603,15 +1068,15 @@ export const mdastToDocx = async (
   const sections: DocxContent[][] = [[]];
   for (const n of node.children) {
     const r = renderNode(n, ctx);
-    if (r) {
-      if (!r.length) {
-        // thematicBreak
-        sections.push([]);
-      } else {
-        const lastSection = sections[sections.length - 1]!;
-        lastSection.push(...r);
-      }
+    if (!r) {
+      continue;
     }
+    if (!r.length) {
+      // thematicBreak
+      sections.push([]);
+      continue;
+    }
+    sections[sections.length - 1]!.push(...r);
   }
 
   const tocOptions: TocOptions | undefined =
@@ -619,7 +1084,6 @@ export const mdastToDocx = async (
   if (tocOptions) {
     const { title: tocTitle, depth = 3 } = tocOptions;
     const first = sections[0]!;
-    const hasContent = first.length > 0;
     first.unshift(
       ...(tocTitle
         ? [docxParagraph({ style: TOC_HEADING_STYLE_ID, text: tocTitle }, ctx)]
@@ -629,7 +1093,7 @@ export const mdastToDocx = async (
         hyperlink: true,
       }),
       // The next section break already starts a new page
-      ...(hasContent ? [new Paragraph({ children: [new PageBreak()] })] : []),
+      ...(first.length ? [pageBreak()] : []),
     );
   }
 
@@ -739,12 +1203,12 @@ export const mdastToDocx = async (
         {
           reference: BULLET_LIST_REF,
           levels: buildLevels([
-            { text: "\u25CF", format: "BULLET" },
-            { text: "\u25CB", format: "BULLET" },
-            { text: "\u25A0", format: "BULLET" },
-            { text: "\u25CF", format: "BULLET" },
-            { text: "\u25CB", format: "BULLET" },
-            { text: "\u25A0", format: "BULLET" },
+            { text: "●", format: "BULLET" },
+            { text: "○", format: "BULLET" },
+            { text: "■", format: "BULLET" },
+            { text: "●", format: "BULLET" },
+            { text: "○", format: "BULLET" },
+            { text: "■", format: "BULLET" },
           ]),
         },
         ...Array.from(orderedStarts, ([reference, starts]) => ({
@@ -756,23 +1220,23 @@ export const mdastToDocx = async (
         {
           reference: COMPLETE_TASK_LIST_REF,
           levels: buildLevels([
-            { text: "\u2611", format: "BULLET" },
-            { text: "\u2611", format: "BULLET" },
-            { text: "\u2611", format: "BULLET" },
-            { text: "\u2611", format: "BULLET" },
-            { text: "\u2611", format: "BULLET" },
-            { text: "\u2611", format: "BULLET" },
+            { text: "☑", format: "BULLET" },
+            { text: "☑", format: "BULLET" },
+            { text: "☑", format: "BULLET" },
+            { text: "☑", format: "BULLET" },
+            { text: "☑", format: "BULLET" },
+            { text: "☑", format: "BULLET" },
           ]),
         },
         {
           reference: INCOMPLETE_TASK_LIST_REF,
           levels: buildLevels([
-            { text: "\u2610", format: "BULLET" },
-            { text: "\u2610", format: "BULLET" },
-            { text: "\u2610", format: "BULLET" },
-            { text: "\u2610", format: "BULLET" },
-            { text: "\u2610", format: "BULLET" },
-            { text: "\u2610", format: "BULLET" },
+            { text: "☐", format: "BULLET" },
+            { text: "☐", format: "BULLET" },
+            { text: "☐", format: "BULLET" },
+            { text: "☐", format: "BULLET" },
+            { text: "☐", format: "BULLET" },
+            { text: "☐", format: "BULLET" },
           ]),
         },
       ],
@@ -787,520 +1251,4 @@ export const mdastToDocx = async (
   _numbering.concreteNumberingMap.delete(defaultBulletKey);
 
   return new Uint8Array(await Packer.toArrayBuffer(doc));
-};
-
-const buildParagraph: NodeBuilder<"paragraph"> = ({ children }, ctx) => {
-  return docxParagraph(
-    {
-      children: ctx.render(children) as ParagraphChild[],
-      // Later blocks of an item in tight lists aren't paragraphs of the item itself (e.g. in blockquotes)
-      contextualSpacing:
-        (ctx.list?.tight && !ctx.list.continuation) || undefined,
-    },
-    ctx,
-  );
-};
-
-const buildHeading: NodeBuilder<"heading"> = (node, ctx) => {
-  const id = ctx.bookmarks.get(node);
-  const children = ctx.render(node.children) as ParagraphChild[];
-  return docxParagraph(
-    {
-      heading: HeadingLevel[`HEADING_${node.depth}`],
-      children: id ? [new Bookmark({ id, children })] : children,
-    },
-    ctx,
-  );
-};
-
-const buildThematicBreak: NodeBuilder<"thematicBreak"> = (_, ctx) => {
-  switch (ctx.thematicBreak) {
-    case "page": {
-      return new Paragraph({ children: [new PageBreak()] });
-    }
-    case "section": {
-      // Returning empty array at toplevel means section insertion.
-      return [];
-    }
-    case "line": {
-      return new Paragraph({ thematicBreak: true });
-    }
-  }
-};
-
-const buildBlockquote: NodeBuilder<"blockquote"> = ({ children }, ctx) => {
-  return ctx.render(children, {
-    ...ctx,
-    quote: ctx.quote == null ? 0 : ctx.quote + 1,
-  });
-};
-
-const buildList: NodeBuilder<"list"> = (
-  { children, ordered, start, spread },
-  ctx,
-) => {
-  const parentList = ctx.list;
-  const level = !parentList ? 0 : parentList.level + 1;
-
-  let meta: ListContext["meta"];
-  if (ordered) {
-    const reference =
-      parentList && parentList.meta.type === "ordered"
-        ? parentList.meta.reference
-        : ctx.orderedId();
-    if (start != null) {
-      ctx.orderedStart(reference, level, start);
-    }
-    meta = { type: "ordered", reference };
-  } else {
-    meta = { type: "bullet" };
-  }
-
-  return ctx.render(children, {
-    ...ctx,
-    list: {
-      level,
-      meta,
-      // https://spec.commonmark.org/0.31.2/#loose
-      tight: !spread && !children.some((c) => c.spread),
-    },
-  });
-};
-
-const buildListItem: NodeBuilder<"listItem"> = ({ children, checked }, ctx) => {
-  let list = ctx.list;
-  if (list) {
-    // listItem must be the child of list
-    if (checked != null) {
-      list = {
-        ...list,
-        meta: {
-          type: "task",
-          checked,
-        },
-      };
-    }
-  }
-  return children.flatMap((child, i) =>
-    ctx.render([child], {
-      ...ctx,
-      list: list && i > 0 ? { ...list, continuation: true } : list,
-    }),
-  );
-};
-
-const buildTable: NodeBuilder<"table"> = ({ children, align }, ctx) => {
-  const columnLength = children[0]!.children.length;
-  const columnWidth = ctx.width / columnLength;
-
-  const options: Writeable<ITableOptions> = {
-    columnWidths: Array.from({ length: columnLength }).map(() => columnWidth),
-    rows: children.map((r, rowIndex) => {
-      return new TableRow({
-        tableHeader: rowIndex === 0 || undefined,
-        children: r.children.map((c, i) => {
-          return new TableCell({
-            width: { size: columnWidth, type: "dxa" },
-            children: [
-              new Paragraph({
-                alignment: align?.[i] ?? undefined,
-                children: ctx.render(c.children, {
-                  ...ctx,
-                  width: columnWidth - TABLE_CELL_MARGIN * 2,
-                  quote: undefined,
-                  list: undefined,
-                  // https://github.com/dolanmiu/docx/blob/master/demo/22-right-to-left-text.ts
-                  rtl: undefined,
-                }) as ParagraphChild[],
-              }),
-            ],
-          });
-        }),
-      });
-    }),
-  };
-
-  if (ctx.rtl) {
-    options.visuallyRightToLeft = true;
-  }
-
-  return new Table(options);
-};
-
-const buildText: NodeBuilder<"text"> = ({ value }, { style, rtl }) => {
-  const options: Writeable<IRunOptions> = {
-    text: value,
-    bold: style.bold,
-    italics: style.italic,
-    strike: style.strike,
-  };
-  if (style.inlineCode) {
-    options.highlight = "lightGray";
-  }
-  if (style.link) {
-    // https://docx.js.org/#/usage/hyperlinks?id=styling-hyperlinks
-    options.style = HYPERLINK_STYLE_ID;
-  }
-  if (rtl) {
-    options.rightToLeft = true;
-  }
-
-  return new TextRun(options);
-};
-
-const buildEmphasis: NodeBuilder<"emphasis"> = ({ children }, ctx) => {
-  return ctx.render(children, {
-    ...ctx,
-    style: { ...ctx.style, italic: true },
-  });
-};
-
-const buildStrong: NodeBuilder<"strong"> = ({ children }, ctx) => {
-  return ctx.render(children, {
-    ...ctx,
-    style: { ...ctx.style, bold: true },
-  });
-};
-
-const buildDelete: NodeBuilder<"delete"> = ({ children }, ctx) => {
-  return ctx.render(children, {
-    ...ctx,
-    style: { ...ctx.style, strike: true },
-  });
-};
-
-const buildInlineCode: NodeBuilder<"inlineCode"> = ({ value }, ctx) => {
-  return buildText(
-    { type: "text", value },
-    {
-      ...ctx,
-      style: { ...ctx.style, inlineCode: true },
-    },
-  );
-};
-
-const buildBreak: NodeBuilder<"break"> = () => {
-  return new TextRun({ text: "", break: 1 });
-};
-
-const buildLink: NodeBuilder<"link"> = ({ children, url }, ctx) => {
-  if (url.startsWith("#")) {
-    const anchor = ctx.bookmarks.get(url);
-    if (!anchor) {
-      return ctx.render(children);
-    }
-    return new InternalHyperlink({
-      anchor,
-      children: ctx.render(children, {
-        ...ctx,
-        style: { ...ctx.style, link: true },
-      }) as ParagraphChild[],
-    });
-  }
-  return new ExternalHyperlink({
-    link: url,
-    children: ctx.render(children, {
-      ...ctx,
-      style: { ...ctx.style, link: true },
-    }) as ParagraphChild[],
-  });
-};
-
-const buildLinkReference: NodeBuilder<"linkReference"> = (
-  { children, identifier },
-  ctx,
-) => {
-  const def = ctx.definition(identifier);
-  if (def == null) {
-    return ctx.render(children);
-  }
-  return buildLink({ type: "link", children, url: def.url }, ctx);
-};
-
-const buildImage: NodeBuilder<"image"> = (node, ctx) => {
-  const image = ctx.images.get(node.url);
-  if (!image) {
-    // Keep the description of the image if it can't be embedded
-    return node.alt ? buildText({ type: "text", value: node.alt }, ctx) : null;
-  }
-
-  const max = maxImageSize(ctx);
-  const scale = Math.min(1, max.width / image.width, max.height / image.height);
-  const width = image.width * scale;
-  const height = image.height * scale;
-
-  const altText =
-    node.alt || node.title
-      ? {
-          name: "",
-          description: node.alt ?? undefined,
-          title: node.title ?? undefined,
-        }
-      : undefined;
-
-  if (image.type === "svg") {
-    const { type, data, fallback } = image;
-    return new ImageRun({
-      type: type,
-      data: data,
-      transformation: {
-        width,
-        height,
-      },
-      // https://github.com/dolanmiu/docx/issues/1162#issuecomment-3228368003
-      fallback: { type: "png", data: fallback },
-      altText,
-    });
-  }
-
-  const { type, data } = image;
-  return new ImageRun({
-    type: type,
-    data: data,
-    transformation: {
-      width,
-      height,
-    },
-    altText,
-  });
-};
-
-const maxImageSize = (ctx: Context): { width: number; height: number } => {
-  // The Quote style also indents the right
-  const indent = contentIndent(ctx) + (ctx.quote != null ? QUOTE_INDENT : 0);
-  // twip to px
-  return {
-    width: ((ctx.width - indent) / 1440) * 96,
-    height: (ctx.height / 1440) * 96,
-  };
-};
-
-const buildImageReference: NodeBuilder<"imageReference"> = (node, ctx) => {
-  const def = ctx.definition(node.identifier);
-  if (def == null) {
-    return null;
-  }
-  return buildImage(
-    { type: "image", url: def.url, alt: node.alt, title: def.title },
-    ctx,
-  );
-};
-
-const buildFootnoteDefinition: NodeBuilder<"footnoteDefinition"> = (
-  { children, identifier },
-  ctx,
-) => {
-  const contents = ctx.render(children).filter((c) => c instanceof Paragraph);
-  ctx.footnote.set(ctx.footnote.id(identifier), contents);
-  return null;
-};
-
-const buildFootnoteReference: NodeBuilder<"footnoteReference"> = (
-  { identifier },
-  ctx,
-) => {
-  return new FootnoteReferenceRun(ctx.footnote.id(identifier));
-};
-
-const parseLatex = (value: string): DocxMath | null => {
-  try {
-    return new DocxMath({ children: latexToMath(value) });
-  } catch (e) {
-    warnOnce(
-      `Failed to convert LaTeX to a Word equation, falling back to text.\n` +
-        (e instanceof Error ? e.message : String(e)),
-    );
-    return null;
-  }
-};
-
-const textLines = (value: string): TextRun[] => {
-  return value.split(/\r?\n/).map(
-    (line, index) =>
-      new TextRun({
-        text: line,
-        break: index === 0 ? undefined : 1,
-      }),
-  );
-};
-
-const buildMath: NodeBuilder<"math"> = ({ value }, ctx) => {
-  const math = parseLatex(value);
-  return docxParagraph({ children: math ? [math] : textLines(value) }, ctx);
-};
-
-const buildInlineMath: NodeBuilder<"inlineMath"> = ({ value }, ctx) => {
-  const math = parseLatex(value);
-  if (!math) {
-    return buildText({ type: "text", value }, ctx);
-  }
-  return math;
-};
-
-const FLOW_PARENTS = new Set<mdast.Parents["type"]>([
-  "root",
-  "blockquote",
-  "listItem",
-  "footnoteDefinition",
-]);
-
-// https://html.spec.whatwg.org/multipage/syntax.html#void-elements
-const VOID_ELEMENTS = new Set([
-  "area",
-  "base",
-  "br",
-  "col",
-  "embed",
-  "hr",
-  "img",
-  "input",
-  "link",
-  "meta",
-  "source",
-  "track",
-  "wbr",
-]);
-
-/**
- * Returns the tag name if the value is an opening or closing tag of non-void element.
- * The syntax of inline html is already validated by markdown parser, so only tag name is needed.
- * "/>" is ignored like browsers.
- */
-const parseTag = (value: string): { name: string; closing: boolean } | null => {
-  const match = /^<(\/?)([a-zA-Z][a-zA-Z0-9-]*)/.exec(value);
-  if (!match) {
-    return null;
-  }
-  const name = match[2]!.toLowerCase();
-  return VOID_ELEMENTS.has(name) ? null : { name, closing: !!match[1] };
-};
-
-/**
- * In markdown, inline raw HTML is split into a node per tag, so join an element back into one node.
- * According to CommonMark, each inline html node is a single tag, comment, etc.
- * https://spec.commonmark.org/0.31.2/#raw-html
- */
-const joinInlineHtml = (
-  nodes: readonly mdast.RootContent[],
-): mdast.RootContent[] => {
-  const results: mdast.RootContent[] = [];
-  for (let i = 0; i < nodes.length; i++) {
-    const node = nodes[i]!;
-    if (node.type !== "html") {
-      results.push(node);
-      continue;
-    }
-
-    const first = parseTag(node.value);
-    if (first && !first.closing) {
-      const stack = [first.name];
-      let html = node.value;
-      let head: mdast.RootContent | undefined;
-      let tail: mdast.RootContent | undefined;
-      let j = i + 1;
-      for (; j < nodes.length && stack.length; j++) {
-        const n = nodes[j]!;
-        if (n.type === "text") {
-          html += n.value
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;");
-        } else if (n.type === "break") {
-          html += "<br>";
-        } else if (n.type === "html") {
-          html += n.value;
-          const tag = parseTag(n.value);
-          if (tag) {
-            if (!tag.closing) {
-              stack.push(tag.name);
-            } else {
-              const index = stack.lastIndexOf(tag.name);
-              if (index !== -1) {
-                stack.length = index;
-              }
-            }
-            continue;
-          }
-        } else {
-          // contains nodes that can't be stringified to HTML
-          break;
-        }
-        head ??= n;
-        tail = n;
-      }
-
-      if (!stack.length) {
-        // docx.js trims whitespaces at the edges of HTML like browsers, so keep them outside
-        const space: mdast.Text = { type: "text", value: " " };
-        if (head?.type === "text" && /^\s/.test(head.value)) {
-          results.push(space);
-        }
-        results.push({ type: "html", value: html });
-        if (tail?.type === "text" && /\s$/.test(tail.value)) {
-          results.push(space);
-        }
-        i = j - 1;
-        continue;
-      }
-    } else if (/^<br[\s/>]/i.test(node.value)) {
-      // docx.js also trims <br> at the edges of HTML, so keep it outside
-      results.push({ type: "break" });
-      continue;
-    }
-    results.push(node);
-  }
-  return results;
-};
-
-const HTML_LINK_CLASS = "remark-docx-link";
-
-const htmlOptions: HtmlOptions = {
-  styleMap: {
-    [`.${HTML_LINK_CLASS}`]: HYPERLINK_STYLE_ID,
-  },
-  onWarning: ({ message }) => {
-    warnOnce(
-      `Failed to convert some HTML to Word as is, leaving it out or changing it.\n` +
-        message,
-    );
-  },
-};
-
-const buildHtml: NodeBuilder<"html"> = (node, ctx) => {
-  let { value } = node;
-  const inline = ctx.inlineHtml.has(node);
-  // Apply the context of markdown to HTML
-  const { style, rtl } = ctx;
-  if (style.bold) value = `<b>${value}</b>`;
-  if (style.italic) value = `<i>${value}</i>`;
-  if (style.strike) value = `<s>${value}</s>`;
-  if (style.link) value = `<span class="${HTML_LINK_CLASS}">${value}</span>`;
-  if (rtl) value = `<div dir="rtl">${value}</div>`;
-
-  // Paragraphs from docx.js can't be indented or numbered afterwards, so wrap runs with a paragraph instead.
-  const paragraph = !inline && (ctx.quote != null || !!ctx.list);
-  const options: HtmlOptions = {
-    ...htmlOptions,
-    maxImageWidth: maxImageSize(ctx).width,
-  };
-  const results =
-    inline || paragraph
-      ? htmlToRuns(value, options)
-      : htmlToContent(value, options);
-  if (!results.length) {
-    // Returning an empty array at root means a section break, so return null instead.
-    return null;
-  }
-  return paragraph
-    ? docxParagraph({ children: results as readonly ParagraphChild[] }, ctx)
-    : (results as DocxContent[]);
-};
-
-const noop = () => {
-  return null;
-};
-
-const fallbackCode: NodeBuilder<"code"> = ({ value }, ctx) => {
-  warnOnce(`code node is not supported without plugins, falling back to text.`);
-  return docxParagraph({ children: textLines(value) }, ctx);
 };

@@ -3,13 +3,6 @@ import type * as mdast from "mdast";
 import type { GetDefinition } from "mdast-util-definitions";
 import type { SupportedImageType } from "./utils";
 
-/**
- * @internal
- */
-export type Writeable<T> = {
-  -readonly [key in keyof T]: T[key];
-};
-
 export type DocxContent = Paragraph | Table | TableOfContents | ParagraphChild;
 
 type KnownNodeType = mdast.RootContent["type"];
