@@ -550,6 +550,15 @@ const buildHtml: NodeBuilder<"html"> = (node, ctx) => {
           message,
       );
     },
+    images: (source) => {
+      const image = ctx.images.get(source);
+      if (!image) {
+        return;
+      }
+      return image.type === "svg"
+        ? { data: image.data, fallback: image.fallback }
+        : image.data;
+    },
     maxImageWidth: maxImageSize(ctx).width,
   });
   if (!results.length) {
@@ -917,6 +926,17 @@ export const mdastToDocx = async (
         }
         break;
       }
+      case "html":
+        if (image) {
+          // Collect <img> sources as docx.js reads them. Data URLs are embedded by docx.js itself.
+          htmlToRuns(n.value, {
+            images: (source) => {
+              imageUrls.add(source);
+              return undefined;
+            },
+          });
+        }
+        break;
     }
 
     if (
