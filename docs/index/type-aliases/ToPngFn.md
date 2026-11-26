@@ -6,7 +6,7 @@
 
 > **ToPngFn** = (`options`) => `Promise`\<`ArrayBuffer`\>
 
-Defined in: [src/utils.ts:28](https://github.com/inokawa/remark-docx/blob/3e43711c62b7e099eee74bf0405f50515237f051/src/utils.ts#L28)
+Defined in: [src/utils.ts:28](https://github.com/inokawa/remark-docx/blob/abed5b556b3c26039b9a2e778adb93b4f8e72c17/src/utils.ts#L28)
 
 ## Parameters
 
