@@ -13,6 +13,7 @@ import {
   Bookmark,
   HeadingLevel,
   LevelFormat,
+  LineNumberRestartFormat,
   AlignmentType,
   type ILevelsOptions,
   FootnoteReferenceRun,
@@ -160,8 +161,14 @@ export interface DocxOptions extends Pick<
    * Word asks to update fields on open to fill in its page numbers.
    */
   toc?: boolean | TocOptions;
-  /** Show the current page number in a centered footer. */
+  /**
+   * Show the current page number in a centered footer.
+   */
   pageNumbers?: boolean;
+  /**
+   * Show line numbers in the margin, continuously through the document.
+   */
+  lineNumbers?: boolean;
   /**
    * Embed images of `image` / `imageReference` nodes. `png`, `jpg`, `gif`, `bmp` and `svg` are supported.
    * Images are not embedded if not set.
@@ -877,6 +884,7 @@ export const mdastToDocx = async (
     thematicBreak = "page",
     toc,
     pageNumbers,
+    lineNumbers,
     orderedListFormat,
   }: DocxOptions = {},
   imageCache: ImageCache,
@@ -1125,6 +1133,13 @@ export const mdastToDocx = async (
 
   const sectionProperties: ISectionPropertiesOptions = {
     column: columns ? { count: columns } : undefined,
+    lineNumbers: lineNumbers
+      ? {
+          // Word shows no line numbers with countBy 0
+          countBy: 1,
+          restart: LineNumberRestartFormat.CONTINUOUS,
+        }
+      : undefined,
     page: {
       textDirection: direction === "vertical" ? "tbRl" : undefined,
       size: { width: pageWidth, height: pageHeight, orientation },
