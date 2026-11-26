@@ -43,13 +43,44 @@ export interface DocxOptions extends Pick<IPropertiesOptions, "title" | "subject
     };
     /**
      * Page margin defined in twip (1 twip == 1/1440 inch).
-     * @default 1 inch ({@link sectionMarginDefaults})
+     * @default {@link sectionMarginDefaults}
      */
     margin?: {
+        /**
+         * Top margin.
+         * @default 1440
+         */
         top?: number;
+        /**
+         * Left margin.
+         * @default 1440
+         */
         left?: number;
+        /**
+         * Bottom margin.
+         * @default 1440
+         */
         bottom?: number;
+        /**
+         * Right margin.
+         * @default 1440
+         */
         right?: number;
+        /**
+         * Distance from the top edge to the header.
+         * @default 708
+         */
+        header?: number;
+        /**
+         * Distance from the bottom edge to the footer.
+         * @default 708
+         */
+        footer?: number;
+        /**
+         * Binding space added to the left margin.
+         * @default 0
+         */
+        gutter?: number;
     };
     /**
      * Page orientation.
