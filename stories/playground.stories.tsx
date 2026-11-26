@@ -35,12 +35,13 @@ const toDocxProcessor = unified()
           const container = document.createElement("div");
           document.body.appendChild(container);
           try {
-            return (await mermaid.render("mermaid", value, container)).svg;
+            return new TextEncoder().encode(
+              (await mermaid.render("mermaid", value, container)).svg,
+            );
           } finally {
             container.remove();
           }
         },
-        toPng: browserToPng,
       }),
       shikiPlugin({ theme: "everforest-dark" }),
     ],

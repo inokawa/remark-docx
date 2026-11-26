@@ -541,7 +541,9 @@ describe("e2e", () => {
   });
 
   describe("code to image", () => {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="20"/>`;
+    const svg = new TextEncoder().encode(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="20"/>`,
+    );
     const png = () => fs.readFile(path.join(fixturesDir, "images/img.png"));
     const toPng = async () => (await png()).buffer;
     const read = (doc: Uint8Array) => {
@@ -558,6 +560,7 @@ describe("e2e", () => {
     it("renders code in the language as svg with png fallback", async () => {
       const rendered: string[] = [];
       const doc = await processor({
+        image: { toPng },
         plugins: [
           codeToImagePlugin({
             render: ({ lang, value }) => {
@@ -565,7 +568,6 @@ describe("e2e", () => {
               rendered.push(value);
               return svg;
             },
-            toPng,
           }),
         ],
       }).process(
@@ -610,7 +612,7 @@ describe("e2e", () => {
           () => {
             throw new Error("syntax error");
           },
-          () => "not an image",
+          () => new TextEncoder().encode("not an image"),
         ]) {
           warn.mockClear();
           const doc = await processor({
@@ -628,10 +630,10 @@ describe("e2e", () => {
 
     it("leaves code to the next plugins", async () => {
       const doc = await processor({
+        image: { toPng },
         plugins: [
           codeToImagePlugin({
             render: ({ lang }) => (lang === "a" ? svg : null),
-            toPng,
           }),
           codeToImagePlugin({
             render: async ({ lang }) => (lang === "b" ? png() : null),

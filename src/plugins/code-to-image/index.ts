@@ -2,29 +2,19 @@ import type * as mdast from "mdast";
 import { Paragraph, type ParagraphChild } from "docx";
 import { visit } from "unist-util-visit";
 import type { RemarkDocxPlugin } from "../../types";
-import { readImage, toArrayBuffer, warnOnce, type ToPngFn } from "../../utils";
+import { warnOnce } from "../../utils";
 
-type ImageSource = string | ArrayBuffer | Uint8Array;
+type ImageSource = ArrayBuffer | Uint8Array;
 
 export interface CodeToImagePluginOptions {
   /**
-   * A function to render a "code" node to an image. Returns SVG as string or image data such as PNG and JPEG.
+   * A function to render a "code" node to image data, such as PNG and SVG.
+   * Images other than PNG, JPEG, GIF and BMP are converted with `toPng` of `image` option, like images in the document.
    * Return `null` to leave the node to other plugins, for example when its language is not the target.
    */
   render: (
     node: mdast.Code,
-  ) =>
-    | string
-    | ArrayBuffer
-    | Uint8Array
-    | null
-    | undefined
-    | Promise<string | ArrayBuffer | Uint8Array | null | undefined>;
-  /**
-   * A function to convert rendered images to PNG. Required to embed images other than PNG, JPEG, GIF and BMP, such as SVG.
-   * On browser, you can use `browserToPng` of remark-docx.
-   */
-  toPng?: ToPngFn;
+  ) => ImageSource | null | undefined | Promise<ImageSource | null | undefined>;
 }
 
 let instanceCount = 0;
@@ -34,14 +24,13 @@ let instanceCount = 0;
  */
 export const codeToImagePlugin = ({
   render,
-  toPng,
 }: CodeToImagePluginOptions): RemarkDocxPlugin => {
   // NUL can't be in urls of Markdown, so the keys don't conflict with images in the document.
   const prefix = `\0code-to-image-${instanceCount++}\0`;
   const keyOf = ({ lang, meta, value }: mdast.Code): string =>
     prefix + JSON.stringify([lang, meta, value]);
 
-  return async ({ root, images }) => {
+  return async ({ root, images, readImage }) => {
     const promises: Promise<void>[] = [];
     visit(root, "code", (node) => {
       const key = keyOf(node);
@@ -63,15 +52,7 @@ export const codeToImagePlugin = ({
           if (source == null) {
             return;
           }
-          const image = await readImage(
-            toArrayBuffer(
-              typeof source === "string"
-                ? new TextEncoder().encode(source)
-                : source,
-            ),
-            toPng,
-            name,
-          );
+          const image = await readImage(source, name);
           if (image) {
             images.set(key, image);
           }
