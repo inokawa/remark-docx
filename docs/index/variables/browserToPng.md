@@ -6,7 +6,7 @@
 
 > `const` **browserToPng**: (`__namedParameters`) => `Promise`\<`ArrayBuffer`\>
 
-Defined in: [src/utils.ts:85](https://github.com/inokawa/remark-docx/blob/094196e1ab168f7f234724d260523184b2a88bd7/src/utils.ts#L85)
+Defined in: [src/utils.ts:85](https://github.com/inokawa/remark-docx/blob/5c16511c356dbeca44eade6652cad52ca3117d4c/src/utils.ts#L85)
 
 Converts images to PNG with canvas. Works only on browser.
 
