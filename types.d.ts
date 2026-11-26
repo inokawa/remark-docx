@@ -68,5 +68,6 @@ export type NodeBuilders = {
 export type RemarkDocxPlugin = (ctx: Readonly<{
     root: mdast.Root;
     images: Map<string, DocxImageData | null>;
+    readImage: (data: ArrayBuffer | Uint8Array, name: string) => Promise<DocxImageData | undefined>;
 }>) => Promise<NodeBuilders>;
 export {};
