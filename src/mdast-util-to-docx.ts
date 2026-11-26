@@ -30,7 +30,7 @@ import {
   TableOfContents,
 } from "docx";
 import { latexToMath } from "docx/math";
-import { htmlToContent, htmlToRuns, type HtmlOptions } from "docx/html";
+import { htmlToContent, htmlToRuns } from "docx/html";
 import type * as mdast from "mdast";
 import type { VFile } from "vfile";
 import { isSupportedType, warnOnce, type ToPngFn } from "./utils";
@@ -191,15 +191,12 @@ const textIndent = (
   };
 };
 
-const maxImageSize = (
-  width: number,
-  height: number,
-  { left, right }: { left: number; right: number },
-): { width: number; height: number } => {
+const maxImageSize = (ctx: Context): { width: number; height: number } => {
+  const { left, right } = textIndent(ctx.quote, ctx.list);
   // twip to px
   return {
-    width: ((width - left - right) / 1440) * 96,
-    height: (height / 1440) * 96,
+    width: ((ctx.width - left - right) / 1440) * 96,
+    height: (ctx.height / 1440) * 96,
   };
 };
 
@@ -530,18 +527,6 @@ const joinInlineHtml = (
 
 const HTML_LINK_CLASS = "remark-docx-link";
 
-const htmlOptions: HtmlOptions = {
-  styleMap: {
-    [`.${HTML_LINK_CLASS}`]: HYPERLINK_STYLE_ID,
-  },
-  onWarning: ({ message }) => {
-    warnOnce(
-      `Failed to convert some HTML to Word as is, leaving it out or changing it.\n` +
-        message,
-    );
-  },
-};
-
 const buildHtml: NodeBuilder<"html"> = (node, ctx) => {
   const inline = ctx.inlineHtml.has(node);
   // Apply the context of markdown to HTML
@@ -555,18 +540,18 @@ const buildHtml: NodeBuilder<"html"> = (node, ctx) => {
 
   // Paragraphs from docx.js can't be indented or numbered afterwards, so wrap runs with a paragraph instead.
   const paragraph = !inline && (ctx.quote != null || !!ctx.list);
-  const options: HtmlOptions = {
-    ...htmlOptions,
-    maxImageWidth: maxImageSize(
-      ctx.width,
-      ctx.height,
-      textIndent(ctx.quote, ctx.list),
-    ).width,
-  };
-  const results =
-    inline || paragraph
-      ? htmlToRuns(value, options)
-      : htmlToContent(value, options);
+  const results = (inline || paragraph ? htmlToRuns : htmlToContent)(value, {
+    styleMap: {
+      [`.${HTML_LINK_CLASS}`]: HYPERLINK_STYLE_ID,
+    },
+    onWarning: ({ message }) => {
+      warnOnce(
+        `Failed to convert some HTML to Word as is, leaving it out or changing it.\n` +
+          message,
+      );
+    },
+    maxImageWidth: maxImageSize(ctx).width,
+  });
   if (!results.length) {
     // Returning an empty array at root means a section break, so return null instead.
     return null;
@@ -676,11 +661,7 @@ const buildImage: NodeBuilder<"image"> = (node, ctx) => {
     return node.alt ? buildText({ type: "text", value: node.alt }, ctx) : null;
   }
 
-  const max = maxImageSize(
-    ctx.width,
-    ctx.height,
-    textIndent(ctx.quote, ctx.list),
-  );
+  const max = maxImageSize(ctx);
   const scale = Math.min(1, max.width / image.width, max.height / image.height);
   const transformation = {
     width: image.width * scale,
