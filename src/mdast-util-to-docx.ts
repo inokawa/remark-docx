@@ -119,9 +119,45 @@ export interface DocxOptions extends Pick<
   size?: { width?: number; height?: number };
   /**
    * Page margin defined in twip (1 twip == 1/1440 inch).
-   * @default 1 inch ({@link sectionMarginDefaults})
+   * @default {@link sectionMarginDefaults}
    */
-  margin?: { top?: number; left?: number; bottom?: number; right?: number };
+  margin?: {
+    /**
+     * Top margin.
+     * @default 1440
+     */
+    top?: number;
+    /**
+     * Left margin.
+     * @default 1440
+     */
+    left?: number;
+    /**
+     * Bottom margin.
+     * @default 1440
+     */
+    bottom?: number;
+    /**
+     * Right margin.
+     * @default 1440
+     */
+    right?: number;
+    /**
+     * Distance from the top edge to the header.
+     * @default 708
+     */
+    header?: number;
+    /**
+     * Distance from the bottom edge to the footer.
+     * @default 708
+     */
+    footer?: number;
+    /**
+     * Binding space added to the left margin.
+     * @default 0
+     */
+    gutter?: number;
+  };
   /**
    * Page orientation.
    * @default "portrait"
@@ -1029,6 +1065,9 @@ export const mdastToDocx = async (
   const marginLeft = margin?.left ?? sectionMarginDefaults.LEFT;
   const marginBottom = margin?.bottom ?? sectionMarginDefaults.BOTTOM;
   const marginRight = margin?.right ?? sectionMarginDefaults.RIGHT;
+  const marginHeader = margin?.header ?? sectionMarginDefaults.HEADER;
+  const marginFooter = margin?.footer ?? sectionMarginDefaults.FOOTER;
+  const marginGutter = margin?.gutter ?? sectionMarginDefaults.GUTTER;
   // docx swaps width and height of landscape pages
   const bodyWidth = orientation === "landscape" ? pageHeight : pageWidth;
   const bodyHeight = orientation === "landscape" ? pageWidth : pageHeight;
@@ -1055,6 +1094,7 @@ export const mdastToDocx = async (
       (bodyWidth -
         marginLeft -
         marginRight -
+        marginGutter -
         COLUMN_SPACE * (columnCount - 1)) /
       columnCount,
     height: bodyHeight - marginTop - marginBottom,
@@ -1148,6 +1188,9 @@ export const mdastToDocx = async (
         left: marginLeft,
         bottom: marginBottom,
         right: marginRight,
+        header: marginHeader,
+        footer: marginFooter,
+        gutter: marginGutter,
       },
     },
   };
