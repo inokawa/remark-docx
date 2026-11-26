@@ -167,7 +167,7 @@ const processor = unified()
 
 #### Image
 
-Render code blocks as images with `codeToImagePlugin`. `render` returns SVG or image data such as PNG, or `null` to leave the code block to the next plugins. Set `toPng` to embed SVG like [`toPng` option of image](#image).
+Render code blocks as images with `codeToImagePlugin`. `render` returns image data such as PNG and SVG, or `null` to leave the code block to the next plugins.
 
 ##### Mermaid
 
@@ -183,6 +183,7 @@ import mermaid from "mermaid";
 const processor = unified()
   .use(markdown)
   .use(docx, {
+    image: { toPng: browserToPng },
     plugins: [
       codeToImagePlugin({
         render: async ({ lang, value }) => {
@@ -191,12 +192,12 @@ const processor = unified()
           const container = document.createElement("div");
           document.body.appendChild(container);
           try {
-            return (await mermaid.render("mermaid", value, container)).svg;
+            const { svg } = await mermaid.render("mermaid", value, container);
+            return new TextEncoder().encode(svg);
           } finally {
             container.remove();
           }
         },
-        toPng: browserToPng,
       }),
     ],
   });
@@ -218,11 +219,15 @@ const viz = await instance();
 const processor = unified()
   .use(markdown)
   .use(docx, {
+    image: { toPng: ({ buffer }) => sharp(buffer).png().toBuffer() },
     plugins: [
       codeToImagePlugin({
         render: ({ lang, value }) =>
-          lang === "dot" ? viz.renderString(value, { format: "svg" }) : null,
-        toPng: ({ buffer }) => sharp(buffer).png().toBuffer(),
+          lang === "dot"
+            ? new TextEncoder().encode(
+                viz.renderString(value, { format: "svg" }),
+              )
+            : null,
       }),
     ],
   });
@@ -244,15 +249,17 @@ import { compile } from "vega-lite";
 const processor = unified()
   .use(markdown)
   .use(docx, {
+    image: { toPng: ({ buffer }) => sharp(buffer).png().toBuffer() },
     plugins: [
       codeToImagePlugin({
-        render: ({ lang, value }) =>
+        render: async ({ lang, value }) =>
           lang === "vega-lite"
-            ? new View(parse(compile(JSON.parse(value)).spec), {
-                renderer: "none",
-              }).toSVG()
+            ? new TextEncoder().encode(
+                await new View(parse(compile(JSON.parse(value)).spec), {
+                  renderer: "none",
+                }).toSVG(),
+              )
             : null,
-        toPng: ({ buffer }) => sharp(buffer).png().toBuffer(),
       }),
     ],
   });
@@ -273,11 +280,15 @@ import { Molecule } from "openchemlib";
 const processor = unified()
   .use(markdown)
   .use(docx, {
+    image: { toPng: ({ buffer }) => sharp(buffer).png().toBuffer() },
     plugins: [
       codeToImagePlugin({
         render: ({ lang, value }) =>
-          lang === "smiles" ? Molecule.fromSmiles(value).toSVG(300, 200) : null,
-        toPng: ({ buffer }) => sharp(buffer).png().toBuffer(),
+          lang === "smiles"
+            ? new TextEncoder().encode(
+                Molecule.fromSmiles(value).toSVG(300, 200),
+              )
+            : null,
       }),
     ],
   });

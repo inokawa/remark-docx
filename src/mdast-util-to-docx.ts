@@ -1035,7 +1035,20 @@ export const mdastToDocx = async (
 
   const images = new Map<string, DocxImageData | null>();
   const [pluginBuilders] = await Promise.all([
-    Promise.all(plugins.map((p) => p({ root: node, images }))),
+    Promise.all(
+      plugins.map((p) =>
+        p({
+          root: node,
+          images,
+          readImage: (data, name) =>
+            readImage(
+              toArrayBuffer(data),
+              typeof image === "object" ? image.toPng : undefined,
+              name,
+            ),
+        }),
+      ),
+    ),
     // Images set by plugins take precedence.
     image &&
       loadImages(
