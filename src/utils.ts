@@ -1,4 +1,5 @@
 import { imageSize } from "image-size";
+import type { DocxImageData } from "./types";
 
 const alreadyWarned: { [message: string]: boolean } = {};
 
@@ -40,6 +41,43 @@ export const toArrayBuffer = (data: ArrayBuffer | Uint8Array): ArrayBuffer =>
       new Uint8Array(data.buffer, data.byteOffset, data.byteLength).slice()
         .buffer
     : data;
+
+/**
+ * Reads image data to embed. Images Word can't show are converted with `toPng`, and SVG keeps the PNG as fallback.
+ * @internal
+ */
+export const readImage = async (
+  data: ArrayBuffer,
+  toPng: ToPngFn | undefined,
+  name: string,
+): Promise<DocxImageData | undefined> => {
+  let size: ReturnType<typeof imageSize>;
+  try {
+    size = imageSize(new Uint8Array(data));
+  } catch (e) {
+    warnOnce(`Failed to detect image type: ${name} ${e}`);
+    return;
+  }
+  const { width, height } = size;
+  const type = size.type!;
+  if (isSupportedType(type) && type !== "svg") {
+    return { type, width, height, data };
+  }
+  if (!toPng) {
+    warnOnce(`toPng option is required to embed ${type}: ${name}`);
+    return;
+  }
+  let png: ArrayBuffer;
+  try {
+    png = toArrayBuffer(await toPng({ buffer: data, width, height }));
+  } catch (e) {
+    warnOnce(`Failed to convert image to png: ${name} ${e}`);
+    return;
+  }
+  return type === "svg"
+    ? { type, width, height, data, fallback: png }
+    : { type: "png", width, height, data: png };
+};
 
 /**
  * Converts images to PNG with canvas. Works only on browser.

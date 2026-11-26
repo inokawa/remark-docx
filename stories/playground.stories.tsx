@@ -6,7 +6,8 @@ import gfm from "remark-gfm";
 import math from "remark-math";
 import docx, { browserToPng } from "../src";
 import { shikiPlugin } from "../src/plugins/shiki";
-import { mermaidPlugin } from "../src/plugins/mermaid";
+import { codeToImagePlugin } from "../src/plugins/code-to-image";
+import mermaid from "mermaid";
 // @ts-expect-error no type definition
 import readmeMd from "../README.md?raw";
 // @ts-expect-error no type definition
@@ -21,13 +22,24 @@ import { saveAs } from "file-saver";
 import { renderAsync } from "docx-preview";
 import debounce from "lodash.debounce";
 
+let mermaidId = 0;
+
 const toDocxProcessor = unified()
   .use(markdown)
   .use(gfm)
   .use(math)
   .use(docx, {
     image: { toPng: browserToPng },
-    plugins: [mermaidPlugin(), shikiPlugin({ theme: "everforest-dark" })],
+    plugins: [
+      codeToImagePlugin({
+        render: async ({ lang, value }) =>
+          lang === "mermaid"
+            ? (await mermaid.render(`mermaid-${mermaidId++}`, value)).svg
+            : null,
+        toPng: browserToPng,
+      }),
+      shikiPlugin({ theme: "everforest-dark" }),
+    ],
   });
 
 export default {
