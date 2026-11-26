@@ -180,16 +180,22 @@ import docx, { browserToPng } from "remark-docx";
 import { codeToImagePlugin } from "remark-docx/plugins/code-to-image";
 import mermaid from "mermaid";
 
-let id = 0;
 const processor = unified()
   .use(markdown)
   .use(docx, {
     plugins: [
       codeToImagePlugin({
-        render: async ({ lang, value }) =>
-          lang === "mermaid"
-            ? (await mermaid.render(`mermaid-${id++}`, value)).svg
-            : null,
+        render: async ({ lang, value }) => {
+          if (lang !== "mermaid") return null;
+          // Mermaid leaves its elements in the container if it fails to render
+          const container = document.createElement("div");
+          document.body.appendChild(container);
+          try {
+            return (await mermaid.render("mermaid", value, container)).svg;
+          } finally {
+            container.remove();
+          }
+        },
         toPng: browserToPng,
       }),
     ],

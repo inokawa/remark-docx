@@ -22,8 +22,6 @@ import { saveAs } from "file-saver";
 import { renderAsync } from "docx-preview";
 import debounce from "lodash.debounce";
 
-let mermaidId = 0;
-
 const toDocxProcessor = unified()
   .use(markdown)
   .use(gfm)
@@ -32,10 +30,16 @@ const toDocxProcessor = unified()
     image: { toPng: browserToPng },
     plugins: [
       codeToImagePlugin({
-        render: async ({ lang, value }) =>
-          lang === "mermaid"
-            ? (await mermaid.render(`mermaid-${mermaidId++}`, value)).svg
-            : null,
+        render: async ({ lang, value }) => {
+          if (lang !== "mermaid") return null;
+          const container = document.createElement("div");
+          document.body.appendChild(container);
+          try {
+            return (await mermaid.render("mermaid", value, container)).svg;
+          } finally {
+            container.remove();
+          }
+        },
         toPng: browserToPng,
       }),
       shikiPlugin({ theme: "everforest-dark" }),
