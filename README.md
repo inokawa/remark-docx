@@ -141,8 +141,7 @@ const processor = unified()
   .use(markdown)
   .use(docx, {
     image: {
-      toPng: async ({ buffer }) =>
-        (await sharp(buffer).png().toBuffer()).buffer,
+      toPng: ({ buffer }) => sharp(buffer).png().toBuffer(),
     },
   });
 ```
